@@ -53,3 +53,25 @@ crashlytics-build.properties
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# ---- 2026-09-28 布局改造后的补充 ----
+# 真正的 Unity 工程在 unity/ 下，上面那些根目录锚定的规则不覆盖它
+/unity/[Ll]ibrary/
+/unity/[Tt]emp/
+/unity/[Oo]bj/
+/unity/[Ll]ogs/
+/unity/[Bb]uild/
+/unity/[Bb]uilds/
+/unity/[Uu]serSettings/
+/unity/[Mm]emoryCaptures/
+/unity/[Rr]ecordings/
+/unity/.vs/
+/unity/.idea/
+/unity/Assets/Plugins/Android/gradleTemplate.properties.bak
+
+# 迁移探测工程的编译产物
+/tools/migration-probe/[Bb]in/
+/tools/migration-probe/[Oo]bj/
+
+# 放行手写工具工程（上面的 *.csproj 是为 Unity 自动生成的工程文件准备的）
+!/tools/**/*.csproj
