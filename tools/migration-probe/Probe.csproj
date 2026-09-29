@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- 迁移探测工程：用 Unity 2022.3.62f3c1 自己的程序集编译工程脚本，
+       把 Unity 4.5 → 2022 的 API 缺口变成可核对的编译错误清单。
+       本目录刻意放在 Assets/ 之外，Unity 不会把它当工程脚本导入。 -->
+
+  <PropertyGroup>
+    <!-- 必须与 unity/ProjectSettings/ProjectSettings.asset 的 apiCompatibilityLevel 对齐。
+         6 = .NET Standard 2.1，所以这里也用 netstandard2.1，并且 framework 引用直接指向
+         编辑器自带的 NetStandard/ref/2.1.0/netstandard.dll。
+         之前这里是 net8.0：net8 的 BCL 与 .NET Standard 2.1 的身份不是同一套，
+         它会放过 Unity 真要报的错 —— 实测就放过过一次：SimpleJSON 依赖的
+         ICSharpCode.SharpZipLib 是 .NET Framework 2.0 的珠子，在 net8 下编得过、
+         在 Unity 的 netstandard2.1 下炸 12×CS0012 + 4×CS1503 + 2×CS1674（Stream 在
+         两边解析成不同程序集）。改成按真档位编，这类错才能在开编辑器之前就被抓到。 -->
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+
+    <OutputType>Library</OutputType>
+    <!-- 必须锁 9.0：Unity 2022.3 就是用 C# 9 编译工程脚本。
+         之前写 latest 会让探测工程放过 Unity 实际会报的 CS8773（文件级命名空间）。 -->
+    <LangVersion>9.0</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>Assembly-CSharp-migrationprobe</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ErrorLimit>100000</ErrorLimit>
+    <NoWarn>0067;0108;0114;0162;0168;0169;0219;0414;0649;1591;1701;1702</NoWarn>
+    <NoWarn>$(NoWarn);CS0436</NoWarn>
+
+    <UnityDataDir Condition="'$(UnityDataDir)'==''">D:\Program\Unity\Edit\2022.3.62f3c1\Editor\Data</UnityDataDir>
+    <UnityManagedDir Condition="'$(UnityManagedDir)'==''">$(UnityDataDir)\Managed\UnityEngine</UnityManagedDir>
+    <UnityNetStandardRef Condition="'$(UnityNetStandardRef)'==''">$(UnityDataDir)\NetStandard\ref\2.1.0\netstandard.dll</UnityNetStandardRef>
+
+    <!-- 档位漂移守卫的取值：见下面项目级的 <Error>。 -->
+    <ProjectSettingsText Condition="Exists('$(MSBuildThisFileDirectory)..\..\unity\ProjectSettings\ProjectSettings.asset')"
+                         >$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)..\..\unity\ProjectSettings\ProjectSettings.asset'))</ProjectSettingsText>
+  </PropertyGroup>
+
+  <!-- 改了工程的 apiCompatibilityLevel 却没改上面的 TargetFramework 时，直接报错停下，
+       而不是给出一份看似干净的假结论。
+       <Error> 既不能放进 <PropertyGroup>（MSB4066），也不能作为 <Project> 直接子元素（本 SDK 明确不再支持），
+       所以挂在 CoreCompile 之前的目标上。 -->
+  <Target Name="CheckApiProfile" BeforeTargets="CoreCompile">
+    <Error Condition="'$(ProjectSettingsText)'!='' And !$([System.String]::Copy('$(ProjectSettingsText)').Contains('apiCompatibilityLevel: 6'))"
+           Text="工程已不再是 apiCompatibilityLevel: 6（.NET Standard 2.1），但本工程仍按 netstandard2.1 探测，结论会失真。请把 TargetFramework / UnityNetStandardRef 改成与工程一致的档位。" />
+  </Target>
+
+  <ItemGroup>
+    <!-- 单一真源：直接编 Unity 工程里的脚本，不另存一份反编译副本 -->
+    <Compile Include="..\..\unity\Assets\Scripts\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 编译器框架引用：用编辑器自带的那份，不是 SDK 的参考集 -->
+    <Reference Include="$(UnityNetStandardRef)">
+      <Private>false</Private>
+    </Reference>
+
+    <!-- SimpleJSON 的 SaveToCompressed*/LoadFromCompressed* 真在用 BZip2，不是多余的 using。
+         Unity 4 自带这颗、2022 不再提供，所以工程里放了一颗现代版（NuGet SharpZipLib 1.4.2
+         的 netstandard2.1 珠子，MIT）。引用必须指向 Assets/Plugins 里工程真正用的那颗：
+         之前这里引用的是 dump/ 下原版，于是"探测过但编辑器报错"，正是本次要修的假阳性来源。 -->
+    <Reference Include="..\..\unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll">
+      <Private>false</Private>
+    </Reference>
+
+    <!-- uGUI 不在 Editor/Data/Managed 下，它由包编译产出、落在工程的 Library/ScriptAssemblies。
+         FPS.cs 用 UI.Text 取代已移除的 GUIText，探测工程必须也能看到它，否则会误报 CS0246。
+         Exists 守卫：Library 是生成物，没打开过编辑器时跳过而不是硬失败 —— 但那样 FPS.cs
+         就会误报 CS0246，所以**先用编辑器打开一次工程再跑探测**。 -->
+    <Reference Include="..\..\unity\Library\ScriptAssemblies\UnityEngine.UI.dll"
+               Condition="Exists('..\..\unity\Library\ScriptAssemblies\UnityEngine.UI.dll')">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UnityDllFiles Include="$(UnityManagedDir)\UnityEngine*.dll" />
+    <!-- Identity 直接给绝对路径：RAR 会把"看起来是已存在文件路径"的 Include 当文件解析。
+         不要用 @(X->'%(Filename)')+HintPath 的写法——%(Filename) 在第一个点处截断，且批处理会丢路径。 -->
+    <Reference Include="@(UnityDllFiles->'%(FullPath)')">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
