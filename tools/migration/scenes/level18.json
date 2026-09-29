@@ -25,6 +25,16 @@
   "ParticleRenderer": 4,
   "GUILayer": 1
  },
+ "field_stats": {
+  "instances decoded": 12,
+  "dangling ref dropped": 5,
+  "ref set": 12,
+  "cross-file ref dropped": 1,
+  "refused:variable-length 'Transform[]' on m": 1,
+  "refused:variable-length 'Texture[]' on tex": 1,
+  "refused:variable-length 'AudioClip[]' on s": 1,
+  "refused:layout consumed 40 of 352 bytes": 1
+ },
  "warnings": [],
  "nodes": [
   {
@@ -224,7 +234,20 @@
      "script": "Cha_Weapon",
      "guid": "6960600ead0fa60499aadd3186526352",
      "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "dummy_spine",
+       "kind": "node",
+       "node": 98,
+       "t": "Transform"
+      },
+      {
+       "n": "dock",
+       "kind": "int",
+       "i": 1
+      }
+     ]
     }
    ]
   },
@@ -2556,7 +2579,15 @@
      "script": "Ef_swing1_ride",
      "guid": "c41afad4cc2ed9643ae8c214973c4be2",
      "cs": "unity/Assets/Scripts/Ef_swing1_ride.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 149,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -3648,7 +3679,83 @@
      "script": "Cha_Control_ride_cha",
      "guid": "a339c61a2c8bc2149b9c0031a555dc03",
      "cs": "unity/Assets/Scripts/Cha_Control_ride_cha.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "horseSpine",
+       "kind": "node",
+       "node": 176,
+       "t": "Transform"
+      },
+      {
+       "n": "horse",
+       "kind": "node",
+       "node": 179,
+       "t": "Transform"
+      },
+      {
+       "n": "dummy_weapon",
+       "kind": "node",
+       "node": 97,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_souleat",
+       "kind": "node",
+       "node": 146,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_damage",
+       "kind": "node",
+       "node": 145,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_twirl",
+       "kind": "node",
+       "node": 152,
+       "t": "Transform"
+      },
+      {
+       "n": "screen_effect",
+       "kind": "node",
+       "node": 147,
+       "t": "Transform"
+      },
+      {
+       "n": "spear",
+       "kind": "node",
+       "node": 96,
+       "t": "Transform"
+      },
+      {
+       "n": "coin",
+       "kind": "node",
+       "node": 95,
+       "t": "Transform"
+      },
+      {
+       "n": "amount_soulstone",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "count_coin",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "count_monster",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "count_behit",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     },
     {
      "kind": "component",
@@ -3853,7 +3960,15 @@
      "script": "Cam_Move_ride",
      "guid": "f59bb2653df4d704794af0c27a75d920",
      "cs": "unity/Assets/Scripts/Cam_Move_ride.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "cha1",
+       "kind": "node",
+       "node": 154,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },

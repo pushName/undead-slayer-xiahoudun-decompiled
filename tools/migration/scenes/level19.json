@@ -23,6 +23,17 @@
   "ParticleRenderer": 1,
   "GUILayer": 1
  },
+ "field_stats": {
+  "dangling ref dropped": 3,
+  "ref set": 4,
+  "instances decoded": 6,
+  "refused:variable-length 'Texture2D[]' on w": 1,
+  "refused:unknown type 'string[,]' on txt_co": 1,
+  "refused:variable-length 'weapon[]' on wi": 2,
+  "refused:variable-length 'Texture2D[]' on j": 1,
+  "refused:variable-length 'Texture2D[]' on i": 1,
+  "cross-file ref dropped": 3
+ },
  "warnings": [],
  "nodes": [
   {
@@ -58,7 +69,20 @@
      "script": "Cha_Weapon",
      "guid": "6960600ead0fa60499aadd3186526352",
      "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "dummy_spine",
+       "kind": "node",
+       "node": 107,
+       "t": "Transform"
+      },
+      {
+       "n": "dock",
+       "kind": "int",
+       "i": 1
+      }
+     ]
     }
    ]
   },
@@ -3982,7 +4006,27 @@
      "script": "GiftBox",
      "guid": "3f4a099ed3ac5484aa48ca3c142963b1",
      "cs": "unity/Assets/Scripts/GiftBox.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "ef_risingitem",
+       "kind": "node",
+       "node": 154,
+       "t": "Transform"
+      },
+      {
+       "n": "inven_gem",
+       "kind": "node",
+       "node": 105,
+       "t": "Transform"
+      },
+      {
+       "n": "inven_weapon",
+       "kind": "node",
+       "node": 104,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",

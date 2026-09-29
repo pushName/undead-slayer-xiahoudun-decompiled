@@ -17,6 +17,14 @@
   "ParticleRenderer": 3,
   "GUILayer": 1
  },
+ "field_stats": {
+  "instances decoded": 7,
+  "cross-file ref dropped": 1,
+  "ref set": 1,
+  "refused:unknown type 'string[,]' on txt_na": 1,
+  "refused:ran out of bytes at g_maxhp": 1,
+  "refused:variable-length 'Texture2D[]' on g": 1
+ },
  "warnings": [],
  "nodes": [
   {
@@ -193,7 +201,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -247,7 +287,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 18
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -301,7 +373,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 18
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -455,7 +559,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -511,7 +647,15 @@
      "script": "FortuneTeller",
      "guid": "3d0687adf1dcb434a96af7f81a107a12",
      "cs": "unity/Assets/Scripts/FortuneTeller.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "ef_shuffle",
+       "kind": "node",
+       "node": 24,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },

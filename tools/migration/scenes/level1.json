@@ -33,6 +33,20 @@
   "GUILayer": 1,
   "FlareLayer": 1
  },
+ "field_stats": {
+  "ref set": 13,
+  "instances decoded": 34,
+  "cross-file ref dropped": 10,
+  "dangling ref dropped": 43,
+  "refused:variable-length 'Texture[]' on att": 1,
+  "refused:variable-length 'AudioClip[]' on y": 1,
+  "refused:layout consumed 40 of 352 bytes": 1,
+  "refused:variable-length 'AudioClip[]' on s": 1,
+  "refused:variable-length 'int[]' on number": 1,
+  "refused:variable-length 'Texture2D[]' on g": 1,
+  "refused:variable-length 'monster[]' on ene": 1,
+  "refused:variable-length 'Transform[]' on e": 1
+ },
  "warnings": [
   "GameObject 213: unmapped builtin m_Tag=1",
   "MeshRenderer 480: material[0] sharedassets0.assets!2 not buildable (deferred shader?)"
@@ -132,7 +146,15 @@
      "script": "Bullet_punch",
      "guid": "d89e993cd9d854a4fad9b5360421000a",
      "cs": "unity/Assets/Scripts/Bullet_punch.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_thrust",
+       "kind": "node",
+       "node": 220,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -278,7 +300,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 22
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -332,7 +386,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 317,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -1787,7 +1849,20 @@
      "script": "Cha_Weapon",
      "guid": "6960600ead0fa60499aadd3186526352",
      "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "dummy_spine",
+       "kind": "node",
+       "node": 264,
+       "t": "Transform"
+      },
+      {
+       "n": "dock",
+       "kind": "int",
+       "i": 2
+      }
+     ]
     }
    ]
   },
@@ -2154,7 +2229,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 317,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -2213,7 +2296,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 317,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -2271,7 +2362,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 317,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -2329,7 +2428,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 317,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -2387,7 +2494,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 317,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -3795,7 +3910,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -3998,7 +4145,15 @@
      "script": "Ef_splash",
      "guid": "1fb7c799aba821f45aefab861dee9e53",
      "cs": "unity/Assets/Scripts/Ef_splash.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "rising_fire",
+       "kind": "node",
+       "node": 322,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -4066,7 +4221,15 @@
      "script": "Cha_Skill",
      "guid": "e9cd7819424d8f14eb589d3c732efc7f",
      "cs": "unity/Assets/Scripts/Cha_Skill.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "ef_rotfog",
+       "kind": "node",
+       "node": 323,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
@@ -4740,7 +4903,25 @@
      "script": "AI_StoryEnemy",
      "guid": "9f29bad8663e2d34384a4a0c3ed41085",
      "cs": "unity/Assets/Scripts/AI_StoryEnemy.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "enemykind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "monmovestat",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "target",
+       "kind": "node",
+       "node": 382,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -4796,7 +4977,25 @@
      "script": "AI_StoryEnemy",
      "guid": "9f29bad8663e2d34384a4a0c3ed41085",
      "cs": "unity/Assets/Scripts/AI_StoryEnemy.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "enemykind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "monmovestat",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "target",
+       "kind": "node",
+       "node": 382,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -5890,7 +6089,25 @@
      "script": "AI_StoryEnemy",
      "guid": "9f29bad8663e2d34384a4a0c3ed41085",
      "cs": "unity/Assets/Scripts/AI_StoryEnemy.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "enemykind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "monmovestat",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "target",
+       "kind": "node",
+       "node": 382,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -7787,7 +8004,19 @@
      "script": "Cam_Move",
      "guid": "6a0c008b2af2dfe498b9ce71af57842b",
      "cs": "unity/Assets/Scripts/Cam_Move.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "limitpos",
+       "kind": "vec",
+       "v": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "t": "Vector3"
+      }
+     ]
     }
    ]
   },
@@ -7844,7 +8073,24 @@
      "script": "Bullet_particle",
      "guid": "59808ab6b4841284e969cfe9417cc9e6",
      "cs": "unity/Assets/Scripts/Bullet_particle.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "start_delay",
+       "kind": "float",
+       "f": 0.5
+      },
+      {
+       "n": "active_delay",
+       "kind": "float",
+       "f": 1.7999999523162842
+      },
+      {
+       "n": "disable_delay",
+       "kind": "float",
+       "f": 2.5
+      }
+     ]
     }
    ]
   },
@@ -7898,7 +8144,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -7997,7 +8275,24 @@
      "script": "RiseAttack",
      "guid": "2f7a33376c80b8d409f622cc90b44177",
      "cs": "unity/Assets/Scripts/RiseAttack.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "emitfinish_time",
+       "kind": "float",
+       "f": 0.5
+      },
+      {
+       "n": "destroy_time",
+       "kind": "float",
+       "f": 1.5
+      },
+      {
+       "n": "movespeed",
+       "kind": "float",
+       "f": 1.5
+      }
+     ]
     }
    ]
   },

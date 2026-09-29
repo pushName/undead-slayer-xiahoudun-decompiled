@@ -17,6 +17,11 @@
   "ParticleRenderer": 1,
   "GUILayer": 1
  },
+ "field_stats": {
+  "ref set": 2,
+  "instances decoded": 3,
+  "cross-file ref dropped": 1
+ },
  "warnings": [],
  "nodes": [
   {
@@ -1093,7 +1098,21 @@
      "script": "Cha_Control_ride_cha_story1",
      "guid": "e5118c53a041d4a448b31d8207c5a1e2",
      "cs": "unity/Assets/Scripts/Cha_Control_ride_cha_story1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "horseSpine",
+       "kind": "node",
+       "node": 100,
+       "t": "Transform"
+      },
+      {
+       "n": "horse",
+       "kind": "node",
+       "node": 117,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },

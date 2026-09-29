@@ -33,6 +33,7 @@ import sys
 import UnityPy
 
 import unity4_files as u4
+import monobehaviour_fields as MF
 
 _REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DUMP = os.path.join(_REPO, "dump", "assets")
@@ -199,6 +200,23 @@ def main():
     warnings = []
     unsupported = collections.Counter()
 
+    # Any object id -> the node id (its GameObject's Transform path_id) it belongs to. Needed
+    # because a serialised reference may point at the Transform, the GameObject, or any other
+    # component of the same object, and the scene JSON is keyed by Transform id.
+    obj2node = {}
+    for o in env.objects:
+        if o.type.name != "GameObject":
+            continue
+        d = o.read()
+        tf = [pp.m_PathID for _tid, pp in d.m_Component if int(_tid) == 4]
+        if not tf:
+            continue
+        obj2node[o.path_id] = tf[0]
+        for _tid, pp in d.m_Component:
+            obj2node[pp.m_PathID] = tf[0]
+
+    field_stats = collections.Counter()
+
     for o in env.objects:
         if o.type.name != "GameObject":
             continue
@@ -221,10 +239,43 @@ def main():
                 if name is None:
                     warnings.append("MonoBehaviour %d: script %d!%d unresolved" % (t.path_id, scf, scp))
                     continue
-                comps.append({"kind": "MonoBehaviour", "script": name,
-                              "guid": script_guid.get(name, ""),
-                              "cs": script_cs.get(name, ""),
-                              "enabled": bool(en)})
+                entry = {"kind": "MonoBehaviour", "script": name,
+                         "guid": script_guid.get(name, ""),
+                         "cs": script_cs.get(name, ""),
+                         "enabled": bool(en)}
+                vals, why = MF.decode_for_class(name, raw)
+                if vals is None:
+                    field_stats["refused:" + (why or "").split(" (")[0][:34]] += 1
+                else:
+                    out_fields = []
+                    for fname, v in vals:
+                        if "ref" in v:
+                            if v["file"] != 0:
+                                # Points into another serialized file (a sharedassets prefab or
+                                # material). The scene rebuild has no such object, so dropping it
+                                # is the only honest option -- counted, never guessed.
+                                field_stats["cross-file ref dropped"] += 1
+                                continue
+                            node = obj2node.get(v["ref"])
+                            if node is None:
+                                field_stats["dangling ref dropped"] += 1
+                                continue
+                            out_fields.append({"n": fname, "kind": "node", "node": node,
+                                               "t": v["type"]})
+                            field_stats["ref set"] += 1
+                        elif "bool" in v:
+                            out_fields.append({"n": fname, "kind": "bool", "b": 1 if v["bool"] else 0})
+                        elif "float" in v:
+                            out_fields.append({"n": fname, "kind": "float", "f": v["float"]})
+                        elif "int" in v:
+                            out_fields.append({"n": fname, "kind": "int", "i": v["int"]})
+                        else:
+                            out_fields.append({"n": fname, "kind": "vec", "v": v["floats"],
+                                               "t": v.get("vec", "")})
+                    if out_fields:
+                        entry["fields"] = out_fields
+                    field_stats["instances decoded"] += 1
+                comps.append(entry)
             elif tn in ("MeshFilter", "MeshRenderer", "SkinnedMeshRenderer"):
                 comps.append(translate_renderer(tn, t, warnings, o.path_id))
             elif tn in REMOVED_IN_5:
@@ -269,6 +320,7 @@ def main():
         "node_count": len(nodes),
         "root_ids": roots,
         "unsupported_components": dict(unsupported),
+        "field_stats": dict(field_stats),
         "warnings": warnings,
         "nodes": nodes,
     }
@@ -291,6 +343,7 @@ def main():
         print("warnings: %d" % len(warnings))
         for w in warnings[:8]:
             print("   ", w)
+    print("mono fields: %s" % (dict(field_stats) or "none"))
     print("wrote %s" % os.path.relpath(out, _REPO).replace(os.sep, "/"))
 
 

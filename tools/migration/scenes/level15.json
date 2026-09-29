@@ -13,6 +13,13 @@
   "ParticleRenderer": 1,
   "GUILayer": 1
  },
+ "field_stats": {
+  "instances decoded": 5,
+  "ref set": 3,
+  "refused:variable-length 'Texture[]' on tex": 1,
+  "dangling ref dropped": 3,
+  "cross-file ref dropped": 3
+ },
  "warnings": [],
  "nodes": [
   {
@@ -113,7 +120,21 @@
      "script": "Loading_cha",
      "guid": "899fabf0d46b20141b87203daf2bae0a",
      "cs": "unity/Assets/Scripts/Loading_cha.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "horseSpine",
+       "kind": "node",
+       "node": 85,
+       "t": "Transform"
+      },
+      {
+       "n": "horse",
+       "kind": "node",
+       "node": 82,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -3121,7 +3142,20 @@
      "script": "Cha_Weapon",
      "guid": "6960600ead0fa60499aadd3186526352",
      "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
-     "enabled": false
+     "enabled": false,
+     "fields": [
+      {
+       "n": "dummy_spine",
+       "kind": "node",
+       "node": 155,
+       "t": "Transform"
+      },
+      {
+       "n": "dock",
+       "kind": "int",
+       "i": 1
+      }
+     ]
     }
    ]
   },

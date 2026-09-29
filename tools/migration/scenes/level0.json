@@ -23,6 +23,11 @@
   "GUILayer": 1,
   "FlareLayer": 1
  },
+ "field_stats": {
+  "refused:variable-length 'Texture2D[]' on i": 1,
+  "ref set": 5,
+  "instances decoded": 1
+ },
  "warnings": [],
  "nodes": [
   {
@@ -285,7 +290,39 @@
      "script": "Cam_intro",
      "guid": "bc1657d9435bf4e41bb54bf2a3ecc6ba",
      "cs": "unity/Assets/Scripts/Cam_intro.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "UI_intro",
+       "kind": "node",
+       "node": 15,
+       "t": "Transform"
+      },
+      {
+       "n": "gate",
+       "kind": "node",
+       "node": 19,
+       "t": "Transform"
+      },
+      {
+       "n": "cha",
+       "kind": "node",
+       "node": 18,
+       "t": "Transform"
+      },
+      {
+       "n": "mon1",
+       "kind": "node",
+       "node": 17,
+       "t": "Transform"
+      },
+      {
+       "n": "mon2",
+       "kind": "node",
+       "node": 20,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },

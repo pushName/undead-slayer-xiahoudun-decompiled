@@ -55,6 +55,27 @@ namespace UndeadSlayer.Migration
             public bool receive_shadows;
             public int[] bones;
             public int root_bone;
+            // kind == MonoBehaviour: decoded field values (see tools/migration/monobehaviour_fields.py).
+            // Absent when the class's layout could not be proven, which is deliberate -- the
+            // decoder refuses a class rather than half-fill it.
+            public FieldVal[] fields;
+        }
+
+        /// <summary>
+        /// One decoded MonoBehaviour field. Flat rather than typed because JsonUtility cannot
+        /// deserialise a union or a dictionary, so kind selects which member is meaningful.
+        /// </summary>
+        [Serializable]
+        private class FieldVal
+        {
+            public string n;         // field name
+            public string kind;      // node | int | float | bool | vec
+            public string t;         // declared type name (Transform, GameObject, Vector3, ...)
+            public int node;         // kind == node: source object id, resolved to a scene node
+            public int i;
+            public float f;
+            public int b;
+            public float[] v;
         }
 
         [Serializable]
@@ -121,6 +142,8 @@ namespace UndeadSlayer.Migration
             int addedScripts = 0, missingScripts = 0, addedComps = 0, unknownComps = 0;
             int meshesSet = 0, matsSet = 0, missingAssets = 0;
             var skinJobs = new List<SkinJob>();
+            var fieldJobs = new List<FieldJob>();
+            int fieldsRefs = 0, fieldsVals = 0, fieldsMissing = 0, fieldsLanded = 0, fieldsDropped = 0;
 
             foreach (var n in data.nodes)
             {
@@ -195,6 +218,10 @@ namespace UndeadSlayer.Migration
                         var mb = go.AddComponent(type);
                         ((MonoBehaviour)mb).enabled = c.enabled;
                         addedScripts++;
+                        if (c.fields != null && c.fields.Length > 0)
+                        {
+                            fieldJobs.Add(new FieldJob { Mb = (MonoBehaviour)mb, Comp = c });
+                        }
                     }
                     else if (c.kind == "component")
                     {
@@ -252,6 +279,100 @@ namespace UndeadSlayer.Migration
                 }
             }
 
+            // Decoded MonoBehaviour field values, applied through SerializedObject so Unity
+            // validates the property and serialises it -- same reason the whole tool exists.
+            // Deferred for the same reason as bones: references point at other scene objects.
+            foreach (var job in fieldJobs)
+            {
+                var so = new SerializedObject(job.Mb);
+                bool dirty = false;
+                foreach (var fv in job.Comp.fields)
+                {
+                    var prop = so.FindProperty(fv.n);
+                    if (prop == null)
+                    {
+                        fieldsMissing++;
+                        Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                            ": no such serialised property on " + job.Mb.GetType().Name);
+                        continue;
+                    }
+                    if (fv.kind == "node")
+                    {
+                        GameObject target;
+                        if (!byId.TryGetValue(fv.node, out target))
+                        {
+                            fieldsMissing++;
+                            Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                ": source object " + fv.node + " is not in this scene");
+                            continue;
+                        }
+                        // Decide what to hand over from the field's DECLARED CLR TYPE. The first
+                        // cut here matched SerializedProperty.type against the strings "Transform"
+                        // and "GameObject"; that is Unity's own naming, and trusting it is why
+                        // every reference came back null while int/float/bool applied fine.
+                        var fi = FindFieldType(job.Mb.GetType(), fv.n);
+                        var ft = fi == null ? null : fi.FieldType;
+                        object value = null;
+                        if (ft != null)
+                        {
+                            if (ft.IsAssignableFrom(typeof(Transform))) value = target.transform;
+                            else if (ft.IsAssignableFrom(typeof(GameObject))) value = target;
+                            else if (typeof(Component).IsAssignableFrom(ft)) value = target.GetComponent(ft);
+                        }
+                        if (value == null)
+                        {
+                            fieldsMissing++;
+                            Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                ": cannot resolve on " + target.name +
+                                " (field type=" + (ft == null ? "<none>" : ft.Name) +
+                                ", prop.type=" + prop.type + ", prop.class=" + prop.propertyType +
+                                ") -- left unset");
+                            continue;
+                        }
+                        prop.objectReferenceValue = (UnityEngine.Object)value;
+                        fieldsRefs++;
+                    }
+                    else if (fv.kind == "int") { prop.intValue = fv.i; fieldsVals++; }
+                    else if (fv.kind == "float") { prop.floatValue = fv.f; fieldsVals++; }
+                    else if (fv.kind == "bool") { prop.boolValue = fv.b != 0; fieldsVals++; }
+                    else if (fv.kind == "vec" && fv.v != null)
+                    {
+                        if (prop.propertyType == SerializedPropertyType.Vector2 && fv.v.Length >= 2)
+                            prop.vector2Value = new Vector2(fv.v[0], fv.v[1]);
+                        else if (prop.propertyType == SerializedPropertyType.Vector3 && fv.v.Length >= 3)
+                            prop.vector3Value = new Vector3(fv.v[0], fv.v[1], fv.v[2]);
+                        else if (prop.propertyType == SerializedPropertyType.Vector4 && fv.v.Length >= 4)
+                            prop.vector4Value = new Vector4(fv.v[0], fv.v[1], fv.v[2], fv.v[3]);
+                        else if (prop.propertyType == SerializedPropertyType.Color && fv.v.Length >= 4)
+                            prop.colorValue = new Color(fv.v[0], fv.v[1], fv.v[2], fv.v[3]);
+                        else { fieldsMissing++; continue; }
+                        fieldsVals++;
+                    }
+                    else { fieldsMissing++; continue; }
+                    dirty = true;
+                }
+                if (!dirty) continue;
+                so.ApplyModifiedPropertiesWithoutUndo();
+                // Post-condition. Setting objectReferenceValue on a property can be accepted and
+                // then discarded at apply time (wrong type, object not yet serialisable), and the
+                // first version of this pass reported "applied" from the assignment alone -- which
+                // is how five Cam_intro references came back as {fileID: 0} in the written file
+                // while the summary claimed they were set. Re-read and count what actually stuck.
+                so.Update();
+                foreach (var fv in job.Comp.fields)
+                {
+                    if (fv.kind != "node") continue;
+                    var p2 = so.FindProperty(fv.n);
+                    if (p2 != null && p2.objectReferenceValue != null) fieldsLanded++;
+                    else
+                    {
+                        fieldsDropped++;
+                        Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                            ": assignment did not survive apply");
+                    }
+                }
+            }
+
             // Restore sibling order per parent and per root list.
             foreach (var n in data.nodes)
             {
@@ -297,10 +418,11 @@ namespace UndeadSlayer.Migration
             }
 
             Debug.Log(
-                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  dropped     : %s\n  NOT restored: MonoBehaviour field values (default), AudioClip references (not exported yet), scene settings (Unity defaults)"
+                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
                 .Fmt(data.source_level, data.scene_path, data.nodes.Length,
                      addedScripts, missingScripts, addedComps, unknownComps,
                      meshesSet, matsSet, missingAssets,
+                     fieldsRefs, fieldsVals, fieldsMissing, fieldsLanded, fieldsDropped,
                      dropped.Any() ? string.Join(", ", dropped) : "none"));
 
             AssetDatabase.Refresh();
@@ -334,6 +456,27 @@ namespace UndeadSlayer.Migration
         // all 24 guids still md5 (that is what the post-condition in verify_scenes.py now checks).
         // The working route is offline: restore_projectsettings.py's scene_guid() reads each file's
         // real guid from its .meta and regenerates the asset, which verified 24/24 and is idempotent.
+
+        /// <summary>
+        /// Declared type of a serialisable field, searching base classes. Unity's default
+        /// BindingFlags do not walk the hierarchy for instance fields, so a field inherited from a
+        /// parent class reads as missing unless DeclaredOnly is stepped up by hand.
+        /// </summary>
+        private static FieldInfo FindFieldType(Type t, string name)
+        {
+            for (var c = t; c != null && c != typeof(object); c = c.BaseType)
+            {
+                var f = c.GetField(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                if (f != null) return f;
+            }
+            return null;
+        }
+
+        private class FieldJob
+        {
+            public MonoBehaviour Mb;
+            public Comp Comp;
+        }
 
         private class SkinJob
         {

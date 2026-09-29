@@ -30,6 +30,31 @@
   "ParticleAnimator": 12,
   "ParticleRenderer": 12
  },
+ "field_stats": {
+  "instances decoded": 52,
+  "ref set": 21,
+  "cross-file ref dropped": 31,
+  "refused:variable-length 'Material[]' on at": 2,
+  "refused:variable-length 'Texture[]' on eft": 1,
+  "refused:variable-length 'Texture2D[]' on p": 1,
+  "refused:variable-length 'Texture[]' on att": 1,
+  "refused:layout consumed 88 of 1648 bytes": 1,
+  "refused:variable-length 'AudioClip[]' on y": 1,
+  "refused:variable-length 'int[]' on isskill": 1,
+  "refused:variable-length 'AudioClip[]' on s": 1,
+  "refused:variable-length 'Transform[]' on c": 1,
+  "refused:unknown type 'skillset[,]' on ss": 1,
+  "refused:unknown type 'petset[,]' on ps": 1,
+  "refused:variable-length 'Transform[]' on s": 1,
+  "refused:variable-length 'monster[]' on ene": 1,
+  "refused:variable-length 'bossmonster[]' on": 1,
+  "refused:ran out of bytes at g_maxhp": 1,
+  "refused:variable-length 'generalset[]' on ": 1,
+  "refused:variable-length 'stagestat[]' on s": 1,
+  "refused:variable-length 'string' on aninam": 1,
+  "refused:variable-length 'Texture[]' on tex": 1,
+  "refused:variable-length 'angelkind[]' on a": 1
+ },
  "warnings": [
   "GameObject 196: unmapped builtin m_Tag=1",
   "MeshRenderer 533: material[0] sharedassets0.assets!2 not buildable (deferred shader?)"
@@ -133,14 +158,68 @@
      "script": "Bullet_arrow_general",
      "guid": "ead25fc0d1d60ed4b84d46021eadd83c",
      "cs": "unity/Assets/Scripts/Bullet_arrow_general.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "accel_factor",
+       "kind": "float",
+       "f": 30.0
+      },
+      {
+       "n": "bullet_speed",
+       "kind": "float",
+       "f": 2.0
+      },
+      {
+       "n": "growspeed",
+       "kind": "int",
+       "i": 10
+      },
+      {
+       "n": "delay_finish",
+       "kind": "float",
+       "f": 0.4000000059604645
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 2
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     },
     {
      "kind": "component",
@@ -202,7 +281,19 @@
      "script": "Icon_Skill_p",
      "guid": "219f51381681a644d8bfcfe3b877b385",
      "cs": "unity/Assets/Scripts/Icon_Skill_p.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "general",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "g_skill",
+       "kind": "bool",
+       "b": 1
+      }
+     ]
     }
    ]
   },
@@ -3920,7 +4011,39 @@
      "script": "Ef_ani_loop",
      "guid": "c82a88ed2a9226b469138302e713d10c",
      "cs": "unity/Assets/Scripts/Ef_ani_loop.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 18
+      },
+      {
+       "n": "impact",
+       "kind": "int",
+       "i": 1
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "sharedmtl",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -4022,7 +4145,15 @@
      "script": "Bullet_punch",
      "guid": "d89e993cd9d854a4fad9b5360421000a",
      "cs": "unity/Assets/Scripts/Bullet_punch.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_thrust",
+       "kind": "node",
+       "node": 329,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -4198,7 +4329,27 @@
      "script": "General_dummy",
      "guid": "f171bd2c573a79d43814751a8d082689",
      "cs": "unity/Assets/Scripts/General_dummy.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "r_hand",
+       "kind": "node",
+       "node": 241,
+       "t": "Transform"
+      },
+      {
+       "n": "l_hand",
+       "kind": "node",
+       "node": 242,
+       "t": "Transform"
+      },
+      {
+       "n": "bip01",
+       "kind": "node",
+       "node": 243,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -4783,7 +4934,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 22
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -4920,7 +5103,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 387,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -5079,7 +5270,19 @@
      "script": "Icon_Skill_p",
      "guid": "219f51381681a644d8bfcfe3b877b385",
      "cs": "unity/Assets/Scripts/Icon_Skill_p.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "general",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "g_skill",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -5946,14 +6149,54 @@
      "script": "Jin",
      "guid": "438bf73fabed06f49bf62bf3a8ddc1db",
      "cs": "unity/Assets/Scripts/Jin.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "cyl",
+       "kind": "node",
+       "node": 380,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 30
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 1
+      }
+     ]
     }
    ]
   },
@@ -6366,7 +6609,15 @@
      "script": "MakeUI",
      "guid": "ec9e1577c93a2194c958a4a39d50f467",
      "cs": "unity/Assets/Scripts/MakeUI.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "peticon_folder",
+       "kind": "node",
+       "node": 335,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
@@ -6420,7 +6671,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 387,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -6679,7 +6938,26 @@
      "script": "Cha_Weapon",
      "guid": "6960600ead0fa60499aadd3186526352",
      "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "dummy_spine",
+       "kind": "node",
+       "node": 396,
+       "t": "Transform"
+      },
+      {
+       "n": "sub_hand",
+       "kind": "node",
+       "node": 352,
+       "t": "Transform"
+      },
+      {
+       "n": "dock",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     }
    ]
   },
@@ -6733,7 +7011,15 @@
      "script": "Cutin01",
      "guid": "7aa48ff0ea9c18842b2746ed2254398e",
      "cs": "unity/Assets/Scripts/Cutin01.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bg_black",
+       "kind": "node",
+       "node": 458,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
@@ -7523,7 +7809,45 @@
      "script": "Cha_Skill",
      "guid": "e9cd7819424d8f14eb589d3c732efc7f",
      "cs": "unity/Assets/Scripts/Cha_Skill.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_attackup",
+       "kind": "node",
+       "node": 385,
+       "t": "Transform"
+      },
+      {
+       "n": "pt_boom",
+       "kind": "node",
+       "node": 386,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_gather",
+       "kind": "node",
+       "node": 382,
+       "t": "Transform"
+      },
+      {
+       "n": "jin",
+       "kind": "node",
+       "node": 381,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_rotfog",
+       "kind": "node",
+       "node": 425,
+       "t": "Transform"
+      },
+      {
+       "n": "wing",
+       "kind": "node",
+       "node": 349,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
@@ -7635,7 +7959,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 387,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -7742,7 +8074,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 387,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -7834,7 +8174,15 @@
      "script": "Ef_swing1",
      "guid": "7b64b8a478ee85941968a6df0df6be16",
      "cs": "unity/Assets/Scripts/Ef_swing1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_hit",
+       "kind": "node",
+       "node": 387,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -8137,7 +8485,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 18
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -8248,7 +8628,15 @@
      "script": "Ef_splash",
      "guid": "1fb7c799aba821f45aefab861dee9e53",
      "cs": "unity/Assets/Scripts/Ef_splash.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "rising_fire",
+       "kind": "node",
+       "node": 430,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -8371,7 +8759,19 @@
      "script": "Cam_Move",
      "guid": "6a0c008b2af2dfe498b9ce71af57842b",
      "cs": "unity/Assets/Scripts/Cam_Move.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "limitpos",
+       "kind": "vec",
+       "v": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "t": "Vector3"
+      }
+     ]
     }
    ]
   },
@@ -8891,7 +9291,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 8
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 1
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 1
+      }
+     ]
     }
    ]
   },
@@ -8979,7 +9411,24 @@
      "script": "Bullet_particle",
      "guid": "59808ab6b4841284e969cfe9417cc9e6",
      "cs": "unity/Assets/Scripts/Bullet_particle.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "start_delay",
+       "kind": "float",
+       "f": 0.5
+      },
+      {
+       "n": "active_delay",
+       "kind": "float",
+       "f": 1.7999999523162842
+      },
+      {
+       "n": "disable_delay",
+       "kind": "float",
+       "f": 2.5
+      }
+     ]
     }
    ]
   },
@@ -9151,7 +9600,14 @@
      "script": "Cutin_extreme",
      "guid": "6fea71e21e17b4446be372245378c199",
      "cs": "unity/Assets/Scripts/Cutin_extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "delay",
+       "kind": "float",
+       "f": 2.0
+      }
+     ]
     }
    ]
   },
@@ -9272,7 +9728,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 1
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -9376,7 +9864,24 @@
      "script": "RiseAttack",
      "guid": "2f7a33376c80b8d409f622cc90b44177",
      "cs": "unity/Assets/Scripts/RiseAttack.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "emitfinish_time",
+       "kind": "float",
+       "f": 0.5
+      },
+      {
+       "n": "destroy_time",
+       "kind": "float",
+       "f": 1.5
+      },
+      {
+       "n": "movespeed",
+       "kind": "float",
+       "f": 1.5
+      }
+     ]
     }
    ]
   },
@@ -9430,7 +9935,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 8
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 1
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 30
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -9515,7 +10052,14 @@
      "script": "Cutin_extreme",
      "guid": "6fea71e21e17b4446be372245378c199",
      "cs": "unity/Assets/Scripts/Cutin_extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "delay",
+       "kind": "float",
+       "f": 2.200000047683716
+      }
+     ]
     }
    ]
   },
@@ -9695,7 +10239,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 18
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -9749,7 +10325,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },

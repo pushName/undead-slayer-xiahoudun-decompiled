@@ -28,6 +28,12 @@
   "ParticleAnimator": 7,
   "ParticleRenderer": 7
  },
+ "field_stats": {
+  "refused:variable-length 'Transform[]' on f": 1,
+  "refused:ran out of bytes at g_maxhp": 1,
+  "instances decoded": 69,
+  "refused:variable-length 'archive[]' on aci": 1
+ },
  "warnings": [
   "GameObject 73: unmapped builtin m_Tag=2"
  ],
@@ -125,7 +131,14 @@
      "script": "CamScroll_Extreme",
      "guid": "2e41d81cd5ddff84a93adf87943559ea",
      "cs": "unity/Assets/Scripts/CamScroll_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "drag",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -225,7 +238,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 49
+      }
+     ]
     }
    ]
   },
@@ -283,7 +303,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 28
+      }
+     ]
     }
    ]
   },
@@ -341,7 +368,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 37
+      }
+     ]
     }
    ]
   },
@@ -441,7 +475,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 9
+      }
+     ]
     }
    ]
   },
@@ -541,7 +582,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 57
+      }
+     ]
     }
    ]
   },
@@ -693,7 +741,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 48
+      }
+     ]
     }
    ]
   },
@@ -751,7 +806,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 35
+      }
+     ]
     }
    ]
   },
@@ -809,7 +871,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 5
+      }
+     ]
     }
    ]
   },
@@ -920,7 +989,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 58
+      }
+     ]
     }
    ]
   },
@@ -978,7 +1054,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 31
+      }
+     ]
     }
    ]
   },
@@ -1036,7 +1119,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 12
+      }
+     ]
     }
    ]
   },
@@ -1094,7 +1184,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 22
+      }
+     ]
     }
    ]
   },
@@ -1152,7 +1249,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 54
+      }
+     ]
     }
    ]
   },
@@ -1252,7 +1356,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 25
+      }
+     ]
     }
    ]
   },
@@ -1310,7 +1421,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 34
+      }
+     ]
     }
    ]
   },
@@ -1368,7 +1486,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 59
+      }
+     ]
     }
    ]
   },
@@ -1426,7 +1551,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     }
    ]
   },
@@ -1526,7 +1658,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 50
+      }
+     ]
     }
    ]
   },
@@ -1584,7 +1723,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 45
+      }
+     ]
     }
    ]
   },
@@ -1642,7 +1788,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 32
+      }
+     ]
     }
    ]
   },
@@ -1700,7 +1853,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 10
+      }
+     ]
     }
    ]
   },
@@ -1758,7 +1918,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 33
+      }
+     ]
     }
    ]
   },
@@ -1816,7 +1983,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 61
+      }
+     ]
     }
    ]
   },
@@ -1874,7 +2048,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 30
+      }
+     ]
     }
    ]
   },
@@ -1932,7 +2113,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 11
+      }
+     ]
     }
    ]
   },
@@ -1990,7 +2178,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 38
+      }
+     ]
     }
    ]
   },
@@ -2095,7 +2290,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 17
+      }
+     ]
     }
    ]
   },
@@ -2153,7 +2355,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 47
+      }
+     ]
     }
    ]
   },
@@ -2211,7 +2420,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 55
+      }
+     ]
     }
    ]
   },
@@ -2269,7 +2485,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 42
+      }
+     ]
     }
    ]
   },
@@ -2327,7 +2550,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 13
+      }
+     ]
     }
    ]
   },
@@ -2385,7 +2615,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 60
+      }
+     ]
     }
    ]
   },
@@ -2485,7 +2722,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 6
+      }
+     ]
     }
    ]
   },
@@ -2543,7 +2787,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 39
+      }
+     ]
     }
    ]
   },
@@ -2601,7 +2852,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 51
+      }
+     ]
     }
    ]
   },
@@ -2659,7 +2917,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 1
+      }
+     ]
     }
    ]
   },
@@ -2717,7 +2982,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 19
+      }
+     ]
     }
    ]
   },
@@ -2771,7 +3043,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -2829,7 +3133,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 27
+      }
+     ]
     }
    ]
   },
@@ -2887,7 +3198,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 7
+      }
+     ]
     }
    ]
   },
@@ -2945,7 +3263,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 56
+      }
+     ]
     }
    ]
   },
@@ -3003,7 +3328,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 62
+      }
+     ]
     }
    ]
   },
@@ -3061,7 +3393,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 20
+      }
+     ]
     }
    ]
   },
@@ -3119,7 +3458,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 18
+      }
+     ]
     }
    ]
   },
@@ -3177,7 +3523,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 40
+      }
+     ]
     }
    ]
   },
@@ -3235,7 +3588,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 4
+      }
+     ]
     }
    ]
   },
@@ -3293,7 +3653,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 36
+      }
+     ]
     }
    ]
   },
@@ -3351,7 +3718,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 53
+      }
+     ]
     }
    ]
   },
@@ -3409,7 +3783,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 46
+      }
+     ]
     }
    ]
   },
@@ -3467,7 +3848,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 24
+      }
+     ]
     }
    ]
   },
@@ -3521,7 +3909,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -3621,7 +4041,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 15
+      }
+     ]
     }
    ]
   },
@@ -3679,7 +4106,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 16
+      }
+     ]
     }
    ]
   },
@@ -3733,7 +4167,39 @@
      "script": "Ef_ani_loop_simple",
      "guid": "7c1f21c11c486834faa79cde9b9da365",
      "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -3791,7 +4257,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 21
+      }
+     ]
     }
    ]
   },
@@ -3849,7 +4322,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 43
+      }
+     ]
     }
    ]
   },
@@ -3907,7 +4387,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 41
+      }
+     ]
     }
    ]
   },
@@ -3965,7 +4452,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 23
+      }
+     ]
     }
    ]
   },
@@ -4023,7 +4517,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 63
+      }
+     ]
     }
    ]
   },
@@ -4125,7 +4626,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 8
+      }
+     ]
     }
    ]
   },
@@ -4183,7 +4691,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 14
+      }
+     ]
     }
    ]
   },
@@ -4241,7 +4756,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 29
+      }
+     ]
     }
    ]
   },
@@ -4299,7 +4821,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 3
+      }
+     ]
     }
    ]
   },
@@ -4357,7 +4886,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 44
+      }
+     ]
     }
    ]
   },
@@ -4415,7 +4951,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 52
+      }
+     ]
     }
    ]
   },
@@ -4473,7 +5016,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 2
+      }
+     ]
     }
    ]
   },
@@ -4531,7 +5081,14 @@
      "script": "Icon_Stage_Extreme",
      "guid": "cbf92f4e3a9a2534f847797e84371ab3",
      "cs": "unity/Assets/Scripts/Icon_Stage_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "_index",
+       "kind": "int",
+       "i": 26
+      }
+     ]
     }
    ]
   }

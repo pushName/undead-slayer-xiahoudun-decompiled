@@ -10,6 +10,12 @@
  "unsupported_components": {
   "GUILayer": 1
  },
+ "field_stats": {
+  "dangling ref dropped": 3,
+  "ref set": 2,
+  "instances decoded": 5,
+  "cross-file ref dropped": 1
+ },
  "warnings": [],
  "nodes": [
   {
@@ -143,7 +149,20 @@
      "script": "Cha_Weapon",
      "guid": "6960600ead0fa60499aadd3186526352",
      "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "dummy_spine",
+       "kind": "node",
+       "node": 75,
+       "t": "Transform"
+      },
+      {
+       "n": "dock",
+       "kind": "int",
+       "i": 1
+      }
+     ]
     }
    ]
   },
@@ -2442,7 +2461,15 @@
      "script": "Cam_island",
      "guid": "39d65ee570837f942859b0993c88e974",
      "cs": "unity/Assets/Scripts/Cam_island.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bg",
+       "kind": "node",
+       "node": 108,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },
