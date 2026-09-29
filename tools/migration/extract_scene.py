@@ -51,12 +51,23 @@ SCENE_ORDER = ["Ready", "Intro", "Story", "Story_2", "Story_3", "Story_4", "Stor
 USER_TAGS = ["efs_mon", "ui", "p_plan", "skill", "icon_skill", "sound", "dummy", "general",
              "ranking", "cashshop"]
 
-# Builtin tag indices. 5 and 6 are not inferred from the objects' display names -- they are
-# forced by shipped code: Camera.main is called 28 times across the scripts, and the only
-# camera-bearing GameObjects carry m_Tag 5, so 5 must be MainCamera for the shipped game to
-# work at all. The same argument makes 6 = Player (the cha1 / cha_ui protagonist objects).
-# Indices 1..4 are deliberately unmapped; guessing them would silently retag objects.
-BUILTIN_TAGS = {0: None, 5: "MainCamera", 6: "Player"}
+# Builtin tag indices. Their NAMES are never serialised (TagManager.asset lists user tags only),
+# so each one below is pinned by two independent axes -- see tools/migration/scan_builtin_tags.py,
+# which calibrates the method on the 10 known user tags first (7/10 uniquely recovered, the other
+# 3 reported as uncheckable rather than counted as failures) and then:
+#   1 Respawn     the only index carrying Spawn / Spawn_story / DB_Monster, which is exactly what
+#                 FindWithTag("Respawn").GetComponent<Spawn>() (Cha_Control.cs:460) asks for; and
+#                 it appears in level1+level17, the two scenes hosting the callers.
+#   2 Finish      the only index carrying LoopArchive, asked for by FindWithTag("Finish") in
+#                 UI_map.cs:374 / UI_Extreme.cs:374; appears in exactly level6(Map)+level13(Extreme).
+#   5 MainCamera  no script uses the name, Camera.main does: every object at 5 is a camera named
+#                 "Main Camera"/"MainCamera" (14 of 14), while the 21 untagged cameras are named
+#                 Main_Camera / Camera_UI / Camera_2dbg ... so 0 cannot be it.
+#   6 Player      the only index carrying Cha_Control / Cha_Skill / Cha_Control_ride_cha in every
+#                 scene that calls FindWithTag("Player").
+# 3 and 4 are deliberately left unmapped: they do not occur in any of the 23 level files, so
+# nothing here claims to know them, and a warning still fires if one ever appears.
+BUILTIN_TAGS = {0: None, 1: "Respawn", 2: "Finish", 5: "MainCamera", 6: "Player"}
 
 # Native component classes that still exist in 2022 and can simply be AddComponent'd.
 SUPPORTED = {

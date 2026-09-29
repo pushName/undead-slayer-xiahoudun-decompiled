@@ -48,7 +48,6 @@
   "refused:variable-length 'Transform[]' on e": 1
  },
  "warnings": [
-  "GameObject 213: unmapped builtin m_Tag=1",
   "MeshRenderer 480: material[0] sharedassets0.assets!2 not buildable (deferred shader?)"
  ],
  "nodes": [
@@ -7918,7 +7917,7 @@
    "go_id": 213,
    "name": "Spawn",
    "layer": 0,
-   "tag": null,
+   "tag": "Respawn",
    "active": true,
    "trs": {
     "pos": [
