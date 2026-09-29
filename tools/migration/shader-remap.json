@@ -1,0 +1,57 @@
+{
+  "_comment": [
+    "Unity 4 shader names found in the shipped build data -> Unity 2022.3 built-in names.",
+    "Derived from the 355 Material objects' m_Shader pointers (15 distinct names, 0 unresolved).",
+    "Every right-hand side was confirmed by Shader.Find inside the Editor via",
+    "unity/Assets/Editor/ShaderProbe.cs -- see README gap 4 for the probe output and for the",
+    "two rows that are an approximation rather than an equivalent.",
+    "'pending' rows have no confirmed target yet; export_materials.py refuses to guess them."
+  ],
+  "remap": {
+    "Mobile-Diffuse": "Mobile/Diffuse",
+    "Mobile-BumpSpec": "Mobile/Bumped Specular",
+    "Mobile-VertexLit": "Legacy Shaders/VertexLit",
+    "Mobile-VertexLit-OnlyDirectionalLights": "Legacy Shaders/VertexLit",
+    "Mobile Lightmap Only": "Mobile/Diffuse",
+    "Mobile Alpha Blend plus": "Legacy Shaders/Transparent/Diffuse",
+    "Mobile-Particle-Add": "Legacy Shaders/Particles/Additive",
+    "Mobile-Particle-Alpha": "Legacy Shaders/Particles/Alpha Blended",
+    "Mobile-Particle-Multiply": "Legacy Shaders/Particles/Multiply",
+    "Particle Add": "Legacy Shaders/Particles/Additive",
+    "Unlit-Alpha": "Unlit/Transparent",
+    "Unlit-Normal": "Unlit/Texture",
+    "Mobile Lightmap Only2": "Mobile/Diffuse",
+    "Sprites-Default": "Sprites/Default"
+  },
+  "approximate": {
+    "Mobile-VertexLit-OnlyDirectionalLights": [
+      "Legacy Shaders/VertexLit",
+      "2022 has no directional-lights-only variant. 100 of 355 materials use this shader, so",
+      "roughly 28% of them will additionally receive point lights and shade slightly differently.",
+      "A 1:1 result needs a hand-written shader."
+    ],
+    "Mobile Lightmap Only": [
+      "Mobile/Diffuse",
+      "The _LightMap slot is dropped because lightmap textures are not imported at all",
+      "(LightmapSettings is not migrated). Same for Mobile Lightmap Only2, whose 8 materials",
+      "map_s01..map_s08 all carry a _LightMap reference."
+    ]
+  },
+  "deferred": {
+    "Font": [
+      "6 materials, all named 'Font Material'. Their _MainTex points at glyph atlases",
+      "(sharedassets0!8/10/12/27, sharedassets14!23, unity default resources!10103) -- one of",
+      "which, sharedassets0!27, is among the 3 textures that failed to decode.",
+      "IMPACT, measured: only ONE of the six is actually referenced -- sharedassets0!2, by 7",
+      "MeshRenderers (level1 and level17 in the shipped scenes, the other 5 in prefabs/bundles).",
+      "Those 7 renderers will come in with no material, which shows up as an obviously missing",
+      "quad rather than wrong-looking text -- deliberate, because a wrong shader guess here",
+      "would give glyph quads with the wrong blend mode, which is much harder to spot.",
+      "Unity 2022 regenerates font materials from the Font asset itself, so the real fix is a",
+      "Font export step, not a name in this table.",
+      "NOTE: an earlier version of this file claimed 'no renderer references them'. That was",
+      "wrong -- it came from a single-pass scan that had not finished indexing shaders."
+    ]
+  },
+  "pending": []
+}

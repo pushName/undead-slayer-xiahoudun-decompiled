@@ -1,0 +1,26 @@
+# Unity rewrites these files itself and compares them byte-for-byte, so git must not convert
+# newlines on the way in or out. This is not theoretical: with core.autocrlf=true and no rule
+# here, a fresh checkout turned unity/ProjectSettings/TagManager.asset from 721 bytes into 774
+# (53 CRLF pairs) and EditorBuildSettings.asset from 2429 into 2509 -- i.e. the byte-exactness
+# the restore tools verify against mainData would not survive a clone.
+#
+# Deliberately NOT covered: *.cs and the hand-written tools, which are already CRLF in the
+# working copy. Marking those would rewrite ~646 blobs for no benefit.
+*.unity  -text
+*.asset  -text
+*.prefab -text
+*.meta   -text
+*.png    -text
+*.jpg    -text
+*.tif    -text
+*.tga    -text
+*.mp3    -text
+*.ogg    -text
+*.wav    -text
+*.dll    -text
+*.so     -text
+
+# The original APK payload is evidence. It has to stay byte-identical to what was unpacked,
+# or every offset-based decoder in tools/migration silently reads the wrong bytes.
+dump/**  -text
+recon/** -text

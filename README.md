@@ -1,97 +1,238 @@
-# 亡灵杀手：夏侯惇 - 反编译源码 (Undead Slayer: Xiahou Dun Decompiled Source)
+# 亡灵杀手：夏侯惇 - 反编译与重建工作区
+> Undead Slayer: Xiahou Dun — decompiled source & reconstruction workspace
 
-## 项目说明
+原始 APK：`com.nhncorp.skundeadck` v3.5.0 (versionCode 36)，Unity **4.5.4f1**，armeabi-v7a，minSdk 10。
+本工作区的目标：把它重建成能在 **Unity 2022.3.62f3c1** 里打开、编译、出包的可运行工程。
 
-本项目包含从《亡灵杀手：夏侯惇》Android APK (v3.5.0) 反编译得到的 C# 源代码和游戏资源。
-
-**原始APK信息：**
-- 包名：`com.nhncorp.skundeadck`
-- 版本：3.5.0 (versionCode: 36)
-- Unity版本：4.5.4f1
-- 架构：armeabi-v7a (32-bit ARM)
-- 最低SDK：Android 2.3.3 (API 10)
-
-## 目录结构
+## 目录结构（2026-09-28 改造后）
 
 ```
-├── Assets/
-│   ├── Scripts/           # 反编译的C#源代码 (338个文件)
-│   │   ├── *.cs           # 游戏逻辑类
-│   │   ├── LitJson/       # JSON解析库
-│   │   └── MiniJSON/      # MiniJSON库
-│   ├── Resources/         # Unity资源文件
-│   │   ├── *.assets       # Unity资产包
-│   │   ├── *.split*       # 分割的资产文件
-│   │   ├── Managed/       # .NET程序集
-│   │   └── Data/          # 游戏数据
-│   ├── Textures/          # 贴图资源
-│   ├── Audio/             # 音频资源
-│   ├── Models/            # 3D模型
-│   ├── Animations/        # 动画
-│   └── Prefabs/           # 预制体
-├── ProjectSettings/       # Unity项目设置
-├── lib/                   # 原始native库 (armeabi-v7a)
-└── README.md
+dump/                 原始 APK 转储，只读参照，别再让编辑器碰它
+  assets/             ← 原 Assets/Resources：level0..22、mainData、sharedassets*(含 .splitN 分片)、
+                        约 370 个按 GUID 命名的资源、unity default resources 等
+    Managed/          ← 原始程序集：Assembly-CSharp.dll(962KB) 等 7 个，反编译的唯一真值来源
+  il-dump/            ← 原 Assets/Scripts：338 个“伪源码”（自定义 Python+dnfile 的元数据转储，不可编译）
+  textures/           ← 原 Assets/Textures（只有 1 个 splash.png）
+  lib/                ← armeabi-v7a 的 9 个 .so（含 libunity/libmono 与运营商 SDK）
+  AndroidManifest.xml, apktool.yml
+
+unity/                ★ Unity 2022 工程本体，用编辑器打开这个目录
+  Assets/Scripts/     292 个 .cs：由 ILSpy 从 dump/assets/Managed/Assembly-CSharp.dll 重生成的真 C#
+                      （含 LitJson/、MiniJSON/、SimpleJSON/）
+  ProjectSettings/    Unity 自己生成/重写过的真设置
+  Packages/
+
+tools/migration-probe/  无编辑器也能跑的编译探测（拿 2022 的 UnityEngine*.dll 编 Assets/Scripts）
+REFERENCE-SCAN.md     文件名重命名后的引用检测报告
+RENAME-REPORT.md      非法文件名 / 大小写冲突的改名记录
 ```
 
-## 主要类说明
+## 已经证实的事实
 
-### 游戏核心
-- `Cha_Control` - 角色控制
-- `Cha_Skill` - 技能系统
-- `Cha_Weapon` - 武器系统
-- `Cha_Costume` - 服装系统
+| 事项 | 结论 |
+| :--- | :--- |
+| `dump/il-dump` 那 338 个 `.cs` | **不是 C#**：338/338 含非法 `{{`，312 个是 IL 指令转写（约 150 万行），0 个文件出现 `UnityEngine`，真 C# 语句行 0，`csc` 全量编译 8032 个语法错误。调用点被写成 `call 0x0A00002A` 这类元数据 token，API 名不在其中 |
+| 反编译真值来源 | `dump/assets/Managed/Assembly-CSharp.dll`（+ `-firstpass.dll` 里的 SimpleJSON）。ILSpy 产物 292 个 `.cs`，**285 个用户类型零丢失** |
+| Unity 4.5 → 2022 托管代码迁移面 | 迁移前 **1430 处编译错误、158 个文件**（`dotnet build -t:Rebuild` 净编译实测，两次同值）。**现已归零**：292 个脚本在 C# 9 + 2022.3.62f3c1 托管程序集下 **0 error / 532 warning**，探测工程产出 951,296 字节程序集。根因高度集中，681 处是 `Component/GameObject` 旧版快捷访问器（`animation` 237、`renderer` 131、`collider` 99、`rigidbody` 98、`audio` 86、`camera` 17、`particleSystem` 7、`AddComponent(string)` 7）在 2022 变成 `CS0619`（过时即报错），另有 660 处是它们返回 `Component` 后引发的连锁 `CS1061/CS0021/CS0266`，84 处是已移除的旧粒子系统，5 处是已移除的 `GUIText` |
+| 迁移是怎么做的 | 1341 处（94%）由 `tools/migration/migrate_legacy_accessors.py` 机械改写：`.animation` → `.GetComponent<Animation>()` 等；72 处 `X.emit = b;` 因为是给"属性返回的结构体"赋值（CS1612），统一提升成 `{ var emission = X.emission; emission.enabled = b; }`。跑之前先用 `tools/migration/audit_shims.py` 证明过安全性：全语料**没有任何脚本自己声明同名成员**、`.NAME` **没有一处出现在字符串或注释里**、只有 3 个同名局部变量且它们只从旧访问器**取值**（所以"必须带前导点"的正则碰不到它们）。剩余 15 处手工改：`FPS.cs` 的 `GUIText`→`UI.Text`、`Cha_Skill.cs` 的 `ParticleEmitter` 类型名、`Cha_Control_ride_horse_story.cs` 的 `minEnergy/maxEnergy`→`main.startLifetime`、7 处 `AddComponent(string)`→`typeof(T)`（字符串那 6 个类名已逐个核对确实存在，只有 `_scriptname` 是运行期变量才用 `Type.GetType`） |
+| 两处非 1:1、需按视觉复核 | ① 旧 `ParticleEmitter.Emit()` 语义是"发一个粒子"，按字面译成 `Emit(1)`（`Bullet_Angel4`、`Splash_angel_bomb`）；② 旧 `rndVelocity`（每轴随机初速）在 2022 无同名 API，`Poisonball.cs` 用 `VelocityOverLifetime` 的"两常量间随机" ±1 近似 |
+| `Application.LoadLevel` 等 | 2022.3.62f3c1 的 `UnityEngine.Application` **仍然提供** `LoadLevel/LoadLevelAdditive/LoadLevelAsync/loadedLevel/loadedLevelName/ExternalCall`（实测反编译 `UnityEngine.CoreModule.dll` 得到）→ 场景切换代码不需要改 |
+| `WWW` | 仍在，只是 `CS0618` 过时告警，能编能跑 |
+| `ICSharpCode.SharpZipLib` | **不是"多余的 using"，是真依赖**：SimpleJSON 的 `SaveToCompressedStream/File`、`LoadFromCompressedStream/File` 确实在用 `BZip2OutputStream`/`BZip2InputStream`。游戏自带的两份 SimpleJSON 也印证了这一点 —— `LitJson` 那份把 4 个方法写成 `throw`（没链 SharpZipLib），`SimpleJSON` 那份是真实现。**原版那颗珠子用不了**：它是"SharpZipLib for .NET Framework 2.0"，在工程当前的 `apiCompatibilityLevel: 6`（.NET Standard 2.1）下实测炸 12×`CS0012` + 4×`CS1503` + 2×`CS1674`，因为 `System.IO.Stream` 在两边解析成不同程序集。改放 NuGet `SharpZipLib` 1.4.2 的 **netstandard2.1** 珠子到 `unity/Assets/Plugins/`（MIT，仓库 `icsharpcode/SharpZipLib@33f64eb`）：命名空间与 `BZip2InputStream(Stream)`/`BZip2OutputStream(Stream)`/`IsStreamOwner` 签名与原版逐一对得上，**SimpleJSON 一行都不用改**，也保住了 .NET Standard 2.1 档位（也就是保住 IL2CPP/arm64 路线） |
+| 分片资源 | 12 组 `sharedassetsN.assets.split0..N` 按序号拼接即还原：拼合后头部声明的文件长度与实际字节**完全相等**；序列化版本 9 = Unity 4.x |
+| 资源可读性 | UnityPy 1.25.3 实测 **469 个文件全部解析成功、0 失败**：2774 `GameObject`、915 `Texture2D`、427 `AnimationClip`、355 `Material`、256 `Mesh`、82 `AudioClip`、270 `MonoScript` 等 |
+| 数据分三处（#9 的范围） | `level0..22`（23 个场景，1207 `GameObject`）+ `sharedassets0..23`（24 个，1222 `GameObject`）+ **`dump/assets` 下 425 个哈希名 AssetBundle**（只有 345 `GameObject`，多数是单资源包）。旧粒子三件套 `ParticleAnimator`/`ParticleRenderer`/`EllipsoidParticleEmitter` = 121/121/120，分布是 **场景里 39 套、sharedassets 里 45 套、AssetBundle 里 37 套** —— 场景重建躲不开旧粒子，不是只在预制体里 |
+| Unity 4 构建数据**没有 TypeTree** | 所以 UnityPy 按它自己的（Unity 5.5+ 的 12 字节 PPtr）假设去读 `MonoBehaviour`，394 个里只成功 98 个，其余报 `Expected to read N bytes, but only read 24 bytes`。实际布局是 **Unity 4 的 8 字节 PPtr（int32 FileID + int32 PathID）**，`MonoBehaviour` 头部固定 24 字节：`m_GameObject@0(FileID)/4(PathID)`、`m_Enabled@8`、`m_Script@12/16`、`m_Name.length@20`，**脚本自己的字段数据从偏移 24 开始**。按定长偏移读 → 394/394 全部解析、0 异常 |
+| 脚本绑定链已打通 | 上面那条布局让每个场景组件都能走 `m_Script(FileID,PathID)` → 该文件 externals 表 → `sharedassetsN` 的 `MonoScript.m_Name`（Unity 4 没有独立类名字段，m_Name 就是类名）→ `unity/Assets/Scripts/<name>.cs` → `.cs.meta` 的 guid。实测 **394 个 MonoBehaviour 全部解析成功**，涉及 123 个脚本，**123 个全部有对应 .cs 且编辑器已给出 guid**，零缺口。表在 `tools/migration/monoscript-bindings.{tsv,json}`。布局正确性有独立验证：394/394 的 `m_GameObject` 回指都落在同文件真实存在的 GameObject 上 |
+| 编辑器设置 | `mainData` 里带着 `BuildSettings`/`TagManager`/`InputManager`/`PhysicsManager`/`PlayerSettings` 等 17 个管理器，已逐个核实价值（见下面三行），并还原了 `TagManager.asset` + `EditorBuildSettings.asset` |
+| 场景表（已还原） | `BuildSettings.levels` = **24 个场景原名**（`Assets/Scene/Ready.unity` … `Ending.unity`），已写进 `unity/ProjectSettings/EditorBuildSettings.asset`。脚本里 23 个 `LoadLevel("X")` 目标**全部**命中这 24 条，只有 `Ready`（index 0，启动场景）不靠名字加载。注意**磁盘上的 `levelN` 与这张表错位一格**（`levelN` = `levels[N+1]`，见缺口 5），别按文件名直接对位 |
+| Tag/Layer（已还原） | **两者都是真依赖**。Layer：28/32 层有名字（`unit` `GUI` `obj` `loading1` `enemyattack` 和整套 `…attack` 攻击分层），数据侧 2774 个 `GameObject` 里 1073 个用 layer 8、188 个用 11、88 个用 10。Tag：Unity 4 的 `GameObject` 序列化的是 **`m_Tag`（int）**，不是 2022 的 `m_TagString`（字符串）—— 自定义 tag 存成 `20000 + 在 TagManager.tags 里的下标`。实测 65 个 `GameObject` 带非零 tag，且 **20000..20009 十个值全部出现**（`ui` 16 个最多），跟声明的 10 个自定义 tag 一一对上；另有内置 tag `5`（14 个，对象名就是 `Main Camera`）和 `6`（5 个，`cha1` 主角）。**所以 10 个 tag 必须还原**：2022 场景文件按**名字**存 tag，名字不在 TagManager 里会在导入时被重置成 Untagged。（更正：本仓库先前写的"2429 个 GameObject 的 m_TagString 全为空、tag 没人用"是**测量错误** —— 当时读的字段名 `m_TagString` 在 Unity 4 的 GameObject 上根本不存在，`getattr` 取了默认值 `""`，于是"全为空"是必然结果，不是发现。） |
+| 输入设置（**故意不还原**） | `mainData` 的 17 条轴就是 Unity 4 出厂默认（逐字段比对 2022 默认表：14 条完全一致，差异只有 `Window Shake X/Y` 这两条早已被移除的轴、和 `Fire3` 绑的是 mac 的 `left cmd`）。而且脚本**一条轴都没读**：`GetAxis`/`GetButton` 全 0 次，输入全靠 `mousePosition`(56)/`GetTouch`(16)/`GetMouseButtonDown`(13)。覆盖反而会删掉 `Submit`/`Cancel`（#9 的 uGUI EventSystem 要用），所以留着 2022 的原样 |
+| MonoBehaviour 规范 | 253 个 MonoBehaviour 类，文件名与类名**零不一致**，无一文件挂两个类 |
 
-### AI系统
-- `AI_Boss01` - Boss AI
-- `AI_Enemy01` - 普通敌人AI
-- `AI_General` - 通用AI
-- `AI_Ride_Enemy` - 骑乘敌人AI
+## 仍未解决 / 已知缺口
 
-### UI系统
-- `UI_Ingame` - 游戏内UI
-- `UI_map` - 地图UI
-- `UI_status` - 状态UI
-- `UI_forge` - 锻造UI
-- `UI_skill` - 技能UI
+代码侧编译已经通了，剩下的全是**数据侧**和**可选清理**。
 
-### 数据管理
-- `DB_Boss` - Boss数据
-- `DB_Monster` - 怪物数据
-- `DB_Weapon` - 武器数据
-- `DB_Stage` - 关卡数据
-- `DataSave` - 存档系统
+1. **旧粒子数据必须重做**：代码已经全部指向 `ParticleSystem`，但数据侧还有 121 `ParticleAnimator` + 121 `ParticleRenderer` + 120 `EllipsoidParticleEmitter`，2022 里这些组件不存在。**在它们被重建成 Shuriken 之前，那些 `GetComponent<ParticleSystem>()` 运行时会拿到 null 并抛 NRE** —— 这不是代码 bug，是资源还没到位。
+2. **`FPS.cs` 需要一个 Canvas**：`GUIText` 被整体移除，已换成 `UnityEngine.UI.Text`，但 `UI.Text` 必须挂在 Canvas 下才渲染。原脚本的自检守卫保留了（拿不到组件就 `Debug.Log` + 自我禁用），所以缺 Canvas 时会**明确报错而不是静默失效**。已用 UnityPy 核实 `FPS` 确实是游戏自带的 MonoScript（在 `sharedassets0.assets` 里），不是可以随手删的死代码。
+3. **532 条过时告警（不阻塞）**：`GameObject.active` 414、`Application.LoadLevel(string)` 77、`WWW` 21、`Application.loadedLevelName` 6、`Renderer.castShadows` 6、`Application.LoadLevelAdditiveAsync(string)` 3、`Application.loadedLevel` 2、`Transform.RotateAround(Vector3,float)` 2、`TouchScreenKeyboard.done` 1，2022.3 里全部仍可运行，但未来版本会移除。
+   其中 `Transform.GetChildCount()` 那 4 处**已清掉**：它是全语料唯一带 Unity `(UnityUpgradable)` 标记的一档（`Cha_Costume.cs:44`、`Cha_Costume_shop.cs:39`、`UI_cashshop.cs:308/681`），编辑器会为此弹 "Script Updating Consent"。**点 No，别让它改** —— 那个对话框的默认按钮写的是 "these **and other files that might be found later**"，等于给整个会话挂上 updater，而 #9 导资源时会不断有新过时 API 冒出来，工作副本会被当着我们的面就地改写、事后无从核对。已改成 codemod 里的一条 `rename.GetChildCount` 规则（`.GetChildCount()` → `.childCount`，改前核对过：全语料没有任何类型自己声明过这两个名字、也没有一处出现在字符串或注释里），改完告警 536→532、幂等复跑 0 文件。
+   另外原版有一批全小写类名（`weapon`/`stagestat`/`scenario`/`petset` 等），改名属于逻辑漂移，不动 —— 但**它们并不是告警**：早先记的"15 条 `CS8981`"是探测工程按 `net8.0` 编才产生的假信号，实测同一个 `class weapon{}` 在 `net8.0` 下出 CS8981、在 `netstandard2.1`（= Unity 真实档位）下一条不出，Unity 根本不会报它。
+4. **着色器：已定论，是"改名表"，不是重写着色器**。权威口径是**顺着 355 个 `Material` 的 `m_Shader` 指针、经各文件的 externals 表解析出来的**：**355 个材质、0 个解析失败、实际只用到 15 个着色器名**。分布是 `Mobile-Particle-Add` 104、**`Mobile-VertexLit-OnlyDirectionalLights` 100**、`Unlit-Alpha` 43、`Unlit-Normal` 30、`Mobile-Particle-Alpha` 21、`Mobile-Particle-Multiply` 16、`Mobile Lightmap Only` 10、`Mobile Alpha Blend plus` 8、`Mobile Lightmap Only2` 8、`Font` 6、`Mobile-Diffuse` 4、`Particle Add` 2、`Mobile-BumpSpec` 1、`Mobile-VertexLit` 1、`Sprites-Default` 1。
+   （数据里共有 **31 个 Shader 对象、31 个不同名字**，但另外 16 个是 `Internal-*` / `Camera-*` 这类引擎自带着色器，住在 `dump/assets/unity default resources` 里、不被任何材质引用，不用管。**我在这条上连错两次**：先说"31 个待重写"（没去重也没看谁在用），后来说"12 个"（扫描范围漏了 `unity default resources` 和 AssetBundle）。教训是：口径必须从**引用方**倒推，不能从对象清单正推。`ShaderProbe.cs` 已改成用这 15 个名字。）
+   编辑器内 `Shader.Find` 实测（`Undead Slayer > Probe Shader Names (Read-only)`）：那 12 个 Unity 4 名字**一个都解析不出来（0/12）**，但每个都有现成的 2022 替代 —— 所以不需要写任何着色器代码。已定映射（剩 `Mobile Lightmap Only2` / `Font` / `Sprites-Default` 三个待同一次探针确认，探针已补进去）：
 
-### 战斗系统
-- `Bullet_*` - 各种子弹/投射物
-- `WeaponDamage` - 武器伤害
-- `MonsterHit` - 怪物受击
+   | 数据里的名字（Unity 4） | 2022 目标 | 依据 |
+   | :--- | :--- | :--- |
+   | `Mobile-Diffuse` | `Mobile/Diffuse` | 只是分隔符变了，探针确认存在 |
+   | `Mobile-BumpSpec` | `Mobile/Bumped Specular` | 同上 |
+   | `Mobile-VertexLit` | `Legacy Shaders/VertexLit` | **`Mobile/Vertex Lit` 在 2022 已删**（探针实测 null） |
+   | `Mobile-VertexLit-OnlyDirectionalLights` | `Legacy Shaders/VertexLit` | 没有"只算方向光"的变体，取最接近的；**这是一处行为差异** |
+   | `Mobile Lightmap Only` | `Mobile/Diffuse` | 光贴图数据本来就没迁（LightmapSettings 未搬），差异不额外放大 |
+   | `Mobile Alpha Blend plus` | `Legacy Shaders/Transparent/Diffuse` | 透明混合漫反射；这名字带空格和 "plus"，可能是当年打包进来的第三方着色器 |
+   | `Mobile-Particle-Add` | `Legacy Shaders/Particles/Additive` | 选 Legacy 而不是 `Particles/Standard Unlit`，因为要的是固定管线那套行为 |
+   | `Mobile-Particle-Alpha` | `Legacy Shaders/Particles/Alpha Blended` | 同上 |
+   | `Mobile-Particle-Multiply` | `Legacy Shaders/Particles/Multiply` | 同上 |
+   | `Particle Add` | `Legacy Shaders/Particles/Additive` | 同上 |
+   | `Unlit-Alpha` | `Unlit/Transparent` | Unity 内部名 `Unlit-Alpha` 对应显示名 `Unlit/Transparent` |
+   | `Unlit-Normal` | `Unlit/Texture` | 同上 |
 
-## 如何使用
+   另外探针确认这些在 2022 存在、可作为兜底：`Standard`、`Unlit/Color|Texture|Transparent`、`Mobile/Diffuse`、`Mobile/Bumped Specular`、`Legacy Shaders/*` 全套、`Legacy Shaders/Particles/*`、`Particles/Standard Unlit`、`Sprites/Default`、`UI/Default`、`Diffuse`、`VertexLit`。这些**不存在**：`Mobile/Vertex Lit`、`Particles/Unlit`、`Particles/Added`、`Particles/Alpha Blended`、`Particles/Multiply`、`Particles/Additive`（即 `Particles/` 下只有 `Standard Unlit` 活着，旧的都要走 `Legacy Shaders/Particles/`）。
+   材质对象本身解析是干净的：`m_Name`、`m_Shader`（PPtr）、`m_SavedProperties` 的 `_Color` / `_MainTex`（纹理 PPtr）都正确，而 2022 才有的字段（`m_ShaderKeywords`、`m_LightmapFlags`、`m_DoubleSidedGI`、`stringTagMap` 等）全为 None/空，说明 UnityPy 对 v9 的 Material 没有像 MonoBehaviour 那样读歪。
+   **一个要提前认下来的代价**：单材质数最多的两档是 `Mobile-Particle-Add`(104) 和 `Mobile-VertexLit-OnlyDirectionalLights`(100)，前者有对等的 Legacy 着色器、问题不大；**后者在 2022 根本没有"只算方向光"的变体**，只能退到 `Legacy Shaders/VertexLit`，也就是说 **355 个材质里约 28% 拿不到等价的光照行为**（会额外接受点光源、光照算法也不同）。这不是工具没做好，是 Unity 5 删了这档着色器；真要一比一，得自己写一个只算方向光的着色器。
+5. **缺的场景是 `Ready`（index 0），不是 `Ending` —— 本仓库先前搞反了**：`dump/assets` 里只有 `level0..level22` 共 23 个场景文件，而 BuildSettings 列 24 条。先前按"`levelN` = 第 N 条"直接对位，就推出"缺 index 23 = Ending"。**这个对位是错的**，实测关系是 **`levelN` = `BuildSettings.levels[N+1]`，整体错位一格**，所以没有源数据的是 index 0 的 `Assets/Scene/Ready.unity`，而 `Ending` 是有数据的（就是 `level22`）。
+   证据不是靠场景内容猜的，而是**看每个场景挂了哪个控制脚本**：`level22` 唯一的 MonoBehaviour 绑的就是 `Ending`；`level6`→`UI_map`、`level7`→`UI_general`、`level8`→`UI_status`、`level9`→`UI_forge`、`level10`→`UI_skill`、`level11`→`UI_pet`、`level12`→`UI_archive`、`level13`→`UI_Extreme`、`level14`→`UI_Friends`、`level19`→`UI_result`、`level20`→`UI_result_ride`、`level21`→`UI_result_extreme`、`level0`→`UI_intro`+`Cam_intro`、`level1`→`Cha_Control`+`AI_StoryEnemy`+`Story_trans`。23 个全部一一对上，无一例外。另外 `UI_Ready` 这个脚本**没有挂在任何 level 上**，与"Ready 无场景文件"互相印证。
+   实际影响：① `UI_map.cs:935` 的 `Application.LoadLevel("Ending")` 是**可以工作的**（先前记成"必然失败"，错了）；② 真正缺的是启动场景 —— `Login_again.cs:16` 会判 `Application.loadedLevelName != "Ready"`，而 `Ready` 无数据，重建时得自己补一个；③ 好在**全代码只用字符串名加载场景、没有一处用数字索引**（已核），所以错位一格不会直接弄坏跳转，但 `EditorBuildSettings` 的顺序仍要按原名表钉住。
+   **④ 这条现在升级成了运行期的总闸门：`Ready` 里装的是存档解密的引导代码。** 由编辑器 Console 的真实堆栈 + 与当前源码逐行对齐的行号定死（不是推测）：`Crypto.KEY2` 只在 `Crypto.Init()` 里赋值，`Init()` 只被 `UI_Ready.cs:48`（`Ready` 场景）调用，而 `UI_Ready` 和 `AndroidScript` **在 23 个已恢复场景里一个都没挂上**、也没有任何 `AddComponent` 会补它 —— 它们就住在缺失的 `Ready` 里。于是 `KEY2` 恒为 `string.Empty`，`Load_int_key` 的 `catch` 兜底（`Crypto.cs:101`）拼出的密钥只有 8 字节（`_kind` 前 8 字符），`RijndaelManaged.Key` 只接受 128/192/256 位 → `CryptographicException: Specified key is not a valid size` 从 `Crypto.cs:150` 一路抛出到 `UI_general.Awake`(:256) / `UICampos.Start`(:7)。
+   注意**存档本来读不到是不该炸的**：`DecryptRJ256` 对空密文返回 null，`Convert.ToInt32(null)` = 0（两条都已跑程序验过，不是查文档），所以真机上这条兜底就是"取默认值"。设备上不炸、桌面必炸，差别只在 `KEY2` 长度。而 `Init()` 里 `KEY2` 又依赖 `AndroidScript.i.getDeviceId()`（`new AndroidJavaClass("com.common.libs.CommonActivity")`，**原文件没有任何平台宏/`Application.platform` 保护**，`_i` 也只在它自己 Awake 里赋值）。
+   **已按"Android 桥桌面降级 + 手补 Ready"修掉（2026-09-29）**，改动刻意只覆盖启动路径这三处：`AndroidScript.HasJavaBridge`（`Application.platform == RuntimePlatform.Android`，全项目唯一定义）→ `AndroidScript.Start()` 非 Android 不再构造 `jcBI`、`AndroidScript.getDeviceId()` 非 Android 返回 `SystemInfo.deviceUniqueIdentifier`、`ChannelMgr.init()` 非 Android 直接返回（`channelId` 保持默认 `"000000"`，`UI_Ready.OnGUI` 本来就有"未知渠道不画图"的分支）。**`pay`/`LogEvent`/`showNotice`/`QuitGame` 等用户触发的桥一律不加降级** —— 那些静默桩掉才是真正的逻辑漂移，缺 SDK 就该报错。**代价要说清**：桌面 KEY 和 KEY2 会算成同一个值（都取自 `deviceUniqueIdentifier`），所以这份存档与真机存档互不相通；`jcBI` 为 null 时 `LogEvent` 会 NRE，这是有意保留的现状。
+   `Ready` 场景本身由 `unity/Assets/Editor/ReadySceneBuilder.cs` 的菜单 `Undead Slayer > Build Stand-in Ready Scene (NOT recovered data)` 生成（3 个 GameObject：`Main Camera`/tag MainCamera、`AndroidScript`、`UI_Ready`）—— **这是手工替身，不是还原数据**，`UI_Ready` 那些分渠道闪屏贴图和 `basicSkin` 无从知晓，保持 null。`AndroidScript` 必须和 `UI_Ready` 同场景，因为没有别处会 `AddComponent` 它。
+   受影响的 Awake/Start/OnEnable 站点数（按场景静态数出来的）：`Stage` 13 处（含 `Cha_Control`、`Spawn`、`Cam_Move`、`Cha_Skill`、`AI_Asist`、`Icon_Skill`）、`Map` 4 处（`UI_map` OnEnable+Start、`CamScroll` Start、`LoopArchive` Awake）、`Extreme` 4 处、`General` 3 处。**抛出点之后的代码一律不执行**，所以"场景能打开、渲染器都在"和"界面按预期摆好"是两件事。
+6. **层碰撞矩阵还没落地（`mainData` 里最有游戏性价值的一项）**：`PhysicsManager.m_LayerCollisionMatrix` 有 **27/32 条不是默认值** —— 这决定了哪个攻击层能打在哪个目标层上，也就是战斗手感本身。数据已完整取到并核对（528 对全对称），存在 `tools/migration/maindata-physics.tsv`，但**故意没有写进 `DynamicsManager.asset`**：2022 把它序列化成 256 个十六进制字符，每个 8 字符块究竟是 uint32 的**小端字节**还是**大端数字**我没能在离线环境确证（只有一篇 CSDN 断言小端）。两种写法 Unity 都照收不误、不报错，猜错就是把每个 mask 的位打乱、静默改掉命中关系。正解是**别让脚本猜**：在编辑器里用 `Physics.IgnoreLayerCollision(i, j, …)`（已核实这是唯一的公开写入 API，`Physics.SetLayerCollision` 并不存在）逐对设好再 `AssetDatabase.SaveAssets()`，由 Unity 自己按正确格式写文件。`m_SolverIterationCount 4→m_DefaultSolverIterations`（现为 6）同理待落，其余 Unity 4 物理字段要么已与 2022 相同、要么在 5.0 就换了模型无对应（`m_SleepVelocity`/`m_SleepAngularVelocity`/`m_MinPenetrationForPenalty`）。
+7. **没有 arm64-v8a native 库**：`dump/lib` 只有 9 个 armeabi-v7a `.so`（`libunity`/`libmono` + `libcmcc_haze`/`libcmcc_rusteze`/`libcasdkjni`/`libad`/`libidentifyapp`/`libparkour`）。出 64 位包要么拿到厂商 64 位库，要么砍掉这些渠道 SDK。
+8. **纹理已导出完毕（912 / 915）**：`tools/migration/export_textures.py` → `unity/Assets/Imported/Textures/{sharedassets,bundles}/`，26 MB，引用表在 `tools/migration/texture-index.json`（键是 `源文件!path_id`，材质重建要靠它对上）。3 颗失败是 `ValueError: No image data found`（`sharedassets0!27`、`sharedassets14!23`、`unity default resources!10103`）。格式分布实测 `RGBA4444` 611（66.8%）/ `ETC_RGB4` 155（16.9%）/ `RGBA32` 120 / `RGB24` 12 / `ARGB32` 3 / `Alpha8` 7 / `RGB565` 7 —— **八成以上本来就未压缩**，"全是 ETC1 需自写解码器"的说法以偏概全；6 种格式各抽一颗走 UnityPy 的 `.image` 全部出图，含 ETC。（枚举值是按 Unity 2022 的 `UnityEngine.TextureFormat` 反编译对照的，不是凭记忆。）
+   **一个坑值得记**：第一版把 `dump/assets` 下所有非 `level*`/`sharedassets*.assets` 的文件都当 AssetBundle 扫，结果**连 `sharedassetsN.assets.split0..N` 这些原始字节分片也扫了**，UnityPy 对半截文件解析出一堆幻影对象，报出"7466 张贴图"。分片必须先拼合（用 `recon/` 里那 12 个），别直接 load。修好后 912+3=915，与独立统计吻合。
+9. **网格已导出（256 / 256，0 跳过）**：`tools/migration/export_meshes.py` → `meshes.json`（8.3 MB，83,181 个顶点），编辑器菜单 `Undead Slayer > Build Meshes From JSON` 用 `Mesh.SetVertices/SetUVs/SetTriangles` 造真 Mesh 资产。UnityPy 1.25.3 的 `Mesh` **没有 `Export()`**，而 .obj 表达不了 UV1/切线/皮肤权重，所以走"Python 出描述 + 编辑器落盘"。
+   **顶点通道布局是从数据里验出来的，不是查表查来的**（扫全部 256 个网格，0 解析失败）：`0=位置`(dim3，值域 -5..17.3、只有 1% 单位长)、`1=法线`(dim3，-1..1、**100% 单位长**)、`3=UV0`(dim2，-3.375..4.375，平铺超出 [0,1] 属正常)、`4=UV1`(dim2，0..0.9999 即光照贴图 UV)、`5=切线`(dim4，-1..1、xyz **100% 单位长**)。`2=顶点色` 只出现在 12 个网格里，且**采样的 642 个顶点全是 255**（= 纯白），所以按 no-op 丢掉，不是"看不懂就扔"。索引宽度数据里没有标志位，做法是 16/32 位都试一遍，要求"字节数刚好被各 submesh 的 indexCount 用尽且所有下标 < 顶点数"，两种都不满足就报名字而不是硬猜。造完还会拿源数据的 `m_LocalAABB` 跟 `RecalculateBounds()` 的结果比，误差超 1% 就告警 —— 解错顶点流会当场暴露。
+   **蒙皮不是问题（本仓库先前判断错过一次）**：网格里的 `m_BoneNameHashes` 确实只有 32 位哈希、**没有骨骼名字**（74 个蒙皮网格 0 个带名字），一度被判断成"`SkinnedMeshRenderer` 接不回层级"。那个结论是错的：`SkinnedMeshRenderer.m_Bones` 本身就是**指向同一 level 文件内 Transform 的 PPtr 列表**，按 path_id 直接接回重建出来的层级即可，名字哈希只在网格跨 prefab 共享时才需要。实测场景里 **133 个 `SkinnedMeshRenderer` 全部带骨骼列表**。
+   **编辑器侧建完 256 个网格：0 失败、0 bounds mismatch**（每个网格建完都拿源数据的 `m_LocalAABB` 对 `RecalculateBounds()` 的结果，误差阈值 1%），这等于对上面那套通道判断做了 256 次独立复核。过程中修掉一个真实缺陷：Unity 的 `Mesh.SetTriangles(tri, s)` **不会自动增长 `subMeshCount`**，导致 2 个多 submesh 网格（`level6`/`level13` 的 `Combined Mesh (root: scene)`，静态合批产物，各 3 个 submesh）只建出第一个四边形 —— 而当时汇总仍报 `failed 0`，因为这类失败 Unity 只走 `Debug.LogError` 不抛异常。现在补了后置校验（逐个 `GetIndexCount(s)` 对期望值），"built N"不会再包含半成品。
+10. **`.github/workflows/` 三条 build 流水线尚未适配新布局**，且历史上用 `cp ... || true` 吞错、声称能出包 —— 现状是“未成立”，不要当入口用。
 
-### 重建64位版本
+## 工作流速查
 
-1. **安装Unity** (推荐2021.3 LTS或更高版本)
-2. **打开项目**：在Unity中打开本项目文件夹
-3. **修复编译错误**：由于Unity版本差异(4.x → 2021+)，部分API可能需要调整
-4. **设置构建目标**：File → Build Settings → Android
-5. **配置Player Settings**：
-   - Scripting Backend: IL2CPP
-   - Target Architectures: ARM64 (勾选)
-6. **构建APK**：Build
+重新反编译（**输出到临时目录做 diff，不要就地覆盖 `unity/Assets/Scripts`**，那里是含手工修改的工作副本）：
 
-### 常见Unity 4.x → 2021+ 迁移问题
+```powershell
+# ilspycmd 9.1.0.7988（net8 版）；11.x 需要 .NET 10 运行时
+dotnet tool install -g ilspycmd --version 9.1.0.7988
+# -lv CSharp9_0 必须带：Unity 2022.3 用 C# 9 编译工程脚本，
+# 而 ilspycmd 默认 Latest 会吐出 `namespace X;` 文件级命名空间，Unity 直接报 CS8773。
+ilspycmd -p -lv CSharp9_0 -o "$env:TEMP\redecomp" -r dump\assets\Managed dump\assets\Managed\Assembly-CSharp.dll
+ilspycmd -p -lv CSharp9_0 -o "$env:TEMP\redecomp" -r dump\assets\Managed dump\assets\Managed\Assembly-CSharp-firstpass.dll
+```
 
-- `Application.LoadLevel()` → `SceneManager.LoadScene()`
-- `GameObject.FindWithTag()` 返回值可能变化
-- 部分GUI API已弃用，需改用UI系统
-- `MovieTexture` → `VideoPlayer`
+三个坑，踩过一次就记住：
+
+- ILSpy 在 Windows 上会把只有大小写不同的 `Scenario.cs` / `scenario.cs` **合并进同一个文件**（实测产物是 297 行、同时含 `struct scenario` 与 `class Scenario`）。合并后文件名是小写的 `scenario.cs`，但 Unity 要求 MonoBehaviour 的文件名等于类名，所以拷进工程后必须把它改名成 `Scenario.cs`。
+- 探测工程**必须 `-t:Rebuild`**。不加的话 MSBuild 会跳过 CoreCompile，只回显上一次的少量错误 —— 本仓库就曾因此把 1430 处错误误报成 8 处。
+- 探测工程的 `TargetFramework` **必须等于工程的 API 档位**（现在 `apiCompatibilityLevel: 6` ⇒ `netstandard2.1`，且 framework 引用直接指向编辑器自带的 `NetStandard/ref/2.1.0/netstandard.dll`，不是 SDK 的参考集）。之前它是 `net8.0`，而 net8 的 BCL 与 .NET Standard 2.1 的程序集身份不是同一套，于是**两个方向都会说谎**：往漏报方向，SimpleJSON 依赖的 .NET Framework 2.0 版 SharpZipLib 在 net8 下编得过、Unity 里实际炸 `CS0012/CS1503/CS1674`；往误报方向，net8 会报 15 条 Unity 根本不报的 `CS8981`。csproj 里加了个 `CheckApiProfile` 目标，档位对不上就直接报错停下，不给"看着很干净"的假结论。
+
+不带编辑器验证脚本能否编译：
+
+```powershell
+dotnet build tools\migration-probe\Probe.csproj -c Release -t:Rebuild
+```
+
+探测工程已锁 `<LangVersion>9.0</LangVersion>`，与 Unity 的语言级一致，别改回 `latest`。它还会引用 `unity/Library/ScriptAssemblies/UnityEngine.UI.dll`（`FPS.cs` 用 `UI.Text`），带 `Exists` 守卫，所以没打开过编辑器时会跳过而不是硬失败 —— 但那样 `FPS.cs` 就会误报 CS0246，**先用编辑器打开一次工程再跑探测**。同理 `unity/Assets/Plugins/ICSharpCode.SharpZipLib.dll` 是 `SimpleJSON` 的硬依赖，缺了必报 CS0246；要重新取：
+
+```powershell
+# NuGet 包 id 是 SharpZipLib（不是 ICSharpCode.SharpZipLib，那个只有 0.86 的 .NET FW 老珠子）
+Invoke-WebRequest https://api.nuget.org/v3-flatcontainer/sharpziplib/1.4.2/sharpziplib.1.4.2.nupkg -o szl.zip
+Expand-Archive szl.zip -DestinationPath szl
+Copy-Item szl\lib\netstandard2.1\ICSharpCode.SharpZipLib.dll unity\Assets\Plugins\
+```
+
+重跑 Unity 4 → 2022 的机械迁移（幂等：已经是 `GetComponent<T>()` 的不会再被改）：
+
+```powershell
+python tools\migration\audit_shims.py                 # 先证明安全性：有无同名成员/字符串里的误伤点
+python tools\migration\migrate_legacy_accessors.py unity\Assets\Scripts --dry-run
+python tools\migration\migrate_legacy_accessors.py unity\Assets\Scripts
+```
+
+从 `mainData` 还原 ProjectSettings（幂等：内容一致时打印 `unchanged`，覆盖前自动备份到 `%TEMP%\projectsettings-backup-<时间戳>`）：
+
+```powershell
+# 只读：先把 mainData 里的管理器对象打出来看
+python tools\migration\dump_maindata_settings.py
+python tools\migration\dump_maindata_physics.py
+# 只读：证明 Tag/Layer 到底有没有人用（结论见上面"Tag/Layer"那两行）
+python tools\migration\scan_tags_layers.py
+# 落地：写 TagManager.asset + EditorBuildSettings.asset + 两张表
+python tools\migration\restore_projectsettings.py --dry-run
+python tools\migration\restore_projectsettings.py
+```
+
+需要 UnityPy 1.25.3 的虚拟环境。系统 Python 和 WSL 里都没有装，本次已建好一个隔离的：**`%TEMP%\unitypy-venv`**（`C:\Users\41743\AppData\Local\Temp\unitypy-venv\Scripts\python.exe`，实测 `UnityPy 1.25.3`，依赖含 `brotli/lz4/pillow/texture2ddecoder/fmod_toolkit` 等）。凡碰 `mainData`/`sharedassets` 的脚本都用它跑，只读 `tools/migration/scenes/*.json` 的那批用系统 python 即可。
+
+`scene-guids.tsv` 里的 guid 是 `md5(path)` 生成的，**但这只是张台账，不是要写进 `.meta` 的规格** —— `.unity.meta` 的 guid 由 Unity 导入时自己分配（实测 `General.unity.meta = aaa0b646…`，而 `EditorBuildSettings.asset` 里当初写的是 `ba29674c…`），拿 md5 去覆盖等于和导入管线抢所有权。
+   **在编辑器里改这条路是走不通的，已经证伪**：`EditorBuildSettings.scenes = 新数组` 加 `AssetDatabase.SaveAssets()` 之后，`ProjectSettings/EditorBuildSettings.asset` **字节没变、mtime 没动、24 条 guid 一条都没换成真值** —— `SaveAssets()` 只覆盖 `Assets/` 下的资产，不写 `ProjectSettings`。（这条是靠给同步逻辑加后置断言才发现的：日志明说 `0 guid(s) verified, 24 not found in it`。没有那句断言，这就是又一个"点了没报错但什么都没发生"。）那个菜单已从 `SceneRebuilder.cs` 删掉，不留假入口。
+   **能落地的路是离线的**：`restore_projectsettings.py` 的 `scene_guid()` 改成**先读该 `.unity.meta` 里 Unity 真分配的 guid**、没有才退回 `md5(path)`，再重新生成 `EditorBuildSettings.asset`。实测 `python tools\migration\restore_projectsettings.py` 后 **24/24 与 `.meta` 一致、0 stale、0 缺文件**，复跑报 `unchanged`（幂等）。这个断言已固化进 `verify_scenes.py` 的 `build_settings()`，并用 md5 时代的旧值反向标定过（会被判 stale）。
+
+#9 摸底与脚本绑定（两者都只读，输出可重复）：
+
+```powershell
+python tools\migration\survey_scene_data.py           # 组件/类型/纹理格式直方图 -> %TEMP%\survey9.json
+python tools\migration\build_monoscript_table.py      # 394 个 MonoBehaviour 的脚本绑定表
+```
+
+`build_monoscript_table.py` 是**按定长偏移读原始字节**的，不要用 UnityPy 的 `obj.read()` 去读场景里的 `MonoBehaviour` —— 它会静默失败三分之二（原因见上面"Unity 4 构建数据没有 TypeTree"那行）。后续任何要还原组件字段值的工具，都必须沿用同一套偏移约定，字段数据从 24 开始。
+
+场景重建（**故意不手写 .unity YAML**，改成"Python 出描述 + 编辑器落盘"，让 Unity 自己序列化，格式就不会错）：
+
+```powershell
+python tools\migration\extract_scene.py level7        # -> tools/migration/scenes/level7.json
+# 编辑器菜单：Undead Slayer > Rebuild Scene From Level JSON...   （单个，弹文件选择框）
+#            Undead Slayer > Rebuild ALL Extracted Levels        （批量）
+```
+
+23 个 level 已全部抽好，合计 **1207 个节点 / 394 个 MonoBehaviour**（与上面两张独立统计对得上），只有 4 条告警（`m_Tag` 1 和 2 我没敢猜名字，见 `extract_scene.py` 的 `BUILTIN_TAGS`）。重建时会丢 39 套旧粒子组件 + 22 `GUILayer` + 16 `FlareLayer`（后两个是 Unity 4 给相机自动挂的伴生组件，2022 已删，丢了不影响）。
+
+顺带一个自己踩到的坑，它会误导验收：`SceneRebuilder` 的汇总日志走 `StrFmt.Fmt`，而它内部包的是 `string.Format`；可 7 个调用点写的是 printf 风格的 `%s`/`%d`，`string.Format` 根本不认，于是整条汇总**原样打出占位符**（`GameObjects : %d`），看着像重建没跑。这不是数据错，是格式化函数和占位符风格不匹配 —— `Fmt` 已改成按顺序替换 `%s`/`%d`（`{0}` 这类原样保留，参数不够时剩余占位符也保留成字面量）。识别信号：**日志里的数字没填上，先怀疑打印，别怀疑产物**。
+
+**v1 只还原结构，不还原状态**：层级 / 名字 / layer / tag / active / 局部 TRS / 组件种类 / 脚本绑定都在，但 ① MonoBehaviour 的**字段值全是默认**（要按类从 Assembly-CSharp 解偏移 24 起的字节，还没做）；② 网格和材质引用**已经能对上**（`#14` 的纹理/材质/网格三步做完后实测：`level7` 重建出的 `General.unity` 里 8 个 `MeshFilter.m_Mesh` + 8 个 `m_Materials` 全部解析到 `Assets/Imported/` 下的真资产，场景内除引擎内置的 `e000…`/`f000…` 之外 0 个未解析引用），只剩 AudioClip 没导；③ 场景级设置（RenderSettings 雾效、LightmapSettings 等）用的是 Unity 新建场景的默认值，没从 `levelN` 里搬。所以"重建出来的场景能打开、层级对、脚本不丢"是这一步的验收标准，**不等于能玩**。
+
+**想看画面就选 `Map`（dump `level6`），别选 `General`** —— 这是逐个 JSON 静态数出来的（"可见"= 同节点有 MeshFilter+MeshRenderer、两侧资产都在盘上、自身与所有祖先都 active）：
+
+| dump 文件 | 场景 | 节点 | 可见渲染器 | 源头就是 inactive | 资产没导齐 | 挂脚本 |
+|---|---|---|---|---|---|---|
+| `level6` | Map | 116 | **103** | 0 | 0 | 112 |
+| `level13` | Extreme | 80 | **69** | 0 | 0 | 72 |
+| `level17` | Stage | 237 | 17 | 23 | 0 | 73 |
+| `level1` | Story | 219 | 16 | 8 | 1 | 42 |
+| `level7` | General | 15 | **1** | 7 | 0 | 10 |
+
+决定性的一点是着色器：`Map` 那 103 个材质的原着色器**全是 `Unlit-Alpha`**（→ `Unlit/Transparent`），不吃光；`Stage` 的 29 个 `Mobile-VertexLit-OnlyDirectionalLights`（→ `Legacy Shaders/VertexLit`）则要看有没有光。
+   **这里我犯过一次全称错误，记下来当反面教材**：先前写的"23 个场景一个 `Light` 组件都没有"是拿 `level6`/`level17`/`level7` 三个样本外推的，而这三个恰好都没有。穷举重测的结果是 **11 个 level 带 `Light`**（`level0/1/2/3/4/15/16/18/19/20/21`，每个 1 颗，都挂在名为 `Directional light` 的 GameObject 上）。`Map`(level6) 与 `Stage`(level17) 确实没有，所以"Stage 那批 VertexLit 在编辑器里偏暗"仍然成立，但**"全工程无光"这句不成立**。教训同上一条：否定结论必须穷举，三个样本不是证据。`General` 只有 1 个渲染器是激活的，其余 7 个在原始数据里就是 `m_IsActive: 0`（卡片结算类 UI，靠脚本运行期点亮）—— 之前那张"只有地面和天空"的截图是**忠实还原**，不是重建出错。`Map` 上那 97 个 `Icon_Stage` 也没有 `Awake`/`Start`，只提供一个 `IconDown()`，不会在启动时把渲染器关掉。
+
+`Map` 已实测重建出来并对过文件（`unity/Assets/Scene/Map.unity`，382 KB）：**116 GameObject / 116 Transform / 103 MeshFilter + 103 MeshRenderer / 97 SphereCollider / 2 Camera / 111 MonoBehaviour**，`m_Mesh` 103 条、材质槽 103 条，**除引擎内置 `e000…`/`f000…` 外 0 个未解析引用** —— 与上面表格对 `level6.json` 的静态预测逐项吻合。
+   少的那 1 个脚本不是重建漏掉了：`PayMgr` 上挂的 MonoBehaviour 绑的是 `ChannelMgr`，而 **`ChannelMgr` 根本没有基类**（不是 MonoBehaviour）。这是**拿 APK 里原始的 `dump/assets/Managed/Assembly-CSharp.dll` 直接反编译对证的**（`ilspycmd -t ChannelMgr`，输出 `public class ChannelMgr` 无 `: ...`），所以不是 ILSpy 把基类弄丢了；旁证还有两条：全语料**没有任何一处把 `ChannelMgr` 当组件用**（`GetComponent<ChannelMgr>`/`AddComponent<ChannelMgr>` 零命中），文件里也**没用任何 MonoBehaviour 专属 API**（`StartCoroutine`/`Invoke`/`transform`/`gameObject` 零命中），单例是 `new ChannelMgr()`。`SceneRebuilder.FindType` 要求 `typeof(MonoBehaviour).IsAssignableFrom(t)`，于是它被跳过并打 **`Debug.LogError`（不是 warning）**。**只报现象，不猜原意**。穷举核对过全部 23 个场景：**394 个绑定里只有这 1 个绑到非 MonoBehaviour 类，且没有任何被绑类名在 `unity/Assets/Scripts` 里找不到**。
+   顺手修了这条诊断本身的措辞问题：原来两种完全不同的失败都写成 `not found`，会把人指向"文件丢了"。现在 `FindAnyType`（不带 MonoBehaviour 过滤）先判断类型到底存不存在，存在但不是 MonoBehaviour 就明说 `EXISTS but is not a MonoBehaviour`。另外 `StrFmt.Fmt` 加了自检：**参数一个都没被消费、或占位符没吃完，就在末尾打 `[Fmt: 0/3 arg(s) used]`**。起因是我自己写同步日志时踩了 `"a %s " + "b".Fmt(x)` —— 成员调用优先级高于 `+`，`.Fmt` 只作用于最后一段字面量，前半的 `%s` 原样漏出（和上一条 `%s` 事故同源）。已用只读 harness 跑过：正常替换/多行模板/无占位符无参数这三种都不加噪音，只有畸形调用会标出来。
+
+验收用 `python tools\migration\verify_scenes.py`（只读，退出码 0 才算过）：它读**Unity 真正写出来的 .unity**，按 `--- !u!<classID>` 数对象，和 `levelN.json` 的声明逐项对（GameObject / MeshFilter / 渲染器 / MonoBehaviour / 未解析 guid / 是否残留 2022 已删除的旧组件），并把空 PPtr 槽**按所属字段拆开数**（`noMesh`、`noMat`、`nullRef`）。**当前 23/23 全 PASS，exit 0。**
+   这个后置断言是必需的：第一版就抓到 **`Loading.unity` 是过期的** —— 它 11:19 重建，那时网格/材质还没导出，**20 个 `m_Mesh` 和 20 个材质槽全是 `{fileID: 0}`**，而"0 个未解析引用"完全看不出来（空槽不带 guid，天然通过）。重跑 Rebuild ALL 后已归零。所以顺序很重要：**先 Build Meshes / Build Materials，再 Rebuild ALL**。
+   但**"数空槽"同样是错的判据**，我在这上面连错两轮、把两个本来正常的场景报成 FAIL：① 一个 `MeshFilter` 若 `extract_scene.py` 当初解不出网格，JSON 里**根本没有 `mesh` 这个键**（不是 `mesh: null`），到文件里却会序列化成 `m_Mesh: {fileID: 0}` —— 于是"期望 4、实际 4 条 m_Mesh、却有 1 条空"这种数法自己就不自洽；② **`ParticleSystemRenderer`（class 199）自己也带 `m_Mesh`**，和网格导出毫无关系。正解是**包含关系**而不是计数：`每个"现在磁盘上存在"的期望资产路径，都必须在对应字段里以非空 guid 出现`。并用注入一个假路径的方式标定过它会报错（missing 0→1），不给"永远绿"的假结论。
+   剩下的空槽都能归因，不是 bug：`Story` 2 个 + `Stage` 1 个空材质槽 = JSON 里就是 null（`export_materials.py` 主动推迟的 `Font` 那档）；`Story_2` 1 个空 `m_Mesh` = 当初解不出该网格；`Stage` 3 个空 `m_Mesh`+3 个空材质槽 = 3 个 `ParticleSystemRenderer`（旧粒子还没迁成 Shuriken，本来就是空壳）。`nullRef` 那列则是"MonoBehaviour 字段没解"的直接体量（`Stage` 204、`Story` 137、`Forge` 66、`Archive` 63、`Map` 23…，字段名如 `icon_mission`/`general_weapon`/`card_general`），要等按类解偏移 24 起的字节才降得下来。
+
+四个编辑器脚本（`SceneRebuilder.cs` / `MaterialRebuilder.cs` / `MeshRebuilder.cs` / `ShaderProbe.cs` / `ReadySceneBuilder.cs`）在探测工程里是**逐个 `<Compile Include>` 列出来的**，跟 `Assets\Scripts\**\*.cs` 一起编 —— 不是"排除在外"。它们能用纯 `*.dll` 通配拿到 UnityEditor，是因为 `Editor\Data\Managed\UnityEngine\` 下就有 `UnityEditor.CoreModule.dll`（`EditorSceneManager`、`MenuItem`、`EditorUtility` 都在里面）。这么编验过 0 error —— 第一次就是这么查出一个 `SetParent(GameObject)` 应该是 `SetParent(Transform)` 的错。改完 `Assets/Editor/*.cs` 记得重跑一次探测工程，别只靠编辑器热重编译。
+
+材质同一条路子（Python 出描述 + 编辑器落盘）：
+
+```powershell
+python tools\migration\export_materials.py     # -> tools/migration/materials.json
+# 编辑器菜单：Undead Slayer > Build Materials From JSON
+```
+
+改名表是数据文件 `tools/migration/shader-remap.json`，导出器会校验覆盖度：**没映射到的着色器一律跳过并报名字，绝不瞎猜**。当前实测 355 个材质 → **349 个可建、6 个主动推迟**（`Font` 那档，理由见 `shader-remap.json` 的 `deferred`），**357 个纹理引用全部命中、0 缺失**（349+6=355 对得上），编辑器侧 `Shader.Find` 失败 0。
+
+一个值得注意的发现：材质的 `_MainTex` 普遍带 **非 1 的 `scale` 和不为 0 的 `offset`**（例：scale `[0.5,1]` + offset `[0.51,…]`），说明这游戏**把图打包成了图集**、靠纹理 ST 取子区域。所以 ST 必须一起迁，只导单图不够。
+
+`.mat` 会**持久化存 `m_Name`**，而 Unity 要求它等于文件名，否则每个材质报一条 `Main Object Name 'X' does not match filename 'X_...'`。所以 `MaterialRebuilder` 必须把 `mat.name` 主动写成文件名词干（文件名带来源后缀 `<源文件>_assets_<path_id>`，比裸原名更有用，重名也靠它区分）。**只"不再赋值"修不好** —— 错名字已经写进文件了，得覆写。这个坑的识别信号是"警告条数 == 材质条数（349）"：量级和产物一样的警告要先当 bug 查，别当噪音。
+
+`tools/migration/unity4_files.py` 是共用入口，把"绝不加载 `.splitN` 分片"和"PPtr 的 m_FileID 要靠各文件自己的 externals 表解析"两条规则收在一处 —— 前者曾让纹理数从 915 虚报成 7466。新工具都从它取文件清单。**它的 `sources()` 返回的是 `(basename, abspath)` 元组列表**，直接 `UnityPy.load(pair)` 会得到 `TypeError: Unsupported type for EndianBinaryReader: <class 'tuple'>`，而 `except Exception: continue` 会把这个变成"472 个文件全读不了、0 个 AnimationClip"的**假阴性**（我自己踩了才报出这个数，逐文件计数后才发现是解包漏了）。教训：探针要把"加载失败"和"没有该类型"分开计数，否则自己的用法错误会被读成数据的缺失。
+
+**`Resources/` 是第三类缺口，和"字段没解"不是一回事。** 2022 工程里 `unity/Assets/Resources/` **只有 1 个文件**（`BillingMode.json`，Unity 自己生成的），而 `unity/Assets/Scripts` 里有 **101 处 `Resources.Load`**。原游戏靠它按名字取**预制体和文本资源**，例如 `UI_intro.cs:191` 的 `Resources.Load("hsp_version") as TextAsset`（192 行立刻 `textAsset.text` → 拿不到就是 `NullReferenceException`，且这行在第 195 行第一次调 `Crypto` **之前**，所以"Intro 里没报 CryptographicException"**不能**当作 `Init()` 跑过了的证据）、`Cha_Weapon.cs:72` 的 `Resources.Load("wp_" + num % 100)`（武器预制体）、`UICampos.cs` 的 `bg_worldmap`。**这批是 prefab，是我们至今完全没导出过的一整类资产**，网格/材质/纹理那三步覆盖不到它。
+
+**`nullRef` 那列先前是低估的下界，已修正**：`verify_scenes.py` 原来只数数组形态的 `- {fileID: 0}`，而 `Cam_intro` 这种 `public Transform cha/gate/mon1/mon2` 序列化成**标量行** `cha: {fileID: 0}`，于是一个都没算进去（`Intro` 报 2，实际 36，`cha/gate/UI_intro/mon1/mon2` 全空）。现在按 `!u!114` 文档逐个走、标量与数组两种形态都数、并跳过 Unity 自己写的 PPtr 字段（`m_GameObject`/`m_PrefabInstance`/…）。修正后的真值：**全工程 23 个场景共 1319 个空引用字段**（`Stage` 339、`Story` 259、`Forge` 107、`Map` 82、`Archive`/`Result` 各 84、`Extreme` 74、`Intro` 36）。**偏移 24 起按类解字段这条路已经打通（首例）**：`level0` 里 `Cam_intro` 那个 MonoBehaviour `raw_len=64`，去掉 24 字节头正好 **40 字节 = 5 个 8 字节 PPtr**，与它 5 个 `public Transform` 字段的声明序（`UI_intro/gate/cha/mon1/mon2`）一一对上，解出来是 —— `UI_intro→GameObject 'UI_intro'`、`gate→'bg_castle'`、`cha→'cha'`、`mon1→'mon1'`、`mon2→'mon2'`。**5 个里 4 个对象名与字段名完全一致**，剩下 `gate` 指向城堡图（语义上也讲得通）。所以那 1319 个空引用**是可恢复的**，不是必须放弃的东西。
+   两个实现要点：① `m_Script` 的 **`FileID` 是 externals 列表的 1-based 下标**（`externals[FileID-1]`），`level0` 的 externals 是 `['sharedassets1.assets','sharedassets0.assets']`，`Cam_intro` 的脚本就在 `sharedassets0.assets!84` —— 直接按 0-based 取或用 UnityPy 对象的属性名去猜都会错（我这么翻车过一次）；② 这套解析 `monoscript-bindings.json` 里已经有（`level_externals`/`monoscripts`/`script_to_guid`），解码器要复用它，别另起一套。注意 Unity 只序列化 `public`/`[SerializeField]` 字段，`private` 的 `dx`/`startui` 不占字节 —— 上面的 40 字节正好印证了这点。
+
+**动画是可导的（和 MonoBehaviour 不一样）**：修正解包后实测 **472/472 个序列化文件加载成功、0 失败**，其中 **427 个 `AnimationClip` 全部 `read()` 成功**，曲线内容自洽 —— 骨骼路径是真的（`path='Bip001'`/`Bip01`…）、每 clip 约 30 条位置/旋转/缩放曲线（对应一具骨骼）、关键帧时间落在正常区间、**没有一个 clip 是"所有曲线都为空"**，`m_Name` 就是动画状态名（`costume`/`open`/`fail`/`fail_loop`…，`CostumeAniSpeed.cs:7` 要的 `["costume"]` 确实在数据里）。所以 `AnimationClip` **不需要**像 MonoBehaviour 那样按定长偏移手解，走"Python 出描述 + 编辑器落盘"这条正路就行。两个还没证的前置：① **Legacy 标志**，UnityPy 读出的 `m_Legacy` 是 `None`，而 2022 的 `Animation` 组件只认 legacy clip（`AnimationClip.legacy` 没有公开 setter，得走 `SerializedObject` 的 `m_Legacy`）；② 关键帧 in/outSlope 在 Unity 4 压缩布局下是否逐字节准确（`m_CompressedRotationCurves` 全为 0、旋转走的是 `m_RotationCurves` 的显式 Quaternion，看着是未压缩那条路径，但没做往返验证）。
+
+用 Unity 打开：`unity/` 目录（编辑器版本 2022.3.62f3c1）。**探测工程实测 0 error / 532 warning**（按 Unity 真实档位 netstandard2.1 编），即脚本按 C# 9 + 2022.3 自带的程序集是编得过的。
+   **已经成立的部分（2026-09-29 实测，不再是推断）**：从 `Ready` 进 playmode 后 `Application.LoadLevel("Intro")` **成功跳转**，`Intro` 场景**在 Game 视图里渲染出了主角立绘与背景**（网格 + 材质 + 纹理全链路出图）。证据有两条且互相独立：① Hierarchy 里出现 `DontDestroyOnLoad` 分组，里面就是 `Ready` 的 `AndroidScript`（它 `Start()` 调了 `DontDestroyOnLoad`）；② 注册表 `HKCU\Software\Unity\UnityEditor\NHN Corp\Undead Slayer Xiahou Dun` 多了 `isFirst="YES"`，而全工程唯一写这个键的是 `AndroidScript.Awake()`。
+   **还不成立的部分**：`Intro` 的镜头动画不动（`Cam_intro.gate/cha` 等 1319 个引用字段还没解，见上）；`UI_intro.Start` 在第 192 行因 `Resources.Load("hsp_version")` 取不到而中止（任务 #17）；`Animation` 组件里没有 clip（427 个 clip 已确认可读，还没导）；旧粒子仍是空壳。也就是说**"能看到画面"已经成立，"能玩"还没有**。
 
 ## 免责声明
 
-本项目仅用于学习和研究目的。所有原始代码和资源的版权归原始开发者NHN Corp所有。请勿用于商业用途。
-
-## 技术细节
-
-反编译工具：自定义Python脚本 + dnfile库
-反编译内容：Assembly-CSharp.dll (940KB, 339类型, 2013方法)
+本项目仅用于学习和研究目的。所有原始代码和资源的版权归原始开发者 NHN Corp 所有，请勿用于商业用途。

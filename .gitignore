@@ -75,3 +75,7 @@ Thumbs.db
 
 # 放行手写工具工程（上面的 *.csproj 是为 Unity 自动生成的工程文件准备的）
 !/tools/**/*.csproj
+
+# Python bytecode from the migration probes
+__pycache__/
+*.pyc
