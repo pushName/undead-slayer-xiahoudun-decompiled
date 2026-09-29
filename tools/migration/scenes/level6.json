@@ -1,0 +1,6593 @@
+{
+ "source_level": "level6",
+ "scene_name": "Map",
+ "scene_path": "Assets/Scene/Map.unity",
+ "build_index": 7,
+ "node_count": 116,
+ "root_ids": [
+  123,
+  124,
+  126,
+  127,
+  128,
+  189,
+  190,
+  191,
+  194,
+  195,
+  212,
+  225,
+  230,
+  231,
+  232
+ ],
+ "unsupported_components": {
+  "FlareLayer": 2,
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2,
+  "GUILayer": 1
+ },
+ "warnings": [
+  "GameObject 74: unmapped builtin m_Tag=2"
+ ],
+ "nodes": [
+  {
+   "id": 118,
+   "go_id": 2,
+   "name": "explore1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.588004,
+     -0.530687,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.317305,
+     0.948324
+    ],
+    "scale": [
+     4.0,
+     6.0,
+     4.0
+    ]
+   },
+   "parent": 126,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/explore_area_sharedassets7_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 119,
+   "go_id": 3,
+   "name": "explore6",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.233544,
+     -0.690277,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     6.0,
+     4.0,
+     4.0
+    ]
+   },
+   "parent": 126,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/explore_area_sharedassets7_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 120,
+   "go_id": 4,
+   "name": "explore5",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.628453,
+     -0.012019,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.422618,
+     0.906308
+    ],
+    "scale": [
+     4.0,
+     5.0,
+     4.0
+    ]
+   },
+   "parent": 126,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/explore_area_sharedassets7_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 121,
+   "go_id": 5,
+   "name": "explore4",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.017387,
+     1.291303,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.34202,
+     0.939693
+    ],
+    "scale": [
+     4.0,
+     5.0,
+     4.0
+    ]
+   },
+   "parent": 126,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/explore_area_sharedassets7_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 122,
+   "go_id": 6,
+   "name": "explore2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.231227,
+     0.67954,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     5.0,
+     5.0,
+     4.0
+    ]
+   },
+   "parent": 126,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/explore_area_sharedassets7_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 123,
+   "go_id": 7,
+   "name": "icon_stage_clear3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     10.0,
+     -5.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.8,
+     0.8,
+     0.8
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Combined Mesh (root_ scene)_level6_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon_clear3_sharedassets7_assets_13.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop_simple",
+     "guid": "7c1f21c11c486834faa79cde9b9da365",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 124,
+   "go_id": 8,
+   "name": "icon_stage_clear2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     10.0,
+     -5.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.8,
+     0.8,
+     0.8
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Combined Mesh (root_ scene)_level6_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon_clear2_sharedassets7_assets_12.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop_simple",
+     "guid": "7c1f21c11c486834faa79cde9b9da365",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 125,
+   "go_id": 9,
+   "name": "explore3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.612767,
+     1.06754,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.34202,
+     0.939693
+    ],
+    "scale": [
+     4.0,
+     5.0,
+     4.0
+    ]
+   },
+   "parent": 126,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/explore_area_sharedassets7_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 126,
+   "go_id": 10,
+   "name": "icon_explore",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     50.0,
+     50.0,
+     50.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    125,
+    122,
+    121,
+    120,
+    119,
+    118
+   ],
+   "components": []
+  },
+  {
+   "id": 127,
+   "go_id": 11,
+   "name": "gui_folder",
+   "layer": 9,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    193,
+    192
+   ],
+   "components": []
+  },
+  {
+   "id": 128,
+   "go_id": 12,
+   "name": "Cam_gui",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cam_UI",
+     "guid": "3fbb93bd2fc11b54898aa1d42f5c0d46",
+     "cs": "unity/Assets/Scripts/Cam_UI.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 129,
+   "go_id": 13,
+   "name": "icon28",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.736639,
+     1.958927,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 130,
+   "go_id": 14,
+   "name": "icon05",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.128788,
+     1.642806,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 131,
+   "go_id": 15,
+   "name": "icon04",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.663028,
+     1.813776,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 132,
+   "go_id": 16,
+   "name": "icon03",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.524567,
+     1.323101,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 133,
+   "go_id": 17,
+   "name": "icon02",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.920327,
+     1.012833,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 134,
+   "go_id": 18,
+   "name": "icon01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.302951,
+     0.696311,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 135,
+   "go_id": 19,
+   "name": "icon11",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.171059,
+     0.214672,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 136,
+   "go_id": 20,
+   "name": "icon12",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.557258,
+     -0.095907,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 137,
+   "go_id": 21,
+   "name": "icon15",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.810662,
+     -0.90587,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 138,
+   "go_id": 22,
+   "name": "icon16",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.669354,
+     -1.38976,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 139,
+   "go_id": 23,
+   "name": "icon18",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.996243,
+     -2.037896,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 140,
+   "go_id": 24,
+   "name": "icon42",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.073105,
+     -1.89878,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 141,
+   "go_id": 25,
+   "name": "icon43",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.5342,
+     -2.074449,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 142,
+   "go_id": 26,
+   "name": "icon73",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.92505,
+     -2.074449,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon02_sharedassets7_assets_6.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 143,
+   "go_id": 27,
+   "name": "icon72",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.373949,
+     -1.904838,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 144,
+   "go_id": 28,
+   "name": "icon71",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.252839,
+     -1.432348,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 145,
+   "go_id": 29,
+   "name": "icon48",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.49489,
+     -0.637604,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 146,
+   "go_id": 30,
+   "name": "icon36",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.428595,
+     -0.79016,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 147,
+   "go_id": 31,
+   "name": "icon27",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.595138,
+     1.470602,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 148,
+   "go_id": 32,
+   "name": "icon52",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.609094,
+     0.646506,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 149,
+   "go_id": 33,
+   "name": "icon60",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.787571,
+     1.597713,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 150,
+   "go_id": 34,
+   "name": "icon17",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.138883,
+     -1.555244,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 151,
+   "go_id": 35,
+   "name": "icon24",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.104191,
+     -0.133195,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 152,
+   "go_id": 36,
+   "name": "icon76",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.236826,
+     -1.624341,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 153,
+   "go_id": 37,
+   "name": "icon69",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.781267,
+     -1.616982,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 154,
+   "go_id": 38,
+   "name": "icon44",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.680221,
+     -1.588249,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 155,
+   "go_id": 39,
+   "name": "icon41",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.218777,
+     -1.420708,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 156,
+   "go_id": 40,
+   "name": "icon19",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.604783,
+     -1.725627,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 157,
+   "go_id": 41,
+   "name": "icon61",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.9258,
+     1.108421,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 158,
+   "go_id": 42,
+   "name": "icon84",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.820383,
+     -0.177529,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 159,
+   "go_id": 43,
+   "name": "icon86",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.602696,
+     0.467186,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 160,
+   "go_id": 44,
+   "name": "icon22",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.026683,
+     -0.282388,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 161,
+   "go_id": 45,
+   "name": "icon13",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.424989,
+     -0.599778,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 162,
+   "go_id": 46,
+   "name": "icon14",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.281807,
+     -1.086879,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 163,
+   "go_id": 47,
+   "name": "icon20",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.748724,
+     -1.246716,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 164,
+   "go_id": 48,
+   "name": "icon45",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.146434,
+     -1.747944,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 165,
+   "go_id": 49,
+   "name": "icon74",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.310616,
+     -1.774345,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 166,
+   "go_id": 50,
+   "name": "icon77",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.106614,
+     -1.140004,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 167,
+   "go_id": 51,
+   "name": "icon89",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.63442,
+     -1.316653,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 168,
+   "go_id": 52,
+   "name": "icon55",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.717773,
+     1.930539,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 169,
+   "go_id": 53,
+   "name": "icon85",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.211491,
+     0.143785,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 170,
+   "go_id": 54,
+   "name": "icon75",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.84903,
+     -1.943662,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 171,
+   "go_id": 55,
+   "name": "icon70",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.637922,
+     -1.12659,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 172,
+   "go_id": 56,
+   "name": "icon82",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.484394,
+     -0.82933,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 173,
+   "go_id": 57,
+   "name": "icon78",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.696749,
+     -1.454898,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 174,
+   "go_id": 58,
+   "name": "icon88",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.316892,
+     1.430452,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 175,
+   "go_id": 59,
+   "name": "icon59",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.248348,
+     1.76237,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 176,
+   "go_id": 60,
+   "name": "icon54",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.326317,
+     1.617876,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 177,
+   "go_id": 61,
+   "name": "icon29",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.201552,
+     1.784961,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 178,
+   "go_id": 62,
+   "name": "icon06",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.991046,
+     1.151223,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 179,
+   "go_id": 63,
+   "name": "icon00",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.776417,
+     0.521253,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 180,
+   "go_id": 64,
+   "name": "icon08",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.383589,
+     0.83498,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 181,
+   "go_id": 65,
+   "name": "icon10",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.634938,
+     0.035001,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 182,
+   "go_id": 66,
+   "name": "icon21",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.885379,
+     -0.771877,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 183,
+   "go_id": 67,
+   "name": "icon39",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.828568,
+     -1.103318,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 184,
+   "go_id": 68,
+   "name": "icon47",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.10307,
+     -0.956576,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 185,
+   "go_id": 69,
+   "name": "icon53",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.47118,
+     1.13659,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 186,
+   "go_id": 70,
+   "name": "icon87",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.45922,
+     0.941453,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 187,
+   "go_id": 71,
+   "name": "icon83",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.348842,
+     -0.348026,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 188,
+   "go_id": 72,
+   "name": "icon79",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.566221,
+     -0.979389,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 189,
+   "go_id": 73,
+   "name": "totalcollider",
+   "layer": 0,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     -0.5
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.5,
+     1.5,
+     0.1
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "BoxCollider"
+    }
+   ]
+  },
+  {
+   "id": 190,
+   "go_id": 74,
+   "name": "Archive",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "LoopArchive",
+     "guid": "ea4695052b9e4dd4c8f9e4ff674d0517",
+     "cs": "unity/Assets/Scripts/LoopArchive.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "DB_Archive",
+     "guid": "42655ff387a830140a90bed6325b742b",
+     "cs": "unity/Assets/Scripts/DB_Archive.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 191,
+   "go_id": 75,
+   "name": "icon_etc",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    214,
+    233
+   ],
+   "components": []
+  },
+  {
+   "id": 192,
+   "go_id": 76,
+   "name": "ui_bg_map",
+   "layer": 9,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     -0.24,
+     0.5
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "parent": 127,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ui_bg2_sharedassets7_assets_15.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 193,
+   "go_id": 77,
+   "name": "ani_walk",
+   "layer": 9,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.12,
+     0.6
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "parent": 127,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ui_walk_ani_sharedassets7_assets_16.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_walk",
+     "guid": "58080d029f8a3c94d86a8b0e59b4bffa",
+     "cs": "unity/Assets/Scripts/Ef_ani_walk.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 194,
+   "go_id": 78,
+   "name": "icon_stage_clear1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     10.0,
+     -5.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.8,
+     0.8,
+     0.8
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Combined Mesh (root_ scene)_level6_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon_clear1_sharedassets7_assets_11.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop_simple",
+     "guid": "7c1f21c11c486834faa79cde9b9da365",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 195,
+   "go_id": 79,
+   "name": "icon_stage",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    179,
+    134,
+    133,
+    132,
+    131,
+    130,
+    178,
+    200,
+    180,
+    227,
+    181,
+    135,
+    136,
+    161,
+    162,
+    137,
+    138,
+    150,
+    139,
+    156,
+    163,
+    182,
+    160,
+    205,
+    151,
+    228,
+    201,
+    147,
+    129,
+    177,
+    202,
+    219,
+    216,
+    221,
+    229,
+    208,
+    146,
+    220,
+    211,
+    183,
+    217,
+    155,
+    140,
+    141,
+    154,
+    164,
+    196,
+    184,
+    145,
+    203,
+    204,
+    207,
+    148,
+    185,
+    176,
+    168,
+    199,
+    210,
+    223,
+    175,
+    149,
+    157,
+    226,
+    218,
+    206,
+    224,
+    222,
+    215,
+    197,
+    153,
+    171,
+    144,
+    143,
+    142,
+    165,
+    170,
+    152,
+    166,
+    173,
+    188,
+    209,
+    198,
+    172,
+    187,
+    158,
+    169,
+    159,
+    186,
+    174,
+    167
+   ],
+   "components": []
+  },
+  {
+   "id": 196,
+   "go_id": 80,
+   "name": "icon46",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.296317,
+     -1.271931,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon02_sharedassets7_assets_6.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 197,
+   "go_id": 81,
+   "name": "icon68",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.167315,
+     -1.292977,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 198,
+   "go_id": 82,
+   "name": "icon81",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.955147,
+     -0.639881,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 199,
+   "go_id": 83,
+   "name": "icon56",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.861221,
+     1.44561,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 200,
+   "go_id": 84,
+   "name": "icon07",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.847509,
+     0.66924,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon02_sharedassets7_assets_6.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 201,
+   "go_id": 85,
+   "name": "icon26",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.457253,
+     0.993703,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 202,
+   "go_id": 86,
+   "name": "icon30",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.063064,
+     1.303146,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 203,
+   "go_id": 87,
+   "name": "icon49",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.36288,
+     -0.142166,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 204,
+   "go_id": 88,
+   "name": "icon50",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.753297,
+     0.1735,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 205,
+   "go_id": 89,
+   "name": "icon23",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.494257,
+     -0.454066,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 206,
+   "go_id": 90,
+   "name": "icon64",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.669981,
+     0.317256,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 207,
+   "go_id": 91,
+   "name": "icon51",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.147044,
+     0.48232,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 208,
+   "go_id": 92,
+   "name": "icon35",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.035924,
+     -0.452434,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 209,
+   "go_id": 93,
+   "name": "icon80",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.435538,
+     -0.489091,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 210,
+   "go_id": 94,
+   "name": "icon57",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.004499,
+     0.965311,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 211,
+   "go_id": 95,
+   "name": "icon38",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.966166,
+     -0.607158,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 212,
+   "go_id": 96,
+   "name": "scenario",
+   "layer": 0,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.018307,
+     0.125061,
+     0.087402
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "DB_Scenario",
+     "guid": "3ab947d4aed447247a77266f200f2e9f",
+     "cs": "unity/Assets/Scripts/DB_Scenario.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Scenario",
+     "guid": "8b18850d16573cc4ab9dfb4b72a7cbd7",
+     "cs": "unity/Assets/Scripts/Scenario.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Language_Scenario",
+     "guid": "da21c22d0d1fd644cb1e3323c45ee2f3",
+     "cs": "unity/Assets/Scripts/Language_Scenario.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 213,
+   "go_id": 97,
+   "name": "pt_icon_ef_dun",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.097472,
+     -0.065839
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.428571,
+     1.428571,
+     1.428571
+    ]
+   },
+   "parent": 214,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 214,
+   "go_id": 98,
+   "name": "icon_stage_dun",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.599201,
+     -2.228489,
+     0.140638
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.49,
+     0.49,
+     0.49
+    ]
+   },
+   "parent": 191,
+   "children": [
+    213
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon_dun_sharedassets7_assets_14.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 215,
+   "go_id": 99,
+   "name": "icon67",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.035513,
+     -0.805827,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 216,
+   "go_id": 100,
+   "name": "icon32",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.311139,
+     0.519931,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 217,
+   "go_id": 101,
+   "name": "icon40",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.335873,
+     -0.926462,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 218,
+   "go_id": 102,
+   "name": "icon63",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.545789,
+     0.791576,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon02_sharedassets7_assets_6.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 219,
+   "go_id": 103,
+   "name": "icon31",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.07554,
+     0.826029,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 220,
+   "go_id": 104,
+   "name": "icon37",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.568613,
+     -0.307797,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 221,
+   "go_id": 105,
+   "name": "icon33",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.172741,
+     0.025428,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 222,
+   "go_id": 106,
+   "name": "icon66",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.890155,
+     -0.324735,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 223,
+   "go_id": 107,
+   "name": "icon58",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.394013,
+     1.277629,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon03_sharedassets7_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 224,
+   "go_id": 108,
+   "name": "icon65",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.288794,
+     -0.005642,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 225,
+   "go_id": 109,
+   "name": "icon_stage_active",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.5,
+     1.5,
+     1.5
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon_active_sharedassets7_assets_9.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 226,
+   "go_id": 110,
+   "name": "icon62",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.067368,
+     0.630223,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon05_sharedassets7_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 227,
+   "go_id": 111,
+   "name": "icon09",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.244937,
+     0.360421,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 228,
+   "go_id": 112,
+   "name": "icon25",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.709109,
+     0.18199,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon02_sharedassets7_assets_6.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 229,
+   "go_id": 113,
+   "name": "icon34",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.2156,
+     0.331973,
+     0.2
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 195,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/icon_stage_sharedassets7_assets_98.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon01_sharedassets7_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Icon_Stage",
+     "guid": "b871f36dca05b8a42b29c5df250b785b",
+     "cs": "unity/Assets/Scripts/Icon_Stage.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 230,
+   "go_id": 114,
+   "name": "UI_map",
+   "layer": 0,
+   "tag": "ui",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "UI_map",
+     "guid": "347641d71736a4f46a2a8f6e896b4a43",
+     "cs": "unity/Assets/Scripts/UI_map.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Language_Name",
+     "guid": "36380b50e82695a499e0c7eb3b43f3a5",
+     "cs": "unity/Assets/Scripts/Language_Name.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "General_Stat",
+     "guid": "e42f852ad5da6d44bb41931f575f9643",
+     "cs": "unity/Assets/Scripts/General_Stat.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 231,
+   "go_id": 115,
+   "name": "Main Camera",
+   "layer": 0,
+   "tag": "MainCamera",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "CamScroll",
+     "guid": "6efe82947d971ab409a7ace55075a3f4",
+     "cs": "unity/Assets/Scripts/CamScroll.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 232,
+   "go_id": 116,
+   "name": "PayMgr",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     1.0,
+     -10.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "ChannelMgr",
+     "guid": "be2352d9e30a3bb459e647e7a0d533da",
+     "cs": "unity/Assets/Scripts/ChannelMgr.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 233,
+   "go_id": 117,
+   "name": "pt_icon_ef_dun",
+   "layer": 0,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     2.634947,
+     -1.361181,
+     0.267025
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.7,
+     0.7,
+     0.7
+    ]
+   },
+   "parent": 191,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  }
+ ]
+}

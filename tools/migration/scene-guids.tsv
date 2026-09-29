@@ -1,0 +1,35 @@
+# Original scene build order from mainData BuildSettings.levels (Unity 4.5.4f1).
+# guid is md5(path) and is a LEDGER ONLY -- do not write it into the .unity.meta files.
+# Unity allocates those guids itself on import, so the build settings have to be re-synced
+# to the real guids from inside the Editor (menu: Undead Slayer > Sync Build Settings To
+# The Actual Scene Files). Loading a scene by name cannot resolve until that is done.
+# level_file_in_dump is the APK's serialized scene for that build entry. The dump numbers
+# those files one BELOW the build index (dump levelN == levels[N+1]), verified for all 23.
+# Index 0 (Ready) is the entry with no source data -- it needs a hand-made stand-in.
+# Index 23 (Ending) has dump level22, but that holds a single node.
+# calls_in_scripts counts Application.LoadLevel*"<name>") sites in unity/Assets/Scripts.
+# index	name	path	guid	level_file_in_dump	calls_in_scripts
+0	Ready	Assets/Scene/Ready.unity	19e99e2a5f8d9c24baa77369b0e8ae61	(no dump file)	0
+1	Intro	Assets/Scene/Intro.unity	c3c3165191565bc4a8c7a6e993a4ecce	level0	3
+2	Story	Assets/Scene/Story.unity	1354e026cbd3d1043ad9da7a49256609	level1	5
+3	Story_2	Assets/Scene/Story_2.unity	cd546290756ae5149af35c23287bd21e	level2	1
+4	Story_3	Assets/Scene/Story_3.unity	ef0c4bca7f302be4b87f0276d3c8c537	level3	1
+5	Story_4	Assets/Scene/Story_4.unity	f6c48eec8e626724f84432d8d095dcae	level4	1
+6	Story_5	Assets/Scene/Story_5.unity	0bc169f991c7d7c44b9a46dcfde69d57	level5	1
+7	Map	Assets/Scene/Map.unity	543d313e90140f64797c06e874dcd1b9	level6	19
+8	General	Assets/Scene/General.unity	aaa0b646b886f1f4c89ad75e76b23397	level7	2
+9	Status	Assets/Scene/Status.unity	f37551e96e152a04cb4761bf950b302c	level8	3
+10	Forge	Assets/Scene/Forge.unity	c8ea4f08e9da40b4eb29dcf77ddfd4bc	level9	4
+11	Skill	Assets/Scene/Skill.unity	3b09c47387433f741a5249bad6bada19	level10	4
+12	Pet	Assets/Scene/Pet.unity	3c14bbf3e52e5ee4cbddca55f262e713	level11	2
+13	Archive	Assets/Scene/Archive.unity	c89adcd117028f84cb81ec1e51e42046	level12	2
+14	Extreme	Assets/Scene/Extreme.unity	7dcfbe20ec892ad47a508e5322d7813b	level13	20
+15	Friends	Assets/Scene/Friends.unity	706248fbb06ae5b48af75377c725a5f9	level14	1
+16	Loading	Assets/Scene/Loading.unity	f3ac8bb73486d694e8e1dd7cad9017a5	level15	2
+17	Loading2	Assets/Scene/Loading2.unity	1ebbfd8fe049fe447a6b1cefa9dcd981	level16	1
+18	Stage	Assets/Scene/Stage.unity	83552c20ca18fd04390dfe5b28a37fa6	level17	3
+19	Stage_ride	Assets/Scene/Stage_ride.unity	9661026bdb5da914ba129e27cbeb80fa	level18	1
+20	Result	Assets/Scene/Result.unity	201bb6e23807eeb499ee519b0d40e5eb	level19	1
+21	Result_ride	Assets/Scene/Result_ride.unity	0aa79122ad98bc244a41bf5483c7fc2b	level20	1
+22	Result_Extreme	Assets/Scene/Result_Extreme.unity	b152eb10a1dd4c24a846c9da903550fc	level21	1
+23	Ending	Assets/Scene/Ending.unity	0e628ba96e17e2c429c0d123e9d2c764	level22	1

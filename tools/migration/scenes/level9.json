@@ -1,0 +1,2551 @@
+{
+ "source_level": "level9",
+ "scene_name": "Forge",
+ "scene_path": "Assets/Scene/Forge.unity",
+ "build_index": 10,
+ "node_count": 56,
+ "root_ids": [
+  57,
+  58,
+  106,
+  108,
+  109,
+  110,
+  111,
+  112
+ ],
+ "unsupported_components": {
+  "FlareLayer": 2,
+  "GUILayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 57,
+   "go_id": 1,
+   "name": "ef_result",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     -0.53,
+     0.24,
+     -2.7
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     2.1,
+     2.1,
+     2.1
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ui_hammer_result_sharedassets10_assets_21.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop_simple",
+     "guid": "7c1f21c11c486834faa79cde9b9da365",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 58,
+   "go_id": 2,
+   "name": "ef_hammer",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     -0.53,
+     0.24,
+     -2.8
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     2.0,
+     2.0,
+     2.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ui_hammer_ani_sharedassets10_assets_20.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_forge_hammer",
+     "guid": "7fd866634e395114da62fe37cb87831a",
+     "cs": "unity/Assets/Scripts/Ef_forge_hammer.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 74,
+   "go_id": 3,
+   "name": "spine_dummy",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.03,
+     -0.01,
+     -0.03
+    ],
+    "rot": [
+     0.226671,
+     -0.31692,
+     0.701096,
+     -0.597198
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 83,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 59,
+   "go_id": 4,
+   "name": "m5",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.01653,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 60,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 60,
+   "go_id": 5,
+   "name": "m4",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.01671,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 61,
+   "children": [
+    59
+   ],
+   "components": []
+  },
+  {
+   "id": 61,
+   "go_id": 6,
+   "name": "m3",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.01684,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 62,
+   "children": [
+    60
+   ],
+   "components": []
+  },
+  {
+   "id": 62,
+   "go_id": 7,
+   "name": "m2",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.011344,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 75,
+   "children": [
+    61
+   ],
+   "components": []
+  },
+  {
+   "id": 75,
+   "go_id": 8,
+   "name": "m1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.009408,
+     -0.009043,
+     0.0
+    ],
+    "rot": [
+     0.72721,
+     0.686415,
+     0.0,
+     -1e-06
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 83,
+   "children": [
+    62
+   ],
+   "components": []
+  },
+  {
+   "id": 63,
+   "go_id": 9,
+   "name": "Bip01 R Finger0",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.013468,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.000398,
+     -0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 64,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 64,
+   "go_id": 10,
+   "name": "Bip01 R Hand",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.014706,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.700778,
+     0.092333,
+     -0.092259,
+     0.701337
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 65,
+   "children": [
+    63,
+    107
+   ],
+   "components": []
+  },
+  {
+   "id": 65,
+   "go_id": 11,
+   "name": "Bip01 R Forearm",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.01949,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.14314,
+     0.989702
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 66,
+   "children": [
+    64
+   ],
+   "components": []
+  },
+  {
+   "id": 66,
+   "go_id": 12,
+   "name": "Bip01 R UpperArm",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006759,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.103541,
+     0.368634,
+     -0.106289,
+     0.917655
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 71,
+   "children": [
+    65
+   ],
+   "components": []
+  },
+  {
+   "id": 71,
+   "go_id": 13,
+   "name": "Bip01 R Clavicle",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.00192,
+     0.00139,
+     -0.004321
+    ],
+    "rot": [
+     0.648855,
+     0.057027,
+     0.755858,
+     -0.066433
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 76,
+   "children": [
+    66
+   ],
+   "components": []
+  },
+  {
+   "id": 67,
+   "go_id": 14,
+   "name": "Bip01 L Finger0",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.013468,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.000398,
+     0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 68,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 68,
+   "go_id": 15,
+   "name": "Bip01 L Hand",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.014706,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.700778,
+     -0.092333,
+     -0.092259,
+     0.701337
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 69,
+   "children": [
+    67
+   ],
+   "components": []
+  },
+  {
+   "id": 69,
+   "go_id": 16,
+   "name": "Bip01 L Forearm",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.01949,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.14314,
+     0.989702
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 70,
+   "children": [
+    68
+   ],
+   "components": []
+  },
+  {
+   "id": 70,
+   "go_id": 17,
+   "name": "Bip01 L UpperArm",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006759,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.103541,
+     -0.368634,
+     -0.106289,
+     0.917655
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 72,
+   "children": [
+    69
+   ],
+   "components": []
+  },
+  {
+   "id": 72,
+   "go_id": 18,
+   "name": "Bip01 L Clavicle",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.00192,
+     0.00139,
+     0.004321
+    ],
+    "rot": [
+     -0.648855,
+     -0.057029,
+     0.755858,
+     -0.066431
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 76,
+   "children": [
+    70
+   ],
+   "components": []
+  },
+  {
+   "id": 73,
+   "go_id": 19,
+   "name": "Bip01 Head",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.005915,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.043221,
+     0.999066
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 76,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 76,
+   "go_id": 20,
+   "name": "Bip01 Neck",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.014846,
+     -0.001036,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.087156,
+     0.996195
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 83,
+   "children": [
+    73,
+    72,
+    71
+   ],
+   "components": []
+  },
+  {
+   "id": 83,
+   "go_id": 21,
+   "name": "Bip01 Spine1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.012714,
+     -1e-05,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 86,
+   "children": [
+    76,
+    75,
+    74
+   ],
+   "components": []
+  },
+  {
+   "id": 77,
+   "go_id": 22,
+   "name": "Bip01 R Toe0",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.007059,
+     0.01648,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 78,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 78,
+   "go_id": 23,
+   "name": "Bip01 R Foot",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.015193,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.000455,
+     -0.071485,
+     -0.006351,
+     0.997421
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 79,
+   "children": [
+    77
+   ],
+   "components": []
+  },
+  {
+   "id": 79,
+   "go_id": 24,
+   "name": "Bip01 R Calf",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023779,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.030895,
+     0.999523
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 84,
+   "children": [
+    78
+   ],
+   "components": []
+  },
+  {
+   "id": 84,
+   "go_id": 25,
+   "name": "Bip01 R Thigh",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.006042,
+     -2.9e-05,
+     -0.006941
+    ],
+    "rot": [
+     0.080209,
+     0.994211,
+     0.000428,
+     -0.071485
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 86,
+   "children": [
+    79
+   ],
+   "components": []
+  },
+  {
+   "id": 80,
+   "go_id": 26,
+   "name": "Bip01 L Toe0",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.007059,
+     0.01648,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 81,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 81,
+   "go_id": 27,
+   "name": "Bip01 L Foot",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.015193,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.000455,
+     0.071485,
+     -0.006351,
+     0.997421
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 82,
+   "children": [
+    80
+   ],
+   "components": []
+  },
+  {
+   "id": 82,
+   "go_id": 28,
+   "name": "Bip01 L Calf",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023779,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.030895,
+     0.999523
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 85,
+   "children": [
+    81
+   ],
+   "components": []
+  },
+  {
+   "id": 85,
+   "go_id": 29,
+   "name": "Bip01 L Thigh",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.006042,
+     -2.9e-05,
+     0.006941
+    ],
+    "rot": [
+     0.080209,
+     0.994211,
+     -0.000425,
+     0.071485
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 86,
+   "children": [
+    82
+   ],
+   "components": []
+  },
+  {
+   "id": 86,
+   "go_id": 30,
+   "name": "Bip01 Spine",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006022,
+     -0.000493,
+     0.0
+    ],
+    "rot": [
+     -2e-06,
+     1e-06,
+     0.043222,
+     0.999066
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 87,
+   "children": [
+    85,
+    84,
+    83
+   ],
+   "components": []
+  },
+  {
+   "id": 87,
+   "go_id": 31,
+   "name": "Bip01 Pelvis",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.5,
+     0.5,
+     0.5,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 105,
+   "children": [
+    86
+   ],
+   "components": []
+  },
+  {
+   "id": 97,
+   "go_id": 32,
+   "name": "cha01_08",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume08_sharedassets10_assets_9.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      85,
+      84,
+      86,
+      83,
+      73,
+      76,
+      82,
+      87,
+      70,
+      69,
+      72,
+      66,
+      65,
+      71,
+      68,
+      64,
+      81
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_08_sharedassets10_assets_126.asset"
+    }
+   ]
+  },
+  {
+   "id": 96,
+   "go_id": 33,
+   "name": "cha01_09",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume09_sharedassets10_assets_10.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      73,
+      83,
+      70,
+      75,
+      62,
+      61,
+      60,
+      59,
+      76,
+      69,
+      72,
+      68,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_09_sharedassets10_assets_127.asset"
+    }
+   ]
+  },
+  {
+   "id": 95,
+   "go_id": 34,
+   "name": "cha01_10",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume10_sharedassets10_assets_11.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      83,
+      70,
+      69,
+      72,
+      68,
+      76,
+      73,
+      75,
+      62,
+      61,
+      60,
+      59,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_10_sharedassets10_assets_128.asset"
+    }
+   ]
+  },
+  {
+   "id": 94,
+   "go_id": 35,
+   "name": "cha01_11",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume11_sharedassets10_assets_12.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      83,
+      76,
+      73,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      70,
+      69,
+      72,
+      68,
+      66,
+      65,
+      71,
+      64,
+      75,
+      62,
+      61,
+      60,
+      59
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_11_sharedassets10_assets_129.asset"
+    }
+   ]
+  },
+  {
+   "id": 93,
+   "go_id": 36,
+   "name": "cha01_12",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume12_sharedassets10_assets_13.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      83,
+      76,
+      73,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      70,
+      69,
+      72,
+      68,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_12_sharedassets10_assets_130.asset"
+    }
+   ]
+  },
+  {
+   "id": 98,
+   "go_id": 37,
+   "name": "cha01_07",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume07_sharedassets10_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      85,
+      82,
+      86,
+      87,
+      81,
+      84,
+      83,
+      70,
+      69,
+      72,
+      68,
+      76,
+      73,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_07_sharedassets10_assets_131.asset"
+    }
+   ]
+  },
+  {
+   "id": 92,
+   "go_id": 38,
+   "name": "cha01_13",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume13_sharedassets10_assets_14.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      76,
+      82,
+      85,
+      81,
+      86,
+      83,
+      70,
+      69,
+      72,
+      84,
+      68,
+      73,
+      75,
+      62,
+      61,
+      60,
+      59,
+      87,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_13_sharedassets10_assets_132.asset"
+    }
+   ]
+  },
+  {
+   "id": 91,
+   "go_id": 39,
+   "name": "cha01_14",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume14_sharedassets10_assets_15.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      86,
+      83,
+      70,
+      69,
+      72,
+      85,
+      68,
+      76,
+      73,
+      75,
+      62,
+      61,
+      60,
+      59,
+      82,
+      84,
+      87,
+      81,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_14_sharedassets10_assets_133.asset"
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "go_id": 40,
+   "name": "cha01_15",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume15_sharedassets10_assets_16.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      85,
+      82,
+      86,
+      87,
+      81,
+      84,
+      83,
+      70,
+      69,
+      72,
+      68,
+      76,
+      73,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_15_sharedassets10_assets_134.asset"
+    }
+   ]
+  },
+  {
+   "id": 89,
+   "go_id": 41,
+   "name": "cha01_16",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume16_sharedassets10_assets_17.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      76,
+      82,
+      85,
+      81,
+      86,
+      83,
+      70,
+      69,
+      72,
+      84,
+      68,
+      73,
+      75,
+      62,
+      61,
+      60,
+      59,
+      87,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_16_sharedassets10_assets_135.asset"
+    }
+   ]
+  },
+  {
+   "id": 88,
+   "go_id": 42,
+   "name": "cha01_17",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume17_sharedassets10_assets_18.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      86,
+      83,
+      70,
+      69,
+      72,
+      85,
+      84,
+      68,
+      76,
+      73,
+      87,
+      82,
+      81,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_17_sharedassets10_assets_136.asset"
+    }
+   ]
+  },
+  {
+   "id": 101,
+   "go_id": 43,
+   "name": "cha01_04",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume04_sharedassets10_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      85,
+      82,
+      86,
+      87,
+      81,
+      84,
+      83,
+      70,
+      69,
+      72,
+      68,
+      76,
+      73,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_04_sharedassets10_assets_123.asset"
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "go_id": 44,
+   "name": "cha01_05",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume05_sharedassets10_assets_6.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      73,
+      83,
+      70,
+      75,
+      62,
+      61,
+      60,
+      59,
+      76,
+      69,
+      72,
+      68,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_05_sharedassets10_assets_124.asset"
+    }
+   ]
+  },
+  {
+   "id": 99,
+   "go_id": 45,
+   "name": "cha01_06",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume06_sharedassets10_assets_7.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      73,
+      83,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      70,
+      69,
+      72,
+      68,
+      76,
+      75,
+      62,
+      61,
+      60,
+      59,
+      66,
+      65,
+      71,
+      64
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_06_sharedassets10_assets_125.asset"
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "go_id": 46,
+   "name": "cha01_03",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume03_sharedassets10_assets_4.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      83,
+      70,
+      76,
+      69,
+      72,
+      68,
+      73,
+      66,
+      65,
+      71,
+      64,
+      75,
+      62,
+      61,
+      60,
+      59
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_03_sharedassets10_assets_122.asset"
+    }
+   ]
+  },
+  {
+   "id": 104,
+   "go_id": 47,
+   "name": "cha01_01",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume01_sharedassets2_assets_5.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      85,
+      84,
+      86,
+      83,
+      73,
+      76,
+      82,
+      87,
+      70,
+      69,
+      72,
+      66,
+      65,
+      71,
+      68,
+      64,
+      81
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_01_sharedassets2_assets_140.asset"
+    }
+   ]
+  },
+  {
+   "id": 103,
+   "go_id": 48,
+   "name": "cha01_02",
+   "layer": 8,
+   "tag": null,
+   "active": false,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/costume02_sharedassets10_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      79,
+      78,
+      83,
+      76,
+      73,
+      82,
+      85,
+      86,
+      87,
+      81,
+      84,
+      70,
+      69,
+      72,
+      68,
+      66,
+      65,
+      71,
+      64,
+      75,
+      62,
+      61,
+      60,
+      59
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/cha01_02_sharedassets10_assets_121.asset"
+    }
+   ]
+  },
+  {
+   "id": 105,
+   "go_id": 49,
+   "name": "Bip01",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.04569,
+     0.0
+    ],
+    "rot": [
+     -0.5,
+     0.5,
+     0.5,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [
+    87
+   ],
+   "components": []
+  },
+  {
+   "id": 106,
+   "go_id": 50,
+   "name": "cha_ui",
+   "layer": 8,
+   "tag": "Player",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.25,
+     2.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     6.0,
+     6.0,
+     6.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    105,
+    104,
+    103,
+    102,
+    101,
+    100,
+    99,
+    98,
+    97,
+    96,
+    95,
+    94,
+    93,
+    92,
+    91,
+    90,
+    89,
+    88
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cha_Costume",
+     "guid": "7df7a670819360f4880b69746dc72519",
+     "cs": "unity/Assets/Scripts/Cha_Costume.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "CostumeAniSpeed",
+     "guid": "d3ba271ecf84b0249a89f42e5fb17228",
+     "cs": "unity/Assets/Scripts/CostumeAniSpeed.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 107,
+   "go_id": 51,
+   "name": "dummy_weapon",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006734,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.048076,
+     -0.015332,
+     0.827154,
+     -0.559705
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 64,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cha_Weapon",
+     "guid": "6960600ead0fa60499aadd3186526352",
+     "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 108,
+   "go_id": 52,
+   "name": "pattern",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.057173,
+     0.038,
+     -1.5
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.7,
+     2.4,
+     0.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/color_grey_sharedassets10_assets_2.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 109,
+   "go_id": 53,
+   "name": "ui_3dbg",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.53,
+     -0.075,
+     -3.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     5.2,
+     4.6,
+     0.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ui_bg2_sharedassets7_assets_15.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 110,
+   "go_id": 54,
+   "name": "Camera",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cam_UI",
+     "guid": "3fbb93bd2fc11b54898aa1d42f5c0d46",
+     "cs": "unity/Assets/Scripts/Cam_UI.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 111,
+   "go_id": 55,
+   "name": "ui_forge",
+   "layer": 9,
+   "tag": "ui",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "UI_forge",
+     "guid": "eab04bef0016d7a4ead7b2b8aac5d418",
+     "cs": "unity/Assets/Scripts/UI_forge.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "DB_Weapon",
+     "guid": "be38d884b3d38d64b8f464f6f63eb61a",
+     "cs": "unity/Assets/Scripts/DB_Weapon.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Language_Costume",
+     "guid": "e6da3b8a893911f49aad02f15732484e",
+     "cs": "unity/Assets/Scripts/Language_Costume.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "WeaponStat",
+     "guid": "5ddf0916022adb8439a924e796503eae",
+     "cs": "unity/Assets/Scripts/WeaponStat.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    }
+   ]
+  },
+  {
+   "id": 112,
+   "go_id": 56,
+   "name": "Main Camera",
+   "layer": 0,
+   "tag": "MainCamera",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "UICampos",
+     "guid": "353694a1fb618dd438b1be9971ec551b",
+     "cs": "unity/Assets/Scripts/UICampos.cs",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

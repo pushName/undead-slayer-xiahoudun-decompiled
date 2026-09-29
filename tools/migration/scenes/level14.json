@@ -1,0 +1,108 @@
+{
+ "source_level": "level14",
+ "scene_name": "Friends",
+ "scene_path": "Assets/Scene/Friends.unity",
+ "build_index": 15,
+ "node_count": 2,
+ "root_ids": [
+  3,
+  4
+ ],
+ "unsupported_components": {
+  "GUILayer": 1,
+  "FlareLayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 3,
+   "go_id": 1,
+   "name": "ui_Friends",
+   "layer": 0,
+   "tag": "ui",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "UI_Friends",
+     "guid": "568aa498691ea744d961aae6ddfe3930",
+     "cs": "unity/Assets/Scripts/UI_Friends.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "go_id": 2,
+   "name": "Main Camera",
+   "layer": 0,
+   "tag": "MainCamera",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     3.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "UICampos",
+     "guid": "353694a1fb618dd438b1be9971ec551b",
+     "cs": "unity/Assets/Scripts/UICampos.cs",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

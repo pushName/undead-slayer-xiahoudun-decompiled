@@ -1,0 +1,1641 @@
+{
+ "source_level": "level11",
+ "scene_name": "Pet",
+ "scene_path": "Assets/Scene/Pet.unity",
+ "build_index": 12,
+ "node_count": 46,
+ "root_ids": [
+  47,
+  71,
+  76,
+  89,
+  90,
+  91,
+  92
+ ],
+ "unsupported_components": {
+  "FlareLayer": 2,
+  "GUILayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 48,
+   "go_id": 1,
+   "name": "Bone20(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.018882,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.483959,
+     0.875091
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 49,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 49,
+   "go_id": 2,
+   "name": "Bone19(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024285,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.00776,
+     0.99997
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 64,
+   "children": [
+    48
+   ],
+   "components": []
+  },
+  {
+   "id": 64,
+   "go_id": 3,
+   "name": "Bone18(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.000924,
+     0.00764,
+     -0.014254
+    ],
+    "rot": [
+     0.709284,
+     -0.704923,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 68,
+   "children": [
+    49
+   ],
+   "components": []
+  },
+  {
+   "id": 50,
+   "go_id": 4,
+   "name": "Bone20",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.018882,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.48396,
+     0.87509
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 51,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 51,
+   "go_id": 5,
+   "name": "Bone19",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024285,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.00776,
+     0.99997
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 65,
+   "children": [
+    50
+   ],
+   "components": []
+  },
+  {
+   "id": 65,
+   "go_id": 6,
+   "name": "Bone18",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.000924,
+     0.00764,
+     0.014547
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.704923,
+     0.709284
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 68,
+   "children": [
+    51
+   ],
+   "components": []
+  },
+  {
+   "id": 52,
+   "go_id": 7,
+   "name": "Bone06",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.025152,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.747345,
+     0.664436
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 53,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 53,
+   "go_id": 8,
+   "name": "Bone01",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021255,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.043619,
+     0.999048
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 66,
+   "children": [
+    52
+   ],
+   "components": []
+  },
+  {
+   "id": 66,
+   "go_id": 9,
+   "name": "Bone03",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.002464,
+     -0.005703,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.919664,
+     0.392706
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 68,
+   "children": [
+    53
+   ],
+   "components": []
+  },
+  {
+   "id": 54,
+   "go_id": 10,
+   "name": "Bone25(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021007,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     -1e-06,
+     0.0,
+     0.448289,
+     0.893889
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 55,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 55,
+   "go_id": 11,
+   "name": "Bone24(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.01933,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -1e-06,
+     0.0,
+     0.443283,
+     0.896382
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 56,
+   "children": [
+    54
+   ],
+   "components": []
+  },
+  {
+   "id": 56,
+   "go_id": 12,
+   "name": "Bone23(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.022239,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     1e-06,
+     -0.722886,
+     0.690968
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 61,
+   "children": [
+    55
+   ],
+   "components": []
+  },
+  {
+   "id": 61,
+   "go_id": 13,
+   "name": "Bone22(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.032706,
+     -0.00284,
+     -0.014254
+    ],
+    "rot": [
+     -0.477391,
+     0.878691,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 67,
+   "children": [
+    56
+   ],
+   "components": []
+  },
+  {
+   "id": 57,
+   "go_id": 14,
+   "name": "Bone25",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021007,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.448289,
+     0.893889
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 58,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 58,
+   "go_id": 15,
+   "name": "Bone24",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.01933,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -1e-06,
+     0.0,
+     -0.443283,
+     0.896382
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 59,
+   "children": [
+    57
+   ],
+   "components": []
+  },
+  {
+   "id": 59,
+   "go_id": 16,
+   "name": "Bone23",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.022239,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -1e-06,
+     0.722886,
+     0.690967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 62,
+   "children": [
+    58
+   ],
+   "components": []
+  },
+  {
+   "id": 62,
+   "go_id": 17,
+   "name": "Bone22",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.032706,
+     -0.00284,
+     0.014547
+    ],
+    "rot": [
+     -1e-06,
+     -1e-06,
+     0.878691,
+     -0.477391
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 67,
+   "children": [
+    59
+   ],
+   "components": []
+  },
+  {
+   "id": 60,
+   "go_id": 18,
+   "name": "Bone16",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021629,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.021262,
+     0.999774
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 63,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 63,
+   "go_id": 19,
+   "name": "Bone15",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.032321,
+     -0.007105,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.047891,
+     0.998853
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 67,
+   "children": [
+    60
+   ],
+   "components": []
+  },
+  {
+   "id": 67,
+   "go_id": 20,
+   "name": "Bone02",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023619,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 68,
+   "children": [
+    63,
+    62,
+    61
+   ],
+   "components": []
+  },
+  {
+   "id": 68,
+   "go_id": 21,
+   "name": "Bone14",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.060591,
+     0.023633
+    ],
+    "rot": [
+     0.70674,
+     0.022774,
+     0.70674,
+     0.022774
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 47,
+   "children": [
+    67,
+    66,
+    65,
+    64
+   ],
+   "components": []
+  },
+  {
+   "id": 69,
+   "go_id": 22,
+   "name": "horse",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 47,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/pet_horse_sharedassets2_assets_39.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      67,
+      68,
+      63,
+      66,
+      64,
+      53,
+      49,
+      48,
+      52,
+      56,
+      61,
+      55,
+      54,
+      60,
+      65,
+      51,
+      50,
+      62,
+      59,
+      58,
+      57
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/horse_sharedassets2_assets_124.asset"
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "go_id": 23,
+   "name": "shadow",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.000998,
+     0.004292
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.384615,
+     0.384615,
+     0.834477
+    ]
+   },
+   "parent": 47,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets2_assets_111.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/shadow_cha_sharedassets2_assets_48.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "go_id": 24,
+   "name": "pet_horse_UI",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.08,
+     -0.16,
+     1.0
+    ],
+    "rot": [
+     0.0,
+     0.309017,
+     0.0,
+     -0.951056
+    ],
+    "scale": [
+     6.0,
+     6.0,
+     6.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    68,
+    69,
+    70
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Pet_horse_UI",
+     "guid": "4c0d2463bdbdd99419e81caa8737576c",
+     "cs": "unity/Assets/Scripts/Pet_horse_UI.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 71,
+   "go_id": 25,
+   "name": "ui_3dbg",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.55,
+     0.16,
+     -3.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     5.0,
+     2.5,
+     0.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ui_bg_sharedassets12_assets_2.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 87,
+   "go_id": 26,
+   "name": "Bone02(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.081273,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 86,
+   "children": [
+    88
+   ],
+   "components": []
+  },
+  {
+   "id": 86,
+   "go_id": 27,
+   "name": "Bone01(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.014709,
+     -0.024421,
+     0.02069
+    ],
+    "rot": [
+     0.425963,
+     0.564407,
+     -0.492025,
+     0.50785
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 75,
+   "children": [
+    87
+   ],
+   "components": []
+  },
+  {
+   "id": 88,
+   "go_id": 28,
+   "name": "Bone03(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.085242,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 87,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 82,
+   "go_id": 29,
+   "name": "Bone10",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.02728,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.604237,
+     0.796804
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 80,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 81,
+   "go_id": 30,
+   "name": "Bone05",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.051016,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.033043,
+     0.999454
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 75,
+   "children": [
+    83
+   ],
+   "components": []
+  },
+  {
+   "id": 80,
+   "go_id": 31,
+   "name": "Bone09",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.043164,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.40819,
+     0.912897
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 78,
+   "children": [
+    82
+   ],
+   "components": []
+  },
+  {
+   "id": 85,
+   "go_id": 32,
+   "name": "Bone03",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.085242,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 84,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 74,
+   "go_id": 33,
+   "name": "Bone12",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.05121,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.601935,
+     0.798545
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 73,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 83,
+   "go_id": 34,
+   "name": "Bone06",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.041802,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.017638,
+     0.999844
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 81,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 73,
+   "go_id": 35,
+   "name": "Bone07",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.050487,
+     0.017975,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.71447,
+     0.699667
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 75,
+   "children": [
+    74
+   ],
+   "components": []
+  },
+  {
+   "id": 78,
+   "go_id": 36,
+   "name": "Bone08",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -9.5e-05,
+     -0.003579,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.841008,
+     0.541023
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 75,
+   "children": [
+    80
+   ],
+   "components": []
+  },
+  {
+   "id": 84,
+   "go_id": 37,
+   "name": "Bone02",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.081273,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 79,
+   "children": [
+    85
+   ],
+   "components": []
+  },
+  {
+   "id": 79,
+   "go_id": 38,
+   "name": "Bone01",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.014709,
+     -0.024421,
+     -0.020695
+    ],
+    "rot": [
+     0.50785,
+     -0.492025,
+     0.564408,
+     0.425963
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 75,
+   "children": [
+    84
+   ],
+   "components": []
+  },
+  {
+   "id": 75,
+   "go_id": 39,
+   "name": "Bone04",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.086708,
+     0.035377
+    ],
+    "rot": [
+     0.704992,
+     0.054646,
+     0.704992,
+     0.054646
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 76,
+   "children": [
+    79,
+    86,
+    81,
+    73,
+    78
+   ],
+   "components": []
+  },
+  {
+   "id": 72,
+   "go_id": 40,
+   "name": "eagle1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     -0.007329,
+     -0.02835
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 76,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/pet_eagle_sharedassets2_assets_38.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      73,
+      74,
+      75,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/eagle1_sharedassets2_assets_120.asset"
+    }
+   ]
+  },
+  {
+   "id": 77,
+   "go_id": 41,
+   "name": "shadow",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.13,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     2.0,
+     2.0,
+     2.0
+    ]
+   },
+   "parent": 76,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets2_assets_111.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/shadow_bird_sharedassets2_assets_47.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 76,
+   "go_id": 42,
+   "name": "pet_eagle_UI",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.08,
+     0.02,
+     1.0
+    ],
+    "rot": [
+     0.0,
+     0.342021,
+     0.0,
+     -0.939692
+    ],
+    "scale": [
+     2.0,
+     2.0,
+     2.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    75,
+    72,
+    77
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Pet_eagle_UI",
+     "guid": "f3c075da35bc6dd4cba4ec295f4b94a4",
+     "cs": "unity/Assets/Scripts/Pet_eagle_UI.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 89,
+   "go_id": 43,
+   "name": "Camera",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cam_UI",
+     "guid": "3fbb93bd2fc11b54898aa1d42f5c0d46",
+     "cs": "unity/Assets/Scripts/Cam_UI.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "go_id": 44,
+   "name": "DB_Equip",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     2.1,
+     1.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "DB_EquipItem",
+     "guid": "61740426b3a3ba2439816fce47b11f11",
+     "cs": "unity/Assets/Scripts/DB_EquipItem.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 91,
+   "go_id": 45,
+   "name": "ui_pet",
+   "layer": 9,
+   "tag": "ui",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "UI_pet",
+     "guid": "144b41761be7efd44b637a015de825f9",
+     "cs": "unity/Assets/Scripts/UI_pet.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "DB_PetSkill",
+     "guid": "a13ef7d35cca38442a02d6edd40c8b1a",
+     "cs": "unity/Assets/Scripts/DB_PetSkill.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "DB_angel",
+     "guid": "e05f461f054549a428cc3f3b9de2e0fa",
+     "cs": "unity/Assets/Scripts/DB_angel.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 92,
+   "go_id": 46,
+   "name": "Main Camera",
+   "layer": 0,
+   "tag": "MainCamera",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.7
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "UICampos",
+     "guid": "353694a1fb618dd438b1be9971ec551b",
+     "cs": "unity/Assets/Scripts/UICampos.cs",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

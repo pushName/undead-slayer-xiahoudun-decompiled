@@ -1,0 +1,225 @@
+{
+ "source_level": "level21",
+ "scene_name": "Result_Extreme",
+ "scene_path": "Assets/Scene/Result_Extreme.unity",
+ "build_index": 22,
+ "node_count": 5,
+ "root_ids": [
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "unsupported_components": {
+  "GUILayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 6,
+   "go_id": 1,
+   "name": "bg_result",
+   "layer": 9,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     9.6,
+     6.4,
+     0.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bg_island_sharedassets17_assets_2.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "go_id": 2,
+   "name": "Camera_bg",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.526612
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cam_UI",
+     "guid": "3fbb93bd2fc11b54898aa1d42f5c0d46",
+     "cs": "unity/Assets/Scripts/Cam_UI.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "go_id": 3,
+   "name": "ui_result_extreme",
+   "layer": 0,
+   "tag": "ui",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "UI_result_extreme",
+     "guid": "0d21f6bc0739f9d489a3a39a2ce9c540",
+     "cs": "unity/Assets/Scripts/UI_result_extreme.cs",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "go_id": 4,
+   "name": "Directional light",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.258819,
+     0.0,
+     -0.965926
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Light"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "go_id": 5,
+   "name": "Main_camera",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.11,
+     0.09,
+     0.44
+    ],
+    "rot": [
+     -0.013117,
+     -0.952809,
+     -0.041602,
+     0.30042
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    }
+   ]
+  }
+ ]
+}

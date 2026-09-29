@@ -1,0 +1,340 @@
+{
+ "source_level": "level4",
+ "scene_name": "Story_4",
+ "scene_path": "Assets/Scene/Story_4.unity",
+ "build_index": 5,
+ "node_count": 8,
+ "root_ids": [
+  9,
+  13,
+  14,
+  15,
+  16
+ ],
+ "unsupported_components": {
+  "GUILayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 9,
+   "go_id": 1,
+   "name": "door",
+   "layer": 11,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -1.326911,
+     -0.1
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    11,
+    10,
+    12
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "go_id": 2,
+   "name": "Bone03",
+   "layer": 11,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.154802,
+     0.16147,
+     0.005323
+    ],
+    "rot": [
+     -0.00272,
+     0.707102,
+     0.707102,
+     0.00272
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 9,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 11,
+   "go_id": 3,
+   "name": "Bone01",
+   "layer": 11,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.154733,
+     0.16147,
+     0.007097
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 9,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 12,
+   "go_id": 4,
+   "name": "Object01",
+   "layer": 11,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 9,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/door_b_sharedassets5_assets_4.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      11,
+      10
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/Object01_sharedassets5_assets_8.asset"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "go_id": 5,
+   "name": "back_head",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -1.32,
+     -3.000248
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     0.5,
+     1.0,
+     0.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_50.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/door_a_sharedassets5_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "go_id": 6,
+   "name": "bg_inner",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     12.0,
+     10.0,
+     0.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_50.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bg_story5_sharedassets5_assets_2.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "go_id": 7,
+   "name": "Directional light",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Light"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "go_id": 8,
+   "name": "Main_Camera",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -1.3,
+     -1.0
+    ],
+    "rot": [
+     0.04362,
+     0.0,
+     0.0,
+     -0.999048
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cam_Move_story2",
+     "guid": "4aec82d25e5ec9a4a948ac9e1a794126",
+     "cs": "unity/Assets/Scripts/Cam_Move_story2.cs",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

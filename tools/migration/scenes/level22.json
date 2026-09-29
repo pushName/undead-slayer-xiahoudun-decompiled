@@ -1,0 +1,70 @@
+{
+ "source_level": "level22",
+ "scene_name": "Ending",
+ "scene_path": "Assets/Scene/Ending.unity",
+ "build_index": 23,
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {
+  "GUILayer": 1,
+  "FlareLayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "Main Camera",
+   "layer": 0,
+   "tag": "MainCamera",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     1.0,
+     -10.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ending",
+     "guid": "3c8608f1f43e86645a0f3191f7ed8f1b",
+     "cs": "unity/Assets/Scripts/Ending.cs",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

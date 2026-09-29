@@ -1,0 +1,129 @@
+{
+ "source_level": "level12",
+ "scene_name": "Archive",
+ "scene_path": "Assets/Scene/Archive.unity",
+ "build_index": 13,
+ "node_count": 2,
+ "root_ids": [
+  3,
+  4
+ ],
+ "unsupported_components": {
+  "GUILayer": 1,
+  "FlareLayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 3,
+   "go_id": 1,
+   "name": "ui_archive",
+   "layer": 0,
+   "tag": "ui",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "UI_archive",
+     "guid": "ecdc3de141f6dc548a3d70a19b03c715",
+     "cs": "unity/Assets/Scripts/UI_archive.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Language_Archive",
+     "guid": "7a453026a1fd91b47b596b060fbe8bd4",
+     "cs": "unity/Assets/Scripts/Language_Archive.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Language_Name",
+     "guid": "36380b50e82695a499e0c7eb3b43f3a5",
+     "cs": "unity/Assets/Scripts/Language_Name.cs",
+     "enabled": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "DB_Archive",
+     "guid": "42655ff387a830140a90bed6325b742b",
+     "cs": "unity/Assets/Scripts/DB_Archive.cs",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "go_id": 2,
+   "name": "Main Camera",
+   "layer": 0,
+   "tag": "MainCamera",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "unsupported",
+     "type": "FlareLayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "UICampos",
+     "guid": "353694a1fb618dd438b1be9971ec551b",
+     "cs": "unity/Assets/Scripts/UICampos.cs",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

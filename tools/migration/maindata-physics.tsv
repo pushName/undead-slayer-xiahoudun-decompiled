@@ -1,0 +1,74 @@
+# Unity 4.5.4f1 PhysicsManager (mainData path_id=10) -> Unity 2022.3 DynamicsManager.asset
+# Recorded, NOT applied. 27 of the 32 collision-matrix entries are non-default, so this
+# is load-bearing for combat: it decides which attack layers connect with which targets.
+#
+# Why it is not applied: m_LayerCollisionMatrix is spelled in the YAML as 256 hex chars
+# (32 chunks of 8). Unclear whether each chunk is the uint32's little-endian bytes or its
+# big-endian digits. Unity accepts either silently -- a wrong guess does not error, it
+# permutes every mask's bits and quietly changes which attacks land. One blog post
+# (CSDN 104958961) asserts little-endian; I could not confirm it offline, so I will not
+# write the field on that alone.
+#
+# Recommended fix, which sidesteps the encoding entirely: let Unity serialise the file.
+# A menu item calling Physics.IgnoreLayerCollision(i, j, ignore) for every pair (the
+# only public setter -- verified against UnityEngine.PhysicsModule.xml; there is no
+# Physics.SetLayerCollision), then AssetDatabase.SaveAssets(), writes
+# DynamicsManager.asset in the correct spelling. Verify by reading the 256 hex chars
+# back, decoding to 32 uint32, and asserting they equal the mask_hex column below.
+# Physics.GetIgnoreLayerCollision(a, b) observes Unity's own decoded result, and
+# symmetry (0 of 528 pairs violate it, versus 270 violations under the wrong spelling)
+# is then a cheap invariant to assert.
+#
+# Other Unity 4 physics fields, mapped:
+# kind	unity4_field	value	unity2022_field	action
+scalar	m_Gravity	(0, -9.81, 0)	m_Gravity	already equal - no change
+scalar	m_BounceThreshold	2	m_BounceThreshold	already equal - no change
+scalar	m_RaycastsHitTriggers	True	m_QueriesHitTriggers	already equal - no change
+scalar	m_SolverIterationCount	4	m_DefaultSolverIterations	PROPOSED: 6 -> 4 (safe, plain integer)
+scalar	m_MaxAngularVelocity	7	m_DefaultMaxAngularSpeed	PROPOSED: 50 -> 7; Unity 4's default differs from 2022's, so this is a real behaviour change either way
+scalar	m_SleepVelocity	0.15	-	NO MAPPING: Unity 5 replaced the sleep model with m_SleepThreshold; keep 2022 default 0.005
+scalar	m_SleepAngularVelocity	0.14	-	NO MAPPING: same as above
+scalar	m_MinPenetrationForPenalty	0.01	-	NO MAPPING: penalty solver removed in Unity 5
+scalar	m_DefaultMaterial	None (fileID 0)	m_DefaultMaterial	already equal - no change
+#
+# m_LayerCollisionMatrix: 32 uint32 masks, bit j of entry i = layer i collides with layer j.
+# Verified symmetric (0 violations over all 528 pairs), so the decoded values are correct;
+# only their YAML hex spelling is in question.
+# kind	index	layer_name	mask_dec	mask_hex
+matrix	0	Default	16874	0x000041EA
+matrix	1	TransparentFX	16617	0x000040E9
+matrix	2	Ignore Raycast	16616	0x000040E8
+matrix	3	(unnamed)	4294967295	0xFFFFFFFF
+matrix	4	Water	16616	0x000040E8
+matrix	5	UI	4294967295	0xFFFFFFFF
+matrix	6	(unnamed)	4294967295	0xFFFFFFFF
+matrix	7	(unnamed)	4294967295	0xFFFFFFFF
+matrix	8	unit	4294956521	0xFFFFD5E9
+matrix	9	GUI	16616	0x000040E8
+matrix	10	obj	49640	0x0000C1E8
+matrix	11	loading1	16616	0x000040E8
+matrix	12	general	16872	0x000041E8
+matrix	13	enemyattack	49384	0x0000C0E8
+matrix	14	(unnamed)	4294967295	0xFFFFFFFF
+matrix	15	ally_behit_collider	26088	0x000065E8
+matrix	16	stunattack	16872	0x000041E8
+matrix	17	riseupattack2	16872	0x000041E8
+matrix	18	shockattack	16872	0x000041E8
+matrix	19	darkattack	16872	0x000041E8
+matrix	20	normalattack	16872	0x000041E8
+matrix	21	powerattack	16872	0x000041E8
+matrix	22	skillattack	16872	0x000041E8
+matrix	23	poisonattack	16872	0x000041E8
+matrix	24	deathattack	16872	0x000041E8
+matrix	25	generalattack	16872	0x000041E8
+matrix	26	pierceattack	16872	0x000041E8
+matrix	27	crowdattack	16872	0x000041E8
+matrix	28	pushattack	16872	0x000041E8
+matrix	29	riseupattack	16872	0x000041E8
+matrix	30	burnattack	16872	0x000041E8
+matrix	31	coldattack	16872	0x000041E8
+#
+# concatenated, big-endian digits per uint32 (UNCONFIRMED):
+# 000041ea000040e9000040e8ffffffff000040e8ffffffffffffffffffffffffffffd5e9000040e80000c1e8000040e8000041e80000c0e8ffffffff000065e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8
+# concatenated, little-endian bytes per uint32 (UNCONFIRMED):
+# ea410000e9400000e8400000ffffffffe8400000ffffffffffffffffffffffffe9d5ffffe8400000e8c10000e8400000e8410000e8c00000ffffffffe8650000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000

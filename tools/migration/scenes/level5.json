@@ -1,0 +1,113 @@
+{
+ "source_level": "level5",
+ "scene_name": "Story_5",
+ "scene_path": "Assets/Scene/Story_5.unity",
+ "build_index": 6,
+ "node_count": 2,
+ "root_ids": [
+  3,
+  4
+ ],
+ "unsupported_components": {
+  "GUILayer": 1
+ },
+ "warnings": [],
+ "nodes": [
+  {
+   "id": 3,
+   "go_id": 1,
+   "name": "bg_inner2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     10.0,
+     10.0,
+     10.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bg_story6_sharedassets6_assets_2.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "go_id": 2,
+   "name": "Main_Camera",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.9,
+     -1.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Camera"
+    },
+    {
+     "kind": "unsupported",
+     "type": "GUILayer"
+    },
+    {
+     "kind": "component",
+     "type": "AudioListener"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Cam_Move_story",
+     "guid": "b16c9c8eea6ee2f44b1fafa08921bc85",
+     "cs": "unity/Assets/Scripts/Cam_Move_story.cs",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}
