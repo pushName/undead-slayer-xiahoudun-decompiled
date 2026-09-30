@@ -34,6 +34,9 @@
   "refused:variable-length 'Texture2D[]' on i": 1,
   "cross-file ref dropped": 3
  },
+ "animation_bindings": {
+  "only": 14
+ },
  "warnings": [],
  "nodes": [
   {
@@ -267,6 +270,36 @@
      "guid": "7df7a670819360f4880b69746dc72519",
      "cs": "unity/Assets/Scripts/Cha_Costume.cs",
      "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "costume",
+     "clip_id": "sharedassets10.assets@138",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_138.json",
+     "asset": "Assets/Imported/Animations/costume__sharedassets10_138/costume.anim"
+    },
+    {
+     "name": "fail",
+     "clip_id": "sharedassets10.assets@139",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_139.json",
+     "asset": "Assets/Imported/Animations/fail__sharedassets10_139/fail.anim"
+    },
+    {
+     "name": "fail_loop",
+     "clip_id": "sharedassets10.assets@140",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_140.json",
+     "asset": "Assets/Imported/Animations/fail_loop__sharedassets10_140/fail_loop.anim"
+    },
+    {
+     "name": "open",
+     "clip_id": "sharedassets10.assets@137",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_137.json",
+     "asset": "Assets/Imported/Animations/open__sharedassets10_137/open.anim"
     }
    ]
   },
@@ -3157,6 +3190,22 @@
      "cs": "unity/Assets/Scripts/Pet_eagle_UI.cs",
      "enabled": true
     }
+   ],
+   "animations": [
+    {
+     "name": "fly_flap",
+     "clip_id": "sharedassets2.assets@178",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_178.json",
+     "asset": "Assets/Imported/Animations/fly_flap__sharedassets2_178/fly_flap.anim"
+    },
+    {
+     "name": "fly_glide",
+     "clip_id": "sharedassets2.assets@174",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_174.json",
+     "asset": "Assets/Imported/Animations/fly_glide__sharedassets2_174/fly_glide.anim"
+    }
    ]
   },
   {
@@ -3963,6 +4012,36 @@
      "cs": "unity/Assets/Scripts/Pet_horse_UI.cs",
      "enabled": true
     }
+   ],
+   "animations": [
+    {
+     "name": "horse_cry",
+     "clip_id": "sharedassets2.assets@206",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_206.json",
+     "asset": "Assets/Imported/Animations/horse_cry__sharedassets2_206/horse_cry.anim"
+    },
+    {
+     "name": "horse_jump",
+     "clip_id": "sharedassets2.assets@212",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_212.json",
+     "asset": "Assets/Imported/Animations/horse_jump__sharedassets2_212/horse_jump.anim"
+    },
+    {
+     "name": "horse_run",
+     "clip_id": "sharedassets2.assets@189",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_189.json",
+     "asset": "Assets/Imported/Animations/horse_run__sharedassets2_189/horse_run.anim"
+    },
+    {
+     "name": "horse_stand",
+     "clip_id": "sharedassets2.assets@199",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_199.json",
+     "asset": "Assets/Imported/Animations/horse_stand__sharedassets2_199/horse_stand.anim"
+    }
    ]
   },
   {
@@ -4031,6 +4110,36 @@
     {
      "kind": "component",
      "type": "AudioSource"
+    }
+   ],
+   "animations": [
+    {
+     "name": "drop",
+     "clip_id": "sharedassets20.assets@17",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_17.json",
+     "asset": "Assets/Imported/Animations/drop__sharedassets20_17/drop.anim"
+    },
+    {
+     "name": "drop_i",
+     "clip_id": "sharedassets20.assets@20",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_20.json",
+     "asset": "Assets/Imported/Animations/drop_i__sharedassets20_20/drop_i.anim"
+    },
+    {
+     "name": "invisible",
+     "clip_id": "sharedassets20.assets@19",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_19.json",
+     "asset": "Assets/Imported/Animations/invisible__sharedassets20_19/invisible.anim"
+    },
+    {
+     "name": "open_box",
+     "clip_id": "sharedassets20.assets@18",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_18.json",
+     "asset": "Assets/Imported/Animations/open_box__sharedassets20_18/open_box.anim"
     }
    ]
   },

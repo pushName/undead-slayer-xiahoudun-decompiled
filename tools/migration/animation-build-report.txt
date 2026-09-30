@@ -1,0 +1,17 @@
+===== ANIMATION CLIP BUILD =====
+clips built        : 114  (114 (consumer,state) assets requested), failed 0
+float channels     : 25806
+curve keys         : built 116280 for 38760 source vector keys  (each vector/quaternion curve becomes 3-4 float channels)
+animation events   : 6 persisted via AnimationUtility
+float curves skipped: 0 (classID+attribute, not guessed)
+ambiguous bindings  : 8 (same state name, several candidate clips -- picked by lowest path_id, NOT proven)
+   ambiguous: Story/cha1:idle
+   ambiguous: Story/enemy_story:idle
+   ambiguous: Story/enemy_story:move
+   ambiguous: Story/enemy_story:idle
+   ambiguous: Story/enemy_story:move
+   ambiguous: Story/enemy_story:idle
+   ambiguous: Story/enemy_story:move
+   ambiguous: Stage/cha1:idle
+rotation error AT KEYS   : 0.000 deg  <- assumption free, this is the euler round trip
+rotation error BETWEEN   : 180.000 deg  [sharedassets2.assets@219 / Bip01] <- vs this file's Hermite model of Unity 4, not ground truth

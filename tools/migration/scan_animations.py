@@ -37,9 +37,16 @@ RECON = u4.RECON
 
 # Animation APIs that take a clip/state name as a string literal. Stop() and Rewind() take no
 # name in Unity's API, so they are not matched -- including them manufactured fake clip names.
+#
+# The indexer alternative must list every receiver shape the sources actually use. Measured over
+# all 313 string-indexer sites: 104 of them are base.GetComponent<Animation>()["idle"], which the
+# earlier version (animation / myanimation / anim* / AnimationState*) did not match, so 'idle',
+# 'tornado', 'open_door', 'obj_break', 'cart_destroy' and 'destroy_tower' were invisible to the
+# binding table and AI_StoryEnemy.cs:108 threw at runtime.
 NAME_USE = re.compile(
     r'(?:Play|PlayQueued|CrossFade|CrossFadeQueued|SampleAnimation|IsPlaying)\s*\(\s*"([^"]+)"'
-    r'|(?:\banimation\b|\bmyanimation\b|\banim\w*|AnimationState\w*)\s*(?:\[\s*)?"([^"]+)"\s*\]'
+    r'|(?:\banimation\b|\bmyanimation\b|\banim\w*|AnimationState\w*'
+    r'|GetComponent\s*<\s*Animation\s*>\s*\(\s*\))\s*\[\s*"([^"]+)"\s*\]'
     r'|GetClip\s*\(\s*"([^"]+)"')
 
 
@@ -63,6 +70,28 @@ def requested_names():
     return out, api
 
 
+def script_state_names():
+    """script class -> sorted state names ITS code asks for.
+
+    This is the referring-side table the scene extractor uses to decide which clips an
+    Animation component must register: Play("fly_flap") in Pet_eagle.cs means the object that
+    carries Pet_eagle needs a state named fly_flap. Over-registering is harmless for legacy
+    Animation, a missing name throws, so this drives the binding instead of any geometric guess.
+    """
+    out = collections.defaultdict(set)
+    for root, _dirs, files in os.walk(SCRIPTS):
+        for fn in files:
+            if not fn.endswith(".cs"):
+                continue
+            with open(os.path.join(root, fn), encoding="utf-8", errors="replace") as fh:
+                text = fh.read()
+            for m in NAME_USE.finditer(text):
+                nm = next((g for g in m.groups() if g), None)
+                if nm:
+                    out[fn[:-3]].add(nm)
+    return {k: sorted(v) for k, v in sorted(out.items())}
+
+
 def curve_stats(d):
     """-> (per-list lengths, total keyframes, last key time, curve target paths)."""
     lens = {}
@@ -82,6 +111,30 @@ def curve_stats(d):
             if p:
                 paths.add(str(p))
     return lens, keys, last_t, paths
+
+
+def indexer_receiver_audit():
+    """Every string-indexer site whose receiver is plainly an Animation, for the coverage check.
+
+    The binding table is only as complete as NAME_USE. A receiver shape that regex misses does
+    not look wrong -- it just silently drops a state name, which then throws at runtime
+    (GetComponent<Animation>()["idle"] was missed exactly that way). So count the sites from the
+    source independently and let main() report the delta instead of trusting the regex.
+    """
+    recv = re.compile(r'(.{0,44})\[\s*"([^"]{1,32})"\s*\]', re.S)
+    hits = collections.Counter()
+    for root, _dirs, files in os.walk(SCRIPTS):
+        for fn in files:
+            if not fn.endswith(".cs"):
+                continue
+            with open(os.path.join(root, fn), encoding="utf-8", errors="replace") as fh:
+                text = fh.read()
+            for m in recv.finditer(text):
+                head = m.group(1)
+                if re.search(r'GetComponent\s*<\s*Animation\s*>\s*\(\s*\)$|\banimation$|'
+                             r'\bmyanimation$|\banim\w*$|AnimationState\w*$', head):
+                    hits[m.group(2)] += 1
+    return hits
 
 
 def main():
@@ -241,11 +294,25 @@ def main():
     print("\n  go/no-go for #14: %d/%d of the names the game asks for exist in the assets"
           % (len(present), len(req)))
 
+    # Coverage of the referring side itself, counted independently of NAME_USE. A receiver shape
+    # the regex misses does not look wrong -- it drops a state name that then throws at runtime.
+    audit = indexer_receiver_audit()
+    uncovered = {n: c for n, c in audit.items() if n not in req}
+    print("\n=== indexer coverage audit (independent of NAME_USE) ===")
+    print("  Animation-receiver indexer sites counted from source: %d, over %d names"
+          % (sum(audit.values()), len(audit)))
+    if uncovered:
+        print("  UNCOVERED by the regex -- the binding table is incomplete: %s"
+              % sorted(uncovered.items(), key=lambda x: -x[1]))
+    else:
+        print("  every Animation-receiver site is represented in the table")
+
     out = {
         "clips": [{k: v for k, v in c.items() if k != "lens"} for c in clips],
         "containers": containers,
         "animation_components": anim_comps,
         "requested_names": dict(req),
+        "script_states": script_state_names(),
         "names_present": present,
         "names_missing": missing,
     }

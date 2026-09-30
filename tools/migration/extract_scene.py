@@ -27,6 +27,7 @@ Run:  <unitypy venv python> tools/migration/extract_scene.py level7
 import collections
 import json
 import os
+import re
 import struct
 import sys
 
@@ -100,6 +101,100 @@ def load_json(path):
         return None
     with open(path, encoding="utf-8") as fh:
         return json.load(fh)
+
+
+def _safe(s):
+    return re.sub(r"[^0-9A-Za-z_-]", "_", str(s))
+
+
+def bind_animations(nodes, clip_index, script_states, warnings, stats):
+    """Attach to each Animation-carrying node the clips its own scripts will ask for by name.
+
+    Why names and not geometry: the APK has no AnimationContainer objects and every Animation
+    component's m_Clip is null, so there is no pointer to follow. Bone paths cannot decide it
+    either -- every humanoid reuses the Bip01/... names, which made a path-containment rule bind
+    224 clips to the protagonist. The scripts are the authority: Pet_eagle.cs calls
+    Play("fly_flap"), so the object carrying Pet_eagle needs a state named fly_flap. Registering
+    an extra state is harmless for legacy Animation; a missing one throws.
+
+    Duplicate clip names (idle exists 15 times) are resolved by container-of-the-node's-mesh,
+    then by bone-path containment, then by lowest path_id -- and the rule that won is recorded,
+    so an arbitrary pick is visible instead of silent.
+
+    The asset path is per CONSUMER, and that is load-bearing. A legacy Animation state's name IS
+    the clip's object name, and AssetDatabase.CreateAsset forces object name = file name. One
+    shared asset per clip therefore cannot serve two different state names: measured, Animation.
+    AddClip renamed what it needed and Unity cloned 119 clips INTO Story.unity, taking the file
+    from 320 KB to 47.9 MB and duplicating every curve per scene. Naming the asset exactly after
+    the state, inside a folder per object, lets the scene reference the asset instead.
+    """
+    by_id = {n["id"]: n for n in nodes}
+    by_name = collections.defaultdict(list)
+    for entry in clip_index:
+        by_name[entry["name"]].append(entry)
+
+    def descendants(nid, seen):
+        for cid in by_id[nid].get("children") or []:
+            if cid in by_id and cid not in seen:
+                seen.add(cid)
+                descendants(cid, seen)
+
+    for n in nodes:
+        if not any(c.get("type") == "Animation" for c in n["components"]):
+            continue
+        scripts = [c.get("script") for c in n["components"] if c.get("kind") == "MonoBehaviour"]
+        want = sorted({name for s in scripts for name in script_states.get(s or "", [])})
+        if not want:
+            continue
+        sub = set()
+        descendants(n["id"], sub)
+        sub_names = {by_id[i]["name"] for i in sub}
+        containers = set()
+        for i in sub | {n["id"]}:
+            for c in by_id[i]["components"]:
+                m = re.search(r"_(sharedassets\d+)_assets_", str(c.get("mesh") or ""))
+                if m:
+                    containers.add(m.group(1) + ".assets")
+
+        bound = []
+        for name in want:
+            cands = by_name.get(name)
+            if not cands:
+                stats["missing_name"] += 1
+                warnings.append("%s: script asks for animation state '%s' but no clip in the "
+                                "whole APK has that name" % (n["name"], name))
+                continue
+            pick, how = None, ""
+            if len(cands) == 1:
+                pick, how = cands[0], "only"
+            else:
+                same = [c for c in cands if c["container"] in containers]
+                if len(same) == 1:
+                    pick, how = same[0], "same-container"
+                else:
+                    fits = [c for c in (same or cands)
+                            if c["paths"] and all(p in sub_names for p in c["paths"])]
+                    if len(fits) == 1:
+                        pick, how = fits[0], "path-containment"
+                    else:
+                        pick = sorted(fits or cands, key=lambda c: c["path_id"])[0]
+                        how = "lowest-path-id (ambiguous among %d)" % len(fits or cands)
+                        stats["ambiguous"] += 1
+            stats[how.split(" ")[0]] += 1
+            # One asset per (state name, source clip), not per consumer. The file name must be the
+            # state name (a legacy Animation state IS the clip's object name, and CreateAsset
+            # forces object name = file name), so the FOLDER carries the clip identity. Measured on
+            # this build: 273 (consumer,state) bindings come from 114 distinct clips, so keying on
+            # the consumer stored every shared clip 2.4x over -- 119.8 MB of .anim for ~50 MB of
+            # animation. If #18 later resolves an ambiguous state to different clips per consumer,
+            # that simply adds another folder here; no renaming churn.
+            clip_key = _safe(pick["container"]).replace("_assets", "") + "_" + str(pick["path_id"])
+            bound.append({"name": name, "clip_id": pick["id"], "picked_by": how,
+                          "source_descriptor": pick["descriptor"],
+                          "asset": "Assets/Imported/Animations/%s/%s.anim"
+                                   % (_safe(name) + "__" + clip_key, _safe(name))})
+        if bound:
+            n["animations"] = bound
 
 
 def main():
@@ -323,6 +418,18 @@ def main():
     idx = int(target[5:])
     scene_name = SCENE_ORDER[idx + 1] if idx + 1 < len(SCENE_ORDER) else "?"
 
+    # Animation binding. Both inputs are produced by the animation tools; a missing one is not
+    # fatal -- the scene still rebuilds, just with no states registered, and the gap is reported.
+    clip_index = load_json(os.path.join(mig, "animation-index.json"))
+    survey = load_json(os.path.join(mig, "animations-survey.json"))
+    anim_stats = collections.Counter()
+    if clip_index and survey:
+        bind_animations(nodes, clip_index["clips"], survey.get("script_states", {}),
+                        warnings, anim_stats)
+    else:
+        warnings.append("animation-index.json / animations-survey.json missing -- no Animation "
+                        "component will have states registered")
+
     payload = {
         "source_level": target,
         "scene_name": scene_name,
@@ -332,13 +439,27 @@ def main():
         "root_ids": roots,
         "unsupported_components": dict(unsupported),
         "field_stats": dict(field_stats),
+        "animation_bindings": dict(anim_stats),
         "warnings": warnings,
         "nodes": nodes,
     }
     os.makedirs(OUT_DIR, exist_ok=True)
     out = os.path.join(OUT_DIR, "%s.json" % target)
-    with open(out, "w", encoding="utf-8", newline="\n") as fh:
+    # Write via a temp file and rename. Truncating the destination in place hit intermittent
+    # OSError EINVAL on this machine for whichever level some other process (Editor, indexer)
+    # happened to be reading, which loses a level silently if the caller ignores the exit code.
+    tmp = out + ".tmp"
+    with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
         json.dump(payload, fh, indent=1, ensure_ascii=False)
+    for attempt in range(5):
+        try:
+            os.replace(tmp, out)
+            break
+        except OSError:
+            if attempt == 4:
+                raise
+            import time
+            time.sleep(0.4 * (attempt + 1))
 
     kinds = collections.Counter(
         c["type"] if c["kind"] == "component" else c["kind"]

@@ -91,6 +91,21 @@ namespace UndeadSlayer.Migration
             public int parent;
             public int[] children;
             public Comp[] components;
+            public AnimBinding[] animations;
+        }
+
+        /// <summary>
+        /// One animation state an object's own scripts will ask for, and which .anim asset was
+        /// chosen for it. tools/migration/extract_scene.py derives this from the scripts, because
+        /// the APK carries no AnimationContainer and every Animation.m_Clip is null.
+        /// </summary>
+        [Serializable]
+        private class AnimBinding
+        {
+            public string name;
+            public string asset;
+            public string clip_id;
+            public string picked_by;
         }
 
         [Serializable]
@@ -200,15 +215,29 @@ namespace UndeadSlayer.Migration
                         if (type == null)
                         {
                             missingScripts++;
-                            // Say WHY. FindType filters on IsAssignableFrom(MonoBehaviour), so a null
-                            // here has two different causes, and blaming "not found" would point at a
-                            // missing file when the file is actually present.
-                            // One template per branch, assigned before formatting: "a + b".Fmt(...)
-                            // must be parenthesised or the call binds to b alone and %s leaks through.
-                            var why = FindAnyType(c.script) != null
-                                ? "[SceneRebuilder] %s: script type '%s' EXISTS but is not a MonoBehaviour (%s) -- cannot be attached; this is a property of the original build data, not a lost file"
-                                : "[SceneRebuilder] %s: script type '%s' not found (%s)";
-                            Debug.LogError(why.Fmt(n.name, c.script, c.cs));
+                            // Two different failures, deliberately different severities. FindType
+                            // filters on IsAssignableFrom(MonoBehaviour), so a null means either
+                            // "no such class at all" (our corpus is incomplete -> error) or "the
+                            // class exists but is not a component" (a proven property of the shipped
+                            // data -> warning). The latter happened once in 394 bindings: PayMgr
+                            // binds to ChannelMgr, whose MonoScript names class ChannelMgr in
+                            // Assembly-CSharp.dll, and that class has no base type -- verified with
+                            // ilspycmd on the shipped DLL, and Assembly-CSharp-firstpass.dll has no
+                            // ChannelMgr at all, so there is no second same-named MonoBehaviour.
+                            // Keeping it as an error only buried the real ones under repeat noise.
+                            var nonMono = FindAnyType(c.script);
+                            if (nonMono != null)
+                            {
+                                Debug.LogWarning(
+                                    "[SceneRebuilder] %s: script type '%s' EXISTS but is not a MonoBehaviour (%s) -- cannot be attached; this is a property of the original build data, not a lost file"
+                                    .Fmt(n.name, c.script, c.cs));
+                            }
+                            else
+                            {
+                                Debug.LogError(
+                                    "[SceneRebuilder] %s: script type '%s' not found (%s)"
+                                    .Fmt(n.name, c.script, c.cs));
+                            }
                             continue;
                         }
                         if (go.GetComponent(type) != null)
@@ -410,6 +439,107 @@ namespace UndeadSlayer.Migration
                 }
             }
 
+            // Register the animation states the object's own scripts play, by assigning the
+            // Animation component's clip list through SerializedObject. NOT Animation.AddClip:
+            // AddClip renames the clip to the state name, and since a clip asset's object name is
+            // fixed to its file name, Unity resolved the conflict by CLONING each clip into the
+            // scene -- measured at 119 embedded copies and 47.9 MB for Story.unity, against 320 KB
+            // before. The assets are named after their state now (one folder per consumer), so a
+            // plain reference already carries the right name and nothing has to be renamed.
+            int animStates = 0, animObjects = 0, animMissing = 0, animAmbiguous = 0;
+            var clipGuids = new HashSet<string>();
+            foreach (var n in data.nodes)
+            {
+                if (n.animations == null || n.animations.Length == 0)
+                {
+                    continue;
+                }
+                GameObject goNode;
+                if (!byId.TryGetValue(n.id, out goNode))
+                {
+                    continue;
+                }
+                var anim = goNode.GetComponent<Animation>();
+                if (anim == null)
+                {
+                    animMissing++;
+                    Debug.LogWarning(
+                        "[SceneRebuilder] %s has %d animation states to register but no "
+                        + "Animation component".Fmt(n.name, n.animations.Length));
+                    continue;
+                }
+                var clips = new List<AnimationClip>();
+                foreach (var ab in n.animations)
+                {
+                    if (ab.picked_by != null && ab.picked_by.StartsWith("lowest-path-id"))
+                    {
+                        animAmbiguous++;
+                    }
+                    var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(ab.asset);
+                    if (clip == null)
+                    {
+                        animMissing++;
+                        Debug.LogWarning(
+                            "[SceneRebuilder] %s: clip asset '%s' not found -- run 'Build "
+                            + "AnimationClips From Descriptors' first".Fmt(n.name, ab.asset));
+                        continue;
+                    }
+                    if (clip.name != ab.name)
+                    {
+                        // The state name IS the clip object name for legacy Animation, so a
+                        // mismatch means Play(ab.name) would fail even though the reference is set.
+                        animMissing++;
+                        Debug.LogWarning(
+                            "[SceneRebuilder] %s: '%s' object name is '%s' -- Play(\"%s\") would "
+                            + "not resolve".Fmt(n.name, ab.asset, clip.name, ab.name));
+                        continue;
+                    }
+                    clips.Add(clip);
+                    clipGuids.Add(AssetDatabase.AssetPathToGUID(ab.asset));
+                }
+                if (clips.Count == 0)
+                {
+                    continue;
+                }
+                var animSo = new SerializedObject(anim);
+                var list = animSo.FindProperty("m_Animations");
+                if (list == null)
+                {
+                    Debug.LogWarning("[SceneRebuilder] Animation.m_Animations not serialised in "
+                        + "this Unity version -- states cannot be bound");
+                    continue;
+                }
+                list.arraySize = clips.Count;
+                for (int i = 0; i < clips.Count; i++)
+                {
+                    list.GetArrayElementAtIndex(i).objectReferenceValue = clips[i];
+                }
+                var def = animSo.FindProperty("m_Animation");
+                if (def != null)
+                {
+                    def.objectReferenceValue = clips[0];
+                }
+                animSo.ApplyModifiedPropertiesWithoutUndo();
+                animSo.Update();
+                int landed = 0;
+                var check = animSo.FindProperty("m_Animations");
+                for (int i = 0; i < check.arraySize; i++)
+                {
+                    if (check.GetArrayElementAtIndex(i).objectReferenceValue != null)
+                    {
+                        landed++;
+                    }
+                }
+                if (landed != clips.Count)
+                {
+                    Debug.LogWarning(
+                        "[SceneRebuilder] %s: %d of %d clip references did not land on the "
+                        + "Animation component".Fmt(n.name, clips.Count - landed, clips.Count));
+                }
+                animStates += landed;
+                animObjects++;
+            }
+
             EnsureFolderFor(data.scene_path);
             if (!EditorSceneManager.SaveScene(scene, data.scene_path))
             {
@@ -417,12 +547,38 @@ namespace UndeadSlayer.Migration
                 return;
             }
 
+            // "AddClip succeeded" only proves the in-memory component. Whether the clip list
+            // actually serialised into the scene file is a separate question, so count the clip
+            // guids in the bytes that were just written.
+            int guidsInFile = 0;
+            if (clipGuids.Count > 0)
+            {
+                string saved = Path.Combine(Application.dataPath, "..", data.scene_path);
+                string sceneText = File.Exists(saved) ? File.ReadAllText(saved) : "";
+                foreach (string g in clipGuids)
+                {
+                    if (g.Length > 0 && sceneText.Contains(g))
+                    {
+                        guidsInFile++;
+                    }
+                }
+                if (guidsInFile == 0)
+                {
+                    Debug.LogWarning(
+                        "[SceneRebuilder] %d clip(s) were AddClip'd but NO clip guid appears in "
+                        + "the saved scene file -- Animation's clip list did not persist."
+                        .Fmt(clipGuids.Count));
+                }
+            }
+
             Debug.Log(
-                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
+                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
                 .Fmt(data.source_level, data.scene_path, data.nodes.Length,
                      addedScripts, missingScripts, addedComps, unknownComps,
                      meshesSet, matsSet, missingAssets,
                      fieldsRefs, fieldsVals, fieldsMissing, fieldsLanded, fieldsDropped,
+                     animStates, animObjects, guidsInFile, clipGuids.Count, animMissing,
+                     animAmbiguous,
                      dropped.Any() ? string.Join(", ", dropped) : "none"));
 
             AssetDatabase.Refresh();

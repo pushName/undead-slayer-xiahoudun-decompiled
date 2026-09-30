@@ -16344,12 +16344,12 @@
   "b_attack3_i": 5,
   "b_idle": 10,
   "trans": 4,
-  "move": 13,
-  "down": 14,
-  "down_high": 7,
+  "move": 15,
+  "down": 17,
+  "down_high": 9,
   "m_attack1": 8,
   "m_attack1_i": 9,
-  "idle": 22,
+  "idle": 24,
   "pierced": 2,
   "summon": 4,
   "downforever": 4,
@@ -16357,21 +16357,25 @@
   "bekicked": 2,
   "getup": 2,
   "dead_general": 3,
-  "ride_mon": 2,
-  "ride_mon_shoot": 2,
+  "ride_mon": 3,
+  "ride_mon_shoot": 4,
   "ride_mon_shoot_i": 2,
-  "story_attack1": 2,
-  "story_attack1_i": 2,
-  "story_attack2": 2,
-  "story_attack2_i": 2,
-  "story_attack3": 2,
-  "story_attack3_i": 2,
-  "stop": 2,
-  "dt1": 2,
+  "stop": 4,
+  "story_attack1": 4,
+  "story_attack1_i": 5,
+  "story_attack2": 4,
+  "story_attack2_i": 5,
+  "story_attack3": 4,
+  "story_attack3_i": 5,
+  "wing_fly": 3,
+  "wing_attack": 3,
+  "dt1": 5,
+  "tornado": 3,
   "cart_run": 2,
   "cart_damage": 2,
-  "horse_run": 9,
-  "horse_walk": 1,
+  "horse_walk": 2,
+  "cart_destroy": 1,
+  "horse_run": 17,
   "dead": 9,
   "cast1": 5,
   "cast2": 5,
@@ -16451,52 +16455,390 @@
   "3t": 8,
   "4t": 8,
   "walk_free": 4,
-  "ride2": 9,
+  "ride2": 10,
   "getoff_horse": 2,
   "risecoin": 1,
   "idle_ridestage": 1,
-  "push_door": 1,
-  "horse_cry": 7,
-  "horse_jump": 3,
-  "horse_stand": 9,
-  "costume": 3,
-  "fail": 1,
+  "push_door": 2,
+  "open_door": 1,
+  "horse_jump": 8,
+  "horse_cry": 14,
+  "horse_stand": 14,
+  "costume": 6,
+  "fail": 2,
   "fail_loop": 1,
-  "open": 1,
-  "appear": 1,
-  "fly_chosun": 2,
+  "open": 3,
+  "appear": 5,
+  "fly_chosun": 3,
   "uvU_rotY": 1,
   "bite_ready": 3,
   "bite": 2,
   "bite_i": 2,
-  "snake_move": 1,
-  "flower": 1,
-  "flower_idle": 1,
-  "invisible": 3,
-  "drop": 2,
+  "snake_move": 2,
+  "flower": 2,
+  "flower_idle": 2,
+  "invisible": 6,
+  "open_box": 4,
+  "drop": 3,
   "drop_i": 4,
-  "open_box": 2,
   "junwui_appear": 4,
   "junwui_attack": 4,
   "junwui_idle": 3,
   "junwui_finish": 3,
-  "hurted1": 2,
-  "hurted2": 1,
-  "hurted2_i": 1,
-  "fly_flap": 8,
-  "fly_glide": 3,
-  "wait": 1,
-  "destroy": 2,
-  "beam": 1,
-  "creat": 2,
-  "shoot": 1,
+  "hurted1": 3,
+  "hurted2": 2,
+  "hurted2_i": 3,
+  "obj_break": 1,
+  "fly_flap": 10,
+  "fly_glide": 5,
+  "wait": 2,
+  "creat": 4,
+  "destroy": 4,
+  "beam": 2,
+  "shoot": 2,
   "tank_run": 3,
   "tank_damage": 2,
   "tank_attack": 2,
   "tank_destroy": 2,
-  "wing_start": 2,
-  "wing_fly": 2,
-  "wing_attack": 2
+  "destroy_tower": 1,
+  "wing_start": 2
+ },
+ "script_states": {
+  "AI_Boss01": [
+   "b_attack1",
+   "b_attack1_i",
+   "b_attack2",
+   "b_attack2_i",
+   "b_attack3",
+   "b_attack3_i",
+   "b_down",
+   "b_idle",
+   "b_move",
+   "trans"
+  ],
+  "AI_Enemy01": [
+   "bekicked",
+   "bethrust",
+   "down",
+   "down_high",
+   "downforever",
+   "getup",
+   "idle",
+   "m_attack1",
+   "m_attack1_i",
+   "move",
+   "pierced",
+   "summon"
+  ],
+  "AI_General": [
+   "dead_general",
+   "down",
+   "idle",
+   "m_attack1",
+   "m_attack1_i",
+   "move"
+  ],
+  "AI_Ride_Enemy": [
+   "down",
+   "move"
+  ],
+  "AI_Ride_Enemy2": [
+   "ride_mon",
+   "ride_mon_shoot",
+   "ride_mon_shoot_i"
+  ],
+  "AI_StoryEnemy": [
+   "down",
+   "down_high",
+   "idle",
+   "move",
+   "stop",
+   "story_attack1",
+   "story_attack1_i",
+   "story_attack2",
+   "story_attack2_i",
+   "story_attack3",
+   "story_attack3_i"
+  ],
+  "BossWing": [
+   "wing_attack",
+   "wing_fly"
+  ],
+  "Bullet_explode": [
+   "dt1"
+  ],
+  "Bullet_tornado": [
+   "tornado"
+  ],
+  "Bullet_tornado_b": [
+   "tornado"
+  ],
+  "Cart": [
+   "cart_damage",
+   "cart_destroy",
+   "cart_run",
+   "horse_run",
+   "horse_walk"
+  ],
+  "Cha_Control": [
+   "1t",
+   "2t",
+   "3t",
+   "4t",
+   "attack1",
+   "attack2",
+   "attack3",
+   "attack4",
+   "attack5",
+   "attack_ride1",
+   "attack_ride2",
+   "attackex1",
+   "attackex1_impact",
+   "attackex2",
+   "attackex2_impact",
+   "attackex3",
+   "attackex3_impact",
+   "behitdown",
+   "blocked",
+   "cast1",
+   "cast2",
+   "cast3",
+   "cast4",
+   "change_in",
+   "change_in_atk",
+   "change_out",
+   "dash_attack",
+   "dead",
+   "dodge",
+   "eagle",
+   "eagle_finish",
+   "eagle_shoot",
+   "eagle_start",
+   "evade",
+   "grab10",
+   "grab10_finish",
+   "grab10_finish2",
+   "grab11",
+   "grab11_finish",
+   "grab11_finish2",
+   "grab12",
+   "grab12_finish",
+   "grab12_finish2",
+   "grab20",
+   "grab20_finish",
+   "grab20_finish2",
+   "grab21",
+   "grab21_finish",
+   "grab21_finish2",
+   "grab22",
+   "grab22_finish",
+   "grab22_finish2",
+   "grab30",
+   "grab30_finish",
+   "grab30_finish2",
+   "grabstart",
+   "horse_chacry",
+   "horse_finish",
+   "horse_start",
+   "idle",
+   "jump_changeweapon",
+   "jump_changeweapon_i",
+   "jumpattack_air",
+   "jumpattack_impact",
+   "land_changeweapon",
+   "rapidstab",
+   "ride1",
+   "ride_s",
+   "riseattack",
+   "run",
+   "skill01",
+   "skill02",
+   "skill03",
+   "skill04",
+   "skill_chargesmash",
+   "walk",
+   "walk_free",
+   "wheelwind",
+   "wing",
+   "wing_i"
+  ],
+  "Cha_Control_ride_cha": [
+   "attack_ride1",
+   "attack_ride2",
+   "getoff_horse",
+   "idle_ridestage",
+   "ride1",
+   "ride2",
+   "risecoin"
+  ],
+  "Cha_Control_ride_cha_story1": [
+   "getoff_horse",
+   "ride2"
+  ],
+  "Cha_Control_ride_cha_story2": [
+   "open_door",
+   "push_door",
+   "walk_free"
+  ],
+  "Cha_Control_ride_horse": [
+   "horse_cry",
+   "horse_jump",
+   "horse_run",
+   "horse_stand"
+  ],
+  "Cha_Control_ride_horse_story": [
+   "horse_cry",
+   "horse_run",
+   "horse_stand"
+  ],
+  "Cha_Costume": [
+   "costume",
+   "fail",
+   "fail_loop",
+   "open"
+  ],
+  "Cha_Costume_shop": [
+   "costume"
+  ],
+  "Cha_Skill": [
+   "attackex2",
+   "attackex2_impact",
+   "attackex3",
+   "attackex3_impact",
+   "cast1",
+   "cast2",
+   "cast3",
+   "cast4",
+   "change_in_atk",
+   "dodge",
+   "jumpattack_air",
+   "jumpattack_impact",
+   "rapidstab",
+   "skill01",
+   "skill02",
+   "skill03",
+   "skill04",
+   "skill_chargesmash",
+   "wheelwind",
+   "wing",
+   "wing_i"
+  ],
+  "Chosun": [
+   "appear",
+   "fly_chosun"
+  ],
+  "CostumeAniSpeed": [
+   "costume"
+  ],
+  "Delay_extraEf": [
+   "uvU_rotY"
+  ],
+  "Dragonhead": [
+   "bite",
+   "bite_i",
+   "bite_ready"
+  ],
+  "Dun_Snake": [
+   "snake_move"
+  ],
+  "Flower_cannon": [
+   "flower",
+   "flower_idle"
+  ],
+  "General_dummy": [
+   "change_in",
+   "change_in_atk",
+   "change_out",
+   "dead"
+  ],
+  "GiftBox": [
+   "drop",
+   "drop_i",
+   "invisible",
+   "open_box"
+  ],
+  "GiftBox_extreme": [
+   "drop",
+   "drop_i",
+   "invisible",
+   "open_box"
+  ],
+  "Junwui": [
+   "junwui_appear",
+   "junwui_attack",
+   "junwui_finish",
+   "junwui_idle"
+  ],
+  "Loading_cha": [
+   "ride2"
+  ],
+  "Loading_horse": [
+   "horse_run"
+  ],
+  "Mon_Destroy": [
+   "dt1"
+  ],
+  "NPC1": [
+   "hurted1",
+   "hurted2",
+   "hurted2_i"
+  ],
+  "Obj_break": [
+   "obj_break"
+  ],
+  "Pet_eagle": [
+   "fly_flap",
+   "fly_glide"
+  ],
+  "Pet_eagle_UI": [
+   "fly_flap",
+   "fly_glide"
+  ],
+  "Pet_horse": [
+   "horse_cry",
+   "horse_jump",
+   "horse_run",
+   "horse_stand"
+  ],
+  "Pet_horse_UI": [
+   "horse_cry",
+   "horse_jump",
+   "horse_run",
+   "horse_stand"
+  ],
+  "Sk_fincanon": [
+   "beam",
+   "creat",
+   "destroy",
+   "wait"
+  ],
+  "Sk_machinegun": [
+   "creat",
+   "destroy",
+   "shoot"
+  ],
+  "Tank": [
+   "tank_attack",
+   "tank_damage",
+   "tank_run"
+  ],
+  "Tank_Destroy": [
+   "tank_destroy"
+  ],
+  "Tower_base": [
+   "destroy_tower"
+  ],
+  "UI_forge": [
+   "costume"
+  ],
+  "Wind_axe": [
+   "tornado"
+  ],
+  "Wing": [
+   "wing_attack",
+   "wing_fly",
+   "wing_start"
+  ]
  },
  "names_present": [
   "1t",
@@ -16535,6 +16877,7 @@
   "bite_ready",
   "blocked",
   "cart_damage",
+  "cart_destroy",
   "cart_run",
   "cast1",
   "cast2",
@@ -16548,6 +16891,7 @@
   "dash_attack",
   "dead",
   "destroy",
+  "destroy_tower",
   "dodge",
   "down",
   "down_high",
@@ -16617,8 +16961,10 @@
   "m_attack1",
   "m_attack1_i",
   "move",
+  "obj_break",
   "open",
   "open_box",
+  "open_door",
   "pierced",
   "push_door",
   "rapidstab",
@@ -16649,6 +16995,7 @@
   "tank_damage",
   "tank_destroy",
   "tank_run",
+  "tornado",
   "trans",
   "uvU_rotY",
   "wait",

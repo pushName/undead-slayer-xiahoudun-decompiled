@@ -16,6 +16,9 @@
   "instances decoded": 5,
   "cross-file ref dropped": 1
  },
+ "animation_bindings": {
+  "only": 4
+ },
  "warnings": [],
  "nodes": [
   {
@@ -2291,6 +2294,36 @@
      "guid": "d3ba271ecf84b0249a89f42e5fb17228",
      "cs": "unity/Assets/Scripts/CostumeAniSpeed.cs",
      "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "costume",
+     "clip_id": "sharedassets10.assets@138",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_138.json",
+     "asset": "Assets/Imported/Animations/costume__sharedassets10_138/costume.anim"
+    },
+    {
+     "name": "fail",
+     "clip_id": "sharedassets10.assets@139",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_139.json",
+     "asset": "Assets/Imported/Animations/fail__sharedassets10_139/fail.anim"
+    },
+    {
+     "name": "fail_loop",
+     "clip_id": "sharedassets10.assets@140",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_140.json",
+     "asset": "Assets/Imported/Animations/fail_loop__sharedassets10_140/fail_loop.anim"
+    },
+    {
+     "name": "open",
+     "clip_id": "sharedassets10.assets@137",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_137.json",
+     "asset": "Assets/Imported/Animations/open__sharedassets10_137/open.anim"
     }
    ]
   },

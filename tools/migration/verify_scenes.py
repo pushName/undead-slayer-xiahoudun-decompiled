@@ -54,16 +54,27 @@ NOT_AN_ASSET = {
 def guid_index():
     """guid -> project-relative asset path, from every .meta under unity/Assets."""
     out = {}
+    skipped_meta = []
     assets_root = os.path.join(REPO, "unity")
     for root, _dirs, files in os.walk(assets_root):
         for fn in files:
             if not fn.endswith(".meta"):
                 continue
-            with open(os.path.join(root, fn), "r", encoding="utf-8", errors="replace") as fh:
-                m = re.search(r"^guid: ([0-9a-f]{32})\s*$", fh.read(), re.M)
+            try:
+                with open(os.path.join(root, fn), "r", encoding="utf-8", errors="replace") as fh:
+                    m = re.search(r"^guid: ([0-9a-f]{32})\s*$", fh.read(), re.M)
+            except OSError:
+                # The Editor regenerates .meta files in place, so a walk can race an import and
+                # find the entry gone between listing and opening it. Skip it and say so -- the
+                # alternative is a traceback that looks like a scene defect.
+                skipped_meta.append(os.path.relpath(os.path.join(root, fn), REPO))
+                continue
             if m:
                 rel = os.path.relpath(os.path.join(root, fn)[:-5], assets_root)
                 out[m.group(1)] = rel.replace(os.sep, "/")
+    if skipped_meta:
+        print("note: %d .meta unreadable during the guid sweep (Editor import race), e.g. %s"
+              % (len(skipped_meta), skipped_meta[:2]))
     return out
 
 
@@ -76,7 +87,12 @@ def expected(json_path):
     mat_slots = mesh_slots = 0
     mat_paths = set()
     mesh_paths = set()
+    clip_paths = set()
     for n in d["nodes"]:
+        for a in n.get("animations") or []:
+            p = a.get("asset")
+            if p and os.path.exists(os.path.join(REPO, "unity", p)):
+                clip_paths.add(p)
         for c in n.get("components") or []:
             kinds[c.get("kind")] += 1
             if c.get("kind") == "MonoBehaviour":
@@ -111,6 +127,7 @@ def expected(json_path):
         "mat_paths_here": mat_paths,
         "mesh_slots": mesh_slots,
         "mesh_paths_here": mesh_paths,
+        "clip_paths_here": clip_paths,
     }
 
 
@@ -182,6 +199,11 @@ def actual(scene_path, guids):
         "unresolved": unresolved,
         "mesh_guids": {guids.get(g) for g in mesh_guids if guids.get(g)},
         "mat_guids": {guids.get(g) for g in mat_guids if guids.get(g)},
+        # Animation clips the scene's Animation components reference. Animation's clip list is
+        # rebuilt by SceneRebuilder through Animation.AddClip, and whether that survives
+        # serialisation was an open question -- so it is checked here instead of trusted.
+        "clip_guids": {g for g in refs
+                       if guids.get(g, "").startswith("Assets/Imported/Animations")},
         "empty_materials": empty_by_field.get("m_Materials", 0),
         "null_script_refs": null_ref_total,
         "null_ref_fields": dict(null_refs),
@@ -222,6 +244,8 @@ def build_settings():
 def main():
     verbose = "--verbose" in sys.argv
     guids = guid_index()
+    # reverse map: an expected asset path -> the guid the scene has to reference
+    path_of = {v: k for k, v in guids.items()}
     rows = []
     failures = []
     for jp in sorted(glob.glob(os.path.join(JSON_DIR, "level*.json")),
@@ -230,7 +254,8 @@ def main():
         name = exp["scene_name"]
         sp = os.path.join(SCENE_DIR, name + ".unity")
         if not os.path.exists(sp):
-            rows.append((exp["source_level"], name, "-", "-", "-", "-", "-", "-", "-", "pending"))
+            rows.append((exp["source_level"], name, "-", "-", "-", "-", "-", "-", "-", "-",
+                         "pending"))
             continue
         act = actual(sp, guids)
         go = act["counts"].get("GameObject", 0)
@@ -268,14 +293,20 @@ def main():
         if missing_mat:
             problems.append("%d .mat exist now but no m_Materials entry points at them -- rebuild: %s"
                             % (len(missing_mat), ", ".join(sorted(missing_mat)[:3])))
+        want_clips = {path_of.get(p) for p in exp["clip_paths_here"]} - {None}
+        missing_clip = want_clips - act["clip_guids"]
+        if missing_clip:
+            problems.append("%d bound animation clip(s) are not referenced by this scene -- the "
+                            "clip list did not serialise, rebuild it: %s"
+                            % (len(missing_clip), ", ".join(sorted(missing_clip)[:2])))
         for tid, label in LEGACY_FORBIDDEN.items():
             if act["counts"].get(label, 0):
                 problems.append("legacy component %s survived (it does not exist in 2022)" % label)
         if problems:
             failures.append((name, problems))
         rows.append((exp["source_level"], name, go, mf, rd, mb, act["null_mesh"],
-                     act["empty_materials"], act["null_script_refs"],
-                     "OK" if not problems else "FAIL"))
+                     act["empty_materials"], len(exp["clip_paths_here"]),
+                     act["null_script_refs"], "OK" if not problems else "FAIL"))
         for p in problems:
             print("   !! %s: %s" % (name, p))
         if verbose:
@@ -283,10 +314,11 @@ def main():
                   % (name, act["tags"], act["active"], act["distinct_guid_refs"], act["bytes"]))
 
     print()
-    print("%-9s %-14s %6s %5s %5s %5s %6s %5s %8s %6s"
-          % ("dump", "scene", "GO", "MeshF", "Rend", "MonoB", "noMesh", "noMat", "nullRef", "result"))
+    print("%-9s %-14s %6s %5s %5s %5s %6s %5s %5s %8s %6s"
+          % ("dump", "scene", "GO", "MeshF", "Rend", "MonoB", "noMesh", "noMat", "clips",
+             "nullRef", "result"))
     for r in rows:
-        print("%-9s %-14s %6s %5s %5s %5s %6s %5s %8s %6s" % r)
+        print("%-9s %-14s %6s %5s %5s %5s %6s %5s %5s %8s %6s" % r)
     built = sum(1 for r in rows if r[2] != "-")
     total, good, stale, absent = build_settings()
     print("\nbuild settings: %d entries, %d guid(s) match the .meta, %d stale, %d scene file absent"

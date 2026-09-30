@@ -22,6 +22,9 @@
   "instances decoded": 3,
   "cross-file ref dropped": 1
  },
+ "animation_bindings": {
+  "only": 5
+ },
  "warnings": [],
  "nodes": [
   {
@@ -1114,6 +1117,22 @@
       }
      ]
     }
+   ],
+   "animations": [
+    {
+     "name": "getoff_horse",
+     "clip_id": "sharedassets3.assets@11",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets3_11.json",
+     "asset": "Assets/Imported/Animations/getoff_horse__sharedassets3_11/getoff_horse.anim"
+    },
+    {
+     "name": "ride2",
+     "clip_id": "sharedassets3.assets@10",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets3_10.json",
+     "asset": "Assets/Imported/Animations/ride2__sharedassets3_10/ride2.anim"
+    }
    ]
   },
   {
@@ -1962,6 +1981,29 @@
      "guid": "8e029d0f05754d94488f7e1a9ca34890",
      "cs": "unity/Assets/Scripts/Cha_Control_ride_horse_story.cs",
      "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "horse_cry",
+     "clip_id": "sharedassets2.assets@206",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_206.json",
+     "asset": "Assets/Imported/Animations/horse_cry__sharedassets2_206/horse_cry.anim"
+    },
+    {
+     "name": "horse_run",
+     "clip_id": "sharedassets2.assets@189",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_189.json",
+     "asset": "Assets/Imported/Animations/horse_run__sharedassets2_189/horse_run.anim"
+    },
+    {
+     "name": "horse_stand",
+     "clip_id": "sharedassets2.assets@199",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_199.json",
+     "asset": "Assets/Imported/Animations/horse_stand__sharedassets2_199/horse_stand.anim"
     }
    ]
   },

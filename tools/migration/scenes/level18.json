@@ -35,6 +35,9 @@
   "refused:variable-length 'AudioClip[]' on s": 1,
   "refused:layout consumed 40 of 352 bytes": 1
  },
+ "animation_bindings": {
+  "only": 15
+ },
  "warnings": [],
  "nodes": [
   {
@@ -3605,6 +3608,36 @@
      "kind": "component",
      "type": "Rigidbody"
     }
+   ],
+   "animations": [
+    {
+     "name": "horse_cry",
+     "clip_id": "sharedassets2.assets@206",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_206.json",
+     "asset": "Assets/Imported/Animations/horse_cry__sharedassets2_206/horse_cry.anim"
+    },
+    {
+     "name": "horse_jump",
+     "clip_id": "sharedassets2.assets@212",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_212.json",
+     "asset": "Assets/Imported/Animations/horse_jump__sharedassets2_212/horse_jump.anim"
+    },
+    {
+     "name": "horse_run",
+     "clip_id": "sharedassets2.assets@189",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_189.json",
+     "asset": "Assets/Imported/Animations/horse_run__sharedassets2_189/horse_run.anim"
+    },
+    {
+     "name": "horse_stand",
+     "clip_id": "sharedassets2.assets@199",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_199.json",
+     "asset": "Assets/Imported/Animations/horse_stand__sharedassets2_199/horse_stand.anim"
+    }
    ]
   },
   {
@@ -3764,6 +3797,85 @@
     {
      "kind": "component",
      "type": "AudioSource"
+    }
+   ],
+   "animations": [
+    {
+     "name": "attack_ride1",
+     "clip_id": "sharedassets2.assets@229",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_229.json",
+     "asset": "Assets/Imported/Animations/attack_ride1__sharedassets2_229/attack_ride1.anim"
+    },
+    {
+     "name": "attack_ride2",
+     "clip_id": "sharedassets2.assets@230",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_230.json",
+     "asset": "Assets/Imported/Animations/attack_ride2__sharedassets2_230/attack_ride2.anim"
+    },
+    {
+     "name": "costume",
+     "clip_id": "sharedassets10.assets@138",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_138.json",
+     "asset": "Assets/Imported/Animations/costume__sharedassets10_138/costume.anim"
+    },
+    {
+     "name": "fail",
+     "clip_id": "sharedassets10.assets@139",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_139.json",
+     "asset": "Assets/Imported/Animations/fail__sharedassets10_139/fail.anim"
+    },
+    {
+     "name": "fail_loop",
+     "clip_id": "sharedassets10.assets@140",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_140.json",
+     "asset": "Assets/Imported/Animations/fail_loop__sharedassets10_140/fail_loop.anim"
+    },
+    {
+     "name": "getoff_horse",
+     "clip_id": "sharedassets3.assets@11",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets3_11.json",
+     "asset": "Assets/Imported/Animations/getoff_horse__sharedassets3_11/getoff_horse.anim"
+    },
+    {
+     "name": "idle_ridestage",
+     "clip_id": "sharedassets19.assets@26",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_26.json",
+     "asset": "Assets/Imported/Animations/idle_ridestage__sharedassets19_26/idle_ridestage.anim"
+    },
+    {
+     "name": "open",
+     "clip_id": "sharedassets10.assets@137",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_137.json",
+     "asset": "Assets/Imported/Animations/open__sharedassets10_137/open.anim"
+    },
+    {
+     "name": "ride1",
+     "clip_id": "sharedassets2.assets@227",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_227.json",
+     "asset": "Assets/Imported/Animations/ride1__sharedassets2_227/ride1.anim"
+    },
+    {
+     "name": "ride2",
+     "clip_id": "sharedassets3.assets@10",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets3_10.json",
+     "asset": "Assets/Imported/Animations/ride2__sharedassets3_10/ride2.anim"
+    },
+    {
+     "name": "risecoin",
+     "clip_id": "sharedassets19.assets@20",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_20.json",
+     "asset": "Assets/Imported/Animations/risecoin__sharedassets19_20/risecoin.anim"
     }
    ]
   },

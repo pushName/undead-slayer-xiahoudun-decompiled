@@ -55,6 +55,11 @@
   "refused:variable-length 'Texture[]' on tex": 1,
   "refused:variable-length 'angelkind[]' on a": 1
  },
+ "animation_bindings": {
+  "only": 96,
+  "ambiguous": 1,
+  "lowest-path-id": 1
+ },
  "warnings": [
   "MeshRenderer 533: material[0] sharedassets0.assets!2 not buildable (deferred shader?)"
  ],
@@ -4350,6 +4355,36 @@
       }
      ]
     }
+   ],
+   "animations": [
+    {
+     "name": "change_in",
+     "clip_id": "sharedassets2.assets@290",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_290.json",
+     "asset": "Assets/Imported/Animations/change_in__sharedassets2_290/change_in.anim"
+    },
+    {
+     "name": "change_in_atk",
+     "clip_id": "sharedassets2.assets@291",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_291.json",
+     "asset": "Assets/Imported/Animations/change_in_atk__sharedassets2_291/change_in_atk.anim"
+    },
+    {
+     "name": "change_out",
+     "clip_id": "sharedassets2.assets@289",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_289.json",
+     "asset": "Assets/Imported/Animations/change_out__sharedassets2_289/change_out.anim"
+    },
+    {
+     "name": "dead",
+     "clip_id": "sharedassets2.assets@208",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_208.json",
+     "asset": "Assets/Imported/Animations/dead__sharedassets2_208/dead.anim"
+    }
    ]
   },
   {
@@ -4880,6 +4915,29 @@
      "guid": "01fe45e5a23b5564bb78ff9c914d9a7e",
      "cs": "unity/Assets/Scripts/Wing.cs",
      "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "wing_attack",
+     "clip_id": "sharedassets18.assets@479",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_479.json",
+     "asset": "Assets/Imported/Animations/wing_attack__sharedassets18_479/wing_attack.anim"
+    },
+    {
+     "name": "wing_fly",
+     "clip_id": "sharedassets18.assets@453",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_453.json",
+     "asset": "Assets/Imported/Animations/wing_fly__sharedassets18_453/wing_fly.anim"
+    },
+    {
+     "name": "wing_start",
+     "clip_id": "sharedassets18.assets@507",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_507.json",
+     "asset": "Assets/Imported/Animations/wing_start__sharedassets18_507/wing_start.anim"
     }
    ]
   },
@@ -6873,6 +6931,36 @@
      "kind": "component",
      "type": "SphereCollider"
     }
+   ],
+   "animations": [
+    {
+     "name": "horse_cry",
+     "clip_id": "sharedassets2.assets@206",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_206.json",
+     "asset": "Assets/Imported/Animations/horse_cry__sharedassets2_206/horse_cry.anim"
+    },
+    {
+     "name": "horse_jump",
+     "clip_id": "sharedassets2.assets@212",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_212.json",
+     "asset": "Assets/Imported/Animations/horse_jump__sharedassets2_212/horse_jump.anim"
+    },
+    {
+     "name": "horse_run",
+     "clip_id": "sharedassets2.assets@189",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_189.json",
+     "asset": "Assets/Imported/Animations/horse_run__sharedassets2_189/horse_run.anim"
+    },
+    {
+     "name": "horse_stand",
+     "clip_id": "sharedassets2.assets@199",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_199.json",
+     "asset": "Assets/Imported/Animations/horse_stand__sharedassets2_199/horse_stand.anim"
+    }
    ]
   },
   {
@@ -7233,6 +7321,22 @@
      "guid": "bd56614acbab80f4787cc808edf1c783",
      "cs": "unity/Assets/Scripts/Pet_eagle.cs",
      "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "fly_flap",
+     "clip_id": "sharedassets2.assets@178",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_178.json",
+     "asset": "Assets/Imported/Animations/fly_flap__sharedassets2_178/fly_flap.anim"
+    },
+    {
+     "name": "fly_glide",
+     "clip_id": "sharedassets2.assets@174",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_174.json",
+     "asset": "Assets/Imported/Animations/fly_glide__sharedassets2_174/fly_glide.anim"
     }
    ]
   },
@@ -7865,6 +7969,596 @@
     {
      "kind": "component",
      "type": "SphereCollider"
+    }
+   ],
+   "animations": [
+    {
+     "name": "1t",
+     "clip_id": "sharedassets2.assets@245",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_245.json",
+     "asset": "Assets/Imported/Animations/1t__sharedassets2_245/1t.anim"
+    },
+    {
+     "name": "2t",
+     "clip_id": "sharedassets2.assets@246",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_246.json",
+     "asset": "Assets/Imported/Animations/2t__sharedassets2_246/2t.anim"
+    },
+    {
+     "name": "3t",
+     "clip_id": "sharedassets2.assets@247",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_247.json",
+     "asset": "Assets/Imported/Animations/3t__sharedassets2_247/3t.anim"
+    },
+    {
+     "name": "4t",
+     "clip_id": "sharedassets2.assets@248",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_248.json",
+     "asset": "Assets/Imported/Animations/4t__sharedassets2_248/4t.anim"
+    },
+    {
+     "name": "attack1",
+     "clip_id": "sharedassets2.assets@172",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_172.json",
+     "asset": "Assets/Imported/Animations/attack1__sharedassets2_172/attack1.anim"
+    },
+    {
+     "name": "attack2",
+     "clip_id": "sharedassets2.assets@176",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_176.json",
+     "asset": "Assets/Imported/Animations/attack2__sharedassets2_176/attack2.anim"
+    },
+    {
+     "name": "attack3",
+     "clip_id": "sharedassets2.assets@179",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_179.json",
+     "asset": "Assets/Imported/Animations/attack3__sharedassets2_179/attack3.anim"
+    },
+    {
+     "name": "attack4",
+     "clip_id": "sharedassets2.assets@234",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_234.json",
+     "asset": "Assets/Imported/Animations/attack4__sharedassets2_234/attack4.anim"
+    },
+    {
+     "name": "attack5",
+     "clip_id": "sharedassets2.assets@235",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_235.json",
+     "asset": "Assets/Imported/Animations/attack5__sharedassets2_235/attack5.anim"
+    },
+    {
+     "name": "attack_ride1",
+     "clip_id": "sharedassets2.assets@229",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_229.json",
+     "asset": "Assets/Imported/Animations/attack_ride1__sharedassets2_229/attack_ride1.anim"
+    },
+    {
+     "name": "attack_ride2",
+     "clip_id": "sharedassets2.assets@230",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_230.json",
+     "asset": "Assets/Imported/Animations/attack_ride2__sharedassets2_230/attack_ride2.anim"
+    },
+    {
+     "name": "attackex1",
+     "clip_id": "sharedassets2.assets@237",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_237.json",
+     "asset": "Assets/Imported/Animations/attackex1__sharedassets2_237/attackex1.anim"
+    },
+    {
+     "name": "attackex1_impact",
+     "clip_id": "sharedassets2.assets@238",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_238.json",
+     "asset": "Assets/Imported/Animations/attackex1_impact__sharedassets2_238/attackex1_impact.anim"
+    },
+    {
+     "name": "attackex2",
+     "clip_id": "sharedassets2.assets@239",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_239.json",
+     "asset": "Assets/Imported/Animations/attackex2__sharedassets2_239/attackex2.anim"
+    },
+    {
+     "name": "attackex2_impact",
+     "clip_id": "sharedassets2.assets@240",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_240.json",
+     "asset": "Assets/Imported/Animations/attackex2_impact__sharedassets2_240/attackex2_impact.anim"
+    },
+    {
+     "name": "attackex3",
+     "clip_id": "sharedassets2.assets@241",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_241.json",
+     "asset": "Assets/Imported/Animations/attackex3__sharedassets2_241/attackex3.anim"
+    },
+    {
+     "name": "attackex3_impact",
+     "clip_id": "sharedassets2.assets@242",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_242.json",
+     "asset": "Assets/Imported/Animations/attackex3_impact__sharedassets2_242/attackex3_impact.anim"
+    },
+    {
+     "name": "behitdown",
+     "clip_id": "sharedassets2.assets@202",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_202.json",
+     "asset": "Assets/Imported/Animations/behitdown__sharedassets2_202/behitdown.anim"
+    },
+    {
+     "name": "blocked",
+     "clip_id": "sharedassets2.assets@231",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_231.json",
+     "asset": "Assets/Imported/Animations/blocked__sharedassets2_231/blocked.anim"
+    },
+    {
+     "name": "cast1",
+     "clip_id": "sharedassets2.assets@232",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_232.json",
+     "asset": "Assets/Imported/Animations/cast1__sharedassets2_232/cast1.anim"
+    },
+    {
+     "name": "cast2",
+     "clip_id": "sharedassets2.assets@281",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_281.json",
+     "asset": "Assets/Imported/Animations/cast2__sharedassets2_281/cast2.anim"
+    },
+    {
+     "name": "cast3",
+     "clip_id": "sharedassets2.assets@282",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_282.json",
+     "asset": "Assets/Imported/Animations/cast3__sharedassets2_282/cast3.anim"
+    },
+    {
+     "name": "cast4",
+     "clip_id": "sharedassets2.assets@157",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_157.json",
+     "asset": "Assets/Imported/Animations/cast4__sharedassets2_157/cast4.anim"
+    },
+    {
+     "name": "change_in",
+     "clip_id": "sharedassets2.assets@290",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_290.json",
+     "asset": "Assets/Imported/Animations/change_in__sharedassets2_290/change_in.anim"
+    },
+    {
+     "name": "change_in_atk",
+     "clip_id": "sharedassets2.assets@291",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_291.json",
+     "asset": "Assets/Imported/Animations/change_in_atk__sharedassets2_291/change_in_atk.anim"
+    },
+    {
+     "name": "change_out",
+     "clip_id": "sharedassets2.assets@289",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_289.json",
+     "asset": "Assets/Imported/Animations/change_out__sharedassets2_289/change_out.anim"
+    },
+    {
+     "name": "costume",
+     "clip_id": "sharedassets10.assets@138",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_138.json",
+     "asset": "Assets/Imported/Animations/costume__sharedassets10_138/costume.anim"
+    },
+    {
+     "name": "dash_attack",
+     "clip_id": "sharedassets2.assets@279",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_279.json",
+     "asset": "Assets/Imported/Animations/dash_attack__sharedassets2_279/dash_attack.anim"
+    },
+    {
+     "name": "dead",
+     "clip_id": "sharedassets2.assets@208",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_208.json",
+     "asset": "Assets/Imported/Animations/dead__sharedassets2_208/dead.anim"
+    },
+    {
+     "name": "dodge",
+     "clip_id": "sharedassets2.assets@221",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_221.json",
+     "asset": "Assets/Imported/Animations/dodge__sharedassets2_221/dodge.anim"
+    },
+    {
+     "name": "eagle",
+     "clip_id": "sharedassets2.assets@273",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_273.json",
+     "asset": "Assets/Imported/Animations/eagle__sharedassets2_273/eagle.anim"
+    },
+    {
+     "name": "eagle_finish",
+     "clip_id": "sharedassets2.assets@274",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_274.json",
+     "asset": "Assets/Imported/Animations/eagle_finish__sharedassets2_274/eagle_finish.anim"
+    },
+    {
+     "name": "eagle_shoot",
+     "clip_id": "sharedassets2.assets@272",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_272.json",
+     "asset": "Assets/Imported/Animations/eagle_shoot__sharedassets2_272/eagle_shoot.anim"
+    },
+    {
+     "name": "eagle_start",
+     "clip_id": "sharedassets2.assets@271",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_271.json",
+     "asset": "Assets/Imported/Animations/eagle_start__sharedassets2_271/eagle_start.anim"
+    },
+    {
+     "name": "evade",
+     "clip_id": "sharedassets2.assets@249",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_249.json",
+     "asset": "Assets/Imported/Animations/evade__sharedassets2_249/evade.anim"
+    },
+    {
+     "name": "fail",
+     "clip_id": "sharedassets10.assets@139",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_139.json",
+     "asset": "Assets/Imported/Animations/fail__sharedassets10_139/fail.anim"
+    },
+    {
+     "name": "fail_loop",
+     "clip_id": "sharedassets10.assets@140",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_140.json",
+     "asset": "Assets/Imported/Animations/fail_loop__sharedassets10_140/fail_loop.anim"
+    },
+    {
+     "name": "grab10",
+     "clip_id": "sharedassets2.assets@250",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_250.json",
+     "asset": "Assets/Imported/Animations/grab10__sharedassets2_250/grab10.anim"
+    },
+    {
+     "name": "grab10_finish",
+     "clip_id": "sharedassets2.assets@251",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_251.json",
+     "asset": "Assets/Imported/Animations/grab10_finish__sharedassets2_251/grab10_finish.anim"
+    },
+    {
+     "name": "grab10_finish2",
+     "clip_id": "sharedassets2.assets@252",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_252.json",
+     "asset": "Assets/Imported/Animations/grab10_finish2__sharedassets2_252/grab10_finish2.anim"
+    },
+    {
+     "name": "grab11",
+     "clip_id": "sharedassets2.assets@256",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_256.json",
+     "asset": "Assets/Imported/Animations/grab11__sharedassets2_256/grab11.anim"
+    },
+    {
+     "name": "grab11_finish",
+     "clip_id": "sharedassets2.assets@257",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_257.json",
+     "asset": "Assets/Imported/Animations/grab11_finish__sharedassets2_257/grab11_finish.anim"
+    },
+    {
+     "name": "grab11_finish2",
+     "clip_id": "sharedassets2.assets@258",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_258.json",
+     "asset": "Assets/Imported/Animations/grab11_finish2__sharedassets2_258/grab11_finish2.anim"
+    },
+    {
+     "name": "grab12",
+     "clip_id": "sharedassets2.assets@259",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_259.json",
+     "asset": "Assets/Imported/Animations/grab12__sharedassets2_259/grab12.anim"
+    },
+    {
+     "name": "grab12_finish",
+     "clip_id": "sharedassets2.assets@260",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_260.json",
+     "asset": "Assets/Imported/Animations/grab12_finish__sharedassets2_260/grab12_finish.anim"
+    },
+    {
+     "name": "grab12_finish2",
+     "clip_id": "sharedassets2.assets@261",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_261.json",
+     "asset": "Assets/Imported/Animations/grab12_finish2__sharedassets2_261/grab12_finish2.anim"
+    },
+    {
+     "name": "grab20",
+     "clip_id": "sharedassets2.assets@253",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_253.json",
+     "asset": "Assets/Imported/Animations/grab20__sharedassets2_253/grab20.anim"
+    },
+    {
+     "name": "grab20_finish",
+     "clip_id": "sharedassets2.assets@254",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_254.json",
+     "asset": "Assets/Imported/Animations/grab20_finish__sharedassets2_254/grab20_finish.anim"
+    },
+    {
+     "name": "grab20_finish2",
+     "clip_id": "sharedassets2.assets@255",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_255.json",
+     "asset": "Assets/Imported/Animations/grab20_finish2__sharedassets2_255/grab20_finish2.anim"
+    },
+    {
+     "name": "grab21",
+     "clip_id": "sharedassets2.assets@262",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_262.json",
+     "asset": "Assets/Imported/Animations/grab21__sharedassets2_262/grab21.anim"
+    },
+    {
+     "name": "grab21_finish",
+     "clip_id": "sharedassets2.assets@263",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_263.json",
+     "asset": "Assets/Imported/Animations/grab21_finish__sharedassets2_263/grab21_finish.anim"
+    },
+    {
+     "name": "grab21_finish2",
+     "clip_id": "sharedassets2.assets@264",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_264.json",
+     "asset": "Assets/Imported/Animations/grab21_finish2__sharedassets2_264/grab21_finish2.anim"
+    },
+    {
+     "name": "grab22",
+     "clip_id": "sharedassets2.assets@265",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_265.json",
+     "asset": "Assets/Imported/Animations/grab22__sharedassets2_265/grab22.anim"
+    },
+    {
+     "name": "grab22_finish",
+     "clip_id": "sharedassets2.assets@266",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_266.json",
+     "asset": "Assets/Imported/Animations/grab22_finish__sharedassets2_266/grab22_finish.anim"
+    },
+    {
+     "name": "grab22_finish2",
+     "clip_id": "sharedassets2.assets@267",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_267.json",
+     "asset": "Assets/Imported/Animations/grab22_finish2__sharedassets2_267/grab22_finish2.anim"
+    },
+    {
+     "name": "grab30",
+     "clip_id": "sharedassets2.assets@284",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_284.json",
+     "asset": "Assets/Imported/Animations/grab30__sharedassets2_284/grab30.anim"
+    },
+    {
+     "name": "grab30_finish",
+     "clip_id": "sharedassets2.assets@285",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_285.json",
+     "asset": "Assets/Imported/Animations/grab30_finish__sharedassets2_285/grab30_finish.anim"
+    },
+    {
+     "name": "grab30_finish2",
+     "clip_id": "sharedassets2.assets@286",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_286.json",
+     "asset": "Assets/Imported/Animations/grab30_finish2__sharedassets2_286/grab30_finish2.anim"
+    },
+    {
+     "name": "grabstart",
+     "clip_id": "sharedassets2.assets@292",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_292.json",
+     "asset": "Assets/Imported/Animations/grabstart__sharedassets2_292/grabstart.anim"
+    },
+    {
+     "name": "horse_chacry",
+     "clip_id": "sharedassets2.assets@277",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_277.json",
+     "asset": "Assets/Imported/Animations/horse_chacry__sharedassets2_277/horse_chacry.anim"
+    },
+    {
+     "name": "horse_finish",
+     "clip_id": "sharedassets2.assets@276",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_276.json",
+     "asset": "Assets/Imported/Animations/horse_finish__sharedassets2_276/horse_finish.anim"
+    },
+    {
+     "name": "horse_start",
+     "clip_id": "sharedassets2.assets@275",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_275.json",
+     "asset": "Assets/Imported/Animations/horse_start__sharedassets2_275/horse_start.anim"
+    },
+    {
+     "name": "idle",
+     "clip_id": "sharedassets2.assets@160",
+     "picked_by": "lowest-path-id (ambiguous among 15)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_160.json",
+     "asset": "Assets/Imported/Animations/idle__sharedassets2_160/idle.anim"
+    },
+    {
+     "name": "jump_changeweapon",
+     "clip_id": "sharedassets2.assets@268",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_268.json",
+     "asset": "Assets/Imported/Animations/jump_changeweapon__sharedassets2_268/jump_changeweapon.anim"
+    },
+    {
+     "name": "jump_changeweapon_i",
+     "clip_id": "sharedassets2.assets@270",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_270.json",
+     "asset": "Assets/Imported/Animations/jump_changeweapon_i__sharedassets2_270/jump_changeweapon_i.anim"
+    },
+    {
+     "name": "jumpattack_air",
+     "clip_id": "sharedassets2.assets@243",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_243.json",
+     "asset": "Assets/Imported/Animations/jumpattack_air__sharedassets2_243/jumpattack_air.anim"
+    },
+    {
+     "name": "jumpattack_impact",
+     "clip_id": "sharedassets2.assets@244",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_244.json",
+     "asset": "Assets/Imported/Animations/jumpattack_impact__sharedassets2_244/jumpattack_impact.anim"
+    },
+    {
+     "name": "land_changeweapon",
+     "clip_id": "sharedassets2.assets@269",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_269.json",
+     "asset": "Assets/Imported/Animations/land_changeweapon__sharedassets2_269/land_changeweapon.anim"
+    },
+    {
+     "name": "open",
+     "clip_id": "sharedassets10.assets@137",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_137.json",
+     "asset": "Assets/Imported/Animations/open__sharedassets10_137/open.anim"
+    },
+    {
+     "name": "rapidstab",
+     "clip_id": "sharedassets2.assets@278",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_278.json",
+     "asset": "Assets/Imported/Animations/rapidstab__sharedassets2_278/rapidstab.anim"
+    },
+    {
+     "name": "ride1",
+     "clip_id": "sharedassets2.assets@227",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_227.json",
+     "asset": "Assets/Imported/Animations/ride1__sharedassets2_227/ride1.anim"
+    },
+    {
+     "name": "ride_s",
+     "clip_id": "sharedassets2.assets@228",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_228.json",
+     "asset": "Assets/Imported/Animations/ride_s__sharedassets2_228/ride_s.anim"
+    },
+    {
+     "name": "riseattack",
+     "clip_id": "sharedassets2.assets@293",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_293.json",
+     "asset": "Assets/Imported/Animations/riseattack__sharedassets2_293/riseattack.anim"
+    },
+    {
+     "name": "run",
+     "clip_id": "sharedassets2.assets@158",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_158.json",
+     "asset": "Assets/Imported/Animations/run__sharedassets2_158/run.anim"
+    },
+    {
+     "name": "skill01",
+     "clip_id": "sharedassets2.assets@215",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_215.json",
+     "asset": "Assets/Imported/Animations/skill01__sharedassets2_215/skill01.anim"
+    },
+    {
+     "name": "skill02",
+     "clip_id": "sharedassets2.assets@233",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_233.json",
+     "asset": "Assets/Imported/Animations/skill02__sharedassets2_233/skill02.anim"
+    },
+    {
+     "name": "skill03",
+     "clip_id": "sharedassets2.assets@236",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_236.json",
+     "asset": "Assets/Imported/Animations/skill03__sharedassets2_236/skill03.anim"
+    },
+    {
+     "name": "skill04",
+     "clip_id": "sharedassets2.assets@283",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_283.json",
+     "asset": "Assets/Imported/Animations/skill04__sharedassets2_283/skill04.anim"
+    },
+    {
+     "name": "skill_chargesmash",
+     "clip_id": "sharedassets2.assets@280",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_280.json",
+     "asset": "Assets/Imported/Animations/skill_chargesmash__sharedassets2_280/skill_chargesmash.anim"
+    },
+    {
+     "name": "walk",
+     "clip_id": "sharedassets2.assets@159",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_159.json",
+     "asset": "Assets/Imported/Animations/walk__sharedassets2_159/walk.anim"
+    },
+    {
+     "name": "walk_free",
+     "clip_id": "sharedassets2.assets@187",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_187.json",
+     "asset": "Assets/Imported/Animations/walk_free__sharedassets2_187/walk_free.anim"
+    },
+    {
+     "name": "wheelwind",
+     "clip_id": "sharedassets2.assets@219",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_219.json",
+     "asset": "Assets/Imported/Animations/wheelwind__sharedassets2_219/wheelwind.anim"
+    },
+    {
+     "name": "wing",
+     "clip_id": "sharedassets2.assets@287",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_287.json",
+     "asset": "Assets/Imported/Animations/wing__sharedassets2_287/wing.anim"
+    },
+    {
+     "name": "wing_i",
+     "clip_id": "sharedassets2.assets@288",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_288.json",
+     "asset": "Assets/Imported/Animations/wing_i__sharedassets2_288/wing_i.anim"
     }
    ]
   },

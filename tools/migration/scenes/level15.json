@@ -20,6 +20,9 @@
   "dangling ref dropped": 3,
   "cross-file ref dropped": 3
  },
+ "animation_bindings": {
+  "only": 6
+ },
  "warnings": [],
  "nodes": [
   {
@@ -136,6 +139,43 @@
       }
      ]
     }
+   ],
+   "animations": [
+    {
+     "name": "costume",
+     "clip_id": "sharedassets10.assets@138",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_138.json",
+     "asset": "Assets/Imported/Animations/costume__sharedassets10_138/costume.anim"
+    },
+    {
+     "name": "fail",
+     "clip_id": "sharedassets10.assets@139",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_139.json",
+     "asset": "Assets/Imported/Animations/fail__sharedassets10_139/fail.anim"
+    },
+    {
+     "name": "fail_loop",
+     "clip_id": "sharedassets10.assets@140",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_140.json",
+     "asset": "Assets/Imported/Animations/fail_loop__sharedassets10_140/fail_loop.anim"
+    },
+    {
+     "name": "open",
+     "clip_id": "sharedassets10.assets@137",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets10_137.json",
+     "asset": "Assets/Imported/Animations/open__sharedassets10_137/open.anim"
+    },
+    {
+     "name": "ride2",
+     "clip_id": "sharedassets3.assets@10",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets3_10.json",
+     "asset": "Assets/Imported/Animations/ride2__sharedassets3_10/ride2.anim"
+    }
    ]
   },
   {
@@ -189,6 +229,15 @@
      "guid": "8d80d1ce02b448343977e7b2ba0f3537",
      "cs": "unity/Assets/Scripts/Loading_horse.cs",
      "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "horse_run",
+     "clip_id": "sharedassets2.assets@189",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_189.json",
+     "asset": "Assets/Imported/Animations/horse_run__sharedassets2_189/horse_run.anim"
     }
    ]
   },
