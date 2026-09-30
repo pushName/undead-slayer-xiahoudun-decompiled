@@ -79,3 +79,6 @@ Thumbs.db
 # Python bytecode from the migration probes
 __pycache__/
 *.pyc
+
+# regenerable animation descriptors (50 MB, rebuilt by export_animation_descriptors.py)
+tools/migration/anim_clips/
