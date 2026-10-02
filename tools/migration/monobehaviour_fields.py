@@ -69,7 +69,7 @@ FMT = {"int": "<i", "uint": "<I", "short": "<h", "ushort": "<H", "byte": "<B", "
        "char": "<H", "long": "<q", "ulong": "<Q", "float": "<f", "double": "<d", "LayerMask": "<i"}
 
 CLASS_RE = re.compile(r"^\s*(?:public|internal)?\s*(?:abstract|sealed|partial|static)?\s*"
-                      r"class\s+(\w+)(?:\s*:\s*([\w<>,\. ]+))?\s*\{", re.M)
+                      r"(?:class|struct)\s+(\w+)(?:\s*:\s*([\w<>,\. ]+))?\s*\{", re.M)
 FIELD_RE = re.compile(r"^\t(?:public)\s+(?!static)(?!const)([\w\[\]<>,\s]+?)\s+(\w+)\s*(?:=[^;]*)?;\s*$", re.M)
 
 
@@ -118,52 +118,147 @@ def serializable_fields(cls, classes, depth=0):
     return inherited + own
 
 
-def field_layout(fields):
-    """-> (list of (kind, name, size), reason_to_skip). kind in {value, ref}. Exactly one is set."""
-    layout = []
-    for typ, name in fields:
-        if typ in NON_SERIALIZED:
-            continue
-        if typ.endswith("[]") or typ.startswith("List<") or typ in ("string",):
-            return None, "variable-length %r on %s" % (typ, name)
-        if typ in WIDTHS:
-            w, a = WIDTHS[typ]
-            layout.append(("value", name, typ, w, a))
-        elif typ in STRUCT_TYPES:
-            layout.append(("value", name, typ, STRUCT_TYPES[typ], 4))
-        elif typ in REF_TYPES:
-            layout.append(("ref", name, typ, 8, 4))
-        elif typ.startswith("UnityEngine."):
-            return None, "unmapped engine type %r on %s" % (typ, name)
-        else:
-            return None, "unknown type %r on %s" % (typ, name)
-    return layout, None
+def spec_for(typ, classes, depth=0):
+    """Describe how one serialised value of type `typ` is laid out.
+
+    -> (spec, None) or (None, reason). A spec is a dict:
+         {'kind':'value','type':T,'size':n,'align':a}   fixed scalar / Vector-like
+         {'kind':'ref','type':T}                        8-byte PPtr
+         {'kind':'string'}                              int32 length + bytes + pad to 4
+         {'kind':'array','elem':spec}                   int32 count + elements
+         {'kind':'struct','type':T,'size':n,'align':4,'fields':[(name,spec)]}
+    Only fixed-size structs are accepted, and bool[] is refused outright: whether Unity packs a
+    bool array 1 byte per element or 4 is not something to guess, because the wrong stride can
+    still consume the buffer exactly and then write plausible-looking nonsense.
+    """
+    if depth > 6:
+        return None, "type nesting too deep at %r" % typ
+    m = re.match(r"^(.+)\[\]$", typ) or re.match(r"^List<(.+)>$", typ) or \
+        re.match(r"^IList<(.+)>$", typ)
+    if m:
+        inner, why = spec_for(m.group(1).strip(), classes, depth + 1)
+        if inner is None:
+            return None, why
+        if m.group(1).strip() in ("bool", "sbyte"):
+            return None, "bool[] element stride is not settled (1 vs 4 bytes)"
+        return {"kind": "array", "elem": inner}, None
+    if typ == "string":
+        return {"kind": "string"}, None
+    if typ in WIDTHS:
+        w, a = WIDTHS[typ]
+        return {"kind": "value", "type": typ, "size": w, "align": a}, None
+    if typ in STRUCT_TYPES:
+        return {"kind": "value", "type": typ, "size": STRUCT_TYPES[typ], "align": 4}, None
+    if typ in REF_TYPES:
+        return {"kind": "ref", "type": typ, "size": 8, "align": 4}, None
+    if typ in classes:
+        fields = serializable_fields(typ, classes)
+        if fields is None:
+            return None, "unknown base of %r" % typ
+        if not fields:
+            return None, "struct %r has no parsed fields" % typ
+        subs = []
+        size = 0
+        for t, name in fields:
+            if t in NON_SERIALIZED:
+                continue
+            s, why = spec_for(t, classes, depth + 1)
+            if s is None:
+                return None, "%s (inside %s.%s)" % (why, typ, name)
+            if s["kind"] in ("string", "array"):
+                return None, "variable-length %r inside %s.%s" % (t, typ, name)
+            size = _align(size, s["align"]) + s["size"]
+            subs.append((name, s))
+        return {"kind": "struct", "type": typ, "size": _align(size, 4), "align": 4,
+                "fields": subs}, None
+    if typ.startswith("UnityEngine."):
+        return None, "unmapped engine type %r" % typ
+    return None, "unknown type %r" % typ
 
 
-def decode_instance(raw, fields):
-    """-> ({name: value}, None) or (None, reason). raw is the whole MonoBehaviour record."""
-    layout, why = field_layout(fields)
-    if layout is None:
-        return None, why
+def _read(spec, raw, off, end):
+    """-> (value, new_offset, None) or (None, None, reason)."""
+    k = spec["kind"]
+    off = _align(off, spec.get("align", 4))
+    if k == "value":
+        if off + spec["size"] > end:
+            return None, None, "value overrun"
+        typ = spec["type"]
+        if typ == "bool":
+            return {"bool": bool(raw[off])}, off + 1, None
+        if typ in FMT:
+            v = struct.unpack_from(FMT[typ], raw, off)[0]
+            return ({"float": float(v)} if typ in ("float", "double") else {"int": v}), \
+                off + spec["size"], None
+        vals = list(struct.unpack_from("<%df" % (spec["size"] // 4), raw, off))
+        return {"floats": vals, "vec": typ}, off + spec["size"], None
+    if k == "ref":
+        if off + 8 > end:
+            return None, None, "ref overrun"
+        fid, pid = struct.unpack_from("<ii", raw, off)
+        return {"ref": pid, "file": fid, "type": spec["type"]}, off + 8, None
+    if k == "string":
+        if off + 4 > end:
+            return None, None, "string length overrun"
+        (n,) = struct.unpack_from("<i", raw, off)
+        off += 4
+        if n < 0 or off + n > end:
+            return None, None, "string length %d out of range" % n
+        blob = raw[off:off + n]
+        try:
+            s = blob.decode("utf-8")
+        except UnicodeDecodeError:
+            return None, None, "string bytes are not utf-8"
+        if any(ord(c) < 9 or (13 < ord(c) < 32) or ord(c) == 127 for c in s):
+            return None, None, "string contains control characters -- wrong offset?"
+        return {"str": s}, _align(off + n, 4), None
+    if k == "array":
+        if off + 4 > end:
+            return None, None, "array count overrun"
+        (n,) = struct.unpack_from("<i", raw, off)
+        off += 4
+        if n < 0 or n > 8192:
+            return None, None, "array count %d implausible" % n
+        items = []
+        for _i in range(n):
+            v, off, why = _read(spec["elem"], raw, off, end)
+            if why:
+                return None, None, "array element %d: %s" % (_i, why)
+            items.append(v)
+        return {"arr": items, "elem": spec["elem"].get("type") or spec["elem"]["kind"]}, off, None
+    if k == "struct":
+        if off + spec["size"] > end:
+            return None, None, "struct overrun"
+        vals = {}
+        sub = off
+        for name, s in spec["fields"]:
+            v, sub, why = _read(s, raw, sub, end)
+            if why:
+                return None, None, "%s: %s" % (name, why)
+            vals[name] = v
+        return {"obj": vals, "struct": spec["type"]}, _align(off + spec["size"], 4), None
+    return None, None, "unhandled spec %r" % k
+
+
+def decode_instance(raw, fields, classes=None):
+    """-> ({name: value}, None) or (None, reason). raw is the whole MonoBehaviour record.
+
+    The walk must consume the field region EXACTLY; a leftover or an overrun refuses the whole
+    class rather than emitting a partial guess.
+    """
     off = HEADER_LEN
     end = len(raw)
     out = {}
-    for kind, name, typ, size, align in layout:
-        off = _align(off, align)
-        if off + size > end:
-            return None, "ran out of bytes at %s (need %d at %d, len %d)" % (name, size, off, end)
-        if kind == "ref":
-            fid, pid = struct.unpack_from("<ii", raw, off)
-            out[name] = {"ref": pid, "file": fid, "type": typ}
-        elif typ == "bool":
-            out[name] = {"bool": bool(raw[off])}
-        elif typ in FMT:
-            v = struct.unpack_from(FMT[typ], raw, off)[0]
-            out[name] = {"float": v} if typ in ("float", "double") else {"int": v}
-        else:
-            out[name] = {"floats": list(struct.unpack_from("<%df" % (size // 4), raw, off)),
-                         "vec": typ}
-        off += size
+    for typ, name in fields:
+        if typ in NON_SERIALIZED:
+            continue
+        spec, why = spec_for(typ, classes or {})
+        if spec is None:
+            return None, "%s on %s" % (why, name)
+        v, off, why = _read(spec, raw, off, end)
+        if why:
+            return None, "%s: %s" % (name, why)
+        out[name] = v
     off = _align(off, 4)
     if off != end:
         return None, "layout consumed %d of %d bytes (leftover %d) -- refusing a partial guess" % (
@@ -187,7 +282,7 @@ def decode_for_class(cls, raw):
     fields = serializable_fields(cls, _CLASSES)
     if fields is None:
         return None, "class %s not found in %s" % (cls, SCRIPTS)
-    vals, why = decode_instance(raw, fields)
+    vals, why = decode_instance(raw, fields, _CLASSES)
     if vals is None:
         return None, why
     # list, not dict: the caller relies on field order matching the serialised layout.
@@ -224,7 +319,7 @@ def report():
                 skipped += 1
                 reasons["class not found in sources"] = reasons.get("class not found in sources", 0) + 1
                 continue
-            vals, why = decode_instance(raw, fields)
+            vals, why = decode_instance(raw, fields, classes)
             if vals is None:
                 skipped += 1
                 reasons[why.split("--")[0].strip()[:48]] = reasons.get(why.split("--")[0].strip()[:48], 0) + 1

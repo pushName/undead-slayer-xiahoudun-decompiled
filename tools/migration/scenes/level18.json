@@ -26,13 +26,13 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 12,
-  "dangling ref dropped": 5,
-  "ref set": 12,
-  "cross-file ref dropped": 1,
-  "refused:variable-length 'Transform[]' on m": 1,
-  "refused:variable-length 'Texture[]' on tex": 1,
-  "refused:variable-length 'AudioClip[]' on s": 1,
+  "instances decoded": 15,
+  "dangling ref dropped": 7,
+  "ref set": 16,
+  "cross-file -> asset": 1,
+  "array fully dropped": 2,
+  "cross-file ref dropped": 9,
+  "array set": 1,
   "refused:layout consumed 40 of 352 bytes": 1
  },
  "animation_bindings": {
@@ -2629,7 +2629,15 @@
      "script": "MakeUI",
      "guid": "ec9e1577c93a2194c958a4a39d50f467",
      "cs": "unity/Assets/Scripts/MakeUI.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "main_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/pack_ingame_sharedassets2_assets_37.mat",
+       "t": "Material"
+      }
+     ]
     }
    ]
   },
@@ -2791,7 +2799,20 @@
      "script": "Map_Compose",
      "guid": "dfd24ee525bae154eb87f30d0eae0e71",
      "cs": "unity/Assets/Scripts/Map_Compose.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "dummy_gui",
+       "kind": "node",
+       "node": 186,
+       "t": "Transform"
+      },
+      {
+       "n": "finalmap",
+       "kind": "int",
+       "i": 2
+      }
+     ]
     },
     {
      "kind": "component",
@@ -3602,7 +3623,59 @@
      "script": "Cha_Control_ride_horse",
      "guid": "8ecb4c342f402504ba4d13c030c43e89",
      "cs": "unity/Assets/Scripts/Cha_Control_ride_horse.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "map",
+       "kind": "node",
+       "node": 181,
+       "t": "GameObject"
+      },
+      {
+       "n": "pt_stepfog",
+       "kind": "node",
+       "node": 153,
+       "t": "Transform"
+      },
+      {
+       "n": "tex_stepfog",
+       "kind": "arr",
+       "t": "Texture",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_red_5.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_gress_6.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_waterblob_7.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_snow_4.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_rock_5.png",
+         "t": "Texture"
+        }
+       ]
+      },
+      {
+       "n": "cha1",
+       "kind": "node",
+       "node": 180,
+       "t": "Transform"
+      }
+     ]
     },
     {
      "kind": "component",

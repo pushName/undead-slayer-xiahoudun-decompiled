@@ -14,11 +14,12 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 5,
-  "ref set": 3,
-  "refused:variable-length 'Texture[]' on tex": 1,
+  "instances decoded": 6,
+  "ref set": 4,
+  "array set": 1,
   "dangling ref dropped": 3,
-  "cross-file ref dropped": 3
+  "cross-file -> asset": 2,
+  "cross-file ref dropped": 1
  },
  "animation_bindings": {
   "only": 6
@@ -228,7 +229,47 @@
      "script": "Loading_horse",
      "guid": "8d80d1ce02b448343977e7b2ba0f3537",
      "cs": "unity/Assets/Scripts/Loading_horse.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_stepfog",
+       "kind": "node",
+       "node": 106,
+       "t": "Transform"
+      },
+      {
+       "n": "tex_stepfog",
+       "kind": "arr",
+       "t": "Texture",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_red_5.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_gress_6.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_waterblob_7.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_snow_4.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_footstep_rock_5.png",
+         "t": "Texture"
+        }
+       ]
+      }
+     ]
     }
    ],
    "animations": [
@@ -3312,7 +3353,21 @@
      "script": "Cam_Loading",
      "guid": "4077b65017dc62a4f985df7dcf58d54f",
      "cs": "unity/Assets/Scripts/Cam_Loading.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "txt_loading",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/txt_loading_21.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "black",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_100_104.png",
+       "t": "Texture2D"
+      }
+     ]
     },
     {
      "kind": "component",

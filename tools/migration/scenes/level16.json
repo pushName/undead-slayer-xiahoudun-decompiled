@@ -14,7 +14,7 @@
   "dangling ref dropped": 3,
   "ref set": 2,
   "instances decoded": 5,
-  "cross-file ref dropped": 1
+  "cross-file -> asset": 1
  },
  "animation_bindings": {
   "only": 4
@@ -2501,6 +2501,12 @@
        "kind": "node",
        "node": 108,
        "t": "Transform"
+      },
+      {
+       "n": "txt_loading",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/txt_loading_21.png",
+       "t": "Texture2D"
       }
      ]
     }

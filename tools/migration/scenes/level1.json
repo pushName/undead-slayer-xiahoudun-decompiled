@@ -35,17 +35,16 @@
  },
  "field_stats": {
   "ref set": 13,
-  "instances decoded": 34,
-  "cross-file ref dropped": 10,
-  "dangling ref dropped": 43,
-  "refused:variable-length 'Texture[]' on att": 1,
-  "refused:variable-length 'AudioClip[]' on y": 1,
+  "instances decoded": 38,
+  "cross-file ref dropped": 18,
+  "dangling ref dropped": 47,
+  "array fully dropped": 8,
+  "cross-file -> asset": 5,
+  "array set": 11,
+  "refused:skillyell: array element 105: ref ": 1,
   "refused:layout consumed 40 of 352 bytes": 1,
-  "refused:variable-length 'AudioClip[]' on s": 1,
-  "refused:variable-length 'int[]' on number": 1,
-  "refused:variable-length 'Texture2D[]' on g": 1,
-  "refused:variable-length 'monster[]' on ene": 1,
-  "refused:variable-length 'Transform[]' on e": 1
+  "refused:layout consumed 84 of 396 bytes": 1,
+  "refused:enemy: array count overrun": 1
  },
  "animation_bindings": {
   "only": 109,
@@ -3704,7 +3703,390 @@
      "script": "Monster_efs",
      "guid": "144fbd3111f473e4d9f4803d704ebab7",
      "cs": "unity/Assets/Scripts/Monster_efs.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "split_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/ef_split1_sharedassets2_assets_19.mat",
+       "t": "Material"
+      },
+      {
+       "n": "item_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/item_sharedassets2_assets_29.mat",
+       "t": "Material"
+      },
+      {
+       "n": "hp_bar",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/hpbar_sharedassets2_assets_28.mat",
+       "t": "Material"
+      },
+      {
+       "n": "begrab",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever__sharedassets2_183/downforever.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever2__sharedassets2_201/downforever2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever3__sharedassets2_223/downforever3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever__sharedassets2_210/downforever.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever2__sharedassets2_182/downforever2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever3__sharedassets2_181/downforever3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "bethrust",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust__sharedassets2_191/bethrust.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust2__sharedassets2_207/bethrust2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust3__sharedassets2_224/bethrust3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust__sharedassets2_197/bethrust.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust2__sharedassets2_186/bethrust2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust3__sharedassets2_184/bethrust3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "bekicked",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked__sharedassets2_196/bekicked.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked2__sharedassets2_214/bekicked2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked3__sharedassets2_225/bekicked3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked__sharedassets2_204/bekicked.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked2__sharedassets2_190/bekicked2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked3__sharedassets2_188/bekicked3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "getup",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup__sharedassets2_209/getup.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup2__sharedassets2_218/getup2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup3__sharedassets2_226/getup3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup__sharedassets2_216/getup.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup2__sharedassets2_195/getup2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup3__sharedassets2_192/getup3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "speed_begrab",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "speed_bethrust",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "speed_bekicked",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "speed_getup",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "force_grab",
+       "kind": "arr",
+       "t": "int",
+       "items": [
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        }
+       ]
+      },
+      {
+       "n": "force_kick",
+       "kind": "arr",
+       "t": "int",
+       "items": [
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        }
+       ]
+      },
+      {
+       "n": "story",
+       "kind": "bool",
+       "b": 1
+      }
+     ]
     }
    ]
   },
@@ -4848,7 +5230,21 @@
      "script": "MakeUI",
      "guid": "ec9e1577c93a2194c958a4a39d50f467",
      "cs": "unity/Assets/Scripts/MakeUI.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "main_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/pack_ingame_sharedassets2_assets_37.mat",
+       "t": "Material"
+      },
+      {
+       "n": "mat_txtresult",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/txt_result_sharedassets2_assets_50.mat",
+       "t": "Material"
+      }
+     ]
     }
    ]
   },
@@ -8775,7 +9171,32 @@
      "script": "ImageNumber",
      "guid": "273a5efbdff7daf4a965de42cba3aaf5",
      "cs": "unity/Assets/Scripts/ImageNumber.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "number",
+       "kind": "arr",
+       "t": "int",
+       "items": [
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        }
+       ]
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",

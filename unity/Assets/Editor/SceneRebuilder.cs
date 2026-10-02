@@ -159,6 +159,7 @@ namespace UndeadSlayer.Migration
             var skinJobs = new List<SkinJob>();
             var fieldJobs = new List<FieldJob>();
             int fieldsRefs = 0, fieldsVals = 0, fieldsMissing = 0, fieldsLanded = 0, fieldsDropped = 0;
+            int fieldsNotApplied = 0;
 
             foreach (var n in data.nodes)
             {
@@ -377,6 +378,15 @@ namespace UndeadSlayer.Migration
                         else { fieldsMissing++; continue; }
                         fieldsVals++;
                     }
+                    else if (fv.kind == "arr" || fv.kind == "obj" || fv.kind == "str"
+                             || fv.kind == "asset")
+                    {
+                        // Decoded and present in the JSON, but this pass cannot apply them yet.
+                        // Counted separately so "refused" keeps meaning "something went wrong"
+                        // instead of absorbing work that is simply not implemented.
+                        fieldsNotApplied++;
+                        continue;
+                    }
                     else { fieldsMissing++; continue; }
                     dirty = true;
                 }
@@ -572,11 +582,12 @@ namespace UndeadSlayer.Migration
             }
 
             Debug.Log(
-                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
+                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive, %d decoded but not applicable yet\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
                 .Fmt(data.source_level, data.scene_path, data.nodes.Length,
                      addedScripts, missingScripts, addedComps, unknownComps,
                      meshesSet, matsSet, missingAssets,
                      fieldsRefs, fieldsVals, fieldsMissing, fieldsLanded, fieldsDropped,
+                     fieldsNotApplied,
                      animStates, animObjects, guidsInFile, clipGuids.Count, animMissing,
                      animAmbiguous,
                      dropped.Any() ? string.Join(", ", dropped) : "none"));

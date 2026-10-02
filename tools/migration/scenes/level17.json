@@ -31,29 +31,25 @@
   "ParticleRenderer": 12
  },
  "field_stats": {
-  "instances decoded": 52,
-  "ref set": 21,
-  "cross-file ref dropped": 31,
-  "refused:variable-length 'Material[]' on at": 2,
-  "refused:variable-length 'Texture[]' on eft": 1,
-  "refused:variable-length 'Texture2D[]' on p": 1,
-  "refused:variable-length 'Texture[]' on att": 1,
+  "instances decoded": 61,
+  "ref set": 28,
+  "cross-file ref dropped": 41,
+  "array set": 21,
+  "cross-file -> asset": 7,
+  "array fully dropped": 3,
   "refused:layout consumed 88 of 1648 bytes": 1,
-  "refused:variable-length 'AudioClip[]' on y": 1,
-  "refused:variable-length 'int[]' on isskill": 1,
-  "refused:variable-length 'AudioClip[]' on s": 1,
-  "refused:variable-length 'Transform[]' on c": 1,
+  "refused:skillyell: array element 110: ref ": 1,
+  "refused:bool[] element stride is not settl": 1,
   "refused:unknown type 'skillset[,]' on ss": 1,
   "refused:unknown type 'petset[,]' on ps": 1,
-  "refused:variable-length 'Transform[]' on s": 1,
-  "refused:variable-length 'monster[]' on ene": 1,
-  "refused:variable-length 'bossmonster[]' on": 1,
-  "refused:ran out of bytes at g_maxhp": 1,
-  "refused:variable-length 'generalset[]' on ": 1,
-  "refused:variable-length 'stagestat[]' on s": 1,
-  "refused:variable-length 'string' on aninam": 1,
-  "refused:variable-length 'Texture[]' on tex": 1,
-  "refused:variable-length 'angelkind[]' on a": 1
+  "refused:cur_general: value overrun": 1,
+  "refused:enemy: array count overrun": 1,
+  "refused:boss: array count overrun": 1,
+  "refused:g_maxhp: value overrun": 1,
+  "refused:gs: array count overrun": 1,
+  "refused:st: array count overrun": 1,
+  "string set": 1,
+  "refused:ag: array count overrun": 1
  },
  "animation_bindings": {
   "only": 96,
@@ -5179,7 +5175,41 @@
      "script": "Attribute_swing",
      "guid": "af66594b89486be4f9ec243570c22b8e",
      "cs": "unity/Assets/Scripts/Attribute_swing.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "attribute_mat",
+       "kind": "arr",
+       "t": "Material",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing1_sharedassets2_assets_21.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing2_sharedassets18_assets_52.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing3_sharedassets18_assets_53.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing4_sharedassets18_assets_54.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing5_sharedassets18_assets_55.mat",
+         "t": "Material"
+        }
+       ]
+      }
+     ]
     }
    ]
   },
@@ -6307,7 +6337,26 @@
      "script": "Ef_energy_gather",
      "guid": "9c84402772944f44881ba24cebcea45d",
      "cs": "unity/Assets/Scripts/Ef_energy_gather.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "eftex",
+       "kind": "arr",
+       "t": "Texture",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/ef_energygather_298.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/ef_energygather2_309.png",
+         "t": "Texture"
+        }
+       ]
+      }
+     ]
     }
    ]
   },
@@ -6494,7 +6543,31 @@
      "script": "Ef_boom",
      "guid": "f3b321d78c8825e4991295a08c377792",
      "cs": "unity/Assets/Scripts/Ef_boom.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pttex",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_boom1_162.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_boom2_175.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_boom3_198.png",
+         "t": "Texture2D"
+        }
+       ]
+      }
+     ]
     },
     {
      "kind": "component",
@@ -6588,7 +6661,484 @@
      "script": "Monster_efs",
      "guid": "144fbd3111f473e4d9f4803d704ebab7",
      "cs": "unity/Assets/Scripts/Monster_efs.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_itemdrop",
+       "kind": "node",
+       "node": 451,
+       "t": "Transform"
+      },
+      {
+       "n": "attribute_tex",
+       "kind": "arr",
+       "t": "Texture",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bomb_sphere_217.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/petrify_216.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/att_elec_184.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_ki_109.png",
+         "t": "Texture"
+        }
+       ]
+      },
+      {
+       "n": "blood_mat",
+       "kind": "arr",
+       "t": "Material",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/blood_sharedassets2_assets_3.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/blood_fire_sharedassets18_assets_13.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/blood_ice_sharedassets18_assets_14.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/blood_elec_sharedassets18_assets_12.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/blood_sharedassets2_assets_3.mat",
+         "t": "Material"
+        }
+       ]
+      },
+      {
+       "n": "split_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/ef_split1_sharedassets2_assets_19.mat",
+       "t": "Material"
+      },
+      {
+       "n": "item_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/item_sharedassets2_assets_29.mat",
+       "t": "Material"
+      },
+      {
+       "n": "main_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/pack_ingame_sharedassets2_assets_37.mat",
+       "t": "Material"
+      },
+      {
+       "n": "hp_bar",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/hpbar_sharedassets2_assets_28.mat",
+       "t": "Material"
+      },
+      {
+       "n": "begrab",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever__sharedassets2_183/downforever.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever2__sharedassets2_201/downforever2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever3__sharedassets2_223/downforever3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever__sharedassets2_210/downforever.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever2__sharedassets2_182/downforever2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/downforever3__sharedassets2_181/downforever3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "bethrust",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust__sharedassets2_191/bethrust.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust2__sharedassets2_207/bethrust2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust3__sharedassets2_224/bethrust3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust__sharedassets2_197/bethrust.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust2__sharedassets2_186/bethrust2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bethrust3__sharedassets2_184/bethrust3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "bekicked",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked__sharedassets2_196/bekicked.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked2__sharedassets2_214/bekicked2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked3__sharedassets2_225/bekicked3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked__sharedassets2_204/bekicked.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked2__sharedassets2_190/bekicked2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/bekicked3__sharedassets2_188/bekicked3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "getup",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup__sharedassets2_209/getup.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup2__sharedassets2_218/getup2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup3__sharedassets2_226/getup3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup__sharedassets2_216/getup.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup2__sharedassets2_195/getup2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/getup3__sharedassets2_192/getup3.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "pierce",
+       "kind": "asset",
+       "asset": "Assets/Imported/Animations/pierced__sharedassets18_625/pierced.anim",
+       "t": "AnimationClip"
+      },
+      {
+       "n": "summon",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/summon1__sharedassets18_561/summon1.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/summon1__sharedassets18_561/summon1.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "speed_begrab",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "speed_bethrust",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "speed_bekicked",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "speed_getup",
+       "kind": "arr",
+       "t": "float",
+       "items": [
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        },
+        {
+         "kind": "float",
+         "f": 0.0
+        }
+       ]
+      },
+      {
+       "n": "force_grab",
+       "kind": "arr",
+       "t": "int",
+       "items": [
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        }
+       ]
+      },
+      {
+       "n": "force_kick",
+       "kind": "arr",
+       "t": "int",
+       "items": [
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        }
+       ]
+      },
+      {
+       "n": "story",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     }
    ]
   },
@@ -6668,6 +7218,18 @@
      "cs": "unity/Assets/Scripts/MakeUI.cs",
      "enabled": true,
      "fields": [
+      {
+       "n": "main_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/pack_ingame_sharedassets2_assets_37.mat",
+       "t": "Material"
+      },
+      {
+       "n": "mat_txtresult",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/txt_result_sharedassets2_assets_50.mat",
+       "t": "Material"
+      },
       {
        "n": "peticon_folder",
        "kind": "node",
@@ -8886,7 +9448,41 @@
      "script": "Attribute_swing",
      "guid": "af66594b89486be4f9ec243570c22b8e",
      "cs": "unity/Assets/Scripts/Attribute_swing.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "attribute_mat",
+       "kind": "arr",
+       "t": "Material",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing1_sharedassets2_assets_21.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing2_sharedassets18_assets_52.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing3_sharedassets18_assets_53.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing4_sharedassets18_assets_54.mat",
+         "t": "Material"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Materials/ef_swing5_sharedassets18_assets_55.mat",
+         "t": "Material"
+        }
+       ]
+      }
+     ]
     }
    ]
   },
@@ -9247,7 +9843,88 @@
      "script": "UI_Ingame",
      "guid": "31bc77be7b946df4bb8219a5ba7965a6",
      "cs": "unity/Assets/Scripts/UI_Ingame.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pack",
+       "kind": "node",
+       "node": 390,
+       "t": "Transform"
+      },
+      {
+       "n": "num_level",
+       "kind": "node",
+       "node": 452,
+       "t": "Transform"
+      },
+      {
+       "n": "bg_popui",
+       "kind": "node",
+       "node": 447,
+       "t": "Transform"
+      },
+      {
+       "n": "cut_extreme",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "node",
+         "node": 454,
+         "t": "Transform"
+        },
+        {
+         "kind": "node",
+         "node": 462,
+         "t": "Transform"
+        }
+       ]
+      },
+      {
+       "n": "card",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/card_general_n_35.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/card_general_s_13.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/card_general_g_27.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "ui_ingame_gui",
+       "kind": "node",
+       "node": 389,
+       "t": "Transform"
+      },
+      {
+       "n": "txt_maxcombo",
+       "kind": "node",
+       "node": 457,
+       "t": "Transform"
+      },
+      {
+       "n": "cur_difficulty",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "angelOn",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
@@ -9725,7 +10402,19 @@
      "script": "Ani_speed",
      "guid": "ef4174e6ace0d6247a1f22d0993b0b7a",
      "cs": "unity/Assets/Scripts/Ani_speed.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "aniname",
+       "kind": "str",
+       "s": "angel"
+      },
+      {
+       "n": "speed",
+       "kind": "float",
+       "f": 0.699999988079071
+      }
+     ]
     }
    ]
   },
@@ -11093,7 +11782,109 @@
      "script": "AI_Asist",
      "guid": "c57ed8d5853795f4b96a65cc31be790d",
      "cs": "unity/Assets/Scripts/AI_Asist.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "a_mesh",
+       "kind": "node",
+       "node": 464,
+       "t": "Transform"
+      },
+      {
+       "n": "tex_pt",
+       "kind": "arr",
+       "t": "Texture",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_shiningstar_b_107.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_ki_red_302.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_leaf_g_43.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_shiningstar_28.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_ice_45.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_ki_red_302.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_ki_109.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/pt_ring_274.png",
+         "t": "Texture"
+        }
+       ]
+      },
+      {
+       "n": "tex_grade",
+       "kind": "arr",
+       "t": "Texture",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel1_226.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel5_283.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel3_263.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel2_173.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel4_186.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel6_303.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel7_211.png",
+         "t": "Texture"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/angel8_227.png",
+         "t": "Texture"
+        }
+       ]
+      }
+     ]
     },
     {
      "kind": "component",

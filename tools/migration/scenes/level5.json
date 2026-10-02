@@ -12,7 +12,8 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "cross-file ref dropped": 3,
+  "cross-file -> asset": 2,
+  "cross-file ref dropped": 1,
   "instances decoded": 1
  },
  "animation_bindings": {},
@@ -110,7 +111,21 @@
      "script": "Cam_Move_story",
      "guid": "b16c9c8eea6ee2f44b1fafa08921bc85",
      "cs": "unity/Assets/Scripts/Cam_Move_story.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "cha_cutin",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/cc_bro0_3.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txt_box",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank_28.png",
+       "t": "Texture2D"
+      }
+     ]
     }
    ]
   }

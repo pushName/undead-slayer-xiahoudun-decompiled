@@ -19,11 +19,11 @@
  },
  "field_stats": {
   "instances decoded": 7,
-  "cross-file ref dropped": 1,
+  "cross-file -> asset": 1,
   "ref set": 1,
   "refused:unknown type 'string[,]' on txt_na": 1,
-  "refused:ran out of bytes at g_maxhp": 1,
-  "refused:variable-length 'Texture2D[]' on g": 1
+  "refused:g_maxhp: value overrun": 1,
+  "refused:layout consumed 412 of 2596 bytes": 1
  },
  "animation_bindings": {},
  "warnings": [],
@@ -650,6 +650,12 @@
      "cs": "unity/Assets/Scripts/FortuneTeller.cs",
      "enabled": true,
      "fields": [
+      {
+       "n": "main_material",
+       "kind": "asset",
+       "asset": "Assets/Imported/Materials/fortune_mesh_sharedassets8_assets_3.mat",
+       "t": "Material"
+      },
       {
        "n": "ef_shuffle",
        "kind": "node",

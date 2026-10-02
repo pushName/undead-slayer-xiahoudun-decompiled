@@ -107,6 +107,75 @@ def _safe(s):
     return re.sub(r"[^0-9A-Za-z_-]", "_", str(s))
 
 
+def clip_asset_path(name, container, path_id):
+    """The one rule for where a clip's .anim lives: Animations/<state>__<container>_<id>/<state>.anim
+
+    Both the scene binding table and MonoBehaviour AnimationClip[] references go through this, so
+    the two can never disagree about where a clip is. The file name is the state name because a
+    legacy Animation state IS the clip's object name and CreateAsset pins that to the file name.
+    """
+    key = _safe(container).replace("_assets", "") + "_" + str(path_id)
+    return "Assets/Imported/Animations/%s/%s.anim" % (_safe(name) + "__" + key, _safe(name))
+
+
+def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
+    """One decoded value -> (JSON field dict or None, stat key or None).
+
+    Every branch is explicit. The previous version ended in `else: treat as Vector`, which would
+    have raised on the string/array/struct values this pass adds -- better than silently writing
+    nonsense, but still a hole. Anything that cannot be represented is counted, never guessed.
+    """
+    if "ref" in v:
+        if v["file"] != 0:
+            # Cross-file: a scene object cannot host it, but an exported asset can. Resolve it
+            # against the material / mesh / texture / clip indexes when the type has one, and drop
+            # it (counted) when it points at something not exported yet.
+            path = asset_lookup(v["type"], v["file"], v["ref"])
+            if path:
+                return {"n": fname, "kind": "asset", "asset": path, "t": v["type"]}, \
+                       "cross-file -> asset"
+            return None, "cross-file ref dropped"
+        node = obj2node.get(v["ref"])
+        if node is None:
+            return None, "dangling ref dropped"
+        return {"n": fname, "kind": "node", "node": node, "t": v["type"]}, "ref set"
+    if "bool" in v:
+        return {"n": fname, "kind": "bool", "b": 1 if v["bool"] else 0}, None
+    if "float" in v:
+        return {"n": fname, "kind": "float", "f": v["float"]}, None
+    if "int" in v:
+        return {"n": fname, "kind": "int", "i": v["int"]}, None
+    if "str" in v:
+        return {"n": fname, "kind": "str", "s": v["str"]}, "string set"
+    if "arr" in v:
+        items = []
+        dropped = 0
+        for e in v["arr"]:
+            fv, _st = flatten_value(fname, e, obj2node, asset_lookup)
+            if fv is None:
+                dropped += 1
+            else:
+                items.append({k: val for k, val in fv.items() if k != "n"})
+        if not items:
+            return None, "array fully dropped"
+        out = {"n": fname, "kind": "arr", "t": v["elem"], "items": items}
+        stat = "array set" if not dropped else "array partial (%d dropped)" % dropped
+        return out, stat
+    if "obj" in v:
+        # Sub-field names are kept: a struct's meaning is its field names, and dropping them
+        # would leave the Editor unable to say which value goes where.
+        items = []
+        for sub, e in v["obj"].items():
+            fv, _st = flatten_value(sub, e, obj2node, asset_lookup)
+            if fv is not None:
+                items.append(fv)
+        return ({"n": fname, "kind": "obj", "t": v["struct"], "fields": items}, "struct set") \
+            if items else (None, "struct fully dropped")
+    if "floats" in v:
+        return {"n": fname, "kind": "vec", "v": v["floats"], "t": v.get("vec", "")}, None
+    return None, "unknown decoded kind"
+
+
 def bind_animations(nodes, clip_index, script_states, warnings, stats):
     """Attach to each Animation-carrying node the clips its own scripts will ask for by name.
 
@@ -181,18 +250,13 @@ def bind_animations(nodes, clip_index, script_states, warnings, stats):
                         how = "lowest-path-id (ambiguous among %d)" % len(fits or cands)
                         stats["ambiguous"] += 1
             stats[how.split(" ")[0]] += 1
-            # One asset per (state name, source clip), not per consumer. The file name must be the
-            # state name (a legacy Animation state IS the clip's object name, and CreateAsset
-            # forces object name = file name), so the FOLDER carries the clip identity. Measured on
-            # this build: 273 (consumer,state) bindings come from 114 distinct clips, so keying on
-            # the consumer stored every shared clip 2.4x over -- 119.8 MB of .anim for ~50 MB of
-            # animation. If #18 later resolves an ambiguous state to different clips per consumer,
-            # that simply adds another folder here; no renaming churn.
-            clip_key = _safe(pick["container"]).replace("_assets", "") + "_" + str(pick["path_id"])
+            # One asset per (state name, source clip), not per consumer: 273 (consumer,state)
+            # bindings come from 114 distinct clips, so keying on the consumer stored every shared
+            # clip 2.4x over -- 119.8 MB of .anim for ~50 MB of animation. If #18 later resolves an
+            # ambiguous state to different clips per consumer, that just adds another folder here.
             bound.append({"name": name, "clip_id": pick["id"], "picked_by": how,
                           "source_descriptor": pick["descriptor"],
-                          "asset": "Assets/Imported/Animations/%s/%s.anim"
-                                   % (_safe(name) + "__" + clip_key, _safe(name))})
+                          "asset": clip_asset_path(name, pick["container"], pick["path_id"])})
         if bound:
             n["animations"] = bound
 
@@ -229,6 +293,26 @@ def main():
             return None, "<bad FileID %d>" % file_id
         key = "%s!%d" % (tgt, path_id)
         return index.get(key), key
+
+    # Cross-file object references. A scene cannot host them, but an exported asset can: the
+    # material / mesh / texture indexes are keyed the same way (container!path_id), and clip paths
+    # are a pure function of (name, container, path_id). Anything else stays dropped and counted.
+    tex_index = (load_json(os.path.join(_REPO, "tools", "migration", "texture-index.json")) or {})
+    clip_index_for_refs = {}
+    _ci = load_json(os.path.join(_REPO, "tools", "migration", "animation-index.json"))
+    if _ci:
+        for e in _ci["clips"]:
+            clip_index_for_refs["%s!%d" % (e["container"], e["path_id"])] = clip_asset_path(
+                e["name"], e["container"], e["path_id"])
+    BY_TYPE = {"Material": mat_index, "Mesh": mesh_index, "Texture2D": tex_index,
+               "Texture": tex_index, "AnimationClip": clip_index_for_refs}
+
+    def asset_lookup(typ, file_id, path_id):
+        idx = BY_TYPE.get(typ)
+        if idx is None:
+            return None
+        tgt = u4.resolve_target(target, externals, file_id)
+        return idx.get("%s!%d" % (tgt, path_id)) if tgt else None
 
     def translate_renderer(tn, obj, warnings, go_id):
         rec = {"kind": "renderer", "type": tn}
@@ -355,29 +439,11 @@ def main():
                 else:
                     out_fields = []
                     for fname, v in vals:
-                        if "ref" in v:
-                            if v["file"] != 0:
-                                # Points into another serialized file (a sharedassets prefab or
-                                # material). The scene rebuild has no such object, so dropping it
-                                # is the only honest option -- counted, never guessed.
-                                field_stats["cross-file ref dropped"] += 1
-                                continue
-                            node = obj2node.get(v["ref"])
-                            if node is None:
-                                field_stats["dangling ref dropped"] += 1
-                                continue
-                            out_fields.append({"n": fname, "kind": "node", "node": node,
-                                               "t": v["type"]})
-                            field_stats["ref set"] += 1
-                        elif "bool" in v:
-                            out_fields.append({"n": fname, "kind": "bool", "b": 1 if v["bool"] else 0})
-                        elif "float" in v:
-                            out_fields.append({"n": fname, "kind": "float", "f": v["float"]})
-                        elif "int" in v:
-                            out_fields.append({"n": fname, "kind": "int", "i": v["int"]})
-                        else:
-                            out_fields.append({"n": fname, "kind": "vec", "v": v["floats"],
-                                               "t": v.get("vec", "")})
+                        fv, stat = flatten_value(fname, v, obj2node, asset_lookup)
+                        if stat:
+                            field_stats[stat] += 1
+                        if fv is not None:
+                            out_fields.append(fv)
                     if out_fields:
                         entry["fields"] = out_fields
                     field_stats["instances decoded"] += 1

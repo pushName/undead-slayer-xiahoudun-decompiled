@@ -30,13 +30,14 @@
  },
  "field_stats": {
   "instances decoded": 106,
-  "refused:variable-length 'archive[]' on aci": 1,
+  "refused:aci: array count overrun": 1,
   "refused:unknown type 'scenario[,]' on sn": 1,
-  "cross-file ref dropped": 3,
+  "cross-file -> asset": 2,
+  "cross-file ref dropped": 1,
   "refused:unknown type 'string[,]' on txt_sc": 1,
-  "refused:variable-length 'Texture2D[]' on i": 1,
+  "refused:layout consumed 680 of 5048 bytes": 1,
   "refused:unknown type 'string[,]' on txt_na": 1,
-  "refused:ran out of bytes at g_maxhp": 1
+  "refused:g_maxhp: value overrun": 1
  },
  "animation_bindings": {},
  "warnings": [],
@@ -6933,7 +6934,21 @@
      "script": "Scenario",
      "guid": "8b18850d16573cc4ab9dfb4b72a7cbd7",
      "cs": "unity/Assets/Scripts/Scenario.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "black",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_100_104.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txtbox1",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank_28.png",
+       "t": "Texture2D"
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
