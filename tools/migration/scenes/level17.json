@@ -31,13 +31,13 @@
   "ParticleRenderer": 12
  },
  "field_stats": {
-  "instances decoded": 61,
-  "ref set": 28,
-  "cross-file ref dropped": 41,
+  "instances decoded": 62,
+  "ref set": 29,
+  "cross-file ref dropped": 42,
   "array set": 21,
-  "cross-file -> asset": 7,
+  "cross-file -> asset": 13,
   "array fully dropped": 3,
-  "refused:layout consumed 88 of 1648 bytes": 1,
+  "opaque skipped (GUIStyle)": 5,
   "refused:skillyell: array element 110: ref ": 1,
   "refused:bool[] element stride is not settl": 1,
   "refused:unknown type 'skillset[,]' on ss": 1,
@@ -7175,7 +7175,81 @@
      "script": "UI_Ingame_GUI",
      "guid": "b1bea99e0efced647b1f40303c8ad001",
      "cs": "unity/Assets/Scripts/UI_Ingame_GUI.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pausemenu",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bg_pause",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_25.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_option",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_option2_193.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "ico_slide",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_difficulty1_14.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_jade",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/item_jade_17.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_blank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank2_42.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "touchthis",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/please_touch_41.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "zoom",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "sel_lang",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bar_slide",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "angel",
+       "kind": "node",
+       "node": 468,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },

@@ -379,7 +379,7 @@ namespace UndeadSlayer.Migration
                         fieldsVals++;
                     }
                     else if (fv.kind == "arr" || fv.kind == "obj" || fv.kind == "str"
-                             || fv.kind == "asset")
+                             || fv.kind == "asset" || fv.kind == "opaque")
                     {
                         // Decoded and present in the JSON, but this pass cannot apply them yet.
                         // Counted separately so "refused" keeps meaning "something went wrong"

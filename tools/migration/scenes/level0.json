@@ -24,9 +24,12 @@
   "FlareLayer": 1
  },
  "field_stats": {
-  "refused:layout consumed 276 of 3396 bytes": 1,
-  "ref set": 5,
-  "instances decoded": 1
+  "cross-file -> asset": 27,
+  "array set": 1,
+  "cross-file ref dropped": 2,
+  "opaque skipped (GUIStyle)": 10,
+  "instances decoded": 2,
+  "ref set": 5
  },
  "animation_bindings": {},
  "warnings": [],
@@ -234,7 +237,248 @@
      "script": "UI_intro",
      "guid": "a2dce1f22ace9b5438a37ce3eb1a0e14",
      "cs": "unity/Assets/Scripts/UI_intro.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bg_pause",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_25.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_option",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_option_15.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "ico_slide",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_difficulty1_14.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bi",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/logo_27.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_blank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank2_42.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "cl_over15",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/class_over15_13.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "cl_vioence",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/class_violence_41.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txt_story",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/txt_story_34.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txt_extreme",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/txt_extreme_30.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_start",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_wavestart_19.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "black",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_25.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_bg",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/new_reward_31.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_jade",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/new_reward_jade_44.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_gold",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/new_reward_gold_20.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_0",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/00_10.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_1",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/11_12.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_2",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/22_48.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_3",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/33_36.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_4",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/44_26.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_5",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/55_33.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_6",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/66_29.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_7",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/77_11.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_8",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/88_35.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_num_9",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/99_28.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_ranking",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/new_reward_ranking_17.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_x",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/new_reward_x_21.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_reward_tel_bg",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/new_reward_telnumber_22.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_mode",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/img_story_24.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/img_extreme_46.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "bt_empty",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_redeem",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_new",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bar_slide",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "sel_lang",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_menu",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_cgp",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "img_reward_tel_x",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_ownRanking",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     },
     {
      "kind": "component",

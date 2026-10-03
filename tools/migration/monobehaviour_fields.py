@@ -60,7 +60,14 @@ REF_TYPES = {
 # Types that are NOT UnityEngine.Object: Unity never serialises them, so they occupy zero bytes
 # and must be dropped from the layout rather than counted as unknown. (Got this wrong first: two
 # GUIStyle fields made their whole class refuse to decode.)
-NON_SERIALIZED = {"GUIStyle", "GUIContent", "RectOffset", "GradientColorKey", "RangeInt"}
+#
+# GUIStyle is NOT in that list any more: it is serialised by Unity 4. The 312-byte size is not a
+# guess -- sweeping 300..324 over all 394 scene MonoBehaviour records, 312 is the only value that
+# makes any class consume its buffer exactly (266 -> 285 decoded, refusals 56 -> 37); every other
+# candidate leaves the baseline untouched. Its internals are still unknown to us, so it is carried
+# as an opaque block that is skipped and counted, never written into the scene.
+NON_SERIALIZED = {"GUIContent", "RectOffset", "GradientColorKey", "RangeInt"}
+OPAQUE_TYPES = {"GUIStyle": 312}
 STRUCT_TYPES = {"Bounds": 24}
 
 # Per-type struct format. Getting this wrong is not subtle -- unpacking a 4-byte int where the
@@ -149,6 +156,8 @@ def spec_for(typ, classes, depth=0):
         return {"kind": "value", "type": typ, "size": w, "align": a}, None
     if typ in STRUCT_TYPES:
         return {"kind": "value", "type": typ, "size": STRUCT_TYPES[typ], "align": 4}, None
+    if typ in OPAQUE_TYPES:
+        return {"kind": "opaque", "type": typ, "size": OPAQUE_TYPES[typ], "align": 4}, None
     if typ in REF_TYPES:
         return {"kind": "ref", "type": typ, "size": 8, "align": 4}, None
     if typ in classes:
@@ -192,6 +201,12 @@ def _read(spec, raw, off, end):
                 off + spec["size"], None
         vals = list(struct.unpack_from("<%df" % (spec["size"] // 4), raw, off))
         return {"floats": vals, "vec": typ}, off + spec["size"], None
+    if k == "opaque":
+        # Bytes are consumed so the rest of the class stays aligned; the content is deliberately
+        # not interpreted, and the caller is told it was skipped.
+        if off + spec["size"] > end:
+            return None, None, "opaque overrun"
+        return {"opaque": spec["type"], "size": spec["size"]}, off + spec["size"], None
     if k == "ref":
         if off + 8 > end:
             return None, None, "ref overrun"

@@ -13,8 +13,11 @@
   "FlareLayer": 1
  },
  "field_stats": {
-  "refused:layout consumed 124 of 1996 bytes": 1,
-  "instances decoded": 1
+  "cross-file -> asset": 6,
+  "array set": 1,
+  "opaque skipped (GUIStyle)": 6,
+  "cross-file ref dropped": 1,
+  "instances decoded": 2
  },
  "animation_bindings": {},
  "warnings": [],
@@ -52,7 +55,113 @@
      "script": "UI_Friends",
      "guid": "568aa498691ea744d961aae6ddfe3930",
      "cs": "unity/Assets/Scripts/UI_Friends.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bg_title",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bar_ranking_15.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_title_me",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bar_ranking_me_12.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_key",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_key_19.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "toggle_active",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_rankingtoggle_active_44.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "errorimg",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/hsp_profile_photo_100_14.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_ranktab",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_friend_25.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/facebook_3.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_friend_recommend_2.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_friend_plus_18.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_zoom_39.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "please_touch",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/please_touch_41.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bt_empty",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_start",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_back",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_plus",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_remove",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     }
    ]
   },

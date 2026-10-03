@@ -16,8 +16,10 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 2,
-  "refused:layout consumed 56 of 368 bytes": 1
+  "instances decoded": 3,
+  "cross-file ref dropped": 1,
+  "cross-file -> asset": 3,
+  "opaque skipped (GUIStyle)": 1
  },
  "animation_bindings": {},
  "warnings": [],
@@ -109,7 +111,33 @@
      "script": "UI_result_ride",
      "guid": "6c1fcfb65e002824b9d57e953ff92da1",
      "cs": "unity/Assets/Scripts/UI_result_ride.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bg_asset",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_asset_51.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_list",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_result_ride_4.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_map",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_result_map_22.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bt_empty",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     },
     {
      "kind": "component",

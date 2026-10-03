@@ -145,6 +145,9 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
         return {"n": fname, "kind": "float", "f": v["float"]}, None
     if "int" in v:
         return {"n": fname, "kind": "int", "i": v["int"]}, None
+    if "opaque" in v:
+        return {"n": fname, "kind": "opaque", "t": v["opaque"], "size": v["size"]}, \
+               "opaque skipped (%s)" % v["opaque"]
     if "str" in v:
         return {"n": fname, "kind": "str", "s": v["str"]}, "string set"
     if "arr" in v:

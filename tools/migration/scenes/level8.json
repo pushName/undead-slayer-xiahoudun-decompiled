@@ -13,9 +13,12 @@
   "FlareLayer": 1
  },
  "field_stats": {
-  "refused:layout consumed 224 of 2720 bytes": 1,
-  "refused:unknown type 'equipitem[,]' on ei": 1,
-  "instances decoded": 1
+  "cross-file -> asset": 10,
+  "array set": 2,
+  "opaque skipped (GUIStyle)": 8,
+  "cross-file ref dropped": 2,
+  "instances decoded": 2,
+  "refused:unknown type 'equipitem[,]' on ei": 1
  },
  "animation_bindings": {},
  "warnings": [],
@@ -53,7 +56,191 @@
      "script": "UI_status",
      "guid": "80c9005ea62260140a00ea4d00965f84",
      "cs": "unity/Assets/Scripts/UI_status.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bg_shop",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/cc_cha0_5.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_black",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_25.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_detail",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_shop_15.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_blank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank_28.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_blank2",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank2_42.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "cost_icon",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/item_coin1_90.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_asset",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_asset_51.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "arrow_upgrade",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/arrow_upgrade_14.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "titlebase",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_titlebase_80.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gauge_exp",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/color_cyon_21.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "equipicon",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/eq_acc_13.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/eq_indure_18.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/eq_soul_20.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/eq_evade_10.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/eq_defend_3.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/eq_stamina_11.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "img_acce",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/acce_atkcharm_16.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/acce_necklace_2.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/acce_glove_19.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/acce_book_17.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/acce_belt_5.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/acce_shoes_6.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "bt_equip",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_back",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "titlebase2",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_prev",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_next",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_empty",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_acce",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",

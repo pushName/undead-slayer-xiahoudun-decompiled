@@ -15,7 +15,10 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "refused:layout consumed 48 of 360 bytes": 1
+  "cross-file -> asset": 2,
+  "opaque skipped (GUIStyle)": 1,
+  "cross-file ref dropped": 1,
+  "instances decoded": 1
  },
  "animation_bindings": {},
  "warnings": [],
@@ -336,7 +339,27 @@
      "script": "Cam_Move_story2",
      "guid": "4aec82d25e5ec9a4a948ac9e1a794126",
      "cs": "unity/Assets/Scripts/Cam_Move_story2.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "cha_cutin",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/cc_cha0_5.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txt_box",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank_28.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bt_skip",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     }
    ]
   }

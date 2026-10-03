@@ -15,8 +15,11 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 1,
-  "refused:layout consumed 92 of 404 bytes": 1
+  "instances decoded": 2,
+  "cross-file ref dropped": 1,
+  "cross-file -> asset": 1,
+  "array set": 1,
+  "opaque skipped (GUIStyle)": 1
  },
  "animation_bindings": {},
  "warnings": [],
@@ -142,7 +145,63 @@
      "script": "UI_result_extreme",
      "guid": "0d21f6bc0739f9d489a3a39a2ce9c540",
      "cs": "unity/Assets/Scripts/UI_result_extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "isclear",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "max_stage_index",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "bg_asset",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_asset_51.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_bts",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_result_map_22.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_result_replay_10.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_result_skill_5.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_result_forge_9.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_result_train_6.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "bt_empty",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     },
     {
      "kind": "component",

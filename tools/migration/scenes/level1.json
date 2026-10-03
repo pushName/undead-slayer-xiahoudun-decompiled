@@ -34,16 +34,15 @@
   "FlareLayer": 1
  },
  "field_stats": {
-  "ref set": 13,
-  "instances decoded": 38,
-  "cross-file ref dropped": 18,
+  "ref set": 14,
+  "instances decoded": 40,
+  "cross-file ref dropped": 20,
   "dangling ref dropped": 47,
   "array fully dropped": 8,
-  "cross-file -> asset": 5,
-  "array set": 11,
+  "cross-file -> asset": 7,
+  "array set": 12,
   "refused:skillyell: array element 105: ref ": 1,
-  "refused:layout consumed 40 of 352 bytes": 1,
-  "refused:layout consumed 84 of 396 bytes": 1,
+  "opaque skipped (GUIStyle)": 2,
   "refused:enemy: array count overrun": 1
  },
  "animation_bindings": {
@@ -7472,7 +7471,21 @@
      "script": "Story_trans",
      "guid": "2aee8b17924eebb4282b63a203b09e3c",
      "cs": "unity/Assets/Scripts/Story_trans.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "black2",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_100_104.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bt_skip",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     },
     {
      "kind": "component",
@@ -9203,7 +9216,54 @@
      "script": "UI_Ingame_story",
      "guid": "85046839df411dc4a9d529411c6bcf60",
      "cs": "unity/Assets/Scripts/UI_Ingame_story.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pop_blank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank2_42.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pack",
+       "kind": "node",
+       "node": 328,
+       "t": "Transform"
+      },
+      {
+       "n": "guide_img",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/guide01_105.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/guide02_70.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/guide03_62.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/guide04_77.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     }
    ]
   },

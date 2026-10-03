@@ -18,12 +18,15 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 7,
-  "cross-file -> asset": 1,
-  "ref set": 1,
+  "instances decoded": 8,
+  "cross-file -> asset": 27,
+  "ref set": 8,
   "refused:unknown type 'string[,]' on txt_na": 1,
   "refused:g_maxhp: value overrun": 1,
-  "refused:layout consumed 412 of 2596 bytes": 1
+  "cross-file ref dropped": 2,
+  "array set": 3,
+  "opaque skipped (GUIStyle)": 7,
+  "dangling ref dropped": 1
  },
  "animation_bindings": {},
  "warnings": [],
@@ -713,7 +716,325 @@
      "script": "UI_general",
      "guid": "429703024a6e4de488ffe1e13d1ba1b2",
      "cs": "unity/Assets/Scripts/UI_general.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "general_weapon",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/general_weapon6_60.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/general_weapon4_81.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/general_weapon2_83.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/general_weapon5_47.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/general_weapon3_89.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "icon_popgeneralkind",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_g_heal_22.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_g_fortune_21.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_g_change_29.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "bg_titlename",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_titlebase_80.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_general",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_general_43.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "star_grade",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/star_grade_54.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gauge_hp",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/gauge_feed_29.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "titlebase",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_titlebase2_71.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "titlebase3",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_titlebase3_77.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "hpbase",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_hpbase_66.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_jade",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/item_jade_17.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_coin",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/item_coin1_90.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gauge_exp",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/gauge_exp_64.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "black_all",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_100_104.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "black",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_25.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "arrow_combine",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/arrow_combine_31.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_inherit",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_inherit_cha_24.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "please_touch",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/please_touch_41.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_blank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank_28.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_blank2",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank2_42.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_unlock",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_unlock_16.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_speech",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_speech_32.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "sel_mark",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_general_over_36.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "ico_lock",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_lock_17.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_red",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/box_red_12.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "empty",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_general_empty_68.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bt_general_small",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_general_small_93.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "card_general",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/card_general_n_35.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/card_general_s_13.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/card_general_g_27.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "icon_alarm",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/ico_alart_22.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_asset",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_asset_51.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pausemenu",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_dismiss",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_general",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_roll",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_empty",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_back",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "fortune_teller",
+       "kind": "node",
+       "node": 25,
+       "t": "Transform"
+      },
+      {
+       "n": "bg_popui",
+       "kind": "node",
+       "node": 22,
+       "t": "Transform"
+      },
+      {
+       "n": "bg_card",
+       "kind": "node",
+       "node": 28,
+       "t": "Transform"
+      },
+      {
+       "n": "bg_combine",
+       "kind": "node",
+       "node": 23,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_card_l",
+       "kind": "node",
+       "node": 21,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_card_r",
+       "kind": "node",
+       "node": 20,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_card_dis",
+       "kind": "node",
+       "node": 19,
+       "t": "Transform"
+      }
+     ]
     }
    ]
   },

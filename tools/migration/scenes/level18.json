@@ -26,14 +26,14 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 15,
+  "instances decoded": 16,
   "dangling ref dropped": 7,
   "ref set": 16,
-  "cross-file -> asset": 1,
+  "cross-file -> asset": 2,
   "array fully dropped": 2,
-  "cross-file ref dropped": 9,
+  "cross-file ref dropped": 10,
   "array set": 1,
-  "refused:layout consumed 40 of 352 bytes": 1
+  "opaque skipped (GUIStyle)": 1
  },
  "animation_bindings": {
   "only": 15
@@ -4190,7 +4190,21 @@
      "script": "Tutorial_ride",
      "guid": "9ac55df2720f87d4dbf523685f8b721e",
      "cs": "unity/Assets/Scripts/Tutorial_ride.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pop_blank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank2_42.png",
+       "t": "Texture"
+      },
+      {
+       "n": "bt_yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      }
+     ]
     }
    ]
   }
