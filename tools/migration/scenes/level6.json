@@ -30,17 +30,14 @@
  },
  "field_stats": {
   "instances decoded": 107,
-  "refused:aci: array count overrun": 1,
-  "refused:unknown type 'scenario[,]' on sn": 1,
+  "refused[record shorter than layout (data assig]": 2,
+  "refused[two-dimensional array (unsupported by ]": 3,
   "cross-file -> asset": 44,
   "cross-file ref dropped": 7,
-  "refused:unknown type 'string[,]' on txt_sc": 1,
   "array set": 5,
   "ref set": 8,
   "array fully dropped": 1,
-  "opaque skipped (GUIStyle)": 14,
-  "refused:unknown type 'string[,]' on txt_na": 1,
-  "refused:g_maxhp: value overrun": 1
+  "opaque skipped (GUIStyle)": 14
  },
  "animation_bindings": {},
  "warnings": [],

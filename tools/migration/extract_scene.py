@@ -438,7 +438,7 @@ def main():
                          "enabled": bool(en)}
                 vals, why = MF.decode_for_class(name, raw)
                 if vals is None:
-                    field_stats["refused:" + (why or "").split(" (")[0][:34]] += 1
+                    field_stats["refused[" + MF.classify_refusal(why)[:38] + "]"] += 1
                 else:
                     out_fields = []
                     for fname, v in vals:

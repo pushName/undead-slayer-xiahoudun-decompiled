@@ -304,6 +304,29 @@ def decode_for_class(cls, raw):
     return list(vals.items()), None
 
 
+def classify_refusal(why):
+    """Bucket a refusal so the tally says what kind of problem it is.
+
+    "37 refused" read as 37 defects and sent me hunting a bug that was not there. The dominant
+    bucket is a record SHORTER than the declared layout, which for these classes is faithful to
+    the original: DB_Monster.enemy[] (16 elements, field region 0 bytes) is assigned element by
+    element inside Awake(), and General_Stat.g_maxhp is computed at runtime from rndkey -- the
+    values come from the shipped C# we already have, so there is nothing to recover from bytes.
+    """
+    w = why or ""
+    if "overrun" in w or "out of range" in w:
+        return "record shorter than layout (data assigned in code, or lives in the prefab)"
+    if "leftover" in w:
+        return "record longer than layout (a field this module does not know)"
+    if "[,]" in w:
+        return "two-dimensional array (unsupported by design)"
+    if "bool[]" in w:
+        return "bool[] stride unresolved (refused on purpose)"
+    if "variable-length" in w:
+        return "variable-length member inside a struct (refused on purpose)"
+    return "other"
+
+
 def report():
     import UnityPy
     from unity4_files import sources
@@ -349,6 +372,12 @@ def report():
     print("\nrefusal reasons:")
     for k, v in sorted(reasons.items(), key=lambda x: -x[1]):
         print("   %-52s %d" % (k, v))
+    buckets = {}
+    for k, v in reasons.items():
+        buckets[classify_refusal(k)] = buckets.get(classify_refusal(k), 0) + v
+    print("\nwhat kind of problem each refusal actually is:")
+    for k, v in sorted(buckets.items(), key=lambda x: -x[1]):
+        print("   %-72s %d" % (k, v))
 
 
 if __name__ == "__main__":
