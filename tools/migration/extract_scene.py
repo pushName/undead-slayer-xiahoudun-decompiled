@@ -125,6 +125,8 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
     have raised on the string/array/struct values this pass adds -- better than silently writing
     nonsense, but still a hole. Anything that cannot be represented is counted, never guessed.
     """
+    if stats is None:
+        stats = {}
     if "ref" in v:
         if v["file"] != 0:
             # Cross-file: a scene object cannot host it, but an exported asset can. Resolve it
@@ -135,6 +137,11 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
                 return {"n": fname, "kind": "asset", "asset": path, "t": v["type"]}, \
                        "cross-file -> asset"
             return None, "cross-file ref dropped"
+        if v["ref"] == 0 and v["file"] == 0:
+            # A null PPtr: the field was unassigned in the shipped build. Counted as faithful
+            # absence, NOT as a dropped reference -- 70 fields were being reported as "dangling"
+            # until that was checked, which made a correct result look like a leak.
+            return None, "null in source"
         node = obj2node.get(v["ref"])
         if node is None:
             return None, "dangling ref dropped"
@@ -154,7 +161,11 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
         items = []
         dropped = 0
         for e in v["arr"]:
-            fv, _st = flatten_value(fname, e, obj2node, asset_lookup)
+            fv, st = flatten_value(fname, e, obj2node, asset_lookup)
+            if st:
+                # Element outcomes used to be thrown away, so a half-empty array looked identical
+                # to a fully resolved one in the tally.
+                stats[st + " (element)"] = stats.get(st + " (element)", 0) + 1
             if fv is None:
                 dropped += 1
             else:
@@ -169,7 +180,9 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
         # would leave the Editor unable to say which value goes where.
         items = []
         for sub, e in v["obj"].items():
-            fv, _st = flatten_value(sub, e, obj2node, asset_lookup)
+            fv, st = flatten_value(sub, e, obj2node, asset_lookup)
+            if st:
+                stats[st + " (struct field)"] = stats.get(st + " (struct field)", 0) + 1
             if fv is not None:
                 items.append(fv)
         return ({"n": fname, "kind": "obj", "t": v["struct"], "fields": items}, "struct set") \
