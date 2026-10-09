@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1638198202
+--- !u!1 &1510877264
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,9 +130,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1638198205}
-  - component: {fileID: 1638198204}
-  - component: {fileID: 1638198203}
+  - component: {fileID: 1510877267}
+  - component: {fileID: 1510877266}
+  - component: {fileID: 1510877265}
   m_Layer: 0
   m_Name: ui_skill
   m_TagString: ui
@@ -140,71 +140,71 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1638198203
+--- !u!114 &1510877265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638198202}
+  m_GameObject: {fileID: 1510877264}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75e9d320a7acfed408e509fde0bc490e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1638198204
+--- !u!114 &1510877266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638198202}
+  m_GameObject: {fileID: 1510877264}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bfb594eb79d1cd46a2856d8cfb3df86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bg_skill: {fileID: 0}
-  txt_name: {fileID: 0}
-  bg_black: {fileID: 0}
-  bg_black100: {fileID: 0}
-  pop_detail: {fileID: 0}
-  pop_blank: {fileID: 0}
-  pop_blank2: {fileID: 0}
-  bg_asset: {fileID: 0}
-  titlebase: {fileID: 0}
-  titlebase_w: {fileID: 0}
-  arrow: {fileID: 0}
-  active_slot: {fileID: 0}
-  icon_jade: {fileID: 0}
-  icon_coin: {fileID: 0}
-  icon_soul: {fileID: 0}
-  please_touch: {fileID: 0}
+  bg_skill: {fileID: 2800000, guid: 08bafd8b11da6554893a52260cd8eaf5, type: 3}
+  txt_name: {fileID: 2800000, guid: 0e2e82f5408ac8d449316514eb8201ce, type: 3}
+  bg_black: {fileID: 2800000, guid: bff6dfd358a13064d83b07af2d4ac5aa, type: 3}
+  bg_black100: {fileID: 2800000, guid: fcdc880c6522d8442b440a7472925fc1, type: 3}
+  pop_detail: {fileID: 2800000, guid: 63e8938344f7bfc4ba9cee337a7ed2c4, type: 3}
+  pop_blank: {fileID: 2800000, guid: c7c751a901fe1e34c9193f320ff9401a, type: 3}
+  pop_blank2: {fileID: 2800000, guid: 188bc1d4bb2321b46a94635b002c5812, type: 3}
+  bg_asset: {fileID: 2800000, guid: 937525bee43a85b42b894528ddca6afc, type: 3}
+  titlebase: {fileID: 2800000, guid: beaa4696f83a021458698fafa658b098, type: 3}
+  titlebase_w: {fileID: 2800000, guid: 88ca34a76ae0d384b976a7fcff59dda5, type: 3}
+  arrow: {fileID: 2800000, guid: b36b2c9ca4f13074f9c88272ea3cd888, type: 3}
+  active_slot: {fileID: 2800000, guid: d5990025575907849a0cc54f3e4c0793, type: 3}
+  icon_jade: {fileID: 2800000, guid: 78fe9ca1df17b614ba0f39262ec43fa8, type: 3}
+  icon_coin: {fileID: 2800000, guid: ace25ee460410eb419ca1cf92af0de62, type: 3}
+  icon_soul: {fileID: 2800000, guid: fee04ae6f0923eb4cac2dbc83d6e4133, type: 3}
+  please_touch: {fileID: 2800000, guid: b575e5da54dd2d34e8ccd874f545e153, type: 3}
   skillicon:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: 703d8b217adb32b419259272b72bb568, type: 3}
+  - {fileID: 2800000, guid: c1f621c14648eb8428215a6e277a0218, type: 3}
+  - {fileID: 2800000, guid: 832792c95942883448a0a8c0179885be, type: 3}
+  - {fileID: 2800000, guid: 61480ee16a69c90448a8663d2d12d580, type: 3}
+  - {fileID: 2800000, guid: 0e56ba81713016c40bf1befa55861950, type: 3}
+  - {fileID: 2800000, guid: d51a16ec01b807344b288928af5b78d5, type: 3}
+  - {fileID: 2800000, guid: 16a693e8588a76e4d8234e5c9e5da792, type: 3}
+  - {fileID: 2800000, guid: 01883ad8b8cee7243a21fe34ecdf8642, type: 3}
+  - {fileID: 2800000, guid: 4cf97c65d9ca6db41ba25b12def07905, type: 3}
+  - {fileID: 2800000, guid: 7c05e7db920379041a74a39740b23b25, type: 3}
+  - {fileID: 2800000, guid: 48ffc1917a31c5043a2fd1d7e77f5d71, type: 3}
+  - {fileID: 2800000, guid: 64ee1256e5883d64fb4c186642e8cd95, type: 3}
+  - {fileID: 2800000, guid: bbd763650c86fcd498deeb71f9c54540, type: 3}
+  - {fileID: 2800000, guid: 4bd1e3d84931451488cdb5f3f6b2755f, type: 3}
+  - {fileID: 2800000, guid: 86455421464d7534ebe9b595e9be4904, type: 3}
+  - {fileID: 2800000, guid: 5e97f36ce694b6f499df00ba0607ce3f, type: 3}
+  - {fileID: 2800000, guid: 7396b065b771d514ca00b0dd2b19948a, type: 3}
+  - {fileID: 2800000, guid: 817ab4253579e6042b6ec849ce516bd1, type: 3}
+  - {fileID: 2800000, guid: b5fc900825101ed4384169cb44385a8b, type: 3}
+  - {fileID: 2800000, guid: e5c25575b36de004e842f10114ae572f, type: 3}
   icon_diamond:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: 459174a297c7fe0429c48c3a6688c4f0, type: 3}
+  - {fileID: 2800000, guid: 6ec37d89add642a4dbb390a91cfe656c, type: 3}
+  - {fileID: 2800000, guid: fbf0e3d3e771bac418530d6704d158ce, type: 3}
   bt_skill:
     m_Name: 
     m_Normal:
@@ -542,14 +542,14 @@ MonoBehaviour:
     m_StretchHeight: 0
   basicSkin: {fileID: 0}
   sound_dummy: {fileID: 0}
-  cur_skill_grade: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
---- !u!4 &1638198205
+  cur_skill_grade: 000000000000000000000000000000000000000000000000
+--- !u!4 &1510877267
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638198202}
+  m_GameObject: {fileID: 1510877264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -558,7 +558,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2033249307
+--- !u!1 &1570931526
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -566,10 +566,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2033249311}
-  - component: {fileID: 2033249310}
-  - component: {fileID: 2033249309}
-  - component: {fileID: 2033249308}
+  - component: {fileID: 1570931530}
+  - component: {fileID: 1570931529}
+  - component: {fileID: 1570931528}
+  - component: {fileID: 1570931527}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -577,33 +577,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2033249308
+--- !u!114 &1570931527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033249307}
+  m_GameObject: {fileID: 1570931526}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 353694a1fb618dd438b1be9971ec551b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!81 &2033249309
+--- !u!81 &1570931528
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033249307}
+  m_GameObject: {fileID: 1570931526}
   m_Enabled: 1
---- !u!20 &2033249310
+--- !u!20 &1570931529
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033249307}
+  m_GameObject: {fileID: 1570931526}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -648,13 +648,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &2033249311
+--- !u!4 &1570931530
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033249307}
+  m_GameObject: {fileID: 1570931526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0}
   m_LocalPosition: {x: 0, y: 0, z: 0.7}
@@ -667,5 +667,5 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1638198205}
-  - {fileID: 2033249311}
+  - {fileID: 1510877267}
+  - {fileID: 1570931530}

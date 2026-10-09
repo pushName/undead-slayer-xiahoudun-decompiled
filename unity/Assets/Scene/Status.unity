@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &957456121
+--- !u!1 &1185839789
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,10 +130,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 957456125}
-  - component: {fileID: 957456124}
-  - component: {fileID: 957456123}
-  - component: {fileID: 957456122}
+  - component: {fileID: 1185839793}
+  - component: {fileID: 1185839792}
+  - component: {fileID: 1185839791}
+  - component: {fileID: 1185839790}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -141,33 +141,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &957456122
+--- !u!114 &1185839790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957456121}
+  m_GameObject: {fileID: 1185839789}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 353694a1fb618dd438b1be9971ec551b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!81 &957456123
+--- !u!81 &1185839791
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957456121}
+  m_GameObject: {fileID: 1185839789}
   m_Enabled: 1
---- !u!20 &957456124
+--- !u!20 &1185839792
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957456121}
+  m_GameObject: {fileID: 1185839789}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -212,13 +212,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &957456125
+--- !u!4 &1185839793
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957456121}
+  m_GameObject: {fileID: 1185839789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0}
   m_LocalPosition: {x: 0, y: 0, z: 3}
@@ -227,7 +227,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1626445857
+--- !u!1 &2011158128
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,9 +235,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1626445860}
-  - component: {fileID: 1626445859}
-  - component: {fileID: 1626445858}
+  - component: {fileID: 2011158131}
+  - component: {fileID: 2011158130}
+  - component: {fileID: 2011158129}
   m_Layer: 0
   m_Name: ui_status
   m_TagString: ui
@@ -245,54 +245,54 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1626445858
+--- !u!114 &2011158129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626445857}
+  m_GameObject: {fileID: 2011158128}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61740426b3a3ba2439816fce47b11f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1626445859
+--- !u!114 &2011158130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626445857}
+  m_GameObject: {fileID: 2011158128}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80c9005ea62260140a00ea4d00965f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bg_shop: {fileID: 0}
-  bg_black: {fileID: 0}
-  pop_detail: {fileID: 0}
-  pop_blank: {fileID: 0}
-  pop_blank2: {fileID: 0}
-  cost_icon: {fileID: 0}
-  bg_asset: {fileID: 0}
-  arrow_upgrade: {fileID: 0}
-  titlebase: {fileID: 0}
-  gauge_exp: {fileID: 0}
+  bg_shop: {fileID: 2800000, guid: 2b2732c3ed833084aa0210f150f1ba9d, type: 3}
+  bg_black: {fileID: 2800000, guid: bff6dfd358a13064d83b07af2d4ac5aa, type: 3}
+  pop_detail: {fileID: 2800000, guid: 63e8938344f7bfc4ba9cee337a7ed2c4, type: 3}
+  pop_blank: {fileID: 2800000, guid: c7c751a901fe1e34c9193f320ff9401a, type: 3}
+  pop_blank2: {fileID: 2800000, guid: 188bc1d4bb2321b46a94635b002c5812, type: 3}
+  cost_icon: {fileID: 2800000, guid: ace25ee460410eb419ca1cf92af0de62, type: 3}
+  bg_asset: {fileID: 2800000, guid: 937525bee43a85b42b894528ddca6afc, type: 3}
+  arrow_upgrade: {fileID: 2800000, guid: b36b2c9ca4f13074f9c88272ea3cd888, type: 3}
+  titlebase: {fileID: 2800000, guid: beaa4696f83a021458698fafa658b098, type: 3}
+  gauge_exp: {fileID: 2800000, guid: b225b0b65d6ef6840b78552f17a18011, type: 3}
   equipicon:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: ce8b72013ed63ce4e87401d09f9eeb2a, type: 3}
+  - {fileID: 2800000, guid: e06665c493a8c3c48aec0f6a1d9a1118, type: 3}
+  - {fileID: 2800000, guid: 471ef1e850eb00e4a9e1a88ee11ce0fe, type: 3}
+  - {fileID: 2800000, guid: 627e412ad5a102c43be2016c4fe1347a, type: 3}
+  - {fileID: 2800000, guid: edd36c2827528024ea70be6ca012040b, type: 3}
+  - {fileID: 2800000, guid: a6f2937602d1eec4788b93603d7eac93, type: 3}
   img_acce:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: bd5b406309137884e88d38d186e737b2, type: 3}
+  - {fileID: 2800000, guid: a59c1e59b42d27046bcddd1c5bc7a506, type: 3}
+  - {fileID: 2800000, guid: e11d2c94a9c0e9b468a19cddd7d808bc, type: 3}
+  - {fileID: 2800000, guid: 1e809e20343eeef4d966e072ca2d11b8, type: 3}
+  - {fileID: 2800000, guid: 758dd62e21c173248abe9b7ecbc3e607, type: 3}
+  - {fileID: 2800000, guid: 4ab5786c418541e47a10710c9813bd37, type: 3}
   bt_equip:
     m_Name: 
     m_Normal:
@@ -831,13 +831,13 @@ MonoBehaviour:
     m_StretchHeight: 0
   basicSkin: {fileID: 0}
   sound_dummy: {fileID: 0}
---- !u!4 &1626445860
+--- !u!4 &2011158131
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626445857}
+  m_GameObject: {fileID: 2011158128}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -850,5 +850,5 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1626445860}
-  - {fileID: 957456125}
+  - {fileID: 2011158131}
+  - {fileID: 1185839793}

@@ -69,13 +69,34 @@ namespace UndeadSlayer.Migration
         private class FieldVal
         {
             public string n;         // field name
-            public string kind;      // node | int | float | bool | vec
+            public string kind;      // node | int | float | bool | vec | str | asset | arr | obj | opaque
             public string t;         // declared type name (Transform, GameObject, Vector3, ...)
             public int node;         // kind == node: source object id, resolved to a scene node
             public int i;
             public float f;
             public int b;
             public float[] v;
+            public string s;         // kind == str
+            public string asset;     // kind == asset: project-relative path
+            public FieldItem[] items;  // kind == arr: one entry per element
+        }
+
+        /// <summary>
+        /// One element of an array field. A separate type rather than a recursive FieldVal because
+        /// JsonUtility binds by exact field name and does not do recursion; the element shapes seen
+        /// in this build are asset / int / float / node, which is all this covers.
+        /// </summary>
+        [Serializable]
+        private class FieldItem
+        {
+            public string kind;
+            public string t;
+            public int node;
+            public int i;
+            public float f;
+            public int b;
+            public float[] v;
+            public string asset;
         }
 
         [Serializable]
@@ -159,7 +180,8 @@ namespace UndeadSlayer.Migration
             var skinJobs = new List<SkinJob>();
             var fieldJobs = new List<FieldJob>();
             int fieldsRefs = 0, fieldsVals = 0, fieldsMissing = 0, fieldsLanded = 0, fieldsDropped = 0;
-            int fieldsNotApplied = 0;
+            int fieldsNotApplied = 0, fieldsArrayElems = 0, fieldsArrayPartial = 0;
+            int fieldsLandedArray = 0;
 
             foreach (var n in data.nodes)
             {
@@ -315,6 +337,10 @@ namespace UndeadSlayer.Migration
             foreach (var job in fieldJobs)
             {
                 var so = new SerializedObject(job.Mb);
+                // Field names whose reference values must still be non-null after Apply. Scoped to
+                // this one component: the first cut kept them in a list shared by every job, which
+                // would have charged component B for component A's dropped reference.
+                var wantLanded = new List<string>();
                 bool dirty = false;
                 foreach (var fv in job.Comp.fields)
                 {
@@ -378,8 +404,89 @@ namespace UndeadSlayer.Migration
                         else { fieldsMissing++; continue; }
                         fieldsVals++;
                     }
-                    else if (fv.kind == "arr" || fv.kind == "obj" || fv.kind == "str"
-                             || fv.kind == "asset" || fv.kind == "opaque")
+                    else if (fv.kind == "str")
+                    {
+                        if (prop.propertyType != SerializedPropertyType.String)
+                        {
+                            fieldsMissing++;
+                            Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                ": JSON says string, property is " + prop.propertyType);
+                            continue;
+                        }
+                        prop.stringValue = fv.s;
+                        fieldsVals++;
+                    }
+                    else if (fv.kind == "asset")
+                    {
+                        var a = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(fv.asset);
+                        if (a == null)
+                        {
+                            fieldsMissing++;
+                            Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                ": asset '" + fv.asset + "' is not in the project");
+                            continue;
+                        }
+                        prop.objectReferenceValue = a;
+                        fieldsRefs++;
+                        wantLanded.Add(fv.n);
+                    }
+                    else if (fv.kind == "arr" && fv.items != null)
+                    {
+                        int landed = 0;
+                        prop.arraySize = fv.items.Length;
+                        for (int ei = 0; ei < fv.items.Length; ei++)
+                        {
+                            var item = fv.items[ei];
+                            var ep = prop.GetArrayElementAtIndex(ei);
+                            if (ep == null) continue;
+                            if (item.kind == "asset")
+                            {
+                                var a = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(item.asset);
+                                if (a == null) continue;
+                                ep.objectReferenceValue = a;
+                                landed++;
+                            }
+                            else if (item.kind == "node")
+                            {
+                                GameObject target;
+                                if (!byId.TryGetValue(item.node, out target)) continue;
+                                // An array element's declared element type is not reachable from
+                                // the SerializedProperty, so hand over the GameObject unless the
+                                // property says it wants a component.
+                                if (ep.propertyType == SerializedPropertyType.ObjectReference &&
+                                    ep.type == "GameObject") ep.objectReferenceValue = target;
+                                else ep.objectReferenceValue = target.transform;
+                                landed++;
+                            }
+                            else if (item.kind == "int") { ep.intValue = item.i; landed++; }
+                            else if (item.kind == "float") { ep.floatValue = item.f; landed++; }
+                            else if (item.kind == "bool") { ep.boolValue = item.b != 0; landed++; }
+                            else if (item.kind == "vec" && item.v != null
+                                     && ep.propertyType == SerializedPropertyType.Vector3
+                                     && item.v.Length >= 3)
+                            {
+                                ep.vector3Value = new Vector3(item.v[0], item.v[1], item.v[2]);
+                                landed++;
+                            }
+                        }
+                        if (landed == 0)
+                        {
+                            fieldsMissing++;
+                            Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                ": array of " + fv.items.Length + " applied nothing");
+                            continue;
+                        }
+                        fieldsArrayElems += landed;
+                        if (landed != fv.items.Length)
+                        {
+                            fieldsArrayPartial++;
+                            Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                ": only " + landed + " of " + fv.items.Length +
+                                " array elements applied");
+                        }
+                        wantLanded.Add(fv.n);
+                    }
+                    else if (fv.kind == "obj" || fv.kind == "opaque")
                     {
                         // Decoded and present in the JSON, but this pass cannot apply them yet.
                         // Counted separately so "refused" keeps meaning "something went wrong"
@@ -400,9 +507,45 @@ namespace UndeadSlayer.Migration
                 so.Update();
                 foreach (var fv in job.Comp.fields)
                 {
-                    if (fv.kind != "node") continue;
+                    bool wantRef = fv.kind == "node" || fv.kind == "asset";
+                    if (!wantRef && fv.kind != "arr") continue;
                     var p2 = so.FindProperty(fv.n);
-                    if (p2 != null && p2.objectReferenceValue != null) fieldsLanded++;
+                    if (p2 == null)
+                    {
+                        fieldsDropped++;
+                        continue;
+                    }
+                    if (fv.kind == "arr")
+                    {
+                        // An array of references counts per element; a scalar counts once.
+                        int expected = fv.items == null ? 0 : fv.items.Length;
+                        int got = 0;
+                        for (int ei = 0; ei < Math.Min(expected, p2.arraySize); ei++)
+                        {
+                            var ep = p2.GetArrayElementAtIndex(ei);
+                            if (ep == null) continue;
+                            if (ep.propertyType == SerializedPropertyType.ObjectReference)
+                            {
+                                if (ep.objectReferenceValue != null) got++;
+                            }
+                            else if (ep.propertyType == SerializedPropertyType.Integer
+                                     || ep.propertyType == SerializedPropertyType.Float
+                                     || ep.propertyType == SerializedPropertyType.Boolean)
+                            {
+                                got++;
+                            }
+                        }
+                        fieldsLandedArray += got;
+                        if (got < expected)
+                        {
+                            fieldsDropped++;
+                            Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                ": array holds " + got + " of " + expected +
+                                " values after apply");
+                        }
+                        continue;
+                    }
+                    if (p2.objectReferenceValue != null) fieldsLanded++;
                     else
                     {
                         fieldsDropped++;
@@ -582,12 +725,12 @@ namespace UndeadSlayer.Migration
             }
 
             Debug.Log(
-                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive, %d decoded but not applicable yet\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
+                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive, %d decoded but not applicable yet\n  arrays      : %d elements written, %d landed in the file, %d arrays partial\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
                 .Fmt(data.source_level, data.scene_path, data.nodes.Length,
                      addedScripts, missingScripts, addedComps, unknownComps,
                      meshesSet, matsSet, missingAssets,
                      fieldsRefs, fieldsVals, fieldsMissing, fieldsLanded, fieldsDropped,
-                     fieldsNotApplied,
+                     fieldsNotApplied, fieldsArrayElems, fieldsLandedArray, fieldsArrayPartial,
                      animStates, animObjects, guidsInFile, clipGuids.Count, animMissing,
                      animAmbiguous,
                      dropped.Any() ? string.Join(", ", dropped) : "none"));
