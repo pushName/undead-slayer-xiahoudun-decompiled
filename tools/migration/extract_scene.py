@@ -281,201 +281,236 @@ def bind_animations(nodes, clip_index, script_states, warnings, stats):
             n["animations"] = bound
 
 
-def main():
-    target = sys.argv[1] if len(sys.argv) > 1 else "level7"
-    if not target.startswith("level"):
-        target = "level" + target
-    path = os.path.join(DUMP, target)
-    if not os.path.exists(path):
-        sys.exit("no such level: %s" % path)
+# --- reusable per-file resolution -------------------------------------------------------
+# export_prefabs.py walks the same kind of objects in a different container (the hash-named
+# AssetBundles), so everything that turns an object into a node lives here rather than inside
+# main(). A second copy of the reference resolution would drift the moment one side learned a new
+# case, which is exactly how the scene pass and the ledger resolver once disagreed about 63
+# dropped references.
 
-    bindings = json.load(open(BINDINGS, encoding="utf-8"))
-    script_guid = bindings["script_to_guid"]
-    script_cs = bindings["script_to_cs"]
-    externals = bindings["level_externals"].get(target, [])
-    monoscripts = bindings["monoscripts"]
+_INDEXES = None
+_BINDINGS = None
+MIG = os.path.join(_REPO, "tools", "migration")
 
-    # Asset indexes produced by the earlier export steps. Missing ones are not fatal --
-    # the renderer is then emitted with a null reference and reported, so the scene still
-    # rebuilds and the gap stays visible instead of the tool refusing to run.
-    mig = os.path.join(_REPO, "tools", "migration")
-    meshes_doc = load_json(os.path.join(mig, "meshes.json"))
-    mats_doc = load_json(os.path.join(mig, "materials.json"))
-    mesh_index = (meshes_doc or {}).get("index", {})
-    mat_index = (mats_doc or {}).get("index", {})
-    if not mesh_index or not mat_index:
-        print("WARNING: mesh and/or material index missing -- renderers will have null "
-              "references. Run export_meshes.py / export_materials.py first.")
 
-    def asset_for(index, file_id, path_id):
-        tgt = u4.resolve_target(target, externals, file_id)
+def bindings():
+    """monoscript-bindings.json, once per process."""
+    global _BINDINGS
+    if _BINDINGS is None:
+        _BINDINGS = load_json(BINDINGS)
+        if _BINDINGS is None:
+            raise SystemExit("no monoscript-bindings.json -- run build_monoscript_table.py first")
+    return _BINDINGS
+
+
+def indexes():
+    """The asset indexes the export steps leave behind, keyed the same way (container!path_id).
+
+    A missing index is not fatal: the reference resolves to None, gets counted, and the gap stays
+    in the output instead of the tool refusing to run.
+    """
+    global _INDEXES
+    if _INDEXES is not None:
+        return _INDEXES
+    meshes_doc = load_json(os.path.join(MIG, "meshes.json")) or {}
+    mats_doc = load_json(os.path.join(MIG, "materials.json")) or {}
+    tex_index = load_json(os.path.join(MIG, "texture-index.json")) or {}
+    audio_index = {k: v["path"] for k, v in
+                   (load_json(os.path.join(MIG, "audio.json")) or {}).get("index", {}).items()}
+    clip_index = load_json(os.path.join(MIG, "animation-index.json"))
+    clips = {}
+    if clip_index:
+        for e in clip_index["clips"]:
+            clips["%s!%d" % (e["container"], e["path_id"])] = clip_asset_path(
+                e["name"], e["container"], e["path_id"])
+    _INDEXES = {
+        "mesh": meshes_doc.get("index", {}),
+        "material": mats_doc.get("index", {}),
+        "clip_index": clip_index,
+        "survey": load_json(os.path.join(MIG, "animations-survey.json")),
+        "by_type": {"Material": mats_doc.get("index", {}), "Mesh": meshes_doc.get("index", {}),
+                    "Texture2D": tex_index, "Texture": tex_index, "AnimationClip": clips,
+                    "AudioClip": audio_index},
+    }
+    return _INDEXES
+
+
+class FileCtx:
+    """One serialized file plus the tables needed to name whatever its objects point at.
+
+    `source` is the container basename, which is what the indexes are keyed by, and `externals`
+    turns a PPtr's m_FileID into another container basename.
+    """
+
+    def __init__(self, source, env):
+        self.source = source
+        self.env = env
+        b = bindings()
+        self.script_guid = b["script_to_guid"]
+        self.script_cs = b["script_to_cs"]
+        self.monoscripts = b["monoscripts"]
+        self.externals = b["level_externals"].get(source, [])
+        idx = indexes()
+        self.mesh_index = idx["mesh"]
+        self.mat_index = idx["material"]
+        self.objs = {o.path_id: o for o in env.objects}
+        self.warnings = []
+        self.field_stats = collections.Counter()
+        self.dropped_refs = []
+        self.obj2node = {}
+
+    def asset_for(self, index, file_id, path_id):
+        tgt = u4.resolve_target(self.source, self.externals, file_id)
         if tgt is None:
             return None, "<bad FileID %d>" % file_id
         key = "%s!%d" % (tgt, path_id)
         return index.get(key), key
 
-    # Cross-file object references. A scene cannot host them, but an exported asset can: the
-    # material / mesh / texture indexes are keyed the same way (container!path_id), and clip paths
-    # are a pure function of (name, container, path_id). Anything else stays dropped and counted.
-    tex_index = (load_json(os.path.join(_REPO, "tools", "migration", "texture-index.json")) or {})
-    _au = load_json(os.path.join(mig, "audio.json"))
-    audio_index = {k: v["path"] for k, v in (_au or {}).get("index", {}).items()}
-    clip_index_for_refs = {}
-    _ci = load_json(os.path.join(_REPO, "tools", "migration", "animation-index.json"))
-    if _ci:
-        for e in _ci["clips"]:
-            clip_index_for_refs["%s!%d" % (e["container"], e["path_id"])] = clip_asset_path(
-                e["name"], e["container"], e["path_id"])
-    BY_TYPE = {"Material": mat_index, "Mesh": mesh_index, "Texture2D": tex_index,
-               "Texture": tex_index, "AnimationClip": clip_index_for_refs,
-               "AudioClip": audio_index}
-
-    def asset_lookup(typ, file_id, path_id):
-        idx = BY_TYPE.get(typ)
+    def asset_lookup(self, typ, file_id, path_id):
+        """Cross-file reference -> project path, or None. A scene cannot host one, an exported
+        asset can, so the callers decide whether a None is a drop worth ledgering."""
+        idx = indexes()["by_type"].get(typ)
         if idx is None:
             return None
-        tgt = u4.resolve_target(target, externals, file_id)
+        tgt = u4.resolve_target(self.source, self.externals, file_id)
         return idx.get("%s!%d" % (tgt, path_id)) if tgt else None
 
-    def translate_renderer(tn, obj, warnings, go_id):
+    def script_name(self, sc_file_id, sc_path_id):
+        if sc_file_id == 0:
+            key = "%s!%d" % (self.source, sc_path_id)
+        else:
+            if sc_file_id - 1 >= len(self.externals):
+                return None
+            key = "%s!%d" % (self.externals[sc_file_id - 1], sc_path_id)
+        return self.monoscripts.get(key)
+
+    def translate_renderer(self, tn, obj, go_id):
         rec = {"kind": "renderer", "type": tn}
         try:
             d = obj.read()
         except Exception as exc:
-            warnings.append("%s %d (GameObject %s): unreadable (%s)" % (tn, obj.path_id, go_id, exc))
+            self.warnings.append("%s %d (GameObject %s): unreadable (%s)" % (tn, obj.path_id, go_id, exc))
             rec["unavailable"] = True
             return rec
         rec["enabled"] = bool(getattr(d, "m_Enabled", True))
         if tn == "MeshFilter":
             pm = getattr(d, "m_Mesh", None)
             if pm is not None and int(pm.m_PathID):
-                asset, key = asset_for(mesh_index, int(pm.m_FileID), int(pm.m_PathID))
+                asset, key = self.asset_for(self.mesh_index, int(pm.m_FileID), int(pm.m_PathID))
                 rec["mesh"] = asset
                 if asset is None:
-                    warnings.append("MeshFilter %d: mesh %s not in meshes.json" % (obj.path_id, key))
+                    self.warnings.append("MeshFilter %d: mesh %s not in meshes.json"
+                                         % (obj.path_id, key))
             return rec
         mats = []
         for i, pp in enumerate(getattr(d, "m_Materials", None) or []):
             if int(pp.m_PathID) == 0:
                 mats.append(None)
                 continue
-            asset, key = asset_for(mat_index, int(pp.m_FileID), int(pp.m_PathID))
+            asset, key = self.asset_for(self.mat_index, int(pp.m_FileID), int(pp.m_PathID))
             mats.append(asset)
             if asset is None:
-                warnings.append("%s %d: material[%d] %s not buildable (deferred shader?)"
-                                % (tn, obj.path_id, i, key))
+                self.warnings.append("%s %d: material[%d] %s not buildable (deferred shader?)"
+                                     % (tn, obj.path_id, i, key))
         rec["materials"] = mats
         rec["sorting_order"] = int(getattr(d, "m_SortingOrder", 0) or 0)
         rec["cast_shadows"] = bool(getattr(d, "m_CastShadows", False))
         rec["receive_shadows"] = bool(getattr(d, "m_ReceiveShadows", False))
         if tn == "SkinnedMeshRenderer":
-            # m_Bones holds direct Transform pointers inside this same level file, so the
-            # skeleton can be re-bound by id -- the missing bone NAMES in the mesh only
-            # matter for meshes shared across prefabs.
+            # m_Bones holds direct Transform pointers inside this same file, so the skeleton can
+            # be re-bound by id -- the missing bone NAMES in the mesh only matter for meshes
+            # shared across prefabs.
             rec["bones"] = [int(pp.m_PathID) for pp in (getattr(d, "m_Bones", None) or [])
                             if int(pp.m_FileID) == 0]
             rec["root_bone"] = int(getattr(d, "m_RootBone", None).m_PathID or 0) \
                 if getattr(d, "m_RootBone", None) is not None else 0
             pm = getattr(d, "m_Mesh", None)
             if pm is not None and int(pm.m_PathID):
-                rec["mesh"], _k = asset_for(mesh_index, int(pm.m_FileID), int(pm.m_PathID))
+                rec["mesh"], _k = self.asset_for(self.mesh_index, int(pm.m_FileID),
+                                                 int(pm.m_PathID))
         return rec
 
-    env = UnityPy.load(path)
-    objs = {o.path_id: o for o in env.objects}
+    def read_transforms(self):
+        transforms = {}
+        for o in self.env.objects:
+            if o.type.name != "Transform":
+                continue
+            d = o.read()
+            transforms[o.path_id] = {
+                "father": d.m_Father.m_PathID,
+                "children": [c.m_PathID for c in (d.m_Children or [])],
+                "pos": [round(float(d.m_LocalPosition.x), 6), round(float(d.m_LocalPosition.y), 6),
+                        round(float(d.m_LocalPosition.z), 6)],
+                "rot": [round(float(d.m_LocalRotation.x), 6), round(float(d.m_LocalRotation.y), 6),
+                        round(float(d.m_LocalRotation.z), 6), round(float(d.m_LocalRotation.w), 6)],
+                "scale": [round(float(d.m_LocalScale.x), 6), round(float(d.m_LocalScale.y), 6),
+                          round(float(d.m_LocalScale.z), 6)],
+            }
+        return transforms
 
-    def script_name(sc_file_id, sc_path_id):
-        if sc_file_id == 0:
-            key = "%s!%d" % (target, sc_path_id)
-        else:
-            if sc_file_id - 1 >= len(externals):
-                return None
-            key = "%s!%d" % (externals[sc_file_id - 1], sc_path_id)
-        return monoscripts.get(key)
+    def map_objects_to_nodes(self):
+        """Any object id -> the node id (its GameObject's Transform path_id) it belongs to.
 
-    transforms = {}
-    for o in env.objects:
-        if o.type.name != "Transform":
-            continue
-        d = o.read()
-        transforms[o.path_id] = {
-            "father": d.m_Father.m_PathID,
-            "children": [c.m_PathID for c in (d.m_Children or [])],
-            "pos": [round(float(d.m_LocalPosition.x), 6), round(float(d.m_LocalPosition.y), 6),
-                    round(float(d.m_LocalPosition.z), 6)],
-            "rot": [round(float(d.m_LocalRotation.x), 6), round(float(d.m_LocalRotation.y), 6),
-                    round(float(d.m_LocalRotation.z), 6), round(float(d.m_LocalRotation.w), 6)],
-            "scale": [round(float(d.m_LocalScale.x), 6), round(float(d.m_LocalScale.y), 6),
-                      round(float(d.m_LocalScale.z), 6)],
-        }
+        Needed because a serialised reference may point at the Transform, the GameObject, or any
+        other component of the same object, and the description is keyed by Transform id.
+        """
+        for o in self.env.objects:
+            if o.type.name != "GameObject":
+                continue
+            d = o.read()
+            tf = [pp.m_PathID for _tid, pp in d.m_Component if int(_tid) == 4]
+            if not tf:
+                continue
+            self.obj2node[o.path_id] = tf[0]
+            for _tid, pp in d.m_Component:
+                self.obj2node[pp.m_PathID] = tf[0]
 
-    nodes = []
-    warnings = []
-    unsupported = collections.Counter()
-
-    # Any object id -> the node id (its GameObject's Transform path_id) it belongs to. Needed
-    # because a serialised reference may point at the Transform, the GameObject, or any other
-    # component of the same object, and the scene JSON is keyed by Transform id.
-    obj2node = {}
-    for o in env.objects:
-        if o.type.name != "GameObject":
-            continue
-        d = o.read()
-        tf = [pp.m_PathID for _tid, pp in d.m_Component if int(_tid) == 4]
-        if not tf:
-            continue
-        obj2node[o.path_id] = tf[0]
-        for _tid, pp in d.m_Component:
-            obj2node[pp.m_PathID] = tf[0]
-
-    field_stats = collections.Counter()
-    dropped_refs = []
-
-    for o in env.objects:
-        if o.type.name != "GameObject":
-            continue
-        d = o.read()
-        tpath = None
+    def components_of(self, d, go_id):
+        """One GameObject's data -> the component records, decoded where a layout is proven."""
         comps = []
+        tpath = [None]
+        unsupported = collections.Counter()
         for _tid, pp in d.m_Component:
-            t = objs.get(pp.m_PathID)
+            t = self.objs.get(pp.m_PathID)
             if t is None:
-                warnings.append("GameObject %d: component pointer %d dangles" % (o.path_id, pp.m_PathID))
+                self.warnings.append("GameObject %d: component pointer %d dangles"
+                                     % (go_id, pp.m_PathID))
                 continue
             tn = t.type.name
             if tn == "Transform":
-                tpath = pp.m_PathID
+                tpath[0] = pp.m_PathID
                 continue
             if tn == "MonoBehaviour":
                 raw = bytes(t.get_raw_data())
                 _gof, _gop, en, scf, scp = struct.unpack_from("<iiiii", raw, 0)
-                name = script_name(scf, scp)
+                name = self.script_name(scf, scp)
                 if name is None:
-                    warnings.append("MonoBehaviour %d: script %d!%d unresolved" % (t.path_id, scf, scp))
+                    self.warnings.append("MonoBehaviour %d: script %d!%d unresolved"
+                                         % (t.path_id, scf, scp))
                     continue
                 entry = {"kind": "MonoBehaviour", "script": name,
-                         "guid": script_guid.get(name, ""),
-                         "cs": script_cs.get(name, ""),
+                         "guid": self.script_guid.get(name, ""),
+                         "cs": self.script_cs.get(name, ""),
                          "enabled": bool(en)}
                 vals, why = MF.decode_for_class(name, raw)
                 if vals is None:
-                    field_stats["refused[" + MF.classify_refusal(why)[:38] + "]"] += 1
+                    self.field_stats["refused[" + MF.classify_refusal(why)[:38] + "]"] += 1
                 else:
                     out_fields = []
-                    ctx = {"node": str(d.m_Name), "script": name}
+                    fld_ctx = {"node": str(d.m_Name), "script": name}
                     for fname, v in vals:
-                        fv, stat = flatten_value(fname, v, obj2node, asset_lookup,
-                                                 field_stats, dropped_refs, ctx)
+                        fv, stat = flatten_value(fname, v, self.obj2node, self.asset_lookup,
+                                                 self.field_stats, self.dropped_refs, fld_ctx)
                         if stat:
-                            field_stats[stat] += 1
+                            self.field_stats[stat] += 1
                         if fv is not None:
                             out_fields.append(fv)
                     if out_fields:
                         entry["fields"] = out_fields
-                    field_stats["instances decoded"] += 1
+                    self.field_stats["instances decoded"] += 1
                 comps.append(entry)
             elif tn in ("MeshFilter", "MeshRenderer", "SkinnedMeshRenderer"):
-                comps.append(translate_renderer(tn, t, warnings, o.path_id))
+                comps.append(self.translate_renderer(tn, t, go_id))
             elif tn in REMOVED_IN_5:
                 unsupported[tn] += 1
                 comps.append({"kind": "unsupported", "type": tn})
@@ -483,16 +518,26 @@ def main():
                 comps.append({"kind": "component", "type": tn})
             else:
                 unsupported[tn] += 1
-                warnings.append("GameObject %d: unhandled component type %s" % (o.path_id, tn))
+                self.warnings.append("GameObject %d: unhandled component type %s"
+                                     % (go_id, tn))
+        return comps, tpath[0], unsupported
 
+    def node_record(self, o, transforms):
+        """One GameObject object -> (node dict or None, unsupported histogram).
+
+        None means the object had no Transform to key a node on, which is reported rather than
+        quietly dropped.
+        """
+        d = o.read()
+        comps, tpath, unsupported = self.components_of(d, o.path_id)
         tname, twarn = tag_name(int(d.m_Tag))
         if twarn:
-            warnings.append("GameObject %s: %s" % (o.path_id, twarn))
+            self.warnings.append("GameObject %s: %s" % (o.path_id, twarn))
         if tpath is None:
-            warnings.append("GameObject %s has no Transform -- skipped" % o.path_id)
-            continue
+            self.warnings.append("GameObject %s has no Transform -- skipped" % o.path_id)
+            return None, unsupported
         tr = transforms[tpath]
-        nodes.append({
+        return {
             "id": tpath,
             "go_id": o.path_id,
             "name": str(d.m_Name),
@@ -503,7 +548,43 @@ def main():
             "parent": tr["father"],
             "children": tr["children"],
             "components": comps,
-        })
+        }, unsupported
+
+    def build_nodes(self):
+        """Every GameObject in this file -> (nodes, unsupported histogram)."""
+        transforms = self.read_transforms()
+        self.map_objects_to_nodes()
+        nodes = []
+        unsupported = collections.Counter()
+        for o in self.env.objects:
+            if o.type.name != "GameObject":
+                continue
+            node, unsup = self.node_record(o, transforms)
+            unsupported.update(unsup)
+            if node is not None:
+                nodes.append(node)
+        return nodes, unsupported
+
+
+def main():
+    target = sys.argv[1] if len(sys.argv) > 1 else "level7"
+    if not target.startswith("level"):
+        target = "level" + target
+    path = os.path.join(DUMP, target)
+    if not os.path.exists(path):
+        sys.exit("no such level: %s" % path)
+
+    ix = indexes()
+    if not ix["mesh"] or not ix["material"]:
+        print("WARNING: mesh and/or material index missing -- renderers will have null "
+              "references. Run export_meshes.py / export_materials.py first.")
+
+    env = UnityPy.load(path)
+    ctx = FileCtx(target, env)
+    nodes, unsupported = ctx.build_nodes()
+    warnings = ctx.warnings
+    field_stats = ctx.field_stats
+    dropped_refs = ctx.dropped_refs
 
     ids = {n["id"] for n in nodes}
     roots = [n["id"] for n in nodes if n["parent"] == 0 or n["parent"] not in ids]
@@ -512,8 +593,7 @@ def main():
 
     # Animation binding. Both inputs are produced by the animation tools; a missing one is not
     # fatal -- the scene still rebuilds, just with no states registered, and the gap is reported.
-    clip_index = load_json(os.path.join(mig, "animation-index.json"))
-    survey = load_json(os.path.join(mig, "animations-survey.json"))
+    clip_index, survey = ix["clip_index"], ix["survey"]
     anim_stats = collections.Counter()
     if clip_index and survey:
         bind_animations(nodes, clip_index["clips"], survey.get("script_states", {}),
@@ -525,7 +605,7 @@ def main():
     # Turn each ledger entry's externals index into the file it actually names, so the next pass
     # can find the target without re-reading this level's header.
     for rec in dropped_refs:
-        rec["file"] = u4.resolve_target(target, externals, rec["file_id"])
+        rec["file"] = u4.resolve_target(target, ctx.externals, rec["file_id"])
     payload = {
         "source_level": target,
         "scene_name": scene_name,
