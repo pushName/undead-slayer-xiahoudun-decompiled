@@ -416,7 +416,8 @@ namespace UndeadSlayer.EditorTools
                 + "requested), failed {2}", stat.clips, total, stat.failed));
             sb.AppendLine(string.Format("requested by       : {0} Animation state bindings + {1} "
                 + "MonoBehaviour field references; the index lists {2} clips and only what a scene "
-                + "actually mentions is built", total - fromFields, fromFields, index.clips.Length));
+                + "or prefab description actually mentions is built",
+                total - fromFields, fromFields, index.clips.Length));
             if (orphanMentions.Count > 0)
             {
                 // A scene names a clip path the index does not have. That is the two-path-naming bug
@@ -614,8 +615,12 @@ namespace UndeadSlayer.EditorTools
             var curves = new AnimationCurve[3];
             for (int a = 0; a < 3; a++)
             {
-                curves[a] = AnimationUtility.GetEditorCurve(clip, c.path, typeof(Transform),
-                    "localEulerAnglesRaw." + AxisName(a));
+                // The (clip, path, type, property) overload is obsolete in 2022. The binding form
+                // names the same curve the writer above creates with clip.SetCurve, and the
+                // read-only consequence is deliberate: a wrong binding would surface as
+                // "rotation channel unreadable" in this run's report rather than as a changed asset.
+                curves[a] = AnimationUtility.GetEditorCurve(clip, EditorCurveBinding.FloatCurve(
+                    c.path, typeof(Transform), "localEulerAnglesRaw." + AxisName(a)));
                 if (curves[a] == null || curves[a].length == 0)
                 {
                     problems.Add(d.id + ": rotation channel " + a + " unreadable on " + c.path);

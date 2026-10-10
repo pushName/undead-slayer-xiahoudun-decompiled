@@ -1,0 +1,100 @@
+{
+ "registered_object_parent": null,
+ "source_container": "c0db4720c07eeb24a81dccc6ddeb4841",
+ "root_path_id": 1,
+ "prefab_name": "angel_splash8",
+ "asset_path": "Assets/Resources/angel_splash8.prefab",
+ "scene_path": "Assets/Imported/_PrefabBuild/angel_splash8.unity",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "angel_splash8",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.01,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Particle_Emit",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "emitfinish_time",
+       "kind": "float",
+       "f": 1.0
+      },
+      {
+       "n": "destroy_time",
+       "kind": "float",
+       "f": 3.0
+      },
+      {
+       "n": "show_time",
+       "kind": "float",
+       "f": 0.10000000149011612
+      },
+      {
+       "n": "movespeed",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "ismoveup",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

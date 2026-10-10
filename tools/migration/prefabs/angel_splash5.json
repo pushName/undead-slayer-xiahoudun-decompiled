@@ -1,0 +1,66 @@
+{
+ "registered_object_parent": "cf478de1ef56c3444ac102712d1445a3!1 father=10",
+ "source_container": "cf478de1ef56c3444ac102712d1445a3",
+ "root_path_id": 1,
+ "prefab_name": "angel_splash5",
+ "asset_path": "Assets/Resources/angel_splash5.prefab",
+ "scene_path": "Assets/Imported/_PrefabBuild/angel_splash5.unity",
+ "node_count": 1,
+ "root_ids": [
+  6
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 6,
+   "go_id": 1,
+   "name": "pt_ice",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.072999,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     2.0,
+     1.0,
+     2.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  }
+ ]
+}

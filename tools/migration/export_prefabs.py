@@ -166,10 +166,48 @@ def main():
     args = ap.parse_args()
 
     roots = wanted_roots()
-    unique = {k: v[0] for k, v in roots.items() if len(v) == 1}
-    pending = {k: v for k, v in roots.items() if len(v) > 1}
-    print("GameObject keys: %d, single candidate: %d, ambiguous (not guessed): %d"
+    # mainData's shipped resource index decides a root when it claims one object under that exact
+    # key: a row gives (container, path_id), and the test here is that the row's own verdict is
+    # "exact" (the object there really carries the name) or that no other row claims the rival
+    # candidates. Measured on this build: angel_splash8 and wp_1 pass the name test, and
+    # angel_splash5's four same-named siblings are pointed at by NO row at all, while pid 1 is.
+    # Name matching stays as the fallback, and every root records which of the two decided it.
+    index_roots, index_any, claimed = {}, {}, collections.defaultdict(list)
+    rpath = os.path.join(_REPO, "tools", "migration", "maindata-resource-index.json")
+    if os.path.exists(rpath):
+        rdoc = json.load(open(rpath, encoding="utf-8"))
+        for r in rdoc["records"]:
+            if r.get("listed_container"):
+                claimed[(r["listed_container"], r["b"])].append(r["path"])
+                index_any.setdefault(r["path"].lower(), (r["listed_container"], r["b"]))
+                if r["verdict"] == "exact":
+                    index_roots.setdefault(r["path"].lower(),
+                                           (r["listed_container"], r["b"]))
+    unique, pending, decided = {}, {}, {}
+    for k, v in roots.items():
+        if len(v) == 1:
+            # A unique name hit stands on its own. The index is not allowed to override it: it has
+            # already been seen pointing at a child object (wp_b01 -> sharedassets18!1639, whose
+            # Transform has a father), so where the name match is unambiguous it is the safer judge.
+            unique[k], decided[k] = v[0], "only one candidate by name"
+            continue
+        pick = index_roots.get(k.lower())
+        if pick and pick in v:
+            unique[k], decided[k] = pick, "mainData index, self-agrees on the name"
+            continue
+        row = index_any.get(k.lower())
+        if row and all(claimed.get(c, []) == [] for c in v):
+            # The row names this asset at an object the name search never proposed, and none of the
+            # same-named candidates is claimed by any row at all -- angel_splash5's four siblings.
+            unique[k], decided[k] = row, "mainData index; every same-named candidate is unclaimed"
+        else:
+            pending[k] = v
+    print("GameObject keys: %d, roots decided: %d, still ambiguous (not guessed): %d"
           % (len(roots), len(unique), len(pending)))
+    for k in sorted(decided):
+        if decided[k].startswith("mainData index"):
+            print("   by index  %-16s %s!%d  -- %s" % (k, decided[k] and unique[k][0][:14],
+                                                       unique[k][1], decided[k]))
     for k, v in sorted(pending.items()):
         print("   pending %-16s candidates %s" % (k, v))
 
@@ -200,7 +238,7 @@ def main():
     contents = json.load(open(CONTENTS, encoding="utf-8")) if os.path.exists(CONTENTS) else None
     srcs = dict(u4.sources())
     stats = collections.Counter()
-    report, missing = {}, []
+    report, missing, not_roots = {}, {}, {}
     missing_clips = set()
     for cont in sorted(by_container):
         path = srcs.get(cont)
@@ -222,6 +260,13 @@ def main():
             if root is None:
                 missing.append((key, "%s!%d" % (cont, pid)))
                 continue
+            if root["parent"] not in (0, None):
+                # The registered object sits inside another hierarchy (7 of the wp_b* weapon keys
+                # and angel_splash5 look like this). That is not an error to refuse: the shipped
+                # build hands Resources.Load exactly this object, and instantiating it yields just
+                # this subtree, which is what cut_to_subtree + parent=0 reproduces. Recorded so the
+                # oddity stays visible instead of being smoothed away.
+                not_roots[key] = "%s!%d father=%s" % (cont, pid, root["parent"])
             keep = subtree_ids(nodes, root["id"])
             kept = cut_to_subtree(nodes, keep, stats)
             hist = histogram(kept)
@@ -232,6 +277,7 @@ def main():
                           % (key, dict(hist), claim))
                     return 2
             payload = {
+                "registered_object_parent": not_roots.get(key),
                 "source_container": cont,
                 "root_path_id": pid,
                 "prefab_name": key,
@@ -249,7 +295,7 @@ def main():
                 "container_warnings": list(ctx.warnings),
                 "nodes": kept,
             }
-            report[key] = {"container": cont, "path_id": pid,
+            report[key] = {"container": cont, "path_id": pid, "decided_by": decided[key],
                            "assets": payload["asset_path"], "objects": len(kept),
                            "components": dict(hist)}
             if not args.dry_run:
@@ -282,11 +328,18 @@ def main():
     print("exported %d prefabs, %d objects total (%s cut for references outside a subtree)"
           % (stats["exported"], sum(r["objects"] for r in report.values()),
              {k: v for k, v in stats.items() if k != "exported"} or "nothing"))
+    if not_roots:
+        print("registered objects that are not hierarchy roots (exported as their own subtree, "
+              "parent cleared): %d" % len(not_roots))
+        for k, why in sorted(not_roots.items()):
+            print("   %-16s %s" % (k, why))
     doc = {"tally": {"exported": stats["exported"], "pending_ambiguous": len(pending)},
+           "registered_object_not_a_root": not_roots,
            "pending": {k: ["%s!%d" % c for c in v] for k, v in sorted(pending.items())},
            "cut_stats": {k: v for k, v in stats.items() if k != "exported"},
            "animation_bindings_missing_on_disk": sorted(missing_clips),
-           "prefabs": report}
+           "prefabs": report,
+           "decided_by": {k: decided[k] for k in sorted(decided)}}
     if args.dry_run:
         print("dry run -- nothing written")
         return 0
@@ -299,6 +352,16 @@ def main():
         print("MISMATCH: report lists %d prefabs, exported %d" % (len(back["prefabs"]),
                                                                   stats["exported"]))
         return 2
+    stale = []
+    if not args.dry_run:
+        keep_files = {names[k] + ".json" for k in report}
+        for f in sorted(os.listdir(OUT_DIR)):
+            if f.endswith(".json") and f not in keep_files:
+                os.remove(os.path.join(OUT_DIR, f))
+                stale.append(f)
+        if stale:
+            print("removed %d stale description(s) whose root is no longer exported: %s"
+                  % (len(stale), ", ".join(stale[:6])))
     on_disk = [f for f in os.listdir(OUT_DIR) if f.endswith(".json")]
     if len(on_disk) != stats["exported"]:
         print("MISMATCH: %d descriptions asked for, %d on disk" % (stats["exported"], len(on_disk)))

@@ -1,22 +1,106 @@
 {
  "animation_bindings_missing_on_disk": [],
  "cut_stats": {},
- "pending": {
-  "angel_splash5": [
-   "cf478de1ef56c3444ac102712d1445a3!2",
-   "cf478de1ef56c3444ac102712d1445a3!3",
-   "cf478de1ef56c3444ac102712d1445a3!4",
-   "cf478de1ef56c3444ac102712d1445a3!5"
-  ],
-  "angel_splash8": [
-   "a035586254f722a4bb118a94790a7bbf!2",
-   "c0db4720c07eeb24a81dccc6ddeb4841!1"
-  ],
-  "wp_1": [
-   "sharedassets18.assets!812",
-   "d32e199144d53cf4387accde13443c7a!1"
-  ]
+ "decided_by": {
+  "CashShop": "only one candidate by name",
+  "RankingManager": "only one candidate by name",
+  "Stage_dun1": "only one candidate by name",
+  "Stage_dun2": "only one candidate by name",
+  "Stage_dun3": "only one candidate by name",
+  "Stage_dun4": "only one candidate by name",
+  "Stage_dun5": "only one candidate by name",
+  "Stage_dun6": "only one candidate by name",
+  "Stage_dun7": "only one candidate by name",
+  "Stage_dun8": "only one candidate by name",
+  "angel_splash2": "only one candidate by name",
+  "angel_splash3": "only one candidate by name",
+  "angel_splash4": "only one candidate by name",
+  "angel_splash5": "mainData index; every same-named candidate is unclaimed",
+  "angel_splash6": "only one candidate by name",
+  "angel_splash8": "mainData index, self-agrees on the name",
+  "bg_dun": "only one candidate by name",
+  "bg_dun_below": "only one candidate by name",
+  "bg_dun_cover": "only one candidate by name",
+  "bg_worldmap": "only one candidate by name",
+  "bullet_angel1": "only one candidate by name",
+  "bullet_angel2": "only one candidate by name",
+  "bullet_angel3": "only one candidate by name",
+  "bullet_angel4": "only one candidate by name",
+  "bullet_angel5": "only one candidate by name",
+  "bullet_angel6": "only one candidate by name",
+  "bullet_angel7": "only one candidate by name",
+  "bullet_angel8": "only one candidate by name",
+  "dun_gate": "only one candidate by name",
+  "general_arrow_poison": "only one candidate by name",
+  "general_arrowrain": "only one candidate by name",
+  "general_arrowrain_base": "only one candidate by name",
+  "general_axedance": "only one candidate by name",
+  "general_chain": "only one candidate by name",
+  "general_edge_wheel": "only one candidate by name",
+  "general_elec_shock": "only one candidate by name",
+  "general_fincanon": "only one candidate by name",
+  "general_flowerfan": "only one candidate by name",
+  "general_fly": "only one candidate by name",
+  "general_ice_spear": "only one candidate by name",
+  "general_icebg": "only one candidate by name",
+  "general_meteo": "only one candidate by name",
+  "general_mirage": "only one candidate by name",
+  "general_multispear": "only one candidate by name",
+  "general_rapidthrust": "only one candidate by name",
+  "general_risespear": "only one candidate by name",
+  "general_sister": "only one candidate by name",
+  "general_spinaxe": "only one candidate by name",
+  "general_spiritsword": "only one candidate by name",
+  "general_swamp": "only one candidate by name",
+  "general_sworddance": "only one candidate by name",
+  "getcoin_num": "only one candidate by name",
+  "giftbox": "only one candidate by name",
+  "stagenum_cave": "only one candidate by name",
+  "wp_0": "only one candidate by name",
+  "wp_1": "mainData index, self-agrees on the name",
+  "wp_10": "only one candidate by name",
+  "wp_11": "only one candidate by name",
+  "wp_12": "only one candidate by name",
+  "wp_13": "only one candidate by name",
+  "wp_14": "only one candidate by name",
+  "wp_15": "only one candidate by name",
+  "wp_16": "only one candidate by name",
+  "wp_17": "only one candidate by name",
+  "wp_18": "only one candidate by name",
+  "wp_19": "only one candidate by name",
+  "wp_2": "only one candidate by name",
+  "wp_20": "only one candidate by name",
+  "wp_21": "only one candidate by name",
+  "wp_22": "only one candidate by name",
+  "wp_23": "only one candidate by name",
+  "wp_24": "only one candidate by name",
+  "wp_25": "only one candidate by name",
+  "wp_3": "only one candidate by name",
+  "wp_4": "only one candidate by name",
+  "wp_5": "only one candidate by name",
+  "wp_6": "only one candidate by name",
+  "wp_7": "only one candidate by name",
+  "wp_8": "only one candidate by name",
+  "wp_9": "only one candidate by name",
+  "wp_b01": "only one candidate by name",
+  "wp_b02": "only one candidate by name",
+  "wp_b05": "only one candidate by name",
+  "wp_b06": "only one candidate by name",
+  "wp_b07": "only one candidate by name",
+  "wp_b08": "only one candidate by name",
+  "wp_b10": "only one candidate by name",
+  "wp_general1": "only one candidate by name",
+  "wp_general2": "only one candidate by name",
+  "wp_general3": "only one candidate by name",
+  "wp_general4": "only one candidate by name",
+  "wp_general5": "only one candidate by name",
+  "wp_general6": "only one candidate by name",
+  "wp_general7": "only one candidate by name",
+  "wp_general8": "only one candidate by name",
+  "wp_general_staff": "only one candidate by name",
+  "wp_horse": "only one candidate by name"
  },
+ "pending": {},
  "prefabs": {
   "CashShop": {
    "assets": "Assets/Resources/CashShop.prefab",
@@ -31,6 +115,7 @@
     "Transform": 53
    },
    "container": "8f47a76750ffb8b4183f6e75ca0c88f4",
+   "decided_by": "only one candidate by name",
    "objects": 53,
    "path_id": 1
   },
@@ -41,6 +126,7 @@
     "Transform": 1
    },
    "container": "8030cfee3fae59d41b14d0b6cf1b35f1",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -54,6 +140,7 @@
     "Transform": 12
    },
    "container": "675fdea51516a8c4ebe1091726c6268a",
+   "decided_by": "only one candidate by name",
    "objects": 12,
    "path_id": 1
   },
@@ -74,6 +161,7 @@
     "Transform": 23
    },
    "container": "549d20245296b0645ad2a0c875b87a83",
+   "decided_by": "only one candidate by name",
    "objects": 23,
    "path_id": 1
   },
@@ -93,6 +181,7 @@
     "Transform": 17
    },
    "container": "69f958559f37c4d4bbfbace1100f80d9",
+   "decided_by": "only one candidate by name",
    "objects": 17,
    "path_id": 1
   },
@@ -107,6 +196,7 @@
     "Transform": 16
    },
    "container": "bb3fd2145307bd241b0f466f8124459b",
+   "decided_by": "only one candidate by name",
    "objects": 16,
    "path_id": 1
   },
@@ -125,6 +215,7 @@
     "Transform": 14
    },
    "container": "cf2ec982d6d52a34188ee45e8f8c81f4",
+   "decided_by": "only one candidate by name",
    "objects": 14,
    "path_id": 1
   },
@@ -145,6 +236,7 @@
     "Transform": 35
    },
    "container": "da26799310d7d124093d96b60bcf4293",
+   "decided_by": "only one candidate by name",
    "objects": 35,
    "path_id": 1
   },
@@ -161,6 +253,7 @@
     "Transform": 14
    },
    "container": "e20a04d6f18f1dc46a1531f21b46e5e2",
+   "decided_by": "only one candidate by name",
    "objects": 14,
    "path_id": 1
   },
@@ -174,6 +267,7 @@
     "Transform": 17
    },
    "container": "8d4623989c62fa149b7f2c676fede947",
+   "decided_by": "only one candidate by name",
    "objects": 17,
    "path_id": 11
   },
@@ -186,6 +280,7 @@
     "Transform": 1
    },
    "container": "49fbebace6a8f424ab4fedab6fb4932e",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -201,6 +296,7 @@
     "Transform": 1
    },
    "container": "4c56c8fe077e8fc4a843dd4035ef3aff",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -216,7 +312,21 @@
     "Transform": 4
    },
    "container": "e59ee56f55934174fba3198ad7e25d11",
+   "decided_by": "only one candidate by name",
    "objects": 4,
+   "path_id": 1
+  },
+  "angel_splash5": {
+   "assets": "Assets/Resources/angel_splash5.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Transform": 1
+   },
+   "container": "cf478de1ef56c3444ac102712d1445a3",
+   "decided_by": "mainData index; every same-named candidate is unclaimed",
+   "objects": 1,
    "path_id": 1
   },
   "angel_splash6": {
@@ -234,7 +344,22 @@
     "Transform": 2
    },
    "container": "42889d56caebda34196798dd4285a84c",
+   "decided_by": "only one candidate by name",
    "objects": 2,
+   "path_id": 1
+  },
+  "angel_splash8": {
+   "assets": "Assets/Resources/angel_splash8.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Transform": 1
+   },
+   "container": "c0db4720c07eeb24a81dccc6ddeb4841",
+   "decided_by": "mainData index, self-agrees on the name",
+   "objects": 1,
    "path_id": 1
   },
   "bg_dun": {
@@ -246,6 +371,7 @@
     "Transform": 3
    },
    "container": "f5fab55166dd06f4095e4ce89f0c1e13",
+   "decided_by": "only one candidate by name",
    "objects": 3,
    "path_id": 1
   },
@@ -258,6 +384,7 @@
     "Transform": 1
    },
    "container": "46d751c43ac73544892be9f1f565fed5",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -270,6 +397,7 @@
     "Transform": 1
    },
    "container": "bfa136bb8278f414ab23f8632f5189bd",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -282,6 +410,7 @@
     "Transform": 1
    },
    "container": "8eac51c56ba0f8742bff177745eaa697",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -296,6 +425,7 @@
     "Transform": 1
    },
    "container": "fb2d456f8f7c2e140a7c7c15b9e6ea41",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -312,6 +442,7 @@
     "Transform": 2
    },
    "container": "ce89fa11f960261429793e861f3e41aa",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 2
   },
@@ -327,6 +458,7 @@
     "Transform": 1
    },
    "container": "010621e4ceb268d47a0fc7a75a04ea68",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -341,6 +473,7 @@
     "Transform": 1
    },
    "container": "21e8e4a652ed46c408e76377c4443478",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -357,6 +490,7 @@
     "Transform": 2
    },
    "container": "f2b7e1fc445459d4e80589e5166ea98a",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 2
   },
@@ -373,6 +507,7 @@
     "Transform": 2
    },
    "container": "db87f376cf2764f4db5b17236bcc4596",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 2
   },
@@ -390,6 +525,7 @@
     "Transform": 8
    },
    "container": "09a84b752a276b1449a5ba1b6f6cd83a",
+   "decided_by": "only one candidate by name",
    "objects": 8,
    "path_id": 5
   },
@@ -408,6 +544,7 @@
     "Transform": 4
    },
    "container": "a035586254f722a4bb118a94790a7bbf",
+   "decided_by": "only one candidate by name",
    "objects": 4,
    "path_id": 1
   },
@@ -424,6 +561,7 @@
     "Transform": 3
    },
    "container": "37fc6f1e13139224782ff3fd665316ab",
+   "decided_by": "only one candidate by name",
    "objects": 3,
    "path_id": 1
   },
@@ -441,6 +579,7 @@
     "Transform": 2
    },
    "container": "d8f28820cebf58440981221d23ca2cf2",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 1
   },
@@ -454,6 +593,7 @@
     "Transform": 1
    },
    "container": "cf08e3d0aa897104cbdd6e7cd696f2bf",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -469,6 +609,7 @@
     "Transform": 1
    },
    "container": "7b65e7741efec904b9b0b45aff7e31bc",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -484,6 +625,7 @@
     "Transform": 4
    },
    "container": "3f45fd25feae6e04f82edbee1f83daa6",
+   "decided_by": "only one candidate by name",
    "objects": 4,
    "path_id": 1
   },
@@ -500,6 +642,7 @@
     "Transform": 2
    },
    "container": "854c688faeccb0a4195abc37a3e8147c",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 1
   },
@@ -518,6 +661,7 @@
     "Transform": 2
    },
    "container": "c2af7200ab8d633408fcf38b904a01f7",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 1
   },
@@ -532,6 +676,7 @@
     "Transform": 1
    },
    "container": "c7d548cb10b004b458a8d42041007080",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -549,6 +694,7 @@
     "Transform": 8
    },
    "container": "d9d3aafb93418624b9b84c9549a94718",
+   "decided_by": "only one candidate by name",
    "objects": 8,
    "path_id": 6
   },
@@ -564,6 +710,7 @@
     "Transform": 1
    },
    "container": "0e97da20cae403145b3f459b22490fa8",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -579,6 +726,7 @@
     "Transform": 2
    },
    "container": "368bd2cf2ae87ce4181b4af76a7ae09b",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 2
   },
@@ -596,6 +744,7 @@
     "Transform": 2
    },
    "container": "5c084062369a63e4799940f0eb4f7afb",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 2
   },
@@ -608,6 +757,7 @@
     "Transform": 1
    },
    "container": "7dd048ac75b2ac147adc90da79bdcfe0",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -625,6 +775,7 @@
     "Transform": 3
    },
    "container": "9892c31ba4790444981a9c82b86460dc",
+   "decided_by": "only one candidate by name",
    "objects": 3,
    "path_id": 2
   },
@@ -640,6 +791,7 @@
     "Transform": 2
    },
    "container": "7dde77d3ab32e3045a4f2acbacf3fc26",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 1
   },
@@ -654,6 +806,7 @@
     "Transform": 1
    },
    "container": "7a5f2a6f8440025439daa70404dda73e",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -668,6 +821,7 @@
     "Transform": 1
    },
    "container": "3cc994ff662e8814399b2a9874882c7e",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -682,6 +836,7 @@
     "Transform": 1
    },
    "container": "560d57c83f1458148a77d32bb34fde4b",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -694,6 +849,7 @@
     "Transform": 1
    },
    "container": "cb35c97ebae99fd42a5ff1730d8266c6",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -711,6 +867,7 @@
     "Transform": 2
    },
    "container": "572ee6953dde0b34f8921bfb540f721a",
+   "decided_by": "only one candidate by name",
    "objects": 2,
    "path_id": 1
   },
@@ -723,6 +880,7 @@
     "Transform": 1
    },
    "container": "b6203020a438334498ffe9f436d42f1c",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -741,6 +899,7 @@
     "Transform": 3
    },
    "container": "9e1dbd041accfba4f9ac62cd916e933f",
+   "decided_by": "only one candidate by name",
    "objects": 3,
    "path_id": 1
   },
@@ -756,6 +915,7 @@
     "Transform": 1
    },
    "container": "6ad423bf02f94e647a84e3239af92c3a",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -772,6 +932,7 @@
     "Transform": 3
    },
    "container": "eeb4dafcaa0f20b488db3070cf233a4e",
+   "decided_by": "only one candidate by name",
    "objects": 3,
    "path_id": 2
   },
@@ -789,6 +950,7 @@
     "Transform": 5
    },
    "container": "20edb30c56e6bd54393bc67317572133",
+   "decided_by": "only one candidate by name",
    "objects": 5,
    "path_id": 5
   },
@@ -800,6 +962,7 @@
     "Transform": 1
    },
    "container": "ef5b61d1fab5854408ca51125746caf8",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -811,6 +974,19 @@
     "Transform": 1
    },
    "container": "b6560e31139075f459d6961123470654",
+   "decided_by": "only one candidate by name",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_1": {
+   "assets": "Assets/Resources/wp_1.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "d32e199144d53cf4387accde13443c7a",
+   "decided_by": "mainData index, self-agrees on the name",
    "objects": 1,
    "path_id": 1
   },
@@ -823,6 +999,7 @@
     "Transform": 1
    },
    "container": "f8613f94a76302a42968e4dd266a126e",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -834,6 +1011,7 @@
     "Transform": 1
    },
    "container": "9ffa0b3e1641d414b918b58844aaa684",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -845,6 +1023,7 @@
     "Transform": 1
    },
    "container": "a5d699a586bff844f81d7a794fb1dd9f",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -856,6 +1035,7 @@
     "Transform": 1
    },
    "container": "5e4630e95cbff3a478a414bb507f13da",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -868,6 +1048,7 @@
     "Transform": 1
    },
    "container": "87e24ad3bd5b76b4488ff6dc8a5b99f1",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -879,6 +1060,7 @@
     "Transform": 1
    },
    "container": "d8604ec390043fb4882e19b2284fddb6",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -890,6 +1072,7 @@
     "Transform": 1
    },
    "container": "d836e11304d5d8b4ea0b87937481b0fe",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -901,6 +1084,7 @@
     "Transform": 1
    },
    "container": "a2b6fe4ba19a0bb4a8fb8a812e6067b8",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -912,6 +1096,7 @@
     "Transform": 1
    },
    "container": "c4c6a9939660ebe48ae47eacfee4c645",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -923,6 +1108,7 @@
     "Transform": 1
    },
    "container": "e7854b4f81a78ed4f91ac5b2b71249c1",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -935,6 +1121,7 @@
     "Transform": 1
    },
    "container": "12f056bffc34f0c4ba9141cf0c466586",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -946,6 +1133,7 @@
     "Transform": 1
    },
    "container": "23626bd38c99e3449a6bdc3e6ea24e8c",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -957,6 +1145,7 @@
     "Transform": 1
    },
    "container": "7722176ab8d093c43834f2d96fc01e09",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -968,6 +1157,7 @@
     "Transform": 1
    },
    "container": "03f2b9aac27353040836d6a4e8388ef5",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -979,6 +1169,7 @@
     "Transform": 1
    },
    "container": "8b756b72a53202e4e889a98a99bdf1a3",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -990,6 +1181,7 @@
     "Transform": 1
    },
    "container": "e3a7dfc9d9099d445b40f60ae8b17b3e",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1001,6 +1193,7 @@
     "Transform": 1
    },
    "container": "8b902449b622ed649a72b32e4c07d5bc",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1012,6 +1205,7 @@
     "Transform": 1
    },
    "container": "6f4879622b2b07743964c385ab0b9eef",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1023,6 +1217,7 @@
     "Transform": 1
    },
    "container": "4dd4cecf0e62ed04faf6e4dc86788e80",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1035,6 +1230,7 @@
     "Transform": 1
    },
    "container": "44cf6415a0d1740469006dbfd5256fd6",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1046,6 +1242,7 @@
     "Transform": 1
    },
    "container": "ce03d8eee54a47e4896613572be8f226",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1058,6 +1255,7 @@
     "Transform": 1
    },
    "container": "61e7ae2c442964645b64509be55687e2",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1069,6 +1267,7 @@
     "Transform": 1
    },
    "container": "b5e076f83811bf7459668e37490d0832",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1081,6 +1280,7 @@
     "Transform": 1
    },
    "container": "13c12479ec0191f4f97b4aa8599319a4",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1093,6 +1293,7 @@
     "Transform": 1
    },
    "container": "sharedassets18.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1639
   },
@@ -1105,6 +1306,7 @@
     "Transform": 1
    },
    "container": "sharedassets18.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1696
   },
@@ -1117,6 +1319,7 @@
     "Transform": 1
    },
    "container": "sharedassets18.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 705
   },
@@ -1129,6 +1332,7 @@
     "Transform": 1
    },
    "container": "sharedassets18.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 706
   },
@@ -1141,6 +1345,7 @@
     "Transform": 1
    },
    "container": "sharedassets18.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 816
   },
@@ -1153,6 +1358,7 @@
     "Transform": 1
    },
    "container": "sharedassets18.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 708
   },
@@ -1165,6 +1371,7 @@
     "Transform": 1
    },
    "container": "sharedassets18.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1648
   },
@@ -1176,6 +1383,7 @@
     "Transform": 1
    },
    "container": "1f466a0f8c894904dba3fd13b5aadd50",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1187,6 +1395,7 @@
     "Transform": 1
    },
    "container": "ead3acaaa4a4c9747b1406ed3029f78f",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1199,6 +1408,7 @@
     "Transform": 1
    },
    "container": "ebb15aca5f9adb84a9d2d361cbce6bc3",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1211,6 +1421,7 @@
     "Transform": 1
    },
    "container": "51fc775ea5b72cb429fcae442d1409dc",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1224,6 +1435,7 @@
     "Transform": 1
    },
    "container": "c377ababfc2b3a64b8ff90f905598948",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1235,6 +1447,7 @@
     "Transform": 1
    },
    "container": "73cf695b93ff39f46a8914f602944638",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1246,6 +1459,7 @@
     "Transform": 1
    },
    "container": "6b631ac2a4a98144d885492369514229",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1257,6 +1471,7 @@
     "Transform": 1
    },
    "container": "f79ca79bdc6564f40b02a87d98d71bf0",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1268,6 +1483,7 @@
     "Transform": 1
    },
    "container": "3e1661de4aea62e41b777ab3cd6f7593",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 1
   },
@@ -1280,12 +1496,23 @@
     "Transform": 1
    },
    "container": "sharedassets2.assets",
+   "decided_by": "only one candidate by name",
    "objects": 1,
    "path_id": 342
   }
  },
+ "registered_object_not_a_root": {
+  "angel_splash5": "cf478de1ef56c3444ac102712d1445a3!1 father=10",
+  "wp_b01": "sharedassets18.assets!1639 father=2316",
+  "wp_b02": "sharedassets18.assets!1696 father=2279",
+  "wp_b05": "sharedassets18.assets!705 father=2468",
+  "wp_b06": "sharedassets18.assets!706 father=2502",
+  "wp_b07": "sharedassets18.assets!816 father=2533",
+  "wp_b08": "sharedassets18.assets!708 father=2363",
+  "wp_b10": "sharedassets18.assets!1648 father=2325"
+ },
  "tally": {
-  "exported": 94,
-  "pending_ambiguous": 3
+  "exported": 97,
+  "pending_ambiguous": 0
  }
 }

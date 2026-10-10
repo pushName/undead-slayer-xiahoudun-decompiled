@@ -549,6 +549,17 @@ namespace UndeadSlayer.Migration
                             {
                                 got++;
                             }
+                            else if (ep.propertyType == SerializedPropertyType.String)
+                            {
+                                // The apply side sets arraySize first and writes element ei from
+                                // fv.items[ei], so the two lists stay index-aligned even when an
+                                // element is skipped. Compare the value rather than treating
+                                // non-empty as "landed": RankingManager.username ships 50 empty
+                                // strings, and "not empty" would have called a correct array empty.
+                                string want = (fv.items != null && ei < fv.items.Length)
+                                    ? fv.items[ei].s : null;
+                                if (want == null || ep.stringValue == want) got++;
+                            }
                         }
                         fieldsLandedArray += got;
                         if (got < expected)

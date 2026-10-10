@@ -1,0 +1,65 @@
+{
+ "registered_object_parent": null,
+ "source_container": "d32e199144d53cf4387accde13443c7a",
+ "root_path_id": 1,
+ "prefab_name": "wp_1",
+ "asset_path": "Assets/Resources/wp_1.prefab",
+ "scene_path": "Assets/Imported/_PrefabBuild/wp_1.unity",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {},
+ "field_stats": {},
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "wp_1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/dual_n01_77966c2df86a576468b4913e9a00f0a6_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/wp_dual_n01_baff30df4d520da4fb10319fedaa43ab_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  }
+ ]
+}
