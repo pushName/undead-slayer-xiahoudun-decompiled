@@ -11,10 +11,14 @@ class's serialized layout from offset 24 (after the fixed MonoBehaviour header).
 when the layout is fully known. So this module refuses to guess:
 
   * a class is decoded only when every serializable field has a known fixed width
-    (string, arrays, and unknown custom types are skipped, not approximated);
-  * the walk must consume the field region EXACTLY. Any leftover or overrun skips the whole class
-    and is reported, because a half-correct layout would silently write wrong references into the
-    scene -- worse than no data at all.
+    (strings, arrays, and unknown custom types are skipped, not approximated);
+  * the walk must consume the field region EXACTLY. A leftover refuses the whole class and is
+    reported, because a half-correct layout would silently write wrong references into the scene --
+    worse than no data at all. Running out BETWEEN two fields is the one exception, and it is a
+    fact about the data rather than about the layout: Unity 4 reads positionally with no TypeTree,
+    so a record that ends exactly at a field boundary means the trailing fields were never
+    serialised into that scene and take their C# initializers at runtime. The prefix is decoded,
+    and the absent tail is reported by name (Spawn, General_Stat, DB_Monster all show this).
 
 The reference case that established the layout: Cam_intro in level0, raw_len 64, five public
 Transform fields, 64 - 24 = 40 = 5 x 8 bytes, and four of the five resolve to a GameObject whose
@@ -125,6 +129,25 @@ def serializable_fields(cls, classes, depth=0):
     return inherited + own
 
 
+# The engine bases these scripts declare. A class reaching one of them is an Object reference for
+# serialisation purposes; a class with no base (or `: object`) is a plain [Serializable] holder and
+# stays inline.
+OBJECT_BASES = {"MonoBehaviour", "ScriptableObject", "Component", "Behaviour", "Object",
+                "UnityEngine.Object", "GameObject"}
+
+
+def derives_from_object(typ, classes, depth=0):
+    """True when a field of type `typ` serialises as an 8-byte PPtr rather than inline bytes."""
+    if typ in REF_TYPES:
+        return True
+    if typ not in classes or depth > 8:
+        return False
+    base = classes[typ][0]
+    if not base:
+        return False
+    return base in OBJECT_BASES or derives_from_object(base, classes, depth + 1)
+
+
 def spec_for(typ, classes, depth=0):
     """Describe how one serialised value of type `typ` is laid out.
 
@@ -159,6 +182,12 @@ def spec_for(typ, classes, depth=0):
     if typ in OPAQUE_TYPES:
         return {"kind": "opaque", "type": typ, "size": OPAQUE_TYPES[typ], "align": 4}, None
     if typ in REF_TYPES:
+        return {"kind": "ref", "type": typ, "size": 8, "align": 4}, None
+    if typ in classes and derives_from_object(typ, classes, depth):
+        # A field whose declared type is itself a UnityEngine.Object derivative is serialised as a
+        # PPtr, NOT expanded inline. This was wrong first: Cha_Control has a General_Stat field, the
+        # walk inlined General_Stat's own 20 bytes, the layout then over-ran the record and the whole
+        # class refused -- which is how 234 null references came to look like unrecoverable data.
         return {"kind": "ref", "type": typ, "size": 8, "align": 4}, None
     if typ in classes:
         fields = serializable_fields(typ, classes)
@@ -256,29 +285,44 @@ def _read(spec, raw, off, end):
 
 
 def decode_instance(raw, fields, classes=None):
-    """-> ({name: value}, None) or (None, reason). raw is the whole MonoBehaviour record.
+    """-> ({name: value}, None, [truncated field names]) or (None, reason, []).
 
-    The walk must consume the field region EXACTLY; a leftover or an overrun refuses the whole
-    class rather than emitting a partial guess.
+    The walk must consume the field region EXACTLY: a leftover refuses the whole class rather than
+    emitting a partial guess. A record that runs out BETWEEN fields is different and legitimate --
+    Unity 4 has no TypeTree, so it reads positionally and simply stops at the end of the buffer, and
+    the fields past that point take their C# initializers at runtime. Measured on this build:
+    Spawn's record ends at offset 508, exactly where its last declared int (cur_general) would
+    start, with the preceding 24 fields fitting byte-for-byte; General_Stat carries 4 bytes, exactly
+    its first two shorts, and refuses to carry the other seven at all. Those are trailing fields the
+    shipped scene never serialised, not a layout we got wrong, so the prefix is decoded and the
+    missing tail is reported by name instead of throwing away the data that IS there.
+
+    A field that only PARTIALLY fits still refuses the class: that is drift, not truncation.
     """
     off = HEADER_LEN
     end = len(raw)
     out = {}
-    for typ, name in fields:
+    truncated = []
+    for i, (typ, name) in enumerate(fields):
         if typ in NON_SERIALIZED:
             continue
         spec, why = spec_for(typ, classes or {})
         if spec is None:
-            return None, "%s on %s" % (why, name)
+            return None, "%s on %s" % (why, name), []
+        if _align(off, spec.get("align", 4)) >= end:
+            # Nothing left in the buffer: everything from here on was never serialised.
+            truncated = [n for t, n in fields[i:]
+                         if t not in NON_SERIALIZED and n not in out]
+            break
         v, off, why = _read(spec, raw, off, end)
         if why:
-            return None, "%s: %s" % (name, why)
+            return None, "%s: %s" % (name, why), []
         out[name] = v
     off = _align(off, 4)
     if off != end:
         return None, "layout consumed %d of %d bytes (leftover %d) -- refusing a partial guess" % (
-            off, end, end - off)
-    return out, None
+            off, end, end - off), []
+    return out, None, truncated
 
 
 def load_bindings():
@@ -290,18 +334,18 @@ _CLASSES = None
 
 
 def decode_for_class(cls, raw):
-    """-> ([(field_name, value)], None) or (None, reason). Caches the parsed source classes."""
+    """-> ([(field_name, value)], None, [truncated]) or (None, reason, []). Caches the class table."""
     global _CLASSES
     if _CLASSES is None:
         _CLASSES = parse_classes()
     fields = serializable_fields(cls, _CLASSES)
     if fields is None:
-        return None, "class %s not found in %s" % (cls, SCRIPTS)
-    vals, why = decode_instance(raw, fields, _CLASSES)
+        return None, "class %s not found in %s" % (cls, SCRIPTS), []
+    vals, why, truncated = decode_instance(raw, fields, _CLASSES)
     if vals is None:
-        return None, why
+        return None, why, []
     # list, not dict: the caller relies on field order matching the serialised layout.
-    return list(vals.items()), None
+    return list(vals.items()), None, truncated
 
 
 def classify_refusal(why):
@@ -334,6 +378,8 @@ def report():
     externals, monoscripts = b["level_externals"], b["monoscripts"]
     classes = parse_classes()
     decoded = skipped = noref = 0
+    trunc = {}
+    trunc_total = 0
     reasons = {}
     per_class = {}
     for name, path in sorted(sources()):
@@ -357,7 +403,7 @@ def report():
                 skipped += 1
                 reasons["class not found in sources"] = reasons.get("class not found in sources", 0) + 1
                 continue
-            vals, why = decode_instance(raw, fields, classes)
+            vals, why, truncated = decode_instance(raw, fields, classes)
             if vals is None:
                 skipped += 1
                 reasons[why.split("--")[0].strip()[:48]] = reasons.get(why.split("--")[0].strip()[:48], 0) + 1
@@ -365,9 +411,15 @@ def report():
             decoded += 1
             noref += sum(1 for v in vals.values() if "ref" in v and v["ref"] != 0)
             per_class[cls] = per_class.get(cls, 0) + 1
+            if truncated:
+                trunc[cls] = max(trunc.get(cls, 0), len(truncated))
+                trunc_total += len(truncated)
     print("MonoBehaviour instances decoded exactly: %d   refused: %d" % (decoded, skipped))
     print("non-null object references recovered:  %d" % noref)
     print("distinct classes fully decoded: %d" % len(per_class))
+    print("records ending at a field boundary: %d field value(s) absent across %d class(es), "
+          "worst: %s" % (trunc_total, len(trunc),
+                        sorted(trunc.items(), key=lambda x: -x[1])[:5]))
     print("top classes:", sorted(per_class.items(), key=lambda x: -x[1])[:10])
     print("\nrefusal reasons:")
     for k, v in sorted(reasons.items(), key=lambda x: -x[1]):

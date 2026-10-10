@@ -243,11 +243,13 @@ def main():
                     if sname is None:
                         mono["script unresolved"] += 1
                         continue
-                    vals, why = MF.decode_for_class(sname, raw)
+                    vals, why, truncated = MF.decode_for_class(sname, raw)
                     if vals is None:
                         mono["refused: " + MF.classify_refusal(why)[:40]] += 1
                         continue
                     mono["decoded"] += 1
+                    if truncated:
+                        mono["decoded, trailing fields absent"] += 1
                     for fname, v in vals:
                         items = [v] + [x for x in (v.get("arr") or []) if isinstance(x, dict)] \
                             if isinstance(v, dict) else [v]

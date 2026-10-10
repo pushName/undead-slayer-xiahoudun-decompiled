@@ -377,6 +377,7 @@ class FileCtx:
         self.warnings = []
         self.field_stats = collections.Counter()
         self.dropped_refs = []
+        self.truncations = {}
         self.obj2node = {}
 
     def asset_for(self, index, file_id, path_id):
@@ -512,10 +513,18 @@ class FileCtx:
                          "guid": self.script_guid.get(name, ""),
                          "cs": self.script_cs.get(name, ""),
                          "enabled": bool(en)}
-                vals, why = MF.decode_for_class(name, raw)
+                vals, why, truncated = MF.decode_for_class(name, raw)
                 if vals is None:
                     self.field_stats["refused[" + MF.classify_refusal(why)[:38] + "]"] += 1
                 else:
+                    if truncated:
+                        # The shipped record stopped at a field boundary: these fields were never
+                        # serialised into this scene and take their C# initializers at runtime.
+                        # Recorded per class so a null in the rebuilt scene is not mistaken for a
+                        # reference this tool failed to carry.
+                        self.truncations[name] = sorted(
+                            set(self.truncations.get(name, ())) | set(truncated))
+                        self.field_stats["trailing fields absent from the record"] += len(truncated)
                     out_fields = []
                     fld_ctx = {"node": str(d.m_Name), "script": name}
                     for fname, v in vals:
@@ -643,6 +652,7 @@ def main():
         "root_ids": roots,
         "unsupported_components": dict(unsupported),
         "field_stats": dict(field_stats),
+        "trailing_fields_absent": {k: v for k, v in sorted(ctx.truncations.items())},
         "dropped_refs": dropped_refs,
         "animation_bindings": dict(anim_stats),
         "warnings": warnings,
@@ -681,7 +691,13 @@ def main():
         for w in warnings[:8]:
             print("   ", w)
     print("mono fields: %s" % (dict(field_stats) or "none"))
-    print("wrote %s" % os.path.relpath(out, _REPO).replace(os.sep, "/"))
+    try:
+        shown = os.path.relpath(out, _REPO).replace(os.sep, "/")
+    except ValueError:
+        # SCENE_OUT on another drive than the repo: relpath raises, but the level already wrote
+        # successfully, so this must not turn a good run into a non-zero exit.
+        shown = out.replace(os.sep, "/")
+    print("wrote %s" % shown)
 
 
 if __name__ == "__main__":

@@ -313,6 +313,11 @@ def main():
     path_of = {v: k for k, v in guids.items()}
     rows = []
     failures = []
+    # A bare total is a snapshot, and a snapshot rots: the README carried "1319 null references"
+    # long after re-exports and rebuilds had brought it down to 543, because nothing re-derived it
+    # and nothing said WHO holds them. Print the by-class attribution on every run so the number and
+    # its owner move together, and so the next stale claim is one glance away from being caught.
+    null_by_script_all = collections.Counter()
     for jp in sorted(glob.glob(os.path.join(JSON_DIR, "level*.json")),
                      key=lambda p: int(re.search(r"level(\d+)", p).group(1))):
         exp = expected(jp)
@@ -382,6 +387,7 @@ def main():
                 problems.append("legacy component %s survived (it does not exist in 2022)" % label)
         if problems:
             failures.append((name, problems))
+        null_by_script_all.update(act.get("null_by_script") or {})
         rows.append((exp["source_level"], name, go, mf, rd, mb, act["null_mesh"],
                      act["empty_materials"], len(exp["clip_paths_here"]),
                      act["null_script_refs"], "OK" if not problems else "FAIL"))
@@ -398,6 +404,9 @@ def main():
     for r in rows:
         print("%-9s %-14s %6s %5s %5s %5s %6s %5s %5s %8s %6s" % r)
     built = sum(1 for r in rows if r[2] != "-")
+    print("null object references by script: %d total over %d class(s); %s"
+          % (sum(null_by_script_all.values()), len(null_by_script_all),
+             ", ".join("%s %d" % kv for kv in null_by_script_all.most_common(6))))
     total, good, stale, absent = build_settings()
     print("\nbuild settings: %d entries, %d guid(s) match the .meta, %d stale, %d scene file absent"
           % (total, len(good), len(stale), len(absent)))
