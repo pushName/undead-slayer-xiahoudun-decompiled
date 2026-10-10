@@ -39,12 +39,32 @@ def resolve_target(this_name, externals, file_id):
     return None
 
 
+def split_families():
+    """{whole-file basename: fragment count} for everything the APK ships in byte-range pieces."""
+    out = {}
+    for p in glob.glob(os.path.join(DUMP, "*.split*")):
+        b = os.path.basename(p)
+        whole = b.split(".split")[0]
+        if ".split" not in b or not whole:
+            continue
+        out[whole] = out.get(whole, 0) + 1
+    return out
+
+
 def sources():
     """[(basename, abspath)] for every loadable serialized file, fragments excluded.
 
     Levels first, then sharedassets (reassembled copies win over the non-split leftovers),
     then the hash-named AssetBundles under dump/assets -- which include
     'unity default resources', where Unity 4 keeps its built-in shaders.
+
+    Raises if a file that only exists as fragments has no reassembled copy to read. That is not
+    pedantry: the reassembled copies live outside the repository and Windows' temp cleanup deletes
+    them, and a caller that just iterates this list then reports a smaller world as if it were the
+    world. On 2026-10-10 that happened twice in one day (first 449 loads all failed, then 11 of 12
+    reassembled files were gone and an audio inventory came out at 32 clips instead of the real
+    number), both times printing a confident count. Rebuild with tools/migration/reassemble_splits.py.
+    Set ALLOW_INCOMPLETE_SOURCES=1 to get the old lenient behaviour back on purpose.
     """
     out = []
     seen = set()
@@ -67,6 +87,14 @@ def sources():
         if b.endswith(".dll") or b == "Managed":
             continue
         add(p)
+
+    missing = sorted(w for w in split_families() if w not in seen)
+    if missing and not os.environ.get("ALLOW_INCOMPLETE_SOURCES"):
+        raise RuntimeError(
+            "%d container(s) exist only as fragments and no reassembled copy is readable: %s. "
+            "RECON_DIR=%s. Run: python tools/migration/reassemble_splits.py (under the UnityPy "
+            "venv), or set ALLOW_INCOMPLETE_SOURCES=1 to accept a partial scan."
+            % (len(missing), ", ".join(missing[:6]), RECON))
     return out
 
 
