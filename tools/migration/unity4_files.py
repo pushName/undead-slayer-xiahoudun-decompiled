@@ -40,6 +40,39 @@ def resolve_target(this_name, externals, file_id):
     return None
 
 
+def component_pairs(go_data):
+    """GameObject.m_Component -> [(classID, PPtr)], the one place that knows the order.
+
+    UnityPy 1.25 returns each entry as a 2-tuple with the *classID first* and the PPtr second.
+    Getting this backwards is not loud: a classID is a small integer, and small integers are valid
+    path_ids in the same file, so `read(file, classID)` happily returns whatever object happens to
+    live at that number -- a Material, usually. A scan of the prefab interiors reported "506 Material
+    components" that way, and the ledger resolver that shared the mistake mis-attributed which prefab
+    each reference belonged to. Pass a whole tuple in and the order is detected, so a future UnityPy
+    that flips it cannot silently produce classids-as-pointers again.
+    """
+    out = []
+    for c in getattr(go_data, "m_Component", []) or []:
+        if isinstance(c, (tuple, list)) and len(c) == 2:
+            a, b = c
+            a_pptr = hasattr(a, "m_PathID")
+            b_pptr = hasattr(b, "m_PathID")
+            if a_pptr and not b_pptr:
+                c = (b, a)          # (PPtr, classID) order: normalise to (classID, PPtr)
+            elif not a_pptr and not b_pptr:
+                continue            # neither half is a pointer: nothing to resolve
+        elif hasattr(c, "m_PathID"):
+            c = (None, c)
+        else:
+            continue
+        out.append((c[0], c[1]))
+    return out
+
+
+def component_path_ids(go_data):
+    return [int(getattr(pp, "m_PathID", pp) or 0) for _tid, pp in component_pairs(go_data)]
+
+
 def safe_token(s):
     """A file-name-safe form of a container or clip name."""
     return re.sub(r"[^0-9A-Za-z_-]", "_", str(s))

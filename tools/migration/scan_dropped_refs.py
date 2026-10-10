@@ -39,9 +39,16 @@ CHANNEL = {"Texture2D": "export_textures.py", "Material": "export_materials.py",
 
 
 def pid_of(v):
-    """UnityPy returns m_Component entries as (PPtr, classID) tuples and PPtrs bare elsewhere."""
-    while isinstance(v, (tuple, list)):
-        v = v[0]
+    """PPtr -> int, and it refuses to guess.
+
+    m_Component entries are (classID, PPtr) tuples in UnityPy 1.25, and a classID is a small int
+    that is ALSO a legal path_id in the same file -- so drilling into the tuple silently resolves to
+    a Material and every root attribution downstream is wrong. Use unity4_files.component_pairs for
+    component lists; this function is for real PPtrs (m_GameObject, m_Father, m_Mesh, ...).
+    """
+    if isinstance(v, (tuple, list)):
+        raise TypeError("pid_of got a %r -- a component entry is (classID, PPtr); take the second "
+                        "half via unity4_files.component_pairs()" % (v,))
     return int(getattr(v, "m_PathID", v) or 0)
 
 
@@ -100,11 +107,10 @@ def main():
             return None, None
         own = str(gd.m_Name)
         root = own
-        # Walk up through Transform.m_Father to reach the root; a Unity 4 m_Component entry comes
-        # back as a (PPtr, classID) tuple in this UnityPy version, so both shapes must be handled.
+        # Walk up through Transform.m_Father to reach the root.
         tp, tdata = None, None
-        for c in gd.m_Component:
-            cpid = pid_of(c)
+        for _tid, pp in u4.component_pairs(gd):
+            cpid = pid_of(pp)
             ct, cd = data_of(fname, cpid)
             if ct == "Transform":
                 tp, tdata = cpid, cd
