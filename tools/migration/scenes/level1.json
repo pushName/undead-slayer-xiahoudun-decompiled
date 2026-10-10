@@ -36,16 +36,16 @@
  "field_stats": {
   "ref set": 14,
   "instances decoded": 40,
-  "cross-file ref dropped": 20,
+  "cross-file ref dropped": 11,
   "null in source": 47,
   "null in source (element)": 11,
-  "array fully dropped": 8,
-  "cross-file -> asset": 7,
-  "cross-file -> asset (element)": 28,
-  "array set": 12,
-  "cross-file ref dropped (element)": 16,
+  "array fully dropped": 5,
+  "cross-file -> asset": 16,
+  "cross-file -> asset (element)": 37,
+  "array set": 15,
   "refused[record shorter than layout (data assig]": 2,
-  "opaque skipped (GUIStyle)": 2
+  "opaque skipped (GUIStyle)": 2,
+  "cross-file ref dropped (element)": 7
  },
  "dropped_refs": [
   {
@@ -121,109 +121,10 @@
    "file": "sharedassets2.assets"
   },
   {
-   "field": "snd_move",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 313,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_move",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 322,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_move",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 306,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 301,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 297,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 298,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 320,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "stab",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 302,
-   "node": "enemy_story",
-   "script": "AI_StoryEnemy",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "stab",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 302,
-   "node": "enemy_story",
-   "script": "AI_StoryEnemy",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "stab",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 302,
-   "node": "enemy_story",
-   "script": "AI_StoryEnemy",
-   "file": "sharedassets2.assets"
-  },
-  {
    "field": "blood",
    "t": "Transform",
    "file_id": 1,
    "path_id": 436,
-   "node": "npc",
-   "script": "NPC1",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 304,
    "node": "npc",
    "script": "NPC1",
    "file": "sharedassets2.assets"
@@ -236,69 +137,6 @@
    "node": "scene_trans",
    "script": "Story_trans",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "horse_cry",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 319,
-   "node": "pet_horse",
-   "script": "Pet_horse",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "thrust",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 302,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "smash",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 299,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "slash",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 324,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "slash",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 303,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "block",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 316,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "split",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 321,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
   },
   {
    "field": "basicSkin",
@@ -4409,6 +4247,55 @@
        ]
       },
       {
+       "n": "snd_move",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_growl.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/unm_growl.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/unl_growl.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "snd_scream",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage1.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage2.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage3.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage4.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
        "n": "story",
        "kind": "bool",
        "b": 1
@@ -6206,6 +6093,12 @@
        "i": 0
       },
       {
+       "n": "stab",
+       "kind": "asset",
+       "asset": "Assets/Resources/slash0.mp3",
+       "t": "AudioClip"
+      },
+      {
        "n": "target",
        "kind": "node",
        "node": 382,
@@ -6357,6 +6250,12 @@
        "n": "monmovestat",
        "kind": "int",
        "i": 0
+      },
+      {
+       "n": "stab",
+       "kind": "asset",
+       "asset": "Assets/Resources/slash0.mp3",
+       "t": "AudioClip"
       },
       {
        "n": "target",
@@ -7550,6 +7449,12 @@
        "i": 0
       },
       {
+       "n": "stab",
+       "kind": "asset",
+       "asset": "Assets/Resources/slash0.mp3",
+       "t": "AudioClip"
+      },
+      {
        "n": "target",
        "kind": "node",
        "node": 382,
@@ -7727,7 +7632,15 @@
      "script": "NPC1",
      "guid": "f938e5261e16be34097eaa53b9d09daa",
      "cs": "unity/Assets/Scripts/NPC1.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "snd_scream",
+       "kind": "asset",
+       "asset": "Assets/Resources/npc_scream.mp3",
+       "t": "AudioClip"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -8619,7 +8532,15 @@
      "script": "Pet_horse",
      "guid": "c10521591b1816a45a042e0680a01594",
      "cs": "unity/Assets/Scripts/Pet_horse.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "horse_cry",
+       "kind": "asset",
+       "asset": "Assets/Resources/horse_cry.mp3",
+       "t": "AudioClip"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -9475,7 +9396,50 @@
      "script": "SoundEf_slash",
      "guid": "fcef14b7d2337cd4e84e5084bb5933d5",
      "cs": "unity/Assets/Scripts/SoundEf_slash.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "thrust",
+       "kind": "asset",
+       "asset": "Assets/Resources/slash0.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "smash",
+       "kind": "asset",
+       "asset": "Assets/Resources/hammer.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "slash",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/slash_simple1.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/slash_simple2.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "block",
+       "kind": "asset",
+       "asset": "Assets/Resources/block.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "split",
+       "kind": "asset",
+       "asset": "Assets/Resources/split_blood.mp3",
+       "t": "AudioClip"
+      }
+     ]
     }
    ]
   },

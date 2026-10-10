@@ -33,12 +33,10 @@
  "field_stats": {
   "instances decoded": 62,
   "ref set": 29,
-  "cross-file ref dropped": 42,
-  "cross-file -> asset (element)": 69,
-  "array set": 21,
-  "cross-file -> asset": 13,
-  "cross-file ref dropped (element)": 9,
-  "array fully dropped": 3,
+  "cross-file ref dropped": 35,
+  "cross-file -> asset (element)": 78,
+  "array set": 24,
+  "cross-file -> asset": 20,
   "opaque skipped (GUIStyle)": 5,
   "refused[record shorter than layout (data assig]": 8,
   "refused[bool[] stride unresolved (refused on p]": 1,
@@ -111,69 +109,6 @@
    "file": "sharedassets2.assets"
   },
   {
-   "field": "snd_move",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 306,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_move",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 322,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_move",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 313,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 320,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 297,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 301,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "snd_scream",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 298,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
    "field": "basicSkin",
    "t": "GUISkin",
    "file_id": 3,
@@ -181,15 +116,6 @@
    "node": "UI_Ingame_GUI",
    "script": "UI_Ingame_GUI",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "horse_cry",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 319,
-   "node": "pet_horse",
-   "script": "Pet_horse",
-   "file": "sharedassets2.assets"
   },
   {
    "field": "bowgun",
@@ -217,15 +143,6 @@
    "node": "cut_boss",
    "script": "Cutin_BossTexture",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "snd_jin",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 689,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
   },
   {
    "field": "swordwind",
@@ -433,69 +350,6 @@
    "node": "cha1",
    "script": "Cha_Skill",
    "file": "sharedassets18.assets"
-  },
-  {
-   "field": "thrust",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 302,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "smash",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 299,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "slash",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 324,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "slash",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 303,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "block",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 316,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "block_break",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 694,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "split",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 321,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
   },
   {
    "field": "pt_levelup",
@@ -7590,6 +7444,55 @@
        ]
       },
       {
+       "n": "snd_move",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/unl_growl.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/unm_growl.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_growl.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "snd_scream",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage4.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage2.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage1.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/uns_damage3.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
        "n": "story",
        "kind": "bool",
        "b": 0
@@ -8013,7 +7916,15 @@
      "script": "Pet_horse",
      "guid": "c10521591b1816a45a042e0680a01594",
      "cs": "unity/Assets/Scripts/Pet_horse.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "horse_cry",
+       "kind": "asset",
+       "asset": "Assets/Resources/horse_cry.mp3",
+       "t": "AudioClip"
+      }
+     ]
     },
     {
      "kind": "component",
@@ -9006,6 +8917,12 @@
      "cs": "unity/Assets/Scripts/Cha_Skill.cs",
      "enabled": true,
      "fields": [
+      {
+       "n": "snd_jin",
+       "kind": "asset",
+       "asset": "Assets/Resources/jin.mp3",
+       "t": "AudioClip"
+      },
       {
        "n": "pt_attackup",
        "kind": "node",
@@ -10250,7 +10167,56 @@
      "script": "SoundEf_slash",
      "guid": "fcef14b7d2337cd4e84e5084bb5933d5",
      "cs": "unity/Assets/Scripts/SoundEf_slash.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "thrust",
+       "kind": "asset",
+       "asset": "Assets/Resources/slash0.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "smash",
+       "kind": "asset",
+       "asset": "Assets/Resources/hammer.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "slash",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/slash_simple1.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/slash_simple2.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "block",
+       "kind": "asset",
+       "asset": "Assets/Resources/block.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "block_break",
+       "kind": "asset",
+       "asset": "Assets/Resources/guard_break.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "split",
+       "kind": "asset",
+       "asset": "Assets/Resources/split_blood.mp3",
+       "t": "AudioClip"
+      }
+     ]
     }
    ]
   },

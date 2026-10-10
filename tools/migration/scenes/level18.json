@@ -29,10 +29,10 @@
   "instances decoded": 16,
   "null in source": 7,
   "ref set": 16,
-  "cross-file -> asset": 2,
+  "cross-file -> asset": 8,
   "cross-file ref dropped (element)": 5,
   "array fully dropped": 2,
-  "cross-file ref dropped": 10,
+  "cross-file ref dropped": 4,
   "cross-file -> asset (element)": 5,
   "array set": 1,
   "null in source (element)": 2,
@@ -110,60 +110,6 @@
    "node": "map_compose",
    "script": "Map_Compose",
    "file": "sharedassets19.assets"
-  },
-  {
-   "field": "run",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 318,
-   "node": "pet_horse_riding",
-   "script": "Cha_Control_ride_horse",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "behit",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 319,
-   "node": "pet_horse_riding",
-   "script": "Cha_Control_ride_horse",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "jump",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 312,
-   "node": "pet_horse_riding",
-   "script": "Cha_Control_ride_horse",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "thrust",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 302,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "smash",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 312,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "block",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 316,
-   "node": "soundef_slash",
-   "script": "SoundEf_slash",
-   "file": "sharedassets2.assets"
   },
   {
    "field": "basicSkin",
@@ -3772,6 +3718,24 @@
        "t": "GameObject"
       },
       {
+       "n": "run",
+       "kind": "asset",
+       "asset": "Assets/Resources/horse_move.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "behit",
+       "kind": "asset",
+       "asset": "Assets/Resources/horse_cry.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "jump",
+       "kind": "asset",
+       "asset": "Assets/Resources/boom1.mp3",
+       "t": "AudioClip"
+      },
+      {
        "n": "pt_stepfog",
        "kind": "node",
        "node": 153,
@@ -4242,7 +4206,27 @@
      "script": "SoundEf_slash",
      "guid": "fcef14b7d2337cd4e84e5084bb5933d5",
      "cs": "unity/Assets/Scripts/SoundEf_slash.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "thrust",
+       "kind": "asset",
+       "asset": "Assets/Resources/slash0.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "smash",
+       "kind": "asset",
+       "asset": "Assets/Resources/boom1.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "block",
+       "kind": "asset",
+       "asset": "Assets/Resources/block.mp3",
+       "t": "AudioClip"
+      }
+     ]
     }
    ]
   },

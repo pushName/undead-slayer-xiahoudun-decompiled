@@ -324,6 +324,8 @@ def main():
     # material / mesh / texture indexes are keyed the same way (container!path_id), and clip paths
     # are a pure function of (name, container, path_id). Anything else stays dropped and counted.
     tex_index = (load_json(os.path.join(_REPO, "tools", "migration", "texture-index.json")) or {})
+    _au = load_json(os.path.join(mig, "audio.json"))
+    audio_index = {k: v["path"] for k, v in (_au or {}).get("index", {}).items()}
     clip_index_for_refs = {}
     _ci = load_json(os.path.join(_REPO, "tools", "migration", "animation-index.json"))
     if _ci:
@@ -331,7 +333,8 @@ def main():
             clip_index_for_refs["%s!%d" % (e["container"], e["path_id"])] = clip_asset_path(
                 e["name"], e["container"], e["path_id"])
     BY_TYPE = {"Material": mat_index, "Mesh": mesh_index, "Texture2D": tex_index,
-               "Texture": tex_index, "AnimationClip": clip_index_for_refs}
+               "Texture": tex_index, "AnimationClip": clip_index_for_refs,
+               "AudioClip": audio_index}
 
     def asset_lookup(typ, file_id, path_id):
         idx = BY_TYPE.get(typ)

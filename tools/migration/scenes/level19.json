@@ -27,8 +27,8 @@
   "null in source": 3,
   "ref set": 5,
   "instances decoded": 9,
-  "cross-file ref dropped": 8,
-  "cross-file -> asset": 25,
+  "cross-file ref dropped": 4,
+  "cross-file -> asset": 29,
   "cross-file -> asset (element)": 39,
   "array set": 6,
   "opaque skipped (GUIStyle)": 5,
@@ -70,42 +70,6 @@
    "path_id": 26,
    "node": "ui_result",
    "script": "UI_result",
-   "file": "sharedassets20.assets"
-  },
-  {
-   "field": "bgm_victory",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 22,
-   "node": "ui_result",
-   "script": "UI_result",
-   "file": "sharedassets20.assets"
-  },
-  {
-   "field": "bgm_defeat",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 23,
-   "node": "ui_result",
-   "script": "UI_result",
-   "file": "sharedassets20.assets"
-  },
-  {
-   "field": "snd_drop",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 24,
-   "node": "giftbox",
-   "script": "GiftBox",
-   "file": "sharedassets20.assets"
-  },
-  {
-   "field": "snd_open",
-   "t": "AudioClip",
-   "file_id": 1,
-   "path_id": 21,
-   "node": "giftbox",
-   "script": "GiftBox",
    "file": "sharedassets20.assets"
   }
  ],
@@ -3112,6 +3076,18 @@
        "kind": "node",
        "node": 104,
        "t": "Transform"
+      },
+      {
+       "n": "bgm_victory",
+       "kind": "asset",
+       "asset": "Assets/Resources/bgm_victory.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "bgm_defeat",
+       "kind": "asset",
+       "asset": "Assets/Resources/bgm_fail.mp3",
+       "t": "AudioClip"
       }
      ]
     },
@@ -4618,6 +4594,18 @@
        "kind": "node",
        "node": 104,
        "t": "Transform"
+      },
+      {
+       "n": "snd_drop",
+       "kind": "asset",
+       "asset": "Assets/Resources/boxdrop.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_open",
+       "kind": "asset",
+       "asset": "Assets/Resources/boxopen.mp3",
+       "t": "AudioClip"
       }
      ]
     },

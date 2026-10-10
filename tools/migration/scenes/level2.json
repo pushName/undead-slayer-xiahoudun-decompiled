@@ -20,19 +20,9 @@
  "field_stats": {
   "ref set": 2,
   "instances decoded": 3,
-  "cross-file ref dropped": 1
+  "cross-file -> asset": 1
  },
- "dropped_refs": [
-  {
-   "field": "cry",
-   "t": "AudioClip",
-   "file_id": 2,
-   "path_id": 319,
-   "node": "pet_horse_riding",
-   "script": "Cha_Control_ride_horse_story",
-   "file": "sharedassets2.assets"
-  }
- ],
+ "dropped_refs": [],
  "animation_bindings": {
   "only": 5
  },
@@ -1991,7 +1981,15 @@
      "script": "Cha_Control_ride_horse_story",
      "guid": "8e029d0f05754d94488f7e1a9ca34890",
      "cs": "unity/Assets/Scripts/Cha_Control_ride_horse_story.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "cry",
+       "kind": "asset",
+       "asset": "Assets/Resources/horse_cry.mp3",
+       "t": "AudioClip"
+      }
+     ]
     }
    ],
    "animations": [
