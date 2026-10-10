@@ -23,12 +23,42 @@
   "null in source": 3,
   "ref set": 5,
   "cross-file -> asset": 30,
+  "cross-file -> asset (element)": 57,
   "array set": 6,
   "opaque skipped (GUIStyle)": 9,
   "cross-file ref dropped": 3,
   "refused[record shorter than layout (data assig]": 2,
   "refused[two-dimensional array (unsupported by ]": 1
  },
+ "dropped_refs": [
+  {
+   "field": "pt_plus",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 143,
+   "node": "ui_forge",
+   "script": "UI_forge",
+   "file": "sharedassets10.assets"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 5,
+   "path_id": 301,
+   "node": "ui_forge",
+   "script": "UI_forge",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "sound_dummy",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 117,
+   "node": "ui_forge",
+   "script": "UI_forge",
+   "file": "sharedassets7.assets"
+  }
+ ],
  "animation_bindings": {
   "only": 4
  },

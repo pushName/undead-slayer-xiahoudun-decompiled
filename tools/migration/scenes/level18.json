@@ -30,11 +30,151 @@
   "null in source": 7,
   "ref set": 16,
   "cross-file -> asset": 2,
+  "cross-file ref dropped (element)": 5,
   "array fully dropped": 2,
   "cross-file ref dropped": 10,
+  "cross-file -> asset (element)": 5,
   "array set": 1,
+  "null in source (element)": 2,
   "opaque skipped (GUIStyle)": 1
  },
+ "dropped_refs": [
+  {
+   "field": "map",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 80,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "map",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 81,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "map",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 82,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "map",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 83,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "map",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 84,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "soulstone",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 79,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "barricate",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 85,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "enemy",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 110,
+   "node": "map_compose",
+   "script": "Map_Compose",
+   "file": "sharedassets19.assets"
+  },
+  {
+   "field": "run",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 318,
+   "node": "pet_horse_riding",
+   "script": "Cha_Control_ride_horse",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "behit",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 319,
+   "node": "pet_horse_riding",
+   "script": "Cha_Control_ride_horse",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "jump",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 312,
+   "node": "pet_horse_riding",
+   "script": "Cha_Control_ride_horse",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "thrust",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 302,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "smash",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 312,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "block",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 316,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 1,
+   "path_id": 170,
+   "node": "dummy_gui",
+   "script": "Tutorial_ride",
+   "file": "sharedassets19.assets"
+  }
+ ],
  "animation_bindings": {
   "only": 15
  },

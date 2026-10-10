@@ -24,10 +24,31 @@
   "refused[two-dimensional array (unsupported by ]": 1,
   "refused[record shorter than layout (data assig]": 1,
   "cross-file ref dropped": 2,
+  "cross-file -> asset (element)": 11,
   "array set": 3,
   "opaque skipped (GUIStyle)": 7,
   "null in source": 1
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 5,
+   "path_id": 301,
+   "node": "UI_general",
+   "script": "UI_general",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "sound_dummy",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 117,
+   "node": "UI_general",
+   "script": "UI_general",
+   "file": "sharedassets7.assets"
+  }
+ ],
  "animation_bindings": {},
  "warnings": [],
  "nodes": [

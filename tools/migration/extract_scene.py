@@ -118,12 +118,18 @@ def clip_asset_path(name, container, path_id):
     return "Assets/Imported/Animations/%s/%s.anim" % (_safe(name) + "__" + key, _safe(name))
 
 
-def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
+def flatten_value(fname, v, obj2node, asset_lookup, stats=None, ledger=None, ctx=None):
     """One decoded value -> (JSON field dict or None, stat key or None).
 
     Every branch is explicit. The previous version ended in `else: treat as Vector`, which would
     have raised on the string/array/struct values this pass adds -- better than silently writing
     nonsense, but still a hole. Anything that cannot be represented is counted, never guessed.
+
+    `ledger` records the cross-file references this pass cannot express yet. Counting them as
+    "cross-file ref dropped" without recording WHICH object they point at is what made task #17
+    un-plannable: the number said 20 in level1, but not whether those were prefabs (exportable) or
+    built-in resources (not). The target is stored as (file id, path id) plus the owning node and
+    script, so a later pass can resolve it without re-reading any bytes.
     """
     if stats is None:
         stats = {}
@@ -131,11 +137,15 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
         if v["file"] != 0:
             # Cross-file: a scene object cannot host it, but an exported asset can. Resolve it
             # against the material / mesh / texture / clip indexes when the type has one, and drop
-            # it (counted) when it points at something not exported yet.
+            # it (counted, and recorded in the ledger) when it points at something not exported.
             path = asset_lookup(v["type"], v["file"], v["ref"])
             if path:
                 return {"n": fname, "kind": "asset", "asset": path, "t": v["type"]}, \
                        "cross-file -> asset"
+            if ledger is not None:
+                ledger.append({"field": fname, "t": v["type"], "file_id": v["file"],
+                               "path_id": v["ref"], "node": (ctx or {}).get("node"),
+                               "script": (ctx or {}).get("script")})
             return None, "cross-file ref dropped"
         if v["ref"] == 0 and v["file"] == 0:
             # A null PPtr: the field was unassigned in the shipped build. Counted as faithful
@@ -161,7 +171,7 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
         items = []
         dropped = 0
         for e in v["arr"]:
-            fv, st = flatten_value(fname, e, obj2node, asset_lookup)
+            fv, st = flatten_value(fname, e, obj2node, asset_lookup, stats, ledger, ctx)
             if st:
                 # Element outcomes used to be thrown away, so a half-empty array looked identical
                 # to a fully resolved one in the tally.
@@ -180,7 +190,7 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None):
         # would leave the Editor unable to say which value goes where.
         items = []
         for sub, e in v["obj"].items():
-            fv, st = flatten_value(sub, e, obj2node, asset_lookup)
+            fv, st = flatten_value(sub, e, obj2node, asset_lookup, stats, ledger, ctx)
             if st:
                 stats[st + " (struct field)"] = stats.get(st + " (struct field)", 0) + 1
             if fv is not None:
@@ -422,6 +432,7 @@ def main():
             obj2node[pp.m_PathID] = tf[0]
 
     field_stats = collections.Counter()
+    dropped_refs = []
 
     for o in env.objects:
         if o.type.name != "GameObject":
@@ -454,8 +465,10 @@ def main():
                     field_stats["refused[" + MF.classify_refusal(why)[:38] + "]"] += 1
                 else:
                     out_fields = []
+                    ctx = {"node": str(d.m_Name), "script": name}
                     for fname, v in vals:
-                        fv, stat = flatten_value(fname, v, obj2node, asset_lookup)
+                        fv, stat = flatten_value(fname, v, obj2node, asset_lookup,
+                                                 field_stats, dropped_refs, ctx)
                         if stat:
                             field_stats[stat] += 1
                         if fv is not None:
@@ -512,6 +525,10 @@ def main():
         warnings.append("animation-index.json / animations-survey.json missing -- no Animation "
                         "component will have states registered")
 
+    # Turn each ledger entry's externals index into the file it actually names, so the next pass
+    # can find the target without re-reading this level's header.
+    for rec in dropped_refs:
+        rec["file"] = u4.resolve_target(target, externals, rec["file_id"])
     payload = {
         "source_level": target,
         "scene_name": scene_name,
@@ -521,6 +538,7 @@ def main():
         "root_ids": roots,
         "unsupported_components": dict(unsupported),
         "field_stats": dict(field_stats),
+        "dropped_refs": dropped_refs,
         "animation_bindings": dict(anim_stats),
         "warnings": warnings,
         "nodes": nodes,

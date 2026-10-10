@@ -14,12 +14,33 @@
  },
  "field_stats": {
   "cross-file -> asset": 10,
+  "cross-file -> asset (element)": 12,
   "array set": 2,
   "opaque skipped (GUIStyle)": 8,
   "cross-file ref dropped": 2,
   "instances decoded": 2,
   "refused[two-dimensional array (unsupported by ]": 1
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 1,
+   "path_id": 301,
+   "node": "ui_status",
+   "script": "UI_status",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "sound_dummy",
+   "t": "Transform",
+   "file_id": 5,
+   "path_id": 117,
+   "node": "ui_status",
+   "script": "UI_status",
+   "file": "sharedassets7.assets"
+  }
+ ],
  "animation_bindings": {},
  "warnings": [],
  "nodes": [

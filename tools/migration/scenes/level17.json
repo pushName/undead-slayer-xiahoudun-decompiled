@@ -34,15 +34,479 @@
   "instances decoded": 62,
   "ref set": 29,
   "cross-file ref dropped": 42,
+  "cross-file -> asset (element)": 69,
   "array set": 21,
   "cross-file -> asset": 13,
+  "cross-file ref dropped (element)": 9,
   "array fully dropped": 3,
   "opaque skipped (GUIStyle)": 5,
   "refused[record shorter than layout (data assig]": 8,
   "refused[bool[] stride unresolved (refused on p]": 1,
+  "ref set (element)": 2,
   "refused[two-dimensional array (unsupported by ]": 2,
   "string set": 1
  },
+ "dropped_refs": [
+  {
+   "field": "shadow",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 446,
+   "node": "general_dummy",
+   "script": "General_dummy",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "shadow",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 446,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "ef_hit",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 442,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "ef_blood",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 436,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "ef_block",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 441,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "arrowmark",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 440,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "num_damage",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 445,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_move",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 306,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_move",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 322,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_move",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 313,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 320,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 297,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 301,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 298,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 3,
+   "path_id": 301,
+   "node": "UI_Ingame_GUI",
+   "script": "UI_Ingame_GUI",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "horse_cry",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 319,
+   "node": "pet_horse",
+   "script": "Pet_horse",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "bowgun",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 437,
+   "node": "weapon_dummy",
+   "script": "Cha_Weapon",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "spear",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 447,
+   "node": "weapon_dummy",
+   "script": "Cha_Weapon",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 3,
+   "path_id": 301,
+   "node": "cut_boss",
+   "script": "Cutin_BossTexture",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "snd_jin",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 689,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "swordwind",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1856,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "rapidstab",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1838,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "wheelwind",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1840,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "meteo",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1853,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "supersword",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1854,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "energypillar",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1971,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "pt_defenceup",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1834,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "sworddance",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1855,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "pt_poison",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1918,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "deathhand",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1831,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "chosun",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2693,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "junwui",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1842,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "dragonhead",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2056,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "fincanon",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2060,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "bamboo",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1852,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "crow",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1847,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "bamboobase",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1846,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "swordrain_b",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1860,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "swordrain_s",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1861,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "swordrain",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1859,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "ef_groundbreak",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2232,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "bombsphere",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1789,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "lightningblade",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1839,
+   "node": "cha1",
+   "script": "Cha_Skill",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "thrust",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 302,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "smash",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 299,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "slash",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 324,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "slash",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 303,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "block",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 316,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "block_break",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 694,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "split",
+   "t": "AudioClip",
+   "file_id": 2,
+   "path_id": 321,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "pt_levelup",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1848,
+   "node": "UI_Ingame",
+   "script": "UI_Ingame",
+   "file": "sharedassets18.assets"
+  }
+ ],
  "animation_bindings": {
   "only": 96,
   "ambiguous": 1,

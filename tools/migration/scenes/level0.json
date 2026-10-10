@@ -25,12 +25,33 @@
  },
  "field_stats": {
   "cross-file -> asset": 27,
+  "cross-file -> asset (element)": 2,
   "array set": 1,
   "cross-file ref dropped": 2,
   "opaque skipped (GUIStyle)": 10,
   "instances decoded": 2,
   "ref set": 5
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 2,
+   "path_id": 301,
+   "node": "UI_intro",
+   "script": "UI_intro",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "font",
+   "t": "Font",
+   "file_id": 2,
+   "path_id": 297,
+   "node": "UI_intro",
+   "script": "UI_intro",
+   "file": "sharedassets0.assets"
+  }
+ ],
  "animation_bindings": {},
  "warnings": [],
  "nodes": [

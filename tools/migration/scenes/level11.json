@@ -21,11 +21,24 @@
   "instances decoded": 5,
   "refused[two-dimensional array (unsupported by ]": 2,
   "cross-file -> asset": 17,
+  "cross-file -> asset (element)": 17,
   "array set": 5,
   "opaque skipped (GUIStyle)": 5,
   "cross-file ref dropped": 1,
+  "ref set (element)": 2,
   "refused[record shorter than layout (data assig]": 1
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 4,
+   "path_id": 301,
+   "node": "ui_pet",
+   "script": "UI_pet",
+   "file": "sharedassets0.assets"
+  }
+ ],
  "animation_bindings": {
   "only": 6
  },

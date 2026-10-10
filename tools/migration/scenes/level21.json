@@ -18,9 +18,21 @@
   "instances decoded": 2,
   "cross-file ref dropped": 1,
   "cross-file -> asset": 1,
+  "cross-file -> asset (element)": 5,
   "array set": 1,
   "opaque skipped (GUIStyle)": 1
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 3,
+   "path_id": 301,
+   "node": "ui_result_extreme",
+   "script": "UI_result_extreme",
+   "file": "sharedassets0.assets"
+  }
+ ],
  "animation_bindings": {},
  "warnings": [],
  "nodes": [

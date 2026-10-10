@@ -16,11 +16,23 @@
  "field_stats": {
   "instances decoded": 6,
   "ref set": 4,
+  "cross-file -> asset (element)": 5,
   "array set": 1,
   "null in source": 3,
   "cross-file -> asset": 2,
   "cross-file ref dropped": 1
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 5,
+   "path_id": 301,
+   "node": "Cam_loading",
+   "script": "Cam_Loading",
+   "file": "sharedassets0.assets"
+  }
+ ],
  "animation_bindings": {
   "only": 6
  },

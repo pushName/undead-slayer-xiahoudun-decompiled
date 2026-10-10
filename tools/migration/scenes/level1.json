@@ -38,12 +38,341 @@
   "instances decoded": 40,
   "cross-file ref dropped": 20,
   "null in source": 47,
+  "null in source (element)": 11,
   "array fully dropped": 8,
   "cross-file -> asset": 7,
+  "cross-file -> asset (element)": 28,
   "array set": 12,
+  "cross-file ref dropped (element)": 16,
   "refused[record shorter than layout (data assig]": 2,
   "opaque skipped (GUIStyle)": 2
  },
+ "dropped_refs": [
+  {
+   "field": "bowgun",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 437,
+   "node": "weapon_dummy",
+   "script": "Cha_Weapon",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "spear",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 447,
+   "node": "weapon_dummy",
+   "script": "Cha_Weapon",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "shadow",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 446,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "ef_hit",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 442,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "ef_blood",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 436,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "ef_block",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 441,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "arrowmark",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 440,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "num_damage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 445,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_move",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 313,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_move",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 322,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_move",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 306,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 301,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 297,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 298,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 320,
+   "node": "Monster_efs",
+   "script": "Monster_efs",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "stab",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 302,
+   "node": "enemy_story",
+   "script": "AI_StoryEnemy",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "stab",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 302,
+   "node": "enemy_story",
+   "script": "AI_StoryEnemy",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "stab",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 302,
+   "node": "enemy_story",
+   "script": "AI_StoryEnemy",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "blood",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 436,
+   "node": "npc",
+   "script": "NPC1",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "snd_scream",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 304,
+   "node": "npc",
+   "script": "NPC1",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 2,
+   "path_id": 301,
+   "node": "scene_trans",
+   "script": "Story_trans",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "horse_cry",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 319,
+   "node": "pet_horse",
+   "script": "Pet_horse",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "thrust",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 302,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "smash",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 299,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "slash",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 324,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "slash",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 303,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "block",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 316,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "split",
+   "t": "AudioClip",
+   "file_id": 1,
+   "path_id": 321,
+   "node": "soundef_slash",
+   "script": "SoundEf_slash",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 2,
+   "path_id": 301,
+   "node": "UI_Ingame",
+   "script": "UI_Ingame_story",
+   "file": "sharedassets0.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 518,
+   "node": "Spawn",
+   "script": "Spawn_story",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 518,
+   "node": "Spawn",
+   "script": "Spawn_story",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 431,
+   "node": "Spawn",
+   "script": "Spawn_story",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 432,
+   "node": "Spawn",
+   "script": "Spawn_story",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 433,
+   "node": "Spawn",
+   "script": "Spawn_story",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 527,
+   "node": "Spawn",
+   "script": "Spawn_story",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 435,
+   "node": "Spawn",
+   "script": "Spawn_story",
+   "file": "sharedassets2.assets"
+  }
+ ],
  "animation_bindings": {
   "only": 109,
   "ambiguous": 7,

@@ -14,6 +14,7 @@
  },
  "field_stats": {
   "cross-file -> asset": 20,
+  "cross-file -> asset (element)": 63,
   "array set": 4,
   "opaque skipped (GUIStyle)": 5,
   "cross-file ref dropped": 1,
@@ -21,6 +22,17 @@
   "refused[two-dimensional array (unsupported by ]": 2,
   "refused[record shorter than layout (data assig]": 1
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 1,
+   "path_id": 301,
+   "node": "ui_archive",
+   "script": "UI_archive",
+   "file": "sharedassets0.assets"
+  }
+ ],
  "animation_bindings": {},
  "warnings": [],
  "nodes": [

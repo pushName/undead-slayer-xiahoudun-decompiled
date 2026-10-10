@@ -14,11 +14,23 @@
  },
  "field_stats": {
   "cross-file -> asset": 6,
+  "cross-file -> asset (element)": 5,
   "array set": 1,
   "opaque skipped (GUIStyle)": 6,
   "cross-file ref dropped": 1,
   "instances decoded": 2
  },
+ "dropped_refs": [
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 1,
+   "path_id": 301,
+   "node": "ui_Friends",
+   "script": "UI_Friends",
+   "file": "sharedassets0.assets"
+  }
+ ],
  "animation_bindings": {},
  "warnings": [],
  "nodes": [
