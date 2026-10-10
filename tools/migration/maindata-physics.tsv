@@ -1,23 +1,32 @@
 # Unity 4.5.4f1 PhysicsManager (mainData path_id=10) -> Unity 2022.3 DynamicsManager.asset
-# Recorded, NOT applied. 27 of the 32 collision-matrix entries are non-default, so this
-# is load-bearing for combat: it decides which attack layers connect with which targets.
+# Applied 2026-10-10 by the Editor menu "Undead Slayer > Apply MainData Physics
+# (Writes DynamicsManager)", implemented in unity/Assets/Editor/PhysicsRebuilder.cs.
+# 27 of the 32 collision-matrix entries are non-default, so this is load-bearing for
+# combat: it decides which attack layers connect with which targets.
 #
-# Why it is not applied: m_LayerCollisionMatrix is spelled in the YAML as 256 hex chars
-# (32 chunks of 8). Unclear whether each chunk is the uint32's little-endian bytes or its
-# big-endian digits. Unity accepts either silently -- a wrong guess does not error, it
-# permutes every mask's bits and quietly changes which attacks land. One blog post
-# (CSDN 104958961) asserts little-endian; I could not confirm it offline, so I will not
-# write the field on that alone.
+# The encoding question this file used to carry is now settled by measurement. Unity
+# 2022.3 spells m_LayerCollisionMatrix as 256 hex chars = 32 chunks of 8, chunk k
+# describing layer k, each chunk the uint32 mask written as its LITTLE-ENDIAN BYTES
+# (0x000041ea -> "ea410000"). That is what the menu left in the file: the string now on
+# disk is byte-identical to the little-endian candidate at the bottom of this file, and
+# decoding it by that reading reproduces all 32 mask_dec values below. The big-endian
+# digits reading reproduces 5 of 32, and those 5 are exactly the layers whose mask is
+# all-ones -- the only spelling-invariant value, which is why a wrong reading can look
+# partly right. A wrong reading still parses without an error, which is why this field
+# was never hand-written here.
 #
-# Recommended fix, which sidesteps the encoding entirely: let Unity serialise the file.
-# A menu item calling Physics.IgnoreLayerCollision(i, j, ignore) for every pair (the
-# only public setter -- verified against UnityEngine.PhysicsModule.xml; there is no
-# Physics.SetLayerCollision), then AssetDatabase.SaveAssets(), writes
-# DynamicsManager.asset in the correct spelling. Verify by reading the 256 hex chars
-# back, decoding to 32 uint32, and asserting they equal the mask_hex column below.
-# Physics.GetIgnoreLayerCollision(a, b) observes Unity's own decoded result, and
-# symmetry (0 of 528 pairs violate it, versus 270 violations under the wrong spelling)
-# is then a cheap invariant to assert.
+# The route that sidesteps the encoding entirely: Physics.IgnoreLayerCollision(i, j,
+# ignore) is the only public per-pair setter (verified against UnityEngine.PhysicsModule.xml;
+# there is no Physics.SetLayerCollision), and Unity serialises the result itself. Verify
+# by reading the 256 chars back and decoding to 32 uint32 against the mask_dec column.
+# Physics.GetIgnoreLayerCollision(a, b) observes Unity's own decoded result, and symmetry
+# is a cheap invariant to assert (0 of 528 pairs violate it here; 270 would under the
+# wrong spelling).
+#
+# Two facts only the run could establish: the write does land in ProjectSettings/
+# DynamicsManager.asset, and IgnoreLayerCollision(i, i, ...) does reach the diagonal --
+# 26 of the 32 layers must not collide with themselves, and the written file has those
+# bits clear. Expected end state: 354 of the 528 pairs ignoring collisions, 174 colliding.
 #
 # Other Unity 4 physics fields, mapped:
 # kind	unity4_field	value	unity2022_field	action
@@ -32,8 +41,8 @@ scalar	m_MinPenetrationForPenalty	0.01	-	NO MAPPING: penalty solver removed in U
 scalar	m_DefaultMaterial	None (fileID 0)	m_DefaultMaterial	already equal - no change
 #
 # m_LayerCollisionMatrix: 32 uint32 masks, bit j of entry i = layer i collides with layer j.
-# Verified symmetric (0 violations over all 528 pairs), so the decoded values are correct;
-# only their YAML hex spelling is in question.
+# Verified symmetric (0 violations over all 528 pairs), so the decoded values are correct.
+# Their YAML hex spelling was the open question until the menu wrote the file; see above.
 # kind	index	layer_name	mask_dec	mask_hex
 matrix	0	Default	16874	0x000041EA
 matrix	1	TransparentFX	16617	0x000040E9
@@ -68,7 +77,8 @@ matrix	29	riseupattack	16872	0x000041E8
 matrix	30	burnattack	16872	0x000041E8
 matrix	31	coldattack	16872	0x000041E8
 #
-# concatenated, big-endian digits per uint32 (UNCONFIRMED):
+# concatenated, big-endian digits per uint32 (NOT what Unity writes: decodes to 5/32):
 # 000041ea000040e9000040e8ffffffff000040e8ffffffffffffffffffffffffffffd5e9000040e80000c1e8000040e8000041e80000c0e8ffffffff000065e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8000041e8
-# concatenated, little-endian bytes per uint32 (UNCONFIRMED):
+# concatenated, little-endian bytes per uint32 (CONFIRMED 2026-10-10: byte-identical to
+# the m_LayerCollisionMatrix line Unity wrote into ProjectSettings/DynamicsManager.asset):
 # ea410000e9400000e8400000ffffffffe8400000ffffffffffffffffffffffffe9d5ffffe8400000e8c10000e8400000e8410000e8c00000ffffffffe8650000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000e8410000
