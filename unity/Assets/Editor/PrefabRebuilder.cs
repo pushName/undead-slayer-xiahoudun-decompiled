@@ -165,8 +165,8 @@ namespace UndeadSlayer.Migration
                 return false;
             }
 
-            var sceneGuids = GuidsOf(File.ReadAllText(
-                Path.Combine(ProjectRoot(), scene.path)));
+            var sceneGuids = new HashSet<string>(GuidsOf(File.ReadAllText(
+                Path.Combine(ProjectRoot(), scene.path))));
             SceneRebuilder.EnsureFolderFor(data.asset_path);
             bool saved;
             var prefab = PrefabUtility.SaveAsPrefabAsset(roots[0], data.asset_path, out saved);
@@ -188,7 +188,17 @@ namespace UndeadSlayer.Migration
             }
 
             // A reference the prefab did not carry becomes a null field at runtime, which is the
-            // failure mode this whole project keeps tripping over -- so compare the guid sets.
+            // failure mode this whole project keeps tripping over. Only PROJECT assets are compared:
+            // a saved scene also references Unity's built-in resource namespace, and a .prefab has no
+            // reason to carry that. A first attempt filtered with GUIDToAssetPath alone and Unity
+            // still reported the same 2 guids for all 94 prefabs, so the shape test in
+            // IsProjectAssetGuid is what actually excludes them.
+            var projectGuids = new HashSet<string>();
+            foreach (var g in sceneGuids)
+            {
+                if (IsProjectAssetGuid(g)) projectGuids.Add(g);
+            }
+            sceneGuids = projectGuids;
             var prefabGuids = GuidsOf(File.ReadAllText(prefabPath));
             var missing = new List<string>();
             foreach (var g in sceneGuids)
@@ -214,7 +224,10 @@ namespace UndeadSlayer.Migration
         private static void CloseAndDelete(Scene scene)
         {
             var path = scene.path;
-            EditorSceneManager.CloseScene(scene, true);
+            // Unity refuses to unload the LAST open scene ("Unloading the last loaded scene ... is
+            // not supported"), and it said so 94 times. Open a fresh empty scene first, which is the
+            // switch it asks for, then the scratch file is no longer in use and deletes cleanly.
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             if (!string.IsNullOrEmpty(path) && !AssetDatabase.DeleteAsset(path))
             {
                 Debug.LogWarning("[PrefabRebuilder] could not delete scratch scene " + path);
@@ -230,6 +243,23 @@ namespace UndeadSlayer.Migration
             }
             return n;
         }
+
+        /// <summary>
+        /// Unity keeps its own resources (default shader, builtin extra, scene settings references)
+        /// under an all-zero guid with a single nibble set, e.g. 0000000000000000e000000000000000.
+        /// GUIDToAssetPath resolves those to internal paths rather than returning empty, so the
+        /// shape is the reliable test -- proven by a run in which path filtering alone still let both
+        /// built-in guids through and warned on all 94 prefabs.
+        /// </summary>
+        private static bool IsProjectAssetGuid(string guid)
+        {
+            if (InternalGuid.IsMatch(guid)) return false;
+            var path = AssetDatabase.GUIDToAssetPath(guid);
+            return !string.IsNullOrEmpty(path) && path.StartsWith("Assets/");
+        }
+
+        private static readonly Regex InternalGuid =
+            new Regex("^0{16}[0-9a-f]0{15}$", RegexOptions.Compiled);
 
         private static HashSet<string> GuidsOf(string yaml)
         {

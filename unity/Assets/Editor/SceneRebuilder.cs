@@ -83,8 +83,8 @@ namespace UndeadSlayer.Migration
 
         /// <summary>
         /// One element of an array field. A separate type rather than a recursive FieldVal because
-        /// JsonUtility binds by exact field name and does not do recursion; the element shapes seen
-        /// in this build are asset / int / float / node, which is all this covers.
+        /// JsonUtility binds by exact field name and does not do recursion. Covered element shapes:
+        /// asset / int / float / bool / vec / node / str.
         /// </summary>
         [Serializable]
         internal class FieldItem
@@ -97,6 +97,7 @@ namespace UndeadSlayer.Migration
             public int b;
             public float[] v;
             public string asset;
+            public string s;         // kind == str: e.g. RankingManager.username, string[50]
         }
 
         [Serializable]
@@ -464,6 +465,17 @@ namespace UndeadSlayer.Migration
                             else if (item.kind == "int") { ep.intValue = item.i; landed++; }
                             else if (item.kind == "float") { ep.floatValue = item.f; landed++; }
                             else if (item.kind == "bool") { ep.boolValue = item.b != 0; landed++; }
+                            else if (item.kind == "str"
+                                     && ep.propertyType == SerializedPropertyType.String)
+                            {
+                                // Without this branch a string[] applies nothing and the pass warns
+                                // "array of 50 applied nothing" every single run. RankingManager.username
+                                // is the only string array in this build and its 50 shipped values are all
+                                // empty -- the C# field initializer already gives the same result, so this
+                                // fixes the honesty of the counter, not a visible value.
+                                ep.stringValue = item.s ?? "";
+                                landed++;
+                            }
                             else if (item.kind == "vec" && item.v != null
                                      && ep.propertyType == SerializedPropertyType.Vector3
                                      && item.v.Length >= 3)
@@ -620,8 +632,8 @@ namespace UndeadSlayer.Migration
                 {
                     animMissing++;
                     Debug.LogWarning(
-                        "[SceneRebuilder] %s has %d animation states to register but no "
-                        + "Animation component".Fmt(n.name, n.animations.Length));
+                        ("[SceneRebuilder] %s has %d animation states to register but no "
+                        + "Animation component").Fmt(n.name, n.animations.Length));
                     continue;
                 }
                 var clips = new List<AnimationClip>();
@@ -636,8 +648,8 @@ namespace UndeadSlayer.Migration
                     {
                         animMissing++;
                         Debug.LogWarning(
-                            "[SceneRebuilder] %s: clip asset '%s' not found -- run 'Build "
-                            + "AnimationClips From Descriptors' first".Fmt(n.name, ab.asset));
+                            ("[SceneRebuilder] %s: clip asset '%s' not found -- run 'Build "
+                            + "AnimationClips From Descriptors' first").Fmt(n.name, ab.asset));
                         continue;
                     }
                     if (clip.name != ab.name)
@@ -646,8 +658,8 @@ namespace UndeadSlayer.Migration
                         // mismatch means Play(ab.name) would fail even though the reference is set.
                         animMissing++;
                         Debug.LogWarning(
-                            "[SceneRebuilder] %s: '%s' object name is '%s' -- Play(\"%s\") would "
-                            + "not resolve".Fmt(n.name, ab.asset, clip.name, ab.name));
+                            ("[SceneRebuilder] %s: '%s' object name is '%s' -- Play(\"%s\") would "
+                            + "not resolve").Fmt(n.name, ab.asset, clip.name, ab.name));
                         continue;
                     }
                     clips.Add(clip);
@@ -689,8 +701,8 @@ namespace UndeadSlayer.Migration
                 if (landed != clips.Count)
                 {
                     Debug.LogWarning(
-                        "[SceneRebuilder] %s: %d of %d clip references did not land on the "
-                        + "Animation component".Fmt(n.name, clips.Count - landed, clips.Count));
+                        ("[SceneRebuilder] %s: %d of %d clip references did not land on the "
+                        + "Animation component").Fmt(n.name, clips.Count - landed, clips.Count));
                 }
                 animStates += landed;
                 animObjects++;
@@ -721,8 +733,8 @@ namespace UndeadSlayer.Migration
                 if (guidsInFile == 0)
                 {
                     Debug.LogWarning(
-                        "[SceneRebuilder] %d clip(s) were AddClip'd but NO clip guid appears in "
-                        + "the saved scene file -- Animation's clip list did not persist."
+                        ("[SceneRebuilder] %d clip(s) were AddClip'd but NO clip guid appears in "
+                        + "the saved scene file -- Animation's clip list did not persist.")
                         .Fmt(clipGuids.Count));
                 }
             }

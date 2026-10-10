@@ -190,6 +190,7 @@ namespace UndeadSlayer.EditorTools
             // file name -- 15 clips are called "idle", so a single shared asset cannot serve two
             // names, and the folder carries the clip identity. Measured alternative: AddClip cloned
             // 119 clips into Story.unity, 320 KB -> 47.9 MB, duplicating every curve per scene.
+            int sceneFiles = 0;
             var work = new Dictionary<string, Binding>();
             var ambiguous = new List<string>();
             var scenesText = new StringBuilder();
@@ -198,6 +199,7 @@ namespace UndeadSlayer.EditorTools
                 string raw = File.ReadAllText(file);
                 scenesText.Append(raw);
                 SceneDoc doc = JsonUtility.FromJson<SceneDoc>(raw);
+                sceneFiles++;
                 if (doc == null || doc.nodes == null)
                 {
                     continue;
@@ -217,6 +219,48 @@ namespace UndeadSlayer.EditorTools
                         work[b.asset] = b;
                     }
                 }
+            }
+
+            // The prefab descriptions reference the same kind of asset, and until now this builder
+            // only looked at the 23 scenes -- which is exactly why 6 bindings inside built prefabs
+            // logged "clip asset not found": nothing had ever built them. Both feeds count now, the
+            // node bindings for their picked_by evidence and the raw text for the scan below.
+            string prefabDir = Path.Combine(root, "tools", "migration", "prefabs");
+            int prefabDocs = 0;
+            if (Directory.Exists(prefabDir))
+            {
+                foreach (string file in Directory.GetFiles(prefabDir, "*.json"))
+                {
+                    string raw = File.ReadAllText(file);
+                    scenesText.Append(raw);
+                    prefabDocs++;
+                    SceneDoc doc = JsonUtility.FromJson<SceneDoc>(raw);
+                    if (doc == null || doc.nodes == null)
+                    {
+                        continue;
+                    }
+                    string label = Path.GetFileNameWithoutExtension(file);
+                    foreach (NodeAnim n in doc.nodes)
+                    {
+                        if (n.animations == null)
+                        {
+                            continue;
+                        }
+                        foreach (Binding b in n.animations)
+                        {
+                            if (b.picked_by != null && b.picked_by.StartsWith("lowest-path-id"))
+                            {
+                                ambiguous.Add("prefab " + label + ":" + b.name);
+                            }
+                            work[b.asset] = b;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("[AnimationClipBuilder] no prefab descriptions at " + prefabDir
+                          + " -- building only what the scenes reference");
             }
 
             // A MonoBehaviour field of type AnimationClip (Cha_Control.begrab and friends, 51
@@ -389,6 +433,8 @@ namespace UndeadSlayer.EditorTools
                 stat.sourceKeys));
             sb.AppendLine(string.Format("animation events   : {0} persisted via AnimationUtility",
                 stat.eventsBuilt));
+            sb.AppendLine(string.Format("descriptions scanned  : {0} scene file(s) + {1} prefab file(s)",
+                sceneFiles, prefabDocs));
             sb.AppendLine(string.Format("float curves skipped: {0} (classID+attribute, not guessed)",
                 stat.floatCurvesSkipped));
             sb.AppendLine(string.Format("ambiguous bindings  : {0} (same state name, several "

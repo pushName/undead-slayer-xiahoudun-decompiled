@@ -27,6 +27,7 @@ Run:  <unitypy venv python> tools/migration/export_prefabs.py [--dry-run]  RECON
 """
 import argparse
 import collections
+import glob
 import json
 import os
 import re
@@ -43,6 +44,8 @@ OUT_DIR = os.path.join(_REPO, "tools", "migration", "prefabs")
 OUT_REPORT = os.path.join(_REPO, "tools", "migration", "prefabs-export.json")
 SURVEY = os.path.join(_REPO, "tools", "migration", "prefabs-survey.json")
 CONTENTS = os.path.join(_REPO, "tools", "migration", "prefab-contents.json")
+MIG = os.path.join(_REPO, "tools", "migration")
+load_json = ES.load_json
 # Scratch scenes the Editor builds into, then deletes. Under Assets so SaveScene accepts it, but
 # never committed -- see the docstring's flow.
 BUILD_SCENE_DIR = "Assets/Imported/_PrefabBuild"
@@ -177,11 +180,15 @@ def main():
         print("REFUSING: two roots would be written as the same Resources name: %s" % dup[:6])
         return 2
     res_dir = os.path.join(_REPO, "unity", "Assets", "Resources")
+    # Clash detection is about two DIFFERENT kinds of asset ending up on one resource path -- that is
+    # what made 18 textures and 94 prefabs fight over the same names. A .prefab already sitting there
+    # is this exporter's own output from a previous Editor run, and refusing it would make the
+    # description impossible to regenerate after building once.
     on_disk = {os.path.splitext(f)[0].lower() for f in os.listdir(res_dir)
-               if not f.endswith(".meta")}
+               if not f.endswith(".meta") and not f.endswith(".prefab")}
     hit = sorted(n for n in names.values() if n.lower() in on_disk)
     if hit:
-        print("REFUSING: %d prefab name(s) collide with an existing Resources asset, which would "
+        print("REFUSING: %d prefab name(s) collide with a non-prefab Resources asset, which would "
               "make Resources.Load('%s') ambiguous" % (len(hit), hit[0]))
         return 2
 
@@ -266,8 +273,12 @@ def main():
     # Some animation bindings reference a .anim the Editor has not built yet: the index lists 427
     # clips and 140 have been turned into assets. Counted rather than hidden -- the fix is the build
     # pass, not the description.
+    built = len(glob.glob(os.path.join(_REPO, "unity", "Assets", "Imported", "Animations",
+                                       "*", "*.anim")))
+    total = len((load_json(os.path.join(MIG, "animation-index.json")) or {}).get("clips", []))
     print("animation bindings pointing at a .anim that is not built yet: %d "
-          "(the clip-to-asset pass has produced 140 of the build's 427)" % len(missing_clips))
+          "(the clip-to-asset pass has produced %d of the build's %d)"
+          % (len(missing_clips), built, total))
     print("exported %d prefabs, %d objects total (%s cut for references outside a subtree)"
           % (stats["exported"], sum(r["objects"] for r in report.values()),
              {k: v for k, v in stats.items() if k != "exported"} or "nothing"))
