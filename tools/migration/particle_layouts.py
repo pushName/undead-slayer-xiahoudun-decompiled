@@ -279,7 +279,65 @@ def decode_one(raw, spec, label, problems):
     return vals
 
 
-def verify(rows, name, sink=None):
+def spec_offsets(spec):
+    """[(offset, name, kind)] walking the layout the way the decoder does."""
+    widths = {"pptr": 8, "tail2": 2, "bool1": 1, "byte1": 1}
+    out, off = [], 0
+    for n, kind in spec:
+        out.append((off, n, kind))
+        off += widths.get(kind, 4)
+    return out
+
+
+def roles(rows, name, decoded):
+    """Which engine property each slot could be, stated as candidates with the evidence for them.
+
+    Deliberately not a single label per slot: nothing in the build names these fields, so a slot that
+    could be "maxParticles" or "an enum" is reported as both. The tests are all-sample, not samples:
+    a role is only proposed when every one of the records is consistent with it.
+    """
+    offs = spec_offsets(LAYOUTS[name])
+    vals = {n: [d[4][n] for d in decoded] for _o, n, k in offs if k != "pptr" and n in decoded[0][4]}
+    fl_by_off = [(o, n) for o, n, k in offs if k == "fl"]
+    print("")
+    print("---- %s: role evidence (%d records) ----" % (name, len(decoded)))
+    for o, n in fl_by_off:
+        v = vals[n]
+        whole = all(abs(x - round(x)) < 1e-9 for x in v)
+        in01 = all(0.0 <= x <= 1.0 for x in v)
+        const = len(set(v)) == 1
+        lo, hi = min(v), max(v)
+        cands = []
+        if const:
+            cands.append("constant/default")
+        if whole and not const:
+            cands.append("integer-valued: count, level or enum")
+        if in01:
+            cands.append("normalised 0..1: weight, alpha, damping, fraction")
+        if not whole and max(abs(x) for x in v) <= 10.0:
+            cands.append("small float: size / speed / lifetime / radius")
+        if hi > 100:
+            cands.append("large float: rate or maxParticles scale")
+        print("    off %3d %-10s values %-46s  %s" % (o, n, "%.3g..%.3g %s" % (
+            lo, hi, ("= %s" % lo) if const else "(%d distinct)" % len(set(v))), "; ".join(cands)))
+    # vectors: three consecutive float slots where at least one record has a negative value
+    vec = []
+    for i in range(len(fl_by_off) - 2):
+        (o1, n1), (o2, n2), (o3, n3) = fl_by_off[i:i + 3]
+        if o2 - o1 == 4 and o3 - o2 == 4:
+            tri = list(zip(vals[n1], vals[n2], vals[n3]))
+            if any(min(t) < 0 for t in tri) and len(set(tri)) > 1:
+                vec.append((o1, [n1, n2, n3]))
+    print("  three-slot runs containing negatives (Vector3 candidates): %s"
+          % [(o, ns) for o, ns in vec])
+    col = [(o, n) for o, n, k in offs if k == "rgba"]
+    if col:
+        alphas = [[d[4][n][3] for _o, n in col] for d in decoded]
+        print("  RGBA track: %d frames, alpha values seen: %s (first record %s)"
+              % (len(col), sorted({a for row in alphas for a in row})[:12], alphas[0]))
+
+
+def verify(rows, name, sink=None, show_roles=False):
     spec = LAYOUTS[name]
     problems, ok = [], 0
     decoded = []
@@ -329,6 +387,8 @@ def verify(rows, name, sink=None):
           % len(pairs))
     for oa, na, ob, nb, lo, hi in pairs:
         print("     off %3d/%3d  %-14s %-14s range %s .. %s" % (oa, ob, na, nb, lo, hi))
+    if show_roles:
+        roles(rows, name, decoded)
     return decoded
 
 
@@ -336,6 +396,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dump", type=int, default=0, help="hexdumps per class")
     ap.add_argument("--classify", action="store_true", help="print the per-slot classification")
+    ap.add_argument("--roles", action="store_true",
+                    help="propose which engine property each slot could be, with its evidence")
     ap.add_argument("--out", default=None,
                     help="write the layouts plus every decoded record (the converter's input)")
     args = ap.parse_args()
@@ -354,7 +416,7 @@ def main():
                       % (c["off"], c["float_ok"], c["bool_ok"], c["quad_ok"], c["floats"],
                          c["ints"]))
         if k in LAYOUTS:
-            verify(rows[k], k, decoded_all)
+            verify(rows[k], k, decoded_all, args.roles)
         if args.dump:
             report(rows[k], k, args.dump)
     clean = sum(1 for _ in decoded_all)
