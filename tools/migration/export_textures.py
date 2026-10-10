@@ -20,9 +20,12 @@ Comparison is case-insensitive, because Windows would collide `Sk_1` with `sk_1`
 After the migration that check reports 25 keys OK and 38 waiting on prefabs (task #17), and no key is
 blocked by naming any more.
 
-Placement: a texture whose name the shipped code loads is written under unity/Assets/Resources/,
-flat, because that is the only place Resources.Load can see; everything else stays under
-Assets/Imported/Textures/<bucket>/, where scene and material references reach it by guid.
+Placement: a texture whose name the shipped code loads **as a texture** is written under
+unity/Assets/Resources/, flat, because that is the only place Resources.Load can see; everything else
+stays under Assets/Imported/Textures/<bucket>/, where scene and material references reach it by guid.
+The demanded type is part of the test: `Resources.Load("bg_dun_cover") as GameObject` wants a prefab,
+and putting a same-named PNG in Resources/ would put two assets on one resource path. 18 textures were
+in Resources/ for exactly that reason and moved back out on 2026-10-10.
 
 Renaming a file and carrying its .meta along keeps the guid, so references survive; re-exporting
 under a new name does NOT keep the guid, which is why the one-time migration lives in
@@ -77,10 +80,21 @@ def bucket_of(basename):
 
 
 def loadable_names():
-    """-> (whole-key set, concatenation-head list) from the one census the game is checked with."""
+    """-> (whole-key set, concatenation-head list) for the keys that can be satisfied by a texture.
+
+    The demanded TYPE is part of the test, not a detail: `Resources.Load("bg_dun_cover") as
+    GameObject` is served by a prefab, and placing a same-named PNG in Resources/ for it would put
+    two assets at one resource path -- which is what export_prefabs.py's collision guard caught.
+    A key with no recorded type is kept, because the census could not tell what it wants.
+    """
+    TEXTURE_TYPES = {"Texture2D", "Texture", "Sprite"}
     sites = call_sites()
-    exact = {k.lower() for k, v in sites.items() if not v["head"]}
-    heads = sorted({k.lower() for k, v in sites.items() if v["head"]})
+
+    def serves_texture(v):
+        return not v["wanted"] or bool(TEXTURE_TYPES & set(v["wanted"]))
+
+    exact = {k.lower() for k, v in sites.items() if not v["head"] and serves_texture(v)}
+    heads = sorted({k.lower() for k, v in sites.items() if v["head"] and serves_texture(v)})
     return exact, heads
 
 
