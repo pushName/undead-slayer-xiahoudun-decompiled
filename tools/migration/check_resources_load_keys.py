@@ -21,8 +21,13 @@ what the game asks for. That census already separates whole keys from concatenat
 ("bgm_stage" + num) and records the demanded type per call site. For a head, the runtime names it can
 produce are taken from the asset names that start with it, so the check never has to guess numbers.
 
-Case is checked on purpose: Resources paths are matched case-sensitively in a player, and this
-repository has already mistaken a case difference for a missing asset once.
+Case is checked on purpose, and this repository has already mistaken a case difference for a missing
+asset once. What the shipped build itself did is now measured rather than assumed: mainData's
+resource table stores the keys lower-cased (`cashshop`, `gameno`, `blockname`) while the scripts ask
+for "CashShop", "gameNo", "blockName", so the original lookup cannot have been case-sensitive -- see
+tools/migration/dump_maindata_resource_index.py. This tool still reports a case difference separately,
+because our own file names match the key's exact case and a silent fold would hide it if that ever
+stopped being true.
 
 Run:  python tools/migration/check_resources_load_keys.py        (no UnityPy needed)
 """
