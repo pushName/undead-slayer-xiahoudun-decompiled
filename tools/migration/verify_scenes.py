@@ -131,6 +131,45 @@ def expected(json_path):
     }
 
 
+def expected_refs(json_path):
+    """The reference-valued fields extract_scene.py decoded, as (field, want) pairs.
+
+    want is an asset path for kind "asset" and "local" for a same-scene object reference. This is
+    a scene-level set, not per component: the YAML does not tie a field back to the MonoBehaviour
+    that declared it without re-parsing m_Script per doc, and the question asked here is "did the
+    value get written at all", which the field name answers. Instance-level binding is what
+    SceneRebuilder's own post-check already does.
+    """
+    d = json.load(open(json_path, encoding="utf-8"))
+    want = []
+    for n in d["nodes"]:
+        for c in n.get("components") or []:
+            if c.get("kind") != "MonoBehaviour":
+                continue
+            for f in c.get("fields") or []:
+                if f.get("kind") == "asset":
+                    want.append((f["n"], f["asset"]))
+                elif f.get("kind") == "node":
+                    want.append((f["n"], "local"))
+                elif f.get("kind") == "arr":
+                    for it in f.get("items") or []:
+                        if it.get("kind") == "asset":
+                            want.append((f["n"], it["asset"]))
+                        elif it.get("kind") == "node":
+                            want.append((f["n"], "local"))
+    return want
+
+
+def _mark_pptr(field_refs, name, file_id, guid, guids):
+    """Credit a MonoBehaviour field only when its PPtr actually holds something."""
+    if int(file_id) == 0 and not guid:
+        return
+    if guid:
+        field_refs[name].add(guids.get(guid) or ("guid:" + guid[:12]))
+    else:
+        field_refs[name].add("local")
+
+
 def actual(scene_path, guids):
     with open(scene_path, "r", encoding="utf-8", errors="replace") as fh:
         text = fh.read()
@@ -193,8 +232,34 @@ def actual(scene_path, guids):
         if mine:
             null_by_script[who] += mine
     null_ref_total = sum(null_by_script.values())
+    # What the reference-valued fields actually hold. Every !u!114 field that carries a PPtr is
+    # recorded as field -> {resolved asset path or "local"}; a field is only credited when the
+    # PPtr is non-null, so "the Editor accepted the assignment" cannot count as landed here.
+    field_refs = collections.defaultdict(set)
+    pp_re = re.compile(r"^  (\w+): \{fileID: (\d+)(?:, guid: ([0-9a-f]{32}))?")
+    item_re = re.compile(r"^\s*-\s*\{fileID: (\d+)(?:, guid: ([0-9a-f]{32}))?")
+    for doc in re.split(r"(?m)^--- ", text)[1:]:
+        if not doc.startswith("!u!114"):
+            continue
+        owner = None
+        for line in doc.split("\n"):
+            owned = re.match(r"^  (\w+):", line)
+            m = pp_re.match(line)
+            mi = item_re.match(line)
+            if owned:
+                # A list-valued field owns the "- {fileID: ...}" lines under it, and its own line
+                # carries no PPtr at all, so the owner has to be tracked separately from the match.
+                owner = None if (owned.group(1) in reserved
+                                 or owned.group(1) == "m_Script") else owned.group(1)
+            if owner is None:
+                continue
+            if m:
+                _mark_pptr(field_refs, owner, m.group(2), m.group(3), guids)
+            elif mi:
+                _mark_pptr(field_refs, owner, mi.group(1), mi.group(2), guids)
     return {
         "counts": dict(counts),
+        "field_refs": {k: sorted(v) for k, v in field_refs.items()},
         "distinct_guid_refs": len(refs),
         "unresolved": unresolved,
         "mesh_guids": {guids.get(g) for g in mesh_guids if guids.get(g)},
@@ -299,6 +364,19 @@ def main():
             problems.append("%d bound animation clip(s) are not referenced by this scene -- the "
                             "clip list did not serialise, rebuild it: %s"
                             % (len(missing_clip), ", ".join(sorted(missing_clip)[:2])))
+        # The reference-valued fields are checked the same way: what the decoder says a field
+        # should point at, against what the written file holds in that field. SceneRebuilder
+        # already re-reads after Apply, but that is the same process that did the writing -- this
+        # is the independent witness, and it is what catches "the export appeared after the
+        # scene was built".
+        wrefs = expected_refs(jp)
+        absent = [(f, w) for f, w in wrefs if w not in act["field_refs"].get(f, ())]
+        if absent:
+            problems.append("%d/%d decoded field references are not in the file -- the scene "
+                            "predates the export they point at, rebuild it. First: %s"
+                            % (len(absent), len(wrefs),
+                               ", ".join("%s->%s" % (f, os.path.basename(w))
+                                         for f, w in absent[:3])))
         for tid, label in LEGACY_FORBIDDEN.items():
             if act["counts"].get(label, 0):
                 problems.append("legacy component %s survived (it does not exist in 2022)" % label)
