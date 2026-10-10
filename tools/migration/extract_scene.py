@@ -290,7 +290,21 @@ def bind_animations(nodes, clip_index, script_states, warnings, stats):
 
 _INDEXES = None
 _BINDINGS = None
+_PARTICLE_RECORDS = None
 MIG = os.path.join(_REPO, "tools", "migration")
+
+
+def particle_records():
+    """{container!path_id -> {class, fields}} decoded from the raw MonoBehaviour-free particle bytes.
+
+    Read from the tool output rather than re-decoded here: particle_layouts.py owns that layout and
+    refuses a record whose byte length does not fit its class, so a wrong decode cannot leak in.
+    """
+    global _PARTICLE_RECORDS
+    if _PARTICLE_RECORDS is None:
+        doc = load_json(os.path.join(MIG, "particle-records.json")) or {}
+        _PARTICLE_RECORDS = doc.get("records", {})
+    return _PARTICLE_RECORDS
 
 
 def bindings():
@@ -519,7 +533,15 @@ class FileCtx:
                 comps.append(self.translate_renderer(tn, t, go_id))
             elif tn in REMOVED_IN_5:
                 unsupported[tn] += 1
-                comps.append({"kind": "unsupported", "type": tn})
+                # Keep the object id and, for the legacy particle classes, the byte-exact record
+                # tools/migration/particle_layouts.py decoded. Without this the only trace of an
+                # emitter is a type name in a histogram, and #19 would have to re-derive every
+                # offset after the tuning sheet is answered.
+                rec = {"kind": "unsupported", "type": tn, "id": t.path_id}
+                fields = particle_records().get("%s!%d" % (self.source, t.path_id))
+                if fields:
+                    rec["record"] = fields["fields"]
+                comps.append(rec)
             elif tn in SUPPORTED:
                 comps.append({"kind": "component", "type": tn})
             else:
