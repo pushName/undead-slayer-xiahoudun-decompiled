@@ -1,0 +1,3948 @@
+{
+ "keys": [
+  "CashShop",
+  "RankingManager",
+  "Stage_dun",
+  "angel_splash",
+  "ani_explore_cha",
+  "ani_explore_cha_fail",
+  "ani_explore_cha_suc",
+  "ani_explore_treasure",
+  "bg_dun",
+  "bg_dun_below",
+  "bg_dun_cover",
+  "bg_worldmap",
+  "bgm_boss",
+  "bgm_stage",
+  "bullet_angel",
+  "cc_cha3",
+  "cc_yun0",
+  "dun_gate",
+  "ef_perfect",
+  "extraimg",
+  "general_arrow_poison",
+  "general_arrowrain",
+  "general_arrowrain_base",
+  "general_axedance",
+  "general_chain",
+  "general_edge_wheel",
+  "general_elec_shock",
+  "general_fincanon",
+  "general_flowerfan",
+  "general_fly",
+  "general_ice_spear",
+  "general_icebg",
+  "general_meteo",
+  "general_mirage",
+  "general_multispear",
+  "general_rapidthrust",
+  "general_risespear",
+  "general_sister",
+  "general_skillyell",
+  "general_spinaxe",
+  "general_spiritsword",
+  "general_swamp",
+  "general_sworddance",
+  "general_yell",
+  "getcoin_num",
+  "giftbox",
+  "guide",
+  "guide9",
+  "hsp_version",
+  "jewel0",
+  "name_boss",
+  "petkind_angel",
+  "portrait_boss",
+  "prt_cart",
+  "prt_cha",
+  "prt_general",
+  "sk_",
+  "sky_ground",
+  "stagenum_cave",
+  "treasure",
+  "wp_",
+  "wp_0",
+  "wp_general"
+ ],
+ "sites": {
+  "bullet_angel": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "AI_Asist: GameObject gameObject = Resources.Load(\"bullet_angel\" + a_index) as GameObject;"
+   ]
+  },
+  "angel_splash": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "AI_Asist: GameObject gameObject2 = Resources.Load(\"angel_splash\" + splashEF) as GameObject;"
+   ]
+  },
+  "cc_yun0": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cam_Move_story: cha_cutin = Resources.Load(\"cc_yun0\") as Texture2D;"
+   ]
+  },
+  "cc_cha3": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cam_Move_story2: cha_cutin = Resources.Load(\"cc_cha3\") as Texture2D;"
+   ]
+  },
+  "general_yell": {
+   "wanted": [
+    "AudioClip"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "Cha_Control: g_yell[0] = Resources.Load(\"general_yell\" + _voice + \"a\") as AudioClip;",
+    "Cha_Control: g_yell[1] = Resources.Load(\"general_yell\" + _voice + \"b\") as AudioClip;"
+   ]
+  },
+  "general_skillyell": {
+   "wanted": [
+    "AudioClip"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "Cha_Control: g_skillyell[0] = Resources.Load(\"general_skillyell\" + _voice + \"a\") as AudioClip;",
+    "Cha_Control: g_skillyell[1] = Resources.Load(\"general_skillyell\" + _voice + \"b\") as AudioClip;"
+   ]
+  },
+  "stagenum_cave": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 2,
+   "examples": [
+    "Cha_Control_ride_cha: GameObject gameObject = Resources.Load(\"stagenum_cave\") as GameObject;",
+    "UI_Ingame: GameObject gameObject = Resources.Load(\"stagenum_cave\") as GameObject;"
+   ]
+  },
+  "general_spiritsword": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_spiritsword\") as GameObject;"
+   ]
+  },
+  "general_spinaxe": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_spinaxe\") as GameObject;"
+   ]
+  },
+  "general_fly": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_fly\") as GameObject;"
+   ]
+  },
+  "general_sister": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_sister\") as GameObject;"
+   ]
+  },
+  "general_ice_spear": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_ice_spear\") as GameObject;"
+   ]
+  },
+  "general_icebg": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: GameObject gameObject = Resources.Load(\"general_icebg\") as GameObject;"
+   ]
+  },
+  "general_sworddance": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_sworddance\") as GameObject;"
+   ]
+  },
+  "general_axedance": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_axedance\") as GameObject;"
+   ]
+  },
+  "general_arrowrain": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_arrowrain\") as GameObject;"
+   ]
+  },
+  "general_arrowrain_base": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_arrowrain_base\") as GameObject;"
+   ]
+  },
+  "general_risespear": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_risespear\") as GameObject;"
+   ]
+  },
+  "general_meteo": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_meteo\") as GameObject;"
+   ]
+  },
+  "general_mirage": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_mirage\") as GameObject;"
+   ]
+  },
+  "general_edge_wheel": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_edge_wheel\") as GameObject;"
+   ]
+  },
+  "general_swamp": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_swamp\") as GameObject;"
+   ]
+  },
+  "general_multispear": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_multispear\") as GameObject;"
+   ]
+  },
+  "general_fincanon": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_fincanon\") as GameObject;"
+   ]
+  },
+  "general_flowerfan": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_flowerfan\") as GameObject;"
+   ]
+  },
+  "general_chain": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_chain\") as GameObject;"
+   ]
+  },
+  "general_arrow_poison": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_arrow_poison\") as GameObject;"
+   ]
+  },
+  "general_rapidthrust": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_rapidthrust\") as GameObject;"
+   ]
+  },
+  "general_elec_shock": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_elec_shock\") as GameObject;"
+   ]
+  },
+  "wp_0": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Cha_Weapon: blade = Resources.Load(\"wp_0\") as GameObject;"
+   ]
+  },
+  "wp_": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "Cha_Weapon: blade = Resources.Load(\"wp_\" + num % 100) as GameObject;",
+    "Cha_Weapon: blade = Resources.Load(\"wp_\" + _meshkind) as GameObject;"
+   ]
+  },
+  "wp_general": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "Cha_Weapon: blade = Resources.Load(\"wp_general\" + _weaponindex) as GameObject;",
+    "General_dummy: GameObject gameObject = Resources.Load(\"wp_general\" + _weaponindex) as GameObject;"
+   ]
+  },
+  "portrait_boss": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "Cutin_BossTexture: base.GetComponent<Renderer>().material.mainTexture = Resources.Load(\"portrait_boss\" + text) as Texture;"
+   ]
+  },
+  "name_boss": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "Cutin_BossTexture: nameimg = Resources.Load(\"name_boss\" + text) as Texture2D;"
+   ]
+  },
+  "ani_explore_cha": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha\") as Texture2D;"
+   ]
+  },
+  "ani_explore_cha_suc": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha_suc\") as Texture2D;"
+   ]
+  },
+  "ani_explore_cha_fail": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha_fail\") as Texture2D;"
+   ]
+  },
+  "ani_explore_treasure": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_treasure\") as Texture2D;"
+   ]
+  },
+  "ef_perfect": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ef_perfect\") as Texture2D;"
+   ]
+  },
+  "treasure": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "Inventory_Gem: getitem_tex = Resources.Load(\"treasure\" + num2) as Texture2D;",
+    "UI_map: icon_treasure = Resources.Load(\"treasure\" + (treasureindex + 1)) as Texture2D;"
+   ]
+  },
+  "sky_ground": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "Loading_sky: base.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = Resources.Load(\"sky_ground\" + num) as Texture;"
+   ]
+  },
+  "extraimg": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "Scenario: extraimg = Resources.Load(\"extraimg\" + extraimg_num) as Texture2D;"
+   ]
+  },
+  "dun_gate": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Spawn: GameObject gameObject2 = Resources.Load(\"dun_gate\") as GameObject;"
+   ]
+  },
+  "prt_cart": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Spawn: general_portrait.GetComponent<Renderer>().material.mainTexture = Resources.Load(\"prt_cart\") as Texture;"
+   ]
+  },
+  "prt_general": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 5,
+   "examples": [
+    "Spawn: prt_general = Resources.Load(\"prt_general\" + (general_index + 1)) as Texture;",
+    "UI_Extreme: prt_general = Resources.Load(\"prt_general\" + (num + 1)) as Texture2D;",
+    "UI_general: prt_general[i] = Resources.Load(\"prt_general\" + (num + 1)) as Texture2D;"
+   ]
+  },
+  "prt_cha": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Spawn: prt_cha = Resources.Load(\"prt_cha\") as Texture;"
+   ]
+  },
+  "bgm_stage": {
+   "wanted": [
+    "AudioClip"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "Spawn: base.GetComponent<AudioSource>().clip = Resources.Load(\"bgm_stage\" + num) as AudioClip;",
+    "Spawn: base.GetComponent<AudioSource>().clip = Resources.Load(\"bgm_stage\" + num) as AudioClip;"
+   ]
+  },
+  "Stage_dun": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "Spawn: GameObject gameObject = Resources.Load(\"Stage_dun\" + (num + 1)) as GameObject;"
+   ]
+  },
+  "bgm_boss": {
+   "wanted": [
+    "AudioClip"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "Spawn: base.GetComponent<AudioSource>().clip = Resources.Load(\"bgm_boss\") as AudioClip;"
+   ]
+  },
+  "guide9": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "Tutorial_ride: guide_img = Resources.Load(\"guide9\" + guide_curent_subindex) as Texture2D;",
+    "Tutorial_ride: guide_img = Resources.Load(\"guide9\" + guide_curent_subindex) as Texture2D;"
+   ]
+  },
+  "bg_worldmap": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 2,
+   "examples": [
+    "UICampos: GameObject gameObject = Resources.Load(\"bg_worldmap\") as GameObject;",
+    "UI_map: GameObject gameObject2 = Resources.Load(\"bg_worldmap\") as GameObject;"
+   ]
+  },
+  "bg_dun": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 2,
+   "examples": [
+    "UICampos: GameObject gameObject2 = Resources.Load(\"bg_dun\") as GameObject;",
+    "UI_Extreme: GameObject gameObject2 = Resources.Load(\"bg_dun\") as GameObject;"
+   ]
+  },
+  "bg_dun_cover": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 2,
+   "examples": [
+    "UICampos: GameObject gameObject3 = Resources.Load(\"bg_dun_cover\") as GameObject;",
+    "UI_Extreme: GameObject gameObject3 = Resources.Load(\"bg_dun_cover\") as GameObject;"
+   ]
+  },
+  "bg_dun_below": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 2,
+   "examples": [
+    "UICampos: GameObject gameObject4 = Resources.Load(\"bg_dun_below\") as GameObject;",
+    "UI_Extreme: GameObject gameObject4 = Resources.Load(\"bg_dun_below\") as GameObject;"
+   ]
+  },
+  "CashShop": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 19,
+   "examples": [
+    "UI_archive: cashshop = Resources.Load(\"CashShop\") as GameObject;",
+    "UI_Extreme: cashshop = Resources.Load(\"CashShop\") as GameObject;",
+    "UI_forge: cashshop = Resources.Load(\"CashShop\") as GameObject;"
+   ]
+  },
+  "jewel0": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "UI_cashshop: icon_gem = Resources.Load(\"jewel0\" + (num9 + 1) + \"a\") as Texture2D;"
+   ]
+  },
+  "RankingManager": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "UI_Extreme: GameObject original = Resources.Load(\"RankingManager\") as GameObject;"
+   ]
+  },
+  "sk_": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 2,
+   "examples": [
+    "UI_Extreme: skillicon[k] = Resources.Load(\"sk_\" + (skill_slot[k] + 1)) as Texture2D;",
+    "UI_map: skillicon[i] = Resources.Load(\"sk_\" + (skill_slot[i] + 1)) as Texture2D;"
+   ]
+  },
+  "getcoin_num": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "UI_Ingame: GameObject gameObject2 = Resources.Load(\"getcoin_num\") as GameObject;"
+   ]
+  },
+  "giftbox": {
+   "wanted": [
+    "GameObject"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "UI_Ingame: GameObject gameObject3 = Resources.Load(\"giftbox\") as GameObject;"
+   ]
+  },
+  "petkind_angel": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "UI_Ingame: Texture mainTexture = Resources.Load(\"petkind_angel\" + cur_angel) as Texture;"
+   ]
+  },
+  "guide": {
+   "wanted": [
+    "Texture2D"
+   ],
+   "head": true,
+   "sites": 1,
+   "examples": [
+    "UI_Ingame_GUI: guide_img = Resources.Load(\"guide\" + num) as Texture2D;"
+   ]
+  },
+  "hsp_version": {
+   "wanted": [
+    "TextAsset"
+   ],
+   "head": false,
+   "sites": 1,
+   "examples": [
+    "UI_intro: TextAsset textAsset = Resources.Load(\"hsp_version\") as TextAsset;"
+   ]
+  }
+ },
+ "verdicts": {
+  "CashShop": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "8f47a76750ffb8b4183f6e75ca0c88f4",
+     1
+    ]
+   ],
+   "subtree": [
+    53
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "RankingManager": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "8030cfee3fae59d41b14d0b6cf1b35f1",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    2
+   ],
+   "types": []
+  },
+  "ani_explore_cha": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "52980c884875c7642b93d7a8cffa3b72",
+      1
+     ]
+    ]
+   }
+  },
+  "ani_explore_cha_fail": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "e34715cd2bf29b844b1d477e1860997a",
+      1
+     ]
+    ]
+   }
+  },
+  "ani_explore_cha_suc": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "8e7b8a6ed38f086428c5039e868cb048",
+      1
+     ]
+    ]
+   }
+  },
+  "ani_explore_treasure": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "95c784e472ea2144f8d5d6349457f027",
+      1
+     ]
+    ]
+   }
+  },
+  "bg_dun": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "f5fab55166dd06f4095e4ce89f0c1e13",
+     1
+    ]
+   ],
+   "subtree": [
+    3
+   ],
+   "components": [
+    2
+   ],
+   "types": []
+  },
+  "bg_dun_below": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "46d751c43ac73544892be9f1f565fed5",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    4
+   ],
+   "types": []
+  },
+  "bg_dun_cover": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "bfa136bb8278f414ab23f8632f5189bd",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    4
+   ],
+   "types": []
+  },
+  "bg_worldmap": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "8eac51c56ba0f8742bff177745eaa697",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    4
+   ],
+   "types": []
+  },
+  "bgm_boss": {
+   "kind": "asset",
+   "types": [
+    "AudioClip"
+   ],
+   "objects": {
+    "AudioClip": [
+     [
+      "18b7a33d4acae79498c3469b031becea",
+      1
+     ]
+    ]
+   }
+  },
+  "cc_cha3": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "3efee101bbbba6a4fa9e4ac3e6f3ecaf",
+      1
+     ]
+    ]
+   }
+  },
+  "cc_yun0": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "3accf807199ab3549b2f09102583467d",
+      1
+     ]
+    ]
+   }
+  },
+  "dun_gate": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "37fc6f1e13139224782ff3fd665316ab",
+     1
+    ]
+   ],
+   "subtree": [
+    3
+   ],
+   "components": [
+    3
+   ],
+   "types": []
+  },
+  "ef_perfect": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "sharedassets10.assets",
+      48
+     ]
+    ]
+   }
+  },
+  "general_arrow_poison": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "d8f28820cebf58440981221d23ca2cf2",
+     1
+    ]
+   ],
+   "subtree": [
+    2
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_arrowrain": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "cf08e3d0aa897104cbdd6e7cd696f2bf",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    5
+   ],
+   "types": []
+  },
+  "general_arrowrain_base": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "7b65e7741efec904b9b0b45aff7e31bc",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "general_axedance": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "3f45fd25feae6e04f82edbee1f83daa6",
+     1
+    ]
+   ],
+   "subtree": [
+    4
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "general_chain": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "854c688faeccb0a4195abc37a3e8147c",
+     1
+    ]
+   ],
+   "subtree": [
+    2
+   ],
+   "components": [
+    8
+   ],
+   "types": []
+  },
+  "general_edge_wheel": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "c2af7200ab8d633408fcf38b904a01f7",
+     1
+    ]
+   ],
+   "subtree": [
+    2
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "general_elec_shock": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "c7d548cb10b004b458a8d42041007080",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_fincanon": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "d9d3aafb93418624b9b84c9549a94718",
+     6
+    ]
+   ],
+   "subtree": [
+    8
+   ],
+   "components": [
+    5
+   ],
+   "types": []
+  },
+  "general_flowerfan": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "0e97da20cae403145b3f459b22490fa8",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "general_fly": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "368bd2cf2ae87ce4181b4af76a7ae09b",
+     2
+    ]
+   ],
+   "subtree": [
+    2
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "general_ice_spear": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "5c084062369a63e4799940f0eb4f7afb",
+     2
+    ]
+   ],
+   "subtree": [
+    2
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_icebg": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "7dd048ac75b2ac147adc90da79bdcfe0",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    4
+   ],
+   "types": []
+  },
+  "general_meteo": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "9892c31ba4790444981a9c82b86460dc",
+     2
+    ]
+   ],
+   "subtree": [
+    3
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_mirage": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "7dde77d3ab32e3045a4f2acbacf3fc26",
+     1
+    ]
+   ],
+   "subtree": [
+    2
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_multispear": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "7a5f2a6f8440025439daa70404dda73e",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_rapidthrust": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "3cc994ff662e8814399b2a9874882c7e",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_risespear": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "560d57c83f1458148a77d32bb34fde4b",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    6
+   ],
+   "types": []
+  },
+  "general_sister": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "cb35c97ebae99fd42a5ff1730d8266c6",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    4
+   ],
+   "types": []
+  },
+  "general_spinaxe": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "572ee6953dde0b34f8921bfb540f721a",
+     1
+    ]
+   ],
+   "subtree": [
+    2
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "general_spiritsword": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "b6203020a438334498ffe9f436d42f1c",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    4
+   ],
+   "types": []
+  },
+  "general_swamp": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "9e1dbd041accfba4f9ac62cd916e933f",
+     1
+    ]
+   ],
+   "subtree": [
+    3
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "general_sworddance": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "6ad423bf02f94e647a84e3239af92c3a",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    7
+   ],
+   "types": []
+  },
+  "getcoin_num": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "eeb4dafcaa0f20b488db3070cf233a4e",
+     2
+    ]
+   ],
+   "subtree": [
+    3
+   ],
+   "components": [
+    4
+   ],
+   "types": []
+  },
+  "giftbox": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "20edb30c56e6bd54393bc67317572133",
+     5
+    ]
+   ],
+   "subtree": [
+    5
+   ],
+   "components": [
+    5
+   ],
+   "types": []
+  },
+  "hsp_version": {
+   "kind": "asset",
+   "types": [
+    "TextAsset"
+   ],
+   "objects": {
+    "TextAsset": [
+     [
+      "6c515a3b5089af144a36d480a2ceea72",
+      1
+     ]
+    ]
+   }
+  },
+  "prt_cart": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "2b4051ae13d1b38428733d7578eec1c1",
+      1
+     ]
+    ]
+   }
+  },
+  "prt_cha": {
+   "kind": "asset",
+   "types": [
+    "Texture2D"
+   ],
+   "objects": {
+    "Texture2D": [
+     [
+      "b5f742ed3fad659418bceae1ddea8ccd",
+      1
+     ]
+    ]
+   }
+  },
+  "stagenum_cave": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "ef5b61d1fab5854408ca51125746caf8",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    3
+   ],
+   "types": []
+  },
+  "wp_0": {
+   "kind": "prefab",
+   "objects": [
+    [
+     "b6560e31139075f459d6961123470654",
+     1
+    ]
+   ],
+   "subtree": [
+    1
+   ],
+   "components": [
+    3
+   ],
+   "types": []
+  },
+  "Stage_dun": {
+   "kind": "family",
+   "members": {
+    "GameObject": [
+     "Stage_dun1",
+     "Stage_dun2",
+     "Stage_dun3",
+     "Stage_dun4",
+     "Stage_dun5",
+     "Stage_dun6",
+     "Stage_dun7",
+     "Stage_dun8"
+    ]
+   },
+   "prefab_objects": {
+    "Stage_dun1": [
+     [
+      "675fdea51516a8c4ebe1091726c6268a",
+      1
+     ]
+    ],
+    "Stage_dun2": [
+     [
+      "549d20245296b0645ad2a0c875b87a83",
+      1
+     ]
+    ],
+    "Stage_dun3": [
+     [
+      "69f958559f37c4d4bbfbace1100f80d9",
+      1
+     ]
+    ],
+    "Stage_dun4": [
+     [
+      "bb3fd2145307bd241b0f466f8124459b",
+      1
+     ]
+    ],
+    "Stage_dun5": [
+     [
+      "cf2ec982d6d52a34188ee45e8f8c81f4",
+      1
+     ]
+    ],
+    "Stage_dun6": [
+     [
+      "da26799310d7d124093d96b60bcf4293",
+      1
+     ]
+    ],
+    "Stage_dun7": [
+     [
+      "e20a04d6f18f1dc46a1531f21b46e5e2",
+      1
+     ]
+    ],
+    "Stage_dun8": [
+     [
+      "8d4623989c62fa149b7f2c676fede947",
+      11
+     ]
+    ]
+   }
+  },
+  "angel_splash": {
+   "kind": "family",
+   "members": {
+    "GameObject": [
+     "angel_splash2",
+     "angel_splash3",
+     "angel_splash4",
+     "angel_splash5",
+     "angel_splash6",
+     "angel_splash8"
+    ]
+   },
+   "prefab_objects": {
+    "angel_splash2": [
+     [
+      "49fbebace6a8f424ab4fedab6fb4932e",
+      1
+     ]
+    ],
+    "angel_splash3": [
+     [
+      "4c56c8fe077e8fc4a843dd4035ef3aff",
+      1
+     ]
+    ],
+    "angel_splash4": [
+     [
+      "e59ee56f55934174fba3198ad7e25d11",
+      1
+     ]
+    ],
+    "angel_splash5": [
+     [
+      "cf478de1ef56c3444ac102712d1445a3",
+      2
+     ],
+     [
+      "cf478de1ef56c3444ac102712d1445a3",
+      3
+     ],
+     [
+      "cf478de1ef56c3444ac102712d1445a3",
+      4
+     ],
+     [
+      "cf478de1ef56c3444ac102712d1445a3",
+      5
+     ]
+    ],
+    "angel_splash6": [
+     [
+      "42889d56caebda34196798dd4285a84c",
+      1
+     ]
+    ],
+    "angel_splash8": [
+     [
+      "a035586254f722a4bb118a94790a7bbf",
+      2
+     ],
+     [
+      "c0db4720c07eeb24a81dccc6ddeb4841",
+      1
+     ]
+    ]
+   }
+  },
+  "bgm_stage": {
+   "kind": "family",
+   "members": {
+    "AudioClip": [
+     "bgm_stage1",
+     "bgm_stage2",
+     "bgm_stage3"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "bullet_angel": {
+   "kind": "family",
+   "members": {
+    "GameObject": [
+     "bullet_angel1",
+     "bullet_angel2",
+     "bullet_angel3",
+     "bullet_angel4",
+     "bullet_angel5",
+     "bullet_angel6",
+     "bullet_angel7",
+     "bullet_angel8"
+    ]
+   },
+   "prefab_objects": {
+    "bullet_angel1": [
+     [
+      "fb2d456f8f7c2e140a7c7c15b9e6ea41",
+      1
+     ]
+    ],
+    "bullet_angel2": [
+     [
+      "ce89fa11f960261429793e861f3e41aa",
+      2
+     ]
+    ],
+    "bullet_angel3": [
+     [
+      "010621e4ceb268d47a0fc7a75a04ea68",
+      1
+     ]
+    ],
+    "bullet_angel4": [
+     [
+      "21e8e4a652ed46c408e76377c4443478",
+      1
+     ]
+    ],
+    "bullet_angel5": [
+     [
+      "f2b7e1fc445459d4e80589e5166ea98a",
+      2
+     ]
+    ],
+    "bullet_angel6": [
+     [
+      "db87f376cf2764f4db5b17236bcc4596",
+      2
+     ]
+    ],
+    "bullet_angel7": [
+     [
+      "09a84b752a276b1449a5ba1b6f6cd83a",
+      5
+     ]
+    ],
+    "bullet_angel8": [
+     [
+      "a035586254f722a4bb118a94790a7bbf",
+      1
+     ]
+    ]
+   }
+  },
+  "extraimg": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "extraimg1001",
+     "extraimg1002",
+     "extraimg1003",
+     "extraimg1004",
+     "extraimg1005",
+     "extraimg1006",
+     "extraimg1007",
+     "extraimg1008"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "general_skillyell": {
+   "kind": "family",
+   "members": {
+    "AudioClip": [
+     "general_skillyell0a",
+     "general_skillyell0b",
+     "general_skillyell1a",
+     "general_skillyell1b",
+     "general_skillyell2a",
+     "general_skillyell2b",
+     "general_skillyell3a",
+     "general_skillyell3b",
+     "general_skillyell4a",
+     "general_skillyell4b",
+     "general_skillyell5a",
+     "general_skillyell5b"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "general_yell": {
+   "kind": "family",
+   "members": {
+    "AudioClip": [
+     "general_yell0a",
+     "general_yell0b",
+     "general_yell1a",
+     "general_yell1b",
+     "general_yell2a",
+     "general_yell2b",
+     "general_yell3a",
+     "general_yell3b",
+     "general_yell4a",
+     "general_yell4b",
+     "general_yell5a",
+     "general_yell5b"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "guide": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "guide01",
+     "guide02",
+     "guide03",
+     "guide04",
+     "guide10",
+     "guide11",
+     "guide12",
+     "guide20",
+     "guide21",
+     "guide30",
+     "guide31",
+     "guide40",
+     "guide41",
+     "guide50",
+     "guide51",
+     "guide52",
+     "guide60",
+     "guide61",
+     "guide70",
+     "guide90",
+     "guide91"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "guide9": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "guide90",
+     "guide91"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "jewel0": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "jewel01a",
+     "jewel02a",
+     "jewel03a",
+     "jewel04a",
+     "jewel05a"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "name_boss": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "name_boss1",
+     "name_boss10",
+     "name_boss11",
+     "name_boss2",
+     "name_boss3",
+     "name_boss4",
+     "name_boss5",
+     "name_boss6",
+     "name_boss7",
+     "name_boss8",
+     "name_boss9"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "petkind_angel": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "petkind_angel1",
+     "petkind_angel2",
+     "petkind_angel3",
+     "petkind_angel4",
+     "petkind_angel5",
+     "petkind_angel6",
+     "petkind_angel7",
+     "petkind_angel8"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "portrait_boss": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "portrait_boss1",
+     "portrait_boss10",
+     "portrait_boss11",
+     "portrait_boss2",
+     "portrait_boss3",
+     "portrait_boss4",
+     "portrait_boss5",
+     "portrait_boss6",
+     "portrait_boss7",
+     "portrait_boss8",
+     "portrait_boss9"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "prt_general": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "prt_general1",
+     "prt_general10",
+     "prt_general11",
+     "prt_general12",
+     "prt_general13",
+     "prt_general14",
+     "prt_general15",
+     "prt_general16",
+     "prt_general17",
+     "prt_general18",
+     "prt_general19",
+     "prt_general2",
+     "prt_general20",
+     "prt_general21",
+     "prt_general22",
+     "prt_general23",
+     "prt_general24",
+     "prt_general25",
+     "prt_general26",
+     "prt_general27",
+     "prt_general28",
+     "prt_general29",
+     "prt_general3",
+     "prt_general30",
+     "prt_general4",
+     "prt_general5",
+     "prt_general6",
+     "prt_general7",
+     "prt_general8",
+     "prt_general9"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "sk_": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "sk_1",
+     "sk_10",
+     "sk_11",
+     "sk_12",
+     "sk_13",
+     "sk_14",
+     "sk_15",
+     "sk_16",
+     "sk_17",
+     "sk_18",
+     "sk_19",
+     "sk_2",
+     "sk_20",
+     "sk_3",
+     "sk_4",
+     "sk_5",
+     "sk_6",
+     "sk_7",
+     "sk_8",
+     "sk_9",
+     "sk_g_0",
+     "sk_pet_autoitem",
+     "sk_pet_bowgun",
+     "sk_pet_conboost",
+     "sk_pet_expup",
+     "sk_pet_spear",
+     "sk_pet_speedup",
+     "sk_thrust"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "sky_ground": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "sky_ground1",
+     "sky_ground2",
+     "sky_ground3",
+     "sky_ground4",
+     "sky_ground5"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "treasure": {
+   "kind": "family",
+   "members": {
+    "Texture2D": [
+     "treasure",
+     "treasure1",
+     "treasure10",
+     "treasure11",
+     "treasure12",
+     "treasure13",
+     "treasure14",
+     "treasure15",
+     "treasure16",
+     "treasure17",
+     "treasure18",
+     "treasure19",
+     "treasure2",
+     "treasure20",
+     "treasure21",
+     "treasure22",
+     "treasure23",
+     "treasure24",
+     "treasure3",
+     "treasure4",
+     "treasure5",
+     "treasure6",
+     "treasure7",
+     "treasure8",
+     "treasure9"
+    ]
+   },
+   "prefab_objects": {}
+  },
+  "wp_": {
+   "kind": "family",
+   "members": {
+    "GameObject": [
+     "wp_0",
+     "wp_1",
+     "wp_10",
+     "wp_11",
+     "wp_12",
+     "wp_13",
+     "wp_14",
+     "wp_15",
+     "wp_16",
+     "wp_17",
+     "wp_18",
+     "wp_19",
+     "wp_2",
+     "wp_20",
+     "wp_21",
+     "wp_22",
+     "wp_23",
+     "wp_24",
+     "wp_25",
+     "wp_3",
+     "wp_4",
+     "wp_5",
+     "wp_6",
+     "wp_7",
+     "wp_8",
+     "wp_9",
+     "wp_b01",
+     "wp_b02",
+     "wp_b05",
+     "wp_b06",
+     "wp_b07",
+     "wp_b08",
+     "wp_b10",
+     "wp_general1",
+     "wp_general2",
+     "wp_general3",
+     "wp_general4",
+     "wp_general5",
+     "wp_general6",
+     "wp_general7",
+     "wp_general8",
+     "wp_general_staff",
+     "wp_horse"
+    ]
+   },
+   "prefab_objects": {
+    "wp_0": [
+     [
+      "b6560e31139075f459d6961123470654",
+      1
+     ]
+    ],
+    "wp_1": [
+     [
+      "sharedassets18.assets",
+      812
+     ],
+     [
+      "d32e199144d53cf4387accde13443c7a",
+      1
+     ]
+    ],
+    "wp_10": [
+     [
+      "f8613f94a76302a42968e4dd266a126e",
+      1
+     ]
+    ],
+    "wp_11": [
+     [
+      "9ffa0b3e1641d414b918b58844aaa684",
+      1
+     ]
+    ],
+    "wp_12": [
+     [
+      "a5d699a586bff844f81d7a794fb1dd9f",
+      1
+     ]
+    ],
+    "wp_13": [
+     [
+      "5e4630e95cbff3a478a414bb507f13da",
+      1
+     ]
+    ],
+    "wp_14": [
+     [
+      "87e24ad3bd5b76b4488ff6dc8a5b99f1",
+      1
+     ]
+    ],
+    "wp_15": [
+     [
+      "d8604ec390043fb4882e19b2284fddb6",
+      1
+     ]
+    ],
+    "wp_16": [
+     [
+      "d836e11304d5d8b4ea0b87937481b0fe",
+      1
+     ]
+    ],
+    "wp_17": [
+     [
+      "a2b6fe4ba19a0bb4a8fb8a812e6067b8",
+      1
+     ]
+    ],
+    "wp_18": [
+     [
+      "c4c6a9939660ebe48ae47eacfee4c645",
+      1
+     ]
+    ],
+    "wp_19": [
+     [
+      "e7854b4f81a78ed4f91ac5b2b71249c1",
+      1
+     ]
+    ],
+    "wp_2": [
+     [
+      "12f056bffc34f0c4ba9141cf0c466586",
+      1
+     ]
+    ],
+    "wp_20": [
+     [
+      "23626bd38c99e3449a6bdc3e6ea24e8c",
+      1
+     ]
+    ],
+    "wp_21": [
+     [
+      "7722176ab8d093c43834f2d96fc01e09",
+      1
+     ]
+    ],
+    "wp_22": [
+     [
+      "03f2b9aac27353040836d6a4e8388ef5",
+      1
+     ]
+    ],
+    "wp_23": [
+     [
+      "8b756b72a53202e4e889a98a99bdf1a3",
+      1
+     ]
+    ],
+    "wp_24": [
+     [
+      "e3a7dfc9d9099d445b40f60ae8b17b3e",
+      1
+     ]
+    ],
+    "wp_25": [
+     [
+      "8b902449b622ed649a72b32e4c07d5bc",
+      1
+     ]
+    ],
+    "wp_3": [
+     [
+      "6f4879622b2b07743964c385ab0b9eef",
+      1
+     ]
+    ],
+    "wp_4": [
+     [
+      "4dd4cecf0e62ed04faf6e4dc86788e80",
+      1
+     ]
+    ],
+    "wp_5": [
+     [
+      "44cf6415a0d1740469006dbfd5256fd6",
+      1
+     ]
+    ],
+    "wp_6": [
+     [
+      "ce03d8eee54a47e4896613572be8f226",
+      1
+     ]
+    ],
+    "wp_7": [
+     [
+      "61e7ae2c442964645b64509be55687e2",
+      1
+     ]
+    ],
+    "wp_8": [
+     [
+      "b5e076f83811bf7459668e37490d0832",
+      1
+     ]
+    ],
+    "wp_9": [
+     [
+      "13c12479ec0191f4f97b4aa8599319a4",
+      1
+     ]
+    ],
+    "wp_b01": [
+     [
+      "sharedassets18.assets",
+      1639
+     ]
+    ],
+    "wp_b02": [
+     [
+      "sharedassets18.assets",
+      1696
+     ]
+    ],
+    "wp_b05": [
+     [
+      "sharedassets18.assets",
+      705
+     ]
+    ],
+    "wp_b06": [
+     [
+      "sharedassets18.assets",
+      706
+     ]
+    ],
+    "wp_b07": [
+     [
+      "sharedassets18.assets",
+      816
+     ]
+    ],
+    "wp_b08": [
+     [
+      "sharedassets18.assets",
+      708
+     ]
+    ],
+    "wp_b10": [
+     [
+      "sharedassets18.assets",
+      1648
+     ]
+    ],
+    "wp_general1": [
+     [
+      "1f466a0f8c894904dba3fd13b5aadd50",
+      1
+     ]
+    ],
+    "wp_general2": [
+     [
+      "ead3acaaa4a4c9747b1406ed3029f78f",
+      1
+     ]
+    ],
+    "wp_general3": [
+     [
+      "ebb15aca5f9adb84a9d2d361cbce6bc3",
+      1
+     ]
+    ],
+    "wp_general4": [
+     [
+      "51fc775ea5b72cb429fcae442d1409dc",
+      1
+     ]
+    ],
+    "wp_general5": [
+     [
+      "c377ababfc2b3a64b8ff90f905598948",
+      1
+     ]
+    ],
+    "wp_general6": [
+     [
+      "73cf695b93ff39f46a8914f602944638",
+      1
+     ]
+    ],
+    "wp_general7": [
+     [
+      "6b631ac2a4a98144d885492369514229",
+      1
+     ]
+    ],
+    "wp_general8": [
+     [
+      "f79ca79bdc6564f40b02a87d98d71bf0",
+      1
+     ]
+    ],
+    "wp_general_staff": [
+     [
+      "3e1661de4aea62e41b777ab3cd6f7593",
+      1
+     ]
+    ],
+    "wp_horse": [
+     [
+      "sharedassets2.assets",
+      342
+     ]
+    ]
+   }
+  },
+  "wp_general": {
+   "kind": "family",
+   "members": {
+    "GameObject": [
+     "wp_general1",
+     "wp_general2",
+     "wp_general3",
+     "wp_general4",
+     "wp_general5",
+     "wp_general6",
+     "wp_general7",
+     "wp_general8",
+     "wp_general_staff"
+    ]
+   },
+   "prefab_objects": {
+    "wp_general1": [
+     [
+      "1f466a0f8c894904dba3fd13b5aadd50",
+      1
+     ]
+    ],
+    "wp_general2": [
+     [
+      "ead3acaaa4a4c9747b1406ed3029f78f",
+      1
+     ]
+    ],
+    "wp_general3": [
+     [
+      "ebb15aca5f9adb84a9d2d361cbce6bc3",
+      1
+     ]
+    ],
+    "wp_general4": [
+     [
+      "51fc775ea5b72cb429fcae442d1409dc",
+      1
+     ]
+    ],
+    "wp_general5": [
+     [
+      "c377ababfc2b3a64b8ff90f905598948",
+      1
+     ]
+    ],
+    "wp_general6": [
+     [
+      "73cf695b93ff39f46a8914f602944638",
+      1
+     ]
+    ],
+    "wp_general7": [
+     [
+      "6b631ac2a4a98144d885492369514229",
+      1
+     ]
+    ],
+    "wp_general8": [
+     [
+      "f79ca79bdc6564f40b02a87d98d71bf0",
+      1
+     ]
+    ],
+    "wp_general_staff": [
+     [
+      "3e1661de4aea62e41b777ab3cd6f7593",
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "prefab_keys": [
+  "CashShop",
+  "RankingManager",
+  "bg_dun",
+  "bg_dun_below",
+  "bg_dun_cover",
+  "bg_worldmap",
+  "dun_gate",
+  "general_arrow_poison",
+  "general_arrowrain",
+  "general_arrowrain_base",
+  "general_axedance",
+  "general_chain",
+  "general_edge_wheel",
+  "general_elec_shock",
+  "general_fincanon",
+  "general_flowerfan",
+  "general_fly",
+  "general_ice_spear",
+  "general_icebg",
+  "general_meteo",
+  "general_mirage",
+  "general_multispear",
+  "general_rapidthrust",
+  "general_risespear",
+  "general_sister",
+  "general_spinaxe",
+  "general_spiritsword",
+  "general_swamp",
+  "general_sworddance",
+  "getcoin_num",
+  "giftbox",
+  "stagenum_cave",
+  "wp_0"
+ ],
+ "family_prefab_objects": [
+  "Stage_dun1",
+  "Stage_dun2",
+  "Stage_dun3",
+  "Stage_dun4",
+  "Stage_dun5",
+  "Stage_dun6",
+  "Stage_dun7",
+  "Stage_dun8",
+  "angel_splash2",
+  "angel_splash3",
+  "angel_splash4",
+  "angel_splash5",
+  "angel_splash6",
+  "angel_splash8",
+  "bullet_angel1",
+  "bullet_angel2",
+  "bullet_angel3",
+  "bullet_angel4",
+  "bullet_angel5",
+  "bullet_angel6",
+  "bullet_angel7",
+  "bullet_angel8",
+  "wp_0",
+  "wp_1",
+  "wp_10",
+  "wp_11",
+  "wp_12",
+  "wp_13",
+  "wp_14",
+  "wp_15",
+  "wp_16",
+  "wp_17",
+  "wp_18",
+  "wp_19",
+  "wp_2",
+  "wp_20",
+  "wp_21",
+  "wp_22",
+  "wp_23",
+  "wp_24",
+  "wp_25",
+  "wp_3",
+  "wp_4",
+  "wp_5",
+  "wp_6",
+  "wp_7",
+  "wp_8",
+  "wp_9",
+  "wp_b01",
+  "wp_b02",
+  "wp_b05",
+  "wp_b06",
+  "wp_b07",
+  "wp_b08",
+  "wp_b10",
+  "wp_general1",
+  "wp_general2",
+  "wp_general3",
+  "wp_general4",
+  "wp_general5",
+  "wp_general6",
+  "wp_general7",
+  "wp_general8",
+  "wp_general_staff",
+  "wp_horse"
+ ],
+ "gaps": [],
+ "components": {
+  "sharedassets10.assets!142": 4,
+  "sharedassets14.assets!52": 3,
+  "sharedassets14.assets!53": 3,
+  "sharedassets18.assets!701": 6,
+  "sharedassets18.assets!702": 6,
+  "sharedassets18.assets!703": 6,
+  "sharedassets18.assets!704": 1,
+  "sharedassets18.assets!705": 4,
+  "sharedassets18.assets!706": 4,
+  "sharedassets18.assets!707": 6,
+  "sharedassets18.assets!708": 4,
+  "sharedassets18.assets!709": 6,
+  "sharedassets18.assets!710": 6,
+  "sharedassets18.assets!711": 6,
+  "sharedassets18.assets!712": 1,
+  "sharedassets18.assets!713": 6,
+  "sharedassets18.assets!714": 6,
+  "sharedassets18.assets!715": 6,
+  "sharedassets18.assets!716": 2,
+  "sharedassets18.assets!717": 2,
+  "sharedassets18.assets!718": 1,
+  "sharedassets18.assets!719": 1,
+  "sharedassets18.assets!720": 2,
+  "sharedassets18.assets!721": 1,
+  "sharedassets18.assets!722": 1,
+  "sharedassets18.assets!723": 3,
+  "sharedassets18.assets!724": 1,
+  "sharedassets18.assets!725": 1,
+  "sharedassets18.assets!726": 2,
+  "sharedassets18.assets!727": 3,
+  "sharedassets18.assets!728": 4,
+  "sharedassets18.assets!729": 3,
+  "sharedassets18.assets!730": 6,
+  "sharedassets18.assets!731": 3,
+  "sharedassets18.assets!732": 7,
+  "sharedassets18.assets!733": 4,
+  "sharedassets18.assets!734": 7,
+  "sharedassets18.assets!735": 6,
+  "sharedassets18.assets!736": 7,
+  "sharedassets18.assets!737": 7,
+  "sharedassets18.assets!738": 5,
+  "sharedassets18.assets!739": 7,
+  "sharedassets18.assets!740": 7,
+  "sharedassets18.assets!741": 8,
+  "sharedassets18.assets!742": 4,
+  "sharedassets18.assets!743": 4,
+  "sharedassets18.assets!744": 7,
+  "sharedassets18.assets!745": 5,
+  "sharedassets18.assets!746": 5,
+  "sharedassets18.assets!747": 5,
+  "sharedassets18.assets!748": 7,
+  "sharedassets18.assets!749": 7,
+  "sharedassets18.assets!750": 8,
+  "sharedassets18.assets!751": 8,
+  "sharedassets18.assets!752": 8,
+  "sharedassets18.assets!753": 8,
+  "sharedassets18.assets!754": 8,
+  "sharedassets18.assets!755": 8,
+  "sharedassets18.assets!756": 7,
+  "sharedassets18.assets!757": 9,
+  "sharedassets18.assets!758": 8,
+  "sharedassets18.assets!759": 8,
+  "sharedassets18.assets!760": 8,
+  "sharedassets18.assets!761": 8,
+  "sharedassets18.assets!762": 8,
+  "sharedassets18.assets!763": 8,
+  "sharedassets18.assets!764": 8,
+  "sharedassets18.assets!765": 8,
+  "sharedassets18.assets!766": 8,
+  "sharedassets18.assets!767": 8,
+  "sharedassets18.assets!768": 8,
+  "sharedassets18.assets!769": 6,
+  "sharedassets18.assets!770": 6,
+  "sharedassets18.assets!771": 7,
+  "sharedassets18.assets!772": 2,
+  "sharedassets18.assets!773": 2,
+  "sharedassets18.assets!774": 4,
+  "sharedassets18.assets!775": 6,
+  "sharedassets18.assets!776": 3,
+  "sharedassets18.assets!777": 1,
+  "sharedassets18.assets!778": 5,
+  "sharedassets18.assets!779": 3,
+  "sharedassets18.assets!780": 5,
+  "sharedassets18.assets!781": 3,
+  "sharedassets18.assets!782": 6,
+  "sharedassets18.assets!783": 6,
+  "sharedassets18.assets!784": 6,
+  "sharedassets18.assets!785": 1,
+  "sharedassets18.assets!786": 6,
+  "sharedassets18.assets!787": 6,
+  "sharedassets18.assets!788": 3,
+  "sharedassets18.assets!789": 6,
+  "sharedassets18.assets!790": 4,
+  "sharedassets18.assets!791": 4,
+  "sharedassets18.assets!792": 4,
+  "sharedassets18.assets!793": 4,
+  "sharedassets18.assets!794": 6,
+  "sharedassets18.assets!795": 8,
+  "sharedassets18.assets!796": 6,
+  "sharedassets18.assets!797": 7,
+  "sharedassets18.assets!798": 7,
+  "sharedassets18.assets!799": 7,
+  "sharedassets18.assets!800": 6,
+  "sharedassets18.assets!801": 4,
+  "sharedassets18.assets!802": 7,
+  "sharedassets18.assets!803": 5,
+  "sharedassets18.assets!804": 7,
+  "sharedassets18.assets!805": 5,
+  "sharedassets18.assets!806": 2,
+  "sharedassets18.assets!807": 4,
+  "sharedassets18.assets!808": 6,
+  "sharedassets18.assets!809": 3,
+  "sharedassets18.assets!810": 2,
+  "sharedassets18.assets!811": 1,
+  "sharedassets18.assets!812": 4,
+  "sharedassets18.assets!813": 1,
+  "sharedassets18.assets!814": 1,
+  "sharedassets18.assets!815": 2,
+  "sharedassets18.assets!816": 4,
+  "sharedassets18.assets!817": 6,
+  "sharedassets18.assets!818": 1,
+  "sharedassets18.assets!819": 2,
+  "sharedassets18.assets!820": 1,
+  "sharedassets18.assets!821": 1,
+  "sharedassets18.assets!822": 1,
+  "sharedassets18.assets!823": 2,
+  "sharedassets18.assets!824": 1,
+  "sharedassets18.assets!825": 1,
+  "sharedassets18.assets!826": 1,
+  "sharedassets18.assets!827": 1,
+  "sharedassets18.assets!828": 6,
+  "sharedassets18.assets!829": 6,
+  "sharedassets18.assets!830": 6,
+  "sharedassets18.assets!831": 1,
+  "sharedassets18.assets!832": 2,
+  "sharedassets18.assets!833": 3,
+  "sharedassets18.assets!834": 2,
+  "sharedassets18.assets!835": 4,
+  "sharedassets18.assets!836": 3,
+  "sharedassets18.assets!837": 1,
+  "sharedassets18.assets!838": 3,
+  "sharedassets18.assets!839": 1,
+  "sharedassets18.assets!840": 4,
+  "sharedassets18.assets!841": 4,
+  "sharedassets18.assets!842": 2,
+  "sharedassets18.assets!843": 3,
+  "sharedassets18.assets!844": 4,
+  "sharedassets18.assets!845": 4,
+  "sharedassets18.assets!846": 4,
+  "sharedassets18.assets!847": 5,
+  "sharedassets18.assets!848": 3,
+  "sharedassets18.assets!849": 3,
+  "sharedassets18.assets!850": 3,
+  "sharedassets18.assets!851": 3,
+  "sharedassets18.assets!852": 1,
+  "sharedassets18.assets!853": 4,
+  "sharedassets18.assets!854": 1,
+  "sharedassets18.assets!855": 3,
+  "sharedassets18.assets!856": 3,
+  "sharedassets18.assets!857": 3,
+  "sharedassets18.assets!858": 1,
+  "sharedassets18.assets!859": 1,
+  "sharedassets18.assets!860": 3,
+  "sharedassets18.assets!861": 6,
+  "sharedassets18.assets!862": 7,
+  "sharedassets18.assets!863": 5,
+  "sharedassets18.assets!864": 3,
+  "sharedassets18.assets!865": 3,
+  "sharedassets18.assets!866": 3,
+  "sharedassets18.assets!867": 3,
+  "sharedassets18.assets!868": 3,
+  "sharedassets18.assets!869": 1,
+  "sharedassets18.assets!870": 1,
+  "sharedassets18.assets!871": 1,
+  "sharedassets18.assets!872": 1,
+  "sharedassets18.assets!873": 1,
+  "sharedassets18.assets!874": 1,
+  "sharedassets18.assets!875": 2,
+  "sharedassets18.assets!876": 2,
+  "sharedassets18.assets!877": 1,
+  "sharedassets18.assets!878": 1,
+  "sharedassets18.assets!879": 1,
+  "sharedassets18.assets!880": 1,
+  "sharedassets18.assets!881": 1,
+  "sharedassets18.assets!882": 1,
+  "sharedassets18.assets!883": 1,
+  "sharedassets18.assets!884": 1,
+  "sharedassets18.assets!885": 1,
+  "sharedassets18.assets!886": 1,
+  "sharedassets18.assets!887": 2,
+  "sharedassets18.assets!888": 2,
+  "sharedassets18.assets!889": 2,
+  "sharedassets18.assets!890": 1,
+  "sharedassets18.assets!891": 2,
+  "sharedassets18.assets!892": 1,
+  "sharedassets18.assets!893": 2,
+  "sharedassets18.assets!894": 4,
+  "sharedassets18.assets!895": 1,
+  "sharedassets18.assets!896": 3,
+  "sharedassets18.assets!897": 2,
+  "sharedassets18.assets!898": 1,
+  "sharedassets18.assets!899": 2,
+  "sharedassets18.assets!900": 4,
+  "sharedassets18.assets!901": 4,
+  "sharedassets18.assets!902": 4,
+  "sharedassets18.assets!903": 3,
+  "sharedassets18.assets!904": 3,
+  "sharedassets18.assets!905": 2,
+  "sharedassets18.assets!906": 3,
+  "sharedassets18.assets!907": 1,
+  "sharedassets18.assets!908": 1,
+  "sharedassets18.assets!909": 3,
+  "sharedassets18.assets!910": 3,
+  "sharedassets18.assets!911": 3,
+  "sharedassets18.assets!912": 1,
+  "sharedassets18.assets!913": 1,
+  "sharedassets18.assets!914": 5,
+  "sharedassets18.assets!915": 6,
+  "sharedassets18.assets!916": 5,
+  "sharedassets18.assets!917": 3,
+  "sharedassets18.assets!918": 4,
+  "sharedassets18.assets!919": 3,
+  "sharedassets18.assets!920": 1,
+  "sharedassets18.assets!921": 1,
+  "sharedassets18.assets!922": 1,
+  "sharedassets18.assets!923": 1,
+  "sharedassets18.assets!924": 1,
+  "sharedassets18.assets!925": 1,
+  "sharedassets18.assets!926": 1,
+  "sharedassets18.assets!927": 1,
+  "sharedassets18.assets!928": 1,
+  "sharedassets18.assets!929": 1,
+  "sharedassets18.assets!930": 1,
+  "sharedassets18.assets!931": 1,
+  "sharedassets18.assets!932": 1,
+  "sharedassets18.assets!933": 1,
+  "sharedassets18.assets!934": 1,
+  "sharedassets18.assets!935": 1,
+  "sharedassets18.assets!936": 1,
+  "sharedassets18.assets!937": 1,
+  "sharedassets18.assets!938": 1,
+  "sharedassets18.assets!939": 1,
+  "sharedassets18.assets!940": 1,
+  "sharedassets18.assets!941": 1,
+  "sharedassets18.assets!942": 2,
+  "sharedassets18.assets!943": 1,
+  "sharedassets18.assets!944": 1,
+  "sharedassets18.assets!945": 1,
+  "sharedassets18.assets!946": 1,
+  "sharedassets18.assets!947": 1,
+  "sharedassets18.assets!948": 1,
+  "sharedassets18.assets!949": 3,
+  "sharedassets18.assets!950": 3,
+  "sharedassets18.assets!951": 3,
+  "sharedassets18.assets!952": 1,
+  "sharedassets18.assets!953": 3,
+  "sharedassets18.assets!954": 1,
+  "sharedassets18.assets!955": 1,
+  "sharedassets18.assets!956": 3,
+  "sharedassets18.assets!957": 3,
+  "sharedassets18.assets!958": 3,
+  "sharedassets18.assets!959": 1,
+  "sharedassets18.assets!960": 1,
+  "sharedassets18.assets!961": 4,
+  "sharedassets18.assets!962": 6,
+  "sharedassets18.assets!963": 3,
+  "sharedassets18.assets!964": 3,
+  "sharedassets18.assets!965": 1,
+  "sharedassets18.assets!966": 1,
+  "sharedassets18.assets!967": 1,
+  "sharedassets18.assets!968": 1,
+  "sharedassets18.assets!969": 1,
+  "sharedassets18.assets!970": 1,
+  "sharedassets18.assets!971": 1,
+  "sharedassets18.assets!972": 1,
+  "sharedassets18.assets!973": 1,
+  "sharedassets18.assets!974": 1,
+  "sharedassets18.assets!975": 1,
+  "sharedassets18.assets!976": 1,
+  "sharedassets18.assets!977": 1,
+  "sharedassets18.assets!978": 1,
+  "sharedassets18.assets!979": 1,
+  "sharedassets18.assets!980": 1,
+  "sharedassets18.assets!981": 1,
+  "sharedassets18.assets!982": 1,
+  "sharedassets18.assets!983": 1,
+  "sharedassets18.assets!984": 1,
+  "sharedassets18.assets!985": 1,
+  "sharedassets18.assets!986": 1,
+  "sharedassets18.assets!987": 2,
+  "sharedassets18.assets!988": 1,
+  "sharedassets18.assets!989": 1,
+  "sharedassets18.assets!990": 1,
+  "sharedassets18.assets!991": 1,
+  "sharedassets18.assets!992": 4,
+  "sharedassets18.assets!993": 1,
+  "sharedassets18.assets!994": 3,
+  "sharedassets18.assets!995": 3,
+  "sharedassets18.assets!996": 3,
+  "sharedassets18.assets!997": 1,
+  "sharedassets18.assets!998": 3,
+  "sharedassets18.assets!999": 1,
+  "sharedassets18.assets!1000": 6,
+  "sharedassets18.assets!1001": 3,
+  "sharedassets18.assets!1002": 3,
+  "sharedassets18.assets!1003": 3,
+  "sharedassets18.assets!1004": 1,
+  "sharedassets18.assets!1005": 1,
+  "sharedassets18.assets!1006": 1,
+  "sharedassets18.assets!1007": 3,
+  "sharedassets18.assets!1008": 3,
+  "sharedassets18.assets!1009": 1,
+  "sharedassets18.assets!1010": 1,
+  "sharedassets18.assets!1011": 1,
+  "sharedassets18.assets!1012": 1,
+  "sharedassets18.assets!1013": 1,
+  "sharedassets18.assets!1014": 1,
+  "sharedassets18.assets!1015": 1,
+  "sharedassets18.assets!1016": 1,
+  "sharedassets18.assets!1017": 1,
+  "sharedassets18.assets!1018": 1,
+  "sharedassets18.assets!1019": 1,
+  "sharedassets18.assets!1020": 1,
+  "sharedassets18.assets!1021": 1,
+  "sharedassets18.assets!1022": 1,
+  "sharedassets18.assets!1023": 1,
+  "sharedassets18.assets!1024": 1,
+  "sharedassets18.assets!1025": 1,
+  "sharedassets18.assets!1026": 1,
+  "sharedassets18.assets!1027": 1,
+  "sharedassets18.assets!1028": 1,
+  "sharedassets18.assets!1029": 1,
+  "sharedassets18.assets!1030": 1,
+  "sharedassets18.assets!1031": 2,
+  "sharedassets18.assets!1032": 1,
+  "sharedassets18.assets!1033": 1,
+  "sharedassets18.assets!1034": 1,
+  "sharedassets18.assets!1035": 1,
+  "sharedassets18.assets!1036": 1,
+  "sharedassets18.assets!1037": 3,
+  "sharedassets18.assets!1038": 3,
+  "sharedassets18.assets!1039": 3,
+  "sharedassets18.assets!1040": 1,
+  "sharedassets18.assets!1041": 3,
+  "sharedassets18.assets!1042": 1,
+  "sharedassets18.assets!1043": 4,
+  "sharedassets18.assets!1044": 3,
+  "sharedassets18.assets!1045": 3,
+  "sharedassets18.assets!1046": 3,
+  "sharedassets18.assets!1047": 1,
+  "sharedassets18.assets!1048": 1,
+  "sharedassets18.assets!1049": 1,
+  "sharedassets18.assets!1050": 3,
+  "sharedassets18.assets!1051": 3,
+  "sharedassets18.assets!1052": 1,
+  "sharedassets18.assets!1053": 1,
+  "sharedassets18.assets!1054": 1,
+  "sharedassets18.assets!1055": 1,
+  "sharedassets18.assets!1056": 1,
+  "sharedassets18.assets!1057": 1,
+  "sharedassets18.assets!1058": 1,
+  "sharedassets18.assets!1059": 1,
+  "sharedassets18.assets!1060": 1,
+  "sharedassets18.assets!1061": 1,
+  "sharedassets18.assets!1062": 1,
+  "sharedassets18.assets!1063": 1,
+  "sharedassets18.assets!1064": 1,
+  "sharedassets18.assets!1065": 1,
+  "sharedassets18.assets!1066": 1,
+  "sharedassets18.assets!1067": 1,
+  "sharedassets18.assets!1068": 1,
+  "sharedassets18.assets!1069": 1,
+  "sharedassets18.assets!1070": 1,
+  "sharedassets18.assets!1071": 1,
+  "sharedassets18.assets!1072": 1,
+  "sharedassets18.assets!1073": 1,
+  "sharedassets18.assets!1074": 2,
+  "sharedassets18.assets!1075": 1,
+  "sharedassets18.assets!1076": 1,
+  "sharedassets18.assets!1077": 1,
+  "sharedassets18.assets!1078": 1,
+  "sharedassets18.assets!1079": 1,
+  "sharedassets18.assets!1080": 3,
+  "sharedassets18.assets!1081": 3,
+  "sharedassets18.assets!1082": 3,
+  "sharedassets18.assets!1083": 1,
+  "sharedassets18.assets!1084": 3,
+  "sharedassets18.assets!1085": 1,
+  "sharedassets18.assets!1086": 1,
+  "sharedassets18.assets!1087": 3,
+  "sharedassets18.assets!1088": 3,
+  "sharedassets18.assets!1089": 3,
+  "sharedassets18.assets!1090": 4,
+  "sharedassets18.assets!1091": 1,
+  "sharedassets18.assets!1092": 1,
+  "sharedassets18.assets!1093": 3,
+  "sharedassets18.assets!1094": 3,
+  "sharedassets18.assets!1095": 1,
+  "sharedassets18.assets!1096": 1,
+  "sharedassets18.assets!1097": 1,
+  "sharedassets18.assets!1098": 1,
+  "sharedassets18.assets!1099": 1,
+  "sharedassets18.assets!1100": 1,
+  "sharedassets18.assets!1101": 1,
+  "sharedassets18.assets!1102": 1,
+  "sharedassets18.assets!1103": 1,
+  "sharedassets18.assets!1104": 1,
+  "sharedassets18.assets!1105": 1,
+  "sharedassets18.assets!1106": 1,
+  "sharedassets18.assets!1107": 1,
+  "sharedassets18.assets!1108": 1,
+  "sharedassets18.assets!1109": 1,
+  "sharedassets18.assets!1110": 1,
+  "sharedassets18.assets!1111": 1,
+  "sharedassets18.assets!1112": 1,
+  "sharedassets18.assets!1113": 1,
+  "sharedassets18.assets!1114": 1,
+  "sharedassets18.assets!1115": 1,
+  "sharedassets18.assets!1116": 1,
+  "sharedassets18.assets!1117": 2,
+  "sharedassets18.assets!1118": 1,
+  "sharedassets18.assets!1119": 1,
+  "sharedassets18.assets!1120": 1,
+  "sharedassets18.assets!1121": 1,
+  "sharedassets18.assets!1122": 1,
+  "sharedassets18.assets!1123": 3,
+  "sharedassets18.assets!1124": 3,
+  "sharedassets18.assets!1125": 3,
+  "sharedassets18.assets!1126": 1,
+  "sharedassets18.assets!1127": 3,
+  "sharedassets18.assets!1128": 1,
+  "sharedassets18.assets!1129": 4,
+  "sharedassets18.assets!1130": 3,
+  "sharedassets18.assets!1131": 3,
+  "sharedassets18.assets!1132": 3,
+  "sharedassets18.assets!1133": 6,
+  "sharedassets18.assets!1134": 1,
+  "sharedassets18.assets!1135": 1,
+  "sharedassets18.assets!1136": 4,
+  "sharedassets18.assets!1137": 3,
+  "sharedassets18.assets!1138": 1,
+  "sharedassets18.assets!1139": 1,
+  "sharedassets18.assets!1140": 1,
+  "sharedassets18.assets!1141": 1,
+  "sharedassets18.assets!1142": 1,
+  "sharedassets18.assets!1143": 1,
+  "sharedassets18.assets!1144": 1,
+  "sharedassets18.assets!1145": 1,
+  "sharedassets18.assets!1146": 1,
+  "sharedassets18.assets!1147": 1,
+  "sharedassets18.assets!1148": 1,
+  "sharedassets18.assets!1149": 1,
+  "sharedassets18.assets!1150": 1,
+  "sharedassets18.assets!1151": 1,
+  "sharedassets18.assets!1152": 1,
+  "sharedassets18.assets!1153": 1,
+  "sharedassets18.assets!1154": 1,
+  "sharedassets18.assets!1155": 1,
+  "sharedassets18.assets!1156": 1,
+  "sharedassets18.assets!1157": 1,
+  "sharedassets18.assets!1158": 1,
+  "sharedassets18.assets!1159": 1,
+  "sharedassets18.assets!1160": 2,
+  "sharedassets18.assets!1161": 1,
+  "sharedassets18.assets!1162": 1,
+  "sharedassets18.assets!1163": 1,
+  "sharedassets18.assets!1164": 1,
+  "sharedassets18.assets!1165": 2,
+  "sharedassets18.assets!1166": 1,
+  "sharedassets18.assets!1167": 3,
+  "sharedassets18.assets!1168": 3,
+  "sharedassets18.assets!1169": 3,
+  "sharedassets18.assets!1170": 1,
+  "sharedassets18.assets!1171": 3,
+  "sharedassets18.assets!1172": 1,
+  "sharedassets18.assets!1173": 2,
+  "sharedassets18.assets!1174": 5,
+  "sharedassets18.assets!1175": 6,
+  "sharedassets18.assets!1176": 5,
+  "sharedassets18.assets!1177": 1,
+  "sharedassets18.assets!1178": 2,
+  "sharedassets18.assets!1179": 1,
+  "sharedassets18.assets!1180": 4,
+  "sharedassets18.assets!1181": 1,
+  "sharedassets18.assets!1182": 1,
+  "sharedassets18.assets!1183": 1,
+  "sharedassets18.assets!1184": 1,
+  "sharedassets18.assets!1185": 1,
+  "sharedassets18.assets!1186": 1,
+  "sharedassets18.assets!1187": 1,
+  "sharedassets18.assets!1188": 1,
+  "sharedassets18.assets!1189": 1,
+  "sharedassets18.assets!1190": 1,
+  "sharedassets18.assets!1191": 1,
+  "sharedassets18.assets!1192": 1,
+  "sharedassets18.assets!1193": 1,
+  "sharedassets18.assets!1194": 1,
+  "sharedassets18.assets!1195": 1,
+  "sharedassets18.assets!1196": 1,
+  "sharedassets18.assets!1197": 1,
+  "sharedassets18.assets!1198": 1,
+  "sharedassets18.assets!1199": 1,
+  "sharedassets18.assets!1200": 1,
+  "sharedassets18.assets!1201": 1,
+  "sharedassets18.assets!1202": 1,
+  "sharedassets18.assets!1203": 2,
+  "sharedassets18.assets!1204": 1,
+  "sharedassets18.assets!1205": 1,
+  "sharedassets18.assets!1206": 1,
+  "sharedassets18.assets!1207": 1,
+  "sharedassets18.assets!1208": 2,
+  "sharedassets18.assets!1209": 2,
+  "sharedassets18.assets!1210": 1,
+  "sharedassets18.assets!1211": 3,
+  "sharedassets18.assets!1212": 3,
+  "sharedassets18.assets!1213": 3,
+  "sharedassets18.assets!1214": 1,
+  "sharedassets18.assets!1215": 3,
+  "sharedassets18.assets!1216": 1,
+  "sharedassets18.assets!1217": 3,
+  "sharedassets18.assets!1218": 1,
+  "sharedassets18.assets!1219": 4,
+  "sharedassets18.assets!1220": 1,
+  "sharedassets18.assets!1221": 1,
+  "sharedassets18.assets!1222": 1,
+  "sharedassets18.assets!1223": 1,
+  "sharedassets18.assets!1224": 1,
+  "sharedassets18.assets!1225": 1,
+  "sharedassets18.assets!1226": 1,
+  "sharedassets18.assets!1227": 1,
+  "sharedassets18.assets!1228": 1,
+  "sharedassets18.assets!1229": 1,
+  "sharedassets18.assets!1230": 1,
+  "sharedassets18.assets!1231": 1,
+  "sharedassets18.assets!1232": 1,
+  "sharedassets18.assets!1233": 1,
+  "sharedassets18.assets!1234": 1,
+  "sharedassets18.assets!1235": 1,
+  "sharedassets18.assets!1236": 1,
+  "sharedassets18.assets!1237": 1,
+  "sharedassets18.assets!1238": 1,
+  "sharedassets18.assets!1239": 1,
+  "sharedassets18.assets!1240": 1,
+  "sharedassets18.assets!1241": 1,
+  "sharedassets18.assets!1242": 1,
+  "sharedassets18.assets!1243": 2,
+  "sharedassets18.assets!1244": 1,
+  "sharedassets18.assets!1245": 1,
+  "sharedassets18.assets!1246": 1,
+  "sharedassets18.assets!1247": 1,
+  "sharedassets18.assets!1248": 2,
+  "sharedassets18.assets!1249": 4,
+  "sharedassets18.assets!1250": 1,
+  "sharedassets18.assets!1251": 3,
+  "sharedassets18.assets!1252": 3,
+  "sharedassets18.assets!1253": 3,
+  "sharedassets18.assets!1254": 1,
+  "sharedassets18.assets!1255": 3,
+  "sharedassets18.assets!1256": 1,
+  "sharedassets18.assets!1257": 1,
+  "sharedassets18.assets!1258": 1,
+  "sharedassets18.assets!1259": 1,
+  "sharedassets18.assets!1260": 1,
+  "sharedassets18.assets!1261": 1,
+  "sharedassets18.assets!1262": 1,
+  "sharedassets18.assets!1263": 1,
+  "sharedassets18.assets!1264": 1,
+  "sharedassets18.assets!1265": 1,
+  "sharedassets18.assets!1266": 1,
+  "sharedassets18.assets!1267": 1,
+  "sharedassets18.assets!1268": 1,
+  "sharedassets18.assets!1269": 1,
+  "sharedassets18.assets!1270": 1,
+  "sharedassets18.assets!1271": 1,
+  "sharedassets18.assets!1272": 1,
+  "sharedassets18.assets!1273": 1,
+  "sharedassets18.assets!1274": 1,
+  "sharedassets18.assets!1275": 1,
+  "sharedassets18.assets!1276": 1,
+  "sharedassets18.assets!1277": 1,
+  "sharedassets18.assets!1278": 1,
+  "sharedassets18.assets!1279": 1,
+  "sharedassets18.assets!1280": 1,
+  "sharedassets18.assets!1281": 1,
+  "sharedassets18.assets!1282": 2,
+  "sharedassets18.assets!1283": 3,
+  "sharedassets18.assets!1284": 1,
+  "sharedassets18.assets!1285": 1,
+  "sharedassets18.assets!1286": 2,
+  "sharedassets18.assets!1287": 1,
+  "sharedassets18.assets!1288": 4,
+  "sharedassets18.assets!1289": 1,
+  "sharedassets18.assets!1290": 1,
+  "sharedassets18.assets!1291": 1,
+  "sharedassets18.assets!1292": 3,
+  "sharedassets18.assets!1293": 3,
+  "sharedassets18.assets!1294": 3,
+  "sharedassets18.assets!1295": 1,
+  "sharedassets18.assets!1296": 1,
+  "sharedassets18.assets!1297": 1,
+  "sharedassets18.assets!1298": 1,
+  "sharedassets18.assets!1299": 1,
+  "sharedassets18.assets!1300": 1,
+  "sharedassets18.assets!1301": 1,
+  "sharedassets18.assets!1302": 1,
+  "sharedassets18.assets!1303": 1,
+  "sharedassets18.assets!1304": 1,
+  "sharedassets18.assets!1305": 1,
+  "sharedassets18.assets!1306": 1,
+  "sharedassets18.assets!1307": 1,
+  "sharedassets18.assets!1308": 1,
+  "sharedassets18.assets!1309": 1,
+  "sharedassets18.assets!1310": 1,
+  "sharedassets18.assets!1311": 1,
+  "sharedassets18.assets!1312": 1,
+  "sharedassets18.assets!1313": 1,
+  "sharedassets18.assets!1314": 1,
+  "sharedassets18.assets!1315": 1,
+  "sharedassets18.assets!1316": 1,
+  "sharedassets18.assets!1317": 1,
+  "sharedassets18.assets!1318": 1,
+  "sharedassets18.assets!1319": 1,
+  "sharedassets18.assets!1320": 1,
+  "sharedassets18.assets!1321": 1,
+  "sharedassets18.assets!1322": 2,
+  "sharedassets18.assets!1323": 2,
+  "sharedassets18.assets!1324": 1,
+  "sharedassets18.assets!1325": 3,
+  "sharedassets18.assets!1326": 2,
+  "sharedassets18.assets!1327": 3,
+  "sharedassets18.assets!1328": 1,
+  "sharedassets18.assets!1329": 3,
+  "sharedassets18.assets!1330": 3,
+  "sharedassets18.assets!1331": 3,
+  "sharedassets18.assets!1332": 1,
+  "sharedassets18.assets!1333": 1,
+  "sharedassets18.assets!1334": 2,
+  "sharedassets18.assets!1335": 1,
+  "sharedassets18.assets!1336": 1,
+  "sharedassets18.assets!1337": 1,
+  "sharedassets18.assets!1338": 1,
+  "sharedassets18.assets!1339": 1,
+  "sharedassets18.assets!1340": 1,
+  "sharedassets18.assets!1341": 1,
+  "sharedassets18.assets!1342": 1,
+  "sharedassets18.assets!1343": 1,
+  "sharedassets18.assets!1344": 1,
+  "sharedassets18.assets!1345": 1,
+  "sharedassets18.assets!1346": 1,
+  "sharedassets18.assets!1347": 1,
+  "sharedassets18.assets!1348": 1,
+  "sharedassets18.assets!1349": 1,
+  "sharedassets18.assets!1350": 1,
+  "sharedassets18.assets!1351": 1,
+  "sharedassets18.assets!1352": 1,
+  "sharedassets18.assets!1353": 1,
+  "sharedassets18.assets!1354": 1,
+  "sharedassets18.assets!1355": 1,
+  "sharedassets18.assets!1356": 1,
+  "sharedassets18.assets!1357": 1,
+  "sharedassets18.assets!1358": 1,
+  "sharedassets18.assets!1359": 3,
+  "sharedassets18.assets!1360": 2,
+  "sharedassets18.assets!1361": 3,
+  "sharedassets18.assets!1362": 2,
+  "sharedassets18.assets!1363": 2,
+  "sharedassets18.assets!1364": 1,
+  "sharedassets18.assets!1365": 1,
+  "sharedassets18.assets!1366": 3,
+  "sharedassets18.assets!1367": 3,
+  "sharedassets18.assets!1368": 3,
+  "sharedassets18.assets!1369": 1,
+  "sharedassets18.assets!1370": 1,
+  "sharedassets18.assets!1371": 1,
+  "sharedassets18.assets!1372": 1,
+  "sharedassets18.assets!1373": 1,
+  "sharedassets18.assets!1374": 1,
+  "sharedassets18.assets!1375": 1,
+  "sharedassets18.assets!1376": 1,
+  "sharedassets18.assets!1377": 1,
+  "sharedassets18.assets!1378": 1,
+  "sharedassets18.assets!1379": 1,
+  "sharedassets18.assets!1380": 1,
+  "sharedassets18.assets!1381": 1,
+  "sharedassets18.assets!1382": 1,
+  "sharedassets18.assets!1383": 1,
+  "sharedassets18.assets!1384": 1,
+  "sharedassets18.assets!1385": 1,
+  "sharedassets18.assets!1386": 1,
+  "sharedassets18.assets!1387": 1,
+  "sharedassets18.assets!1388": 1,
+  "sharedassets18.assets!1389": 1,
+  "sharedassets18.assets!1390": 1,
+  "sharedassets18.assets!1391": 1,
+  "sharedassets18.assets!1392": 1,
+  "sharedassets18.assets!1393": 1,
+  "sharedassets18.assets!1394": 1,
+  "sharedassets18.assets!1395": 1,
+  "sharedassets18.assets!1396": 2,
+  "sharedassets18.assets!1397": 4,
+  "sharedassets18.assets!1398": 2,
+  "sharedassets18.assets!1399": 1,
+  "sharedassets18.assets!1400": 1,
+  "sharedassets18.assets!1401": 3,
+  "sharedassets18.assets!1402": 3,
+  "sharedassets18.assets!1403": 3,
+  "sharedassets18.assets!1404": 1,
+  "sharedassets18.assets!1405": 1,
+  "sharedassets18.assets!1406": 1,
+  "sharedassets18.assets!1407": 1,
+  "sharedassets18.assets!1408": 1,
+  "sharedassets18.assets!1409": 1,
+  "sharedassets18.assets!1410": 1,
+  "sharedassets18.assets!1411": 1,
+  "sharedassets18.assets!1412": 1,
+  "sharedassets18.assets!1413": 1,
+  "sharedassets18.assets!1414": 1,
+  "sharedassets18.assets!1415": 1,
+  "sharedassets18.assets!1416": 1,
+  "sharedassets18.assets!1417": 1,
+  "sharedassets18.assets!1418": 2,
+  "sharedassets18.assets!1419": 2,
+  "sharedassets18.assets!1420": 1,
+  "sharedassets18.assets!1421": 1,
+  "sharedassets18.assets!1422": 1,
+  "sharedassets18.assets!1423": 1,
+  "sharedassets18.assets!1424": 1,
+  "sharedassets18.assets!1425": 1,
+  "sharedassets18.assets!1426": 1,
+  "sharedassets18.assets!1427": 1,
+  "sharedassets18.assets!1428": 1,
+  "sharedassets18.assets!1429": 1,
+  "sharedassets18.assets!1430": 1,
+  "sharedassets18.assets!1431": 2,
+  "sharedassets18.assets!1432": 1,
+  "sharedassets18.assets!1433": 2,
+  "sharedassets18.assets!1434": 1,
+  "sharedassets18.assets!1435": 3,
+  "sharedassets18.assets!1436": 3,
+  "sharedassets18.assets!1437": 3,
+  "sharedassets18.assets!1438": 1,
+  "sharedassets18.assets!1439": 1,
+  "sharedassets18.assets!1440": 1,
+  "sharedassets18.assets!1441": 1,
+  "sharedassets18.assets!1442": 1,
+  "sharedassets18.assets!1443": 1,
+  "sharedassets18.assets!1444": 1,
+  "sharedassets18.assets!1445": 1,
+  "sharedassets18.assets!1446": 1,
+  "sharedassets18.assets!1447": 1,
+  "sharedassets18.assets!1448": 1,
+  "sharedassets18.assets!1449": 1,
+  "sharedassets18.assets!1450": 1,
+  "sharedassets18.assets!1451": 6,
+  "sharedassets18.assets!1452": 1,
+  "sharedassets18.assets!1453": 2,
+  "sharedassets18.assets!1454": 1,
+  "sharedassets18.assets!1455": 1,
+  "sharedassets18.assets!1456": 1,
+  "sharedassets18.assets!1457": 1,
+  "sharedassets18.assets!1458": 1,
+  "sharedassets18.assets!1459": 1,
+  "sharedassets18.assets!1460": 1,
+  "sharedassets18.assets!1461": 2,
+  "sharedassets18.assets!1462": 2,
+  "sharedassets18.assets!1463": 2,
+  "sharedassets18.assets!1464": 1,
+  "sharedassets18.assets!1465": 3,
+  "sharedassets18.assets!1466": 3,
+  "sharedassets18.assets!1467": 3,
+  "sharedassets18.assets!1468": 1,
+  "sharedassets18.assets!1469": 1,
+  "sharedassets18.assets!1470": 1,
+  "sharedassets18.assets!1471": 1,
+  "sharedassets18.assets!1472": 1,
+  "sharedassets18.assets!1473": 1,
+  "sharedassets18.assets!1474": 1,
+  "sharedassets18.assets!1475": 1,
+  "sharedassets18.assets!1476": 1,
+  "sharedassets18.assets!1477": 1,
+  "sharedassets18.assets!1478": 1,
+  "sharedassets18.assets!1479": 1,
+  "sharedassets18.assets!1480": 1,
+  "sharedassets18.assets!1481": 6,
+  "sharedassets18.assets!1482": 6,
+  "sharedassets18.assets!1483": 2,
+  "sharedassets18.assets!1484": 1,
+  "sharedassets18.assets!1485": 1,
+  "sharedassets18.assets!1486": 1,
+  "sharedassets18.assets!1487": 1,
+  "sharedassets18.assets!1488": 6,
+  "sharedassets18.assets!1489": 1,
+  "sharedassets18.assets!1490": 2,
+  "sharedassets18.assets!1491": 2,
+  "sharedassets18.assets!1492": 1,
+  "sharedassets18.assets!1493": 1,
+  "sharedassets18.assets!1494": 2,
+  "sharedassets18.assets!1495": 2,
+  "sharedassets18.assets!1496": 2,
+  "sharedassets18.assets!1497": 1,
+  "sharedassets18.assets!1498": 1,
+  "sharedassets18.assets!1499": 1,
+  "sharedassets18.assets!1500": 1,
+  "sharedassets18.assets!1501": 1,
+  "sharedassets18.assets!1502": 1,
+  "sharedassets18.assets!1503": 1,
+  "sharedassets18.assets!1504": 1,
+  "sharedassets18.assets!1505": 1,
+  "sharedassets18.assets!1506": 1,
+  "sharedassets18.assets!1507": 1,
+  "sharedassets18.assets!1508": 1,
+  "sharedassets18.assets!1509": 1,
+  "sharedassets18.assets!1510": 1,
+  "sharedassets18.assets!1511": 1,
+  "sharedassets18.assets!1512": 1,
+  "sharedassets18.assets!1513": 1,
+  "sharedassets18.assets!1514": 2,
+  "sharedassets18.assets!1515": 2,
+  "sharedassets18.assets!1516": 2,
+  "sharedassets18.assets!1517": 1,
+  "sharedassets18.assets!1518": 1,
+  "sharedassets18.assets!1519": 1,
+  "sharedassets18.assets!1520": 1,
+  "sharedassets18.assets!1521": 1,
+  "sharedassets18.assets!1522": 1,
+  "sharedassets18.assets!1523": 1,
+  "sharedassets18.assets!1524": 1,
+  "sharedassets18.assets!1525": 1,
+  "sharedassets18.assets!1526": 1,
+  "sharedassets18.assets!1527": 1,
+  "sharedassets18.assets!1528": 1,
+  "sharedassets18.assets!1529": 1,
+  "sharedassets18.assets!1530": 1,
+  "sharedassets18.assets!1531": 1,
+  "sharedassets18.assets!1532": 6,
+  "sharedassets18.assets!1533": 1,
+  "sharedassets18.assets!1534": 1,
+  "sharedassets18.assets!1535": 2,
+  "sharedassets18.assets!1536": 2,
+  "sharedassets18.assets!1537": 1,
+  "sharedassets18.assets!1538": 1,
+  "sharedassets18.assets!1539": 1,
+  "sharedassets18.assets!1540": 1,
+  "sharedassets18.assets!1541": 1,
+  "sharedassets18.assets!1542": 1,
+  "sharedassets18.assets!1543": 1,
+  "sharedassets18.assets!1544": 1,
+  "sharedassets18.assets!1545": 1,
+  "sharedassets18.assets!1546": 1,
+  "sharedassets18.assets!1547": 1,
+  "sharedassets18.assets!1548": 1,
+  "sharedassets18.assets!1549": 1,
+  "sharedassets18.assets!1550": 1,
+  "sharedassets18.assets!1551": 1,
+  "sharedassets18.assets!1552": 2,
+  "sharedassets18.assets!1553": 1,
+  "sharedassets18.assets!1554": 1,
+  "sharedassets18.assets!1555": 1,
+  "sharedassets18.assets!1556": 1,
+  "sharedassets18.assets!1557": 1,
+  "sharedassets18.assets!1558": 1,
+  "sharedassets18.assets!1559": 1,
+  "sharedassets18.assets!1560": 1,
+  "sharedassets18.assets!1561": 1,
+  "sharedassets18.assets!1562": 1,
+  "sharedassets18.assets!1563": 1,
+  "sharedassets18.assets!1564": 1,
+  "sharedassets18.assets!1565": 1,
+  "sharedassets18.assets!1566": 1,
+  "sharedassets18.assets!1567": 1,
+  "sharedassets18.assets!1568": 1,
+  "sharedassets18.assets!1569": 1,
+  "sharedassets18.assets!1570": 1,
+  "sharedassets18.assets!1571": 1,
+  "sharedassets18.assets!1572": 1,
+  "sharedassets18.assets!1573": 1,
+  "sharedassets18.assets!1574": 1,
+  "sharedassets18.assets!1575": 1,
+  "sharedassets18.assets!1576": 1,
+  "sharedassets18.assets!1577": 1,
+  "sharedassets18.assets!1578": 1,
+  "sharedassets18.assets!1579": 1,
+  "sharedassets18.assets!1580": 1,
+  "sharedassets18.assets!1581": 1,
+  "sharedassets18.assets!1582": 1,
+  "sharedassets18.assets!1583": 1,
+  "sharedassets18.assets!1584": 1,
+  "sharedassets18.assets!1585": 6,
+  "sharedassets18.assets!1586": 1,
+  "sharedassets18.assets!1587": 1,
+  "sharedassets18.assets!1588": 1,
+  "sharedassets18.assets!1589": 1,
+  "sharedassets18.assets!1590": 1,
+  "sharedassets18.assets!1591": 1,
+  "sharedassets18.assets!1592": 1,
+  "sharedassets18.assets!1593": 1,
+  "sharedassets18.assets!1594": 2,
+  "sharedassets18.assets!1595": 1,
+  "sharedassets18.assets!1596": 1,
+  "sharedassets18.assets!1597": 1,
+  "sharedassets18.assets!1598": 1,
+  "sharedassets18.assets!1599": 1,
+  "sharedassets18.assets!1600": 1,
+  "sharedassets18.assets!1601": 1,
+  "sharedassets18.assets!1602": 3,
+  "sharedassets18.assets!1603": 1,
+  "sharedassets18.assets!1604": 1,
+  "sharedassets18.assets!1605": 1,
+  "sharedassets18.assets!1606": 1,
+  "sharedassets18.assets!1607": 1,
+  "sharedassets18.assets!1608": 1,
+  "sharedassets18.assets!1609": 1,
+  "sharedassets18.assets!1610": 1,
+  "sharedassets18.assets!1611": 1,
+  "sharedassets18.assets!1612": 1,
+  "sharedassets18.assets!1613": 1,
+  "sharedassets18.assets!1614": 1,
+  "sharedassets18.assets!1615": 1,
+  "sharedassets18.assets!1616": 1,
+  "sharedassets18.assets!1617": 1,
+  "sharedassets18.assets!1618": 2,
+  "sharedassets18.assets!1619": 1,
+  "sharedassets18.assets!1620": 5,
+  "sharedassets18.assets!1621": 1,
+  "sharedassets18.assets!1622": 1,
+  "sharedassets18.assets!1623": 1,
+  "sharedassets18.assets!1624": 1,
+  "sharedassets18.assets!1625": 1,
+  "sharedassets18.assets!1626": 6,
+  "sharedassets18.assets!1627": 1,
+  "sharedassets18.assets!1628": 1,
+  "sharedassets18.assets!1629": 1,
+  "sharedassets18.assets!1630": 1,
+  "sharedassets18.assets!1631": 1,
+  "sharedassets18.assets!1632": 1,
+  "sharedassets18.assets!1633": 1,
+  "sharedassets18.assets!1634": 1,
+  "sharedassets18.assets!1635": 1,
+  "sharedassets18.assets!1636": 1,
+  "sharedassets18.assets!1637": 2,
+  "sharedassets18.assets!1638": 1,
+  "sharedassets18.assets!1639": 4,
+  "sharedassets18.assets!1640": 1,
+  "sharedassets18.assets!1641": 1,
+  "sharedassets18.assets!1642": 1,
+  "sharedassets18.assets!1643": 1,
+  "sharedassets18.assets!1644": 1,
+  "sharedassets18.assets!1645": 1,
+  "sharedassets18.assets!1646": 1,
+  "sharedassets18.assets!1647": 1,
+  "sharedassets18.assets!1648": 4,
+  "sharedassets18.assets!1649": 1,
+  "sharedassets18.assets!1650": 1,
+  "sharedassets18.assets!1651": 6,
+  "sharedassets18.assets!1652": 1,
+  "sharedassets18.assets!1653": 6,
+  "sharedassets18.assets!1654": 1,
+  "sharedassets18.assets!1655": 1,
+  "sharedassets18.assets!1656": 1,
+  "sharedassets18.assets!1657": 1,
+  "sharedassets18.assets!1658": 1,
+  "sharedassets18.assets!1659": 1,
+  "sharedassets18.assets!1660": 1,
+  "sharedassets18.assets!1661": 4,
+  "sharedassets18.assets!1662": 1,
+  "sharedassets18.assets!1663": 1,
+  "sharedassets18.assets!1664": 1,
+  "sharedassets18.assets!1665": 1,
+  "sharedassets18.assets!1666": 1,
+  "sharedassets18.assets!1667": 1,
+  "sharedassets18.assets!1668": 1,
+  "sharedassets18.assets!1669": 1,
+  "sharedassets18.assets!1670": 1,
+  "sharedassets18.assets!1671": 1,
+  "sharedassets18.assets!1672": 1,
+  "sharedassets18.assets!1673": 1,
+  "sharedassets18.assets!1674": 1,
+  "sharedassets18.assets!1675": 1,
+  "sharedassets18.assets!1676": 2,
+  "sharedassets18.assets!1677": 1,
+  "sharedassets18.assets!1678": 2,
+  "sharedassets18.assets!1679": 1,
+  "sharedassets18.assets!1680": 1,
+  "sharedassets18.assets!1681": 1,
+  "sharedassets18.assets!1682": 1,
+  "sharedassets18.assets!1683": 1,
+  "sharedassets18.assets!1684": 1,
+  "sharedassets18.assets!1685": 1,
+  "sharedassets18.assets!1686": 1,
+  "sharedassets18.assets!1687": 1,
+  "sharedassets18.assets!1688": 1,
+  "sharedassets18.assets!1689": 1,
+  "sharedassets18.assets!1690": 1,
+  "sharedassets18.assets!1691": 1,
+  "sharedassets18.assets!1692": 1,
+  "sharedassets18.assets!1693": 1,
+  "sharedassets18.assets!1694": 1,
+  "sharedassets18.assets!1695": 1,
+  "sharedassets18.assets!1696": 4,
+  "sharedassets18.assets!1697": 2,
+  "sharedassets18.assets!1698": 6,
+  "sharedassets18.assets!1699": 6,
+  "sharedassets18.assets!1700": 1,
+  "sharedassets18.assets!1701": 1,
+  "sharedassets18.assets!1702": 1,
+  "sharedassets18.assets!1703": 1,
+  "sharedassets18.assets!1704": 1,
+  "sharedassets18.assets!1705": 1,
+  "sharedassets18.assets!1706": 8,
+  "sharedassets18.assets!1707": 6,
+  "sharedassets18.assets!1708": 8,
+  "sharedassets18.assets!1709": 1,
+  "sharedassets18.assets!1710": 1,
+  "sharedassets18.assets!1711": 1,
+  "sharedassets18.assets!1712": 1,
+  "sharedassets18.assets!1713": 1,
+  "sharedassets18.assets!1714": 5,
+  "sharedassets18.assets!1715": 1,
+  "sharedassets18.assets!1716": 1,
+  "sharedassets18.assets!1717": 1,
+  "sharedassets18.assets!1718": 1,
+  "sharedassets18.assets!1719": 1,
+  "sharedassets18.assets!1720": 1,
+  "sharedassets18.assets!1721": 1,
+  "sharedassets18.assets!1722": 1,
+  "sharedassets18.assets!1723": 2,
+  "sharedassets18.assets!1724": 1,
+  "sharedassets18.assets!1725": 1,
+  "sharedassets18.assets!1726": 1,
+  "sharedassets18.assets!1727": 1,
+  "sharedassets18.assets!1728": 2,
+  "sharedassets18.assets!1729": 1,
+  "sharedassets18.assets!1730": 1,
+  "sharedassets18.assets!1731": 1,
+  "sharedassets18.assets!1732": 1,
+  "sharedassets18.assets!1733": 5,
+  "sharedassets18.assets!1734": 1,
+  "sharedassets18.assets!1735": 1,
+  "sharedassets18.assets!1736": 1,
+  "sharedassets18.assets!1737": 1,
+  "sharedassets18.assets!1738": 1,
+  "sharedassets18.assets!1739": 1,
+  "sharedassets18.assets!1740": 1,
+  "sharedassets18.assets!1741": 1,
+  "sharedassets18.assets!1742": 2,
+  "sharedassets18.assets!1743": 1,
+  "sharedassets18.assets!1744": 1,
+  "sharedassets18.assets!1745": 2,
+  "sharedassets18.assets!1746": 1,
+  "sharedassets18.assets!1747": 1,
+  "sharedassets18.assets!1748": 3,
+  "sharedassets18.assets!1749": 2,
+  "sharedassets18.assets!1750": 2,
+  "sharedassets18.assets!1751": 4,
+  "sharedassets18.assets!1752": 1,
+  "sharedassets18.assets!1753": 1,
+  "sharedassets18.assets!1754": 1,
+  "sharedassets18.assets!1755": 2,
+  "sharedassets18.assets!1756": 7,
+  "sharedassets2.assets!325": 1,
+  "sharedassets2.assets!326": 6,
+  "sharedassets2.assets!327": 3,
+  "sharedassets2.assets!328": 3,
+  "sharedassets2.assets!329": 1,
+  "sharedassets2.assets!330": 3,
+  "sharedassets2.assets!331": 4,
+  "sharedassets2.assets!332": 4,
+  "sharedassets2.assets!333": 7,
+  "sharedassets2.assets!334": 7,
+  "sharedassets2.assets!335": 3,
+  "sharedassets2.assets!336": 5,
+  "sharedassets2.assets!337": 4,
+  "sharedassets2.assets!338": 4,
+  "sharedassets2.assets!339": 4,
+  "sharedassets2.assets!340": 4,
+  "sharedassets2.assets!341": 4,
+  "sharedassets2.assets!342": 4,
+  "sharedassets2.assets!343": 1,
+  "sharedassets2.assets!344": 1,
+  "sharedassets2.assets!345": 1,
+  "sharedassets2.assets!346": 1,
+  "sharedassets2.assets!347": 1,
+  "sharedassets2.assets!348": 3,
+  "sharedassets2.assets!349": 1,
+  "sharedassets2.assets!350": 1,
+  "sharedassets2.assets!351": 1,
+  "sharedassets2.assets!352": 1,
+  "sharedassets2.assets!353": 3,
+  "sharedassets2.assets!354": 1,
+  "sharedassets2.assets!355": 1,
+  "sharedassets2.assets!356": 1,
+  "sharedassets2.assets!357": 1,
+  "sharedassets2.assets!358": 3,
+  "sharedassets2.assets!359": 1,
+  "sharedassets2.assets!360": 1,
+  "sharedassets2.assets!361": 1,
+  "sharedassets2.assets!362": 1,
+  "sharedassets2.assets!363": 1,
+  "sharedassets2.assets!364": 3,
+  "sharedassets2.assets!365": 1,
+  "sharedassets2.assets!366": 1,
+  "sharedassets2.assets!367": 1,
+  "sharedassets2.assets!368": 1,
+  "sharedassets2.assets!369": 1,
+  "sharedassets2.assets!370": 3,
+  "sharedassets2.assets!371": 1,
+  "sharedassets2.assets!372": 1,
+  "sharedassets2.assets!373": 1,
+  "sharedassets2.assets!374": 1,
+  "sharedassets2.assets!375": 1,
+  "sharedassets2.assets!376": 3,
+  "sharedassets2.assets!377": 1,
+  "sharedassets2.assets!378": 1,
+  "sharedassets2.assets!379": 1,
+  "sharedassets2.assets!380": 1,
+  "sharedassets2.assets!381": 1,
+  "sharedassets2.assets!382": 3,
+  "sharedassets2.assets!383": 1,
+  "sharedassets2.assets!384": 1,
+  "sharedassets2.assets!385": 1,
+  "sharedassets2.assets!386": 1,
+  "sharedassets2.assets!387": 1,
+  "sharedassets2.assets!388": 3,
+  "sharedassets2.assets!389": 1,
+  "sharedassets2.assets!390": 1,
+  "sharedassets2.assets!391": 1,
+  "sharedassets2.assets!392": 1,
+  "sharedassets2.assets!393": 2,
+  "sharedassets2.assets!394": 3,
+  "sharedassets2.assets!395": 1,
+  "sharedassets2.assets!396": 1,
+  "sharedassets2.assets!397": 1,
+  "sharedassets2.assets!398": 1,
+  "sharedassets2.assets!399": 1,
+  "sharedassets2.assets!400": 3,
+  "sharedassets2.assets!401": 1,
+  "sharedassets2.assets!402": 1,
+  "sharedassets2.assets!403": 1,
+  "sharedassets2.assets!404": 1,
+  "sharedassets2.assets!405": 1,
+  "sharedassets2.assets!406": 3,
+  "sharedassets2.assets!407": 1,
+  "sharedassets2.assets!408": 1,
+  "sharedassets2.assets!409": 1,
+  "sharedassets2.assets!410": 1,
+  "sharedassets2.assets!411": 2,
+  "sharedassets2.assets!412": 3,
+  "sharedassets2.assets!413": 1,
+  "sharedassets2.assets!414": 1,
+  "sharedassets2.assets!415": 2,
+  "sharedassets2.assets!416": 2,
+  "sharedassets2.assets!417": 3,
+  "sharedassets2.assets!418": 1,
+  "sharedassets2.assets!419": 1,
+  "sharedassets2.assets!420": 2,
+  "sharedassets2.assets!421": 2,
+  "sharedassets2.assets!422": 3,
+  "sharedassets2.assets!423": 3,
+  "sharedassets2.assets!424": 2,
+  "sharedassets2.assets!425": 1,
+  "sharedassets2.assets!426": 1,
+  "sharedassets2.assets!427": 1,
+  "sharedassets2.assets!428": 6,
+  "sharedassets2.assets!429": 2,
+  "sharedassets20.assets!25": 4,
+  "sharedassets7.assets!101": 4,
+  "sharedassets7.assets!102": 4,
+  "sharedassets7.assets!103": 4,
+  "sharedassets7.assets!104": 3,
+  "sharedassets7.assets!105": 3,
+  "sharedassets7.assets!106": 3,
+  "sharedassets7.assets!107": 4,
+  "sharedassets7.assets!108": 3,
+  "sharedassets7.assets!109": 2,
+  "sharedassets19.assets!29": 1,
+  "sharedassets19.assets!30": 6,
+  "sharedassets19.assets!31": 5,
+  "sharedassets19.assets!32": 3,
+  "sharedassets19.assets!33": 3,
+  "sharedassets19.assets!34": 3,
+  "sharedassets19.assets!35": 3,
+  "sharedassets19.assets!36": 3,
+  "sharedassets19.assets!37": 5,
+  "sharedassets19.assets!38": 3,
+  "sharedassets19.assets!39": 1,
+  "sharedassets19.assets!40": 4,
+  "sharedassets19.assets!41": 3,
+  "sharedassets19.assets!42": 3,
+  "sharedassets19.assets!43": 1,
+  "sharedassets19.assets!44": 3,
+  "sharedassets19.assets!45": 1,
+  "sharedassets19.assets!46": 3,
+  "sharedassets19.assets!47": 1,
+  "sharedassets19.assets!48": 3,
+  "sharedassets19.assets!49": 1,
+  "sharedassets19.assets!50": 1,
+  "sharedassets19.assets!51": 1,
+  "sharedassets19.assets!52": 1,
+  "sharedassets19.assets!53": 1,
+  "sharedassets19.assets!54": 1,
+  "sharedassets19.assets!55": 1,
+  "sharedassets19.assets!56": 1,
+  "sharedassets19.assets!57": 1,
+  "sharedassets19.assets!58": 1,
+  "sharedassets19.assets!59": 1,
+  "sharedassets19.assets!60": 2,
+  "sharedassets19.assets!61": 1,
+  "sharedassets19.assets!62": 5,
+  "sharedassets19.assets!63": 4,
+  "sharedassets19.assets!64": 3,
+  "sharedassets19.assets!65": 1,
+  "sharedassets19.assets!66": 3,
+  "sharedassets19.assets!67": 2,
+  "sharedassets19.assets!68": 1,
+  "sharedassets19.assets!69": 1,
+  "sharedassets19.assets!70": 1,
+  "sharedassets19.assets!71": 1,
+  "sharedassets19.assets!72": 1,
+  "sharedassets19.assets!73": 1,
+  "sharedassets19.assets!74": 1,
+  "sharedassets19.assets!75": 1,
+  "sharedassets19.assets!76": 1,
+  "010621e4ceb268d47a0fc7a75a04ea68!1": 7,
+  "0307c3426149ade418987967fc564084!1": 2,
+  "03f2b9aac27353040836d6a4e8388ef5!1": 3,
+  "09a84b752a276b1449a5ba1b6f6cd83a!1": 6,
+  "09a84b752a276b1449a5ba1b6f6cd83a!2": 6,
+  "09a84b752a276b1449a5ba1b6f6cd83a!3": 6,
+  "09a84b752a276b1449a5ba1b6f6cd83a!4": 6,
+  "09a84b752a276b1449a5ba1b6f6cd83a!5": 2,
+  "09a84b752a276b1449a5ba1b6f6cd83a!6": 4,
+  "09a84b752a276b1449a5ba1b6f6cd83a!7": 6,
+  "09a84b752a276b1449a5ba1b6f6cd83a!8": 6,
+  "0e97da20cae403145b3f459b22490fa8!1": 7,
+  "12f056bffc34f0c4ba9141cf0c466586!1": 4,
+  "13c12479ec0191f4f97b4aa8599319a4!1": 4,
+  "1f466a0f8c894904dba3fd13b5aadd50!1": 3,
+  "20edb30c56e6bd54393bc67317572133!1": 4,
+  "20edb30c56e6bd54393bc67317572133!2": 1,
+  "20edb30c56e6bd54393bc67317572133!3": 1,
+  "20edb30c56e6bd54393bc67317572133!4": 2,
+  "20edb30c56e6bd54393bc67317572133!5": 5,
+  "21e8e4a652ed46c408e76377c4443478!1": 7,
+  "23626bd38c99e3449a6bdc3e6ea24e8c!1": 3,
+  "368bd2cf2ae87ce4181b4af76a7ae09b!1": 4,
+  "368bd2cf2ae87ce4181b4af76a7ae09b!2": 7,
+  "37fc6f1e13139224782ff3fd665316ab!1": 3,
+  "37fc6f1e13139224782ff3fd665316ab!2": 3,
+  "37fc6f1e13139224782ff3fd665316ab!3": 4,
+  "3cc994ff662e8814399b2a9874882c7e!1": 6,
+  "3e1661de4aea62e41b777ab3cd6f7593!1": 3,
+  "3f45fd25feae6e04f82edbee1f83daa6!1": 7,
+  "3f45fd25feae6e04f82edbee1f83daa6!2": 3,
+  "3f45fd25feae6e04f82edbee1f83daa6!3": 3,
+  "3f45fd25feae6e04f82edbee1f83daa6!4": 2,
+  "42889d56caebda34196798dd4285a84c!1": 7,
+  "42889d56caebda34196798dd4285a84c!2": 4,
+  "44cf6415a0d1740469006dbfd5256fd6!1": 4,
+  "46d751c43ac73544892be9f1f565fed5!1": 4,
+  "49fbebace6a8f424ab4fedab6fb4932e!1": 4,
+  "4c56c8fe077e8fc4a843dd4035ef3aff!1": 7,
+  "4dd4cecf0e62ed04faf6e4dc86788e80!1": 3,
+  "51fc775ea5b72cb429fcae442d1409dc!1": 4,
+  "549d20245296b0645ad2a0c875b87a83!1": 2,
+  "549d20245296b0645ad2a0c875b87a83!2": 3,
+  "549d20245296b0645ad2a0c875b87a83!3": 2,
+  "549d20245296b0645ad2a0c875b87a83!4": 1,
+  "549d20245296b0645ad2a0c875b87a83!5": 1,
+  "549d20245296b0645ad2a0c875b87a83!6": 1,
+  "549d20245296b0645ad2a0c875b87a83!7": 1,
+  "549d20245296b0645ad2a0c875b87a83!8": 1,
+  "549d20245296b0645ad2a0c875b87a83!9": 1,
+  "549d20245296b0645ad2a0c875b87a83!10": 1,
+  "549d20245296b0645ad2a0c875b87a83!11": 1,
+  "549d20245296b0645ad2a0c875b87a83!12": 1,
+  "549d20245296b0645ad2a0c875b87a83!13": 4,
+  "549d20245296b0645ad2a0c875b87a83!14": 1,
+  "549d20245296b0645ad2a0c875b87a83!15": 1,
+  "549d20245296b0645ad2a0c875b87a83!16": 1,
+  "549d20245296b0645ad2a0c875b87a83!17": 1,
+  "549d20245296b0645ad2a0c875b87a83!18": 1,
+  "549d20245296b0645ad2a0c875b87a83!19": 2,
+  "549d20245296b0645ad2a0c875b87a83!20": 4,
+  "549d20245296b0645ad2a0c875b87a83!21": 4,
+  "549d20245296b0645ad2a0c875b87a83!22": 4,
+  "549d20245296b0645ad2a0c875b87a83!23": 4,
+  "560d57c83f1458148a77d32bb34fde4b!1": 6,
+  "572ee6953dde0b34f8921bfb540f721a!1": 7,
+  "572ee6953dde0b34f8921bfb540f721a!2": 4,
+  "5c084062369a63e4799940f0eb4f7afb!1": 4,
+  "5c084062369a63e4799940f0eb4f7afb!2": 6,
+  "5e4630e95cbff3a478a414bb507f13da!1": 3,
+  "601e9efe121d2de4d987749308bfd7f7!1": 5,
+  "61e7ae2c442964645b64509be55687e2!1": 4,
+  "675fdea51516a8c4ebe1091726c6268a!1": 2,
+  "675fdea51516a8c4ebe1091726c6268a!2": 3,
+  "675fdea51516a8c4ebe1091726c6268a!3": 2,
+  "675fdea51516a8c4ebe1091726c6268a!4": 1,
+  "675fdea51516a8c4ebe1091726c6268a!5": 1,
+  "675fdea51516a8c4ebe1091726c6268a!6": 1,
+  "675fdea51516a8c4ebe1091726c6268a!7": 1,
+  "675fdea51516a8c4ebe1091726c6268a!8": 1,
+  "675fdea51516a8c4ebe1091726c6268a!9": 1,
+  "675fdea51516a8c4ebe1091726c6268a!10": 1,
+  "675fdea51516a8c4ebe1091726c6268a!11": 1,
+  "675fdea51516a8c4ebe1091726c6268a!12": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!1": 2,
+  "69f958559f37c4d4bbfbace1100f80d9!2": 3,
+  "69f958559f37c4d4bbfbace1100f80d9!3": 2,
+  "69f958559f37c4d4bbfbace1100f80d9!4": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!5": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!6": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!7": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!8": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!9": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!10": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!11": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!12": 1,
+  "69f958559f37c4d4bbfbace1100f80d9!13": 2,
+  "69f958559f37c4d4bbfbace1100f80d9!14": 4,
+  "69f958559f37c4d4bbfbace1100f80d9!15": 4,
+  "69f958559f37c4d4bbfbace1100f80d9!16": 3,
+  "69f958559f37c4d4bbfbace1100f80d9!17": 7,
+  "6ad423bf02f94e647a84e3239af92c3a!1": 7,
+  "6b631ac2a4a98144d885492369514229!1": 3,
+  "6f4879622b2b07743964c385ab0b9eef!1": 3,
+  "73cf695b93ff39f46a8914f602944638!1": 3,
+  "7722176ab8d093c43834f2d96fc01e09!1": 3,
+  "7a5f2a6f8440025439daa70404dda73e!1": 6,
+  "7b65e7741efec904b9b0b45aff7e31bc!1": 7,
+  "7dd048ac75b2ac147adc90da79bdcfe0!1": 4,
+  "7dde77d3ab32e3045a4f2acbacf3fc26!1": 6,
+  "7dde77d3ab32e3045a4f2acbacf3fc26!2": 2,
+  "8030cfee3fae59d41b14d0b6cf1b35f1!1": 2,
+  "854c688faeccb0a4195abc37a3e8147c!1": 8,
+  "854c688faeccb0a4195abc37a3e8147c!2": 6,
+  "87e24ad3bd5b76b4488ff6dc8a5b99f1!1": 4,
+  "8b756b72a53202e4e889a98a99bdf1a3!1": 3,
+  "8b902449b622ed649a72b32e4c07d5bc!1": 3,
+  "8d4623989c62fa149b7f2c676fede947!1": 1,
+  "8d4623989c62fa149b7f2c676fede947!2": 1,
+  "8d4623989c62fa149b7f2c676fede947!3": 1,
+  "8d4623989c62fa149b7f2c676fede947!4": 1,
+  "8d4623989c62fa149b7f2c676fede947!5": 1,
+  "8d4623989c62fa149b7f2c676fede947!6": 1,
+  "8d4623989c62fa149b7f2c676fede947!7": 1,
+  "8d4623989c62fa149b7f2c676fede947!8": 1,
+  "8d4623989c62fa149b7f2c676fede947!9": 1,
+  "8d4623989c62fa149b7f2c676fede947!10": 2,
+  "8d4623989c62fa149b7f2c676fede947!11": 2,
+  "8d4623989c62fa149b7f2c676fede947!12": 3,
+  "8d4623989c62fa149b7f2c676fede947!13": 1,
+  "8d4623989c62fa149b7f2c676fede947!14": 1,
+  "8d4623989c62fa149b7f2c676fede947!15": 1,
+  "8d4623989c62fa149b7f2c676fede947!16": 1,
+  "8d4623989c62fa149b7f2c676fede947!17": 2,
+  "8eac51c56ba0f8742bff177745eaa697!1": 4,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!1": 6,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!2": 4,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!3": 3,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!4": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!5": 3,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!6": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!7": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!8": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!9": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!10": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!11": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!12": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!13": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!14": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!15": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!16": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!17": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!18": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!19": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!20": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!21": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!22": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!23": 2,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!24": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!25": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!26": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!27": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!28": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!29": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!30": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!31": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!32": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!33": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!34": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!35": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!36": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!37": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!38": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!39": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!40": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!41": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!42": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!43": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!44": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!45": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!46": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!47": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!48": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!49": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!50": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!51": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!52": 1,
+  "8f47a76750ffb8b4183f6e75ca0c88f4!53": 3,
+  "91fcc777d4d284d4d89647dc880d9da5!1": 2,
+  "9892c31ba4790444981a9c82b86460dc!1": 4,
+  "9892c31ba4790444981a9c82b86460dc!2": 6,
+  "9892c31ba4790444981a9c82b86460dc!3": 4,
+  "9e1dbd041accfba4f9ac62cd916e933f!1": 7,
+  "9e1dbd041accfba4f9ac62cd916e933f!2": 4,
+  "9e1dbd041accfba4f9ac62cd916e933f!3": 3,
+  "9ffa0b3e1641d414b918b58844aaa684!1": 3,
+  "a035586254f722a4bb118a94790a7bbf!1": 3,
+  "a035586254f722a4bb118a94790a7bbf!2": 4,
+  "a035586254f722a4bb118a94790a7bbf!3": 5,
+  "a035586254f722a4bb118a94790a7bbf!4": 4,
+  "a2b6fe4ba19a0bb4a8fb8a812e6067b8!1": 3,
+  "a5d699a586bff844f81d7a794fb1dd9f!1": 3,
+  "aeb3f770de2a9324188020ca58082c99!1": 2,
+  "b169bc3d8ee0ac14f8b73ff2ee864416!1": 7,
+  "b5e076f83811bf7459668e37490d0832!1": 3,
+  "b6203020a438334498ffe9f436d42f1c!1": 4,
+  "b6560e31139075f459d6961123470654!1": 3,
+  "bb3fd2145307bd241b0f466f8124459b!1": 2,
+  "bb3fd2145307bd241b0f466f8124459b!2": 3,
+  "bb3fd2145307bd241b0f466f8124459b!3": 2,
+  "bb3fd2145307bd241b0f466f8124459b!4": 1,
+  "bb3fd2145307bd241b0f466f8124459b!5": 1,
+  "bb3fd2145307bd241b0f466f8124459b!6": 1,
+  "bb3fd2145307bd241b0f466f8124459b!7": 1,
+  "bb3fd2145307bd241b0f466f8124459b!8": 1,
+  "bb3fd2145307bd241b0f466f8124459b!9": 1,
+  "bb3fd2145307bd241b0f466f8124459b!10": 1,
+  "bb3fd2145307bd241b0f466f8124459b!11": 1,
+  "bb3fd2145307bd241b0f466f8124459b!12": 1,
+  "bb3fd2145307bd241b0f466f8124459b!13": 3,
+  "bb3fd2145307bd241b0f466f8124459b!14": 2,
+  "bb3fd2145307bd241b0f466f8124459b!15": 2,
+  "bb3fd2145307bd241b0f466f8124459b!16": 1,
+  "bfa136bb8278f414ab23f8632f5189bd!1": 4,
+  "c0db4720c07eeb24a81dccc6ddeb4841!1": 5,
+  "c2af7200ab8d633408fcf38b904a01f7!1": 7,
+  "c2af7200ab8d633408fcf38b904a01f7!2": 4,
+  "c2d05d4d63f396c4ba15610836d4edc6!1": 6,
+  "c377ababfc2b3a64b8ff90f905598948!1": 5,
+  "c4c6a9939660ebe48ae47eacfee4c645!1": 3,
+  "c7d548cb10b004b458a8d42041007080!1": 6,
+  "cb35c97ebae99fd42a5ff1730d8266c6!1": 4,
+  "ce03d8eee54a47e4896613572be8f226!1": 3,
+  "ce89fa11f960261429793e861f3e41aa!1": 3,
+  "ce89fa11f960261429793e861f3e41aa!2": 7,
+  "cf08e3d0aa897104cbdd6e7cd696f2bf!1": 5,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!1": 2,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!2": 3,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!3": 2,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!4": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!5": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!6": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!7": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!8": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!9": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!10": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!11": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!12": 1,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!13": 6,
+  "cf2ec982d6d52a34188ee45e8f8c81f4!14": 4,
+  "cf478de1ef56c3444ac102712d1445a3!1": 4,
+  "cf478de1ef56c3444ac102712d1445a3!2": 3,
+  "cf478de1ef56c3444ac102712d1445a3!3": 3,
+  "cf478de1ef56c3444ac102712d1445a3!4": 3,
+  "cf478de1ef56c3444ac102712d1445a3!5": 6,
+  "d32e199144d53cf4387accde13443c7a!1": 3,
+  "d836e11304d5d8b4ea0b87937481b0fe!1": 3,
+  "d8604ec390043fb4882e19b2284fddb6!1": 3,
+  "d8f28820cebf58440981221d23ca2cf2!1": 6,
+  "d8f28820cebf58440981221d23ca2cf2!2": 4,
+  "d9d3aafb93418624b9b84c9549a94718!1": 1,
+  "d9d3aafb93418624b9b84c9549a94718!2": 1,
+  "d9d3aafb93418624b9b84c9549a94718!3": 2,
+  "d9d3aafb93418624b9b84c9549a94718!4": 1,
+  "d9d3aafb93418624b9b84c9549a94718!5": 1,
+  "d9d3aafb93418624b9b84c9549a94718!6": 5,
+  "d9d3aafb93418624b9b84c9549a94718!7": 4,
+  "d9d3aafb93418624b9b84c9549a94718!8": 4,
+  "da26799310d7d124093d96b60bcf4293!1": 2,
+  "da26799310d7d124093d96b60bcf4293!2": 3,
+  "da26799310d7d124093d96b60bcf4293!3": 2,
+  "da26799310d7d124093d96b60bcf4293!4": 1,
+  "da26799310d7d124093d96b60bcf4293!5": 1,
+  "da26799310d7d124093d96b60bcf4293!6": 1,
+  "da26799310d7d124093d96b60bcf4293!7": 1,
+  "da26799310d7d124093d96b60bcf4293!8": 1,
+  "da26799310d7d124093d96b60bcf4293!9": 1,
+  "da26799310d7d124093d96b60bcf4293!10": 1,
+  "da26799310d7d124093d96b60bcf4293!11": 1,
+  "da26799310d7d124093d96b60bcf4293!12": 1,
+  "da26799310d7d124093d96b60bcf4293!13": 2,
+  "da26799310d7d124093d96b60bcf4293!14": 2,
+  "da26799310d7d124093d96b60bcf4293!15": 2,
+  "da26799310d7d124093d96b60bcf4293!16": 2,
+  "da26799310d7d124093d96b60bcf4293!17": 2,
+  "da26799310d7d124093d96b60bcf4293!18": 2,
+  "da26799310d7d124093d96b60bcf4293!19": 2,
+  "da26799310d7d124093d96b60bcf4293!20": 1,
+  "da26799310d7d124093d96b60bcf4293!21": 3,
+  "da26799310d7d124093d96b60bcf4293!22": 4,
+  "da26799310d7d124093d96b60bcf4293!23": 4,
+  "da26799310d7d124093d96b60bcf4293!24": 4,
+  "da26799310d7d124093d96b60bcf4293!25": 4,
+  "da26799310d7d124093d96b60bcf4293!26": 1,
+  "da26799310d7d124093d96b60bcf4293!27": 1,
+  "da26799310d7d124093d96b60bcf4293!28": 1,
+  "da26799310d7d124093d96b60bcf4293!29": 1,
+  "da26799310d7d124093d96b60bcf4293!30": 1,
+  "da26799310d7d124093d96b60bcf4293!31": 1,
+  "da26799310d7d124093d96b60bcf4293!32": 1,
+  "da26799310d7d124093d96b60bcf4293!33": 2,
+  "da26799310d7d124093d96b60bcf4293!34": 1,
+  "da26799310d7d124093d96b60bcf4293!35": 2,
+  "db87f376cf2764f4db5b17236bcc4596!1": 3,
+  "db87f376cf2764f4db5b17236bcc4596!2": 8,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!1": 2,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!2": 3,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!3": 2,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!4": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!5": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!6": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!7": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!8": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!9": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!10": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!11": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!12": 1,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!13": 4,
+  "e20a04d6f18f1dc46a1531f21b46e5e2!14": 1,
+  "e3a7dfc9d9099d445b40f60ae8b17b3e!1": 3,
+  "e59ee56f55934174fba3198ad7e25d11!1": 6,
+  "e59ee56f55934174fba3198ad7e25d11!2": 3,
+  "e59ee56f55934174fba3198ad7e25d11!3": 3,
+  "e59ee56f55934174fba3198ad7e25d11!4": 3,
+  "e7854b4f81a78ed4f91ac5b2b71249c1!1": 3,
+  "ead3acaaa4a4c9747b1406ed3029f78f!1": 3,
+  "ebb15aca5f9adb84a9d2d361cbce6bc3!1": 4,
+  "eeb4dafcaa0f20b488db3070cf233a4e!1": 3,
+  "eeb4dafcaa0f20b488db3070cf233a4e!2": 4,
+  "eeb4dafcaa0f20b488db3070cf233a4e!3": 4,
+  "ef5b61d1fab5854408ca51125746caf8!1": 3,
+  "f2b7e1fc445459d4e80589e5166ea98a!1": 3,
+  "f2b7e1fc445459d4e80589e5166ea98a!2": 6,
+  "f5fab55166dd06f4095e4ce89f0c1e13!1": 2,
+  "f5fab55166dd06f4095e4ce89f0c1e13!2": 3,
+  "f5fab55166dd06f4095e4ce89f0c1e13!3": 3,
+  "f606c4cb32ee8a4458f61e1666eedb07!1": 4,
+  "f606c4cb32ee8a4458f61e1666eedb07!2": 7,
+  "f79ca79bdc6564f40b02a87d98d71bf0!1": 3,
+  "f8613f94a76302a42968e4dd266a126e!1": 4,
+  "fb2d456f8f7c2e140a7c7c15b9e6ea41!1": 6,
+  "mainData!18": 6,
+  "mainData!19": 2,
+  "mainData!20": 2,
+  "mainData!21": 2
+ }
+}
