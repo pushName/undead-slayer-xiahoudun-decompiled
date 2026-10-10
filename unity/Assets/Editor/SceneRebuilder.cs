@@ -31,7 +31,7 @@ namespace UndeadSlayer.Migration
         private const string MenuRoot = "Undead Slayer/Rebuild Scene From Level JSON...";
 
         [Serializable]
-        private class Trs
+        internal class Trs
         {
             public float[] pos;
             public float[] rot;
@@ -39,7 +39,7 @@ namespace UndeadSlayer.Migration
         }
 
         [Serializable]
-        private class Comp
+        internal class Comp
         {
             public string kind;      // MonoBehaviour | renderer | component | unsupported
             public string script;    // class name, for kind == MonoBehaviour
@@ -66,7 +66,7 @@ namespace UndeadSlayer.Migration
         /// deserialise a union or a dictionary, so kind selects which member is meaningful.
         /// </summary>
         [Serializable]
-        private class FieldVal
+        internal class FieldVal
         {
             public string n;         // field name
             public string kind;      // node | int | float | bool | vec | str | asset | arr | obj | opaque
@@ -87,7 +87,7 @@ namespace UndeadSlayer.Migration
         /// in this build are asset / int / float / node, which is all this covers.
         /// </summary>
         [Serializable]
-        private class FieldItem
+        internal class FieldItem
         {
             public string kind;
             public string t;
@@ -100,7 +100,7 @@ namespace UndeadSlayer.Migration
         }
 
         [Serializable]
-        private class Node
+        internal class Node
         {
             public int id;
             public int go_id;
@@ -121,7 +121,7 @@ namespace UndeadSlayer.Migration
         /// the APK carries no AnimationContainer and every Animation.m_Clip is null.
         /// </summary>
         [Serializable]
-        private class AnimBinding
+        internal class AnimBinding
         {
             public string name;
             public string asset;
@@ -130,11 +130,14 @@ namespace UndeadSlayer.Migration
         }
 
         [Serializable]
-        private class SceneFile
+        internal class SceneFile
         {
             public string source_level;
             public string scene_name;
             public string scene_path;
+            // Only prefab payloads set this: the .prefab the scratch scene's root is saved into.
+            // Absent for the 23 level files, where JsonUtility leaves it null and nothing reads it.
+            public string asset_path;
             public int build_index;
             public int node_count;
             public int[] root_ids;
@@ -868,18 +871,20 @@ namespace UndeadSlayer.Migration
             }
         }
 
-        private static string FindJsonDir()
+        // Defaults to the scene payloads so the 23 level rebuilds are untouched; the prefab
+        // builder passes "prefabs" and shares this one locator instead of writing a second one.
+        internal static string FindJsonDir(string sub = "scenes")
         {
             // Application.dataPath is <repo>/unity/Assets, so the extractor's output is
             // exactly two levels up. Relative paths would depend on the Editor's CWD,
             // which is not the project folder when Unity is launched from a shortcut.
             var fromDataPath = Path.GetFullPath(
-                Path.Combine(Application.dataPath, "..", "..", "tools", "migration", "scenes"));
+                Path.Combine(Application.dataPath, "..", "..", "tools", "migration", sub));
             if (Directory.Exists(fromDataPath))
             {
                 return fromDataPath;
             }
-            foreach (var candidate in new[] { "tools/migration/scenes", "../tools/migration/scenes" })
+            foreach (var candidate in new[] { "tools/migration/" + sub, "../tools/migration/" + sub })
             {
                 var full = Path.GetFullPath(candidate);
                 if (Directory.Exists(full))
@@ -890,7 +895,7 @@ namespace UndeadSlayer.Migration
             return null;
         }
 
-        private static void EnsureFolderFor(string assetPath)
+        internal static void EnsureFolderFor(string assetPath)
         {
             var dir = Path.GetDirectoryName(assetPath)?.Replace('\\', '/');
             if (string.IsNullOrEmpty(dir) || AssetDatabase.IsValidFolder(dir))

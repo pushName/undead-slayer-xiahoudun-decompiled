@@ -1,57 +1,86 @@
 {
  "tally": {
-  "PREFAB PENDING #17": 38,
-  "OK": 25
+  "OK": 63
  },
  "verdicts": {
   "CashShop": {
-   "verdict": "PREFAB PENDING #17 (no prefab named CashShop exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 19,
-   "names": [],
-   "paths": [],
+   "names": [
+    "CashShop"
+   ],
+   "paths": [
+    "Resources/CashShop.prefab"
+   ],
    "example": [
     "UI_archive: cashshop = Resources.Load(\"CashShop\") as GameObject;"
    ]
   },
   "RankingManager": {
-   "verdict": "PREFAB PENDING #17 (no prefab named RankingManager exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "RankingManager"
+   ],
+   "paths": [
+    "Resources/RankingManager.prefab"
+   ],
    "example": [
     "UI_Extreme: GameObject original = Resources.Load(\"RankingManager\") as GameObject;"
    ]
   },
   "Stage_dun": {
-   "verdict": "PREFAB PENDING #17 (no prefab starts with Stage_dun)",
+   "verdict": "OK (8 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "Stage_dun1",
+    "Stage_dun2",
+    "Stage_dun3",
+    "Stage_dun4",
+    "Stage_dun5",
+    "Stage_dun6",
+    "Stage_dun7",
+    "Stage_dun8"
+   ],
+   "paths": [
+    "Resources/Stage_dun1.prefab",
+    "Resources/Stage_dun2.prefab",
+    "Resources/Stage_dun3.prefab"
+   ],
    "example": [
     "Spawn: GameObject gameObject = Resources.Load(\"Stage_dun\" + (num + 1)) as GameObject;"
    ]
   },
   "angel_splash": {
-   "verdict": "PREFAB PENDING #17 (no prefab starts with angel_splash)",
+   "verdict": "OK (4 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "angel_splash2",
+    "angel_splash3",
+    "angel_splash4",
+    "angel_splash6"
+   ],
+   "paths": [
+    "Resources/angel_splash2.prefab",
+    "Resources/angel_splash3.prefab",
+    "Resources/angel_splash4.prefab"
+   ],
    "example": [
     "AI_Asist: GameObject gameObject2 = Resources.Load(\"angel_splash\" + splashEF) as GameObject;"
    ]
@@ -125,53 +154,71 @@
    ]
   },
   "bg_dun": {
-   "verdict": "PREFAB PENDING #17 (no prefab named bg_dun exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [],
-   "paths": [],
+   "names": [
+    "bg_dun"
+   ],
+   "paths": [
+    "Resources/bg_dun.prefab"
+   ],
    "example": [
     "UICampos: GameObject gameObject2 = Resources.Load(\"bg_dun\") as GameObject;"
    ]
   },
   "bg_dun_below": {
-   "verdict": "PREFAB PENDING #17 (no prefab named bg_dun_below exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [],
-   "paths": [],
+   "names": [
+    "bg_dun_below"
+   ],
+   "paths": [
+    "Resources/bg_dun_below.prefab"
+   ],
    "example": [
     "UICampos: GameObject gameObject4 = Resources.Load(\"bg_dun_below\") as GameObject;"
    ]
   },
   "bg_dun_cover": {
-   "verdict": "PREFAB PENDING #17 (no prefab named bg_dun_cover exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [],
-   "paths": [],
+   "names": [
+    "bg_dun_cover"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/bg_dun_cover.png",
+    "Resources/bg_dun_cover.prefab"
+   ],
    "example": [
     "UICampos: GameObject gameObject3 = Resources.Load(\"bg_dun_cover\") as GameObject;"
    ]
   },
   "bg_worldmap": {
-   "verdict": "PREFAB PENDING #17 (no prefab named bg_worldmap exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [],
-   "paths": [],
+   "names": [
+    "bg_worldmap"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/bg_worldmap.png",
+    "Resources/bg_worldmap.prefab"
+   ],
    "example": [
     "UICampos: GameObject gameObject = Resources.Load(\"bg_worldmap\") as GameObject;"
    ]
@@ -215,14 +262,27 @@
    ]
   },
   "bullet_angel": {
-   "verdict": "PREFAB PENDING #17 (no prefab starts with bullet_angel)",
+   "verdict": "OK (8 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "bullet_angel1",
+    "bullet_angel2",
+    "bullet_angel3",
+    "bullet_angel4",
+    "bullet_angel5",
+    "bullet_angel6",
+    "bullet_angel7",
+    "bullet_angel8"
+   ],
+   "paths": [
+    "Resources/bullet_angel1.prefab",
+    "Resources/bullet_angel2.prefab",
+    "Resources/bullet_angel3.prefab"
+   ],
    "example": [
     "AI_Asist: GameObject gameObject = Resources.Load(\"bullet_angel\" + a_index) as GameObject;"
    ]
@@ -262,14 +322,18 @@
    ]
   },
   "dun_gate": {
-   "verdict": "PREFAB PENDING #17 (no prefab named dun_gate exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "dun_gate"
+   ],
+   "paths": [
+    "Resources/dun_gate.prefab"
+   ],
    "example": [
     "Spawn: GameObject gameObject2 = Resources.Load(\"dun_gate\") as GameObject;"
    ]
@@ -318,235 +382,307 @@
    ]
   },
   "general_arrow_poison": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_arrow_poison exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_arrow_poison"
+   ],
+   "paths": [
+    "Resources/general_arrow_poison.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_arrow_poison\") as GameObject;"
    ]
   },
   "general_arrowrain": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_arrowrain exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_arrowrain"
+   ],
+   "paths": [
+    "Resources/general_arrowrain.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_arrowrain\") as GameObject;"
    ]
   },
   "general_arrowrain_base": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_arrowrain_base exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_arrowrain_base"
+   ],
+   "paths": [
+    "Resources/general_arrowrain_base.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_arrowrain_base\") as GameObject;"
    ]
   },
   "general_axedance": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_axedance exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_axedance"
+   ],
+   "paths": [
+    "Resources/general_axedance.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_axedance\") as GameObject;"
    ]
   },
   "general_chain": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_chain exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_chain"
+   ],
+   "paths": [
+    "Resources/general_chain.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_chain\") as GameObject;"
    ]
   },
   "general_edge_wheel": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_edge_wheel exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_edge_wheel"
+   ],
+   "paths": [
+    "Resources/general_edge_wheel.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_edge_wheel\") as GameObject;"
    ]
   },
   "general_elec_shock": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_elec_shock exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_elec_shock"
+   ],
+   "paths": [
+    "Resources/general_elec_shock.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_elec_shock\") as GameObject;"
    ]
   },
   "general_fincanon": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_fincanon exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_fincanon"
+   ],
+   "paths": [
+    "Resources/general_fincanon.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_fincanon\") as GameObject;"
    ]
   },
   "general_flowerfan": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_flowerfan exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_flowerfan"
+   ],
+   "paths": [
+    "Resources/general_flowerfan.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_flowerfan\") as GameObject;"
    ]
   },
   "general_fly": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_fly exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_fly"
+   ],
+   "paths": [
+    "Resources/general_fly.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_fly\") as GameObject;"
    ]
   },
   "general_ice_spear": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_ice_spear exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_ice_spear"
+   ],
+   "paths": [
+    "Resources/general_ice_spear.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_ice_spear\") as GameObject;"
    ]
   },
   "general_icebg": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_icebg exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_icebg"
+   ],
+   "paths": [
+    "Resources/general_icebg.prefab"
+   ],
    "example": [
     "Cha_Skill: GameObject gameObject = Resources.Load(\"general_icebg\") as GameObject;"
    ]
   },
   "general_meteo": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_meteo exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_meteo"
+   ],
+   "paths": [
+    "Resources/general_meteo.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_meteo\") as GameObject;"
    ]
   },
   "general_mirage": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_mirage exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_mirage"
+   ],
+   "paths": [
+    "Resources/general_mirage.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_mirage\") as GameObject;"
    ]
   },
   "general_multispear": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_multispear exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_multispear"
+   ],
+   "paths": [
+    "Resources/general_multispear.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_multispear\") as GameObject;"
    ]
   },
   "general_rapidthrust": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_rapidthrust exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_rapidthrust"
+   ],
+   "paths": [
+    "Resources/general_rapidthrust.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_rapidthrust\") as GameObject;"
    ]
   },
   "general_risespear": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_risespear exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_risespear"
+   ],
+   "paths": [
+    "Resources/general_risespear.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_risespear\") as GameObject;"
    ]
   },
   "general_sister": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_sister exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_sister"
+   ],
+   "paths": [
+    "Resources/general_sister.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_sister\") as GameObject;"
    ]
@@ -582,53 +718,69 @@
    ]
   },
   "general_spinaxe": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_spinaxe exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_spinaxe"
+   ],
+   "paths": [
+    "Resources/general_spinaxe.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_spinaxe\") as GameObject;"
    ]
   },
   "general_spiritsword": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_spiritsword exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_spiritsword"
+   ],
+   "paths": [
+    "Resources/general_spiritsword.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_spiritsword\") as GameObject;"
    ]
   },
   "general_swamp": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_swamp exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_swamp"
+   ],
+   "paths": [
+    "Resources/general_swamp.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_swamp\") as GameObject;"
    ]
   },
   "general_sworddance": {
-   "verdict": "PREFAB PENDING #17 (no prefab named general_sworddance exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "general_sworddance"
+   ],
+   "paths": [
+    "Resources/general_sworddance.prefab"
+   ],
    "example": [
     "Cha_Skill: load_skobj = Resources.Load(\"general_sworddance\") as GameObject;"
    ]
@@ -664,27 +816,36 @@
    ]
   },
   "getcoin_num": {
-   "verdict": "PREFAB PENDING #17 (no prefab named getcoin_num exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "getcoin_num"
+   ],
+   "paths": [
+    "Resources/getcoin_num.prefab"
+   ],
    "example": [
     "UI_Ingame: GameObject gameObject2 = Resources.Load(\"getcoin_num\") as GameObject;"
    ]
   },
   "giftbox": {
-   "verdict": "PREFAB PENDING #17 (no prefab named giftbox exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "giftbox"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/giftbox.png",
+    "Resources/giftbox.prefab"
+   ],
    "example": [
     "UI_Ingame: GameObject gameObject3 = Resources.Load(\"giftbox\") as GameObject;"
    ]
@@ -975,14 +1136,18 @@
    ]
   },
   "stagenum_cave": {
-   "verdict": "PREFAB PENDING #17 (no prefab named stagenum_cave exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [],
-   "paths": [],
+   "names": [
+    "stagenum_cave"
+   ],
+   "paths": [
+    "Resources/stagenum_cave.prefab"
+   ],
    "example": [
     "Cha_Control_ride_cha: GameObject gameObject = Resources.Load(\"stagenum_cave\") as GameObject;"
    ]
@@ -1018,40 +1183,75 @@
    ]
   },
   "wp_": {
-   "verdict": "PREFAB PENDING #17 (no prefab starts with wp_)",
+   "verdict": "OK (17 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [],
-   "paths": [],
+   "names": [
+    "wp_b01",
+    "wp_b02",
+    "wp_b05",
+    "wp_b06",
+    "wp_b07",
+    "wp_b08",
+    "wp_b10",
+    "wp_general1",
+    "wp_general2",
+    "wp_general3",
+    "wp_general4",
+    "wp_general5"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/wp_general7.png",
+    "Imported/Textures/sharedassets/wp_b05.png",
+    "Imported/Textures/sharedassets/wp_b06.png"
+   ],
    "example": [
     "Cha_Weapon: blade = Resources.Load(\"wp_\" + num % 100) as GameObject;"
    ]
   },
   "wp_0": {
-   "verdict": "PREFAB PENDING #17 (no prefab named wp_0 exists yet)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [],
-   "paths": [],
+   "names": [
+    "wp_0"
+   ],
+   "paths": [
+    "Resources/wp_0.prefab"
+   ],
    "example": [
     "Cha_Weapon: blade = Resources.Load(\"wp_0\") as GameObject;"
    ]
   },
   "wp_general": {
-   "verdict": "PREFAB PENDING #17 (no prefab starts with wp_general)",
+   "verdict": "OK (9 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [],
-   "paths": [],
+   "names": [
+    "wp_general1",
+    "wp_general2",
+    "wp_general3",
+    "wp_general4",
+    "wp_general5",
+    "wp_general6",
+    "wp_general7",
+    "wp_general8",
+    "wp_general_staff"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/wp_general7.png",
+    "Resources/wp_general1.prefab",
+    "Resources/wp_general2.prefab"
+   ],
    "example": [
     "Cha_Weapon: blade = Resources.Load(\"wp_general\" + _weaponindex) as GameObject;"
    ]

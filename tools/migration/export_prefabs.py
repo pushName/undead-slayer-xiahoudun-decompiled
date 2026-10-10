@@ -43,6 +43,9 @@ OUT_DIR = os.path.join(_REPO, "tools", "migration", "prefabs")
 OUT_REPORT = os.path.join(_REPO, "tools", "migration", "prefabs-export.json")
 SURVEY = os.path.join(_REPO, "tools", "migration", "prefabs-survey.json")
 CONTENTS = os.path.join(_REPO, "tools", "migration", "prefab-contents.json")
+# Scratch scenes the Editor builds into, then deletes. Under Assets so SaveScene accepts it, but
+# never committed -- see the docstring's flow.
+BUILD_SCENE_DIR = "Assets/Imported/_PrefabBuild"
 
 BAD = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 
@@ -226,6 +229,11 @@ def main():
                 "root_path_id": pid,
                 "prefab_name": key,
                 "asset_path": "Assets/Resources/%s.prefab" % names[key],
+                # The Editor builds a prefab by running the ONE proven node builder
+                # (SceneRebuilder.Rebuild) into a throwaway scene and saving its root. scene_path is
+                # that scratch file; PrefabRebuilder deletes it after SaveAsPrefabAsset. Naming it
+                # here instead of in the C# keeps one definition of where build artifacts live.
+                "scene_path": BUILD_SCENE_DIR + "/%s.unity" % names[key],
                 "node_count": len(kept),
                 "root_ids": [root["id"]],
                 "unsupported_components": dict(unsupported),

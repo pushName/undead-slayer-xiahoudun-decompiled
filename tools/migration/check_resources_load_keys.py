@@ -49,9 +49,12 @@ OUT = os.path.join(_REPO, "tools", "migration", "resources-load-check.json")
 EXT_TYPE = {".png": "Texture2D", ".tga": "Texture2D", ".jpg": "Texture2D", ".psd": "Texture2D",
             ".mp3": "AudioClip", ".ogg": "AudioClip", ".wav": "AudioClip",
             ".bytes": "TextAsset", ".txt": "TextAsset", ".mat": "Material",
-            ".anim": "AnimationClip", ".fbx": "Mesh"}
-# nothing that can satisfy a GameObject/Transform load exists yet: that is task #17's job
-PENDING = {"GameObject", "Transform"}
+            ".anim": "AnimationClip", ".fbx": "Mesh", ".prefab": "GameObject"}
+# A prefab CAN satisfy a GameObject load now (94 of them were built on 2026-10-10), so GameObject is
+# no longer exempted as "pending" -- leaving it there made every prefab key read "PREFAB PENDING" even
+# with the file on disk, which is a verdict about this table, not about the project. Only a bare
+# Transform reference has no exporter behind it.
+PENDING = {"Transform"}
 
 
 def strip_path_id(stem):
@@ -117,10 +120,10 @@ def classify(key, info, exact, source, names_ci):
         if ci and ci.lower() != key.lower():
             return "CASE-ONLY (on disk as %s)" % ci, []
         if pending_only:
-            return "PREFAB PENDING #17 (no prefab named %s exists yet)" % key, []
+            return "MISSING (nothing in the project is named %s)" % key, []
         return "MISSING (nothing in the project is named %s)" % key, []
     if info["head"] and pending_only:
-        return "PREFAB PENDING #17 (no prefab starts with %s)" % key, []
+        return "MISSING (no asset name starts with %s)" % key, []
     return "MISSING (no asset name starts with %s)" % key, []
 
 
