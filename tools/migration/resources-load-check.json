@@ -1,8 +1,7 @@
 {
  "tally": {
-  "PREFAB PENDING #17": 35,
-  "NAME-MANGLED": 23,
-  "OK": 5
+  "PREFAB PENDING #17": 38,
+  "OK": 25
  },
  "verdicts": {
   "CashShop": {
@@ -58,7 +57,7 @@
    ]
   },
   "ani_explore_cha": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_cha)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -68,14 +67,14 @@
     "ani_explore_cha"
    ],
    "paths": [
-    "Imported/Textures/bundles/ani_explore_cha_1.png"
+    "Resources/ani_explore_cha.png"
    ],
    "example": [
     "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha\") as Texture2D;"
    ]
   },
   "ani_explore_cha_fail": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_cha_fail)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -85,14 +84,14 @@
     "ani_explore_cha_fail"
    ],
    "paths": [
-    "Imported/Textures/bundles/ani_explore_cha_fail_1.png"
+    "Resources/ani_explore_cha_fail.png"
    ],
    "example": [
     "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha_fail\") as Texture2D;"
    ]
   },
   "ani_explore_cha_suc": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_cha_suc)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -102,14 +101,14 @@
     "ani_explore_cha_suc"
    ],
    "paths": [
-    "Imported/Textures/bundles/ani_explore_cha_suc_1.png"
+    "Resources/ani_explore_cha_suc.png"
    ],
    "example": [
     "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha_suc\") as Texture2D;"
    ]
   },
   "ani_explore_treasure": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_treasure)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -119,7 +118,7 @@
     "ani_explore_treasure"
    ],
    "paths": [
-    "Imported/Textures/bundles/ani_explore_treasure_1.png"
+    "Resources/ani_explore_treasure.png"
    ],
    "example": [
     "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_treasure\") as Texture2D;"
@@ -152,35 +151,27 @@
    ]
   },
   "bg_dun_cover": {
-   "verdict": "NAME-MANGLED (only bg_dun_cover_1.png on disk, never bg_dun_cover.png)",
+   "verdict": "PREFAB PENDING #17 (no prefab named bg_dun_cover exists yet)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [
-    "bg_dun_cover"
-   ],
-   "paths": [
-    "Imported/Textures/bundles/bg_dun_cover_1.png"
-   ],
+   "names": [],
+   "paths": [],
    "example": [
     "UICampos: GameObject gameObject3 = Resources.Load(\"bg_dun_cover\") as GameObject;"
    ]
   },
   "bg_worldmap": {
-   "verdict": "NAME-MANGLED (only bg_worldmap_1.png on disk, never bg_worldmap.png)",
+   "verdict": "PREFAB PENDING #17 (no prefab named bg_worldmap exists yet)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 2,
-   "names": [
-    "bg_worldmap"
-   ],
-   "paths": [
-    "Imported/Textures/bundles/bg_worldmap_1.png"
-   ],
+   "names": [],
+   "paths": [],
    "example": [
     "UICampos: GameObject gameObject = Resources.Load(\"bg_worldmap\") as GameObject;"
    ]
@@ -237,7 +228,7 @@
    ]
   },
   "cc_cha3": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. cc_cha3)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -247,14 +238,14 @@
     "cc_cha3"
    ],
    "paths": [
-    "Imported/Textures/bundles/cc_cha3_1.png"
+    "Resources/cc_cha3.png"
    ],
    "example": [
     "Cam_Move_story2: cha_cutin = Resources.Load(\"cc_cha3\") as Texture2D;"
    ]
   },
   "cc_yun0": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. cc_yun0)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -264,7 +255,7 @@
     "cc_yun0"
    ],
    "paths": [
-    "Imported/Textures/bundles/cc_yun0_1.png"
+    "Resources/cc_yun0.png"
    ],
    "example": [
     "Cam_Move_story: cha_cutin = Resources.Load(\"cc_yun0\") as Texture2D;"
@@ -284,7 +275,7 @@
    ]
   },
   "ef_perfect": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ef_perfect)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -294,14 +285,14 @@
     "ef_perfect"
    ],
    "paths": [
-    "Imported/Textures/sharedassets/ef_perfect_48.png"
+    "Resources/ef_perfect.png"
    ],
    "example": [
     "Ef_ani_walk: ani_img = Resources.Load(\"ef_perfect\") as Texture2D;"
    ]
   },
   "extraimg": {
-   "verdict": "NAME-MANGLED (8 name(s) only exist as <name>_<path_id>.png, e.g. extraimg1001)",
+   "verdict": "OK (8 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -318,9 +309,9 @@
     "extraimg1008"
    ],
    "paths": [
-    "Imported/Textures/bundles/extraimg1001_1.png",
-    "Imported/Textures/bundles/extraimg1002_1.png",
-    "Imported/Textures/bundles/extraimg1003_1.png"
+    "Resources/extraimg1001.png",
+    "Resources/extraimg1002.png",
+    "Resources/extraimg1003.png"
    ],
    "example": [
     "Scenario: extraimg = Resources.Load(\"extraimg\" + extraimg_num) as Texture2D;"
@@ -686,24 +677,20 @@
    ]
   },
   "giftbox": {
-   "verdict": "NAME-MANGLED (only giftbox_11.png on disk, never giftbox.png)",
+   "verdict": "PREFAB PENDING #17 (no prefab named giftbox exists yet)",
    "head": false,
    "wanted": [
     "GameObject"
    ],
    "sites": 1,
-   "names": [
-    "giftbox"
-   ],
-   "paths": [
-    "Imported/Textures/sharedassets/giftbox_11.png"
-   ],
+   "names": [],
+   "paths": [],
    "example": [
     "UI_Ingame: GameObject gameObject3 = Resources.Load(\"giftbox\") as GameObject;"
    ]
   },
   "guide": {
-   "verdict": "NAME-MANGLED (21 name(s) only exist as <name>_<path_id>.png, e.g. guide01)",
+   "verdict": "OK (21 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -724,16 +711,16 @@
     "guide40"
    ],
    "paths": [
-    "Imported/Textures/bundles/guide10_1.png",
-    "Imported/Textures/bundles/guide11_1.png",
-    "Imported/Textures/bundles/guide12_1.png"
+    "Resources/guide01.png",
+    "Resources/guide02.png",
+    "Resources/guide03.png"
    ],
    "example": [
     "UI_Ingame_GUI: guide_img = Resources.Load(\"guide\" + num) as Texture2D;"
    ]
   },
   "guide9": {
-   "verdict": "NAME-MANGLED (2 name(s) only exist as <name>_<path_id>.png, e.g. guide90)",
+   "verdict": "OK (2 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -744,8 +731,8 @@
     "guide91"
    ],
    "paths": [
-    "Imported/Textures/bundles/guide90_1.png",
-    "Imported/Textures/bundles/guide91_1.png"
+    "Resources/guide90.png",
+    "Resources/guide91.png"
    ],
    "example": [
     "Tutorial_ride: guide_img = Resources.Load(\"guide9\" + guide_curent_subindex) as Texture2D;"
@@ -769,7 +756,7 @@
    ]
   },
   "jewel0": {
-   "verdict": "NAME-MANGLED (5 name(s) only exist as <name>_<path_id>.png, e.g. jewel01a)",
+   "verdict": "OK (5 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -783,16 +770,16 @@
     "jewel05a"
    ],
    "paths": [
-    "Imported/Textures/sharedassets/jewel01a_91.png",
-    "Imported/Textures/sharedassets/jewel02a_109.png",
-    "Imported/Textures/sharedassets/jewel03a_83.png"
+    "Resources/jewel01a.png",
+    "Resources/jewel02a.png",
+    "Resources/jewel03a.png"
    ],
    "example": [
     "UI_cashshop: icon_gem = Resources.Load(\"jewel0\" + (num9 + 1) + \"a\") as Texture2D;"
    ]
   },
   "name_boss": {
-   "verdict": "NAME-MANGLED (11 name(s) only exist as <name>_<path_id>.png, e.g. name_boss1)",
+   "verdict": "OK (11 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -812,16 +799,16 @@
     "name_boss9"
    ],
    "paths": [
-    "Imported/Textures/bundles/name_boss10_1.png",
-    "Imported/Textures/bundles/name_boss11_1.png",
-    "Imported/Textures/bundles/name_boss1_1.png"
+    "Resources/name_boss1.png",
+    "Resources/name_boss10.png",
+    "Resources/name_boss11.png"
    ],
    "example": [
     "Cutin_BossTexture: nameimg = Resources.Load(\"name_boss\" + text) as Texture2D;"
    ]
   },
   "petkind_angel": {
-   "verdict": "NAME-MANGLED (8 name(s) only exist as <name>_<path_id>.png, e.g. petkind_angel1)",
+   "verdict": "OK (8 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -838,16 +825,16 @@
     "petkind_angel8"
    ],
    "paths": [
-    "Imported/Textures/sharedassets/petkind_angel1_7.png",
-    "Imported/Textures/sharedassets/petkind_angel2_19.png",
-    "Imported/Textures/sharedassets/petkind_angel3_20.png"
+    "Resources/petkind_angel1.png",
+    "Resources/petkind_angel2.png",
+    "Resources/petkind_angel3.png"
    ],
    "example": [
     "UI_Ingame: Texture mainTexture = Resources.Load(\"petkind_angel\" + cur_angel) as Texture;"
    ]
   },
   "portrait_boss": {
-   "verdict": "NAME-MANGLED (11 name(s) only exist as <name>_<path_id>.png, e.g. portrait_boss1)",
+   "verdict": "OK (11 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -867,16 +854,16 @@
     "portrait_boss9"
    ],
    "paths": [
-    "Imported/Textures/bundles/portrait_boss10_1.png",
-    "Imported/Textures/bundles/portrait_boss11_1.png",
-    "Imported/Textures/bundles/portrait_boss1_1.png"
+    "Resources/portrait_boss1.png",
+    "Resources/portrait_boss10.png",
+    "Resources/portrait_boss11.png"
    ],
    "example": [
     "Cutin_BossTexture: base.GetComponent<Renderer>().material.mainTexture = Resources.Load(\"portrait_boss\" + text) as Texture;"
    ]
   },
   "prt_cart": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. prt_cart)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -886,14 +873,14 @@
     "prt_cart"
    ],
    "paths": [
-    "Imported/Textures/bundles/prt_cart_1.png"
+    "Resources/prt_cart.png"
    ],
    "example": [
     "Spawn: general_portrait.GetComponent<Renderer>().material.mainTexture = Resources.Load(\"prt_cart\") as Texture;"
    ]
   },
   "prt_cha": {
-   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. prt_cha)",
+   "verdict": "OK (1 file(s) loadable by that exact name)",
    "head": false,
    "wanted": [
     "Texture2D"
@@ -903,14 +890,14 @@
     "prt_cha"
    ],
    "paths": [
-    "Imported/Textures/bundles/prt_cha_1.png"
+    "Resources/prt_cha.png"
    ],
    "example": [
     "Spawn: prt_cha = Resources.Load(\"prt_cha\") as Texture;"
    ]
   },
   "prt_general": {
-   "verdict": "NAME-MANGLED (30 name(s) only exist as <name>_<path_id>.png, e.g. prt_general1)",
+   "verdict": "OK (30 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -931,46 +918,41 @@
     "prt_general2"
    ],
    "paths": [
-    "Imported/Textures/sharedassets/prt_general10_71.png",
-    "Imported/Textures/sharedassets/prt_general11_18.png",
-    "Imported/Textures/sharedassets/prt_general12_29.png"
+    "Resources/prt_general1.png",
+    "Resources/prt_general10.png",
+    "Resources/prt_general11.png"
    ],
    "example": [
     "Spawn: prt_general = Resources.Load(\"prt_general\" + (general_index + 1)) as Texture;"
    ]
   },
   "sk_": {
-   "verdict": "NAME-MANGLED (28 name(s) only exist as <name>_<path_id>.png, e.g. sk_1)",
+   "verdict": "OK (7 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
    ],
    "sites": 2,
    "names": [
-    "sk_1",
-    "sk_10",
-    "sk_11",
-    "sk_12",
-    "sk_13",
-    "sk_14",
-    "sk_15",
-    "sk_16",
-    "sk_17",
-    "sk_18",
-    "sk_19",
-    "sk_2"
+    "sk_pet_autoitem",
+    "sk_pet_bowgun",
+    "sk_pet_conboost",
+    "sk_pet_expup",
+    "sk_pet_spear",
+    "sk_pet_speedup",
+    "sk_thrust"
    ],
    "paths": [
-    "Imported/Textures/bundles/sk_thrust_1.png",
-    "Imported/Textures/sharedassets/sk_10_22.png",
-    "Imported/Textures/sharedassets/sk_11_15.png"
+    "Resources/sk_pet_autoitem.png",
+    "Resources/sk_pet_bowgun.png",
+    "Resources/sk_pet_conboost.png"
    ],
    "example": [
     "UI_Extreme: skillicon[k] = Resources.Load(\"sk_\" + (skill_slot[k] + 1)) as Texture2D;"
    ]
   },
   "sky_ground": {
-   "verdict": "NAME-MANGLED (5 name(s) only exist as <name>_<path_id>.png, e.g. sky_ground1)",
+   "verdict": "OK (5 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -984,9 +966,9 @@
     "sky_ground5"
    ],
    "paths": [
-    "Imported/Textures/sharedassets/sky_ground1_7.png",
-    "Imported/Textures/sharedassets/sky_ground2_233.png",
-    "Imported/Textures/sharedassets/sky_ground3_215.png"
+    "Resources/sky_ground1.png",
+    "Resources/sky_ground2.png",
+    "Resources/sky_ground3.png"
    ],
    "example": [
     "Loading_sky: base.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = Resources.Load(\"sky_ground\" + num) as Texture;"
@@ -1006,7 +988,7 @@
    ]
   },
   "treasure": {
-   "verdict": "NAME-MANGLED (24 name(s) only exist as <name>_<path_id>.png, e.g. treasure1)",
+   "verdict": "OK (24 file(s) loadable by that exact name)",
    "head": true,
    "wanted": [
     "Texture2D"
@@ -1027,9 +1009,9 @@
     "treasure2"
    ],
    "paths": [
-    "Imported/Textures/sharedassets/treasure10_62.png",
-    "Imported/Textures/sharedassets/treasure11_3.png",
-    "Imported/Textures/sharedassets/treasure12_48.png"
+    "Resources/treasure1.png",
+    "Resources/treasure10.png",
+    "Resources/treasure11.png"
    ],
    "example": [
     "Inventory_Gem: getitem_tex = Resources.Load(\"treasure\" + num2) as Texture2D;"
