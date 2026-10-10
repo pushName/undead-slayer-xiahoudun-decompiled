@@ -11,6 +11,7 @@ Two rules, encoded once:
 """
 import glob
 import os
+import re
 
 import UnityPy
 
@@ -37,6 +38,27 @@ def resolve_target(this_name, externals, file_id):
     if 0 < fid <= len(externals):
         return externals[fid - 1]
     return None
+
+
+def safe_token(s):
+    """A file-name-safe form of a container or clip name."""
+    return re.sub(r"[^0-9A-Za-z_-]", "_", str(s))
+
+
+def clip_asset_path(name, container, path_id):
+    """The ONE rule for where a clip's .anim lives: Animations/<state>__<container>_<id>/<state>.anim
+
+    It lives here because two different producers have to agree on it: export_animation_descriptors
+    writes it into animation-index.json, and extract_scene writes it into every scene's bindings and
+    into the AnimationClip-typed MonoBehaviour fields. When the descriptor exporter kept its own flat
+    naming (<state>_<id>_<container>.anim) the index pointed at 427 files of which 0 existed, and the
+    scene pass pointed at folders -- so 51 field references could never land and nothing complained.
+    The file name is the state name because a legacy Animation state IS the clip's object name and
+    CreateAsset pins that to the file name; the folder carries the clip identity.
+    """
+    key = safe_token(container).replace("_assets", "") + "_" + str(path_id)
+    return "Assets/Imported/Animations/%s/%s.anim" % (safe_token(name) + "__" + key,
+                                                      safe_token(name))
 
 
 def split_families():

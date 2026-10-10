@@ -108,14 +108,8 @@ def _safe(s):
 
 
 def clip_asset_path(name, container, path_id):
-    """The one rule for where a clip's .anim lives: Animations/<state>__<container>_<id>/<state>.anim
-
-    Both the scene binding table and MonoBehaviour AnimationClip[] references go through this, so
-    the two can never disagree about where a clip is. The file name is the state name because a
-    legacy Animation state IS the clip's object name and CreateAsset pins that to the file name.
-    """
-    key = _safe(container).replace("_assets", "") + "_" + str(path_id)
-    return "Assets/Imported/Animations/%s/%s.anim" % (_safe(name) + "__" + key, _safe(name))
+    """Delegates to the one rule in unity4_files -- see its docstring for why it is shared."""
+    return u4.clip_asset_path(name, container, path_id)
 
 
 def flatten_value(fname, v, obj2node, asset_lookup, stats=None, ledger=None, ctx=None):

@@ -169,9 +169,7 @@ def main():
             payload["id"] = cid
             payload["container"] = base
             payload["path_id"] = o.path_id
-            payload["asset_path"] = "Assets/Imported/Animations/%s_%d_%s.anim" % (
-                "".join(ch if (ch.isalnum() or ch in "_-") else "_" for ch in desc["name"]),
-                o.path_id, slug(base))
+            payload["asset_path"] = u4.clip_asset_path(desc["name"], base, o.path_id)
             blob = json.dumps(payload, sort_keys=True, indent=1)
             if os.path.exists(fpath):
                 with open(fpath, encoding="utf-8") as fh:

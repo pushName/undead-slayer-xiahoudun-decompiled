@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -135,6 +136,25 @@ namespace UndeadSlayer.EditorTools
             public NodeAnim[] nodes;
         }
 
+        /// <summary>
+        /// One row of tools/migration/animation-index.json. Only the fields needed to turn a clip
+        /// into an asset path and back to its descriptor.
+        /// </summary>
+        [Serializable] private class IndexEntry
+        {
+            public string id;
+            public string name;
+            public string container;
+            public int path_id;
+            public string asset_path;
+            public string descriptor;
+        }
+
+        [Serializable] private class IndexDoc
+        {
+            public IndexEntry[] clips;
+        }
+
         private class Stat
         {
             public int clips;
@@ -165,16 +185,19 @@ namespace UndeadSlayer.EditorTools
                 return;
             }
 
-            // One asset per (consumer object, state name). Not one asset per source clip: a
-            // legacy Animation state's name IS the clip's object name, CreateAsset forces
-            // object name = file name, and 15 clips are named "idle" -- so a shared asset cannot
-            // serve two names. Measured: AddClip worked around that by cloning 119 clips into
-            // Story.unity, 320 KB -> 47.9 MB, duplicating every curve per scene.
+            // One asset per (state name, source clip). The file name is the state name, because a
+            // legacy Animation state IS the clip's object name and CreateAsset pins object name to
+            // file name -- 15 clips are called "idle", so a single shared asset cannot serve two
+            // names, and the folder carries the clip identity. Measured alternative: AddClip cloned
+            // 119 clips into Story.unity, 320 KB -> 47.9 MB, duplicating every curve per scene.
             var work = new Dictionary<string, Binding>();
             var ambiguous = new List<string>();
+            var scenesText = new StringBuilder();
             foreach (string file in Directory.GetFiles(scenesDir, "level*.json"))
             {
-                SceneDoc doc = JsonUtility.FromJson<SceneDoc>(File.ReadAllText(file));
+                string raw = File.ReadAllText(file);
+                scenesText.Append(raw);
+                SceneDoc doc = JsonUtility.FromJson<SceneDoc>(raw);
                 if (doc == null || doc.nodes == null)
                 {
                     continue;
@@ -193,6 +216,60 @@ namespace UndeadSlayer.EditorTools
                         }
                         work[b.asset] = b;
                     }
+                }
+            }
+
+            // A MonoBehaviour field of type AnimationClip (Cha_Control.begrab and friends, 51
+            // reference slots in Story and Stage) names the same kind of asset but arrives through
+            // components[].fields instead of nodes[].animations, so JsonUtility would have to model
+            // nested arrays of a self-referential type to see it -- which it cannot do. Scanning the
+            // scene text for the paths this project generates needs no schema and cannot miss a field
+            // hidden inside an array or struct value.
+            string indexPath = Path.Combine(root, "tools", "migration", "animation-index.json");
+            if (!File.Exists(indexPath))
+            {
+                EditorUtility.DisplayDialog("Animation clips", "No clip index at:\n" + indexPath
+                    + "\n\nRun tools/migration/export_animation_descriptors.py first.", "OK");
+                return;
+            }
+            IndexDoc index = JsonUtility.FromJson<IndexDoc>(File.ReadAllText(indexPath));
+            if (index == null || index.clips == null || index.clips.Length == 0)
+            {
+                EditorUtility.DisplayDialog("Animation clips",
+                    "animation-index.json parsed to no clips.", "OK");
+                return;
+            }
+            var mentioned = new HashSet<string>();
+            foreach (Match m in Regex.Matches(scenesText.ToString(),
+                         "\"(Assets/Imported/Animations/[^\"]+\\.anim)\""))
+            {
+                mentioned.Add(m.Groups[1].Value);
+            }
+            var known = new HashSet<string>();
+            int fromFields = 0;
+            foreach (IndexEntry e in index.clips)
+            {
+                known.Add(e.asset_path);
+                if (work.ContainsKey(e.asset_path) || !mentioned.Contains(e.asset_path))
+                {
+                    continue;
+                }
+                work[e.asset_path] = new Binding
+                {
+                    name = e.name,
+                    clip_id = e.id,
+                    picked_by = "referenced by a MonoBehaviour field",
+                    source_descriptor = e.descriptor,
+                    asset = e.asset_path,
+                };
+                fromFields++;
+            }
+            var orphanMentions = new List<string>();
+            foreach (string p in mentioned)
+            {
+                if (!known.Contains(p))
+                {
+                    orphanMentions.Add(p);
                 }
             }
             EnsureFolder();
@@ -291,8 +368,21 @@ namespace UndeadSlayer.EditorTools
 
             var sb = new StringBuilder();
             sb.AppendLine("===== ANIMATION CLIP BUILD =====");
-            sb.AppendLine(string.Format("clips built        : {0}  ({1} (consumer,state) assets "
+            sb.AppendLine(string.Format("clips built        : {0}  ({1} (state,clip) assets "
                 + "requested), failed {2}", stat.clips, total, stat.failed));
+            sb.AppendLine(string.Format("requested by       : {0} Animation state bindings + {1} "
+                + "MonoBehaviour field references; the index lists {2} clips and only what a scene "
+                + "actually mentions is built", total - fromFields, fromFields, index.clips.Length));
+            if (orphanMentions.Count > 0)
+            {
+                // A scene names a clip path the index does not have. That is the two-path-naming bug
+                // coming back (extract_scene and the index once disagreed on all 427), so it is an
+                // error rather than a footnote.
+                sb.AppendLine(string.Format("!! {0} referenced clip path(s) are not in "
+                    + "animation-index.json -- the path rule has forked again: {1}",
+                    orphanMentions.Count, string.Join(", ", orphanMentions.GetRange(
+                        0, Mathf.Min(3, orphanMentions.Count)).ToArray())));
+            }
             sb.AppendLine(string.Format("float channels     : {0}", stat.channels));
             sb.AppendLine(string.Format("curve keys         : built {0} for {1} source vector keys"
                 + "  (each vector/quaternion curve becomes 3-4 float channels)", stat.builtKeys,
