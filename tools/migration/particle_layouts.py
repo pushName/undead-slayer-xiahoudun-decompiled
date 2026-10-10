@@ -396,6 +396,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dump", type=int, default=0, help="hexdumps per class")
     ap.add_argument("--classify", action="store_true", help="print the per-slot classification")
+    ap.add_argument("--assign", action="store_true",
+                    help="narrow each slot to the roles every record allows")
     ap.add_argument("--roles", action="store_true",
                     help="propose which engine property each slot could be, with its evidence")
     ap.add_argument("--out", default=None,
@@ -416,7 +418,9 @@ def main():
                       % (c["off"], c["float_ok"], c["bool_ok"], c["quad_ok"], c["floats"],
                          c["ints"]))
         if k in LAYOUTS:
-            verify(rows[k], k, decoded_all, args.roles)
+            dec = verify(rows[k], k, decoded_all, args.roles)
+            if dec and (args.assign or args.roles):
+                assign(dec, k)
         if args.dump:
             report(rows[k], k, args.dump)
     clean = sum(1 for _ in decoded_all)
@@ -437,6 +441,64 @@ def main():
         print("wrote %s (%d decoded records)" % (args.out, len(decoded_all)))
     return 0
 
+
+
+
+
+# --------------------------------------------------------------------------- role elimination
+# A role survives only if EVERY record fits its domain. These domains are physical facts about the
+# quantity, not recollections of Unity 4's field order -- a particle count cannot be fractional, a
+# lifetime cannot be 400 seconds, a normalised weight cannot exceed 1 -- so the inference is
+# falsifiable by one bad record rather than plausible by many good ones.
+DOMAINS = [
+    ("count (maxParticles / a level)", lambda v: v == int(v) and 1 <= v <= 4000),
+    ("rate (particles per second)", lambda v: 0.0 <= v <= 500.0),
+    ("size (world units)", lambda v: 0.0 < v <= 12.0),
+    ("speed (units/s)", lambda v: 0.0 <= v <= 60.0),
+    ("lifetime (seconds)", lambda v: 0.0 < v <= 20.0),
+    ("normalised 0..1", lambda v: 0.0 <= v <= 1.0),
+    ("angle (degrees)", lambda v: -360.0 <= v <= 360.0),
+    ("small vector component", lambda v: -20.0 <= v <= 20.0),
+    "anything non-zero",
+]
+
+
+def domains_of(vals):
+    """Every role name all of these values satisfy ("" last entry always passes when non-zero)."""
+    out = []
+    for row in DOMAINS:
+        name, test = row if isinstance(row, tuple) else (row, lambda v: v != 0.0)
+        if all(test(v) for v in vals):
+            out.append(name)
+    return out
+
+
+def assign(decoded, name):
+    """Narrow each offset (and each proven min/max pair) to the roles the whole population allows.
+
+    The field order is fixed across records, so an offset carries the same property everywhere: that
+    is what makes population-wide elimination possible at all, and why a single out-of-domain record
+    is decisive against a role.
+    """
+    spec = LAYOUTS[name]
+    offs = spec_offsets(spec)
+    fls = [(o, n) for o, n, k in offs if k == "fl"]
+    vals = {n: [d[4][n] for d in decoded] for _o, n in fls}
+    print("")
+    print("---- %s: role elimination over %d records ----" % (name, len(decoded)))
+    for o, n in fls:
+        cand = domains_of(vals[n])
+        print("    off %3d %-8s %-22s  %s" % (o, n, "%.3g..%.3g" % (min(vals[n]), max(vals[n])),
+                                              "; ".join(cand) if cand else "NONE -> not a float"))
+    print("  pairs proven ordered (lo<=hi in every record, strict somewhere):")
+    for (oa, na), (ob, nb) in zip(fls, fls[1:]):
+        if ob - oa != 4:
+            continue
+        va, vb = vals[na], vals[nb]
+        if all(x <= y for x, y in zip(va, vb)) and any(x < y for x, y in zip(va, vb)):
+            both = sorted(set(domains_of(va)) & set(domains_of(vb)))
+            print("    off %3d/%3d  lo %.3g..%.3g  hi %.3g..%.3g  -> %s"
+                  % (oa, ob, min(va), max(va), min(vb), max(vb), "; ".join(both) or "none"))
 
 
 if __name__ == "__main__":
