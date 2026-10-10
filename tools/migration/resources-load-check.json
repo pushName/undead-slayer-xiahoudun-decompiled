@@ -1,0 +1,1078 @@
+{
+ "tally": {
+  "PREFAB PENDING #17": 35,
+  "NAME-MANGLED": 23,
+  "OK": 5
+ },
+ "verdicts": {
+  "CashShop": {
+   "verdict": "PREFAB PENDING #17 (no prefab named CashShop exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 19,
+   "names": [],
+   "paths": [],
+   "example": [
+    "UI_archive: cashshop = Resources.Load(\"CashShop\") as GameObject;"
+   ]
+  },
+  "RankingManager": {
+   "verdict": "PREFAB PENDING #17 (no prefab named RankingManager exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "UI_Extreme: GameObject original = Resources.Load(\"RankingManager\") as GameObject;"
+   ]
+  },
+  "Stage_dun": {
+   "verdict": "PREFAB PENDING #17 (no prefab starts with Stage_dun)",
+   "head": true,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Spawn: GameObject gameObject = Resources.Load(\"Stage_dun\" + (num + 1)) as GameObject;"
+   ]
+  },
+  "angel_splash": {
+   "verdict": "PREFAB PENDING #17 (no prefab starts with angel_splash)",
+   "head": true,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "AI_Asist: GameObject gameObject2 = Resources.Load(\"angel_splash\" + splashEF) as GameObject;"
+   ]
+  },
+  "ani_explore_cha": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_cha)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "ani_explore_cha"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/ani_explore_cha_1.png"
+   ],
+   "example": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha\") as Texture2D;"
+   ]
+  },
+  "ani_explore_cha_fail": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_cha_fail)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "ani_explore_cha_fail"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/ani_explore_cha_fail_1.png"
+   ],
+   "example": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha_fail\") as Texture2D;"
+   ]
+  },
+  "ani_explore_cha_suc": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_cha_suc)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "ani_explore_cha_suc"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/ani_explore_cha_suc_1.png"
+   ],
+   "example": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_cha_suc\") as Texture2D;"
+   ]
+  },
+  "ani_explore_treasure": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ani_explore_treasure)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "ani_explore_treasure"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/ani_explore_treasure_1.png"
+   ],
+   "example": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ani_explore_treasure\") as Texture2D;"
+   ]
+  },
+  "bg_dun": {
+   "verdict": "PREFAB PENDING #17 (no prefab named bg_dun exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 2,
+   "names": [],
+   "paths": [],
+   "example": [
+    "UICampos: GameObject gameObject2 = Resources.Load(\"bg_dun\") as GameObject;"
+   ]
+  },
+  "bg_dun_below": {
+   "verdict": "PREFAB PENDING #17 (no prefab named bg_dun_below exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 2,
+   "names": [],
+   "paths": [],
+   "example": [
+    "UICampos: GameObject gameObject4 = Resources.Load(\"bg_dun_below\") as GameObject;"
+   ]
+  },
+  "bg_dun_cover": {
+   "verdict": "NAME-MANGLED (only bg_dun_cover_1.png on disk, never bg_dun_cover.png)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 2,
+   "names": [
+    "bg_dun_cover"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/bg_dun_cover_1.png"
+   ],
+   "example": [
+    "UICampos: GameObject gameObject3 = Resources.Load(\"bg_dun_cover\") as GameObject;"
+   ]
+  },
+  "bg_worldmap": {
+   "verdict": "NAME-MANGLED (only bg_worldmap_1.png on disk, never bg_worldmap.png)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 2,
+   "names": [
+    "bg_worldmap"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/bg_worldmap_1.png"
+   ],
+   "example": [
+    "UICampos: GameObject gameObject = Resources.Load(\"bg_worldmap\") as GameObject;"
+   ]
+  },
+  "bgm_boss": {
+   "verdict": "OK (1 file(s) loadable by that exact name)",
+   "head": false,
+   "wanted": [
+    "AudioClip"
+   ],
+   "sites": 1,
+   "names": [
+    "bgm_boss"
+   ],
+   "paths": [
+    "Resources/bgm_boss.mp3"
+   ],
+   "example": [
+    "Spawn: base.GetComponent<AudioSource>().clip = Resources.Load(\"bgm_boss\") as AudioClip;"
+   ]
+  },
+  "bgm_stage": {
+   "verdict": "OK (3 file(s) loadable by that exact name)",
+   "head": true,
+   "wanted": [
+    "AudioClip"
+   ],
+   "sites": 2,
+   "names": [
+    "bgm_stage1",
+    "bgm_stage2",
+    "bgm_stage3"
+   ],
+   "paths": [
+    "Resources/bgm_stage1.mp3",
+    "Resources/bgm_stage2.mp3",
+    "Resources/bgm_stage3.mp3"
+   ],
+   "example": [
+    "Spawn: base.GetComponent<AudioSource>().clip = Resources.Load(\"bgm_stage\" + num) as AudioClip;"
+   ]
+  },
+  "bullet_angel": {
+   "verdict": "PREFAB PENDING #17 (no prefab starts with bullet_angel)",
+   "head": true,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "AI_Asist: GameObject gameObject = Resources.Load(\"bullet_angel\" + a_index) as GameObject;"
+   ]
+  },
+  "cc_cha3": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. cc_cha3)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "cc_cha3"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/cc_cha3_1.png"
+   ],
+   "example": [
+    "Cam_Move_story2: cha_cutin = Resources.Load(\"cc_cha3\") as Texture2D;"
+   ]
+  },
+  "cc_yun0": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. cc_yun0)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "cc_yun0"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/cc_yun0_1.png"
+   ],
+   "example": [
+    "Cam_Move_story: cha_cutin = Resources.Load(\"cc_yun0\") as Texture2D;"
+   ]
+  },
+  "dun_gate": {
+   "verdict": "PREFAB PENDING #17 (no prefab named dun_gate exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Spawn: GameObject gameObject2 = Resources.Load(\"dun_gate\") as GameObject;"
+   ]
+  },
+  "ef_perfect": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. ef_perfect)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "ef_perfect"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/ef_perfect_48.png"
+   ],
+   "example": [
+    "Ef_ani_walk: ani_img = Resources.Load(\"ef_perfect\") as Texture2D;"
+   ]
+  },
+  "extraimg": {
+   "verdict": "NAME-MANGLED (8 name(s) only exist as <name>_<path_id>.png, e.g. extraimg1001)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "extraimg1001",
+    "extraimg1002",
+    "extraimg1003",
+    "extraimg1004",
+    "extraimg1005",
+    "extraimg1006",
+    "extraimg1007",
+    "extraimg1008"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/extraimg1001_1.png",
+    "Imported/Textures/bundles/extraimg1002_1.png",
+    "Imported/Textures/bundles/extraimg1003_1.png"
+   ],
+   "example": [
+    "Scenario: extraimg = Resources.Load(\"extraimg\" + extraimg_num) as Texture2D;"
+   ]
+  },
+  "general_arrow_poison": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_arrow_poison exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_arrow_poison\") as GameObject;"
+   ]
+  },
+  "general_arrowrain": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_arrowrain exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_arrowrain\") as GameObject;"
+   ]
+  },
+  "general_arrowrain_base": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_arrowrain_base exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_arrowrain_base\") as GameObject;"
+   ]
+  },
+  "general_axedance": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_axedance exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_axedance\") as GameObject;"
+   ]
+  },
+  "general_chain": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_chain exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_chain\") as GameObject;"
+   ]
+  },
+  "general_edge_wheel": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_edge_wheel exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_edge_wheel\") as GameObject;"
+   ]
+  },
+  "general_elec_shock": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_elec_shock exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_elec_shock\") as GameObject;"
+   ]
+  },
+  "general_fincanon": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_fincanon exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_fincanon\") as GameObject;"
+   ]
+  },
+  "general_flowerfan": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_flowerfan exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_flowerfan\") as GameObject;"
+   ]
+  },
+  "general_fly": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_fly exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_fly\") as GameObject;"
+   ]
+  },
+  "general_ice_spear": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_ice_spear exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_ice_spear\") as GameObject;"
+   ]
+  },
+  "general_icebg": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_icebg exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: GameObject gameObject = Resources.Load(\"general_icebg\") as GameObject;"
+   ]
+  },
+  "general_meteo": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_meteo exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_meteo\") as GameObject;"
+   ]
+  },
+  "general_mirage": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_mirage exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_mirage\") as GameObject;"
+   ]
+  },
+  "general_multispear": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_multispear exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_multispear\") as GameObject;"
+   ]
+  },
+  "general_rapidthrust": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_rapidthrust exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_rapidthrust\") as GameObject;"
+   ]
+  },
+  "general_risespear": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_risespear exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_risespear\") as GameObject;"
+   ]
+  },
+  "general_sister": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_sister exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_sister\") as GameObject;"
+   ]
+  },
+  "general_skillyell": {
+   "verdict": "OK (12 file(s) loadable by that exact name)",
+   "head": true,
+   "wanted": [
+    "AudioClip"
+   ],
+   "sites": 2,
+   "names": [
+    "general_skillyell0a",
+    "general_skillyell0b",
+    "general_skillyell1a",
+    "general_skillyell1b",
+    "general_skillyell2a",
+    "general_skillyell2b",
+    "general_skillyell3a",
+    "general_skillyell3b",
+    "general_skillyell4a",
+    "general_skillyell4b",
+    "general_skillyell5a",
+    "general_skillyell5b"
+   ],
+   "paths": [
+    "Resources/general_skillyell0a.mp3",
+    "Resources/general_skillyell0b.mp3",
+    "Resources/general_skillyell1a.mp3"
+   ],
+   "example": [
+    "Cha_Control: g_skillyell[0] = Resources.Load(\"general_skillyell\" + _voice + \"a\") as AudioClip;"
+   ]
+  },
+  "general_spinaxe": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_spinaxe exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_spinaxe\") as GameObject;"
+   ]
+  },
+  "general_spiritsword": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_spiritsword exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_spiritsword\") as GameObject;"
+   ]
+  },
+  "general_swamp": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_swamp exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_swamp\") as GameObject;"
+   ]
+  },
+  "general_sworddance": {
+   "verdict": "PREFAB PENDING #17 (no prefab named general_sworddance exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Skill: load_skobj = Resources.Load(\"general_sworddance\") as GameObject;"
+   ]
+  },
+  "general_yell": {
+   "verdict": "OK (12 file(s) loadable by that exact name)",
+   "head": true,
+   "wanted": [
+    "AudioClip"
+   ],
+   "sites": 2,
+   "names": [
+    "general_yell0a",
+    "general_yell0b",
+    "general_yell1a",
+    "general_yell1b",
+    "general_yell2a",
+    "general_yell2b",
+    "general_yell3a",
+    "general_yell3b",
+    "general_yell4a",
+    "general_yell4b",
+    "general_yell5a",
+    "general_yell5b"
+   ],
+   "paths": [
+    "Resources/general_yell0a.mp3",
+    "Resources/general_yell0b.mp3",
+    "Resources/general_yell1a.mp3"
+   ],
+   "example": [
+    "Cha_Control: g_yell[0] = Resources.Load(\"general_yell\" + _voice + \"a\") as AudioClip;"
+   ]
+  },
+  "getcoin_num": {
+   "verdict": "PREFAB PENDING #17 (no prefab named getcoin_num exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "UI_Ingame: GameObject gameObject2 = Resources.Load(\"getcoin_num\") as GameObject;"
+   ]
+  },
+  "giftbox": {
+   "verdict": "NAME-MANGLED (only giftbox_11.png on disk, never giftbox.png)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [
+    "giftbox"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/giftbox_11.png"
+   ],
+   "example": [
+    "UI_Ingame: GameObject gameObject3 = Resources.Load(\"giftbox\") as GameObject;"
+   ]
+  },
+  "guide": {
+   "verdict": "NAME-MANGLED (21 name(s) only exist as <name>_<path_id>.png, e.g. guide01)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "guide01",
+    "guide02",
+    "guide03",
+    "guide04",
+    "guide10",
+    "guide11",
+    "guide12",
+    "guide20",
+    "guide21",
+    "guide30",
+    "guide31",
+    "guide40"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/guide10_1.png",
+    "Imported/Textures/bundles/guide11_1.png",
+    "Imported/Textures/bundles/guide12_1.png"
+   ],
+   "example": [
+    "UI_Ingame_GUI: guide_img = Resources.Load(\"guide\" + num) as Texture2D;"
+   ]
+  },
+  "guide9": {
+   "verdict": "NAME-MANGLED (2 name(s) only exist as <name>_<path_id>.png, e.g. guide90)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 2,
+   "names": [
+    "guide90",
+    "guide91"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/guide90_1.png",
+    "Imported/Textures/bundles/guide91_1.png"
+   ],
+   "example": [
+    "Tutorial_ride: guide_img = Resources.Load(\"guide9\" + guide_curent_subindex) as Texture2D;"
+   ]
+  },
+  "hsp_version": {
+   "verdict": "OK (1 file(s) loadable by that exact name)",
+   "head": false,
+   "wanted": [
+    "TextAsset"
+   ],
+   "sites": 1,
+   "names": [
+    "hsp_version"
+   ],
+   "paths": [
+    "Resources/hsp_version.bytes"
+   ],
+   "example": [
+    "UI_intro: TextAsset textAsset = Resources.Load(\"hsp_version\") as TextAsset;"
+   ]
+  },
+  "jewel0": {
+   "verdict": "NAME-MANGLED (5 name(s) only exist as <name>_<path_id>.png, e.g. jewel01a)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "jewel01a",
+    "jewel02a",
+    "jewel03a",
+    "jewel04a",
+    "jewel05a"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/jewel01a_91.png",
+    "Imported/Textures/sharedassets/jewel02a_109.png",
+    "Imported/Textures/sharedassets/jewel03a_83.png"
+   ],
+   "example": [
+    "UI_cashshop: icon_gem = Resources.Load(\"jewel0\" + (num9 + 1) + \"a\") as Texture2D;"
+   ]
+  },
+  "name_boss": {
+   "verdict": "NAME-MANGLED (11 name(s) only exist as <name>_<path_id>.png, e.g. name_boss1)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "name_boss1",
+    "name_boss10",
+    "name_boss11",
+    "name_boss2",
+    "name_boss3",
+    "name_boss4",
+    "name_boss5",
+    "name_boss6",
+    "name_boss7",
+    "name_boss8",
+    "name_boss9"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/name_boss10_1.png",
+    "Imported/Textures/bundles/name_boss11_1.png",
+    "Imported/Textures/bundles/name_boss1_1.png"
+   ],
+   "example": [
+    "Cutin_BossTexture: nameimg = Resources.Load(\"name_boss\" + text) as Texture2D;"
+   ]
+  },
+  "petkind_angel": {
+   "verdict": "NAME-MANGLED (8 name(s) only exist as <name>_<path_id>.png, e.g. petkind_angel1)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "petkind_angel1",
+    "petkind_angel2",
+    "petkind_angel3",
+    "petkind_angel4",
+    "petkind_angel5",
+    "petkind_angel6",
+    "petkind_angel7",
+    "petkind_angel8"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/petkind_angel1_7.png",
+    "Imported/Textures/sharedassets/petkind_angel2_19.png",
+    "Imported/Textures/sharedassets/petkind_angel3_20.png"
+   ],
+   "example": [
+    "UI_Ingame: Texture mainTexture = Resources.Load(\"petkind_angel\" + cur_angel) as Texture;"
+   ]
+  },
+  "portrait_boss": {
+   "verdict": "NAME-MANGLED (11 name(s) only exist as <name>_<path_id>.png, e.g. portrait_boss1)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "portrait_boss1",
+    "portrait_boss10",
+    "portrait_boss11",
+    "portrait_boss2",
+    "portrait_boss3",
+    "portrait_boss4",
+    "portrait_boss5",
+    "portrait_boss6",
+    "portrait_boss7",
+    "portrait_boss8",
+    "portrait_boss9"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/portrait_boss10_1.png",
+    "Imported/Textures/bundles/portrait_boss11_1.png",
+    "Imported/Textures/bundles/portrait_boss1_1.png"
+   ],
+   "example": [
+    "Cutin_BossTexture: base.GetComponent<Renderer>().material.mainTexture = Resources.Load(\"portrait_boss\" + text) as Texture;"
+   ]
+  },
+  "prt_cart": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. prt_cart)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "prt_cart"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/prt_cart_1.png"
+   ],
+   "example": [
+    "Spawn: general_portrait.GetComponent<Renderer>().material.mainTexture = Resources.Load(\"prt_cart\") as Texture;"
+   ]
+  },
+  "prt_cha": {
+   "verdict": "NAME-MANGLED (1 name(s) only exist as <name>_<path_id>.png, e.g. prt_cha)",
+   "head": false,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "prt_cha"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/prt_cha_1.png"
+   ],
+   "example": [
+    "Spawn: prt_cha = Resources.Load(\"prt_cha\") as Texture;"
+   ]
+  },
+  "prt_general": {
+   "verdict": "NAME-MANGLED (30 name(s) only exist as <name>_<path_id>.png, e.g. prt_general1)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 5,
+   "names": [
+    "prt_general1",
+    "prt_general10",
+    "prt_general11",
+    "prt_general12",
+    "prt_general13",
+    "prt_general14",
+    "prt_general15",
+    "prt_general16",
+    "prt_general17",
+    "prt_general18",
+    "prt_general19",
+    "prt_general2"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/prt_general10_71.png",
+    "Imported/Textures/sharedassets/prt_general11_18.png",
+    "Imported/Textures/sharedassets/prt_general12_29.png"
+   ],
+   "example": [
+    "Spawn: prt_general = Resources.Load(\"prt_general\" + (general_index + 1)) as Texture;"
+   ]
+  },
+  "sk_": {
+   "verdict": "NAME-MANGLED (28 name(s) only exist as <name>_<path_id>.png, e.g. sk_1)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 2,
+   "names": [
+    "sk_1",
+    "sk_10",
+    "sk_11",
+    "sk_12",
+    "sk_13",
+    "sk_14",
+    "sk_15",
+    "sk_16",
+    "sk_17",
+    "sk_18",
+    "sk_19",
+    "sk_2"
+   ],
+   "paths": [
+    "Imported/Textures/bundles/sk_thrust_1.png",
+    "Imported/Textures/sharedassets/sk_10_22.png",
+    "Imported/Textures/sharedassets/sk_11_15.png"
+   ],
+   "example": [
+    "UI_Extreme: skillicon[k] = Resources.Load(\"sk_\" + (skill_slot[k] + 1)) as Texture2D;"
+   ]
+  },
+  "sky_ground": {
+   "verdict": "NAME-MANGLED (5 name(s) only exist as <name>_<path_id>.png, e.g. sky_ground1)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 1,
+   "names": [
+    "sky_ground1",
+    "sky_ground2",
+    "sky_ground3",
+    "sky_ground4",
+    "sky_ground5"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/sky_ground1_7.png",
+    "Imported/Textures/sharedassets/sky_ground2_233.png",
+    "Imported/Textures/sharedassets/sky_ground3_215.png"
+   ],
+   "example": [
+    "Loading_sky: base.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = Resources.Load(\"sky_ground\" + num) as Texture;"
+   ]
+  },
+  "stagenum_cave": {
+   "verdict": "PREFAB PENDING #17 (no prefab named stagenum_cave exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 2,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Control_ride_cha: GameObject gameObject = Resources.Load(\"stagenum_cave\") as GameObject;"
+   ]
+  },
+  "treasure": {
+   "verdict": "NAME-MANGLED (24 name(s) only exist as <name>_<path_id>.png, e.g. treasure1)",
+   "head": true,
+   "wanted": [
+    "Texture2D"
+   ],
+   "sites": 2,
+   "names": [
+    "treasure1",
+    "treasure10",
+    "treasure11",
+    "treasure12",
+    "treasure13",
+    "treasure14",
+    "treasure15",
+    "treasure16",
+    "treasure17",
+    "treasure18",
+    "treasure19",
+    "treasure2"
+   ],
+   "paths": [
+    "Imported/Textures/sharedassets/treasure10_62.png",
+    "Imported/Textures/sharedassets/treasure11_3.png",
+    "Imported/Textures/sharedassets/treasure12_48.png"
+   ],
+   "example": [
+    "Inventory_Gem: getitem_tex = Resources.Load(\"treasure\" + num2) as Texture2D;"
+   ]
+  },
+  "wp_": {
+   "verdict": "PREFAB PENDING #17 (no prefab starts with wp_)",
+   "head": true,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 2,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Weapon: blade = Resources.Load(\"wp_\" + num % 100) as GameObject;"
+   ]
+  },
+  "wp_0": {
+   "verdict": "PREFAB PENDING #17 (no prefab named wp_0 exists yet)",
+   "head": false,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 1,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Weapon: blade = Resources.Load(\"wp_0\") as GameObject;"
+   ]
+  },
+  "wp_general": {
+   "verdict": "PREFAB PENDING #17 (no prefab starts with wp_general)",
+   "head": true,
+   "wanted": [
+    "GameObject"
+   ],
+   "sites": 2,
+   "names": [],
+   "paths": [],
+   "example": [
+    "Cha_Weapon: blade = Resources.Load(\"wp_general\" + _weaponindex) as GameObject;"
+   ]
+  }
+ }
+}
