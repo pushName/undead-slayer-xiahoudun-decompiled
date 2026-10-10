@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- 编辑器脚本的编译探测工程。和 Probe.csproj 分开是有原因的：Probe 只 glob
+       unity/Assets/Scripts/**，0 error 并不代表 Assets/Editor 下那 6 个能编过 ——
+       这个洞真实放过一次假结论。
+       引用与档位设置的理由同 Probe.csproj，不重复注释。 -->
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <OutputType>Library</OutputType>
+    <LangVersion>9.0</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>Undead.EditorProbe</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ErrorLimit>100000</ErrorLimit>
+    <NoWarn>0067;0108;0114;0162;0168;0169;0219;0414;0649;1591;1701;1702;CS0436</NoWarn>
+
+    <UnityDataDir Condition="'$(UnityDataDir)'==''">D:\Program\Unity\Edit\2022.3.62f3c1\Editor\Data</UnityDataDir>
+    <UnityManagedDir Condition="'$(UnityManagedDir)'==''">$(UnityDataDir)\Managed\UnityEngine</UnityManagedDir>
+    <UnityNetStandardRef Condition="'$(UnityNetStandardRef)'==''">$(UnityDataDir)\NetStandard\ref\2.1.0\netstandard.dll</UnityNetStandardRef>
+
+    <ProjectSettingsText Condition="Exists('$(MSBuildThisFileDirectory)..\..\unity\ProjectSettings\ProjectSettings.asset')"
+                         >$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)..\..\unity\ProjectSettings\ProjectSettings.asset'))</ProjectSettingsText>
+  </PropertyGroup>
+
+  <!-- 档位漂移守卫：见 Probe.csproj 里同样的说明，<Error> 只能挂在目标上。 -->
+  <Target Name="CheckApiProfile" BeforeTargets="CoreCompile">
+    <Error Condition="'$(ProjectSettingsText)'!='' And !$([System.String]::Copy('$(ProjectSettingsText)').Contains('apiCompatibilityLevel: 6'))"
+           Text="工程已不再是 apiCompatibilityLevel: 6（.NET Standard 2.1），但本工程仍按 netstandard2.1 探测，结论会失真。" />
+  </Target>
+
+  <ItemGroup>
+    <!-- 逐个列出来，别用 glob 兜底：新增的 Editor 脚本要在这里显式出现，才不会出现
+         "文件没参与编译、结果一片绿"。 -->
+    <Compile Include="..\..\unity\Assets\Editor\AnimationClipBuilder.cs" />
+    <Compile Include="..\..\unity\Assets\Editor\MaterialRebuilder.cs" />
+    <Compile Include="..\..\unity\Assets\Editor\MeshRebuilder.cs" />
+    <Compile Include="..\..\unity\Assets\Editor\ReadySceneBuilder.cs" />
+    <Compile Include="..\..\unity\Assets\Editor\SceneRebuilder.cs" />
+    <Compile Include="..\..\unity\Assets\Editor\ShaderProbe.cs" />
+    <!-- Editor 脚本看得见 Assembly-CSharp 的类型，所以运行期脚本也要进来：
+         ReadySceneBuilder 引用 AndroidScript / UI_Ready，缺这一段就得到两条
+         CS0246，而那是探测工程的缺漏，不是代码的错。 -->
+    <Compile Include="..\..\unity\Assets\Scripts\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="$(UnityNetStandardRef)">
+      <Private>false</Private>
+    </Reference>
+    <!-- UnityEditor.CoreModule.dll 就在这个目录里，所以一条通配就够。 -->
+    <Reference Include="$(UnityManagedDir)\*.dll">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="..\..\unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll">
+      <Private>false</Private>
+    </Reference>
+    <!-- 运行期脚本里有 using UnityEngine.UI;（FPS.cs 等），这条引用和 Probe.csproj 里同源，
+         来自编辑器导入后生成的 ScriptAssemblies。 -->
+    <Reference Include="..\..\unity\Library\ScriptAssemblies\UnityEngine.UI.dll"
+               Condition="Exists('..\..\unity\Library\ScriptAssemblies\UnityEngine.UI.dll')">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
