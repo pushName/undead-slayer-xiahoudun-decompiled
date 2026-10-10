@@ -1,0 +1,101 @@
+{
+ "source_container": "6ad423bf02f94e647a84e3239af92c3a",
+ "root_path_id": 1,
+ "prefab_name": "general_sworddance",
+ "asset_path": "Assets/Resources/general_sworddance.prefab",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "general_sworddance",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.5,
+     0.4,
+     0.5
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Torus Knot07_4686747de019d9a47b1d0412d8f64d10_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/general_sworddance_891734ddea7410a4d82442a4203222b6_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "SwordDance",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvspeed",
+       "kind": "float",
+       "f": 1.0
+      },
+      {
+       "n": "hitrate",
+       "kind": "float",
+       "f": 0.20000000298023224
+      },
+      {
+       "n": "startdelay",
+       "kind": "float",
+       "f": 0.10000000149011612
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "Animation"
+    }
+   ]
+  }
+ ]
+}

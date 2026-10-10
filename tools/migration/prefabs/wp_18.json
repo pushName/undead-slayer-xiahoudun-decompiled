@@ -1,0 +1,63 @@
+{
+ "source_container": "c4c6a9939660ebe48ae47eacfee4c645",
+ "root_path_id": 1,
+ "prefab_name": "wp_18",
+ "asset_path": "Assets/Resources/wp_18.prefab",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {},
+ "field_stats": {},
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "wp_18",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/unique3_49441ad8f0f354f478b4bda6f5f8be2c_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/unique3_71c7ec3690de4e64db83a2ba6b7f081c_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  }
+ ]
+}

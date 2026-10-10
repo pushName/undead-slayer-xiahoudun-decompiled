@@ -1,0 +1,106 @@
+{
+ "source_container": "0e97da20cae403145b3f459b22490fa8",
+ "root_path_id": 1,
+ "prefab_name": "general_flowerfan",
+ "asset_path": "Assets/Resources/general_flowerfan.prefab",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "general_flowerfan",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Particle_Emit",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "emitfinish_time",
+       "kind": "float",
+       "f": 2.0
+      },
+      {
+       "n": "destroy_time",
+       "kind": "float",
+       "f": 3.0
+      },
+      {
+       "n": "show_time",
+       "kind": "float",
+       "f": 0.10000000149011612
+      },
+      {
+       "n": "movespeed",
+       "kind": "float",
+       "f": 1.0
+      },
+      {
+       "n": "ismoveup",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

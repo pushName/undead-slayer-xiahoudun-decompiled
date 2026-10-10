@@ -1,0 +1,112 @@
+{
+ "source_container": "c7d548cb10b004b458a8d42041007080",
+ "root_path_id": 1,
+ "prefab_name": "general_elec_shock",
+ "asset_path": "Assets/Resources/general_elec_shock.prefab",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "general_elec_shock",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     2.0,
+     1.2,
+     3.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/ef_elecshock_3e4e7a150221ac94ba7c0388200f023f_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_elec_shock_ad22b9685ac21db4d8f6dfeb9ce0f1ed_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_rapidstab",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "showtime",
+       "kind": "float",
+       "f": 0.5
+      },
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 2
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 30
+      },
+      {
+       "n": "damagerate",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "loopcount",
+       "kind": "int",
+       "i": 1
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  }
+ ]
+}

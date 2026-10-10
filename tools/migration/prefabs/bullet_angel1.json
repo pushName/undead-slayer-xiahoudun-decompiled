@@ -1,0 +1,87 @@
+{
+ "source_container": "fb2d456f8f7c2e140a7c7c15b9e6ea41",
+ "root_path_id": 1,
+ "prefab_name": "bullet_angel1",
+ "asset_path": "Assets/Resources/bullet_angel1.prefab",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "bullet_angel1",
+   "layer": 25,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     5.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.4,
+     0.4,
+     0.5
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/plane_crossbullet_sharedassets18_assets_362.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_spear_sharedassets2_assets_18.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Bullet_Angel1",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bullet_speed",
+       "kind": "float",
+       "f": 2.0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

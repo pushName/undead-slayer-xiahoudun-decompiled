@@ -1,0 +1,955 @@
+{
+ "source_container": "549d20245296b0645ad2a0c875b87a83",
+ "root_path_id": 1,
+ "prefab_name": "Stage_dun2",
+ "asset_path": "Assets/Resources/Stage_dun2.prefab",
+ "node_count": 23,
+ "root_ids": [
+  24
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2
+ },
+ "field_stats": {
+  "ref set": 4,
+  "instances decoded": 3
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 24,
+   "go_id": 1,
+   "name": "Stage_dun2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    35,
+    26,
+    25,
+    36,
+    46
+   ],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "Map_extreme",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "trap",
+       "kind": "node",
+       "node": 46,
+       "t": "Transform"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "go_id": 2,
+   "name": "map_s1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 24,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/a_map01_384b9f0cc5af90d4490ed87b9a7bfeb1_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/map_s03_79c8825d964cd4043866988b7feedd01_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "go_id": 3,
+   "name": "light_dun1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.7
+    ],
+    "rot": [
+     0.0,
+     0.866025,
+     0.0,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 24,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Light"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "go_id": 4,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.498083,
+     0.0,
+     0.543441
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 28,
+   "go_id": 5,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.755881,
+     0.0,
+     0.006582
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 29,
+   "go_id": 6,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.529552,
+     0.0,
+     -0.469486
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 30,
+   "go_id": 7,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.002596,
+     0.0,
+     -0.698988
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 31,
+   "go_id": 8,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.544921,
+     0.0,
+     -0.553005
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 32,
+   "go_id": 9,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.724491,
+     0.0,
+     0.010601
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 33,
+   "go_id": 10,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.512876,
+     0.0,
+     0.511897
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 34,
+   "go_id": 11,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.005632,
+     0.0,
+     0.772155
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 35,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 35,
+   "go_id": 12,
+   "name": "aaapoint",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 24,
+   "children": [
+    34,
+    33,
+    32,
+    31,
+    30,
+    29,
+    28,
+    27
+   ],
+   "components": []
+  },
+  {
+   "id": 36,
+   "go_id": 13,
+   "name": "map_s2_obj",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.01,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 24,
+   "children": [
+    43,
+    41,
+    42
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Flower_cannon",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "cannonball",
+       "kind": "node",
+       "node": 43,
+       "t": "Transform"
+      },
+      {
+       "n": "trap",
+       "kind": "node",
+       "node": 46,
+       "t": "Transform"
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ],
+   "animations": [
+    {
+     "name": "flower",
+     "clip_id": "ef2c3b1c3cbb7e44f94da3c7b81de6d0@1",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/ef2c3b1c3cbb7e44f94da3c7b81de6d0_1.json",
+     "asset": "Assets/Imported/Animations/flower__ef2c3b1c3cbb7e44f94da3c7b81de6d0_1/flower.anim"
+    },
+    {
+     "name": "flower_idle",
+     "clip_id": "634ee1efec6d0fd43a8a9179a771e03a@2",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/634ee1efec6d0fd43a8a9179a771e03a_2.json",
+     "asset": "Assets/Imported/Animations/flower_idle__634ee1efec6d0fd43a8a9179a771e03a_2/flower_idle.anim"
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "go_id": 14,
+   "name": "Bone013",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.117839,
+     0.020101,
+     -0.017905
+    ],
+    "rot": [
+     0.363798,
+     -0.317019,
+     -0.129604,
+     0.866229
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 41,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 38,
+   "go_id": 15,
+   "name": "Bone014",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.117856,
+     0.022029,
+     0.023212
+    ],
+    "rot": [
+     0.868937,
+     -0.127177,
+     -0.318048,
+     0.35724
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 41,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 39,
+   "go_id": 16,
+   "name": "Bone012",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.117513,
+     -0.01716,
+     -0.018548
+    ],
+    "rot": [
+     -0.354449,
+     -0.321156,
+     0.134761,
+     0.867793
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 41,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 40,
+   "go_id": 17,
+   "name": "Bone011",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.117424,
+     -0.027407,
+     0.022557
+    ],
+    "rot": [
+     0.865064,
+     0.137164,
+     -0.320184,
+     -0.361015
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 41,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 41,
+   "go_id": 18,
+   "name": "Bone015",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     2e-06,
+     -2e-06,
+     -0.710188,
+     0.704012
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 36,
+   "children": [
+    40,
+    39,
+    37,
+    38
+   ],
+   "components": []
+  },
+  {
+   "id": 42,
+   "go_id": 19,
+   "name": "flower",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3e-06,
+     0.094538,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     3.92355,
+     3.92355,
+     3.92355
+    ]
+   },
+   "parent": 36,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/plant_cannon_f9ea2f3d9dc00a6429e4b7466566326c_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      40,
+      41,
+      39,
+      38,
+      37
+     ],
+     "root_bone": 41,
+     "mesh": "Assets/Imported/Meshes/flower_634ee1efec6d0fd43a8a9179a771e03a_1.asset"
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "go_id": 20,
+   "name": "cannonball",
+   "layer": 23,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.000313,
+     0.116447,
+     0.00342
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.8,
+     0.8,
+     0.8
+    ]
+   },
+   "parent": 36,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/ball_sharedassets18_assets_396.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bombsphere2_sharedassets18_assets_16.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Animation"
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "go_id": 21,
+   "name": "pt_explode_fog",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.02,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 46,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "go_id": 22,
+   "name": "pt_explode_fire",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.03,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 46,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "go_id": 23,
+   "name": "trap",
+   "layer": 13,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 24,
+   "children": [
+    45,
+    44
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Trap_Extreme",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "firerate",
+       "kind": "float",
+       "f": 5.0
+      },
+      {
+       "n": "duration",
+       "kind": "float",
+       "f": 0.5
+      },
+      {
+       "n": "startdelay",
+       "kind": "float",
+       "f": 0.009999999776482582
+      },
+      {
+       "n": "rndRotation",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "startPosY",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "startScale",
+       "kind": "vec",
+       "v": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "t": "Vector3"
+      },
+      {
+       "n": "growScaleSpeed",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "movedir",
+       "kind": "vec",
+       "v": [
+        0.0,
+        -1.0,
+        0.0
+       ],
+       "t": "Vector3"
+      },
+      {
+       "n": "accuracy",
+       "kind": "float",
+       "f": 0.30000001192092896
+      },
+      {
+       "n": "playAutomatically",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "liveObj",
+       "kind": "node",
+       "node": 36,
+       "t": "Transform"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

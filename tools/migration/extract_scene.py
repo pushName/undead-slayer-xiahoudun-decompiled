@@ -349,7 +349,13 @@ class FileCtx:
         self.script_guid = b["script_to_guid"]
         self.script_cs = b["script_to_cs"]
         self.monoscripts = b["monoscripts"]
-        self.externals = b["level_externals"].get(source, [])
+        # level_externals was precomputed for the 23 level files only. A prefab lives in an AssetBundle,
+        # whose MonoScript and textures sit in files IT references, so the file's own externals table has
+        # to be read -- otherwise every such script resolves to None and the component silently vanishes
+        # (export_prefabs.py caught exactly that on bullet_angel3, where the measurement pass had seen
+        # the MonoBehaviour and the exporter had dropped it).
+        le = b["level_externals"]
+        self.externals = le[source] if source in le else u4.externals_of(env)
         idx = indexes()
         self.mesh_index = idx["mesh"]
         self.mat_index = idx["material"]

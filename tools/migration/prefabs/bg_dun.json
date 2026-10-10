@@ -1,0 +1,152 @@
+{
+ "source_container": "f5fab55166dd06f4095e4ce89f0c1e13",
+ "root_path_id": 1,
+ "prefab_name": "bg_dun",
+ "asset_path": "Assets/Resources/bg_dun.prefab",
+ "node_count": 3,
+ "root_ids": [
+  4
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 4,
+   "go_id": 1,
+   "name": "bg_dun",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.15,
+     -1.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     14.0,
+     14.0,
+     14.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    6,
+    5
+   ],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "DontDestroyObj",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "go_id": 2,
+   "name": "bg_dun_ent",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 4,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/bg_dun_ent_86e49479c9c58254ba797358717b9038_2.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bg_extreme_ent_b9f45396c0bf43040af4f29e5a873312_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "go_id": 3,
+   "name": "bg_dun_core",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 4,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/bg_dun_86e49479c9c58254ba797358717b9038_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bg_extreme_33854c9c17782514ba9edd5ea9cee7f2_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  }
+ ]
+}

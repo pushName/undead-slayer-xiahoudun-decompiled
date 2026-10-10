@@ -1,0 +1,276 @@
+{
+ "source_container": "20edb30c56e6bd54393bc67317572133",
+ "root_path_id": 5,
+ "prefab_name": "giftbox",
+ "asset_path": "Assets/Resources/giftbox.prefab",
+ "node_count": 5,
+ "root_ids": [
+  10
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {
+  "ref set": 1,
+  "cross-file -> asset": 2,
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 6,
+   "go_id": 1,
+   "name": "ef_risingitem",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.000522,
+     0.04,
+     -0.001252
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 10,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "go_id": 2,
+   "name": "Bone02",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.034237,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     1e-06,
+     1e-06,
+     -0.698992,
+     0.715129
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 8,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 8,
+   "go_id": 3,
+   "name": "Bone01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.000923,
+     0.03994
+    ],
+    "rot": [
+     0.504909,
+     -0.495042,
+     0.504909,
+     -0.495042
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 10,
+   "children": [
+    7
+   ],
+   "components": []
+  },
+  {
+   "id": 9,
+   "go_id": 4,
+   "name": "giftbox2",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.680358,
+     1.680358,
+     1.680358
+    ]
+   },
+   "parent": 10,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/giftbox_extreme_adfaf5b63a46d52489acd86077a19fad_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      7,
+      8
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/giftbox_sharedassets20_assets_16.asset"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "go_id": 5,
+   "name": "giftbox",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    8,
+    6,
+    9
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "GiftBox_extreme",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "ef_risingitem",
+       "kind": "node",
+       "node": 6,
+       "t": "Transform"
+      },
+      {
+       "n": "snd_drop",
+       "kind": "asset",
+       "asset": "Assets/Resources/boxdrop.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_open",
+       "kind": "asset",
+       "asset": "Assets/Resources/boxopen.mp3",
+       "t": "AudioClip"
+      }
+     ]
+    }
+   ],
+   "animations": [
+    {
+     "name": "drop",
+     "clip_id": "sharedassets20.assets@17",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_17.json",
+     "asset": "Assets/Imported/Animations/drop__sharedassets20_17/drop.anim"
+    },
+    {
+     "name": "drop_i",
+     "clip_id": "sharedassets20.assets@20",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_20.json",
+     "asset": "Assets/Imported/Animations/drop_i__sharedassets20_20/drop_i.anim"
+    },
+    {
+     "name": "invisible",
+     "clip_id": "sharedassets20.assets@19",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_19.json",
+     "asset": "Assets/Imported/Animations/invisible__sharedassets20_19/invisible.anim"
+    },
+    {
+     "name": "open_box",
+     "clip_id": "sharedassets20.assets@18",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets20_18.json",
+     "asset": "Assets/Imported/Animations/open_box__sharedassets20_18/open_box.anim"
+    }
+   ]
+  }
+ ]
+}

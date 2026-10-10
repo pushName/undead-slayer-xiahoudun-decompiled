@@ -1,0 +1,366 @@
+{
+ "source_container": "d9d3aafb93418624b9b84c9549a94718",
+ "root_path_id": 6,
+ "prefab_name": "general_fincanon",
+ "asset_path": "Assets/Resources/general_fincanon.prefab",
+ "node_count": 8,
+ "root_ids": [
+  14
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2
+ },
+ "field_stats": {
+  "ref set": 2,
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 12,
+   "go_id": 1,
+   "name": "Bone02",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.05,
+     0.071077,
+     -0.068152
+    ],
+    "rot": [
+     -0.01248,
+     0.706997,
+     -0.01248,
+     0.706997
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 14,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 13,
+   "go_id": 2,
+   "name": "Bone01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.05,
+     0.070519,
+     -0.046933
+    ],
+    "rot": [
+     -0.005091,
+     0.707089,
+     -0.005091,
+     0.707088
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 14,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 9,
+   "go_id": 3,
+   "name": "fin",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.05,
+     0.070453,
+     -0.029181
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 14,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/fin_53df4281a80c7c34a979ee9a1cd886af_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      13,
+      12,
+      11,
+      10
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/fin_18fa2996ed4d1a94ab10713ee0937801_1.asset"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "go_id": 4,
+   "name": "Bone04",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.05,
+     0.071077,
+     -0.068152
+    ],
+    "rot": [
+     -0.01248,
+     0.706997,
+     -0.01248,
+     0.706997
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 14,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 11,
+   "go_id": 5,
+   "name": "Bone03",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.05,
+     0.070519,
+     -0.046933
+    ],
+    "rot": [
+     -0.005091,
+     0.707089,
+     -0.005091,
+     0.707088
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 14,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 14,
+   "go_id": 6,
+   "name": "general_fincanon",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    13,
+    12,
+    11,
+    10,
+    9,
+    15,
+    16
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Sk_machinegun",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "beam1",
+       "kind": "node",
+       "node": 15,
+       "t": "Transform"
+      },
+      {
+       "n": "beam2",
+       "kind": "node",
+       "node": 16,
+       "t": "Transform"
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "CapsuleCollider"
+    }
+   ],
+   "animations": [
+    {
+     "name": "creat",
+     "clip_id": "18fa2996ed4d1a94ab10713ee0937801@2",
+     "picked_by": "path-containment",
+     "source_descriptor": "tools/migration/anim_clips/18fa2996ed4d1a94ab10713ee0937801_2.json",
+     "asset": "Assets/Imported/Animations/creat__18fa2996ed4d1a94ab10713ee0937801_2/creat.anim"
+    },
+    {
+     "name": "destroy",
+     "clip_id": "18fa2996ed4d1a94ab10713ee0937801@3",
+     "picked_by": "path-containment",
+     "source_descriptor": "tools/migration/anim_clips/18fa2996ed4d1a94ab10713ee0937801_3.json",
+     "asset": "Assets/Imported/Animations/destroy__18fa2996ed4d1a94ab10713ee0937801_3/destroy.anim"
+    },
+    {
+     "name": "shoot",
+     "clip_id": "18fa2996ed4d1a94ab10713ee0937801@4",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/18fa2996ed4d1a94ab10713ee0937801_4.json",
+     "asset": "Assets/Imported/Animations/shoot__18fa2996ed4d1a94ab10713ee0937801_4/shoot.anim"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "go_id": 7,
+   "name": "aaa_fly1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.050768,
+     0.071429,
+     0.115626
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 14,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "go_id": 8,
+   "name": "aaa_fly2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.049709,
+     0.071429,
+     0.115626
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 14,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  }
+ ]
+}

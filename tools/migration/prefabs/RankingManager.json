@@ -1,0 +1,506 @@
+{
+ "source_container": "8030cfee3fae59d41b14d0b6cf1b35f1",
+ "root_path_id": 1,
+ "prefab_name": "RankingManager",
+ "asset_path": "Assets/Resources/RankingManager.prefab",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "null in source (element)": 50,
+  "array fully dropped": 1,
+  "array set": 2,
+  "string set (element)": 50,
+  "string set": 1,
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "RankingManager",
+   "layer": 0,
+   "tag": "ranking",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "RankingManager",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "userpoint",
+       "kind": "arr",
+       "t": "int",
+       "items": [
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        }
+       ]
+      },
+      {
+       "n": "username",
+       "kind": "arr",
+       "t": "string",
+       "items": [
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        },
+        {
+         "kind": "str",
+         "s": ""
+        }
+       ]
+      },
+      {
+       "n": "mypoint",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "mygrade",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "resettime",
+       "kind": "str",
+       "s": ""
+      },
+      {
+       "n": "maxfriend",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "loadfinish",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "imagefinish",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "source_container": "cb35c97ebae99fd42a5ff1730d8266c6",
+ "root_path_id": 1,
+ "prefab_name": "general_sister",
+ "asset_path": "Assets/Resources/general_sister.prefab",
+ "node_count": 1,
+ "root_ids": [
+  2
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "cross-file ref dropped": 1,
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sword",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 2,
+   "node": "general_sister",
+   "script": "SpiritSword3"
+  }
+ ],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 2,
+   "go_id": 1,
+   "name": "general_sister",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "SpiritSword3",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

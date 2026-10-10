@@ -1,0 +1,207 @@
+{
+ "source_container": "a035586254f722a4bb118a94790a7bbf",
+ "root_path_id": 1,
+ "prefab_name": "bullet_angel8",
+ "asset_path": "Assets/Resources/bullet_angel8.prefab",
+ "node_count": 4,
+ "root_ids": [
+  5
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2
+ },
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 5,
+   "go_id": 1,
+   "name": "bullet_angel8",
+   "layer": 25,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     5.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.4,
+     12.0,
+     0.4
+    ]
+   },
+   "parent": 0,
+   "children": [
+    8
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "LineRenderer"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Bullet_Angel3",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "go_id": 2,
+   "name": "angel_splash8",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     2.5,
+     1.0,
+     2.5
+    ]
+   },
+   "parent": 8,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "go_id": 3,
+   "name": "firebase",
+   "layer": 18,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.416667,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     0.75,
+     0.0,
+     0.75
+    ]
+   },
+   "parent": 5,
+   "children": [
+    6,
+    7
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets2_assets_111.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/firebase_sharedassets14_assets_2.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "go_id": 4,
+   "name": "pt_fireP",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 8,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  }
+ ]
+}

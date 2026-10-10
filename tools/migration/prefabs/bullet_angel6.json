@@ -1,0 +1,135 @@
+{
+ "source_container": "db87f376cf2764f4db5b17236bcc4596",
+ "root_path_id": 2,
+ "prefab_name": "bullet_angel6",
+ "asset_path": "Assets/Resources/bullet_angel6.prefab",
+ "node_count": 2,
+ "root_ids": [
+  4
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 3,
+   "go_id": 1,
+   "name": "pt_bullet",
+   "layer": 25,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "parent": 4,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "ParticleSystem"
+    },
+    {
+     "kind": "component",
+     "type": "ParticleSystemRenderer"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "go_id": 2,
+   "name": "bullet_angel6",
+   "layer": 25,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     5.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.3,
+     0.0,
+     0.8
+    ]
+   },
+   "parent": 0,
+   "children": [
+    3
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets2_assets_111.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/arrow_fire_sharedassets18_assets_4.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Bullet_Angel1",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "bullet_speed",
+       "kind": "float",
+       "f": 1.2000000476837158
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "ParticleSystem"
+    },
+    {
+     "kind": "component",
+     "type": "ParticleSystemRenderer"
+    }
+   ]
+  }
+ ]
+}

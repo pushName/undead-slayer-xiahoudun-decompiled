@@ -1,0 +1,237 @@
+{
+ "source_container": "3f45fd25feae6e04f82edbee1f83daa6",
+ "root_path_id": 1,
+ "prefab_name": "general_axedance",
+ "asset_path": "Assets/Resources/general_axedance.prefab",
+ "node_count": 4,
+ "root_ids": [
+  5
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "instances decoded": 2
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 5,
+   "go_id": 1,
+   "name": "general_axedance",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.7,
+     0.5,
+     0.7
+    ]
+   },
+   "parent": 0,
+   "children": [
+    8
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/axe_dance_caa66c0d752a4a648889b0245c2ed573_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/general_axedance_e3207a505bbc339488df665082fccdb5_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "SwordDance",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvspeed",
+       "kind": "float",
+       "f": 0.5
+      },
+      {
+       "n": "hitrate",
+       "kind": "float",
+       "f": 0.4000000059604645
+      },
+      {
+       "n": "startdelay",
+       "kind": "float",
+       "f": 0.10000000149011612
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Wind_axe",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "go_id": 2,
+   "name": "Cylinder01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.064476,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 8,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Cylinder01_sharedassets18_assets_369.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_tornado_fire_96edcdc7ec1d9be469304e5b3a90bba4_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "go_id": 3,
+   "name": "Plane01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.035784,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 8,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets18_assets_391.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_tornado_fire_96edcdc7ec1d9be469304e5b3a90bba4_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "go_id": 4,
+   "name": "general_tornado",
+   "layer": 13,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.5,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     6.0,
+     6.0,
+     6.0
+    ]
+   },
+   "parent": 5,
+   "children": [
+    7,
+    6
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    }
+   ]
+  }
+ ]
+}

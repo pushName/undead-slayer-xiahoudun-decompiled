@@ -1,0 +1,724 @@
+{
+ "source_container": "69f958559f37c4d4bbfbace1100f80d9",
+ "root_path_id": 1,
+ "prefab_name": "Stage_dun3",
+ "asset_path": "Assets/Resources/Stage_dun3.prefab",
+ "node_count": 17,
+ "root_ids": [
+  18
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2
+ },
+ "field_stats": {
+  "ref set": 1,
+  "instances decoded": 2,
+  "null in source": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 18,
+   "go_id": 1,
+   "name": "Stage_dun3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    29,
+    20,
+    19,
+    31,
+    34,
+    30
+   ],
+   "components": [
+    {
+     "kind": "MonoBehaviour",
+     "script": "Map_extreme",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "trap",
+       "kind": "node",
+       "node": 34,
+       "t": "Transform"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "go_id": 2,
+   "name": "map_s1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 18,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/a_map01_384b9f0cc5af90d4490ed87b9a7bfeb1_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/map_s02_0a3723c6887780b42aa9f50dda613d57_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "go_id": 3,
+   "name": "light_dun1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.7
+    ],
+    "rot": [
+     0.0,
+     0.866025,
+     0.0,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 18,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Light"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "go_id": 4,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.517784,
+     0.0,
+     0.463221
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 22,
+   "go_id": 5,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.753139,
+     0.0,
+     -0.007447
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 23,
+   "go_id": 6,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.50947,
+     0.0,
+     -0.548292
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 24,
+   "go_id": 7,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.005194,
+     0.0,
+     -0.748241
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 25,
+   "go_id": 8,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.515368,
+     0.0,
+     -0.537462
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 26,
+   "go_id": 9,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.773699,
+     0.0,
+     -0.00703
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 27,
+   "go_id": 10,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.565837,
+     0.0,
+     0.48727
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 28,
+   "go_id": 11,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.000707,
+     0.0,
+     0.717402
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 29,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 29,
+   "go_id": 12,
+   "name": "aaapoint",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 18,
+   "children": [
+    28,
+    27,
+    26,
+    25,
+    24,
+    23,
+    22,
+    21
+   ],
+   "components": []
+  },
+  {
+   "id": 30,
+   "go_id": 13,
+   "name": "zcol",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.01,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 18,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "go_id": 14,
+   "name": "pt_map",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.01,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 18,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "go_id": 15,
+   "name": "pt_fireP",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.025,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.625,
+     1.25,
+     0.625
+    ]
+   },
+   "parent": 34,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "go_id": 16,
+   "name": "firebase",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.02,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "parent": 34,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets2_assets_111.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/pt_dark_sharedassets18_assets_107.mat",
+      "Assets/Imported/Materials/firebase_sharedassets14_assets_2.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "go_id": 17,
+   "name": "trap",
+   "layer": 13,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.6,
+     0.8,
+     1.6
+    ]
+   },
+   "parent": 18,
+   "children": [
+    33,
+    32
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/PlaneY_topalpha_sharedassets18_assets_355.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ray_red_8b34a773a998c2f488155decc90f3c9d_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Trap_Extreme",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "firerate",
+       "kind": "float",
+       "f": 6.0
+      },
+      {
+       "n": "duration",
+       "kind": "float",
+       "f": 1.0
+      },
+      {
+       "n": "startdelay",
+       "kind": "float",
+       "f": 1.0
+      },
+      {
+       "n": "rndRotation",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "startPosY",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "startScale",
+       "kind": "vec",
+       "v": [
+        1.600000023841858,
+        0.0,
+        1.600000023841858
+       ],
+       "t": "Vector3"
+      },
+      {
+       "n": "growScaleSpeed",
+       "kind": "float",
+       "f": 2.0
+      },
+      {
+       "n": "movedir",
+       "kind": "vec",
+       "v": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "t": "Vector3"
+      },
+      {
+       "n": "accuracy",
+       "kind": "float",
+       "f": 0.10000000149011612
+      },
+      {
+       "n": "playAutomatically",
+       "kind": "bool",
+       "b": 1
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "Animation"
+    }
+   ]
+  }
+ ]
+}

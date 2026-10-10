@@ -1,0 +1,1298 @@
+{
+ "animation_bindings_missing_on_disk": [
+  "Stage_dun2 -> Assets/Imported/Animations/flower__ef2c3b1c3cbb7e44f94da3c7b81de6d0_1/flower.anim",
+  "Stage_dun2 -> Assets/Imported/Animations/flower_idle__634ee1efec6d0fd43a8a9179a771e03a_2/flower_idle.anim",
+  "Stage_dun6 -> Assets/Imported/Animations/snake_move__fa4bd3b89fe1d5d408414fd3ffd1aa48_2/snake_move.anim",
+  "general_fincanon -> Assets/Imported/Animations/creat__18fa2996ed4d1a94ab10713ee0937801_2/creat.anim",
+  "general_fincanon -> Assets/Imported/Animations/destroy__18fa2996ed4d1a94ab10713ee0937801_3/destroy.anim",
+  "general_fincanon -> Assets/Imported/Animations/shoot__18fa2996ed4d1a94ab10713ee0937801_4/shoot.anim"
+ ],
+ "cut_stats": {},
+ "pending": {
+  "angel_splash5": [
+   "cf478de1ef56c3444ac102712d1445a3!2",
+   "cf478de1ef56c3444ac102712d1445a3!3",
+   "cf478de1ef56c3444ac102712d1445a3!4",
+   "cf478de1ef56c3444ac102712d1445a3!5"
+  ],
+  "angel_splash8": [
+   "a035586254f722a4bb118a94790a7bbf!2",
+   "c0db4720c07eeb24a81dccc6ddeb4841!1"
+  ],
+  "wp_1": [
+   "sharedassets18.assets!812",
+   "d32e199144d53cf4387accde13443c7a!1"
+  ]
+ },
+ "prefabs": {
+  "CashShop": {
+   "assets": "Assets/Resources/CashShop.prefab",
+   "components": {
+    "Animation": 1,
+    "Camera": 1,
+    "FlareLayer": 1,
+    "MeshFilter": 2,
+    "MeshRenderer": 2,
+    "MonoBehaviour": 8,
+    "SkinnedMeshRenderer": 17,
+    "Transform": 53
+   },
+   "container": "8f47a76750ffb8b4183f6e75ca0c88f4",
+   "objects": 53,
+   "path_id": 1
+  },
+  "RankingManager": {
+   "assets": "Assets/Resources/RankingManager.prefab",
+   "components": {
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "8030cfee3fae59d41b14d0b6cf1b35f1",
+   "objects": 1,
+   "path_id": 1
+  },
+  "Stage_dun1": {
+   "assets": "Assets/Resources/Stage_dun1.prefab",
+   "components": {
+    "Light": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 12
+   },
+   "container": "675fdea51516a8c4ebe1091726c6268a",
+   "objects": 12,
+   "path_id": 1
+  },
+  "Stage_dun2": {
+   "assets": "Assets/Resources/Stage_dun2.prefab",
+   "components": {
+    "Animation": 2,
+    "EllipsoidParticleEmitter": 2,
+    "Light": 1,
+    "MeshFilter": 2,
+    "MeshRenderer": 2,
+    "MonoBehaviour": 3,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 1,
+    "SkinnedMeshRenderer": 1,
+    "SphereCollider": 2,
+    "Transform": 23
+   },
+   "container": "549d20245296b0645ad2a0c875b87a83",
+   "objects": 23,
+   "path_id": 1
+  },
+  "Stage_dun3": {
+   "assets": "Assets/Resources/Stage_dun3.prefab",
+   "components": {
+    "Animation": 1,
+    "EllipsoidParticleEmitter": 2,
+    "Light": 1,
+    "MeshFilter": 3,
+    "MeshRenderer": 3,
+    "MonoBehaviour": 2,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 2,
+    "Transform": 17
+   },
+   "container": "69f958559f37c4d4bbfbace1100f80d9",
+   "objects": 17,
+   "path_id": 1
+  },
+  "Stage_dun4": {
+   "assets": "Assets/Resources/Stage_dun4.prefab",
+   "components": {
+    "CapsuleCollider": 2,
+    "Light": 1,
+    "MeshFilter": 2,
+    "MeshRenderer": 2,
+    "MonoBehaviour": 1,
+    "Transform": 16
+   },
+   "container": "bb3fd2145307bd241b0f466f8124459b",
+   "objects": 16,
+   "path_id": 1
+  },
+  "Stage_dun5": {
+   "assets": "Assets/Resources/Stage_dun5.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "Light": 1,
+    "MeshFilter": 2,
+    "MeshRenderer": 2,
+    "MonoBehaviour": 2,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 14
+   },
+   "container": "cf2ec982d6d52a34188ee45e8f8c81f4",
+   "objects": 14,
+   "path_id": 1
+  },
+  "Stage_dun6": {
+   "assets": "Assets/Resources/Stage_dun6.prefab",
+   "components": {
+    "Animation": 1,
+    "EllipsoidParticleEmitter": 2,
+    "Light": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 5,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 2,
+    "SkinnedMeshRenderer": 1,
+    "SphereCollider": 9,
+    "Transform": 35
+   },
+   "container": "da26799310d7d124093d96b60bcf4293",
+   "objects": 35,
+   "path_id": 1
+  },
+  "Stage_dun7": {
+   "assets": "Assets/Resources/Stage_dun7.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "Light": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Transform": 14
+   },
+   "container": "e20a04d6f18f1dc46a1531f21b46e5e2",
+   "objects": 14,
+   "path_id": 1
+  },
+  "Stage_dun8": {
+   "assets": "Assets/Resources/Stage_dun8.prefab",
+   "components": {
+    "Animation": 1,
+    "Light": 1,
+    "MonoBehaviour": 2,
+    "SkinnedMeshRenderer": 1,
+    "Transform": 17
+   },
+   "container": "8d4623989c62fa149b7f2c676fede947",
+   "objects": 17,
+   "path_id": 11
+  },
+  "angel_splash2": {
+   "assets": "Assets/Resources/angel_splash2.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "49fbebace6a8f424ab4fedab6fb4932e",
+   "objects": 1,
+   "path_id": 1
+  },
+  "angel_splash3": {
+   "assets": "Assets/Resources/angel_splash3.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "4c56c8fe077e8fc4a843dd4035ef3aff",
+   "objects": 1,
+   "path_id": 1
+  },
+  "angel_splash4": {
+   "assets": "Assets/Resources/angel_splash4.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 3,
+    "MeshRenderer": 3,
+    "MonoBehaviour": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 4
+   },
+   "container": "e59ee56f55934174fba3198ad7e25d11",
+   "objects": 4,
+   "path_id": 1
+  },
+  "angel_splash6": {
+   "assets": "Assets/Resources/angel_splash6.prefab",
+   "components": {
+    "Animation": 1,
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "42889d56caebda34196798dd4285a84c",
+   "objects": 2,
+   "path_id": 1
+  },
+  "bg_dun": {
+   "assets": "Assets/Resources/bg_dun.prefab",
+   "components": {
+    "MeshFilter": 2,
+    "MeshRenderer": 2,
+    "MonoBehaviour": 1,
+    "Transform": 3
+   },
+   "container": "f5fab55166dd06f4095e4ce89f0c1e13",
+   "objects": 3,
+   "path_id": 1
+  },
+  "bg_dun_below": {
+   "assets": "Assets/Resources/bg_dun_below.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "46d751c43ac73544892be9f1f565fed5",
+   "objects": 1,
+   "path_id": 1
+  },
+  "bg_dun_cover": {
+   "assets": "Assets/Resources/bg_dun_cover.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "bfa136bb8278f414ab23f8632f5189bd",
+   "objects": 1,
+   "path_id": 1
+  },
+  "bg_worldmap": {
+   "assets": "Assets/Resources/bg_worldmap.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "8eac51c56ba0f8742bff177745eaa697",
+   "objects": 1,
+   "path_id": 1
+  },
+  "bullet_angel1": {
+   "assets": "Assets/Resources/bullet_angel1.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "fb2d456f8f7c2e140a7c7c15b9e6ea41",
+   "objects": 1,
+   "path_id": 1
+  },
+  "bullet_angel2": {
+   "assets": "Assets/Resources/bullet_angel2.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 2,
+    "ParticleSystem": 1,
+    "ParticleSystemRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "ce89fa11f960261429793e861f3e41aa",
+   "objects": 2,
+   "path_id": 2
+  },
+  "bullet_angel3": {
+   "assets": "Assets/Resources/bullet_angel3.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "010621e4ceb268d47a0fc7a75a04ea68",
+   "objects": 1,
+   "path_id": 1
+  },
+  "bullet_angel4": {
+   "assets": "Assets/Resources/bullet_angel4.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "21e8e4a652ed46c408e76377c4443478",
+   "objects": 1,
+   "path_id": 1
+  },
+  "bullet_angel5": {
+   "assets": "Assets/Resources/bullet_angel5.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleSystem": 1,
+    "ParticleSystemRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "f2b7e1fc445459d4e80589e5166ea98a",
+   "objects": 2,
+   "path_id": 2
+  },
+  "bullet_angel6": {
+   "assets": "Assets/Resources/bullet_angel6.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleSystem": 2,
+    "ParticleSystemRenderer": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "db87f376cf2764f4db5b17236bcc4596",
+   "objects": 2,
+   "path_id": 2
+  },
+  "bullet_angel7": {
+   "assets": "Assets/Resources/bullet_angel7.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 6,
+    "MeshRenderer": 6,
+    "MonoBehaviour": 7,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 6,
+    "SphereCollider": 6,
+    "Transform": 8
+   },
+   "container": "09a84b752a276b1449a5ba1b6f6cd83a",
+   "objects": 8,
+   "path_id": 5
+  },
+  "bullet_angel8": {
+   "assets": "Assets/Resources/bullet_angel8.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 2,
+    "LineRenderer": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 4
+   },
+   "container": "a035586254f722a4bb118a94790a7bbf",
+   "objects": 4,
+   "path_id": 1
+  },
+  "dun_gate": {
+   "assets": "Assets/Resources/dun_gate.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "SphereCollider": 1,
+    "Transform": 3
+   },
+   "container": "37fc6f1e13139224782ff3fd665316ab",
+   "objects": 3,
+   "path_id": 1
+  },
+  "general_arrow_poison": {
+   "assets": "Assets/Resources/general_arrow_poison.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "d8f28820cebf58440981221d23ca2cf2",
+   "objects": 2,
+   "path_id": 1
+  },
+  "general_arrowrain": {
+   "assets": "Assets/Resources/general_arrowrain.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Transform": 1
+   },
+   "container": "cf08e3d0aa897104cbdd6e7cd696f2bf",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_arrowrain_base": {
+   "assets": "Assets/Resources/general_arrowrain_base.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "7b65e7741efec904b9b0b45aff7e31bc",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_axedance": {
+   "assets": "Assets/Resources/general_axedance.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 3,
+    "MeshRenderer": 3,
+    "MonoBehaviour": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 4
+   },
+   "container": "3f45fd25feae6e04f82edbee1f83daa6",
+   "objects": 4,
+   "path_id": 1
+  },
+  "general_chain": {
+   "assets": "Assets/Resources/general_chain.prefab",
+   "components": {
+    "AudioSource": 1,
+    "EllipsoidParticleEmitter": 2,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 2,
+    "SphereCollider": 2,
+    "Transform": 2
+   },
+   "container": "854c688faeccb0a4195abc37a3e8147c",
+   "objects": 2,
+   "path_id": 1
+  },
+  "general_edge_wheel": {
+   "assets": "Assets/Resources/general_edge_wheel.prefab",
+   "components": {
+    "Animation": 1,
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "c2af7200ab8d633408fcf38b904a01f7",
+   "objects": 2,
+   "path_id": 1
+  },
+  "general_elec_shock": {
+   "assets": "Assets/Resources/general_elec_shock.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "c7d548cb10b004b458a8d42041007080",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_fincanon": {
+   "assets": "Assets/Resources/general_fincanon.prefab",
+   "components": {
+    "Animation": 1,
+    "CapsuleCollider": 1,
+    "EllipsoidParticleEmitter": 2,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 1,
+    "SkinnedMeshRenderer": 1,
+    "Transform": 8
+   },
+   "container": "d9d3aafb93418624b9b84c9549a94718",
+   "objects": 8,
+   "path_id": 6
+  },
+  "general_flowerfan": {
+   "assets": "Assets/Resources/general_flowerfan.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "0e97da20cae403145b3f459b22490fa8",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_fly": {
+   "assets": "Assets/Resources/general_fly.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 2,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "368bd2cf2ae87ce4181b4af76a7ae09b",
+   "objects": 2,
+   "path_id": 2
+  },
+  "general_ice_spear": {
+   "assets": "Assets/Resources/general_ice_spear.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "5c084062369a63e4799940f0eb4f7afb",
+   "objects": 2,
+   "path_id": 2
+  },
+  "general_icebg": {
+   "assets": "Assets/Resources/general_icebg.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Transform": 1
+   },
+   "container": "7dd048ac75b2ac147adc90da79bdcfe0",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_meteo": {
+   "assets": "Assets/Resources/general_meteo.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 2,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 2,
+    "ParticleRenderer": 2,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 3
+   },
+   "container": "9892c31ba4790444981a9c82b86460dc",
+   "objects": 3,
+   "path_id": 2
+  },
+  "general_mirage": {
+   "assets": "Assets/Resources/general_mirage.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "TrailRenderer": 1,
+    "Transform": 2
+   },
+   "container": "7dde77d3ab32e3045a4f2acbacf3fc26",
+   "objects": 2,
+   "path_id": 1
+  },
+  "general_multispear": {
+   "assets": "Assets/Resources/general_multispear.prefab",
+   "components": {
+    "CapsuleCollider": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "Transform": 1
+   },
+   "container": "7a5f2a6f8440025439daa70404dda73e",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_rapidthrust": {
+   "assets": "Assets/Resources/general_rapidthrust.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "3cc994ff662e8814399b2a9874882c7e",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_risespear": {
+   "assets": "Assets/Resources/general_risespear.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "560d57c83f1458148a77d32bb34fde4b",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_sister": {
+   "assets": "Assets/Resources/general_sister.prefab",
+   "components": {
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "cb35c97ebae99fd42a5ff1730d8266c6",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_spinaxe": {
+   "assets": "Assets/Resources/general_spinaxe.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 2,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 2
+   },
+   "container": "572ee6953dde0b34f8921bfb540f721a",
+   "objects": 2,
+   "path_id": 1
+  },
+  "general_spiritsword": {
+   "assets": "Assets/Resources/general_spiritsword.prefab",
+   "components": {
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "b6203020a438334498ffe9f436d42f1c",
+   "objects": 1,
+   "path_id": 1
+  },
+  "general_swamp": {
+   "assets": "Assets/Resources/general_swamp.prefab",
+   "components": {
+    "Animation": 1,
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 2,
+    "MeshRenderer": 2,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 3
+   },
+   "container": "9e1dbd041accfba4f9ac62cd916e933f",
+   "objects": 3,
+   "path_id": 1
+  },
+  "general_sworddance": {
+   "assets": "Assets/Resources/general_sworddance.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Rigidbody": 1,
+    "SphereCollider": 1,
+    "Transform": 1
+   },
+   "container": "6ad423bf02f94e647a84e3239af92c3a",
+   "objects": 1,
+   "path_id": 1
+  },
+  "getcoin_num": {
+   "assets": "Assets/Resources/getcoin_num.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 2,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "TextMesh": 1,
+    "Transform": 3
+   },
+   "container": "eeb4dafcaa0f20b488db3070cf233a4e",
+   "objects": 3,
+   "path_id": 2
+  },
+  "giftbox": {
+   "assets": "Assets/Resources/giftbox.prefab",
+   "components": {
+    "Animation": 1,
+    "AudioSource": 1,
+    "EllipsoidParticleEmitter": 1,
+    "MonoBehaviour": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "SkinnedMeshRenderer": 1,
+    "SphereCollider": 1,
+    "Transform": 5
+   },
+   "container": "20edb30c56e6bd54393bc67317572133",
+   "objects": 5,
+   "path_id": 5
+  },
+  "stagenum_cave": {
+   "assets": "Assets/Resources/stagenum_cave.prefab",
+   "components": {
+    "MeshRenderer": 1,
+    "TextMesh": 1,
+    "Transform": 1
+   },
+   "container": "ef5b61d1fab5854408ca51125746caf8",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_0": {
+   "assets": "Assets/Resources/wp_0.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "b6560e31139075f459d6961123470654",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_10": {
+   "assets": "Assets/Resources/wp_10.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "f8613f94a76302a42968e4dd266a126e",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_11": {
+   "assets": "Assets/Resources/wp_11.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "9ffa0b3e1641d414b918b58844aaa684",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_12": {
+   "assets": "Assets/Resources/wp_12.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "a5d699a586bff844f81d7a794fb1dd9f",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_13": {
+   "assets": "Assets/Resources/wp_13.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "5e4630e95cbff3a478a414bb507f13da",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_14": {
+   "assets": "Assets/Resources/wp_14.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "87e24ad3bd5b76b4488ff6dc8a5b99f1",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_15": {
+   "assets": "Assets/Resources/wp_15.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "d8604ec390043fb4882e19b2284fddb6",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_16": {
+   "assets": "Assets/Resources/wp_16.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "d836e11304d5d8b4ea0b87937481b0fe",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_17": {
+   "assets": "Assets/Resources/wp_17.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "a2b6fe4ba19a0bb4a8fb8a812e6067b8",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_18": {
+   "assets": "Assets/Resources/wp_18.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "c4c6a9939660ebe48ae47eacfee4c645",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_19": {
+   "assets": "Assets/Resources/wp_19.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "e7854b4f81a78ed4f91ac5b2b71249c1",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_2": {
+   "assets": "Assets/Resources/wp_2.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "12f056bffc34f0c4ba9141cf0c466586",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_20": {
+   "assets": "Assets/Resources/wp_20.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "23626bd38c99e3449a6bdc3e6ea24e8c",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_21": {
+   "assets": "Assets/Resources/wp_21.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "7722176ab8d093c43834f2d96fc01e09",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_22": {
+   "assets": "Assets/Resources/wp_22.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "03f2b9aac27353040836d6a4e8388ef5",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_23": {
+   "assets": "Assets/Resources/wp_23.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "8b756b72a53202e4e889a98a99bdf1a3",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_24": {
+   "assets": "Assets/Resources/wp_24.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "e3a7dfc9d9099d445b40f60ae8b17b3e",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_25": {
+   "assets": "Assets/Resources/wp_25.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "8b902449b622ed649a72b32e4c07d5bc",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_3": {
+   "assets": "Assets/Resources/wp_3.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "6f4879622b2b07743964c385ab0b9eef",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_4": {
+   "assets": "Assets/Resources/wp_4.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "4dd4cecf0e62ed04faf6e4dc86788e80",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_5": {
+   "assets": "Assets/Resources/wp_5.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "44cf6415a0d1740469006dbfd5256fd6",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_6": {
+   "assets": "Assets/Resources/wp_6.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "ce03d8eee54a47e4896613572be8f226",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_7": {
+   "assets": "Assets/Resources/wp_7.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "61e7ae2c442964645b64509be55687e2",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_8": {
+   "assets": "Assets/Resources/wp_8.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "b5e076f83811bf7459668e37490d0832",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_9": {
+   "assets": "Assets/Resources/wp_9.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "13c12479ec0191f4f97b4aa8599319a4",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_b01": {
+   "assets": "Assets/Resources/wp_b01.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "objects": 1,
+   "path_id": 1639
+  },
+  "wp_b02": {
+   "assets": "Assets/Resources/wp_b02.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "objects": 1,
+   "path_id": 1696
+  },
+  "wp_b05": {
+   "assets": "Assets/Resources/wp_b05.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "objects": 1,
+   "path_id": 705
+  },
+  "wp_b06": {
+   "assets": "Assets/Resources/wp_b06.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "objects": 1,
+   "path_id": 706
+  },
+  "wp_b07": {
+   "assets": "Assets/Resources/wp_b07.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "objects": 1,
+   "path_id": 816
+  },
+  "wp_b08": {
+   "assets": "Assets/Resources/wp_b08.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "objects": 1,
+   "path_id": 708
+  },
+  "wp_b10": {
+   "assets": "Assets/Resources/wp_b10.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "objects": 1,
+   "path_id": 1648
+  },
+  "wp_general1": {
+   "assets": "Assets/Resources/wp_general1.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "1f466a0f8c894904dba3fd13b5aadd50",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general2": {
+   "assets": "Assets/Resources/wp_general2.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "ead3acaaa4a4c9747b1406ed3029f78f",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general3": {
+   "assets": "Assets/Resources/wp_general3.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "ebb15aca5f9adb84a9d2d361cbce6bc3",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general4": {
+   "assets": "Assets/Resources/wp_general4.prefab",
+   "components": {
+    "Animation": 1,
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "51fc775ea5b72cb429fcae442d1409dc",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general5": {
+   "assets": "Assets/Resources/wp_general5.prefab",
+   "components": {
+    "EllipsoidParticleEmitter": 1,
+    "ParticleAnimator": 1,
+    "ParticleRenderer": 1,
+    "TrailRenderer": 1,
+    "Transform": 1
+   },
+   "container": "c377ababfc2b3a64b8ff90f905598948",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general6": {
+   "assets": "Assets/Resources/wp_general6.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "73cf695b93ff39f46a8914f602944638",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general7": {
+   "assets": "Assets/Resources/wp_general7.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "6b631ac2a4a98144d885492369514229",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general8": {
+   "assets": "Assets/Resources/wp_general8.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "f79ca79bdc6564f40b02a87d98d71bf0",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_general_staff": {
+   "assets": "Assets/Resources/wp_general_staff.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "Transform": 1
+   },
+   "container": "3e1661de4aea62e41b777ab3cd6f7593",
+   "objects": 1,
+   "path_id": 1
+  },
+  "wp_horse": {
+   "assets": "Assets/Resources/wp_horse.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets2.assets",
+   "objects": 1,
+   "path_id": 342
+  }
+ },
+ "tally": {
+  "exported": 94,
+  "pending_ambiguous": 3
+ }
+}

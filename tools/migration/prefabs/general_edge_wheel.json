@@ -1,0 +1,154 @@
+{
+ "source_container": "c2af7200ab8d633408fcf38b904a01f7",
+ "root_path_id": 1,
+ "prefab_name": "general_edge_wheel",
+ "asset_path": "Assets/Resources/general_edge_wheel.prefab",
+ "node_count": 2,
+ "root_ids": [
+  3
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {
+  "instances decoded": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 3,
+   "go_id": 1,
+   "name": "general_edge_wheel",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.15,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.8,
+     1.3,
+     1.3
+    ]
+   },
+   "parent": 0,
+   "children": [
+    4
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Torus01_4eaf8a35e20abc940b922deca5f51be6_1.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_wheel_cd8fc9cbf8eee8c4c942d260aba03639_1.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Bullet_arrow_general",
+     "guid": "ead25fc0d1d60ed4b84d46021eadd83c",
+     "cs": "unity/Assets/Scripts/Bullet_arrow_general.cs",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "accel_factor",
+       "kind": "float",
+       "f": 3.0
+      },
+      {
+       "n": "bullet_speed",
+       "kind": "float",
+       "f": 1.5
+      },
+      {
+       "n": "growspeed",
+       "kind": "int",
+       "i": 2
+      },
+      {
+       "n": "delay_finish",
+       "kind": "float",
+       "f": 3.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "go_id": 2,
+   "name": "pt_darkball",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.015385,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.25,
+     0.769231,
+     0.769231
+    ]
+   },
+   "parent": 3,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator"
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer"
+    }
+   ]
+  }
+ ]
+}
