@@ -18,16 +18,27 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 8,
+  "instances decoded": 9,
   "cross-file -> asset": 27,
   "ref set": 8,
   "refused[two-dimensional array (unsupported by ]": 1,
-  "refused[record shorter than layout (data assig]": 1,
+  "trailing fields absent from the record": 7,
   "cross-file ref dropped": 2,
   "cross-file -> asset (element)": 11,
   "array set": 3,
   "opaque skipped (GUIStyle)": 7,
   "null in source": 1
+ },
+ "trailing_fields_absent": {
+  "General_Stat": [
+   "g_atkspd",
+   "g_def",
+   "g_grade",
+   "g_level",
+   "g_maxatk",
+   "g_maxhp",
+   "g_unique"
+  ]
  },
  "dropped_refs": [
   {
@@ -878,7 +889,19 @@
      "script": "General_Stat",
      "guid": "e42f852ad5da6d44bb41931f575f9643",
      "cs": "unity/Assets/Scripts/General_Stat.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "general_index",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "general_kind",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",

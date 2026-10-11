@@ -30,8 +30,22 @@
  },
  "field_stats": {
   "refused[record longer than layout (a field thi]": 1,
-  "refused[record shorter than layout (data assig]": 2,
-  "instances decoded": 69
+  "trailing fields absent from the record": 8,
+  "instances decoded": 71
+ },
+ "trailing_fields_absent": {
+  "DB_Archive": [
+   "aci"
+  ],
+  "General_Stat": [
+   "g_atkspd",
+   "g_def",
+   "g_grade",
+   "g_level",
+   "g_maxatk",
+   "g_maxhp",
+   "g_unique"
+  ]
  },
  "dropped_refs": [],
  "animation_bindings": {},
@@ -77,7 +91,19 @@
      "script": "General_Stat",
      "guid": "e42f852ad5da6d44bb41931f575f9643",
      "cs": "unity/Assets/Scripts/General_Stat.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "general_index",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "general_kind",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     }
    ]
   },

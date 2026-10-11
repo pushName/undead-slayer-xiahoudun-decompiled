@@ -94,19 +94,26 @@ def main():
         t, d, _why = read(fname, pid)
         return t, d
 
-    def owner_and_root(fname, t, d):
-        """Transform/Component -> its GameObject name, and the root of that hierarchy."""
+    def owner_and_root(fname, t, d, self_pid):
+        """Transform/Component -> its GameObject name, the root of that hierarchy, and the root's
+        two object ids.
+
+        The ids are what an exporter needs: a name alone cannot be re-read, and the root is the only
+        object in the hierarchy the shipped file can hand to SaveAsPrefabAsset.
+        """
         if t == "GameObject":
-            return str(d.m_Name), str(d.m_Name)
+            return str(d.m_Name), str(d.m_Name), self_pid, None
         go = getattr(d, "m_GameObject", None)
         if go is None:
-            return None, None
+            return None, None, None, None
         gpid = pid_of(go)
         gt, gd = data_of(fname, gpid)
         if gt != "GameObject":
-            return None, None
+            return None, None, None, None
         own = str(gd.m_Name)
         root = own
+        root_go = gpid
+        root_tr = None
         # Walk up through Transform.m_Father to reach the root.
         tp, tdata = None, None
         for _tid, pp in u4.component_pairs(gd):
@@ -114,6 +121,7 @@ def main():
             ct, cd = data_of(fname, cpid)
             if ct == "Transform":
                 tp, tdata = cpid, cd
+                root_tr = cpid
                 break
         guard = 0
         while tp is not None and tdata is not None and guard < 64:
@@ -127,9 +135,11 @@ def main():
             _gt, gd2 = data_of(fname, pid_of(nd.m_GameObject))
             if gd2 is not None:
                 root = str(gd2.m_Name)
+            root_go = pid_of(nd.m_GameObject)
+            root_tr = fpid
             tp, tdata = fpid, nd
             guard += 1
-        return own, root
+        return own, root, root_go, root_tr
 
     rows, unresolvable = [], []
     for fn in sorted(os.listdir(SCENES)):
@@ -149,8 +159,9 @@ def main():
                 r["tgt_type"] = t
                 unresolvable.append(r)
                 continue
-            own, root = owner_and_root(fname, t, d)
-            r.update({"tgt_type": t, "object": own, "root": root, "container": fname})
+            own, root, root_go, root_tr = owner_and_root(fname, t, d, r["path_id"])
+            r.update({"tgt_type": t, "object": own, "root": root, "container": fname,
+                      "root_object": root_go, "root_transform": root_tr})
             if fname.startswith("level"):
                 reach = "object inside ANOTHER level (cross-scene reference)"
             elif root in prefab_names:

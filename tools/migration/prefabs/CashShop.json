@@ -21,8 +21,8 @@
   "null in source (element)": 2,
   "array partial (2 dropped)": 1,
   "ref set": 3,
-  "instances decoded": 4,
-  "refused[record shorter than layout (data assig]": 3,
+  "instances decoded": 7,
+  "trailing fields absent from the record": 3,
   "refused[two-dimensional array (unsupported by ]": 1,
   "null in source": 3
  },
@@ -636,7 +636,69 @@
      "script": "WeaponStat",
      "guid": "5ddf0916022adb8439a924e796503eae",
      "cs": "unity/Assets/Scripts/WeaponStat.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "weapon_index",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_meshkind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_kind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_name",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_maxatk",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_minatk",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_spd",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "weapon_special",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_grade",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_upgrade",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_special_txt",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_cost",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",

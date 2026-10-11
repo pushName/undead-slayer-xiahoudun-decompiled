@@ -18,7 +18,7 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 5,
+  "instances decoded": 6,
   "refused[two-dimensional array (unsupported by ]": 2,
   "cross-file -> asset": 17,
   "cross-file -> asset (element)": 17,
@@ -26,7 +26,12 @@
   "opaque skipped (GUIStyle)": 5,
   "cross-file ref dropped": 1,
   "ref set (element)": 2,
-  "refused[record shorter than layout (data assig]": 1
+  "trailing fields absent from the record": 1
+ },
+ "trailing_fields_absent": {
+  "DB_angel": [
+   "ag"
+  ]
  },
  "dropped_refs": [
   {

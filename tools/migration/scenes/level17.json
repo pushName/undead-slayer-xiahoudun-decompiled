@@ -31,18 +31,50 @@
   "ParticleRenderer": 12
  },
  "field_stats": {
-  "instances decoded": 62,
-  "ref set": 29,
-  "cross-file ref dropped": 35,
+  "instances decoded": 69,
+  "ref set": 32,
+  "cross-file ref dropped": 45,
   "cross-file -> asset (element)": 78,
   "array set": 24,
   "cross-file -> asset": 20,
   "opaque skipped (GUIStyle)": 5,
-  "refused[record shorter than layout (data assig]": 8,
+  "refused[record shorter than layout (data assig]": 1,
   "refused[bool[] stride unresolved (refused on p]": 1,
   "ref set (element)": 2,
   "refused[two-dimensional array (unsupported by ]": 2,
+  "trailing fields absent from the record": 13,
+  "cross-file ref dropped (element)": 42,
+  "array fully dropped": 4,
   "string set": 1
+ },
+ "trailing_fields_absent": {
+  "DB_Boss": [
+   "boss"
+  ],
+  "DB_General": [
+   "gs"
+  ],
+  "DB_Monster": [
+   "enemy"
+  ],
+  "DB_Stage": [
+   "st"
+  ],
+  "DB_angel": [
+   "ag"
+  ],
+  "General_Stat": [
+   "g_atkspd",
+   "g_def",
+   "g_grade",
+   "g_level",
+   "g_maxatk",
+   "g_maxhp",
+   "g_unique"
+  ],
+  "Spawn": [
+   "cur_general"
+  ]
  },
  "dropped_refs": [
   {
@@ -359,6 +391,474 @@
    "node": "UI_Ingame",
    "script": "UI_Ingame",
    "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1777,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1778,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2488,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1780,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1781,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1893,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2343,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2420,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2345,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "stage",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2346,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 432,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 433,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 527,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "mon_destroy",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 435,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2507,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 518,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 2,
+   "path_id": 431,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets2.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1769,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1770,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1771,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2537,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2538,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2588,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2641,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2544,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1884,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1885,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1886,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2544,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "enemy_source",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2544,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1766,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1757,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1758,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1759,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2682,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2754,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2755,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1763,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1873,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1765,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1767,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "boss",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1791,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "cart",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2676,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "tower",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1864,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "barrack",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1786,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "basecamp",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1845,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "tank",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 2018,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "plane_staff",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1917,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "pt_soul",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 1850,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": "sharedassets18.assets"
+  },
+  {
+   "field": "pt_summonfog",
+   "t": "Transform",
+   "file_id": 469,
+   "path_id": 1,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": null
+  },
+  {
+   "field": "icon_dead",
+   "t": "Transform",
+   "file_id": 473,
+   "path_id": 1,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": null
+  },
+  {
+   "field": "lightmap_tank",
+   "t": "Texture",
+   "file_id": 282,
+   "path_id": -1,
+   "node": "Spawn",
+   "script": "Spawn",
+   "file": null
   }
  ],
  "animation_bindings": {
@@ -11719,7 +12219,62 @@
      "script": "Spawn",
      "guid": "c52742f088c2e2041ab292a53b79d5ce",
      "cs": "unity/Assets/Scripts/Spawn.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "general_portrait",
+       "kind": "node",
+       "node": 356,
+       "t": "Transform"
+      },
+      {
+       "n": "collider_ground",
+       "kind": "node",
+       "node": 423,
+       "t": "Transform"
+      },
+      {
+       "n": "cut_boss",
+       "kind": "node",
+       "node": 398,
+       "t": "Transform"
+      },
+      {
+       "n": "monnum",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "rewardkind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "wave",
+       "kind": "int",
+       "i": 5
+      },
+      {
+       "n": "finalstage",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "enemykill",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "grappling",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "infinitymode",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
@@ -11740,7 +12295,19 @@
      "script": "General_Stat",
      "guid": "e42f852ad5da6d44bb41931f575f9643",
      "cs": "unity/Assets/Scripts/General_Stat.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "general_index",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "general_kind",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",

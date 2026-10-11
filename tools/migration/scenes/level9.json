@@ -19,7 +19,7 @@
   "GUILayer": 1
  },
  "field_stats": {
-  "instances decoded": 8,
+  "instances decoded": 10,
   "null in source": 3,
   "ref set": 5,
   "cross-file -> asset": 30,
@@ -27,8 +27,16 @@
   "array set": 6,
   "opaque skipped (GUIStyle)": 9,
   "cross-file ref dropped": 3,
-  "refused[record shorter than layout (data assig]": 2,
+  "trailing fields absent from the record": 2,
   "refused[two-dimensional array (unsupported by ]": 1
+ },
+ "trailing_fields_absent": {
+  "DB_Weapon": [
+   "wi"
+  ],
+  "WeaponStat": [
+   "wi"
+  ]
  },
  "dropped_refs": [
   {
@@ -3193,7 +3201,69 @@
      "script": "WeaponStat",
      "guid": "5ddf0916022adb8439a924e796503eae",
      "cs": "unity/Assets/Scripts/WeaponStat.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "weapon_index",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_meshkind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_kind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_name",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_maxatk",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_minatk",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_spd",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "weapon_special",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_grade",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_upgrade",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_special_txt",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_cost",
+       "kind": "int",
+       "i": 0
+      }
+     ]
     },
     {
      "kind": "component",

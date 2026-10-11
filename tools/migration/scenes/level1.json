@@ -35,7 +35,7 @@
  },
  "field_stats": {
   "ref set": 14,
-  "instances decoded": 40,
+  "instances decoded": 41,
   "cross-file ref dropped": 11,
   "null in source": 47,
   "null in source (element)": 11,
@@ -43,9 +43,15 @@
   "cross-file -> asset": 16,
   "cross-file -> asset (element)": 37,
   "array set": 15,
-  "refused[record shorter than layout (data assig]": 2,
+  "refused[record shorter than layout (data assig]": 1,
   "opaque skipped (GUIStyle)": 2,
+  "trailing fields absent from the record": 1,
   "cross-file ref dropped (element)": 7
+ },
+ "trailing_fields_absent": {
+  "DB_Monster": [
+   "enemy"
+  ]
  },
  "dropped_refs": [
   {
