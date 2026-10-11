@@ -97,9 +97,9 @@ namespace UndeadSlayer.Migration
             }
             AssetDatabase.Refresh();
 
-            var msg = "[PrefabRebuilder] {0} prefabs built into Assets/Resources, {1} refused, {2} "
-                      .Fmt(built, refused, objects) + "objects in total, took " + stopwatch.ElapsedMilliseconds
-                      + " ms";
+            var msg = ("[PrefabRebuilder] %d prefabs built into Assets/Resources, %d refused, "
+                       + "%d objects in total, took %d ms")
+                .Fmt(built, refused, objects, stopwatch.ElapsedMilliseconds);
             if (problems.Count > 0)
             {
                 msg += "\n  first problems:\n    - " + string.Join("\n    - ", problems.ToArray());

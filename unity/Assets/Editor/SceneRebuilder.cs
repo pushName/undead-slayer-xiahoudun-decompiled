@@ -139,6 +139,11 @@ namespace UndeadSlayer.Migration
             // Only prefab payloads set this: the .prefab the scratch scene's root is saved into.
             // Absent for the 23 level files, where JsonUtility leaves it null and nothing reads it.
             public string asset_path;
+            // Also prefab-only: which container and root object the description was cut from. Level
+            // payloads identify themselves by source_level, prefabs have none, so without these the
+            // summary header printed an empty field and every prefab line started with two spaces.
+            public string source_container;
+            public int root_path_id;
             public int build_index;
             public int node_count;
             public int[] root_ids;
@@ -750,9 +755,15 @@ namespace UndeadSlayer.Migration
                 }
             }
 
+            // Prefab payloads carry no source_level, so the header would print empty; name them by
+            // the container and root object they were cut from instead.
+            var who = string.IsNullOrEmpty(data.source_level)
+                ? "%s!%d".Fmt(data.source_container, data.root_path_id)
+                : data.source_level;
+
             Debug.Log(
                 "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive, %d decoded but not applicable yet\n  arrays      : %d elements written, %d landed in the file, %d arrays partial\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
-                .Fmt(data.source_level, data.scene_path, data.nodes.Length,
+                .Fmt(who, data.scene_path, data.nodes.Length,
                      addedScripts, missingScripts, addedComps, unknownComps,
                      meshesSet, matsSet, missingAssets,
                      fieldsRefs, fieldsVals, fieldsMissing, fieldsLanded, fieldsDropped,
