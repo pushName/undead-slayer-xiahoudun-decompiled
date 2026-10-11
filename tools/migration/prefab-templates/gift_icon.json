@@ -1,0 +1,67 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets14.assets",
+ "root_path_id": 52,
+ "prefab_name": "gift_icon",
+ "asset_path": "Assets/Imported/Prefabs/gift_icon.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/gift_icon.unity",
+ "node_count": 1,
+ "root_ids": [
+  54
+ ],
+ "unsupported_components": {},
+ "field_stats": {},
+ "container_dropped_refs": [],
+ "container_warnings": [
+  "MeshRenderer 57: material[0] sharedassets0.assets!2 not buildable (deferred shader?)"
+ ],
+ "nodes": [
+  {
+   "id": 54,
+   "go_id": 52,
+   "name": "gift_icon",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     10.358646,
+     -5.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon_extreme_gift_sharedassets14_assets_8.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  }
+ ]
+}

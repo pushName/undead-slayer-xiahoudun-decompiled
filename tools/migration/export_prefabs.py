@@ -493,8 +493,19 @@ def main():
               % (sum(len(v) for v in absent.values()), scanned))
         for t, ps in sorted(absent.items(), key=lambda x: -len(x[1])):
             print("   %-16s %d   e.g. %s" % (t, len(ps), sorted(ps)[0]))
-        print("   the .anim ones are the clip pass's job: run Undead Slayer/Build AnimationClips "
-              "From Descriptors, then build prefabs and rebuild the scenes again")
+        # Name the step that is actually missing, from what is actually absent: hard-coding "the clip
+        # pass" here pointed at the wrong menu the first time this guard caught prefab assets instead
+        # of clips.
+        exts = {os.path.splitext(p)[1] for ps in absent.values() for p in ps}
+        if ".anim" in exts:
+            print("   run Undead Slayer/Build AnimationClips From Descriptors, then build prefabs "
+                  "and rebuild the scenes")
+        if ".prefab" in exts:
+            print("   run Undead Slayer/Build Prefabs From JSON (recovered roots), then rebuild the "
+                  "scenes")
+        if not (exts & {".anim", ".prefab"}):
+            print("   no menu of this pipeline claims these types -- they need an export pass "
+                  "before the scenes can carry them")
     else:
         print("asset references: every path in %d description file(s) exists under unity/ "
               "(the clip pass has produced %d of the build's %d AnimationClips)"

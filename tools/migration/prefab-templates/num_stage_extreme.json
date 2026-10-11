@@ -1,0 +1,65 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets14.assets",
+ "root_path_id": 53,
+ "prefab_name": "num_stage_extreme",
+ "asset_path": "Assets/Imported/Prefabs/num_stage_extreme.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/num_stage_extreme.unity",
+ "node_count": 1,
+ "root_ids": [
+  55
+ ],
+ "unsupported_components": {},
+ "field_stats": {},
+ "container_dropped_refs": [],
+ "container_warnings": [
+  "MeshRenderer 57: material[0] sharedassets0.assets!2 not buildable (deferred shader?)"
+ ],
+ "nodes": [
+  {
+   "id": 55,
+   "go_id": 53,
+   "name": "num_stage_extreme",
+   "layer": 9,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.182211,
+     -0.036368,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "TextMesh"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      null
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  }
+ ]
+}

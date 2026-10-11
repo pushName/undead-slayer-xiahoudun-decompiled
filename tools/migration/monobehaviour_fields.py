@@ -66,14 +66,21 @@ REF_TYPES = {
 # Types that are NOT UnityEngine.Object: Unity never serialises them, so they occupy zero bytes
 # and must be dropped from the layout rather than counted as unknown. (Got this wrong first: two
 # GUIStyle fields made their whole class refuse to decode.)
-#
-# GUIStyle is NOT in that list any more: it is serialised by Unity 4. The 312-byte size is not a
-# guess -- sweeping 300..324 over all 394 scene MonoBehaviour records, 312 is the only value that
-# makes any class consume its buffer exactly (266 -> 285 decoded, refusals 56 -> 37); every other
-# candidate leaves the baseline untouched. Its internals are still unknown to us, so it is carried
-# as an opaque block that is skipped and counted, never written into the scene.
 NON_SERIALIZED = {"GUIContent", "RectOffset", "GradientColorKey", "RangeInt"}
-OPAQUE_TYPES = {"GUIStyle": 312}
+# GUIStyle is serialised, and it is NOT fixed size: it begins with a length-prefixed name string and
+# then 308 bytes of internals. The 308 is what the old 300..324 sweep actually found, less the 4 bytes
+# of an empty name's length prefix -- and that sweep (266 -> 285 decoded) was right for every instance
+# it covered, because 101 of the 102 GUIStyle blocks in the 23 levels carry an empty name and therefore
+# occupy exactly 4 + 308 = 312 bytes, which is what hid the variable part. The one exception is
+# UI_Extreme.rank_name, whose stored name is "rank": 4 + 4 + 308 = 316, and that single extra word is
+# why UI_Extreme was the last record in the build to refuse (it consumed 5944 of 5948). Localisation
+# came from the block interior, not from the total: read at a forced 312 stride, every block of
+# UI_map/UI_intro/UI_Extreme shows its 1.0f defaults at words 6,12,18,24,... while rank_name showed
+# them at 7,13,19,25,..., i.e. shifted by exactly one word, and its first two words were 4 and
+# 0x6b6e6172 ("rank"). With the name read, all 20 records containing a GUIStyle close exactly and
+# nothing that decoded before changes. Internals are still not interpreted, so a style is skipped and
+# counted, never written into the scene.
+GUISTYLE_FIXED = 308
 STRUCT_TYPES = {"Bounds": 24}
 
 # A multidimensional array (T[,], T[,,]) is not a type Unity's mono serialiser writes at all, so
@@ -184,6 +191,7 @@ def spec_for(typ, classes, depth=0):
          {'kind':'ref','type':T}                        8-byte PPtr
          {'kind':'string'}                              int32 length + bytes + pad to 4
          {'kind':'array','elem':spec}                   int32 count + elements
+         {'kind':'style','fixed':n}                     GUIStyle: name string + n bytes, variable
          {'kind':'struct','type':T,'size':n,'align':4,'fields':[(name,spec)]}
     Only fixed-size structs are accepted.
     """
@@ -215,8 +223,8 @@ def spec_for(typ, classes, depth=0):
         return {"kind": "value", "type": typ, "size": w, "align": a}, None
     if typ in STRUCT_TYPES:
         return {"kind": "value", "type": typ, "size": STRUCT_TYPES[typ], "align": 4}, None
-    if typ in OPAQUE_TYPES:
-        return {"kind": "opaque", "type": typ, "size": OPAQUE_TYPES[typ], "align": 4}, None
+    if typ == "GUIStyle":
+        return {"kind": "style", "type": typ, "fixed": GUISTYLE_FIXED, "align": 4}, None
     if typ in REF_TYPES:
         return {"kind": "ref", "type": typ, "size": 8, "align": 4}, None
     if typ in classes and derives_from_object(typ, classes, depth):
@@ -266,12 +274,26 @@ def _read(spec, raw, off, end):
                 off + spec["size"], None
         vals = list(struct.unpack_from("<%df" % (spec["size"] // 4), raw, off))
         return {"floats": vals, "vec": typ}, off + spec["size"], None
-    if k == "opaque":
-        # Bytes are consumed so the rest of the class stays aligned; the content is deliberately
-        # not interpreted, and the caller is told it was skipped.
-        if off + spec["size"] > end:
-            return None, None, "opaque overrun"
-        return {"opaque": spec["type"], "size": spec["size"]}, off + spec["size"], None
+    if k == "style":
+        # GUIStyle = its name as a length-prefixed string + GUISTYLE_FIXED bytes of internals that
+        # we still do not interpret. The name is what makes the block variable length, and reading
+        # it is the difference between closing and refusing -- see GUISTYLE_FIXED. An implausible
+        # length refuses the class instead of sliding the rest of the walk off by an unknown run.
+        if off + 4 > end:
+            return None, None, "GUIStyle name length overrun"
+        (n,) = struct.unpack_from("<i", raw, off)
+        if n < 0 or n > 64:
+            return None, None, "GUIStyle name length %d implausible" % n
+        head = off + 4
+        if head + n > end:
+            return None, None, "GUIStyle name %d runs past the record" % n
+        s = raw[head:head + n].decode("utf-8", errors="replace")
+        if n and not s.isprintable():
+            return None, None, "GUIStyle name is not printable -- wrong offset?"
+        body = _align(head + n, 4) + spec["fixed"]
+        if body > end:
+            return None, None, "GUIStyle overrun"
+        return {"opaque": spec["type"], "size": body - off, "name": s}, body, None
     if k == "ref":
         if off + 8 > end:
             return None, None, "ref overrun"

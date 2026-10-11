@@ -29,9 +29,16 @@
   "ParticleRenderer": 7
  },
  "field_stats": {
-  "refused[record longer than layout (a field thi]": 1,
-  "trailing fields absent from the record": 8,
-  "instances decoded": 71
+  "cross-file -> prefab root": 3,
+  "cross-file -> prefab root (element)": 3,
+  "array set": 6,
+  "ref set": 3,
+  "cross-file -> asset": 43,
+  "cross-file -> asset (element)": 20,
+  "cross-file ref dropped": 2,
+  "opaque skipped (GUIStyle)": 17,
+  "instances decoded": 72,
+  "trailing fields absent from the record": 8
  },
  "trailing_fields_absent": {
   "DB_Archive": [
@@ -47,7 +54,26 @@
    "g_unique"
   ]
  },
- "dropped_refs": [],
+ "dropped_refs": [
+  {
+   "field": "blockName",
+   "t": "TextAsset",
+   "file_id": 1,
+   "path_id": 49,
+   "node": "ui_Extreme",
+   "script": "UI_Extreme",
+   "file": "sharedassets14.assets"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 1,
+   "path_id": 60,
+   "node": "ui_Extreme",
+   "script": "UI_Extreme",
+   "file": "sharedassets14.assets"
+  }
+ ],
  "animation_bindings": {},
  "warnings": [],
  "nodes": [
@@ -84,7 +110,568 @@
      "script": "UI_Extreme",
      "guid": "d607ecc64cca03a4f9fb6735c51815aa",
      "cs": "unity/Assets/Scripts/UI_Extreme.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "sound_dummy",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sound_UI.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "flag_icon",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/icon_stage_clear1.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/icon_stage_clear2.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/icon_stage_clear3.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
+       "n": "icon_stage",
+       "kind": "node",
+       "node": 92,
+       "t": "Transform"
+      },
+      {
+       "n": "plane_friend",
+       "kind": "node",
+       "node": 117,
+       "t": "Transform"
+      },
+      {
+       "n": "num_stage_index",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/num_stage_extreme.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ring_active",
+       "kind": "node",
+       "node": 96,
+       "t": "Transform"
+      },
+      {
+       "n": "gifticon",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/gift_icon.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "pop_blank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "pop_blank2",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_blank2.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_title",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bar_ranking.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_title_me",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bar_ranking_me.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_key",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_key.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "toggle_active",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_rankingtoggle_active.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_asset",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_asset.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_asset_lv",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_asset_lv.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_asset_key",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_asset_key.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gauge_exp",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/gauge_exp.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "black",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_25.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "black_all",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/black_100.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_option",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/pop_option.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "ico_slide",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_difficulty1.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_skill_slot",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/skill_emptyslot.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_item",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/chamberbox_w1.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_coin",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/item_coin1.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "img_menu",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_skill.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_archive.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_status.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_shop.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_pet.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "img_consumeItem",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/item_extreme1.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/item_extreme2.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/item_extreme3.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/item_extreme4.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/item_extreme5.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/item_extreme6.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "bt_lockmenu",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_lockmenu.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bt_lockmenu2",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_lockmenu2.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bt_unlockstage",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_unlockstage1.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_unlockstage2.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/bt_unlockstage3.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "menutray",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_menu_tray.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_ranktab",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_friend.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_ranking_total.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_friend_plus.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "errorimg",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/hsp_profile_photo_100.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_info",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_zoom.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txt_start",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/txt_start.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "arrow_next",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/arrow_next.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_table",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_result_map.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_friend_plus",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_friend.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_speech",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_speech2.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "bg_red",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/red.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_jade",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/item_jade.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "tex_currentStage",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/icon_stage_extreme_s.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txt_extreme",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/txt_story.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "txt_loading",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/txt_loading.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "ico_warn",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/ico_alart.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gift_title",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/newGiftTitle.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gift_five_percnt",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/temai.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gift_skill",
+       "kind": "asset",
+       "asset": "Assets/Resources/sk_15.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gift_coin",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/convertcash.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gift_bg_item",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/chamberbox_w1.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "gift_skill_bg",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/c_equip_n.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "rank_bg",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bg_rank.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "rank_item_bg",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/rank_item_bg.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "icon_toprank",
+       "kind": "arr",
+       "t": "Texture2D",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_toprank1.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_toprank2.png",
+         "t": "Texture2D"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Textures/sharedassets/icon_toprank3.png",
+         "t": "Texture2D"
+        }
+       ]
+      },
+      {
+       "n": "bar_slide",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_empty",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_start",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_back",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "sel_lang",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "pausemenu",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_yesno",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_menu",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_shop",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_arrow_r",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_arrow_l",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_general_small",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_plus",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_gift",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "bt_rank",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "rank_name",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 316
+      },
+      {
+       "n": "bg_ownRanking",
+       "kind": "opaque",
+       "t": "GUIStyle",
+       "size": 312
+      },
+      {
+       "n": "gauge_hp",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/gauge_feed.png",
+       "t": "Texture2D"
+      },
+      {
+       "n": "empty",
+       "kind": "asset",
+       "asset": "Assets/Imported/Textures/sharedassets/bt_general_empty.png",
+       "t": "Texture2D"
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",

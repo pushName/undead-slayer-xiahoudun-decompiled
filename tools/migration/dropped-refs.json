@@ -17,6 +17,60 @@
    "root_transform": null,
    "reachable_by": "Resources root no script names",
    "channel": "NOT EXPORTED YET"
+  },
+  {
+   "field": "num_stage_index",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 55,
+   "node": "ui_Extreme",
+   "script": "UI_Extreme",
+   "file": "sharedassets14.assets",
+   "level": "level13",
+   "tgt_type": "Transform",
+   "object": "num_stage_extreme",
+   "root": "num_stage_extreme",
+   "container": "sharedassets14.assets",
+   "root_object": 53,
+   "root_transform": 55,
+   "reachable_by": "Resources root no script names",
+   "channel": "task #17 (prefab export)"
+  },
+  {
+   "field": "gifticon",
+   "t": "Transform",
+   "file_id": 1,
+   "path_id": 54,
+   "node": "ui_Extreme",
+   "script": "UI_Extreme",
+   "file": "sharedassets14.assets",
+   "level": "level13",
+   "tgt_type": "Transform",
+   "object": "gift_icon",
+   "root": "gift_icon",
+   "container": "sharedassets14.assets",
+   "root_object": 52,
+   "root_transform": 54,
+   "reachable_by": "Resources root no script names",
+   "channel": "task #17 (prefab export)"
+  },
+  {
+   "field": "blockName",
+   "t": "TextAsset",
+   "file_id": 1,
+   "path_id": 49,
+   "node": "ui_Extreme",
+   "script": "UI_Extreme",
+   "file": "sharedassets14.assets",
+   "level": "level13",
+   "tgt_type": "TextAsset",
+   "object": null,
+   "root": null,
+   "container": "sharedassets14.assets",
+   "root_object": null,
+   "root_transform": null,
+   "reachable_by": "Resources root no script names",
+   "channel": "unclassified"
   }
  ],
  "unresolvable": [
@@ -89,6 +143,18 @@
    "script": "UI_archive",
    "file": "sharedassets0.assets",
    "level": "level12",
+   "status": "present as MonoBehaviour but UnityPy cannot parse it (Expected to read 10532 bytes, but only read 32 b)",
+   "tgt_type": "MonoBehaviour"
+  },
+  {
+   "field": "basicSkin",
+   "t": "GUISkin",
+   "file_id": 1,
+   "path_id": 60,
+   "node": "ui_Extreme",
+   "script": "UI_Extreme",
+   "file": "sharedassets14.assets",
+   "level": "level13",
    "status": "present as MonoBehaviour but UnityPy cannot parse it (Expected to read 10532 bytes, but only read 32 b)",
    "tgt_type": "MonoBehaviour"
   },
@@ -330,5 +396,8 @@
    "tgt_type": "MonoBehaviour"
   }
  ],
- "prefab_subtrees": {}
+ "prefab_subtrees": {
+  "sharedassets14.assets!num_stage_extreme": 1,
+  "sharedassets14.assets!gift_icon": 1
+ }
 }
