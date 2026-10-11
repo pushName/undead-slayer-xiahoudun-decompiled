@@ -31,20 +31,19 @@
   "ParticleRenderer": 12
  },
  "field_stats": {
-  "instances decoded": 69,
-  "ref set": 32,
-  "cross-file -> prefab root": 40,
-  "cross-file -> asset (element)": 78,
-  "array set": 28,
-  "cross-file -> asset": 20,
+  "instances decoded": 73,
+  "ref set": 59,
+  "cross-file -> prefab root": 44,
+  "cross-file -> asset (element)": 161,
+  "array set": 38,
+  "cross-file -> asset": 26,
   "opaque skipped (GUIStyle)": 5,
   "cross-file ref dropped": 5,
   "audio clip -> asset": 2,
   "audio clip null in source": 2,
-  "refused[record shorter than layout (data assig]": 1,
-  "refused[bool[] stride unresolved (refused on p]": 1,
+  "null in source": 1,
   "ref set (element)": 2,
-  "refused[two-dimensional array (unsupported by ]": 2,
+  "multidimensional array, no bytes in the record": 2,
   "trailing fields absent from the record": 13,
   "cross-file -> prefab root (element)": 42,
   "string set": 1
@@ -9992,7 +9991,726 @@
      "script": "Cha_Control",
      "guid": "391a8cf5287612747a3c6a644430b770",
      "cs": "unity/Assets/Scripts/Cha_Control.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "screen_effect",
+       "kind": "node",
+       "node": 383,
+       "t": "Transform"
+      },
+      {
+       "n": "shadow",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/shadow.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_arrow_multy",
+       "kind": "node",
+       "node": 331,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_arrow_single",
+       "kind": "node",
+       "node": 332,
+       "t": "Transform"
+      },
+      {
+       "n": "pt_heal",
+       "kind": "node",
+       "node": 384,
+       "t": "Transform"
+      },
+      {
+       "n": "pt_rising",
+       "kind": "node",
+       "node": 450,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_riseattack",
+       "kind": "node",
+       "node": 459,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_swordExtreme",
+       "kind": "node",
+       "node": 438,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_linehit",
+       "kind": "node",
+       "node": 460,
+       "t": "Transform"
+      },
+      {
+       "n": "limit_x",
+       "kind": "float",
+       "f": 2.6500000953674316
+      },
+      {
+       "n": "limit_y_b",
+       "kind": "float",
+       "f": -2.5999999046325684
+      },
+      {
+       "n": "limit_y_f",
+       "kind": "float",
+       "f": 2.5
+      },
+      {
+       "n": "level",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "exp",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "yell",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_hup1.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_hup3.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_hup2.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "skillyell",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_skill2.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_skill1.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "footstep",
+       "kind": "asset",
+       "asset": "Assets/Resources/footstep.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_getitem",
+       "kind": "asset",
+       "asset": "Assets/Resources/getitem.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "boom",
+       "kind": "asset",
+       "asset": "Assets/Resources/boom1.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_dodge",
+       "kind": "asset",
+       "asset": "Assets/Resources/dodge.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_swing",
+       "kind": "asset",
+       "asset": "Assets/Resources/swing1.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_skillstart",
+       "kind": "asset",
+       "asset": "Assets/Resources/skillstart.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "guicam",
+       "kind": "node",
+       "node": 427,
+       "t": "Camera"
+      },
+      {
+       "n": "dummy_weapon",
+       "kind": "node",
+       "node": 397,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_blur",
+       "kind": "node",
+       "node": 357,
+       "t": "Transform"
+      },
+      {
+       "n": "txtef",
+       "kind": "node",
+       "node": 355,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_block",
+       "kind": "node",
+       "node": 351,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_blockbreak",
+       "kind": "node",
+       "node": 350,
+       "t": "Transform"
+      },
+      {
+       "n": "dummy_general",
+       "kind": "node",
+       "node": 333,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_punch",
+       "kind": "node",
+       "node": 330,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_firesplash",
+       "kind": "node",
+       "node": 328,
+       "t": "Transform"
+      },
+      {
+       "n": "guide_circle",
+       "kind": "node",
+       "node": 426,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_super",
+       "kind": "node",
+       "node": 467,
+       "t": "Transform"
+      },
+      {
+       "n": "magicspear",
+       "kind": "node",
+       "node": 239,
+       "t": "Transform"
+      },
+      {
+       "n": "pet_eagle",
+       "kind": "node",
+       "node": 402,
+       "t": "Transform"
+      },
+      {
+       "n": "pet_horse",
+       "kind": "node",
+       "node": 395,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_splash",
+       "kind": "node",
+       "node": 432,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_stepfog",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_stepfog.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_thrustfog",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_thrustfog.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_rotfog",
+       "kind": "node",
+       "node": 425,
+       "t": "Transform"
+      },
+      {
+       "n": "life",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "exattack",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_kind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "attack_rising",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "attack_blade",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack1__sharedassets2_172/attack1.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack2__sharedassets2_176/attack2.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack3__sharedassets2_179/attack3.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack4__sharedassets2_234/attack4.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack5__sharedassets2_235/attack5.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/1t__sharedassets2_245/1t.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/2t__sharedassets2_246/2t.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/3t__sharedassets2_247/3t.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/4t__sharedassets2_248/4t.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/run__sharedassets2_158/run.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/walk__sharedassets2_159/walk.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/idle__sharedassets2_160/idle.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/land_changeweapon__sharedassets2_269/land_changeweapon.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "attack_dual",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack1_duel__sharedassets18_612/attack1_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack2_duel__sharedassets18_614/attack2_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack3_duel__sharedassets18_615/attack3_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack4_duel__sharedassets18_617/attack4_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack5_duel__sharedassets18_618/attack5_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/1t_duel__sharedassets18_622/1t_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/2t_duel__sharedassets18_624/2t_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/3t_duel__sharedassets18_626/3t_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/4t_duel__sharedassets18_628/4t_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/run_duel__sharedassets18_436/run_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/walk_duel__sharedassets18_620/walk_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/idle_duel__sharedassets18_629/idle_duel.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/land_duel__sharedassets18_648/land_duel.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "attack_spear",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack1_halberd__sharedassets18_630/attack1_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack2_halberd__sharedassets18_631/attack2_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack3_halberd__sharedassets18_632/attack3_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack4_halberd__sharedassets18_633/attack4_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack5_halberd__sharedassets18_634/attack5_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/1t_halberd__sharedassets18_638/1t_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/2t_halberd__sharedassets18_640/2t_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/3t_halberd__sharedassets18_642/3t_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/4t_halberd__sharedassets18_644/4t_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/run_halberd__sharedassets18_437/run_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/walk_halberd__sharedassets18_636/walk_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/idle_halberd__sharedassets18_646/idle_halberd.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/land_halberd__sharedassets18_650/land_halberd.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "attack_bow",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack1_bow__sharedassets18_652/attack1_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack2_bow__sharedassets18_654/attack2_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack3_bow__sharedassets18_655/attack3_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack4_bow__sharedassets18_656/attack4_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack5_bow__sharedassets18_657/attack5_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/1t_bow__sharedassets18_659/1t_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/2t_bow__sharedassets18_660/2t_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/3t_bow__sharedassets18_661/3t_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/4t_bow__sharedassets18_662/4t_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/run_bow__sharedassets18_435/run_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/walk_bow__sharedassets18_658/walk_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/idle_bow__sharedassets18_663/idle_bow.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/land_bow__sharedassets18_664/land_bow.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "attack_staff",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack1_staff__sharedassets18_665/attack1_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack2_staff__sharedassets18_673/attack2_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack3_staff__sharedassets18_674/attack3_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack4_staff__sharedassets18_675/attack4_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack5_staff__sharedassets18_676/attack5_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/1t_staff__sharedassets18_667/1t_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/2t_staff__sharedassets18_668/2t_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/3t_staff__sharedassets18_669/3t_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/4t_staff__sharedassets18_670/4t_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/run_staff__sharedassets18_439/run_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/walk_staff__sharedassets18_666/walk_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/idle_staff__sharedassets18_671/idle_staff.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/land_staff__sharedassets18_672/land_staff.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      },
+      {
+       "n": "attack_magic",
+       "kind": "arr",
+       "t": "AnimationClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack1_magic__sharedassets18_677/attack1_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack2_magic__sharedassets18_678/attack2_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack3_magic__sharedassets18_679/attack3_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack4_magic__sharedassets18_680/attack4_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/attack5_magic__sharedassets18_681/attack5_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/1t_magic__sharedassets18_683/1t_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/2t_magic__sharedassets18_684/2t_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/3t_magic__sharedassets18_685/3t_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/4t_magic__sharedassets18_686/4t_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/run_magic__sharedassets18_438/run_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/walk_magic__sharedassets18_682/walk_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/idle_magic__sharedassets18_687/idle_magic.anim",
+         "t": "AnimationClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Animations/land_magic__sharedassets18_688/land_magic.anim",
+         "t": "AnimationClip"
+        }
+       ]
+      }
+     ]
     },
     {
      "kind": "MonoBehaviour",
@@ -10632,7 +11350,150 @@
      "script": "Icon_Skill",
      "guid": "d5a6947dae99a0540975a84de1d8cd64",
      "cs": "unity/Assets/Scripts/Icon_Skill.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "ef_activeskill",
+       "kind": "node",
+       "node": 399,
+       "t": "Transform"
+      },
+      {
+       "n": "pack",
+       "kind": "node",
+       "node": 390,
+       "t": "Transform"
+      },
+      {
+       "n": "icon_pet_folder",
+       "kind": "node",
+       "node": 335,
+       "t": "Transform"
+      },
+      {
+       "n": "isskillready",
+       "kind": "arr",
+       "t": "int",
+       "items": [
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        },
+        {
+         "kind": "int",
+         "i": 0
+        }
+       ]
+      },
+      {
+       "n": "ispetready",
+       "kind": "arr",
+       "t": "bool",
+       "items": [
+        {
+         "kind": "bool",
+         "b": 0
+        },
+        {
+         "kind": "bool",
+         "b": 0
+        }
+       ]
+      },
+      {
+       "n": "move_icon_skill",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "move_icon_pet",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "num_skill",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/num_level.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      }
+     ]
     }
    ]
   },

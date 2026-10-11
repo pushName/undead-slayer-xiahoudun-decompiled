@@ -10,8 +10,10 @@ Unity 4 player builds carry no TypeTree, so a field's offset can only be recover
 class's serialized layout from offset 24 (after the fixed MonoBehaviour header). That is only safe
 when the layout is fully known. So this module refuses to guess:
 
-  * a class is decoded only when every serializable field has a known fixed width
-    (strings, arrays, and unknown custom types are skipped, not approximated);
+  * a class is decoded only when every serialisable field has a known layout -- a fixed width, a
+    string, an array of known elements, or a type Unity writes no bytes for at all;
+  * a type the mono serialiser never writes counts as zero bytes instead of refusing the class. Two
+    such rules, both measured: NON_SERIALIZED (GUIContent and friends) and MULTIDIM_RE below.
   * the walk must consume the field region EXACTLY. A leftover refuses the whole class and is
     reported, because a half-correct layout would silently write wrong references into the scene --
     worse than no data at all. Running out BETWEEN two fields is the one exception, and it is a
@@ -73,6 +75,32 @@ REF_TYPES = {
 NON_SERIALIZED = {"GUIContent", "RectOffset", "GradientColorKey", "RangeInt"}
 OPAQUE_TYPES = {"GUIStyle": 312}
 STRUCT_TYPES = {"Bounds": 24}
+
+# A multidimensional array (T[,], T[,,]) is not a type Unity's mono serialiser writes at all, so
+# the field costs zero bytes rather than an unknown number. Measured on all 14 instances of the
+# eight classes that declare one -- DB_EquipItem.ei, DB_PetSkill.ps, DB_Scenario.sn, DB_Skill.ss,
+# Language_Archive.txt_arch, Language_Costume.txt_cos, Language_Name.txt_name,
+# Language_Scenario.txt_scene -- every one of their records is exactly HEADER_LEN bytes, i.e. the
+# field region is empty, and in all eight the multidimensional array is the class's only field.
+# They were refused before, which is why those eight classes never decoded; nothing was lost, since
+# the tables ship as C# initializers in unity/Assets/Scripts and are already in the rebuild.
+MULTIDIM_RE = re.compile(r"\[\s*,")
+
+# Class -> (first field, last field, bytes the record actually holds) for a run of declared fields
+# whose sizes exceed the bytes present, where nothing in the data can say WHICH field the
+# serializer left out. Cha_Control is the only case: `rideon` plus twelve ints plus `g_atk`, `sp`
+# and `maxsp` need 64 bytes and the record offers 60, and in both instances in this build those 60
+# bytes are entirely zero -- so every candidate "extra field" fits the arithmetic and decodes to the
+# same values; only the name a zero gets filed under would differ. Picking one would invent a
+# mapping the data cannot support, so the block stays unattributed and the walk resumes at the
+# offsets the anchors do pin: shadow = Transform 446 of sharedassets2 (the 'shadow' root we export
+# as a prefab) at 92, limit_x/limit_y_b/limit_y_f = 2.65/-2.6/2.5 at 156/160/164, then yell count=3
+# and skillyell count=2, matching the C# initializers `new AudioClip[3]` and `[2]`, and the six
+# attack arrays land on the tail: 440 + 6 * (4 + 13*8) = 1088 = the record length.
+#
+# The escape hatch is deliberately narrow: it applies only if those bytes are all zero, and refuses
+# the class otherwise, so a future instance carrying real values there cannot be silently skipped.
+UNATTRIBUTED = {"Cha_Control": ("rideon", "maxsp", 60)}
 
 # Per-type struct format. Getting this wrong is not subtle -- unpacking a 4-byte int where the
 # field is 2 bytes overruns the buffer and the whole class then fails the exactness rule.
@@ -157,9 +185,7 @@ def spec_for(typ, classes, depth=0):
          {'kind':'string'}                              int32 length + bytes + pad to 4
          {'kind':'array','elem':spec}                   int32 count + elements
          {'kind':'struct','type':T,'size':n,'align':4,'fields':[(name,spec)]}
-    Only fixed-size structs are accepted, and bool[] is refused outright: whether Unity packs a
-    bool array 1 byte per element or 4 is not something to guess, because the wrong stride can
-    still consume the buffer exactly and then write plausible-looking nonsense.
+    Only fixed-size structs are accepted.
     """
     if depth > 6:
         return None, "type nesting too deep at %r" % typ
@@ -169,8 +195,18 @@ def spec_for(typ, classes, depth=0):
         inner, why = spec_for(m.group(1).strip(), classes, depth + 1)
         if inner is None:
             return None, why
-        if m.group(1).strip() in ("bool", "sbyte"):
-            return None, "bool[] element stride is not settled (1 vs 4 bytes)"
+        if m.group(1).strip() == "sbyte":
+            return None, "sbyte[] element stride is not settled (no instance to measure on)"
+        if m.group(1).strip() == "bool":
+            # Array elements pack 1 byte each even though a STANDALONE bool field is 4-byte aligned.
+            # Icon_Skill.ispetready in level17 (raw_len 160) is the only bool[] in the build and it
+            # separates the two rules: count 2 at 136, elements at 140 and 141, move_icon_skill at
+            # 144, move_icon_pet at 148, num_skill at 152 -- exactly the end of the record. A 4-byte
+            # element stride over-runs it. Keeping standalone bools at stride 1 instead would break
+            # 23 other records (378 decoded falling to 352), so the difference is real, and
+            # num_skill landing on a Transform whose GameObject is named num_level is the content
+            # check that says the offsets are not merely self-consistent.
+            inner = dict(inner, align=1)
         return {"kind": "array", "elem": inner}, None
     if typ == "string":
         return {"kind": "string"}, None
@@ -284,7 +320,7 @@ def _read(spec, raw, off, end):
     return None, None, "unhandled spec %r" % k
 
 
-def decode_instance(raw, fields, classes=None):
+def decode_instance(raw, fields, classes=None, cls=None):
     """-> ({name: value}, None, [truncated field names]) or (None, reason, []).
 
     The walk must consume the field region EXACTLY: a leftover refuses the whole class rather than
@@ -303,8 +339,34 @@ def decode_instance(raw, fields, classes=None):
     end = len(raw)
     out = {}
     truncated = []
+    block = UNATTRIBUTED.get(cls or "")
+    names = [n for _t, n in fields]
+    if block and (block[0] not in names or block[1] not in names):
+        return None, "unattributed block names %s/%s are not in the parsed layout" % (
+            block[0], block[1]), []
+    i0 = names.index(block[0]) if block else -1
+    i1 = names.index(block[1]) if block else -1
     for i, (typ, name) in enumerate(fields):
         if typ in NON_SERIALIZED:
+            continue
+        if MULTIDIM_RE.search(typ):
+            # Marked rather than dropped so the caller can count it: the record genuinely holds no
+            # bytes here (see MULTIDIM_RE), so the value comes from the C# initializer at runtime.
+            out[name] = {"not_serialised": typ}
+            continue
+        if block and i == i0:
+            # Absorb the run on the way past it, so every field before it has already been read at
+            # its own offset -- the block starts where they end, not at the head of the record.
+            first, last, nbytes = block
+            start = _align(off, 4)
+            blob = raw[start:start + nbytes]
+            if len(blob) != nbytes or any(blob):
+                return None, ("unattributed block %s..%s needs %d zero bytes at %d and the record "
+                              "has something else -- refusing rather than skipping real values"
+                              % (first, last, nbytes, start)), []
+            off = start + nbytes
+            continue
+        if block and i0 < i <= i1:
             continue
         spec, why = spec_for(typ, classes or {})
         if spec is None:
@@ -341,7 +403,7 @@ def decode_for_class(cls, raw):
     fields = serializable_fields(cls, _CLASSES)
     if fields is None:
         return None, "class %s not found in %s" % (cls, SCRIPTS), []
-    vals, why, truncated = decode_instance(raw, fields, _CLASSES)
+    vals, why, truncated = decode_instance(raw, fields, _CLASSES, cls)
     if vals is None:
         return None, why, []
     # list, not dict: the caller relies on field order matching the serialised layout.
@@ -363,9 +425,9 @@ def classify_refusal(why):
     if "leftover" in w:
         return "record longer than layout (a field this module does not know)"
     if "[,]" in w:
-        return "two-dimensional array (unsupported by design)"
-    if "bool[]" in w:
-        return "bool[] stride unresolved (refused on purpose)"
+        return "two-dimensional array reached a struct member (zero bytes at top level)"
+    if "element stride is not settled" in w:
+        return "byte-packed element type with no instance in this build to measure on"
     if "variable-length" in w:
         return "variable-length member inside a struct (refused on purpose)"
     return "other"
@@ -403,7 +465,10 @@ def report():
                 skipped += 1
                 reasons["class not found in sources"] = reasons.get("class not found in sources", 0) + 1
                 continue
-            vals, why, truncated = decode_instance(raw, fields, classes)
+            # cls must be passed: the UNATTRIBUTED table is keyed by class, and forgetting it
+            # silently leaves those classes refusing while the walk itself is fine -- which is how
+            # this run first reported no change at all.
+            vals, why, truncated = decode_instance(raw, fields, classes, cls)
             if vals is None:
                 skipped += 1
                 reasons[why.split("--")[0].strip()[:48]] = reasons.get(why.split("--")[0].strip()[:48], 0) + 1

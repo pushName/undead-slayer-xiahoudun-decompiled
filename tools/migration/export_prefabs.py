@@ -59,12 +59,37 @@ BUILD_SCENE_DIR = "Assets/Imported/_PrefabBuild"
 
 BAD = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 
+
+def asset_refs(o):
+    """Yield (asset_path, declared_type) for every "asset" path anywhere in a document.
+
+    A plain recursive walk rather than a typed parse, because the references are not all at one
+    depth or one shape: an Animation component's m_Clips binding, a scalar field like
+    Cha_Weapon.bowgun, and an array element like Cha_Control.attack_dual[0] sit three levels apart,
+    and only the latter two carry kind == "asset".
+    """
+    if isinstance(o, dict):
+        p = o.get("asset")
+        if isinstance(p, str) and p.startswith("Assets/"):
+            # A binding carries no declared type but is by definition a clip; a field carries "t".
+            yield p, o.get("t") or ("AnimationClip" if "clip_id" in o else "?")
+        for v in o.values():
+            for r in asset_refs(v):
+                yield r
+    elif isinstance(o, list):
+        for v in o:
+            for r in asset_refs(v):
+                yield r
+
 # The second kind of prefab: a hierarchy root that lives in a container and is referenced by a
 # scene's MonoBehaviour field as an Instantiate template, but is NOT named by any Resources.Load key.
 # Their names and root ids come from dropped-refs.json (scan_dropped_refs.py resolves the roots).
-# Measured: 97 distinct roots, zero name collisions among themselves, one name (wp_horse) already
-# exported as a load-key prefab. The hierarchies are NOT all single objects -- sizes run from 1 to
-# 42 objects -- so the index covers each subtree's own ids, see the note in the loop.
+# Measured at first: 97 candidate roots, zero name collisions among themselves, one name (wp_horse)
+# already exported as a load-key prefab, so 96 were exported. The ledger grew to 99 when the
+# MonoBehaviour field decode found three more (ef_stepfog, ef_thrustfog, num_level) -- every wider
+# decoder uncovers references this list had never seen. The hierarchies are NOT all single objects --
+# sizes run from 1 to 42 objects -- so the index covers each subtree's own ids, see the note in the
+# loop.
 DROPPED = os.path.join(_REPO, "tools", "migration", "dropped-refs.json")
 TPL_OUT_DIR = os.path.join(_REPO, "tools", "migration", "prefab-templates")
 # Deliberately NOT under Resources/: not one of these roots appears among the 299 rows of the
@@ -355,7 +380,6 @@ def main():
     srcs = dict(u4.sources())
     stats = collections.Counter()
     report, missing, not_roots = {}, {}, {}
-    missing_clips = set()
     for cont in sorted(by_container):
         path = srcs.get(cont)
         if path is None:
@@ -440,26 +464,41 @@ def main():
                 with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
                     json.dump(payload, fh, indent=1, ensure_ascii=False)
                 os.replace(tmp, os.path.join(out_dir, safe + ".json"))
-            for n in kept:
-                for b in n.get("animations") or []:
-                    if not os.path.exists(os.path.join(_REPO, "unity",
-                                                       b["asset"].replace("/", os.sep))):
-                        missing_clips.add("%s -> %s" % (key, b["asset"]))
             stats["exported"] += 1
 
     if missing:
         print("REFUSING to call this a run: %d root GameObject(s) produced no node at all, e.g. %s"
               % (len(missing), missing[:3]))
         return 2
-    # Some animation bindings reference a .anim the Editor has not built yet: the index lists 427
-    # clips and 140 have been turned into assets. Counted rather than hidden -- the fix is the build
-    # pass, not the description.
+    # Every asset path the scenes and descriptions now reference has to exist under unity/ by the
+    # time the Editor builds, because a reference to a missing asset lands as null and the only
+    # trace is a warning buried in a Console dump. The first version of this guard looked only at
+    # nodes[].animations of the descriptions it had just written, so it printed "0" the whole way
+    # through the run that put 65 Cha_Control.attack_* AnimationClip array elements into Stage --
+    # the referring side is not only the Animation component, and array elements are a third shape.
     built = len(glob.glob(os.path.join(_REPO, "unity", "Assets", "Imported", "Animations",
                                        "*", "*.anim")))
     total = len((load_json(os.path.join(MIG, "animation-index.json")) or {}).get("clips", []))
-    print("animation bindings pointing at a .anim that is not built yet: %d "
-          "(the clip-to-asset pass has produced %d of the build's %d)"
-          % (len(missing_clips), built, total))
+    absent = collections.defaultdict(set)
+    scanned = 0
+    for d in [os.path.join(MIG, "scenes"), os.path.join(MIG, "prefabs"), TPL_OUT_DIR]:
+        for fn in sorted(glob.glob(os.path.join(d, "*.json"))):
+            scanned += 1
+            for p, t in asset_refs(load_json(fn) or {}):
+                if not os.path.exists(os.path.join(_REPO, "unity", p.replace("/", os.sep))):
+                    absent[t].add(p)
+    if absent:
+        print("MISSING ASSET: %d referenced asset path(s) do not exist on disk, from "
+              "%d scene/prefab description file(s) scanned"
+              % (sum(len(v) for v in absent.values()), scanned))
+        for t, ps in sorted(absent.items(), key=lambda x: -len(x[1])):
+            print("   %-16s %d   e.g. %s" % (t, len(ps), sorted(ps)[0]))
+        print("   the .anim ones are the clip pass's job: run Undead Slayer/Build AnimationClips "
+              "From Descriptors, then build prefabs and rebuild the scenes again")
+    else:
+        print("asset references: every path in %d description file(s) exists under unity/ "
+              "(the clip pass has produced %d of the build's %d AnimationClips)"
+              % (scanned, built, total))
     print("exported %d prefabs, %d objects total (%s cut for references outside a subtree)"
           % (stats["exported"], sum(r["objects"] for r in report.values()),
              {k: v for k, v in stats.items() if k != "exported"} or "nothing"))
@@ -472,7 +511,10 @@ def main():
            "registered_object_not_a_root": not_roots,
            "pending": {k: ["%s!%d" % c for c in v] for k, v in sorted(pending.items())},
            "cut_stats": {k: v for k, v in stats.items() if k != "exported"},
-           "animation_bindings_missing_on_disk": sorted(missing_clips),
+           # Recomputed at the end of the run, over the scenes as well as the descriptions, so the
+           # report cannot list "no gaps" while the scene files still point at unbuilt assets.
+           "referenced_assets_missing_on_disk": {t: sorted(ps)
+                                                 for t, ps in sorted(absent.items())},
            "prefabs": report,
            "decided_by": {k: decided[k] for k in sorted(decided)}}
     if args.dry_run:

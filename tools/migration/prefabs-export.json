@@ -1,5 +1,4 @@
 {
- "animation_bindings_missing_on_disk": [],
  "cut_stats": {
   "node ref outside subtree dropped": 9
  },
@@ -91,7 +90,9 @@
   "ef_icon_breakstage": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "ef_icon_creatstage": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "ef_rapidstab": "hierarchy root named by dropped-refs (no Resources.Load key)",
+  "ef_stepfog": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "ef_swing_ex3": "hierarchy root named by dropped-refs (no Resources.Load key)",
+  "ef_thrustfog": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "ef_wheelwind": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "fincanon": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "general_arrow_poison": "only one candidate by name",
@@ -129,6 +130,7 @@
   "map_ride4": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "map_ride5": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "num_damege": "hierarchy root named by dropped-refs (no Resources.Load key)",
+  "num_level": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "obj_barricade": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "obj_basecamp": "hierarchy root named by dropped-refs (no Resources.Load key)",
   "plane_staff_test": "hierarchy root named by dropped-refs (no Resources.Load key)",
@@ -4888,6 +4890,26 @@
    "objects": 1,
    "path_id": 782
   },
+  "ef_stepfog": {
+   "assets": "Assets/Imported/Prefabs/ef_stepfog.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets2.assets",
+   "decided_by": "hierarchy root named by dropped-refs (no Resources.Load key)",
+   "object_ids": [
+    338,
+    443,
+    543,
+    569,
+    622
+   ],
+   "objects": 1,
+   "path_id": 338
+  },
   "ef_swing_ex3": {
    "assets": "Assets/Imported/Prefabs/ef_swing_ex3.prefab",
    "components": {
@@ -4911,6 +4933,26 @@
    ],
    "objects": 1,
    "path_id": 783
+  },
+  "ef_thrustfog": {
+   "assets": "Assets/Imported/Prefabs/ef_thrustfog.prefab",
+   "components": {
+    "MeshFilter": 1,
+    "MeshRenderer": 1,
+    "MonoBehaviour": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets2.assets",
+   "decided_by": "hierarchy root named by dropped-refs (no Resources.Load key)",
+   "object_ids": [
+    339,
+    444,
+    544,
+    570,
+    623
+   ],
+   "objects": 1,
+   "path_id": 339
   },
   "ef_wheelwind": {
    "assets": "Assets/Imported/Prefabs/ef_wheelwind.prefab",
@@ -5952,6 +5994,24 @@
    ],
    "objects": 1,
    "path_id": 340
+  },
+  "num_level": {
+   "assets": "Assets/Imported/Prefabs/num_level.prefab",
+   "components": {
+    "MeshRenderer": 1,
+    "TextMesh": 1,
+    "Transform": 1
+   },
+   "container": "sharedassets18.assets",
+   "decided_by": "hierarchy root named by dropped-refs (no Resources.Load key)",
+   "object_ids": [
+    788,
+    1844,
+    2957,
+    3421
+   ],
+   "objects": 1,
+   "path_id": 788
   },
   "obj_barricade": {
    "assets": "Assets/Imported/Prefabs/obj_barricade.prefab",
@@ -7478,6 +7538,75 @@
    "path_id": 342
   }
  },
+ "referenced_assets_missing_on_disk": {
+  "AnimationClip": [
+   "Assets/Imported/Animations/1t_bow__sharedassets18_659/1t_bow.anim",
+   "Assets/Imported/Animations/1t_duel__sharedassets18_622/1t_duel.anim",
+   "Assets/Imported/Animations/1t_halberd__sharedassets18_638/1t_halberd.anim",
+   "Assets/Imported/Animations/1t_magic__sharedassets18_683/1t_magic.anim",
+   "Assets/Imported/Animations/1t_staff__sharedassets18_667/1t_staff.anim",
+   "Assets/Imported/Animations/2t_bow__sharedassets18_660/2t_bow.anim",
+   "Assets/Imported/Animations/2t_duel__sharedassets18_624/2t_duel.anim",
+   "Assets/Imported/Animations/2t_halberd__sharedassets18_640/2t_halberd.anim",
+   "Assets/Imported/Animations/2t_magic__sharedassets18_684/2t_magic.anim",
+   "Assets/Imported/Animations/2t_staff__sharedassets18_668/2t_staff.anim",
+   "Assets/Imported/Animations/3t_bow__sharedassets18_661/3t_bow.anim",
+   "Assets/Imported/Animations/3t_duel__sharedassets18_626/3t_duel.anim",
+   "Assets/Imported/Animations/3t_halberd__sharedassets18_642/3t_halberd.anim",
+   "Assets/Imported/Animations/3t_magic__sharedassets18_685/3t_magic.anim",
+   "Assets/Imported/Animations/3t_staff__sharedassets18_669/3t_staff.anim",
+   "Assets/Imported/Animations/4t_bow__sharedassets18_662/4t_bow.anim",
+   "Assets/Imported/Animations/4t_duel__sharedassets18_628/4t_duel.anim",
+   "Assets/Imported/Animations/4t_halberd__sharedassets18_644/4t_halberd.anim",
+   "Assets/Imported/Animations/4t_magic__sharedassets18_686/4t_magic.anim",
+   "Assets/Imported/Animations/4t_staff__sharedassets18_670/4t_staff.anim",
+   "Assets/Imported/Animations/attack1_bow__sharedassets18_652/attack1_bow.anim",
+   "Assets/Imported/Animations/attack1_duel__sharedassets18_612/attack1_duel.anim",
+   "Assets/Imported/Animations/attack1_halberd__sharedassets18_630/attack1_halberd.anim",
+   "Assets/Imported/Animations/attack1_magic__sharedassets18_677/attack1_magic.anim",
+   "Assets/Imported/Animations/attack1_staff__sharedassets18_665/attack1_staff.anim",
+   "Assets/Imported/Animations/attack2_bow__sharedassets18_654/attack2_bow.anim",
+   "Assets/Imported/Animations/attack2_duel__sharedassets18_614/attack2_duel.anim",
+   "Assets/Imported/Animations/attack2_halberd__sharedassets18_631/attack2_halberd.anim",
+   "Assets/Imported/Animations/attack2_magic__sharedassets18_678/attack2_magic.anim",
+   "Assets/Imported/Animations/attack2_staff__sharedassets18_673/attack2_staff.anim",
+   "Assets/Imported/Animations/attack3_bow__sharedassets18_655/attack3_bow.anim",
+   "Assets/Imported/Animations/attack3_duel__sharedassets18_615/attack3_duel.anim",
+   "Assets/Imported/Animations/attack3_halberd__sharedassets18_632/attack3_halberd.anim",
+   "Assets/Imported/Animations/attack3_magic__sharedassets18_679/attack3_magic.anim",
+   "Assets/Imported/Animations/attack3_staff__sharedassets18_674/attack3_staff.anim",
+   "Assets/Imported/Animations/attack4_bow__sharedassets18_656/attack4_bow.anim",
+   "Assets/Imported/Animations/attack4_duel__sharedassets18_617/attack4_duel.anim",
+   "Assets/Imported/Animations/attack4_halberd__sharedassets18_633/attack4_halberd.anim",
+   "Assets/Imported/Animations/attack4_magic__sharedassets18_680/attack4_magic.anim",
+   "Assets/Imported/Animations/attack4_staff__sharedassets18_675/attack4_staff.anim",
+   "Assets/Imported/Animations/attack5_bow__sharedassets18_657/attack5_bow.anim",
+   "Assets/Imported/Animations/attack5_duel__sharedassets18_618/attack5_duel.anim",
+   "Assets/Imported/Animations/attack5_halberd__sharedassets18_634/attack5_halberd.anim",
+   "Assets/Imported/Animations/attack5_magic__sharedassets18_681/attack5_magic.anim",
+   "Assets/Imported/Animations/attack5_staff__sharedassets18_676/attack5_staff.anim",
+   "Assets/Imported/Animations/idle_bow__sharedassets18_663/idle_bow.anim",
+   "Assets/Imported/Animations/idle_duel__sharedassets18_629/idle_duel.anim",
+   "Assets/Imported/Animations/idle_halberd__sharedassets18_646/idle_halberd.anim",
+   "Assets/Imported/Animations/idle_magic__sharedassets18_687/idle_magic.anim",
+   "Assets/Imported/Animations/idle_staff__sharedassets18_671/idle_staff.anim",
+   "Assets/Imported/Animations/land_bow__sharedassets18_664/land_bow.anim",
+   "Assets/Imported/Animations/land_duel__sharedassets18_648/land_duel.anim",
+   "Assets/Imported/Animations/land_halberd__sharedassets18_650/land_halberd.anim",
+   "Assets/Imported/Animations/land_magic__sharedassets18_688/land_magic.anim",
+   "Assets/Imported/Animations/land_staff__sharedassets18_672/land_staff.anim",
+   "Assets/Imported/Animations/run_bow__sharedassets18_435/run_bow.anim",
+   "Assets/Imported/Animations/run_duel__sharedassets18_436/run_duel.anim",
+   "Assets/Imported/Animations/run_halberd__sharedassets18_437/run_halberd.anim",
+   "Assets/Imported/Animations/run_magic__sharedassets18_438/run_magic.anim",
+   "Assets/Imported/Animations/run_staff__sharedassets18_439/run_staff.anim",
+   "Assets/Imported/Animations/walk_bow__sharedassets18_658/walk_bow.anim",
+   "Assets/Imported/Animations/walk_duel__sharedassets18_620/walk_duel.anim",
+   "Assets/Imported/Animations/walk_halberd__sharedassets18_636/walk_halberd.anim",
+   "Assets/Imported/Animations/walk_magic__sharedassets18_682/walk_magic.anim",
+   "Assets/Imported/Animations/walk_staff__sharedassets18_666/walk_staff.anim"
+  ]
+ },
  "registered_object_not_a_root": {
   "angel_splash5": "cf478de1ef56c3444ac102712d1445a3!1 father=10",
   "wp_b01": "sharedassets18.assets!1639 father=2316",
@@ -7489,7 +7618,7 @@
   "wp_b10": "sharedassets18.assets!1648 father=2325"
  },
  "tally": {
-  "exported": 193,
+  "exported": 196,
   "pending_ambiguous": 0
  }
 }

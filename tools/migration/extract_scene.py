@@ -166,6 +166,11 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None, ledger=None, ctx
         return {"n": fname, "kind": "float", "f": v["float"]}, None
     if "int" in v:
         return {"n": fname, "kind": "int", "i": v["int"]}, None
+    if "not_serialised" in v:
+        # Zero bytes in the record, by measurement (see MULTIDIM_RE in monobehaviour_fields): the
+        # field takes its C# initializer at runtime, so there is nothing to carry -- but the tally
+        # has to say so, or eight classes that decode to nothing look like a bug.
+        return None, "multidimensional array, no bytes in the record"
     if "opaque" in v:
         return {"n": fname, "kind": "opaque", "t": v["opaque"], "size": v["size"]}, \
                "opaque skipped (%s)" % v["opaque"]

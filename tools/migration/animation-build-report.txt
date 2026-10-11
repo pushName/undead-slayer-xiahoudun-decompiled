@@ -1,10 +1,10 @@
 ===== ANIMATION CLIP BUILD =====
-clips built        : 186  (186 (state,clip) assets requested), failed 0
-requested by       : 165 Animation state bindings + 21 MonoBehaviour field references; the index lists 427 clips and only what a scene or prefab description actually mentions is built
-float channels     : 34866
-curve keys         : built 161874 for 53958 source vector keys  (each vector/quaternion curve becomes 3-4 float channels)
-animation events   : 16 persisted via AnimationUtility
-descriptions scanned  : 23 scene file(s) + 193 prefab file(s)
+clips built        : 251  (251 (state,clip) assets requested), failed 0
+requested by       : 165 Animation state bindings + 86 MonoBehaviour field references; the index lists 427 clips and only what a scene or prefab description actually mentions is built
+float channels     : 51831
+curve keys         : built 218421 for 72807 source vector keys  (each vector/quaternion curve becomes 3-4 float channels)
+animation events   : 26 persisted via AnimationUtility
+descriptions scanned  : 23 scene file(s) + 196 prefab file(s)
 float curves skipped: 0 (classID+attribute, not guessed)
 ambiguous bindings  : 211 (same state name, several candidate clips -- picked by lowest path_id, NOT proven)
    ambiguous: Story/cha1:idle

@@ -34,17 +34,16 @@
   "FlareLayer": 1
  },
  "field_stats": {
-  "ref set": 14,
-  "instances decoded": 41,
-  "cross-file -> prefab root": 9,
-  "null in source": 47,
-  "null in source (element)": 11,
-  "array fully dropped": 3,
-  "cross-file -> asset": 16,
-  "cross-file -> asset (element)": 37,
-  "array set": 17,
+  "ref set": 31,
+  "instances decoded": 42,
+  "cross-file -> prefab root": 12,
+  "null in source": 55,
+  "null in source (element)": 83,
+  "array fully dropped": 9,
+  "cross-file -> asset": 22,
+  "cross-file -> asset (element)": 42,
+  "array set": 19,
   "audio clip null in source": 4,
-  "refused[record shorter than layout (data assig]": 1,
   "audio clip -> asset": 4,
   "cross-file ref dropped": 2,
   "opaque skipped (GUIStyle)": 2,
@@ -5350,7 +5349,252 @@
      "script": "Cha_Control",
      "guid": "391a8cf5287612747a3c6a644430b770",
      "cs": "unity/Assets/Scripts/Cha_Control.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "screen_effect",
+       "kind": "node",
+       "node": 244,
+       "t": "Transform"
+      },
+      {
+       "n": "shadow",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/shadow.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "pt_heal",
+       "kind": "node",
+       "node": 436,
+       "t": "Transform"
+      },
+      {
+       "n": "pt_rising",
+       "kind": "node",
+       "node": 434,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_riseattack",
+       "kind": "node",
+       "node": 437,
+       "t": "Transform"
+      },
+      {
+       "n": "limit_x",
+       "kind": "float",
+       "f": 2.6500000953674316
+      },
+      {
+       "n": "limit_y_b",
+       "kind": "float",
+       "f": -2.5999999046325684
+      },
+      {
+       "n": "limit_y_f",
+       "kind": "float",
+       "f": 2.5
+      },
+      {
+       "n": "level",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "exp",
+       "kind": "float",
+       "f": 0.0
+      },
+      {
+       "n": "yell",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_hup1.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_hup3.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_hup2.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "skillyell",
+       "kind": "arr",
+       "t": "AudioClip",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_skill2.mp3",
+         "t": "AudioClip"
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Resources/main_skill1.mp3",
+         "t": "AudioClip"
+        }
+       ]
+      },
+      {
+       "n": "footstep",
+       "kind": "asset",
+       "asset": "Assets/Resources/footstep.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_getitem",
+       "kind": "asset",
+       "asset": "Assets/Resources/getitem.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "boom",
+       "kind": "asset",
+       "asset": "Assets/Resources/boom1.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_dodge",
+       "kind": "asset",
+       "asset": "Assets/Resources/dodge.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_swing",
+       "kind": "asset",
+       "asset": "Assets/Resources/swing1.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "snd_skillstart",
+       "kind": "asset",
+       "asset": "Assets/Resources/skillstart.mp3",
+       "t": "AudioClip"
+      },
+      {
+       "n": "guicam",
+       "kind": "node",
+       "node": 428,
+       "t": "Camera"
+      },
+      {
+       "n": "dummy_weapon",
+       "kind": "node",
+       "node": 257,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_blur",
+       "kind": "node",
+       "node": 228,
+       "t": "Transform"
+      },
+      {
+       "n": "txtef",
+       "kind": "node",
+       "node": 227,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_block",
+       "kind": "node",
+       "node": 223,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_blockbreak",
+       "kind": "node",
+       "node": 224,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_punch",
+       "kind": "node",
+       "node": 221,
+       "t": "Transform"
+      },
+      {
+       "n": "guide_circle",
+       "kind": "node",
+       "node": 324,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_super",
+       "kind": "node",
+       "node": 435,
+       "t": "Transform"
+      },
+      {
+       "n": "pet_eagle",
+       "kind": "node",
+       "node": 409,
+       "t": "Transform"
+      },
+      {
+       "n": "pet_horse",
+       "kind": "node",
+       "node": 407,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_splash",
+       "kind": "node",
+       "node": 327,
+       "t": "Transform"
+      },
+      {
+       "n": "ef_stepfog",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_stepfog.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_thrustfog",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_thrustfog.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_rotfog",
+       "kind": "node",
+       "node": 323,
+       "t": "Transform"
+      },
+      {
+       "n": "life",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "exattack",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "weapon_kind",
+       "kind": "int",
+       "i": 0
+      },
+      {
+       "n": "attack_rising",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
     },
     {
      "kind": "component",
