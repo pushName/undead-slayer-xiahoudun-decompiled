@@ -78,6 +78,10 @@ namespace UndeadSlayer.Migration
             public float[] v;
             public string s;         // kind == str
             public string asset;     // kind == asset: project-relative path
+            // kind == asset AND this asset is a .prefab: the field does not want the prefab
+            // itself, it wants an object INSIDE it (the shipped data pointed at a Transform that
+            // happened to live in that container). 1 means resolve through the prefab's root.
+            public int in_prefab;
             public FieldItem[] items;  // kind == arr: one entry per element
         }
 
@@ -98,6 +102,7 @@ namespace UndeadSlayer.Migration
             public float[] v;
             public string asset;
             public string s;         // kind == str: e.g. RankingManager.username, string[50]
+            public int in_prefab;    // kind == asset and the asset is a .prefab (see FieldVal)
         }
 
         [Serializable]
@@ -435,7 +440,25 @@ namespace UndeadSlayer.Migration
                                 ": asset '" + fv.asset + "' is not in the project");
                             continue;
                         }
-                        prop.objectReferenceValue = a;
+                        if (fv.in_prefab != 0)
+                        {
+                            var fiP = FindFieldType(job.Mb.GetType(), fv.n);
+                            var valP = RefForPrefabRoot(a as GameObject,
+                                fiP == null ? null : fiP.FieldType);
+                            if (valP == null)
+                            {
+                                fieldsMissing++;
+                                Debug.LogWarning("[SceneRebuilder] " + job.Mb.name + "." + fv.n +
+                                    ": '" + fv.asset + "' has no " + (fv.t ?? "?") +
+                                    " resolvable on its root -- left unset");
+                                continue;
+                            }
+                            prop.objectReferenceValue = valP;
+                        }
+                        else
+                        {
+                            prop.objectReferenceValue = a;
+                        }
                         fieldsRefs++;
                         wantLanded.Add(fv.n);
                     }
@@ -452,6 +475,21 @@ namespace UndeadSlayer.Migration
                             {
                                 var a = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(item.asset);
                                 if (a == null) continue;
+                                if (item.in_prefab != 0)
+                                {
+                                    // An element's declared type is not reachable from the
+                                    // SerializedProperty, so this makes the same guess the in-scene
+                                    // element branch below makes: GameObject only when the property
+                                    // says GameObject, otherwise the root Transform.
+                                    var ft = ep.propertyType == SerializedPropertyType.ObjectReference
+                                             && ep.type == "GameObject"
+                                        ? typeof(GameObject) : typeof(Transform);
+                                    var v = RefForPrefabRoot(a as GameObject, ft);
+                                    if (v == null) continue;
+                                    ep.objectReferenceValue = v;
+                                    landed++;
+                                    continue;
+                                }
                                 ep.objectReferenceValue = a;
                                 landed++;
                             }
@@ -816,6 +854,25 @@ namespace UndeadSlayer.Migration
                 var f = c.GetField(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
                 if (f != null) return f;
             }
+            return null;
+        }
+
+        /// What to hand a reference field whose target is a prefab ASSET instead of a scene object:
+        /// the same declared-CLR-type decision the in-scene branch makes, applied to the prefab's
+        /// root. The order is deliberately identical to that branch, so a Transform field and a
+        /// Component field resolve the same way whether the target lives in this scene or in another
+        /// file. Assigning the root Transform of a prefab serialises as {fileID, guid, type: 3} --
+        /// a reference INTO the asset, which is what the shipped data held (it pointed at a
+        /// Transform that lived in a sharedassets container, not at a scene object).
+        private static UnityEngine.Object RefForPrefabRoot(GameObject root, Type ft)
+        {
+            if (root == null || ft == null)
+            {
+                return null;
+            }
+            if (ft.IsAssignableFrom(typeof(Transform))) return root.transform;
+            if (ft.IsAssignableFrom(typeof(GameObject))) return root;
+            if (typeof(Component).IsAssignableFrom(ft)) return root.GetComponent(ft);
             return null;
         }
 

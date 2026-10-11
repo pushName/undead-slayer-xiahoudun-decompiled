@@ -1,0 +1,80 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets2.assets",
+ "root_path_id": 332,
+ "prefab_name": "bowgun01",
+ "asset_path": "Assets/Imported/Prefabs/bowgun01.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/bowgun01.unity",
+ "node_count": 1,
+ "root_ids": [
+  437
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 2,
+  "ref set": 4,
+  "instances decoded": 17
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [
+  "MeshRenderer 545: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy02: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy01: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 437,
+   "go_id": 332,
+   "name": "bowgun01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/bowgun_sharedassets2_assets_116.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bowgun01_sharedassets2_assets_4.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "WeaponDrop",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

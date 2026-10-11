@@ -20,10 +20,17 @@ What a prefab adds, and what is therefore done here and not in extract_scene:
   * SkinnedMeshRenderer bone lists are cut to the subtree for the same reason.
 
 Emits:
-  tools/migration/prefabs/<name>.json      one description per exportable root
+  tools/migration/prefabs/<name>.json      one description per load-key root (Assets/Resources)
+  tools/migration/prefab-templates/<name>.json  ... per template root (Assets/Imported/Prefabs)
   tools/migration/prefabs-export.json      tally, the pending list, and per-root counts
+  tools/migration/prefab-templates.json    container!path_id -> the asset that now holds it, which
+                                           is how extract_scene turns a dropped cross-file
+                                           reference into a reference into a prefab
 
-Run:  <unitypy venv python> tools/migration/export_prefabs.py [--dry-run]  RECON_DIR=<path>
+Run:  <unitypy venv python> tools/migration/export_prefabs.py [--dry-run] [--with-templates]
+                             [--only NAME[,NAME]]   RECON_DIR=<path>
+`--only` is a pilot switch: it exports just those template roots, leaves the aggregate report and
+the other descriptions alone, and merges rather than rewrites the index.
 """
 import argparse
 import collections
@@ -51,6 +58,49 @@ load_json = ES.load_json
 BUILD_SCENE_DIR = "Assets/Imported/_PrefabBuild"
 
 BAD = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
+
+# The second kind of prefab: a hierarchy root that lives in a container and is referenced by a
+# scene's MonoBehaviour field as an Instantiate template, but is NOT named by any Resources.Load key.
+# Their names, subtree sizes and cross-file targets come from dropped-refs.json (scan_dropped_refs.py
+# resolves the root ids), measured: 97 roots, every one a single object, zero name collisions among
+# themselves, one name (wp_horse) already exported as a load-key prefab.
+DROPPED = os.path.join(_REPO, "tools", "migration", "dropped-refs.json")
+TPL_OUT_DIR = os.path.join(_REPO, "tools", "migration", "prefab-templates")
+# Deliberately NOT under Resources/: not one of these roots appears among the 299 rows of the
+# shipped resource index, so no call site can load them by name, and giving two assets the same
+# resource path is an ambiguous load rather than a fix.
+TPL_ASSET_DIR = "Assets/Imported/Prefabs"
+TPL_BUILD_SCENE_DIR = "Assets/Imported/_TemplateBuild"
+TEMPLATE_INDEX = os.path.join(_REPO, "tools", "migration", "prefab-templates.json")
+
+
+def template_roots(only=None):
+    """{name: (container, root GameObject path_id)} for the Instantiate-template roots.
+
+    Returns None to refuse: a name claimed by two different objects would mean two prefabs wanting
+    one file, which is the same ambiguity the texture pass already got burned by.
+    """
+    doc = load_json(DROPPED)
+    if doc is None:
+        print("no dropped-refs.json -- run scan_dropped_refs.py first; refusing to guess roots")
+        return None
+    out = {}
+    for r in doc.get("resolved", []):
+        if r.get("tgt_type") != "Transform" or r.get("root_object") is None or not r.get("root"):
+            continue
+        name, key = r["root"], (r["container"], r["root_object"])
+        if name in out and out[name] != key:
+            print("REFUSING: template root name %s is claimed by %s and %s" % (name, out[name], key))
+            return None
+        out[name] = key
+    if only:
+        want = [n.strip() for n in only.split(",") if n.strip()]
+        miss = sorted(n for n in want if n.lower() not in {k.lower() for k in out})
+        if miss:
+            print("REFUSING: --only names that are not template roots: %s" % miss)
+            return None
+        out = {k: v for k, v in out.items() if k.lower() in {n.lower() for n in want}}
+    return out
 
 
 def wanted_roots():
@@ -163,9 +213,20 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--with-templates", action="store_true",
+                    help="also export the Instantiate-template roots from dropped-refs.json")
+    ap.add_argument("--only", metavar="NAME[,NAME]",
+                    help="templates: export only these root names (pilot runs); implies "
+                         "--with-templates and skips deleting stale descriptions")
     args = ap.parse_args()
 
     roots = wanted_roots()
+    if args.only:
+        # A pilot run: the load-key roots are already exported and committed, and re-running them
+        # here would rewrite 97 descriptions plus the aggregate report to prove nothing. Drop them
+        # and keep only the named template roots.
+        roots = {}
+        print("PILOT: --only given, so the load-key roots are skipped for this run")
     # mainData's shipped resource index decides a root when it claims one object under that exact
     # key: a row gives (container, path_id), and the test here is that the row's own verdict is
     # "exact" (the object there really carries the name) or that no other row claims the rival
@@ -230,6 +291,39 @@ def main():
               "make Resources.Load('%s') ambiguous" % (len(hit), hit[0]))
         return 2
 
+    # Where each root's description and asset go. Load keys are Resources prefabs; template roots are
+    # Imported/Prefabs, and the two kinds never share a directory or a name space.
+    folders = {k: ("Assets/Resources", OUT_DIR, BUILD_SCENE_DIR) for k in unique}
+    if args.with_templates or args.only:
+        tpl = template_roots(args.only)
+        if tpl is None:
+            return 2
+        exported_as_keys = set(unique.values())
+        added, already = 0, 0
+        for name in sorted(tpl):
+            key = tpl[name]
+            if key in exported_as_keys:
+                # wp_horse: a load-key export already produces exactly this root, so the scene
+                # reference resolves to that asset instead of a duplicate copy of it.
+                already += 1
+                continue
+            if name in unique:
+                print("REFUSING: template root %s would collide with a load-key prefab of the "
+                      "same name but a different object" % name)
+                return 2
+            unique[name] = key
+            decided[name] = "hierarchy root named by dropped-refs (no Resources.Load key)"
+            names[name] = BAD.sub("_", name).strip(". ")
+            folders[name] = (TPL_ASSET_DIR, TPL_OUT_DIR, TPL_BUILD_SCENE_DIR)
+            added += 1
+        dup2 = [n for n, c in collections.Counter(
+            names[k].lower() for k in unique if folders[k][1] == TPL_OUT_DIR).items() if c > 1]
+        if dup2:
+            print("REFUSING: two template roots would be written to the same file: %s" % dup2[:4])
+            return 2
+        print("template roots asked %d, added %d under %s, %d already exported as a load key"
+              % (len(tpl), added, TPL_ASSET_DIR, already))
+
     by_container = collections.defaultdict(list)
     for key, (cont, pid) in unique.items():
         by_container[cont].append((key, pid))
@@ -276,17 +370,33 @@ def main():
                     print("MISMATCH %s: exporter sees %s, prefab-contents.json measured %s"
                           % (key, dict(hist), claim))
                     return 2
+            # Every object id a scene PPtr could name inside this prefab: the root GameObject AND
+            # each of its components. The shipped references point at the Transform (bowgun01 is
+            # GameObject 332 but Cha_Weapon.bowgun names 437), so indexing only the root would miss
+            # the very reference this table exists to resolve. Measured: all 97 template roots are
+            # single-object hierarchies, so the root plus its components covers them; a multi-object
+            # root would leave child components unindexed, and that case is printed, not hidden.
+            ids = {pid, root["go_id"]}
+            if len(kept) > 1:
+                print("NOTE %s: root has %d objects; only the root's own ids are indexed, so a "
+                      "reference into a child still drops" % (key, len(kept)))
+            ro = ctx.objs.get(pid)
+            if ro is not None:
+                for _cid, pp in u4.component_pairs(ro.read()):
+                    p2 = getattr(pp, "m_PathID", None)
+                    if p2:
+                        ids.add(p2)
             payload = {
                 "registered_object_parent": not_roots.get(key),
                 "source_container": cont,
                 "root_path_id": pid,
                 "prefab_name": key,
-                "asset_path": "Assets/Resources/%s.prefab" % names[key],
+                "asset_path": "%s/%s.prefab" % (folders[key][0], names[key]),
                 # The Editor builds a prefab by running the ONE proven node builder
                 # (SceneRebuilder.Rebuild) into a throwaway scene and saving its root. scene_path is
                 # that scratch file; PrefabRebuilder deletes it after SaveAsPrefabAsset. Naming it
                 # here instead of in the C# keeps one definition of where build artifacts live.
-                "scene_path": BUILD_SCENE_DIR + "/%s.unity" % names[key],
+                "scene_path": folders[key][2] + "/%s.unity" % names[key],
                 "node_count": len(kept),
                 "root_ids": [root["id"]],
                 "unsupported_components": dict(unsupported),
@@ -297,14 +407,15 @@ def main():
             }
             report[key] = {"container": cont, "path_id": pid, "decided_by": decided[key],
                            "assets": payload["asset_path"], "objects": len(kept),
-                           "components": dict(hist)}
+                           "object_ids": sorted(ids), "components": dict(hist)}
             if not args.dry_run:
-                os.makedirs(OUT_DIR, exist_ok=True)
+                out_dir = folders[key][1]
+                os.makedirs(out_dir, exist_ok=True)
                 safe = names[key]
-                tmp = os.path.join(OUT_DIR, safe + ".json.tmp")
+                tmp = os.path.join(out_dir, safe + ".json.tmp")
                 with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
                     json.dump(payload, fh, indent=1, ensure_ascii=False)
-                os.replace(tmp, os.path.join(OUT_DIR, safe + ".json"))
+                os.replace(tmp, os.path.join(out_dir, safe + ".json"))
             for n in kept:
                 for b in n.get("animations") or []:
                     if not os.path.exists(os.path.join(_REPO, "unity",
@@ -343,32 +454,71 @@ def main():
     if args.dry_run:
         print("dry run -- nothing written")
         return 0
-    tmp = OUT_REPORT + ".tmp"
-    with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
-        json.dump(doc, fh, indent=1, ensure_ascii=False, sort_keys=True)
-    os.replace(tmp, OUT_REPORT)
-    back = json.load(open(OUT_REPORT, encoding="utf-8"))
-    if len(back["prefabs"]) != stats["exported"]:
-        print("MISMATCH: report lists %d prefabs, exported %d" % (len(back["prefabs"]),
-                                                                  stats["exported"]))
-        return 2
+    if not args.only:
+        tmp = OUT_REPORT + ".tmp"
+        with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
+            json.dump(doc, fh, indent=1, ensure_ascii=False, sort_keys=True)
+        os.replace(tmp, OUT_REPORT)
+        back = json.load(open(OUT_REPORT, encoding="utf-8"))
+        if len(back["prefabs"]) != stats["exported"]:
+            print("MISMATCH: report lists %d prefabs, exported %d" % (len(back["prefabs"]),
+                                                                      stats["exported"]))
+            return 2
+    else:
+        print("PILOT run: %s is left untouched (it lists the full export)"
+              % os.path.relpath(OUT_REPORT, _REPO).replace(os.sep, "/"))
     stale = []
-    if not args.dry_run:
-        keep_files = {names[k] + ".json" for k in report}
-        for f in sorted(os.listdir(OUT_DIR)):
-            if f.endswith(".json") and f not in keep_files:
-                os.remove(os.path.join(OUT_DIR, f))
-                stale.append(f)
+    # A filtered pilot run writes one description, so cleaning "stale" files against that would
+    # delete every other description on disk. Skip the sweep whenever a filter is active.
+    if not args.dry_run and not args.only:
+        for out_dir in (OUT_DIR, TPL_OUT_DIR):
+            if not os.path.isdir(out_dir):
+                continue
+            keep_files = {names[k] + ".json" for k in report if folders[k][1] == out_dir}
+            for f in sorted(os.listdir(out_dir)):
+                if f.endswith(".json") and f not in keep_files:
+                    os.remove(os.path.join(out_dir, f))
+                    stale.append(os.path.join(os.path.basename(out_dir), f))
         if stale:
             print("removed %d stale description(s) whose root is no longer exported: %s"
                   % (len(stale), ", ".join(stale[:6])))
-    on_disk = [f for f in os.listdir(OUT_DIR) if f.endswith(".json")]
-    if len(on_disk) != stats["exported"]:
-        print("MISMATCH: %d descriptions asked for, %d on disk" % (stats["exported"], len(on_disk)))
-        return 2
-    print("wrote %d descriptions into %s and %s (re-read ok)"
-          % (len(on_disk), os.path.relpath(OUT_DIR, _REPO).replace(os.sep, "/"),
-             os.path.relpath(OUT_REPORT, _REPO).replace(os.sep, "/")))
+    counted = {}
+    for out_dir in (OUT_DIR, TPL_OUT_DIR):
+        want = sum(1 for k in report if folders[k][1] == out_dir)
+        if not os.path.isdir(out_dir):
+            if want:
+                print("MISMATCH: %d descriptions asked for in %s, directory absent"
+                      % (want, os.path.basename(out_dir)))
+                return 2
+            continue
+        have = len([f for f in os.listdir(out_dir) if f.endswith(".json")])
+        counted[out_dir] = have
+        if not args.only and have != want:
+            print("MISMATCH: %d descriptions asked for in %s, %d on disk"
+                  % (want, os.path.basename(out_dir), have))
+            return 2
+    # The index extract_scene.py consults to turn a cross-file reference into a reference INTO a
+    # prefab. Keyed by the object the shipped PPtr named, so it covers both kinds of prefab --
+    # a template root that also happens to be a load key (wp_horse) resolves to the Resources asset.
+    index = {"%s!%d" % (r["container"], oid): {"asset": r["assets"], "prefab": k}
+             for k, r in sorted(report.items()) for oid in r["object_ids"]}
+    if args.only:
+        # A partial run must not narrow the index the extractor reads, so merge this run's entries
+        # into what is already published instead of rewriting it from one root.
+        merged = load_json(TEMPLATE_INDEX) or {}
+        merged.update(index)
+        index = merged
+    tmp = TEMPLATE_INDEX + ".tmp"
+    with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
+        json.dump(index, fh, indent=1, ensure_ascii=False, sort_keys=True)
+    os.replace(tmp, TEMPLATE_INDEX)
+    print("prefab-root index: %d container!path_id -> asset path(s) written to %s"
+          % (len(index), os.path.relpath(TEMPLATE_INDEX, _REPO).replace(os.sep, "/")))
+    print("this run exported %d prefab(s); descriptions on disk: %d in %s, %d in %s"
+          % (stats["exported"], counted.get(OUT_DIR, 0),
+             os.path.relpath(OUT_DIR, _REPO).replace(os.sep, "/"),
+             counted.get(TPL_OUT_DIR, 0),
+             os.path.relpath(TPL_OUT_DIR, _REPO).replace(os.sep, "/")))
     if args.verbose:
         for k in sorted(report):
             print("   %-24s %3d objects  %s" % (k, report[k]["objects"],

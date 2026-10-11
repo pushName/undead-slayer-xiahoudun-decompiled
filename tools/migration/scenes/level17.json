@@ -33,11 +33,12 @@
  "field_stats": {
   "instances decoded": 69,
   "ref set": 32,
-  "cross-file ref dropped": 45,
+  "cross-file ref dropped": 44,
   "cross-file -> asset (element)": 78,
   "array set": 24,
   "cross-file -> asset": 20,
   "opaque skipped (GUIStyle)": 5,
+  "cross-file -> prefab root": 1,
   "refused[record shorter than layout (data assig]": 1,
   "refused[bool[] stride unresolved (refused on p]": 1,
   "ref set (element)": 2,
@@ -148,15 +149,6 @@
    "node": "UI_Ingame_GUI",
    "script": "UI_Ingame_GUI",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "bowgun",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 437,
-   "node": "weapon_dummy",
-   "script": "Cha_Weapon",
-   "file": "sharedassets2.assets"
   },
   {
    "field": "spear",
@@ -9559,6 +9551,13 @@
      "cs": "unity/Assets/Scripts/Cha_Weapon.cs",
      "enabled": true,
      "fields": [
+      {
+       "n": "bowgun",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/bowgun01.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
       {
        "n": "dummy_spine",
        "kind": "node",

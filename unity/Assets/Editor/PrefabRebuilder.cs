@@ -35,7 +35,14 @@ namespace UndeadSlayer.Migration
     public static class PrefabRebuilder
     {
         private const string MenuRoot = "Undead Slayer/Build Prefabs From JSON (recovered roots)";
-        private const string ScratchFolder = "Assets/Imported/_PrefabBuild";
+        // Two kinds of prefab, two scratch folders, two destinations: load-key roots become
+        // Assets/Resources/<key>.prefab, template roots become Assets/Imported/Prefabs/<name>.prefab.
+        private static readonly string[] DescriptionSubdirs = { "prefabs", "prefab-templates" };
+        private static readonly string[] ScratchFolders =
+        {
+            "Assets/Imported/_PrefabBuild",
+            "Assets/Imported/_TemplateBuild",
+        };
 
         private static readonly Regex GuidPattern =
             new Regex("guid: ([0-9a-f]{32})", RegexOptions.Compiled);
@@ -51,15 +58,24 @@ namespace UndeadSlayer.Migration
                 return;
             }
 
-            var files = Directory.GetFiles(dir, "*.json");
-            Array.Sort(files, StringComparer.OrdinalIgnoreCase);
-            if (files.Length == 0)
+            var files = new List<string>();
+            foreach (var sub in DescriptionSubdirs)
+            {
+                var d = SceneRebuilder.FindJsonDir(sub);
+                if (d == null)
+                {
+                    continue;   // no template descriptions yet -- that is a gap, not an error
+                }
+                files.AddRange(Directory.GetFiles(d, "*.json"));
+            }
+            files.Sort(StringComparer.OrdinalIgnoreCase);
+            if (files.Count == 0)
             {
                 Debug.LogError("[PrefabRebuilder] " + dir + " holds no descriptions -- nothing to build.");
                 return;
             }
 
-            int built = 0, refused = 0, objects = 0;
+            int built = 0, refused = 0, objects = 0, toResources = 0, toImported = 0;
             var problems = new List<string>();
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -67,10 +83,16 @@ namespace UndeadSlayer.Migration
             {
                 string error;
                 int count;
-                if (BuildOne(file, out error, out count))
+                string assetPath;
+                if (BuildOne(file, out error, out count, out assetPath))
                 {
                     built++;
                     objects += count;
+                    // Counted per destination because the two kinds land in two places, and a line
+                    // that says "built into Assets/Resources" while one artifact went elsewhere is a
+                    // wrong line -- which is exactly what it was.
+                    if (assetPath != null && assetPath.StartsWith("Assets/Resources/")) toResources++;
+                    else toImported++;
                 }
                 else
                 {
@@ -82,24 +104,25 @@ namespace UndeadSlayer.Migration
                 }
             }
 
-            // Delete the scratch folder as a whole: leftover scenes would be committed by accident.
-            if (AssetDatabase.IsValidFolder(ScratchFolder))
+            // Delete the scratch folders as a whole: leftover scenes would be committed by accident.
+            foreach (var scratch in ScratchFolders)
             {
-                foreach (var guid in AssetDatabase.FindAssets("t:Scene",
-                                          new[] { ScratchFolder }))
+                if (!AssetDatabase.IsValidFolder(scratch))
+                {
+                    continue;
+                }
+                foreach (var guid in AssetDatabase.FindAssets("t:Scene", new[] { scratch }))
                 {
                     AssetDatabase.DeleteAsset(AssetDatabase.GUIDToAssetPath(guid));
                 }
-            }
-            if (AssetDatabase.IsValidFolder(ScratchFolder))
-            {
-                AssetDatabase.DeleteAsset(ScratchFolder);
+                AssetDatabase.DeleteAsset(scratch);
             }
             AssetDatabase.Refresh();
 
-            var msg = ("[PrefabRebuilder] %d prefabs built into Assets/Resources, %d refused, "
-                       + "%d objects in total, took %d ms")
-                .Fmt(built, refused, objects, stopwatch.ElapsedMilliseconds);
+            var msg = ("[PrefabRebuilder] %d prefabs built (%d -> Assets/Resources, %d -> "
+                       + "Assets/Imported/Prefabs), %d refused, %d objects in total, took %d ms")
+                .Fmt(built, toResources, toImported, refused, objects,
+                     stopwatch.ElapsedMilliseconds);
             if (problems.Count > 0)
             {
                 msg += "\n  first problems:\n    - " + string.Join("\n    - ", problems.ToArray());
@@ -120,10 +143,12 @@ namespace UndeadSlayer.Migration
         /// than leaving a half-written asset, because a prefab that loads but is wrong is worse than
         /// one that is missing.
         /// </summary>
-        private static bool BuildOne(string jsonPath, out string error, out int objectCount)
+        private static bool BuildOne(string jsonPath, out string error, out int objectCount,
+                                    out string assetPath)
         {
             error = null;
             objectCount = 0;
+            assetPath = null;
             var text = File.ReadAllText(jsonPath);
             var data = JsonUtility.FromJson<SceneRebuilder.SceneFile>(text);
             if (data == null || data.nodes == null || data.nodes.Length == 0)
@@ -136,6 +161,7 @@ namespace UndeadSlayer.Migration
                 error = Path.GetFileName(jsonPath) + ": description has no asset_path/scene_path";
                 return false;
             }
+            assetPath = data.asset_path;
 
             SceneRebuilder.Rebuild(jsonPath);
 

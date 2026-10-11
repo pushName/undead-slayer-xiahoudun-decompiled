@@ -132,10 +132,13 @@ def flatten_value(fname, v, obj2node, asset_lookup, stats=None, ledger=None, ctx
             # Cross-file: a scene object cannot host it, but an exported asset can. Resolve it
             # against the material / mesh / texture / clip indexes when the type has one, and drop
             # it (counted, and recorded in the ledger) when it points at something not exported.
-            path = asset_lookup(v["type"], v["file"], v["ref"])
+            path, into_prefab = asset_lookup(v["type"], v["file"], v["ref"])
             if path:
-                return {"n": fname, "kind": "asset", "asset": path, "t": v["type"]}, \
-                       "cross-file -> asset"
+                out = {"n": fname, "kind": "asset", "asset": path, "t": v["type"]}
+                if into_prefab:
+                    out["in_prefab"] = 1
+                return out, ("cross-file -> prefab root" if into_prefab
+                             else "cross-file -> asset")
             if ledger is not None:
                 ledger.append({"field": fname, "t": v["type"], "file_id": v["file"],
                                "path_id": v["ref"], "node": (ctx or {}).get("node"),
@@ -332,6 +335,9 @@ def indexes():
     audio_index = {k: v["path"] for k, v in
                    (load_json(os.path.join(MIG, "audio.json")) or {}).get("index", {}).items()}
     clip_index = load_json(os.path.join(MIG, "animation-index.json"))
+    # Which container!path_id has been exported as a .prefab root, and at what project path.
+    # Written by export_prefabs.py, so the two tools never disagree about where a root landed.
+    templates_doc = load_json(os.path.join(MIG, "prefab-templates.json")) or {}
     clips = {}
     if clip_index:
         for e in clip_index["clips"]:
@@ -345,6 +351,7 @@ def indexes():
         "by_type": {"Material": mats_doc.get("index", {}), "Mesh": meshes_doc.get("index", {}),
                     "Texture2D": tex_index, "Texture": tex_index, "AnimationClip": clips,
                     "AudioClip": audio_index},
+        "prefab_root": {k: v["asset"] for k, v in templates_doc.items()},
     }
     return _INDEXES
 
@@ -388,13 +395,26 @@ class FileCtx:
         return index.get(key), key
 
     def asset_lookup(self, typ, file_id, path_id):
-        """Cross-file reference -> project path, or None. A scene cannot host one, an exported
-        asset can, so the callers decide whether a None is a drop worth ledgering."""
-        idx = indexes()["by_type"].get(typ)
-        if idx is None:
-            return None
+        """Cross-file reference -> (project path, points_into_a_prefab), or (None, False).
+
+        A scene cannot host a cross-file reference; an exported asset can, so the callers decide
+        whether a None is a drop worth ledgering.
+
+        The prefab-root table is consulted first because it is keyed by the OBJECT: when the shipped
+        data pointed at a Transform that lived inside another container and that container's root has
+        been exported as a .prefab, the field has to resolve INTO the prefab (Unity then writes
+        {fileID, guid, type: 3}) rather than at the prefab asset as a whole -- assigning the asset
+        itself into a Transform field yields null.
+        """
         tgt = u4.resolve_target(self.source, self.externals, file_id)
-        return idx.get("%s!%d" % (tgt, path_id)) if tgt else None
+        if tgt is None:
+            return None, False
+        key = "%s!%d" % (tgt, path_id)
+        hit = indexes()["prefab_root"].get(key)
+        if hit:
+            return hit, True
+        idx = indexes()["by_type"].get(typ)
+        return (idx.get(key), False) if idx else (None, False)
 
     def script_name(self, sc_file_id, sc_path_id):
         if sc_file_id == 0:
