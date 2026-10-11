@@ -1,0 +1,326 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 800,
+ "prefab_name": "sk_swordwind",
+ "asset_path": "Assets/Imported/Prefabs/sk_swordwind.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/sk_swordwind.unity",
+ "node_count": 3,
+ "root_ids": [
+  1856
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1856,
+   "go_id": 800,
+   "name": "sk_swordwind",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     4.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    1970,
+    1919
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets18_assets_363.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_swordwind_sharedassets18_assets_62.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "BoxCollider"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_swordwind",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 1919,
+   "go_id": 863,
+   "name": "drawY",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.244641,
+     0.025765
+    ],
+    "rot": [
+     -0.707107,
+     0.707107,
+     0.0,
+     -0.0
+    ],
+    "scale": [
+     3.0,
+     3.0,
+     0.75
+    ]
+   },
+   "parent": 1856,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/drawline_sharedassets18_assets_361.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_linedraw_sharedassets18_assets_47.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop_simple",
+     "guid": "7c1f21c11c486834faa79cde9b9da365",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 8
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 1
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 15
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Swordwind_draw",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "startdelay",
+       "kind": "float",
+       "f": 0.699999988079071
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1970,
+   "go_id": 914,
+   "name": "drawX",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.102507,
+     0.025765
+    ],
+    "rot": [
+     -0.0,
+     -1.0,
+     -0.0,
+     0.0
+    ],
+    "scale": [
+     3.0,
+     3.0,
+     0.75
+    ]
+   },
+   "parent": 1856,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/drawline_sharedassets18_assets_361.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_linedraw_sharedassets18_assets_47.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop_simple",
+     "guid": "7c1f21c11c486834faa79cde9b9da365",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 8
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 1
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 15
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Swordwind_draw",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "startdelay",
+       "kind": "float",
+       "f": 0.20000000298023224
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

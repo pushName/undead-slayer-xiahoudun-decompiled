@@ -1,0 +1,874 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 1585,
+ "prefab_name": "Enemy09",
+ "asset_path": "Assets/Imported/Prefabs/Enemy09.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Enemy09.unity",
+ "node_count": 22,
+ "root_ids": [
+  2641
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1775,
+   "go_id": 719,
+   "name": "Bone11(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.108654,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.010894,
+     -0.016339,
+     -0.590732,
+     0.806629
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1883,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 1883,
+   "go_id": 827,
+   "name": "Bone10(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.090757,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.058161,
+     0.002753,
+     -0.181497,
+     0.981666
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2481,
+   "children": [
+    1775
+   ],
+   "components": []
+  },
+  {
+   "id": 2481,
+   "go_id": 886,
+   "name": "Bone09(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.068268,
+     0.042888,
+     -0.05764
+    ],
+    "rot": [
+     -0.265834,
+     0.961426,
+     0.068096,
+     -0.018828
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2608,
+   "children": [
+    1883
+   ],
+   "components": []
+  },
+  {
+   "id": 1942,
+   "go_id": 937,
+   "name": "Bone11",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.108654,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.010894,
+     -0.016339,
+     0.590732,
+     0.806629
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1993,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 1993,
+   "go_id": 982,
+   "name": "Bone10",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.090757,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.058161,
+     0.002753,
+     0.181497,
+     0.981666
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2512,
+   "children": [
+    1942
+   ],
+   "components": []
+  },
+  {
+   "id": 2512,
+   "go_id": 1026,
+   "name": "Bone09",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.068268,
+     0.042888,
+     0.057643
+    ],
+    "rot": [
+     -0.018829,
+     0.068096,
+     0.961427,
+     -0.265833
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2608,
+   "children": [
+    1993
+   ],
+   "components": []
+  },
+  {
+   "id": 2038,
+   "go_id": 1069,
+   "name": "Bone15(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.098126,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.942421,
+     -0.334428
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2082,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2082,
+   "go_id": 1112,
+   "name": "Bone14(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.091364,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.817775,
+     0.575539
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2295,
+   "children": [
+    2038
+   ],
+   "components": []
+  },
+  {
+   "id": 2295,
+   "go_id": 1155,
+   "name": "Bone13(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.056377,
+     -0.030098,
+     -0.03925
+    ],
+    "rot": [
+     0.400067,
+     0.87758,
+     -0.09083,
+     -0.248092
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2540,
+   "children": [
+    2082
+   ],
+   "components": []
+  },
+  {
+   "id": 2125,
+   "go_id": 1198,
+   "name": "Bone15",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.098126,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.942421,
+     0.334427
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2168,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2168,
+   "go_id": 1238,
+   "name": "Bone14",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.091364,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.817775,
+     0.575539
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2333,
+   "children": [
+    2125
+   ],
+   "components": []
+  },
+  {
+   "id": 2333,
+   "go_id": 1277,
+   "name": "Bone13",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.056377,
+     -0.030098,
+     0.039246
+    ],
+    "rot": [
+     -0.248091,
+     -0.09083,
+     0.87758,
+     0.400067
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2540,
+   "children": [
+    2168
+   ],
+   "components": []
+  },
+  {
+   "id": 2211,
+   "go_id": 1317,
+   "name": "Bone08",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.065181,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.002787,
+     0.999996
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2254,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2254,
+   "go_id": 1354,
+   "name": "Bone07",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.061622,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.01217,
+     0.999926
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2373,
+   "children": [
+    2211
+   ],
+   "components": []
+  },
+  {
+   "id": 2373,
+   "go_id": 1390,
+   "name": "Bone06",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.095937,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.088106,
+     0.996111
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2540,
+   "children": [
+    2254
+   ],
+   "components": []
+  },
+  {
+   "id": 2540,
+   "go_id": 1425,
+   "name": "Bone05",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.007485,
+     -0.009791,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.891343,
+     0.453329
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2608,
+   "children": [
+    2373,
+    2333,
+    2295
+   ],
+   "components": []
+  },
+  {
+   "id": 2410,
+   "go_id": 1456,
+   "name": "Bone04",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024047,
+     0.034085,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.117464,
+     0.993077
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2446,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2446,
+   "go_id": 1484,
+   "name": "Bone03",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.07628,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.573716,
+     0.819055
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2567,
+   "children": [
+    2410
+   ],
+   "components": []
+  },
+  {
+   "id": 2567,
+   "go_id": 1511,
+   "name": "Bone02",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.116734,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.1892,
+     0.981939
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2608,
+   "children": [
+    2446
+   ],
+   "components": []
+  },
+  {
+   "id": 2608,
+   "go_id": 1533,
+   "name": "Bone_pelvis",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.165666,
+     -0.046953
+    ],
+    "rot": [
+     0.617509,
+     -0.344504,
+     -0.617509,
+     0.344504
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2641,
+   "children": [
+    2567,
+    2540,
+    2512,
+    2481
+   ],
+   "components": []
+  },
+  {
+   "id": 2589,
+   "go_id": 1552,
+   "name": "mon",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.164029,
+     -0.0414
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2641,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon09_sharedassets18_assets_91.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      2211,
+      2254,
+      2608,
+      2540,
+      2410,
+      2373,
+      2168,
+      2333,
+      2125,
+      2512,
+      2567,
+      1993,
+      2038,
+      1942,
+      1775,
+      2446,
+      2295,
+      2082,
+      2481,
+      1883
+     ],
+     "root_bone": 2608,
+     "mesh": "Assets/Imported/Meshes/mon_sharedassets18_assets_341.asset"
+    }
+   ]
+  },
+  {
+   "id": 2641,
+   "go_id": 1585,
+   "name": "Enemy09",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "parent": 0,
+   "children": [
+    2608,
+    2589
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "AI_Enemy01",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "bekicked",
+     "clip_id": "sharedassets18.assets@607",
+     "picked_by": "same-container",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_607.json",
+     "asset": "Assets/Imported/Animations/bekicked__sharedassets18_607/bekicked.anim"
+    },
+    {
+     "name": "bethrust",
+     "clip_id": "sharedassets18.assets@604",
+     "picked_by": "same-container",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_604.json",
+     "asset": "Assets/Imported/Animations/bethrust__sharedassets18_604/bethrust.anim"
+    },
+    {
+     "name": "down",
+     "clip_id": "sharedassets2.assets@169",
+     "picked_by": "lowest-path-id (ambiguous among 4)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_169.json",
+     "asset": "Assets/Imported/Animations/down__sharedassets2_169/down.anim"
+    },
+    {
+     "name": "down_high",
+     "clip_id": "sharedassets2.assets@180",
+     "picked_by": "lowest-path-id (ambiguous among 4)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_180.json",
+     "asset": "Assets/Imported/Animations/down_high__sharedassets2_180/down_high.anim"
+    },
+    {
+     "name": "downforever",
+     "clip_id": "sharedassets18.assets@600",
+     "picked_by": "same-container",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_600.json",
+     "asset": "Assets/Imported/Animations/downforever__sharedassets18_600/downforever.anim"
+    },
+    {
+     "name": "getup",
+     "clip_id": "sharedassets18.assets@610",
+     "picked_by": "same-container",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_610.json",
+     "asset": "Assets/Imported/Animations/getup__sharedassets18_610/getup.anim"
+    },
+    {
+     "name": "idle",
+     "clip_id": "sharedassets2.assets@160",
+     "picked_by": "lowest-path-id (ambiguous among 15)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_160.json",
+     "asset": "Assets/Imported/Animations/idle__sharedassets2_160/idle.anim"
+    },
+    {
+     "name": "m_attack1",
+     "clip_id": "sharedassets2.assets@173",
+     "picked_by": "lowest-path-id (ambiguous among 14)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_173.json",
+     "asset": "Assets/Imported/Animations/m_attack1__sharedassets2_173/m_attack1.anim"
+    },
+    {
+     "name": "m_attack1_i",
+     "clip_id": "sharedassets2.assets@177",
+     "picked_by": "lowest-path-id (ambiguous among 14)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_177.json",
+     "asset": "Assets/Imported/Animations/m_attack1_i__sharedassets2_177/m_attack1_i.anim"
+    },
+    {
+     "name": "move",
+     "clip_id": "sharedassets19.assets@21",
+     "picked_by": "lowest-path-id (ambiguous among 15)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_21.json",
+     "asset": "Assets/Imported/Animations/move__sharedassets19_21/move.anim"
+    },
+    {
+     "name": "pierced",
+     "clip_id": "sharedassets18.assets@625",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_625.json",
+     "asset": "Assets/Imported/Animations/pierced__sharedassets18_625/pierced.anim"
+    }
+   ]
+  }
+ ]
+}

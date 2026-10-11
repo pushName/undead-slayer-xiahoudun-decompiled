@@ -61,9 +61,10 @@ BAD = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 
 # The second kind of prefab: a hierarchy root that lives in a container and is referenced by a
 # scene's MonoBehaviour field as an Instantiate template, but is NOT named by any Resources.Load key.
-# Their names, subtree sizes and cross-file targets come from dropped-refs.json (scan_dropped_refs.py
-# resolves the root ids), measured: 97 roots, every one a single object, zero name collisions among
-# themselves, one name (wp_horse) already exported as a load-key prefab.
+# Their names and root ids come from dropped-refs.json (scan_dropped_refs.py resolves the roots).
+# Measured: 97 distinct roots, zero name collisions among themselves, one name (wp_horse) already
+# exported as a load-key prefab. The hierarchies are NOT all single objects -- sizes run from 1 to
+# 42 objects -- so the index covers each subtree's own ids, see the note in the loop.
 DROPPED = os.path.join(_REPO, "tools", "migration", "dropped-refs.json")
 TPL_OUT_DIR = os.path.join(_REPO, "tools", "migration", "prefab-templates")
 # Deliberately NOT under Resources/: not one of these roots appears among the 299 rows of the
@@ -77,15 +78,33 @@ TEMPLATE_INDEX = os.path.join(_REPO, "tools", "migration", "prefab-templates.jso
 def template_roots(only=None):
     """{name: (container, root GameObject path_id)} for the Instantiate-template roots.
 
+    Two sources, unioned. The ledger (dropped-refs.json) is where a root is DISCOVERED, but it is
+    not a list to export from: once a run publishes the index, the next extract resolves those
+    fields and they stop being dropped, so the ledger empties itself out from under this tool -- and
+    a second run would then report zero template roots and the stale sweep would delete the 96
+    descriptions the first run wrote. The published index is therefore the durable list, and the
+    ledger only adds roots not yet in it.
+
     Returns None to refuse: a name claimed by two different objects would mean two prefabs wanting
     one file, which is the same ambiguity the texture pass already got burned by.
     """
-    doc = load_json(DROPPED)
-    if doc is None:
-        print("no dropped-refs.json -- run scan_dropped_refs.py first; refusing to guess roots")
-        return None
     out = {}
-    for r in doc.get("resolved", []):
+    # Seed from the descriptions this tool already wrote: each one names its own container and root
+    # object, so the list survives the ledger emptying out above.
+    if os.path.isdir(TPL_OUT_DIR):
+        for fn in sorted(os.listdir(TPL_OUT_DIR)):
+            if not fn.endswith(".json"):
+                continue
+            d = load_json(os.path.join(TPL_OUT_DIR, fn)) or {}
+            if d.get("source_container") and d.get("root_path_id") is not None:
+                out[d.get("prefab_name") or fn[:-5]] = (d["source_container"], d["root_path_id"])
+    seeded = len(out)
+    doc = load_json(DROPPED)
+    if doc is None and not seeded:
+        print("no dropped-refs.json and no %s -- nothing can name the template roots; run "
+              "scan_dropped_refs.py first" % os.path.basename(TEMPLATE_INDEX))
+        return None
+    for r in (doc or {}).get("resolved", []):
         if r.get("tgt_type") != "Transform" or r.get("root_object") is None or not r.get("root"):
             continue
         name, key = r["root"], (r["container"], r["root_object"])
@@ -100,6 +119,9 @@ def template_roots(only=None):
             print("REFUSING: --only names that are not template roots: %s" % miss)
             return None
         out = {k: v for k, v in out.items() if k.lower() in {n.lower() for n in want}}
+    if seeded:
+        print("template roots: %d carried by the published index, plus any new ones in the ledger"
+              % seeded)
     return out
 
 
@@ -370,22 +392,24 @@ def main():
                     print("MISMATCH %s: exporter sees %s, prefab-contents.json measured %s"
                           % (key, dict(hist), claim))
                     return 2
-            # Every object id a scene PPtr could name inside this prefab: the root GameObject AND
-            # each of its components. The shipped references point at the Transform (bowgun01 is
-            # GameObject 332 but Cha_Weapon.bowgun names 437), so indexing only the root would miss
-            # the very reference this table exists to resolve. Measured: all 97 template roots are
-            # single-object hierarchies, so the root plus its components covers them; a multi-object
-            # root would leave child components unindexed, and that case is printed, not hidden.
-            ids = {pid, root["go_id"]}
-            if len(kept) > 1:
-                print("NOTE %s: root has %d objects; only the root's own ids are indexed, so a "
-                      "reference into a child still drops" % (key, len(kept)))
-            ro = ctx.objs.get(pid)
-            if ro is not None:
-                for _cid, pp in u4.component_pairs(ro.read()):
-                    p2 = getattr(pp, "m_PathID", None)
-                    if p2:
-                        ids.add(p2)
+            # Every object id a scene PPtr could name INSIDE this prefab: each node's GameObject, its
+            # Transform, and every component on that GameObject. The shipped references point at
+            # whatever the field actually held -- bowgun01 names Transform 437, not the root 332 --
+            # and these hierarchies run to 42 objects (bosssp), so indexing only the root would leave
+            # every reference into a child dropping. (An earlier census of mine reported all 97 roots
+            # as single objects; that walk only counted GameObjects while m_Children yields Transform
+            # ids, so it skipped every child it met. subtree_ids is the tested walk, and this uses it.)
+            ids = set()
+            for n in kept:
+                ids.add(n["id"])
+                go = ctx.objs.get(n.get("go_id"))
+                if n.get("go_id"):
+                    ids.add(n["go_id"])
+                if go is not None:
+                    for _cid, pp in u4.component_pairs(go.read()):
+                        p2 = getattr(pp, "m_PathID", None)
+                        if p2:
+                            ids.add(p2)
             payload = {
                 "registered_object_parent": not_roots.get(key),
                 "source_container": cont,
@@ -500,7 +524,8 @@ def main():
     # The index extract_scene.py consults to turn a cross-file reference into a reference INTO a
     # prefab. Keyed by the object the shipped PPtr named, so it covers both kinds of prefab --
     # a template root that also happens to be a load key (wp_horse) resolves to the Resources asset.
-    index = {"%s!%d" % (r["container"], oid): {"asset": r["assets"], "prefab": k}
+    index = {"%s!%d" % (r["container"], oid): {"asset": r["assets"], "prefab": k,
+                                               "root": "%s!%d" % (r["container"], r["path_id"])}
              for k, r in sorted(report.items()) for oid in r["object_ids"]}
     if args.only:
         # A partial run must not narrow the index the extractor reads, so merge this run's entries

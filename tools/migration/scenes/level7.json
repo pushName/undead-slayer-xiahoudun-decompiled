@@ -23,10 +23,11 @@
   "ref set": 8,
   "refused[two-dimensional array (unsupported by ]": 1,
   "trailing fields absent from the record": 7,
-  "cross-file ref dropped": 2,
+  "cross-file ref dropped": 1,
   "cross-file -> asset (element)": 11,
   "array set": 3,
   "opaque skipped (GUIStyle)": 7,
+  "cross-file -> prefab root": 1,
   "null in source": 1
  },
  "trailing_fields_absent": {
@@ -49,15 +50,6 @@
    "node": "UI_general",
    "script": "UI_general",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "sound_dummy",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 117,
-   "node": "UI_general",
-   "script": "UI_general",
-   "file": "sharedassets7.assets"
   }
  ],
  "animation_bindings": {},
@@ -1189,6 +1181,13 @@
        "kind": "node",
        "node": 25,
        "t": "Transform"
+      },
+      {
+       "n": "sound_dummy",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sound_UI.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       },
       {
        "n": "bg_popui",

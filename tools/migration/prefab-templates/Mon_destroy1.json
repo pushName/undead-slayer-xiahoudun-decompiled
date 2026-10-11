@@ -1,0 +1,556 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets2.assets",
+ "root_path_id": 327,
+ "prefab_name": "Mon_destroy1",
+ "asset_path": "Assets/Imported/Prefabs/Mon_destroy1.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Mon_destroy1.unity",
+ "node_count": 15,
+ "root_ids": [
+  432
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 2,
+  "ref set": 4,
+  "instances decoded": 17
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [
+  "MeshRenderer 545: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy02: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy01: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 432,
+   "go_id": 327,
+   "name": "Mon_destroy1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    478,
+    502,
+    531,
+    490
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Mon_Destroy",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "headbone",
+       "kind": "node",
+       "node": 466,
+       "t": "Transform"
+      }
+     ]
+    }
+   ],
+   "animations": [
+    {
+     "name": "dt1",
+     "clip_id": "sharedassets2.assets@161",
+     "picked_by": "lowest-path-id (ambiguous among 4)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_161.json",
+     "asset": "Assets/Imported/Animations/dt1__sharedassets2_161/dt1.anim"
+    }
+   ]
+  },
+  {
+   "id": 450,
+   "go_id": 345,
+   "name": "Bone_heart",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006285,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.029319,
+     0.99957
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 502,
+   "children": [
+    466,
+    520
+   ],
+   "components": []
+  },
+  {
+   "id": 461,
+   "go_id": 356,
+   "name": "Bone07(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 520,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 466,
+   "go_id": 361,
+   "name": "Bone03",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.027023,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.071109,
+     0.997469
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 450,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 472,
+   "go_id": 367,
+   "name": "Bone05(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024336,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.000688,
+     -0.046542,
+     0.01046,
+     0.998861
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 508,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 484,
+   "go_id": 373,
+   "name": "Bone05",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024336,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.000687,
+     -0.046539,
+     -0.01046,
+     0.998861
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 525,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 496,
+   "go_id": 379,
+   "name": "Bone07",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 514,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 508,
+   "go_id": 385,
+   "name": "Bone04(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.000753,
+     0.001179,
+     -0.005311
+    ],
+    "rot": [
+     0.04909,
+     -0.7054,
+     0.706937,
+     0.015485
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 502,
+   "children": [
+    472
+   ],
+   "components": []
+  },
+  {
+   "id": 514,
+   "go_id": 391,
+   "name": "Bone06",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.027426,
+     0.003367,
+     -0.003205
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.941833,
+     -0.336082
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 478,
+   "children": [
+    496
+   ],
+   "components": []
+  },
+  {
+   "id": 520,
+   "go_id": 397,
+   "name": "Bone06(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023176,
+     0.001171,
+     -0.009792
+    ],
+    "rot": [
+     -0.217135,
+     0.672943,
+     -0.6705,
+     -0.224566
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 450,
+   "children": [
+    461
+   ],
+   "components": []
+  },
+  {
+   "id": 525,
+   "go_id": 403,
+   "name": "Bone04",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.001531,
+     0.000336,
+     -0.003205
+    ],
+    "rot": [
+     0.001909,
+     0.000139,
+     0.997356,
+     -0.072647
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 478,
+   "children": [
+    484
+   ],
+   "components": []
+  },
+  {
+   "id": 478,
+   "go_id": 409,
+   "name": "Bone01",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.00493,
+     0.048723,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.724634,
+     0.689134
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 432,
+   "children": [
+    525,
+    514
+   ],
+   "components": []
+  },
+  {
+   "id": 490,
+   "go_id": 415,
+   "name": "p2",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 432,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      525,
+      484,
+      496,
+      514,
+      478
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/p2_sharedassets2_assets_125.asset"
+    }
+   ]
+  },
+  {
+   "id": 531,
+   "go_id": 420,
+   "name": "p1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 432,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      508,
+      450,
+      502,
+      520,
+      466,
+      461,
+      472
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/p1_sharedassets2_assets_112.asset"
+    }
+   ]
+  },
+  {
+   "id": 502,
+   "go_id": 426,
+   "name": "Bone_pelvis",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.046481,
+     -0.001992
+    ],
+    "rot": [
+     0.511754,
+     -0.487963,
+     0.511754,
+     -0.487963
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 432,
+   "children": [
+    508,
+    450
+   ],
+   "components": []
+  }
+ ]
+}

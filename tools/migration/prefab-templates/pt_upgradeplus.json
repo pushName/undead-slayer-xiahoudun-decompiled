@@ -1,0 +1,211 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets10.assets",
+ "root_path_id": 142,
+ "prefab_name": "pt_upgradeplus",
+ "asset_path": "Assets/Imported/Prefabs/pt_upgradeplus.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/pt_upgradeplus.unity",
+ "node_count": 1,
+ "root_ids": [
+  143
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {},
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 143,
+   "go_id": 142,
+   "name": "pt_upgradeplus",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.62252,
+     -0.22,
+     -0.3
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter",
+     "id": 145,
+     "record": {
+      "gameObject": [
+       0,
+       142
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 0,
+      "flag_11": 0,
+      "f_12": 0.2,
+      "f_16": 0.3,
+      "f_20": 1.0,
+      "f_24": 1.0,
+      "f_28": 30.0,
+      "f_32": 30.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 1.0,
+      "f_56": 0.0,
+      "f_60": 1.0,
+      "f_64": 1.0,
+      "f_68": 0.0,
+      "f_72": 0.05,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.0,
+      "f_88": 0.0,
+      "f_92": 0.0,
+      "flag_96": 1,
+      "flag_97": 0,
+      "flag_98": 1,
+      "flag_99": 0,
+      "f_100": 0.0,
+      "f_104": 0.0,
+      "f_108": 0.0,
+      "f_112": 0.0
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator",
+     "id": 144,
+     "record": {
+      "gameObject": [
+       0,
+       142
+      ],
+      "flag_8": true,
+      "color_12": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "color_16": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_20": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_24": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_28": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "f_32": 0.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": -0.8,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.0,
+      "f_76": -0.8,
+      "f_80": 0.0,
+      "f_84": 0.1,
+      "tail_88": [
+       0,
+       1
+      ]
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer",
+     "id": 146,
+     "record": {
+      "gameObject": [
+       0,
+       142
+      ],
+      "flag_8": 1,
+      "flag_9": 0,
+      "flag_10": 0,
+      "flag_11": 255,
+      "one_12": 1.0,
+      "one_16": 1.0,
+      "zero_20": 0.0,
+      "zero_24": 0.0,
+      "materialCount_28": 1,
+      "material0_32": [
+       0,
+       19
+      ],
+      "zero_40": 0.0,
+      "zero_44": 0.0,
+      "zero_48": 0.0,
+      "zero_52": 0.0,
+      "zero_56": 0.0,
+      "zero_60": 0.0,
+      "zero_64": 0.0,
+      "zero_68": 0.0,
+      "zero_72": 0.0,
+      "bytes_76": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "f_80": 2.0,
+      "f_84": 0.0,
+      "f_88": 0.25,
+      "enum_92": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "enum_96": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "f_100": 1.0
+     }
+    }
+   ]
+  }
+ ]
+}

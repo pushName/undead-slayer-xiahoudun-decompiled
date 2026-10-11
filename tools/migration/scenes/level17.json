@@ -33,19 +33,18 @@
  "field_stats": {
   "instances decoded": 69,
   "ref set": 32,
-  "cross-file ref dropped": 44,
+  "cross-file -> prefab root": 40,
   "cross-file -> asset (element)": 78,
-  "array set": 24,
+  "array set": 28,
   "cross-file -> asset": 20,
   "opaque skipped (GUIStyle)": 5,
-  "cross-file -> prefab root": 1,
+  "cross-file ref dropped": 5,
   "refused[record shorter than layout (data assig]": 1,
   "refused[bool[] stride unresolved (refused on p]": 1,
   "ref set (element)": 2,
   "refused[two-dimensional array (unsupported by ]": 2,
   "trailing fields absent from the record": 13,
-  "cross-file ref dropped (element)": 42,
-  "array fully dropped": 4,
+  "cross-file -> prefab root (element)": 42,
   "string set": 1
  },
  "trailing_fields_absent": {
@@ -79,69 +78,6 @@
  },
  "dropped_refs": [
   {
-   "field": "shadow",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 446,
-   "node": "general_dummy",
-   "script": "General_dummy",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "shadow",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 446,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "ef_hit",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 442,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "ef_blood",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 436,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "ef_block",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 441,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "arrowmark",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 440,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "num_damage",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 445,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
    "field": "basicSkin",
    "t": "GUISkin",
    "file_id": 3,
@@ -151,15 +87,6 @@
    "file": "sharedassets0.assets"
   },
   {
-   "field": "spear",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 447,
-   "node": "weapon_dummy",
-   "script": "Cha_Weapon",
-   "file": "sharedassets2.assets"
-  },
-  {
    "field": "basicSkin",
    "t": "GUISkin",
    "file_id": 3,
@@ -167,663 +94,6 @@
    "node": "cut_boss",
    "script": "Cutin_BossTexture",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "swordwind",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1856,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "rapidstab",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1838,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "wheelwind",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1840,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "meteo",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1853,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "supersword",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1854,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "energypillar",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1971,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "pt_defenceup",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1834,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "sworddance",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1855,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "pt_poison",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1918,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "deathhand",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1831,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "chosun",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2693,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "junwui",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1842,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "dragonhead",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2056,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "fincanon",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2060,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "bamboo",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1852,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "crow",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1847,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "bamboobase",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1846,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "swordrain_b",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1860,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "swordrain_s",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1861,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "swordrain",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1859,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "ef_groundbreak",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2232,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "bombsphere",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1789,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "lightningblade",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1839,
-   "node": "cha1",
-   "script": "Cha_Skill",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "pt_levelup",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1848,
-   "node": "UI_Ingame",
-   "script": "UI_Ingame",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1777,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1778,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2488,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1780,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1781,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1893,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2343,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2420,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2345,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "stage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2346,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 432,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 433,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 527,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 435,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2507,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 518,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 431,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1769,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1770,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1771,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2537,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2538,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2588,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2641,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2544,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1884,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1885,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1886,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2544,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2544,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1766,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1757,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1758,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1759,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2682,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2754,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2755,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1763,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1873,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1765,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1767,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "boss",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1791,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "cart",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2676,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "tower",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1864,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "barrack",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1786,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "basecamp",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1845,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "tank",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 2018,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "plane_staff",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1917,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
-  },
-  {
-   "field": "pt_soul",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 1850,
-   "node": "Spawn",
-   "script": "Spawn",
-   "file": "sharedassets18.assets"
   },
   {
    "field": "pt_summonfog",
@@ -5428,6 +4698,13 @@
      "enabled": true,
      "fields": [
       {
+       "n": "shadow",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/shadow.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "r_hand",
        "kind": "node",
        "node": 241,
@@ -8348,6 +7625,48 @@
      "enabled": true,
      "fields": [
       {
+       "n": "shadow",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/shadow.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_hit",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_hit.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_blood",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/blood.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_block",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_block.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "arrowmark",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/directionArrow_r.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "num_damage",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/num_damege.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "pt_itemdrop",
        "kind": "node",
        "node": 451,
@@ -9559,6 +8878,13 @@
        "in_prefab": 1
       },
       {
+       "n": "spear",
+       "kind": "asset",
+       "asset": "Assets/Resources/wp_horse.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "dummy_spine",
        "kind": "node",
        "node": 396,
@@ -10452,10 +9778,59 @@
        "t": "AudioClip"
       },
       {
+       "n": "swordwind",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sk_swordwind.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "rapidstab",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_rapidstab.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "wheelwind",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_wheelwind.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "meteo",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sk_spiritsword.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "supersword",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sk_supersword.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "energypillar",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/skill_energyfillar.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "pt_attackup",
        "kind": "node",
        "node": 385,
        "t": "Transform"
+      },
+      {
+       "n": "pt_defenceup",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_defenceup.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       },
       {
        "n": "pt_boom",
@@ -10464,10 +9839,45 @@
        "t": "Transform"
       },
       {
+       "n": "sworddance",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sk_sworddance.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "pt_poison",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_poison.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "ef_gather",
        "kind": "node",
        "node": 382,
        "t": "Transform"
+      },
+      {
+       "n": "deathhand",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/deathhand.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "chosun",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/chosun.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "junwui",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/junwui.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       },
       {
        "n": "jin",
@@ -10476,16 +9886,93 @@
        "t": "Transform"
       },
       {
+       "n": "dragonhead",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/dragonhead.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "ef_rotfog",
        "kind": "node",
        "node": 425,
        "t": "Transform"
       },
       {
+       "n": "fincanon",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/fincanon.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "bamboo",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sk_bamboo.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "crow",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_crow.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "bamboobase",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_bamboobase.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "swordrain_b",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/swordrain_base.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "swordrain_s",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/swordrain_start.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "swordrain",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/swordrain.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "wing",
        "kind": "node",
        "node": 349,
        "t": "Transform"
+      },
+      {
+       "n": "ef_groundbreak",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_groundbreak_cha.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "bombsphere",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/bombsphere.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "lightningblade",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_swing_ex3.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       }
      ]
     },
@@ -12023,6 +11510,13 @@
        "t": "Transform"
       },
       {
+       "n": "pt_levelup",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_lvup.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "num_level",
        "kind": "node",
        "node": 452,
@@ -12221,6 +11715,286 @@
      "enabled": true,
      "fields": [
       {
+       "n": "stage",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage01.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage02.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage03.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage04.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage05.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage_line1.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage_line2.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage_line3.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage_line4.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Stage_line5.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
+       "n": "mon_destroy",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy1.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy2.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy3.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy4.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
+       "n": "enemy_source",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy00.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy01.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy02.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy03.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy04.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy05.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy06.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy07.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy08.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy09.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy14.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy11.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy12.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy13.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy14.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy14.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
+       "n": "boss",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss09_trans.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss01.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss02.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss03.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss04.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss05.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss06.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss07.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss08.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss09.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Boss10.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/bosssp.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
        "n": "general_portrait",
        "kind": "node",
        "node": 356,
@@ -12231,6 +12005,55 @@
        "kind": "node",
        "node": 423,
        "t": "Transform"
+      },
+      {
+       "n": "cart",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/cart.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "tower",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/tower_arrow.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "barrack",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/barrack.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "basecamp",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/obj_basecamp.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "tank",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/tank.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "plane_staff",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/plane_staff_test.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "pt_soul",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_soul.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       },
       {
        "n": "cut_boss",

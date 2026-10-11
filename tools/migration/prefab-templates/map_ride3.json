@@ -1,0 +1,263 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets19.assets",
+ "root_path_id": 34,
+ "prefab_name": "map_ride3",
+ "asset_path": "Assets/Imported/Prefabs/map_ride3.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/map_ride3.unity",
+ "node_count": 2,
+ "root_ids": [
+  82
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2
+ },
+ "field_stats": {
+  "instances decoded": 6,
+  "ref set": 3
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 82,
+   "go_id": 34,
+   "name": "map_ride3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     -4.900068
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    88
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane02_sharedassets18_assets_368.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/sky_ground3_sharedassets18_assets_129.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 88,
+   "go_id": 40,
+   "name": "pt_watercircle",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.07,
+     15.900068
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 82,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter",
+     "id": 128,
+     "record": {
+      "gameObject": [
+       0,
+       40
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 0,
+      "flag_11": 0,
+      "f_12": 0.4,
+      "f_16": 0.5,
+      "f_20": 1.5,
+      "f_24": 1.5,
+      "f_28": 50.0,
+      "f_32": 50.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": -0.5,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.05,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.0,
+      "f_88": 0.0,
+      "f_92": 0.0,
+      "flag_96": 1,
+      "flag_97": 0,
+      "flag_98": 0,
+      "flag_99": 0,
+      "f_100": 0.3,
+      "f_104": 0.0,
+      "f_108": 21.0,
+      "f_112": 0.0
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator",
+     "id": 126,
+     "record": {
+      "gameObject": [
+       0,
+       40
+      ],
+      "flag_8": true,
+      "color_12": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "color_16": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_20": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_24": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_28": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "f_32": 0.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.8,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.0,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.1,
+      "tail_88": [
+       0,
+       0
+      ]
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer",
+     "id": 144,
+     "record": {
+      "gameObject": [
+       0,
+       40
+      ],
+      "flag_8": 1,
+      "flag_9": 0,
+      "flag_10": 0,
+      "flag_11": 255,
+      "one_12": 1.0,
+      "one_16": 1.0,
+      "zero_20": 0.0,
+      "zero_24": 0.0,
+      "materialCount_28": 1,
+      "material0_32": [
+       9,
+       122
+      ],
+      "zero_40": 0.0,
+      "zero_44": 0.0,
+      "zero_48": 0.0,
+      "zero_52": 0.0,
+      "zero_56": 0.0,
+      "zero_60": 0.0,
+      "zero_64": 0.0,
+      "zero_68": 0.0,
+      "zero_72": 0.0,
+      "bytes_76": [
+       4,
+       0,
+       0,
+       0
+      ],
+      "f_80": 2.0,
+      "f_84": 0.0,
+      "f_88": 2.0,
+      "enum_92": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "enum_96": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "f_100": 1.0
+     }
+    }
+   ]
+  }
+ ]
+}

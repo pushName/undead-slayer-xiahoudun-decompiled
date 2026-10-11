@@ -1,0 +1,1205 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 702,
+ "prefab_name": "Boss02",
+ "asset_path": "Assets/Imported/Prefabs/Boss02.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Boss02.unity",
+ "node_count": 32,
+ "root_ids": [
+  1758
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1758,
+   "go_id": 702,
+   "name": "Boss02",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.4,
+     1.4,
+     1.4
+    ]
+   },
+   "parent": 0,
+   "children": [
+    2742,
+    2732
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "AI_Boss01",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    }
+   ],
+   "animations": [
+    {
+     "name": "b_attack1",
+     "clip_id": "sharedassets18.assets@430",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_430.json",
+     "asset": "Assets/Imported/Animations/b_attack1__sharedassets18_430/b_attack1.anim"
+    },
+    {
+     "name": "b_attack1_i",
+     "clip_id": "sharedassets18.assets@527",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_527.json",
+     "asset": "Assets/Imported/Animations/b_attack1_i__sharedassets18_527/b_attack1_i.anim"
+    },
+    {
+     "name": "b_attack2",
+     "clip_id": "sharedassets18.assets@431",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_431.json",
+     "asset": "Assets/Imported/Animations/b_attack2__sharedassets18_431/b_attack2.anim"
+    },
+    {
+     "name": "b_attack2_i",
+     "clip_id": "sharedassets18.assets@564",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_564.json",
+     "asset": "Assets/Imported/Animations/b_attack2_i__sharedassets18_564/b_attack2_i.anim"
+    },
+    {
+     "name": "b_attack3",
+     "clip_id": "sharedassets18.assets@428",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_428.json",
+     "asset": "Assets/Imported/Animations/b_attack3__sharedassets18_428/b_attack3.anim"
+    },
+    {
+     "name": "b_attack3_i",
+     "clip_id": "sharedassets18.assets@587",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_587.json",
+     "asset": "Assets/Imported/Animations/b_attack3_i__sharedassets18_587/b_attack3_i.anim"
+    },
+    {
+     "name": "b_down",
+     "clip_id": "sharedassets18.assets@602",
+     "picked_by": "lowest-path-id (ambiguous among 3)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_602.json",
+     "asset": "Assets/Imported/Animations/b_down__sharedassets18_602/b_down.anim"
+    },
+    {
+     "name": "b_idle",
+     "clip_id": "sharedassets18.assets@447",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_447.json",
+     "asset": "Assets/Imported/Animations/b_idle__sharedassets18_447/b_idle.anim"
+    },
+    {
+     "name": "b_move",
+     "clip_id": "sharedassets18.assets@473",
+     "picked_by": "lowest-path-id (ambiguous among 12)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_473.json",
+     "asset": "Assets/Imported/Animations/b_move__sharedassets18_473/b_move.anim"
+    },
+    {
+     "name": "trans",
+     "clip_id": "sharedassets18.assets@623",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_623.json",
+     "asset": "Assets/Imported/Animations/trans__sharedassets18_623/trans.anim"
+    }
+   ]
+  },
+  {
+   "id": 1867,
+   "go_id": 811,
+   "name": "m5",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.029533,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -1e-06,
+     -0.0,
+     0.016031,
+     0.999871
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1926,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 1926,
+   "go_id": 870,
+   "name": "m4",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.030019,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -2e-06,
+     -0.0,
+     -4.4e-05,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1977,
+   "children": [
+    1867
+   ],
+   "components": []
+  },
+  {
+   "id": 1977,
+   "go_id": 921,
+   "name": "m3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.028794,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.000405,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2022,
+   "children": [
+    1926
+   ],
+   "components": []
+  },
+  {
+   "id": 2022,
+   "go_id": 966,
+   "name": "m2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.028951,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.002776,
+     0.999996
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2498,
+   "children": [
+    1977
+   ],
+   "components": []
+  },
+  {
+   "id": 2498,
+   "go_id": 1010,
+   "name": "m1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.019701,
+     -0.023442,
+     -0.0
+    ],
+    "rot": [
+     0.702827,
+     0.71136,
+     0.0,
+     -1e-06
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2664,
+   "children": [
+    2022
+   ],
+   "components": []
+  },
+  {
+   "id": 2066,
+   "go_id": 1053,
+   "name": "Bip01 R Finger0",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.026665,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.000398,
+     -0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2109,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2109,
+   "go_id": 1096,
+   "name": "Bip01 R Hand",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.028447,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.69684,
+     0.066089,
+     -0.118395,
+     0.704293
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2152,
+   "children": [
+    2066
+   ],
+   "components": []
+  },
+  {
+   "id": 2152,
+   "go_id": 1139,
+   "name": "Bip01 R Forearm",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.038588,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.1093,
+     0.994009
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2195,
+   "children": [
+    2109
+   ],
+   "components": []
+  },
+  {
+   "id": 2195,
+   "go_id": 1182,
+   "name": "Bip01 R UpperArm",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.013052,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.050736,
+     0.393094,
+     -0.042592,
+     0.917109
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2394,
+   "children": [
+    2152
+   ],
+   "components": []
+  },
+  {
+   "id": 2394,
+   "go_id": 1222,
+   "name": "Bip01 R Clavicle",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.003996,
+     0.001527,
+     -0.009837
+    ],
+    "rot": [
+     0.650748,
+     -0.028154,
+     0.758063,
+     0.032794
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2528,
+   "children": [
+    2195
+   ],
+   "components": []
+  },
+  {
+   "id": 2238,
+   "go_id": 1261,
+   "name": "Bip01 L Finger0",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.026665,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.000398,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2279,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2279,
+   "go_id": 1301,
+   "name": "Bip01 L Hand",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.028447,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.69684,
+     -0.066089,
+     -0.118395,
+     0.704293
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2317,
+   "children": [
+    2238,
+    2752
+   ],
+   "components": []
+  },
+  {
+   "id": 2317,
+   "go_id": 1338,
+   "name": "Bip01 L Forearm",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.038588,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     0.1093,
+     0.994009
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2357,
+   "children": [
+    2279
+   ],
+   "components": []
+  },
+  {
+   "id": 2357,
+   "go_id": 1374,
+   "name": "Bip01 L UpperArm",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.013052,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.050736,
+     -0.393094,
+     -0.042592,
+     0.917109
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2430,
+   "children": [
+    2317
+   ],
+   "components": []
+  },
+  {
+   "id": 2430,
+   "go_id": 1409,
+   "name": "Bip01 L Clavicle",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.003996,
+     0.001527,
+     0.009837
+    ],
+    "rot": [
+     -0.650748,
+     0.028152,
+     0.758063,
+     0.032796
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2528,
+   "children": [
+    2357
+   ],
+   "components": []
+  },
+  {
+   "id": 2465,
+   "go_id": 1442,
+   "name": "Bip01 Head",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.010678,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.130131,
+     0.991497
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2528,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2528,
+   "go_id": 1472,
+   "name": "Bip01 Neck",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.032793,
+     -0.001869,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.043619,
+     0.999048
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2664,
+   "children": [
+    2465,
+    2430,
+    2394
+   ],
+   "components": []
+  },
+  {
+   "id": 2664,
+   "go_id": 1501,
+   "name": "Bip01 Spine1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.028945,
+     -2.3e-05,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2710,
+   "children": [
+    2528,
+    2498
+   ],
+   "components": []
+  },
+  {
+   "id": 2557,
+   "go_id": 1522,
+   "name": "Bip01 R Toe0",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.011753,
+     0.02975,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2578,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2578,
+   "go_id": 1542,
+   "name": "Bip01 R Foot",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.027426,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.002547,
+     -0.040801,
+     -0.006198,
+     0.999145
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2598,
+   "children": [
+    2557
+   ],
+   "components": []
+  },
+  {
+   "id": 2598,
+   "go_id": 1559,
+   "name": "Bip01 R Calf",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.042924,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.030895,
+     0.999523
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2680,
+   "children": [
+    2578
+   ],
+   "components": []
+  },
+  {
+   "id": 2680,
+   "go_id": 1575,
+   "name": "Bip01 R Thigh",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.010872,
+     0.000903,
+     -0.015409
+    ],
+    "rot": [
+     0.036665,
+     0.998491,
+     -0.003822,
+     -0.040701
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2710,
+   "children": [
+    2598
+   ],
+   "components": []
+  },
+  {
+   "id": 2615,
+   "go_id": 1592,
+   "name": "Bip01 L Toe0",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.012742,
+     0.02975,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2631,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2631,
+   "go_id": 1608,
+   "name": "Bip01 L Foot",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.027426,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.002547,
+     0.040801,
+     -0.006198,
+     0.999145
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2648,
+   "children": [
+    2615
+   ],
+   "components": []
+  },
+  {
+   "id": 2648,
+   "go_id": 1624,
+   "name": "Bip01 L Calf",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.042924,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.030895,
+     0.999523
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2696,
+   "children": [
+    2631
+   ],
+   "components": []
+  },
+  {
+   "id": 2696,
+   "go_id": 1640,
+   "name": "Bip01 L Thigh",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.010872,
+     0.000903,
+     0.015409
+    ],
+    "rot": [
+     0.036665,
+     0.998491,
+     0.003824,
+     0.040701
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2710,
+   "children": [
+    2648
+   ],
+   "components": []
+  },
+  {
+   "id": 2710,
+   "go_id": 1654,
+   "name": "Bip01 Spine",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.010873,
+     -0.000894,
+     0.0
+    ],
+    "rot": [
+     -2e-06,
+     1e-06,
+     -0.000398,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2722,
+   "children": [
+    2696,
+    2680,
+    2664
+   ],
+   "components": []
+  },
+  {
+   "id": 2722,
+   "go_id": 1666,
+   "name": "Bip01 Pelvis",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.5,
+     0.5,
+     0.5,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2742,
+   "children": [
+    2710
+   ],
+   "components": []
+  },
+  {
+   "id": 2732,
+   "go_id": 1676,
+   "name": "mon",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.118516,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.760322,
+     1.929625,
+     1.929625
+    ]
+   },
+   "parent": 1758,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/boss02_sharedassets18_assets_18.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      2598,
+      2578,
+      2710,
+      2696,
+      2465,
+      2680,
+      2722,
+      2742,
+      2664,
+      2195,
+      2152,
+      2394,
+      2109,
+      2022,
+      2498,
+      1977,
+      1926,
+      1867,
+      2648,
+      2631,
+      2357,
+      2317,
+      2430,
+      2279
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/mon_sharedassets18_assets_359.asset"
+    }
+   ]
+  },
+  {
+   "id": 2742,
+   "go_id": 1686,
+   "name": "Bip01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.08238,
+     0.0
+    ],
+    "rot": [
+     -0.5,
+     0.5,
+     0.5,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1758,
+   "children": [
+    2722
+   ],
+   "components": []
+  },
+  {
+   "id": 2752,
+   "go_id": 1696,
+   "name": "wp_b02",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.009598,
+     0.005052,
+     0.001267
+    ],
+    "rot": [
+     -0.640142,
+     -0.76709,
+     0.034617,
+     -0.02434
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2279,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/wp_b02_sharedassets18_assets_370.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/wp_b_bow_sharedassets18_assets_147.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "WeaponDrop",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,616 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 725,
+ "prefab_name": "Stage05",
+ "asset_path": "Assets/Imported/Prefabs/Stage05.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Stage05.unity",
+ "node_count": 17,
+ "root_ids": [
+  1781
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1781,
+   "go_id": 725,
+   "name": "Stage05",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    1951,
+    2592,
+    1892,
+    2455
+   ],
+   "components": []
+  },
+  {
+   "id": 1892,
+   "go_id": 836,
+   "name": "map02",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.270598,
+     -0.653282,
+     -0.653282,
+     0.270598
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1781,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/map05_sharedassets18_assets_334.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/map05_sharedassets18_assets_84.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 1951,
+   "go_id": 895,
+   "name": "aaapoint",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1781,
+   "children": [
+    2304,
+    2134,
+    2091,
+    2177,
+    2220,
+    2263,
+    2002,
+    2047
+   ],
+   "components": []
+  },
+  {
+   "id": 2002,
+   "go_id": 946,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.73799,
+     0.0,
+     -3.499051
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2047,
+   "go_id": 991,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.693383,
+     0.0,
+     -3.499051
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2091,
+   "go_id": 1035,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     3.489033,
+     0.0,
+     -0.546846
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2134,
+   "go_id": 1078,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     3.489033,
+     0.0,
+     0.72797
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2177,
+   "go_id": 1121,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.559193,
+     0.0,
+     3.478888
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2220,
+   "go_id": 1164,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.782719,
+     0.0,
+     3.478888
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2263,
+   "go_id": 1207,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.399446,
+     0.0,
+     0.593779
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2304,
+   "go_id": 1247,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.399446,
+     0.0,
+     -0.658672
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1951,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2342,
+   "go_id": 1286,
+   "name": "c3",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.814215,
+     0.0,
+     -1.625277
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2455,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 2382,
+   "go_id": 1326,
+   "name": "c2",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.606837,
+     0.0,
+     0.773171
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2455,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 2419,
+   "go_id": 1363,
+   "name": "c1",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.775539,
+     0.0,
+     1.544745
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2455,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 2455,
+   "go_id": 1399,
+   "name": "map_c1",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1781,
+   "children": [
+    2419,
+    2382,
+    2342,
+    2572
+   ],
+   "components": []
+  },
+  {
+   "id": 2572,
+   "go_id": 1516,
+   "name": "c4",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.568828,
+     0.0,
+     -0.843343
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2455,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    }
+   ]
+  },
+  {
+   "id": 2592,
+   "go_id": 1536,
+   "name": "light_map2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.7
+    ],
+    "rot": [
+     0.0,
+     0.866025,
+     0.0,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1781,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Light"
+    }
+   ]
+  }
+ ]
+}

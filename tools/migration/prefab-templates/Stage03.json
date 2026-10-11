@@ -1,0 +1,751 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 1432,
+ "prefab_name": "Stage03",
+ "asset_path": "Assets/Imported/Prefabs/Stage03.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Stage03.unity",
+ "node_count": 19,
+ "root_ids": [
+  2488
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1779,
+   "go_id": 723,
+   "name": "obj_m03",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.92388,
+     0.0,
+     -0.382683
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2488,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/obj_m3_sharedassets18_assets_404.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/obj_m03_sharedassets18_assets_98.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 1890,
+   "go_id": 834,
+   "name": "c0",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.801915,
+     0.0,
+     -2.586936
+    ],
+    "rot": [
+     -0.652701,
+     0.271996,
+     -0.271996,
+     -0.652701
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2340,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "BoxCollider"
+    }
+   ]
+  },
+  {
+   "id": 1949,
+   "go_id": 893,
+   "name": "c1",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.018728,
+     0.0,
+     1.848113
+    ],
+    "rot": [
+     -0.652701,
+     0.271996,
+     -0.271996,
+     -0.652701
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2340,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "BoxCollider"
+    }
+   ]
+  },
+  {
+   "id": 2000,
+   "go_id": 944,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.840351,
+     0.0,
+     -3.321874
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2045,
+   "go_id": 989,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     1.77202,
+     0.0,
+     -3.351403
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2089,
+   "go_id": 1033,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.296093,
+     0.0,
+     2.587021
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2132,
+   "go_id": 1076,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -2.613549,
+     0.0,
+     3.316475
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2175,
+   "go_id": 1119,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -1.46358,
+     0.0,
+     3.36077
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2218,
+   "go_id": 1162,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     3.297091,
+     0.0,
+     -2.303853
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2261,
+   "go_id": 1205,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     3.35615,
+     0.0,
+     -1.220979
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2302,
+   "go_id": 1245,
+   "name": "sp1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.369916,
+     0.0,
+     1.201689
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2453,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2340,
+   "go_id": 1284,
+   "name": "map_c3",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2488,
+   "children": [
+    1890,
+    1949,
+    2518,
+    2547
+   ],
+   "components": []
+  },
+  {
+   "id": 2453,
+   "go_id": 1324,
+   "name": "aaapoint",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2488,
+   "children": [
+    2302,
+    2261,
+    2218,
+    2175,
+    2132,
+    2089,
+    2045,
+    2000
+   ],
+   "components": []
+  },
+  {
+   "id": 2380,
+   "go_id": 1361,
+   "name": "map03",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.270598,
+     -0.653282,
+     -0.653282,
+     0.270598
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2488,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/map03_sharedassets18_assets_385.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/map03_sharedassets18_assets_82.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2417,
+   "go_id": 1397,
+   "name": "bg_water",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.229445,
+     0.0
+    ],
+    "rot": [
+     -0.270598,
+     -0.653282,
+     -0.653282,
+     0.270598
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2488,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane03_sharedassets18_assets_388.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bg_water_sharedassets18_assets_10.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop",
+     "guid": "c82a88ed2a9226b469138302e713d10c",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop.cs",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "impact",
+       "kind": "int",
+       "i": 100
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "sharedmtl",
+       "kind": "bool",
+       "b": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2488,
+   "go_id": 1432,
+   "name": "Stage03",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    2453,
+    2417,
+    2570,
+    2380,
+    2340,
+    1779
+   ],
+   "components": []
+  },
+  {
+   "id": 2518,
+   "go_id": 1462,
+   "name": "o1",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.622825,
+     0.0,
+     -1.393894
+    ],
+    "rot": [
+     0.0,
+     -0.382683,
+     0.0,
+     0.92388
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2340,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "CapsuleCollider"
+    }
+   ]
+  },
+  {
+   "id": 2547,
+   "go_id": 1491,
+   "name": "o1",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     2.726458,
+     0.0,
+     0.22146
+    ],
+    "rot": [
+     0.0,
+     -0.382683,
+     0.0,
+     0.92388
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2340,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "CapsuleCollider"
+    }
+   ]
+  },
+  {
+   "id": 2570,
+   "go_id": 1514,
+   "name": "light_map3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.7
+    ],
+    "rot": [
+     0.0,
+     0.866025,
+     0.0,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2488,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Light"
+    }
+   ]
+  }
+ ]
+}

@@ -175,22 +175,54 @@ def main():
             rows.append(r)
 
     print("dropped references resolved: %d, unresolvable: %d" % (len(rows), len(unresolvable)))
+    # What the extractor already turned into a reference into an exported prefab, so the control
+    # below can tell "this tool is broken" apart from "this reference stopped being dropped".
+    resolved_into = {}
+    for fn in sorted(os.listdir(SCENES)):
+        if not fn.startswith("level") or not fn.endswith(".json"):
+            continue
+        doc = json.load(open(os.path.join(SCENES, fn), encoding="utf-8"))
+        for n in doc.get("nodes", []):
+            for c in n.get("components") or []:
+                if c.get("kind") != "MonoBehaviour":
+                    continue
+                for f in c.get("fields") or []:
+                    if f.get("in_prefab"):
+                        resolved_into[(c["script"], f["n"])] = f["asset"]
+                    for it in f.get("items") or []:
+                        if it.get("in_prefab"):
+                            resolved_into[(c["script"], f["n"] + "[]")] = it["asset"]
     # Known-positive control, independent of everything above: Monster_efs.shadow was resolved by
     # hand to sharedassets2.assets!446, the Transform of a root GameObject named "shadow". If this
     # tool does not reproduce that exact reading, its "reachable_by" column is not trustworthy and
     # the whole report is noise -- a report that only ever prints counts has no way to notice.
+    # The reading may now live in either place: still dropped (this ledger) or resolved into an
+    # exported prefab (the descriptions). Absence from the ledger is only a failure if it is in
+    # neither -- that is how a fixed pipeline would otherwise look like a broken tool.
     ctl = [r for r in rows if r["script"] == "Monster_efs" and r["field"] == "shadow"]
     if not ctl:
-        print("CONTROL FAILED: no Monster_efs.shadow entry in the ledger -- the ledger itself is "
-              "not being read")
-        return 2
-    c = ctl[0]
-    if not (c["container"] == "sharedassets2.assets" and c["path_id"] == 446
-            and c["tgt_type"] == "Transform" and c["object"] == "shadow"):
-        print("CONTROL FAILED: Monster_efs.shadow resolved to %s -- resolution is wrong" % c)
-        return 2
-    print("control: Monster_efs.shadow -> %s!%d %s of GameObject %r (as verified by hand)"
-          % (c["container"], c["path_id"], c["tgt_type"], c["object"]))
+        got = resolved_into.get(("Monster_efs", "shadow"))
+        if not got:
+            print("CONTROL FAILED: Monster_efs.shadow is in neither this ledger nor the resolved "
+                  "set -- either the ledger is not being read or the extractor lost the field")
+            return 2
+        if not got.endswith("shadow.prefab"):
+            print("CONTROL FAILED: Monster_efs.shadow resolved to %s, expected a shadow.prefab"
+                  % got)
+            return 2
+        print("control: Monster_efs.shadow is no longer dropped -- the extractor resolves it into "
+              "%s, the same object this ledger used to name (sharedassets2.assets!446, the "
+              "Transform of GameObject 'shadow')" % got)
+    else:
+        c = ctl[0]
+        if not (c["container"] == "sharedassets2.assets" and c["path_id"] == 446
+                and c["tgt_type"] == "Transform" and c["object"] == "shadow"):
+            print("CONTROL FAILED: Monster_efs.shadow resolved to %s -- resolution is wrong" % c)
+            return 2
+        print("control: Monster_efs.shadow -> %s!%d %s of GameObject %r (as verified by hand)"
+              % (c["container"], c["path_id"], c["tgt_type"], c["object"]))
+    print("references now resolved into a prefab by the extractor: %d distinct (script, field)"
+          % len(resolved_into))
     print("\nby target type x how the root can be reached:")
     tab = collections.Counter((r["tgt_type"], r["reachable_by"]) for r in rows)
     for (t, reach), n in sorted(tab.items(), key=lambda kv: -kv[1]):

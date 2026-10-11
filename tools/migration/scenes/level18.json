@@ -30,88 +30,17 @@
   "null in source": 7,
   "ref set": 16,
   "cross-file -> asset": 8,
-  "cross-file ref dropped (element)": 5,
-  "array fully dropped": 2,
-  "cross-file ref dropped": 4,
+  "cross-file -> prefab root (element)": 5,
+  "array set": 2,
+  "cross-file -> prefab root": 3,
   "cross-file -> asset (element)": 5,
-  "array set": 1,
   "null in source (element)": 2,
+  "array fully dropped": 1,
+  "cross-file ref dropped": 1,
   "opaque skipped (GUIStyle)": 1
  },
  "trailing_fields_absent": {},
  "dropped_refs": [
-  {
-   "field": "map",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 80,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
-  {
-   "field": "map",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 81,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
-  {
-   "field": "map",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 82,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
-  {
-   "field": "map",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 83,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
-  {
-   "field": "map",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 84,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
-  {
-   "field": "soulstone",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 79,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
-  {
-   "field": "barricate",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 85,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
-  {
-   "field": "enemy",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 110,
-   "node": "map_compose",
-   "script": "Map_Compose",
-   "file": "sharedassets19.assets"
-  },
   {
    "field": "basicSkin",
    "t": "GUISkin",
@@ -3476,6 +3405,64 @@
      "cs": "unity/Assets/Scripts/Map_Compose.cs",
      "enabled": true,
      "fields": [
+      {
+       "n": "map",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/map_ride1.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/map_ride2.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/map_ride3.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/map_ride4.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/map_ride5.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
+       "n": "soulstone",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/coin.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "barricate",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/obj_barricade.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "enemy",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/Enemy_ride1.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
       {
        "n": "dummy_gui",
        "kind": "node",

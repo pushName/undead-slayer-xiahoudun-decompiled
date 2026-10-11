@@ -1,0 +1,495 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 1176,
+ "prefab_name": "ef_groundbreak_cha",
+ "asset_path": "Assets/Imported/Prefabs/ef_groundbreak_cha.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/ef_groundbreak_cha.unity",
+ "node_count": 9,
+ "root_ids": [
+  2232
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1913,
+   "go_id": 781,
+   "name": "g7",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.347661,
+     0.0,
+     -0.200613
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/g7_sharedassets18_assets_417.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_groundbreak1_sharedassets18_assets_45.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 1967,
+   "go_id": 857,
+   "name": "g6",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.017299,
+     0.0,
+     -0.41072
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/g6_sharedassets18_assets_413.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_groundbreak1_sharedassets18_assets_45.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2014,
+   "go_id": 911,
+   "name": "g5",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.285173,
+     0.0,
+     -0.239931
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/g5_sharedassets18_assets_410.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_groundbreak1_sharedassets18_assets_45.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2059,
+   "go_id": 958,
+   "name": "g4",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.403141,
+     0.0,
+     0.150414
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/g4_sharedassets18_assets_406.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_groundbreak1_sharedassets18_assets_45.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2102,
+   "go_id": 1003,
+   "name": "g3",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.047486,
+     0.0,
+     0.495565
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/g3_sharedassets18_assets_401.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_groundbreak1_sharedassets18_assets_45.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2145,
+   "go_id": 1046,
+   "name": "g2",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.274893,
+     0.0,
+     0.351767
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/g2_sharedassets18_assets_395.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_groundbreak1_sharedassets18_assets_45.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2188,
+   "go_id": 1089,
+   "name": "g1",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.496633,
+     0.0,
+     0.137956
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/g1_sharedassets18_assets_380.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/ef_groundbreak1_sharedassets18_assets_45.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 1837,
+   "go_id": 1132,
+   "name": "zcrack",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.004,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     3.2,
+     3.2,
+     3.2
+    ]
+   },
+   "parent": 2232,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets2_assets_111.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/crack_sharedassets2_assets_6.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2232,
+   "go_id": 1176,
+   "name": "ef_groundbreak_cha",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "parent": 0,
+   "children": [
+    2188,
+    2145,
+    2102,
+    2059,
+    2014,
+    1967,
+    1913,
+    1837
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Sk_groundbreak",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

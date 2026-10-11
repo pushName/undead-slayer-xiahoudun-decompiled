@@ -1,12 +1,12 @@
 ===== ANIMATION CLIP BUILD =====
-clips built        : 146  (146 (state,clip) assets requested), failed 0
-requested by       : 120 Animation state bindings + 26 MonoBehaviour field references; the index lists 427 clips and only what a scene or prefab description actually mentions is built
-float channels     : 28923
-curve keys         : built 130662 for 43554 source vector keys  (each vector/quaternion curve becomes 3-4 float channels)
-animation events   : 7 persisted via AnimationUtility
-descriptions scanned  : 23 scene file(s) + 94 prefab file(s)
+clips built        : 186  (186 (state,clip) assets requested), failed 0
+requested by       : 165 Animation state bindings + 21 MonoBehaviour field references; the index lists 427 clips and only what a scene or prefab description actually mentions is built
+float channels     : 34866
+curve keys         : built 161874 for 53958 source vector keys  (each vector/quaternion curve becomes 3-4 float channels)
+animation events   : 16 persisted via AnimationUtility
+descriptions scanned  : 23 scene file(s) + 193 prefab file(s)
 float curves skipped: 0 (classID+attribute, not guessed)
-ambiguous bindings  : 8 (same state name, several candidate clips -- picked by lowest path_id, NOT proven)
+ambiguous bindings  : 211 (same state name, several candidate clips -- picked by lowest path_id, NOT proven)
    ambiguous: Story/cha1:idle
    ambiguous: Story/enemy_story:idle
    ambiguous: Story/enemy_story:move
@@ -15,5 +15,208 @@ ambiguous bindings  : 8 (same state name, several candidate clips -- picked by l
    ambiguous: Story/enemy_story:idle
    ambiguous: Story/enemy_story:move
    ambiguous: Stage/cha1:idle
+   ambiguous: prefab Boss01:b_attack1
+   ambiguous: prefab Boss01:b_attack1_i
+   ambiguous: prefab Boss01:b_attack2
+   ambiguous: prefab Boss01:b_attack2_i
+   ambiguous: prefab Boss01:b_attack3
+   ambiguous: prefab Boss01:b_attack3_i
+   ambiguous: prefab Boss01:b_down
+   ambiguous: prefab Boss01:b_idle
+   ambiguous: prefab Boss01:b_move
+   ambiguous: prefab Boss02:b_attack1
+   ambiguous: prefab Boss02:b_attack1_i
+   ambiguous: prefab Boss02:b_attack2
+   ambiguous: prefab Boss02:b_attack2_i
+   ambiguous: prefab Boss02:b_attack3
+   ambiguous: prefab Boss02:b_attack3_i
+   ambiguous: prefab Boss02:b_down
+   ambiguous: prefab Boss02:b_idle
+   ambiguous: prefab Boss02:b_move
+   ambiguous: prefab Boss03:b_attack1
+   ambiguous: prefab Boss03:b_attack1_i
+   ambiguous: prefab Boss03:b_attack2
+   ambiguous: prefab Boss03:b_attack2_i
+   ambiguous: prefab Boss03:b_attack3
+   ambiguous: prefab Boss03:b_attack3_i
+   ambiguous: prefab Boss03:b_down
+   ambiguous: prefab Boss03:b_idle
+   ambiguous: prefab Boss03:b_move
+   ambiguous: prefab Boss04:b_attack1
+   ambiguous: prefab Boss04:b_attack1_i
+   ambiguous: prefab Boss04:b_attack2
+   ambiguous: prefab Boss04:b_attack2_i
+   ambiguous: prefab Boss04:b_attack3
+   ambiguous: prefab Boss04:b_attack3_i
+   ambiguous: prefab Boss04:b_down
+   ambiguous: prefab Boss04:b_idle
+   ambiguous: prefab Boss04:b_move
+   ambiguous: prefab Boss05:b_attack1
+   ambiguous: prefab Boss05:b_attack1_i
+   ambiguous: prefab Boss05:b_attack2
+   ambiguous: prefab Boss05:b_attack2_i
+   ambiguous: prefab Boss05:b_attack3
+   ambiguous: prefab Boss05:b_attack3_i
+   ambiguous: prefab Boss05:b_down
+   ambiguous: prefab Boss05:b_idle
+   ambiguous: prefab Boss05:b_move
+   ambiguous: prefab Boss06:b_attack1
+   ambiguous: prefab Boss06:b_attack1_i
+   ambiguous: prefab Boss06:b_attack2
+   ambiguous: prefab Boss06:b_attack2_i
+   ambiguous: prefab Boss06:b_attack3
+   ambiguous: prefab Boss06:b_attack3_i
+   ambiguous: prefab Boss06:b_down
+   ambiguous: prefab Boss06:b_idle
+   ambiguous: prefab Boss06:b_move
+   ambiguous: prefab Boss07:b_attack1
+   ambiguous: prefab Boss07:b_attack1_i
+   ambiguous: prefab Boss07:b_attack2
+   ambiguous: prefab Boss07:b_attack2_i
+   ambiguous: prefab Boss07:b_attack3
+   ambiguous: prefab Boss07:b_attack3_i
+   ambiguous: prefab Boss07:b_down
+   ambiguous: prefab Boss07:b_idle
+   ambiguous: prefab Boss07:b_move
+   ambiguous: prefab Boss08:b_attack1
+   ambiguous: prefab Boss08:b_attack1_i
+   ambiguous: prefab Boss08:b_attack2
+   ambiguous: prefab Boss08:b_attack2_i
+   ambiguous: prefab Boss08:b_attack3
+   ambiguous: prefab Boss08:b_attack3_i
+   ambiguous: prefab Boss08:b_down
+   ambiguous: prefab Boss08:b_idle
+   ambiguous: prefab Boss08:b_move
+   ambiguous: prefab Boss09:b_attack1
+   ambiguous: prefab Boss09:b_attack1_i
+   ambiguous: prefab Boss09:b_attack2
+   ambiguous: prefab Boss09:b_attack2_i
+   ambiguous: prefab Boss09:b_attack3
+   ambiguous: prefab Boss09:b_attack3_i
+   ambiguous: prefab Boss09:b_down
+   ambiguous: prefab Boss09:b_idle
+   ambiguous: prefab Boss09:b_move
+   ambiguous: prefab Boss09_trans:b_attack1
+   ambiguous: prefab Boss09_trans:b_attack1_i
+   ambiguous: prefab Boss09_trans:b_attack2
+   ambiguous: prefab Boss09_trans:b_attack2_i
+   ambiguous: prefab Boss09_trans:b_attack3
+   ambiguous: prefab Boss09_trans:b_attack3_i
+   ambiguous: prefab Boss09_trans:b_down
+   ambiguous: prefab Boss09_trans:b_idle
+   ambiguous: prefab Boss09_trans:b_move
+   ambiguous: prefab Boss10:b_attack1
+   ambiguous: prefab Boss10:b_attack1_i
+   ambiguous: prefab Boss10:b_attack2
+   ambiguous: prefab Boss10:b_attack2_i
+   ambiguous: prefab Boss10:b_attack3
+   ambiguous: prefab Boss10:b_attack3_i
+   ambiguous: prefab Boss10:b_down
+   ambiguous: prefab Boss10:b_idle
+   ambiguous: prefab Boss10:b_move
+   ambiguous: prefab bosssp:b_attack1
+   ambiguous: prefab bosssp:b_attack1_i
+   ambiguous: prefab bosssp:b_attack2
+   ambiguous: prefab bosssp:b_attack2_i
+   ambiguous: prefab bosssp:b_attack3
+   ambiguous: prefab bosssp:b_attack3_i
+   ambiguous: prefab bosssp:b_down
+   ambiguous: prefab bosssp:b_idle
+   ambiguous: prefab bosssp:b_move
+   ambiguous: prefab Enemy00:bekicked
+   ambiguous: prefab Enemy00:bethrust
+   ambiguous: prefab Enemy00:downforever
+   ambiguous: prefab Enemy00:getup
+   ambiguous: prefab Enemy00:idle
+   ambiguous: prefab Enemy00:m_attack1
+   ambiguous: prefab Enemy00:m_attack1_i
+   ambiguous: prefab Enemy00:move
+   ambiguous: prefab Enemy01:bekicked
+   ambiguous: prefab Enemy01:bethrust
+   ambiguous: prefab Enemy01:downforever
+   ambiguous: prefab Enemy01:getup
+   ambiguous: prefab Enemy01:idle
+   ambiguous: prefab Enemy01:m_attack1
+   ambiguous: prefab Enemy01:m_attack1_i
+   ambiguous: prefab Enemy01:move
+   ambiguous: prefab Enemy02:bekicked
+   ambiguous: prefab Enemy02:bethrust
+   ambiguous: prefab Enemy02:downforever
+   ambiguous: prefab Enemy02:getup
+   ambiguous: prefab Enemy02:idle
+   ambiguous: prefab Enemy02:m_attack1
+   ambiguous: prefab Enemy02:m_attack1_i
+   ambiguous: prefab Enemy02:move
+   ambiguous: prefab Enemy03:down
+   ambiguous: prefab Enemy03:down_high
+   ambiguous: prefab Enemy03:idle
+   ambiguous: prefab Enemy03:m_attack1
+   ambiguous: prefab Enemy03:m_attack1_i
+   ambiguous: prefab Enemy03:move
+   ambiguous: prefab Enemy04:down
+   ambiguous: prefab Enemy04:down_high
+   ambiguous: prefab Enemy04:idle
+   ambiguous: prefab Enemy04:m_attack1
+   ambiguous: prefab Enemy04:m_attack1_i
+   ambiguous: prefab Enemy04:move
+   ambiguous: prefab Enemy05:down
+   ambiguous: prefab Enemy05:down_high
+   ambiguous: prefab Enemy05:idle
+   ambiguous: prefab Enemy05:m_attack1
+   ambiguous: prefab Enemy05:m_attack1_i
+   ambiguous: prefab Enemy05:move
+   ambiguous: prefab Enemy06:down
+   ambiguous: prefab Enemy06:down_high
+   ambiguous: prefab Enemy06:idle
+   ambiguous: prefab Enemy06:m_attack1
+   ambiguous: prefab Enemy06:m_attack1_i
+   ambiguous: prefab Enemy06:move
+   ambiguous: prefab Enemy07:down
+   ambiguous: prefab Enemy07:down_high
+   ambiguous: prefab Enemy07:idle
+   ambiguous: prefab Enemy07:m_attack1
+   ambiguous: prefab Enemy07:m_attack1_i
+   ambiguous: prefab Enemy07:move
+   ambiguous: prefab Enemy08:down
+   ambiguous: prefab Enemy08:down_high
+   ambiguous: prefab Enemy08:idle
+   ambiguous: prefab Enemy08:m_attack1
+   ambiguous: prefab Enemy08:m_attack1_i
+   ambiguous: prefab Enemy08:move
+   ambiguous: prefab Enemy09:down
+   ambiguous: prefab Enemy09:down_high
+   ambiguous: prefab Enemy09:idle
+   ambiguous: prefab Enemy09:m_attack1
+   ambiguous: prefab Enemy09:m_attack1_i
+   ambiguous: prefab Enemy09:move
+   ambiguous: prefab Enemy11:down
+   ambiguous: prefab Enemy11:down_high
+   ambiguous: prefab Enemy11:idle
+   ambiguous: prefab Enemy11:m_attack1
+   ambiguous: prefab Enemy11:m_attack1_i
+   ambiguous: prefab Enemy11:move
+   ambiguous: prefab Enemy12:down
+   ambiguous: prefab Enemy12:down_high
+   ambiguous: prefab Enemy12:idle
+   ambiguous: prefab Enemy12:m_attack1
+   ambiguous: prefab Enemy12:m_attack1_i
+   ambiguous: prefab Enemy12:move
+   ambiguous: prefab Enemy13:down
+   ambiguous: prefab Enemy13:down_high
+   ambiguous: prefab Enemy13:idle
+   ambiguous: prefab Enemy13:m_attack1
+   ambiguous: prefab Enemy13:m_attack1_i
+   ambiguous: prefab Enemy13:move
+   ambiguous: prefab Enemy14:down
+   ambiguous: prefab Enemy14:down_high
+   ambiguous: prefab Enemy14:idle
+   ambiguous: prefab Enemy14:m_attack1
+   ambiguous: prefab Enemy14:m_attack1_i
+   ambiguous: prefab Enemy14:move
+   ambiguous: prefab Enemy_ride1:move
+   ambiguous: prefab Mon_destroy1:dt1
+   ambiguous: prefab Mon_destroy2:dt1
+   ambiguous: prefab Mon_destroy3:dt1
+   ambiguous: prefab Mon_destroy4:dt1
 rotation error AT KEYS   : 0.000 deg  <- assumption free, this is the euler round trip
 rotation error BETWEEN   : 180.000 deg  [sharedassets2.assets@219 / Bip01] <- vs this file's Hermite model of Unity 4, not ground truth

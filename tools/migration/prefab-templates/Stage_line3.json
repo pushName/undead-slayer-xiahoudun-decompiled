@@ -1,0 +1,452 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 1364,
+ "prefab_name": "Stage_line3",
+ "asset_path": "Assets/Imported/Prefabs/Stage_line3.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Stage_line3.unity",
+ "node_count": 5,
+ "root_ids": [
+  2420
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1784,
+   "go_id": 728,
+   "name": "pt_watercircle",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.07,
+     15.900068
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1894,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter",
+     "id": 2858,
+     "record": {
+      "gameObject": [
+       0,
+       728
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 0,
+      "flag_11": 0,
+      "f_12": 0.4,
+      "f_16": 0.5,
+      "f_20": 1.5,
+      "f_24": 1.5,
+      "f_28": 50.0,
+      "f_32": 50.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": -0.5,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.05,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.0,
+      "f_88": 0.0,
+      "f_92": 0.0,
+      "flag_96": 1,
+      "flag_97": 0,
+      "flag_98": 0,
+      "flag_99": 0,
+      "f_100": 0.3,
+      "f_104": 0.0,
+      "f_108": 21.0,
+      "f_112": 0.0
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator",
+     "id": 2818,
+     "record": {
+      "gameObject": [
+       0,
+       728
+      ],
+      "flag_8": true,
+      "color_12": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "color_16": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_20": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_24": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_28": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "f_32": 0.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.8,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.0,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.1,
+      "tail_88": [
+       0,
+       0
+      ]
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer",
+     "id": 3074,
+     "record": {
+      "gameObject": [
+       0,
+       728
+      ],
+      "flag_8": 1,
+      "flag_9": 0,
+      "flag_10": 0,
+      "flag_11": 255,
+      "one_12": 1.0,
+      "one_16": 1.0,
+      "zero_20": 0.0,
+      "zero_24": 0.0,
+      "materialCount_28": 1,
+      "material0_32": [
+       0,
+       122
+      ],
+      "zero_40": 0.0,
+      "zero_44": 0.0,
+      "zero_48": 0.0,
+      "zero_52": 0.0,
+      "zero_56": 0.0,
+      "zero_60": 0.0,
+      "zero_64": 0.0,
+      "zero_68": 0.0,
+      "zero_72": 0.0,
+      "bytes_76": [
+       4,
+       0,
+       0,
+       0
+      ],
+      "f_80": 2.0,
+      "f_84": 0.0,
+      "f_88": 2.0,
+      "enum_92": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "enum_96": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "f_100": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "id": 1894,
+   "go_id": 838,
+   "name": "amap",
+   "layer": 10,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "parent": 2420,
+   "children": [
+    1784
+   ],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane02_sharedassets18_assets_368.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/sky_ground3_sharedassets18_assets_129.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 2305,
+   "go_id": 1248,
+   "name": "light_map3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.7
+    ],
+    "rot": [
+     0.0,
+     0.866025,
+     0.0,
+     0.5
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2420,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Light"
+    }
+   ]
+  },
+  {
+   "id": 2344,
+   "go_id": 1288,
+   "name": "bg_water",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     -0.229445,
+     0.0
+    ],
+    "rot": [
+     -0.270598,
+     -0.653282,
+     -0.653282,
+     0.270598
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2420,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane03_sharedassets18_assets_388.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/bg_water_sharedassets18_assets_10.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop",
+     "guid": "c82a88ed2a9226b469138302e713d10c",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop.cs",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 20
+      },
+      {
+       "n": "impact",
+       "kind": "int",
+       "i": 100
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "sharedmtl",
+       "kind": "bool",
+       "b": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2420,
+   "go_id": 1364,
+   "name": "Stage_line3",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    2344,
+    2305,
+    1894
+   ],
+   "components": []
+  }
+ ]
+}

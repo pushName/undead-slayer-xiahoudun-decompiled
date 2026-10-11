@@ -1,0 +1,757 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets2.assets",
+ "root_path_id": 330,
+ "prefab_name": "Mon_destroy4",
+ "asset_path": "Assets/Imported/Prefabs/Mon_destroy4.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Mon_destroy4.unity",
+ "node_count": 15,
+ "root_ids": [
+  435
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 2,
+  "ref set": 4,
+  "instances decoded": 17
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [
+  "MeshRenderer 545: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy02: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy01: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 435,
+   "go_id": 330,
+   "name": "Mon_destroy4",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     3.0,
+     3.0,
+     3.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    528,
+    522,
+    517,
+    511,
+    505,
+    499,
+    493,
+    487,
+    481,
+    475,
+    469,
+    463,
+    458,
+    453
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Mon_Destroy",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "headbone",
+       "kind": "node",
+       "node": 528,
+       "t": "Transform"
+      }
+     ]
+    }
+   ],
+   "animations": [
+    {
+     "name": "dt1",
+     "clip_id": "sharedassets2.assets@161",
+     "picked_by": "lowest-path-id (ambiguous among 4)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_161.json",
+     "asset": "Assets/Imported/Animations/dt1__sharedassets2_161/dt1.anim"
+    }
+   ]
+  },
+  {
+   "id": 453,
+   "go_id": 348,
+   "name": "Object14",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object14_sharedassets2_assets_150.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 458,
+   "go_id": 353,
+   "name": "Object13",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object13_sharedassets2_assets_149.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 463,
+   "go_id": 358,
+   "name": "Object12",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object12_sharedassets2_assets_148.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 469,
+   "go_id": 364,
+   "name": "Object11",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object11_sharedassets2_assets_147.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 475,
+   "go_id": 370,
+   "name": "Object10",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object10_sharedassets2_assets_146.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 481,
+   "go_id": 376,
+   "name": "Object09",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object09_sharedassets2_assets_145.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 487,
+   "go_id": 382,
+   "name": "Object08",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object08_sharedassets2_assets_144.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 493,
+   "go_id": 388,
+   "name": "Object07",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.003214,
+     0.019974,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object07_sharedassets2_assets_143.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 499,
+   "go_id": 394,
+   "name": "Object06",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object06_sharedassets2_assets_142.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 505,
+   "go_id": 400,
+   "name": "Object05",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object05_sharedassets2_assets_138.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 511,
+   "go_id": 406,
+   "name": "Object04",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -3.2e-05,
+     0.020484,
+     -3.3e-05
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object04_sharedassets2_assets_136.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 517,
+   "go_id": 412,
+   "name": "Object03",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     6.8e-05,
+     0.016866,
+     0.00058
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object03_sharedassets2_assets_133.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 522,
+   "go_id": 417,
+   "name": "Object02",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.004134,
+     0.020063,
+     0.003669
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object02_sharedassets2_assets_126.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  },
+  {
+   "id": 528,
+   "go_id": 423,
+   "name": "p1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.000776,
+     0.020539,
+     -0.0017
+    ],
+    "rot": [
+     -0.707107,
+     -0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 435,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Object01_sharedassets2_assets_117.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    }
+   ]
+  }
+ ]
+}

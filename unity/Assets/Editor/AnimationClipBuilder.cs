@@ -225,11 +225,23 @@ namespace UndeadSlayer.EditorTools
             // only looked at the 23 scenes -- which is exactly why 6 bindings inside built prefabs
             // logged "clip asset not found": nothing had ever built them. Both feeds count now, the
             // node bindings for their picked_by evidence and the raw text for the scan below.
-            string prefabDir = Path.Combine(root, "tools", "migration", "prefabs");
-            int prefabDocs = 0;
-            if (Directory.Exists(prefabDir))
+            // Same lesson, second time: template prefab descriptions live in a THIRD directory
+            // (prefab-templates), and when the builder did not read it 40 distinct boss/weapon clips
+            // were missing while building 96 templates logged 219 "clip asset not found" warnings.
+            // Any new description directory has to be added here as well.
+            var prefabFiles = new List<string>();
+            foreach (var sub in new[] { "prefabs", "prefab-templates" })
             {
-                foreach (string file in Directory.GetFiles(prefabDir, "*.json"))
+                var d = Path.Combine(root, "tools", "migration", sub);
+                if (Directory.Exists(d))
+                {
+                    prefabFiles.AddRange(Directory.GetFiles(d, "*.json"));
+                }
+            }
+            int prefabDocs = 0;
+            if (prefabFiles.Count > 0)
+            {
+                foreach (string file in prefabFiles)
                 {
                     string raw = File.ReadAllText(file);
                     scenesText.Append(raw);
@@ -259,7 +271,8 @@ namespace UndeadSlayer.EditorTools
             }
             else
             {
-                Debug.Log("[AnimationClipBuilder] no prefab descriptions at " + prefabDir
+                Debug.Log("[AnimationClipBuilder] no prefab descriptions under "
+                          + "tools/migration/prefabs or prefab-templates"
                           + " -- building only what the scenes reference");
             }
 

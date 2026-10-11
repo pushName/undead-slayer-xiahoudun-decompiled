@@ -80,8 +80,15 @@ SUPPORTED = {
     "WheelCollider", "Joint", "SpringJoint",
 }
 REMOVED_IN_5 = {"ParticleAnimator", "ParticleRenderer", "EllipsoidParticleEmitter",
-                "ParticleEmitter", "FlareLayer", "GUILayer", "GUIText", "GUITexture",
-                "Interactable", "NetworkView"}
+                "MeshParticleEmitter", "ParticleEmitter", "FlareLayer", "GUILayer", "GUIText",
+                "GUITexture", "Interactable", "NetworkView"}
+# MeshParticleEmitter was missing from this set, which is not cosmetic: a type that is in neither
+# SUPPORTED nor REMOVED_IN_5 falls into the unhandled branch, where it is counted in
+# unsupported_components but NO component record is written. The exporter's histogram therefore
+# under-counted one emitter per such GameObject while scan_prefab_contents.py, reading raw types,
+# counted it -- and export_prefabs's contents cross-check refused the run on exactly that
+# disagreement (skill_energyfillar). An exhaustive sweep of every container shows this is the only
+# component class still missing: everything else unseen is an asset or a global manager object.
 
 
 def tag_name(value):

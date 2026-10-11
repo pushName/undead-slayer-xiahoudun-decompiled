@@ -1,0 +1,597 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 1000,
+ "prefab_name": "dragonhead",
+ "asset_path": "Assets/Imported/Prefabs/dragonhead.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/dragonhead.unity",
+ "node_count": 9,
+ "root_ids": [
+  2056
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1964,
+   "go_id": 777,
+   "name": "Bone02",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.025039,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.122183,
+     0.992508
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2142,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2011,
+   "go_id": 854,
+   "name": "Bone03",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.028526,
+     -0.006973,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.156539,
+     0.987672
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2142,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2142,
+   "go_id": 908,
+   "name": "Bone01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024535,
+     0.000507,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     -0.010693,
+     0.999943
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1910,
+   "children": [
+    1964,
+    2011,
+    2099
+   ],
+   "components": []
+  },
+  {
+   "id": 1910,
+   "go_id": 955,
+   "name": "Bone04",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.000127,
+     -0.024333
+    ],
+    "rot": [
+     0.007561,
+     0.707066,
+     0.007561,
+     0.707066
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2056,
+   "children": [
+    2142
+   ],
+   "components": []
+  },
+  {
+   "id": 2056,
+   "go_id": 1000,
+   "name": "dragonhead",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     3.0,
+     3.0,
+     3.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    1910,
+    1833,
+    2229,
+    2185
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Dragonhead",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_body",
+       "kind": "node",
+       "node": 2099,
+       "t": "Transform"
+      },
+      {
+       "n": "zwater",
+       "kind": "node",
+       "node": 2185,
+       "t": "Transform"
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    }
+   ],
+   "animations": [
+    {
+     "name": "bite",
+     "clip_id": "sharedassets18.assets@465",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_465.json",
+     "asset": "Assets/Imported/Animations/bite__sharedassets18_465/bite.anim"
+    },
+    {
+     "name": "bite_i",
+     "clip_id": "sharedassets18.assets@492",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_492.json",
+     "asset": "Assets/Imported/Animations/bite_i__sharedassets18_492/bite_i.anim"
+    },
+    {
+     "name": "bite_ready",
+     "clip_id": "sharedassets18.assets@518",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_518.json",
+     "asset": "Assets/Imported/Animations/bite_ready__sharedassets18_518/bite_ready.anim"
+    }
+   ]
+  },
+  {
+   "id": 2099,
+   "go_id": 1043,
+   "name": "pt_body",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.004215,
+     0.017027,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.707107,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     0.111111,
+     0.111111,
+     0.111111
+    ]
+   },
+   "parent": 2142,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter",
+     "id": 2872,
+     "record": {
+      "gameObject": [
+       0,
+       1043
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 0,
+      "flag_11": 0,
+      "f_12": 0.1,
+      "f_16": 0.1,
+      "f_20": 0.7,
+      "f_24": 0.7,
+      "f_28": 40.0,
+      "f_32": 40.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.0,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.05,
+      "f_76": 0.1,
+      "f_80": 0.1,
+      "f_84": 0.1,
+      "f_88": 0.0,
+      "f_92": 100.0,
+      "flag_96": 1,
+      "flag_97": 0,
+      "flag_98": 0,
+      "flag_99": 0,
+      "f_100": 0.1,
+      "f_104": 0.1,
+      "f_108": 0.2,
+      "f_112": 0.0
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator",
+     "id": 2832,
+     "record": {
+      "gameObject": [
+       0,
+       1043
+      ],
+      "flag_8": true,
+      "color_12": [
+       255,
+       255,
+       255,
+       112
+      ],
+      "color_16": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_20": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_24": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_28": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "f_32": 0.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.0,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.0,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.1,
+      "tail_88": [
+       0,
+       0
+      ]
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer",
+     "id": 3088,
+     "record": {
+      "gameObject": [
+       0,
+       1043
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 1,
+      "flag_11": 255,
+      "one_12": 1.0,
+      "one_16": 1.0,
+      "zero_20": 0.0,
+      "zero_24": 0.0,
+      "materialCount_28": 1,
+      "material0_32": [
+       7,
+       5
+      ],
+      "zero_40": 0.0,
+      "zero_44": 0.0,
+      "zero_48": 0.0,
+      "zero_52": 0.0,
+      "zero_56": 0.0,
+      "zero_60": 0.0,
+      "zero_64": 0.0,
+      "zero_68": 0.0,
+      "zero_72": 0.0,
+      "bytes_76": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "f_80": 2.0,
+      "f_84": 0.0,
+      "f_88": 0.25,
+      "enum_92": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "enum_96": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "f_100": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "id": 1833,
+   "go_id": 1086,
+   "name": "Bone05",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.000493,
+     -0.064444
+    ],
+    "rot": [
+     0.707064,
+     0.007769,
+     0.707064,
+     0.007769
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2056,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2185,
+   "go_id": 1129,
+   "name": "zwater",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.003333,
+     -0.09
+    ],
+    "rot": [
+     0.707107,
+     0.0,
+     0.0,
+     -0.707107
+    ],
+    "scale": [
+     0.333333,
+     0.333333,
+     0.333333
+    ]
+   },
+   "parent": 2056,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets17_assets_9.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/zwater_sharedassets17_assets_4.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "component",
+     "type": "Animation"
+    }
+   ]
+  },
+  {
+   "id": 2229,
+   "go_id": 1173,
+   "name": "head",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2056,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/wolfhead_sharedassets18_assets_141.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      2011,
+      1964,
+      1910,
+      2142,
+      1833
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/head_sharedassets18_assets_399.asset"
+    }
+   ]
+  }
+ ]
+}

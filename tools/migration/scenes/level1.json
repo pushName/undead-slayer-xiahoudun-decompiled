@@ -36,18 +36,18 @@
  "field_stats": {
   "ref set": 14,
   "instances decoded": 41,
-  "cross-file -> prefab root": 1,
-  "cross-file ref dropped": 10,
+  "cross-file -> prefab root": 9,
   "null in source": 47,
   "null in source (element)": 11,
-  "array fully dropped": 5,
+  "array fully dropped": 3,
   "cross-file -> asset": 16,
   "cross-file -> asset (element)": 37,
-  "array set": 15,
+  "array set": 17,
   "refused[record shorter than layout (data assig]": 1,
+  "cross-file ref dropped": 2,
   "opaque skipped (GUIStyle)": 2,
   "trailing fields absent from the record": 1,
-  "cross-file ref dropped (element)": 7
+  "cross-file -> prefab root (element)": 7
  },
  "trailing_fields_absent": {
   "DB_Monster": [
@@ -55,78 +55,6 @@
   ]
  },
  "dropped_refs": [
-  {
-   "field": "spear",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 447,
-   "node": "weapon_dummy",
-   "script": "Cha_Weapon",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "shadow",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 446,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "ef_hit",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 442,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "ef_blood",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 436,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "ef_block",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 441,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "arrowmark",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 440,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "num_damage",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 445,
-   "node": "Monster_efs",
-   "script": "Monster_efs",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "blood",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 436,
-   "node": "npc",
-   "script": "NPC1",
-   "file": "sharedassets2.assets"
-  },
   {
    "field": "basicSkin",
    "t": "GUISkin",
@@ -144,69 +72,6 @@
    "node": "UI_Ingame",
    "script": "UI_Ingame_story",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 518,
-   "node": "Spawn",
-   "script": "Spawn_story",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 518,
-   "node": "Spawn",
-   "script": "Spawn_story",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "enemy_source",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 431,
-   "node": "Spawn",
-   "script": "Spawn_story",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 432,
-   "node": "Spawn",
-   "script": "Spawn_story",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 433,
-   "node": "Spawn",
-   "script": "Spawn_story",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 527,
-   "node": "Spawn",
-   "script": "Spawn_story",
-   "file": "sharedassets2.assets"
-  },
-  {
-   "field": "mon_destroy",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 435,
-   "node": "Spawn",
-   "script": "Spawn_story",
-   "file": "sharedassets2.assets"
   }
  ],
  "animation_bindings": {
@@ -2169,6 +2034,13 @@
        "n": "bowgun",
        "kind": "asset",
        "asset": "Assets/Imported/Prefabs/bowgun01.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "spear",
+       "kind": "asset",
+       "asset": "Assets/Resources/wp_horse.prefab",
        "t": "Transform",
        "in_prefab": 1
       },
@@ -4169,6 +4041,48 @@
      "cs": "unity/Assets/Scripts/Monster_efs.cs",
      "enabled": true,
      "fields": [
+      {
+       "n": "shadow",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/shadow.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_hit",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_hit.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_blood",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/blood.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_block",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_block.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "arrowmark",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/directionArrow_r.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "num_damage",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/num_damege.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
       {
        "n": "split_material",
        "kind": "asset",
@@ -8228,6 +8142,13 @@
      "enabled": true,
      "fields": [
       {
+       "n": "blood",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/blood.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "snd_scream",
        "kind": "asset",
        "asset": "Assets/Resources/npc_scream.mp3",
@@ -10192,7 +10113,65 @@
      "script": "Spawn_story",
      "guid": "5427339ee440ab14cb2306471a0e165c",
      "cs": "unity/Assets/Scripts/Spawn_story.cs",
-     "enabled": true
+     "enabled": true,
+     "fields": [
+      {
+       "n": "enemy_source",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy01.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy01.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Enemy02.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
+       "n": "mon_destroy",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy1.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy2.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy3.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/Mon_destroy4.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      }
+     ]
     }
    ]
   },

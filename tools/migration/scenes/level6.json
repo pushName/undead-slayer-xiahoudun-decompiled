@@ -33,12 +33,12 @@
   "trailing fields absent from the record": 8,
   "refused[two-dimensional array (unsupported by ]": 3,
   "cross-file -> asset": 44,
-  "cross-file ref dropped": 7,
+  "cross-file ref dropped": 2,
   "cross-file -> asset (element)": 20,
-  "array set": 5,
+  "array set": 6,
+  "cross-file -> prefab root": 5,
   "ref set": 8,
-  "cross-file ref dropped (element)": 3,
-  "array fully dropped": 1,
+  "cross-file -> prefab root (element)": 3,
   "opaque skipped (GUIStyle)": 14
  },
  "trailing_fields_absent": {
@@ -73,78 +73,6 @@
    "node": "UI_map",
    "script": "UI_map",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "icon_ef",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 116,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
-  },
-  {
-   "field": "icon_mainbattle",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 112,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
-  },
-  {
-   "field": "icon_mainbattle_clear",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 113,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
-  },
-  {
-   "field": "icon_mainbattle_clear",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 114,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
-  },
-  {
-   "field": "icon_mainbattle_clear",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 115,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
-  },
-  {
-   "field": "sound_dummy",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 117,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
-  },
-  {
-   "field": "ef_creaticon",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 111,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
-  },
-  {
-   "field": "ef_breakicon",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 110,
-   "node": "UI_map",
-   "script": "UI_map",
-   "file": "sharedassets7.assets"
   }
  ],
  "animation_bindings": {},
@@ -8854,10 +8782,70 @@
        ]
       },
       {
+       "n": "icon_ef",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_icon_ef1.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
        "n": "icon_active",
        "kind": "node",
        "node": 225,
        "t": "Transform"
+      },
+      {
+       "n": "icon_mainbattle",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/icon_stage_battle.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "icon_mainbattle_clear",
+       "kind": "arr",
+       "t": "Transform",
+       "items": [
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/icon_stage_clear1.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/icon_stage_clear2.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        },
+        {
+         "kind": "asset",
+         "asset": "Assets/Imported/Prefabs/icon_stage_clear3.prefab",
+         "t": "Transform",
+         "in_prefab": 1
+        }
+       ]
+      },
+      {
+       "n": "sound_dummy",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sound_UI.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_creaticon",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_icon_creatstage.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "ef_breakicon",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/ef_icon_breakstage.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       },
       {
        "n": "bg_popui",

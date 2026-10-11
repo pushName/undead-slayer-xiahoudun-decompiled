@@ -1,0 +1,715 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 1451,
+ "prefab_name": "Enemy00",
+ "asset_path": "Assets/Imported/Prefabs/Enemy00.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Enemy00.unity",
+ "node_count": 17,
+ "root_ids": [
+  2507
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1768,
+   "go_id": 712,
+   "name": "Bone_handL",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.019926,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.156941,
+     0.987608
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1876,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 1876,
+   "go_id": 820,
+   "name": "Bone07(mirrored)",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2031,
+   "children": [
+    1768
+   ],
+   "components": []
+  },
+  {
+   "id": 2031,
+   "go_id": 879,
+   "name": "Bone06(mirrored)",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023176,
+     0.001171,
+     -0.009792
+    ],
+    "rot": [
+     -0.193517,
+     0.680111,
+     -0.677929,
+     -0.201029
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2326,
+   "children": [
+    1876
+   ],
+   "components": []
+  },
+  {
+   "id": 1935,
+   "go_id": 930,
+   "name": "Bone_handR",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.019926,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.156941,
+     0.987608
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1986,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 1986,
+   "go_id": 975,
+   "name": "Bone07",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2075,
+   "children": [
+    1935
+   ],
+   "components": []
+  },
+  {
+   "id": 2075,
+   "go_id": 1019,
+   "name": "Bone06",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023176,
+     0.001171,
+     0.00967
+    ],
+    "rot": [
+     -0.201029,
+     -0.677929,
+     0.680111,
+     -0.193517
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2326,
+   "children": [
+    1986
+   ],
+   "components": []
+  },
+  {
+   "id": 2118,
+   "go_id": 1062,
+   "name": "Bone03",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.027023,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.071109,
+     0.997469
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2326,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2326,
+   "go_id": 1105,
+   "name": "Bone_heart",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006285,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.029319,
+     0.99957
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2474,
+   "children": [
+    2118,
+    2075,
+    2031
+   ],
+   "components": []
+  },
+  {
+   "id": 2161,
+   "go_id": 1148,
+   "name": "Bone_footL",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.022827,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.026388,
+     0.706396,
+     -0.029356,
+     0.706715
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2204,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2204,
+   "go_id": 1191,
+   "name": "Bone05(mirrored)",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024336,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.000688,
+     -0.046545,
+     0.010461,
+     0.998861
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2366,
+   "children": [
+    2161
+   ],
+   "components": []
+  },
+  {
+   "id": 2366,
+   "go_id": 1231,
+   "name": "Bone04(mirrored)",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.000753,
+     0.001179,
+     -0.005311
+    ],
+    "rot": [
+     0.049086,
+     -0.705279,
+     0.707059,
+     0.015473
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2474,
+   "children": [
+    2204
+   ],
+   "components": []
+  },
+  {
+   "id": 2247,
+   "go_id": 1270,
+   "name": "Bone_footR",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.022827,
+     -0.0,
+     -0.0
+    ],
+    "rot": [
+     0.026388,
+     0.706397,
+     0.029356,
+     0.706715
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2288,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2288,
+   "go_id": 1310,
+   "name": "Bone05",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024336,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.000687,
+     -0.046543,
+     -0.010461,
+     0.998861
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2403,
+   "children": [
+    2247
+   ],
+   "components": []
+  },
+  {
+   "id": 2403,
+   "go_id": 1347,
+   "name": "Bone04",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.000753,
+     0.001179,
+     0.005189
+    ],
+    "rot": [
+     0.015486,
+     0.706937,
+     -0.705401,
+     0.04909
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2474,
+   "children": [
+    2288
+   ],
+   "components": []
+  },
+  {
+   "id": 2474,
+   "go_id": 1383,
+   "name": "Bone_pelvis",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.048743,
+     -0.001992
+    ],
+    "rot": [
+     0.511754,
+     -0.487963,
+     0.511754,
+     -0.487963
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2507,
+   "children": [
+    2403,
+    2366,
+    2326
+   ],
+   "components": []
+  },
+  {
+   "id": 2439,
+   "go_id": 1418,
+   "name": "mon",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2507,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon00_sharedassets2_assets_31.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      2403,
+      2288,
+      2326,
+      2474,
+      2118,
+      2161,
+      2204,
+      2031,
+      1876,
+      2366,
+      1768,
+      2247,
+      2075,
+      1986,
+      1935
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/mon_sharedassets2_assets_119.asset"
+    }
+   ]
+  },
+  {
+   "id": 2507,
+   "go_id": 1451,
+   "name": "Enemy00",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    2474,
+    2439
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "AI_Enemy01",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "bekicked",
+     "clip_id": "sharedassets2.assets@196",
+     "picked_by": "lowest-path-id (ambiguous among 3)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_196.json",
+     "asset": "Assets/Imported/Animations/bekicked__sharedassets2_196/bekicked.anim"
+    },
+    {
+     "name": "bethrust",
+     "clip_id": "sharedassets2.assets@191",
+     "picked_by": "lowest-path-id (ambiguous among 3)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_191.json",
+     "asset": "Assets/Imported/Animations/bethrust__sharedassets2_191/bethrust.anim"
+    },
+    {
+     "name": "down",
+     "clip_id": "sharedassets2.assets@169",
+     "picked_by": "same-container",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_169.json",
+     "asset": "Assets/Imported/Animations/down__sharedassets2_169/down.anim"
+    },
+    {
+     "name": "down_high",
+     "clip_id": "sharedassets2.assets@180",
+     "picked_by": "same-container",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_180.json",
+     "asset": "Assets/Imported/Animations/down_high__sharedassets2_180/down_high.anim"
+    },
+    {
+     "name": "downforever",
+     "clip_id": "sharedassets2.assets@183",
+     "picked_by": "lowest-path-id (ambiguous among 3)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_183.json",
+     "asset": "Assets/Imported/Animations/downforever__sharedassets2_183/downforever.anim"
+    },
+    {
+     "name": "getup",
+     "clip_id": "sharedassets2.assets@209",
+     "picked_by": "lowest-path-id (ambiguous among 3)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_209.json",
+     "asset": "Assets/Imported/Animations/getup__sharedassets2_209/getup.anim"
+    },
+    {
+     "name": "idle",
+     "clip_id": "sharedassets2.assets@160",
+     "picked_by": "lowest-path-id (ambiguous among 15)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_160.json",
+     "asset": "Assets/Imported/Animations/idle__sharedassets2_160/idle.anim"
+    },
+    {
+     "name": "m_attack1",
+     "clip_id": "sharedassets2.assets@173",
+     "picked_by": "lowest-path-id (ambiguous among 14)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_173.json",
+     "asset": "Assets/Imported/Animations/m_attack1__sharedassets2_173/m_attack1.anim"
+    },
+    {
+     "name": "m_attack1_i",
+     "clip_id": "sharedassets2.assets@177",
+     "picked_by": "lowest-path-id (ambiguous among 14)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_177.json",
+     "asset": "Assets/Imported/Animations/m_attack1_i__sharedassets2_177/m_attack1_i.anim"
+    },
+    {
+     "name": "move",
+     "clip_id": "sharedassets19.assets@21",
+     "picked_by": "lowest-path-id (ambiguous among 15)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_21.json",
+     "asset": "Assets/Imported/Animations/move__sharedassets19_21/move.anim"
+    },
+    {
+     "name": "pierced",
+     "clip_id": "sharedassets18.assets@625",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_625.json",
+     "asset": "Assets/Imported/Animations/pierced__sharedassets18_625/pierced.anim"
+    }
+   ]
+  }
+ ]
+}

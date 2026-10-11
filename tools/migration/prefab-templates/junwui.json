@@ -1,0 +1,705 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 786,
+ "prefab_name": "junwui",
+ "asset_path": "Assets/Imported/Prefabs/junwui.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/junwui.unity",
+ "node_count": 13,
+ "root_ids": [
+  1842
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1842,
+   "go_id": 786,
+   "name": "junwui",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.5,
+     1.5,
+     1.5
+    ]
+   },
+   "parent": 0,
+   "children": [
+    2190,
+    2147
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Junwui",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "pt_body",
+       "kind": "node",
+       "node": 2276,
+       "t": "Transform"
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    }
+   ],
+   "animations": [
+    {
+     "name": "junwui_appear",
+     "clip_id": "sharedassets18.assets@467",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_467.json",
+     "asset": "Assets/Imported/Animations/junwui_appear__sharedassets18_467/junwui_appear.anim"
+    },
+    {
+     "name": "junwui_attack",
+     "clip_id": "sharedassets18.assets@433",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_433.json",
+     "asset": "Assets/Imported/Animations/junwui_attack__sharedassets18_433/junwui_attack.anim"
+    },
+    {
+     "name": "junwui_finish",
+     "clip_id": "sharedassets18.assets@559",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_559.json",
+     "asset": "Assets/Imported/Animations/junwui_finish__sharedassets18_559/junwui_finish.anim"
+    },
+    {
+     "name": "junwui_idle",
+     "clip_id": "sharedassets18.assets@520",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets18_520.json",
+     "asset": "Assets/Imported/Animations/junwui_idle__sharedassets18_520/junwui_idle.anim"
+    }
+   ]
+  },
+  {
+   "id": 1915,
+   "go_id": 859,
+   "name": "Bone02",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.063083,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     1e-06,
+     -0.0,
+     -0.032369,
+     0.999476
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2147,
+   "children": [
+    2016,
+    2234,
+    2061
+   ],
+   "components": []
+  },
+  {
+   "id": 1969,
+   "go_id": 913,
+   "name": "Bone05(mirrored)",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.086545,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.219109,
+     0.9757
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2061,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2016,
+   "go_id": 960,
+   "name": "Bone03",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.082369,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.563585,
+     0.826058
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1915,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2061,
+   "go_id": 1005,
+   "name": "Bone04(mirrored)",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.068179,
+     0.013493,
+     -0.06349
+    ],
+    "rot": [
+     0.202352,
+     -0.677535,
+     0.69264,
+     0.142301
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1915,
+   "children": [
+    1969
+   ],
+   "components": []
+  },
+  {
+   "id": 2104,
+   "go_id": 1048,
+   "name": "Bone05",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.086545,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.219109,
+     0.9757
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2234,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2234,
+   "go_id": 1091,
+   "name": "Bone04",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.068179,
+     0.013493,
+     0.063485
+    ],
+    "rot": [
+     0.142301,
+     0.69264,
+     -0.677535,
+     0.202352
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1915,
+   "children": [
+    2104
+   ],
+   "components": []
+  },
+  {
+   "id": 2147,
+   "go_id": 1134,
+   "name": "Bone01",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.000665,
+     0.000371
+    ],
+    "rot": [
+     0.50568,
+     -0.494255,
+     0.50568,
+     -0.494255
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1842,
+   "children": [
+    1915,
+    2391,
+    2276
+   ],
+   "components": []
+  },
+  {
+   "id": 2190,
+   "go_id": 1178,
+   "name": "body",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 1842,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/junwui_sharedassets18_assets_77.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      1915,
+      2147,
+      2016,
+      2061,
+      2391,
+      1969,
+      2314,
+      2354,
+      2104,
+      2234
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/body_sharedassets18_assets_357.asset"
+    }
+   ]
+  },
+  {
+   "id": 2276,
+   "go_id": 1219,
+   "name": "pt_body",
+   "layer": 23,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.019796,
+     -0.001438,
+     -0.0
+    ],
+    "rot": [
+     -0.50568,
+     0.494255,
+     -0.50568,
+     -0.494255
+    ],
+    "scale": [
+     0.666667,
+     0.666667,
+     0.666667
+    ]
+   },
+   "parent": 2147,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter",
+     "id": 2873,
+     "record": {
+      "gameObject": [
+       0,
+       1219
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 0,
+      "flag_11": 0,
+      "f_12": 0.1,
+      "f_16": 0.1,
+      "f_20": 0.7,
+      "f_24": 0.7,
+      "f_28": 30.0,
+      "f_32": 30.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.0,
+      "f_60": 0.2,
+      "f_64": 0.2,
+      "f_68": 0.2,
+      "f_72": 0.05,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.0,
+      "f_88": 0.0,
+      "f_92": 100.0,
+      "flag_96": 1,
+      "flag_97": 0,
+      "flag_98": 0,
+      "flag_99": 0,
+      "f_100": 0.04,
+      "f_104": 0.04,
+      "f_108": 0.04,
+      "f_112": 0.0
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator",
+     "id": 2833,
+     "record": {
+      "gameObject": [
+       0,
+       1219
+      ],
+      "flag_8": true,
+      "color_12": [
+       255,
+       255,
+       255,
+       112
+      ],
+      "color_16": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_20": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_24": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_28": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "f_32": 0.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.0,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.0,
+      "f_76": -0.5,
+      "f_80": 0.0,
+      "f_84": 0.1,
+      "tail_88": [
+       0,
+       0
+      ]
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer",
+     "id": 3089,
+     "record": {
+      "gameObject": [
+       0,
+       1219
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 1,
+      "flag_11": 255,
+      "one_12": 1.0,
+      "one_16": 1.0,
+      "zero_20": 0.0,
+      "zero_24": 0.0,
+      "materialCount_28": 1,
+      "material0_32": [
+       0,
+       104
+      ],
+      "zero_40": 0.0,
+      "zero_44": 0.0,
+      "zero_48": 0.0,
+      "zero_52": 0.0,
+      "zero_56": 0.0,
+      "zero_60": 0.0,
+      "zero_64": 0.0,
+      "zero_68": 0.0,
+      "zero_72": 0.0,
+      "bytes_76": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "f_80": 2.0,
+      "f_84": 0.0,
+      "f_88": 0.25,
+      "enum_92": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "enum_96": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "f_100": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "id": 2314,
+   "go_id": 1258,
+   "name": "Bone07",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.022551,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2354,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 2354,
+   "go_id": 1298,
+   "name": "Bone08",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024006,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2391,
+   "children": [
+    2314
+   ],
+   "components": []
+  },
+  {
+   "id": 2391,
+   "go_id": 1335,
+   "name": "Bone06",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.001433,
+     0.00034,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.999981,
+     -0.006244
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 2147,
+   "children": [
+    2354
+   ],
+   "components": []
+  }
+ ]
+}

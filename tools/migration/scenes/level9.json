@@ -26,7 +26,8 @@
   "cross-file -> asset (element)": 57,
   "array set": 6,
   "opaque skipped (GUIStyle)": 9,
-  "cross-file ref dropped": 3,
+  "cross-file -> prefab root": 2,
+  "cross-file ref dropped": 1,
   "trailing fields absent from the record": 2,
   "refused[two-dimensional array (unsupported by ]": 1
  },
@@ -40,15 +41,6 @@
  },
  "dropped_refs": [
   {
-   "field": "pt_plus",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 143,
-   "node": "ui_forge",
-   "script": "UI_forge",
-   "file": "sharedassets10.assets"
-  },
-  {
    "field": "basicSkin",
    "t": "GUISkin",
    "file_id": 5,
@@ -56,15 +48,6 @@
    "node": "ui_forge",
    "script": "UI_forge",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "sound_dummy",
-   "t": "Transform",
-   "file_id": 2,
-   "path_id": 117,
-   "node": "ui_forge",
-   "script": "UI_forge",
-   "file": "sharedassets7.assets"
   }
  ],
  "animation_bindings": {
@@ -3179,6 +3162,20 @@
        "kind": "node",
        "node": 57,
        "t": "Transform"
+      },
+      {
+       "n": "pt_plus",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_upgradeplus.prefab",
+       "t": "Transform",
+       "in_prefab": 1
+      },
+      {
+       "n": "sound_dummy",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sound_UI.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       }
      ]
     },

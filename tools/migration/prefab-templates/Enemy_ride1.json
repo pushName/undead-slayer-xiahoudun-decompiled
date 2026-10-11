@@ -1,0 +1,1350 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets19.assets",
+ "root_path_id": 62,
+ "prefab_name": "Enemy_ride1",
+ "asset_path": "Assets/Imported/Prefabs/Enemy_ride1.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Enemy_ride1.unity",
+ "node_count": 33,
+ "root_ids": [
+  110
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2
+ },
+ "field_stats": {
+  "instances decoded": 6,
+  "ref set": 3
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 77,
+   "go_id": 29,
+   "name": "Bone07(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.005173,
+     0.011716,
+     -0.024417
+    ],
+    "rot": [
+     0.746391,
+     -0.664077,
+     0.032588,
+     0.028994
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 87,
+   "children": [
+    91
+   ],
+   "components": []
+  },
+  {
+   "id": 91,
+   "go_id": 39,
+   "name": "Bone08(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.039224,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.12697,
+     0.991907
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 77,
+   "children": [
+    108
+   ],
+   "components": []
+  },
+  {
+   "id": 93,
+   "go_id": 43,
+   "name": "Bone11",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.010389,
+     0.016682,
+     0.014827
+    ],
+    "rot": [
+     0.014095,
+     0.040647,
+     -0.258595,
+     0.965027
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 102,
+   "children": [
+    103
+   ],
+   "components": []
+  },
+  {
+   "id": 95,
+   "go_id": 45,
+   "name": "Bone13",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.036315,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.072853,
+     0.06377,
+     -0.658245,
+     0.746552
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 103,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 98,
+   "go_id": 47,
+   "name": "Bone07",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.005173,
+     0.011716,
+     0.024071
+    ],
+    "rot": [
+     0.028994,
+     0.032588,
+     -0.664077,
+     0.746391
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 87,
+   "children": [
+    99
+   ],
+   "components": []
+  },
+  {
+   "id": 99,
+   "go_id": 49,
+   "name": "Bone08",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.039224,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     -0.12697,
+     0.991907
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 98,
+   "children": [
+    109
+   ],
+   "components": []
+  },
+  {
+   "id": 100,
+   "go_id": 50,
+   "name": "Bone02",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.041599,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.076568,
+     0.997064
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 102,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 101,
+   "go_id": 51,
+   "name": "Bone13(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.036315,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.072563,
+     0.066431,
+     0.658086,
+     0.746488
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 106,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 102,
+   "go_id": 52,
+   "name": "Bone01",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.041451,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.024262,
+     0.999706
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 87,
+   "children": [
+    100,
+    93,
+    107
+   ],
+   "components": []
+  },
+  {
+   "id": 103,
+   "go_id": 53,
+   "name": "Bone12",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.042302,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.015659,
+     -0.007832,
+     -0.462502,
+     0.886446
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 93,
+   "children": [
+    95
+   ],
+   "components": []
+  },
+  {
+   "id": 104,
+   "go_id": 54,
+   "name": "Bone04",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.003286,
+     -0.009476,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.973462,
+     -0.228847
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 87,
+   "children": [
+    105
+   ],
+   "components": []
+  },
+  {
+   "id": 105,
+   "go_id": 55,
+   "name": "Bone05",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.055523,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.107376,
+     0.994218
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 104,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 106,
+   "go_id": 56,
+   "name": "Bone12(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.042506,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.015495,
+     -0.007364,
+     0.465882,
+     0.88468
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 107,
+   "children": [
+    101
+   ],
+   "components": []
+  },
+  {
+   "id": 107,
+   "go_id": 57,
+   "name": "Bone11(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.010389,
+     0.016682,
+     -0.015173
+    ],
+    "rot": [
+     0.966014,
+     -0.254914,
+     0.040417,
+     0.01421
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 102,
+   "children": [
+    106
+   ],
+   "components": []
+  },
+  {
+   "id": 108,
+   "go_id": 58,
+   "name": "Bone09(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.035372,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     -0.087263,
+     0.043069,
+     0.604888,
+     0.790342
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 91,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 109,
+   "go_id": 59,
+   "name": "Bone09",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.035372,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     0.087263,
+     0.043069,
+     -0.604888,
+     0.790342
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 99,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 97,
+   "go_id": 60,
+   "name": "mon",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 110,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon15_sharedassets19_assets_3.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      93,
+      107,
+      104,
+      105,
+      102,
+      100,
+      108,
+      91,
+      77,
+      98,
+      106,
+      101,
+      87,
+      109,
+      99,
+      103,
+      95,
+      113
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/mon_sharedassets19_assets_14.asset"
+    }
+   ]
+  },
+  {
+   "id": 87,
+   "go_id": 61,
+   "name": "Bone_pelvis",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.090829,
+     0.023092
+    ],
+    "rot": [
+     0.705523,
+     0.047301,
+     0.705523,
+     0.047301
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 110,
+   "children": [
+    102,
+    104,
+    98,
+    77,
+    113
+   ],
+   "components": []
+  },
+  {
+   "id": 110,
+   "go_id": 62,
+   "name": "Enemy_ride1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.9,
+     0.9,
+     0.9
+    ]
+   },
+   "parent": 0,
+   "children": [
+    87,
+    97,
+    111,
+    112
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "component",
+     "type": "SphereCollider"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "AI_Ride_Enemy",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "mon",
+       "kind": "node",
+       "node": 114,
+       "t": "Transform"
+      }
+     ]
+    }
+   ],
+   "animations": [
+    {
+     "name": "down",
+     "clip_id": "sharedassets2.assets@169",
+     "picked_by": "same-container",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_169.json",
+     "asset": "Assets/Imported/Animations/down__sharedassets2_169/down.anim"
+    },
+    {
+     "name": "move",
+     "clip_id": "sharedassets19.assets@21",
+     "picked_by": "lowest-path-id (ambiguous among 15)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_21.json",
+     "asset": "Assets/Imported/Animations/move__sharedassets19_21/move.anim"
+    }
+   ]
+  },
+  {
+   "id": 111,
+   "go_id": 63,
+   "name": "ride_stepfog",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.00481,
+     0.059553,
+     0.011477
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "parent": 110,
+   "children": [],
+   "components": [
+    {
+     "kind": "unsupported",
+     "type": "EllipsoidParticleEmitter",
+     "id": 127,
+     "record": {
+      "gameObject": [
+       0,
+       63
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 0,
+      "flag_11": 0,
+      "f_12": 0.2,
+      "f_16": 0.3,
+      "f_20": 0.8,
+      "f_24": 1.0,
+      "f_28": 20.0,
+      "f_32": 20.0,
+      "f_36": 0.0,
+      "f_40": 0.1,
+      "f_44": -1.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.0,
+      "f_60": 0.2,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.07,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 0.0,
+      "f_88": 0.0,
+      "f_92": 0.0,
+      "flag_96": 1,
+      "flag_97": 1,
+      "flag_98": 0,
+      "flag_99": 0,
+      "f_100": 0.0,
+      "f_104": 0.0,
+      "f_108": 0.0,
+      "f_112": 0.0
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleAnimator",
+     "id": 125,
+     "record": {
+      "gameObject": [
+       0,
+       63
+      ],
+      "flag_8": true,
+      "color_12": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "color_16": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_20": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "color_24": [
+       255,
+       255,
+       255,
+       180
+      ],
+      "color_28": [
+       255,
+       255,
+       255,
+       10
+      ],
+      "f_32": 0.0,
+      "f_36": 0.0,
+      "f_40": 0.0,
+      "f_44": 0.0,
+      "f_48": 0.0,
+      "f_52": 0.0,
+      "f_56": 0.0,
+      "f_60": 0.0,
+      "f_64": 0.0,
+      "f_68": 0.0,
+      "f_72": 0.0,
+      "f_76": 0.0,
+      "f_80": 0.0,
+      "f_84": 1.0,
+      "tail_88": [
+       0,
+       0
+      ]
+     }
+    },
+    {
+     "kind": "unsupported",
+     "type": "ParticleRenderer",
+     "id": 143,
+     "record": {
+      "gameObject": [
+       0,
+       63
+      ],
+      "flag_8": 1,
+      "flag_9": 1,
+      "flag_10": 1,
+      "flag_11": 255,
+      "one_12": 1.0,
+      "one_16": 1.0,
+      "zero_20": 0.0,
+      "zero_24": 0.0,
+      "materialCount_28": 1,
+      "material0_32": [
+       8,
+       2
+      ],
+      "zero_40": 0.0,
+      "zero_44": 0.0,
+      "zero_48": 0.0,
+      "zero_52": 0.0,
+      "zero_56": 0.0,
+      "zero_60": 0.0,
+      "zero_64": 0.0,
+      "zero_68": 0.0,
+      "zero_72": 0.0,
+      "bytes_76": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "f_80": 2.0,
+      "f_84": 0.0,
+      "f_88": 1.0,
+      "enum_92": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "enum_96": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "f_100": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "id": 112,
+   "go_id": 64,
+   "name": "shadow",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.011111,
+     0.006199
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.444444,
+     0.444444,
+     0.888889
+    ]
+   },
+   "parent": 110,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets2_assets_111.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/shadow_cha_sharedassets2_assets_48.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  },
+  {
+   "id": 113,
+   "go_id": 65,
+   "name": "d_ridespot",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.035446,
+     -0.021135,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.99776,
+     -0.066894
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 87,
+   "children": [
+    114
+   ],
+   "components": []
+  },
+  {
+   "id": 114,
+   "go_id": 66,
+   "name": "mon_ride",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006526,
+     -0.052895,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.707107,
+     0.0,
+     -0.707107
+    ],
+    "scale": [
+     1.333333,
+     1.333333,
+     1.333333
+    ]
+   },
+   "parent": 113,
+   "children": [
+    124,
+    115
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "AI_Ride_Enemy2",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ],
+   "animations": [
+    {
+     "name": "ride_mon",
+     "clip_id": "sharedassets19.assets@23",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_23.json",
+     "asset": "Assets/Imported/Animations/ride_mon__sharedassets19_23/ride_mon.anim"
+    },
+    {
+     "name": "ride_mon_shoot",
+     "clip_id": "sharedassets19.assets@24",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_24.json",
+     "asset": "Assets/Imported/Animations/ride_mon_shoot__sharedassets19_24/ride_mon_shoot.anim"
+    },
+    {
+     "name": "ride_mon_shoot_i",
+     "clip_id": "sharedassets19.assets@25",
+     "picked_by": "only",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets19_25.json",
+     "asset": "Assets/Imported/Animations/ride_mon_shoot_i__sharedassets19_25/ride_mon_shoot_i.anim"
+    }
+   ]
+  },
+  {
+   "id": 115,
+   "go_id": 67,
+   "name": "mon",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     -0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 114,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon02_sharedassets2_assets_33.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true,
+     "bones": [
+      116,
+      117,
+      119,
+      123,
+      124,
+      122,
+      118,
+      121,
+      120
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/mon_sharedassets19_assets_13.asset"
+    }
+   ]
+  },
+  {
+   "id": 116,
+   "go_id": 68,
+   "name": "Bone_handL",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.019926,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.156941,
+     0.987608
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 117,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 117,
+   "go_id": 69,
+   "name": "Bone07(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 118,
+   "children": [
+    116
+   ],
+   "components": []
+  },
+  {
+   "id": 118,
+   "go_id": 70,
+   "name": "Bone06(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023176,
+     0.001171,
+     -0.009792
+    ],
+    "rot": [
+     -0.193517,
+     0.680111,
+     -0.677929,
+     -0.201029
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 123,
+   "children": [
+    117
+   ],
+   "components": []
+  },
+  {
+   "id": 119,
+   "go_id": 71,
+   "name": "Bone_handR",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.019926,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     -0.156941,
+     0.987608
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 120,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 120,
+   "go_id": 72,
+   "name": "Bone07",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 121,
+   "children": [
+    119
+   ],
+   "components": []
+  },
+  {
+   "id": 121,
+   "go_id": 73,
+   "name": "Bone06",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023176,
+     0.001171,
+     0.00967
+    ],
+    "rot": [
+     -0.201029,
+     -0.677929,
+     0.680111,
+     -0.193517
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 123,
+   "children": [
+    120
+   ],
+   "components": []
+  },
+  {
+   "id": 122,
+   "go_id": 74,
+   "name": "Bone03",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.027023,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     -0.0,
+     -0.0,
+     0.071109,
+     0.997469
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 123,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 123,
+   "go_id": 75,
+   "name": "Bone_heart",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.006285,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.029319,
+     0.99957
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 124,
+   "children": [
+    122,
+    121,
+    118
+   ],
+   "components": []
+  },
+  {
+   "id": 124,
+   "go_id": 76,
+   "name": "Bone_pelvis",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.048743,
+     -0.001992
+    ],
+    "rot": [
+     0.511754,
+     -0.487963,
+     0.511754,
+     -0.487963
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 114,
+   "children": [
+    123
+   ],
+   "components": []
+  }
+ ]
+}

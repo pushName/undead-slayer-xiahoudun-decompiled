@@ -1,0 +1,73 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets7.assets",
+ "root_path_id": 104,
+ "prefab_name": "icon_stage_clear1",
+ "asset_path": "Assets/Imported/Prefabs/icon_stage_clear1.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/icon_stage_clear1.unity",
+ "node_count": 1,
+ "root_ids": [
+  113
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {
+  "instances decoded": 4,
+  "dangling ref dropped (element)": 2,
+  "array fully dropped": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 113,
+   "go_id": 104,
+   "name": "icon_stage_clear1",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.1
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.8,
+     0.8,
+     0.8
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets1_assets_49.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/stageicon_clear1_sharedassets7_assets_11.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  }
+ ]
+}

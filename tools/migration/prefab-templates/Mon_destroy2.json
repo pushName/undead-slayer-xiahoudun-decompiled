@@ -1,0 +1,524 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets2.assets",
+ "root_path_id": 328,
+ "prefab_name": "Mon_destroy2",
+ "asset_path": "Assets/Imported/Prefabs/Mon_destroy2.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/Mon_destroy2.unity",
+ "node_count": 14,
+ "root_ids": [
+  433
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 2,
+  "ref set": 4,
+  "instances decoded": 17
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [
+  "MeshRenderer 545: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy02: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy01: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 433,
+   "go_id": 328,
+   "name": "Mon_destroy2",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    491,
+    503,
+    451,
+    456
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "Animation"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Mon_Destroy",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "headbone",
+       "kind": "node",
+       "node": 497,
+       "t": "Transform"
+      }
+     ]
+    }
+   ],
+   "animations": [
+    {
+     "name": "dt1",
+     "clip_id": "sharedassets2.assets@161",
+     "picked_by": "lowest-path-id (ambiguous among 4)",
+     "source_descriptor": "tools/migration/anim_clips/sharedassets2_161.json",
+     "asset": "Assets/Imported/Animations/dt1__sharedassets2_161/dt1.anim"
+    }
+   ]
+  },
+  {
+   "id": 467,
+   "go_id": 346,
+   "name": "Bone05",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024336,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.000687,
+     -0.046539,
+     -0.01046,
+     0.998861
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 526,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 473,
+   "go_id": 351,
+   "name": "Bone07",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.0,
+     0.0,
+     -0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 479,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 479,
+   "go_id": 362,
+   "name": "Bone06",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023176,
+     0.001171,
+     0.00967
+    ],
+    "rot": [
+     -0.224566,
+     -0.6705,
+     0.672943,
+     -0.217135
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 491,
+   "children": [
+    473
+   ],
+   "components": []
+  },
+  {
+   "id": 485,
+   "go_id": 368,
+   "name": "Bone04(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.000753,
+     0.001179,
+     -0.005311
+    ],
+    "rot": [
+     0.04909,
+     -0.7054,
+     0.706937,
+     0.015485
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 503,
+   "children": [
+    515
+   ],
+   "components": []
+  },
+  {
+   "id": 497,
+   "go_id": 374,
+   "name": "Bone03",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.027023,
+     0.0,
+     -0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.071109,
+     0.997469
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 491,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 509,
+   "go_id": 380,
+   "name": "Bone06(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.023176,
+     0.001171,
+     -0.009792
+    ],
+    "rot": [
+     -0.217135,
+     0.672943,
+     -0.6705,
+     -0.224566
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 491,
+   "children": [
+    521
+   ],
+   "components": []
+  },
+  {
+   "id": 515,
+   "go_id": 386,
+   "name": "Bone05(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.024336,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.000688,
+     -0.046542,
+     0.01046,
+     0.998861
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 485,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 521,
+   "go_id": 392,
+   "name": "Bone07(mirrored)",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.021971,
+     -0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     -0.0,
+     0.008101,
+     0.999967
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 509,
+   "children": [],
+   "components": []
+  },
+  {
+   "id": 526,
+   "go_id": 398,
+   "name": "Bone04",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.000753,
+     0.001179,
+     0.005189
+    ],
+    "rot": [
+     0.015484,
+     0.706937,
+     -0.705401,
+     0.049091
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 503,
+   "children": [
+    467
+   ],
+   "components": []
+  },
+  {
+   "id": 491,
+   "go_id": 404,
+   "name": "Bone_heart",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.052758,
+     -0.002291
+    ],
+    "rot": [
+     -0.497227,
+     0.502758,
+     -0.497226,
+     0.502758
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 433,
+   "children": [
+    497,
+    479,
+    509
+   ],
+   "components": []
+  },
+  {
+   "id": 503,
+   "go_id": 410,
+   "name": "Bone_pelvis",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     -0.0,
+     0.046481,
+     -0.001992
+    ],
+    "rot": [
+     0.511754,
+     -0.487963,
+     0.511754,
+     -0.487963
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 433,
+   "children": [
+    526,
+    485
+   ],
+   "components": []
+  },
+  {
+   "id": 451,
+   "go_id": 416,
+   "name": "p1",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 433,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      491,
+      509,
+      497,
+      521,
+      479,
+      473
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/p1_sharedassets2_assets_123.asset"
+    }
+   ]
+  },
+  {
+   "id": 456,
+   "go_id": 421,
+   "name": "p2",
+   "layer": 8,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.061174,
+     -0.0
+    ],
+    "rot": [
+     -0.707107,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 433,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "SkinnedMeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/mon_destroy_sharedassets2_assets_34.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false,
+     "bones": [
+      467,
+      526,
+      485,
+      503,
+      515
+     ],
+     "root_bone": 0,
+     "mesh": "Assets/Imported/Meshes/p2_sharedassets2_assets_127.asset"
+    }
+   ]
+  }
+ ]
+}

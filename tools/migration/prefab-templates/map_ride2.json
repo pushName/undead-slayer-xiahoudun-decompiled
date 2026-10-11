@@ -1,0 +1,72 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets19.assets",
+ "root_path_id": 33,
+ "prefab_name": "map_ride2",
+ "asset_path": "Assets/Imported/Prefabs/map_ride2.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/map_ride2.unity",
+ "node_count": 1,
+ "root_ids": [
+  81
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 2,
+  "ParticleAnimator": 2,
+  "ParticleRenderer": 2
+ },
+ "field_stats": {
+  "instances decoded": 6,
+  "ref set": 3
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 81,
+   "go_id": 33,
+   "name": "map_ride2",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     -4.900068
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/Plane01_sharedassets18_assets_376.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/sky_ground2_sharedassets18_assets_128.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    }
+   ]
+  }
+ ]
+}

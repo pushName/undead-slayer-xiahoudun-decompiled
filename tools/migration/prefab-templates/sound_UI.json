@@ -1,0 +1,103 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets7.assets",
+ "root_path_id": 108,
+ "prefab_name": "sound_UI",
+ "asset_path": "Assets/Imported/Prefabs/sound_UI.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/sound_UI.unity",
+ "node_count": 2,
+ "root_ids": [
+  117
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 1,
+  "ParticleAnimator": 1,
+  "ParticleRenderer": 1
+ },
+ "field_stats": {
+  "instances decoded": 4,
+  "dangling ref dropped (element)": 2,
+  "array fully dropped": 1
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [],
+ "nodes": [
+  {
+   "id": 117,
+   "go_id": 108,
+   "name": "sound_UI",
+   "layer": 0,
+   "tag": "sound",
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [
+    118
+   ],
+   "components": [
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "SoundEf_UI",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "id": 118,
+   "go_id": 109,
+   "name": "soundef",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 117,
+   "children": [],
+   "components": [
+    {
+     "kind": "component",
+     "type": "AudioSource"
+    }
+   ]
+  }
+ ]
+}

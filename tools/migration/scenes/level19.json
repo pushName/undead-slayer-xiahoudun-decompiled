@@ -27,13 +27,14 @@
   "null in source": 3,
   "ref set": 5,
   "instances decoded": 11,
-  "cross-file ref dropped": 4,
+  "cross-file ref dropped": 3,
   "cross-file -> asset": 29,
   "cross-file -> asset (element)": 39,
   "array set": 6,
   "opaque skipped (GUIStyle)": 5,
   "refused[two-dimensional array (unsupported by ]": 1,
-  "trailing fields absent from the record": 2
+  "trailing fields absent from the record": 2,
+  "cross-file -> prefab root": 1
  },
  "trailing_fields_absent": {
   "DB_Weapon": [
@@ -70,15 +71,6 @@
    "node": "ui_result",
    "script": "UI_result",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "pt_star",
-   "t": "Transform",
-   "file_id": 1,
-   "path_id": 26,
-   "node": "ui_result",
-   "script": "UI_result",
-   "file": "sharedassets20.assets"
   }
  ],
  "animation_bindings": {
@@ -3287,6 +3279,13 @@
        "kind": "opaque",
        "t": "GUIStyle",
        "size": 312
+      },
+      {
+       "n": "pt_star",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/pt_star.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       },
       {
        "n": "inven_weapon",

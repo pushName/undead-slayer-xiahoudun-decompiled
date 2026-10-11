@@ -1,0 +1,174 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets18.assets",
+ "root_path_id": 798,
+ "prefab_name": "sk_supersword",
+ "asset_path": "Assets/Imported/Prefabs/sk_supersword.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/sk_supersword.unity",
+ "node_count": 1,
+ "root_ids": [
+  1854
+ ],
+ "unsupported_components": {
+  "EllipsoidParticleEmitter": 39,
+  "ParticleAnimator": 40,
+  "ParticleRenderer": 40,
+  "MeshParticleEmitter": 1
+ },
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 24,
+  "instances decoded": 158,
+  "ref set": 19,
+  "cross-file ref dropped": 2,
+  "dangling ref dropped": 6,
+  "null in source": 1
+ },
+ "container_dropped_refs": [
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread",
+   "script": "Bullet_arrow_spread"
+  },
+  {
+   "field": "sub_arrow",
+   "t": "Transform",
+   "file_id": 4,
+   "path_id": 438,
+   "node": "bullet_arrow_spread_b02",
+   "script": "Bullet_arrow_spread"
+  }
+ ],
+ "container_warnings": [
+  "MeshRenderer 2957: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy03: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy04: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy05: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy11: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy12: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy13: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy00: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy06: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy07: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy14: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy08: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy09: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 1854,
+   "go_id": 798,
+   "name": "sk_supersword",
+   "layer": 22,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     -0.280077,
+     0.0,
+     0.69148,
+     0.665892
+    ],
+    "scale": [
+     1.5,
+     1.0,
+     1.5
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshFilter",
+     "enabled": true,
+     "mesh": "Assets/Imported/Meshes/plane_perpen_sharedassets18_assets_332.asset"
+    },
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      "Assets/Imported/Materials/supersword_sharedassets18_assets_134.mat"
+     ],
+     "sorting_order": 0,
+     "cast_shadows": false,
+     "receive_shadows": false
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Bullet_delay",
+     "guid": "",
+     "cs": "",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "show_delay",
+       "kind": "float",
+       "f": 0.3499999940395355
+      },
+      {
+       "n": "disable_delay",
+       "kind": "float",
+       "f": 2.799999952316284
+      }
+     ]
+    },
+    {
+     "kind": "component",
+     "type": "CapsuleCollider"
+    },
+    {
+     "kind": "component",
+     "type": "Rigidbody"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "Ef_ani_loop_simple",
+     "guid": "7c1f21c11c486834faa79cde9b9da365",
+     "cs": "unity/Assets/Scripts/Ef_ani_loop_simple.cs",
+     "enabled": true,
+     "fields": [
+      {
+       "n": "uvAnimationTileX",
+       "kind": "int",
+       "i": 4
+      },
+      {
+       "n": "uvAnimationTileY",
+       "kind": "int",
+       "i": 2
+      },
+      {
+       "n": "framesPerSecond",
+       "kind": "int",
+       "i": 24
+      },
+      {
+       "n": "loop",
+       "kind": "bool",
+       "b": 1
+      },
+      {
+       "n": "instance_material",
+       "kind": "bool",
+       "b": 0
+      },
+      {
+       "n": "timetune",
+       "kind": "bool",
+       "b": 0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "registered_object_parent": null,
+ "source_container": "sharedassets2.assets",
+ "root_path_id": 340,
+ "prefab_name": "num_damege",
+ "asset_path": "Assets/Imported/Prefabs/num_damege.prefab",
+ "scene_path": "Assets/Imported/_TemplateBuild/num_damege.unity",
+ "node_count": 1,
+ "root_ids": [
+  445
+ ],
+ "unsupported_components": {},
+ "field_stats": {
+  "refused[record shorter than layout (data assig]": 2,
+  "ref set": 4,
+  "instances decoded": 17
+ },
+ "container_dropped_refs": [],
+ "container_warnings": [
+  "MeshRenderer 545: material[0] sharedassets0.assets!2 not buildable (deferred shader?)",
+  "Enemy02: script asks for animation state 'summon' but no clip in the whole APK has that name",
+  "Enemy01: script asks for animation state 'summon' but no clip in the whole APK has that name"
+ ],
+ "nodes": [
+  {
+   "id": 445,
+   "go_id": 340,
+   "name": "num_damege",
+   "layer": 0,
+   "tag": null,
+   "active": true,
+   "trs": {
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rot": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "parent": 0,
+   "children": [],
+   "components": [
+    {
+     "kind": "renderer",
+     "type": "MeshRenderer",
+     "enabled": true,
+     "materials": [
+      null
+     ],
+     "sorting_order": 0,
+     "cast_shadows": true,
+     "receive_shadows": true
+    },
+    {
+     "kind": "component",
+     "type": "TextMesh"
+    },
+    {
+     "kind": "MonoBehaviour",
+     "script": "DamageNum",
+     "guid": "",
+     "cs": "",
+     "enabled": true
+    }
+   ]
+  }
+ ]
+}

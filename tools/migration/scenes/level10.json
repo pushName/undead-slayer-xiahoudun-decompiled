@@ -17,7 +17,8 @@
   "cross-file -> asset (element)": 23,
   "array set": 3,
   "opaque skipped (GUIStyle)": 5,
-  "cross-file ref dropped": 2,
+  "cross-file ref dropped": 1,
+  "cross-file -> prefab root": 1,
   "instances decoded": 2,
   "refused[two-dimensional array (unsupported by ]": 1
  },
@@ -31,15 +32,6 @@
    "node": "ui_skill",
    "script": "UI_skill",
    "file": "sharedassets0.assets"
-  },
-  {
-   "field": "sound_dummy",
-   "t": "Transform",
-   "file_id": 6,
-   "path_id": 117,
-   "node": "ui_skill",
-   "script": "UI_skill",
-   "file": "sharedassets7.assets"
   }
  ],
  "animation_bindings": {},
@@ -334,6 +326,13 @@
        "kind": "opaque",
        "t": "GUIStyle",
        "size": 312
+      },
+      {
+       "n": "sound_dummy",
+       "kind": "asset",
+       "asset": "Assets/Imported/Prefabs/sound_UI.prefab",
+       "t": "Transform",
+       "in_prefab": 1
       },
       {
        "n": "cur_skill_grade",
