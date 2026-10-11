@@ -15,6 +15,7 @@
   "ParticleRenderer": 1
  },
  "field_stats": {
+  "audio clip null in source": 1,
   "ref set": 1,
   "cross-file -> asset": 2,
   "instances decoded": 1
@@ -355,8 +356,12 @@
      "type": "Animation"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "component",

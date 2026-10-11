@@ -30,6 +30,7 @@
   "cross-file ref dropped": 2,
   "opaque skipped (GUIStyle)": 10,
   "instances decoded": 2,
+  "audio clip -> asset": 1,
   "ref set": 5
  },
  "trailing_fields_absent": {},
@@ -650,8 +651,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/bgm_intro.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ]
   },

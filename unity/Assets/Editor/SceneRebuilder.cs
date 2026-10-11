@@ -41,7 +41,7 @@ namespace UndeadSlayer.Migration
         [Serializable]
         internal class Comp
         {
-            public string kind;      // MonoBehaviour | renderer | component | unsupported
+            public string kind;      // MonoBehaviour | renderer | audio | component | unsupported
             public string script;    // class name, for kind == MonoBehaviour
             public string guid;      // .cs guid, for kind == MonoBehaviour
             public string cs;        // path to the .cs, for reporting only
@@ -55,6 +55,13 @@ namespace UndeadSlayer.Migration
             public bool receive_shadows;
             public int[] bones;
             public int root_bone;
+            // kind == audio (AudioSource). The initialisers are deliberate: JsonUtility leaves them
+            // in place when a key is absent, so an unreadable record cannot end up applying volume 0
+            // or pitch 0 -- and those defaults are what Unity itself would give the component.
+            public string clip;
+            public float volume = 1f;
+            public float pitch = 1f;
+            public bool play_on_awake = true;
             // kind == MonoBehaviour: decoded field values (see tools/migration/monobehaviour_fields.py).
             // Absent when the class's layout could not be proven, which is deliberate -- the
             // decoder refuses a class rather than half-fill it.
@@ -190,7 +197,7 @@ namespace UndeadSlayer.Migration
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var byId = new Dictionary<int, GameObject>();
             int addedScripts = 0, missingScripts = 0, addedComps = 0, unknownComps = 0;
-            int meshesSet = 0, matsSet = 0, missingAssets = 0;
+            int meshesSet = 0, matsSet = 0, missingAssets = 0, clipsSet = 0;
             var skinJobs = new List<SkinJob>();
             var fieldJobs = new List<FieldJob>();
             int fieldsRefs = 0, fieldsVals = 0, fieldsMissing = 0, fieldsLanded = 0, fieldsDropped = 0;
@@ -309,6 +316,10 @@ namespace UndeadSlayer.Migration
                     else if (c.kind == "renderer")
                     {
                         ApplyRenderer(go, c, byId, skinJobs, ref meshesSet, ref matsSet, ref missingAssets);
+                    }
+                    else if (c.kind == "audio")
+                    {
+                        ApplyAudioSource(go, c, ref clipsSet, ref missingAssets);
                     }
                     // kind == "unsupported" is counted up front and reported, not added.
                 }
@@ -800,10 +811,10 @@ namespace UndeadSlayer.Migration
                 : data.source_level;
 
             Debug.Log(
-                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive, %d decoded but not applicable yet\n  arrays      : %d elements written, %d landed in the file, %d arrays partial\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: AudioClip references (not exported yet), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
+                "[SceneRebuilder] %s -> %s\n  GameObjects : %d\n  scripts     : %d added, %d unresolved type\n  components  : %d added, %d unresolvable\n  assets      : %d meshes, %d materials, %d audio clips, %d missing\n  fields      : %d refs assigned + %d values applied, %d refused, %d landed in the file, %d did not survive, %d decoded but not applicable yet\n  arrays      : %d elements written, %d landed in the file, %d arrays partial\n  animations  : %d states on %d objects, %d/%d clip guids in the saved file, %d unresolved asset, %d picked by lowest-path-id\n  dropped     : %s\n  NOT restored: the AudioSource parameters beyond clip/volume/pitch/playOnAwake (rolloff, priority, min/max distance, loop, mute, doppler -- UnityPy's view of the 164-byte record does not expose them), scene settings (Unity defaults), and every MonoBehaviour class whose field layout could not be proven byte-exactly"
                 .Fmt(who, data.scene_path, data.nodes.Length,
                      addedScripts, missingScripts, addedComps, unknownComps,
-                     meshesSet, matsSet, missingAssets,
+                     meshesSet, matsSet, clipsSet, missingAssets,
                      fieldsRefs, fieldsVals, fieldsMissing, fieldsLanded, fieldsDropped,
                      fieldsNotApplied, fieldsArrayElems, fieldsLandedArray, fieldsArrayPartial,
                      animStates, animObjects, guidsInFile, clipGuids.Count, animMissing,
@@ -887,6 +898,39 @@ namespace UndeadSlayer.Migration
             public string Name;
             public Comp Comp;
             public SkinnedMeshRenderer Renderer;
+        }
+
+        /// The AudioSource the shipped record described: which clip it points at, plus the three
+        /// parameters that record exposes (see translate_audio_source in extract_scene.py for what
+        /// 164 bytes of Unity 4 AudioSource leaves uncarried, and why it is left at defaults rather
+        /// than guessed). An empty clip means the build itself had null here -- the game assigns
+        /// those at runtime -- so an empty clip is written as no clip, not as a missing asset.
+        private static void ApplyAudioSource(GameObject go, Comp c, ref int clipsSet, ref int missingAssets)
+        {
+            var src = go.GetComponent<AudioSource>();
+            if (src == null)
+            {
+                src = go.AddComponent<AudioSource>();
+            }
+            src.enabled = c.enabled;
+            src.volume = c.volume;
+            src.pitch = c.pitch;
+            src.playOnAwake = c.play_on_awake;
+            if (string.IsNullOrEmpty(c.clip))
+            {
+                return;
+            }
+            var clip = AssetDatabase.LoadAssetAtPath<AudioClip>(c.clip);
+            if (clip == null)
+            {
+                missingAssets++;
+                Debug.LogWarning("[SceneRebuilder] %s: audio clip '%s' is not in the project -- run "
+                                 + "export_audioclips.py and import its output"
+                    .Fmt(go.name, c.clip));
+                return;
+            }
+            src.clip = clip;
+            clipsSet++;
         }
 
         private static void ApplyRenderer(GameObject go, Comp c, Dictionary<int, GameObject> byId,

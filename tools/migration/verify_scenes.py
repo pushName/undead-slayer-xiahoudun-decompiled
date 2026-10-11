@@ -88,6 +88,9 @@ def expected(json_path):
     mat_paths = set()
     mesh_paths = set()
     clip_paths = set()
+    audio_clips = set()
+    audio_missing = set()
+    audio_slots = 0
     for n in d["nodes"]:
         for a in n.get("animations") or []:
             p = a.get("asset")
@@ -97,6 +100,22 @@ def expected(json_path):
             kinds[c.get("kind")] += 1
             if c.get("kind") == "MonoBehaviour":
                 scripts[c.get("script")] += 1
+            if c.get("kind") == "audio":
+                # Counted on kind, not on the presence of a clip: 40 of the 67 sources have a null
+                # clip in the build, and keying the component count to the clip would make the
+                # "a component was dropped" check fire on every one of them.
+                audio_slots += 1
+                if c.get("clip"):
+                    p = c["clip"]
+                    if os.path.exists(os.path.join(REPO, "unity", p)):
+                        audio_clips.add(p)
+                    else:
+                        audio_missing.add(p)
+                elif "clip" in c:
+                    # The key present but null: the build pointed at a clip that audio.json does not
+                    # name, so nothing can be written for it. Reported rather than left quiet --
+                    # without this the witness would only see "no clip expected here".
+                    audio_missing.add("<not in audio.json>")
             if c.get("type") in ("MeshRenderer", "SkinnedMeshRenderer"):
                 for p in c.get("materials") or []:
                     mat_slots += 1
@@ -128,6 +147,11 @@ def expected(json_path):
         "mesh_slots": mesh_slots,
         "mesh_paths_here": mesh_paths,
         "clip_paths_here": clip_paths,
+        # The clip an AudioSource component carries is a native field, not a MonoBehaviour one, so
+        # no field_refs witness above can see it. Counted here and compared with !u!82 below.
+        "audio_slots": audio_slots,
+        "audio_clips_here": audio_clips,
+        "audio_clips_missing": audio_missing,
     }
 
 
@@ -257,6 +281,24 @@ def actual(scene_path, guids):
                 _mark_pptr(field_refs, owner, m.group(2), m.group(3), guids)
             elif mi:
                 _mark_pptr(field_refs, owner, mi.group(1), mi.group(2), guids)
+    # AudioSource's clip is a field of a NATIVE component (!u!82), so the !u!114 walk above cannot
+    # see it, and neither can any field-level witness. Read it straight off the component docs:
+    # a non-zero fileID+guid is a clip that landed, whatever the writer logged. The key is
+    # m_audioClip in Unity 2022's YAML -- searching for plain "clip:" matches nothing and made a
+    # successful build look like a failed one.
+    audio_clips = set()
+    for doc in re.split(r"(?m)^--- ", text)[1:]:
+        if not doc.startswith("!u!82"):
+            continue
+        for g in re.findall(r"^  m_audioClip: \{fileID: [1-9]\d*(?:, guid: ([0-9a-f]{32}))?",
+                            doc, re.M):
+            if guids.get(g):
+                audio_clips.add(guids[g])
+    audio_sources = len(re.findall(r"(?m)^--- !u!82 ", text))
+    # Calibration guard: count the key itself, null or not. If it never appears while the scene is
+    # expected to hold AudioSources, the YAML key changed under us -- and reporting "clips missing"
+    # for that would be the same false verdict the line above produced once already.
+    audio_clip_lines = len(re.findall(r"^  m_audioClip:", text, re.M))
     return {
         "counts": dict(counts),
         "field_refs": {k: sorted(v) for k, v in field_refs.items()},
@@ -274,6 +316,9 @@ def actual(scene_path, guids):
         "null_ref_fields": dict(null_refs),
         "null_by_script": dict(null_by_script),
         "null_mesh": len(re.findall(r"^  m_Mesh: \{fileID: 0\}", text, re.M)),
+        "audio_clips": audio_clips,
+        "audio_sources": audio_sources,
+        "audio_clip_lines": audio_clip_lines,
         "tags": dict(tags),
         "active": dict(active),
         "bytes": len(text),
@@ -382,6 +427,22 @@ def main():
                             % (len(absent), len(wrefs),
                                ", ".join("%s->%s" % (f, os.path.basename(w))
                                          for f, w in absent[:3])))
+        missing_audio = exp["audio_clips_here"] - act["audio_clips"]
+        if missing_audio:
+            problems.append("%d AudioSource clip(s) the description names are not in the file -- "
+                            "rebuild this scene. First: %s"
+                            % (len(missing_audio), sorted(missing_audio)[:2]))
+        if exp["audio_slots"] and not act["audio_clip_lines"]:
+            problems.append("%d AudioSource(s) expected but the file has no m_audioClip key at all "
+                            "-- the YAML field name this check searches for has changed, so the clip "
+                            "verdicts here are unreadable, not failed" % exp["audio_slots"])
+        if exp["audio_clips_missing"]:
+            problems.append("%d AudioSource clip(s) the build points at cannot be resolved from "
+                            "audio.json: %s" % (len(exp["audio_clips_missing"]),
+                                                 sorted(exp["audio_clips_missing"])[:2]))
+        if act["audio_sources"] != exp["audio_slots"]:
+            problems.append("%d AudioSource components expected, %d in the file -- a component was "
+                            "dropped, not just its clip" % (exp["audio_slots"], act["audio_sources"]))
         for tid, label in LEGACY_FORBIDDEN.items():
             if act["counts"].get(label, 0):
                 problems.append("legacy component %s survived (it does not exist in 2022)" % label)

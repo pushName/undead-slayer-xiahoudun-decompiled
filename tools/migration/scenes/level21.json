@@ -20,7 +20,8 @@
   "cross-file -> asset": 1,
   "cross-file -> asset (element)": 5,
   "array set": 1,
-  "opaque skipped (GUIStyle)": 1
+  "opaque skipped (GUIStyle)": 1,
+  "audio clip null in source": 1
  },
  "trailing_fields_absent": {},
  "dropped_refs": [
@@ -217,8 +218,12 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ]
   },

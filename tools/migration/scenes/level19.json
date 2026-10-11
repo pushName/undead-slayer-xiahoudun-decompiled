@@ -34,7 +34,9 @@
   "opaque skipped (GUIStyle)": 5,
   "refused[two-dimensional array (unsupported by ]": 1,
   "trailing fields absent from the record": 2,
-  "cross-file -> prefab root": 1
+  "cross-file -> prefab root": 1,
+  "audio clip null in source": 2,
+  "audio clip -> asset": 1
  },
  "trailing_fields_absent": {
   "DB_Weapon": [
@@ -3308,8 +3310,12 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ]
   },
@@ -4702,8 +4708,13 @@
      "type": "Animation"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/horse_move.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",
@@ -4826,8 +4837,12 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     }
    ],
    "animations": [

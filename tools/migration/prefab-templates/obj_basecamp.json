@@ -17,8 +17,10 @@
  },
  "field_stats": {
   "refused[record shorter than layout (data assig]": 24,
+  "audio clip null in source": 26,
   "instances decoded": 158,
   "ref set": 19,
+  "audio clip -> asset": 9,
   "cross-file ref dropped": 2,
   "dangling ref dropped": 6,
   "null in source": 1
@@ -123,8 +125,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/wood_break.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     }
    ]
   },

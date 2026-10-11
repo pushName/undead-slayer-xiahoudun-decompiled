@@ -358,6 +358,7 @@ def indexes():
         "by_type": {"Material": mats_doc.get("index", {}), "Mesh": meshes_doc.get("index", {}),
                     "Texture2D": tex_index, "Texture": tex_index, "AnimationClip": clips,
                     "AudioClip": audio_index},
+        "audio": audio_index,
         "prefab_root": {k: v["asset"] for k, v in templates_doc.items()},
     }
     return _INDEXES
@@ -387,6 +388,7 @@ class FileCtx:
         idx = indexes()
         self.mesh_index = idx["mesh"]
         self.mat_index = idx["material"]
+        self.audio_index = idx["audio"]
         self.objs = {o.path_id: o for o in env.objects}
         self.warnings = []
         self.field_stats = collections.Counter()
@@ -567,6 +569,8 @@ class FileCtx:
                 comps.append(entry)
             elif tn in ("MeshFilter", "MeshRenderer", "SkinnedMeshRenderer"):
                 comps.append(self.translate_renderer(tn, t, go_id))
+            elif tn == "AudioSource":
+                comps.append(self.translate_audio_source(t, go_id))
             elif tn in REMOVED_IN_5:
                 unsupported[tn] += 1
                 # Keep the object id and, for the legacy particle classes, the byte-exact record
@@ -585,6 +589,45 @@ class FileCtx:
                 self.warnings.append("GameObject %d: unhandled component type %s"
                                      % (go_id, tn))
         return comps, tpath[0], unsupported
+
+    def translate_audio_source(self, obj, go_id):
+        """Unity 4 AudioSource -> clip + the three parameters its record carries.
+
+        AudioSource sits in SUPPORTED, so every one of these was emitted as a bare type name and
+        the clip it points at was thrown away: 27 of the 67 AudioSource objects in the build name a
+        clip, and none of them reached the rebuilt components -- a silent AudioSource is not the
+        shipped behaviour. The other 40 have a null clip in the build itself (the code assigns them
+        at runtime: 21 sites of ``audio.clip =`` and 13 of ``PlayOneShot``), and those stay null on
+        purpose, which is why "count of nulls" alone would have hidden this.
+
+        What is deliberately NOT carried: every record is 164 bytes while UnityPy's built-in
+        AudioSource view exposes only enabled/clip/volume/pitch/playOnAwake, so priority, rolloff,
+        min/max distance, mute, loop and doppler stay at Unity 2022 defaults. Naming that gap beats
+        hand-decoding a layout nobody has verified byte-exactly -- that is how #19 is set up.
+        """
+        rec = {"kind": "audio", "type": "AudioSource"}
+        try:
+            d = obj.read()
+        except Exception as exc:
+            self.warnings.append("AudioSource %d (GameObject %s): unreadable (%s)"
+                                 % (obj.path_id, go_id, exc))
+            rec["unavailable"] = True
+            return rec
+        rec["enabled"] = bool(getattr(d, "m_Enabled", True))
+        pp = getattr(d, "m_audioClip", None)          # note the lowercase 'a' -- the field name is
+        if pp is not None and int(pp.m_PathID):       # what UnityPy calls it, not m_AudioClip
+            asset, key = self.asset_for(self.audio_index, int(pp.m_FileID), int(pp.m_PathID))
+            rec["clip"] = asset
+            self.field_stats["audio clip -> asset" if asset else "audio clip dropped"] += 1
+            if asset is None:
+                self.warnings.append("AudioSource %d: clip %s not in audio.json"
+                                     % (obj.path_id, key))
+        elif pp is not None:
+            self.field_stats["audio clip null in source"] += 1
+        rec["volume"] = float(getattr(d, "m_Volume", 1.0))
+        rec["pitch"] = float(getattr(d, "m_Pitch", 1.0))
+        rec["play_on_awake"] = bool(getattr(d, "m_PlayOnAwake", True))
+        return rec
 
     def node_record(self, o, transforms):
         """One GameObject object -> (node dict or None, unsupported histogram).

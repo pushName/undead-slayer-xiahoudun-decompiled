@@ -15,7 +15,8 @@
   "ParticleRenderer": 2
  },
  "field_stats": {
-  "instances decoded": 1
+  "instances decoded": 1,
+  "audio clip -> asset": 1
  },
  "container_dropped_refs": [],
  "container_warnings": [],
@@ -225,8 +226,13 @@
      "type": "SphereCollider"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/chain_multi.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ]
   },

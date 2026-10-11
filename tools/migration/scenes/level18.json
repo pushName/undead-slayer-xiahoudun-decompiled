@@ -33,6 +33,7 @@
   "cross-file -> prefab root (element)": 5,
   "array set": 2,
   "cross-file -> prefab root": 3,
+  "audio clip -> asset": 4,
   "cross-file -> asset (element)": 5,
   "null in source (element)": 2,
   "array fully dropped": 1,
@@ -3477,8 +3478,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/ride_stage.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ]
   },
@@ -4277,8 +4283,13 @@
      "type": "Animation"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/horse_move.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     },
     {
      "kind": "MonoBehaviour",
@@ -4548,8 +4559,13 @@
      "type": "CapsuleCollider"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/coin.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     }
    ],
    "animations": [
@@ -4775,8 +4791,13 @@
    "children": [],
    "components": [
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/slash_simple1.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",

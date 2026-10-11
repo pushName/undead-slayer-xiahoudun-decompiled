@@ -43,7 +43,9 @@
   "cross-file -> asset": 16,
   "cross-file -> asset (element)": 37,
   "array set": 17,
+  "audio clip null in source": 4,
   "refused[record shorter than layout (data assig]": 1,
+  "audio clip -> asset": 4,
   "cross-file ref dropped": 2,
   "opaque skipped (GUIStyle)": 2,
   "trailing fields absent from the record": 1,
@@ -5321,8 +5323,12 @@
      "type": "Rigidbody"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",
@@ -6579,8 +6585,12 @@
      "type": "SphereCollider"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     },
     {
      "kind": "MonoBehaviour",
@@ -6738,8 +6748,12 @@
      "type": "SphereCollider"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     },
     {
      "kind": "MonoBehaviour",
@@ -7935,8 +7949,12 @@
      "type": "SphereCollider"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     },
     {
      "kind": "MonoBehaviour",
@@ -8165,8 +8183,13 @@
      "type": "Rigidbody"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/breath_pain.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ],
    "animations": [
@@ -8243,8 +8266,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/bgm_tutorial.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     }
    ]
   },
@@ -9057,8 +9085,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/horse_move.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "component",
@@ -9902,8 +9935,13 @@
    "children": [],
    "components": [
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/slash_simple1.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",

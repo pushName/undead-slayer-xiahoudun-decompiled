@@ -20,6 +20,7 @@
  "field_stats": {
   "ref set": 2,
   "instances decoded": 3,
+  "audio clip -> asset": 1,
   "cross-file -> asset": 1
  },
  "trailing_fields_absent": {},
@@ -2121,8 +2122,13 @@
      "type": "Animation"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/horse_move.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     },
     {
      "kind": "MonoBehaviour",

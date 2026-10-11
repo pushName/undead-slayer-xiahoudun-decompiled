@@ -39,6 +39,8 @@
   "cross-file -> asset": 20,
   "opaque skipped (GUIStyle)": 5,
   "cross-file ref dropped": 5,
+  "audio clip -> asset": 2,
+  "audio clip null in source": 2,
   "refused[record shorter than layout (data assig]": 1,
   "refused[bool[] stride unresolved (refused on p]": 1,
   "ref set (element)": 2,
@@ -8767,8 +8769,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/horse_move.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "component",
@@ -9761,8 +9768,12 @@
      "type": "Rigidbody"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",
@@ -11321,8 +11332,13 @@
    "children": [],
    "components": [
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/slash_simple1.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",
@@ -12146,8 +12162,12 @@
      "enabled": true
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ]
   },

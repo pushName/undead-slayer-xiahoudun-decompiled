@@ -19,7 +19,8 @@
   "instances decoded": 3,
   "cross-file ref dropped": 1,
   "cross-file -> asset": 3,
-  "opaque skipped (GUIStyle)": 1
+  "opaque skipped (GUIStyle)": 1,
+  "audio clip -> asset": 1
  },
  "trailing_fields_absent": {},
  "dropped_refs": [
@@ -152,8 +153,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/bgm_victory.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     }
    ]
   },

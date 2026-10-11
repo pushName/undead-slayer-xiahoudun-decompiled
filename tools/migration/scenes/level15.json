@@ -16,6 +16,7 @@
  "field_stats": {
   "instances decoded": 6,
   "ref set": 4,
+  "audio clip -> asset": 1,
   "cross-file -> asset (element)": 5,
   "array set": 1,
   "null in source": 3,
@@ -230,8 +231,13 @@
      "type": "Animation"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/horse_move.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     },
     {
      "kind": "component",

@@ -18,6 +18,7 @@
   "GUILayer": 1
  },
  "field_stats": {
+  "audio clip -> asset": 1,
   "instances decoded": 6,
   "refused[two-dimensional array (unsupported by ]": 2,
   "cross-file -> asset": 17,
@@ -843,8 +844,13 @@
      "type": "Animation"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/horse_move.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",

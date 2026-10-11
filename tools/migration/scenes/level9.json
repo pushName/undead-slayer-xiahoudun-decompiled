@@ -29,7 +29,8 @@
   "cross-file -> prefab root": 2,
   "cross-file ref dropped": 1,
   "trailing fields absent from the record": 2,
-  "refused[two-dimensional array (unsupported by ]": 1
+  "refused[two-dimensional array (unsupported by ]": 1,
+  "audio clip -> asset": 1
  },
  "trailing_fields_absent": {
   "DB_Weapon": [
@@ -3263,8 +3264,13 @@
      ]
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "clip": "Assets/Resources/forge.mp3",
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     }
    ]
   },

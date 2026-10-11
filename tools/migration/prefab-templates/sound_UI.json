@@ -16,6 +16,7 @@
  },
  "field_stats": {
   "instances decoded": 4,
+  "audio clip null in source": 2,
   "dangling ref dropped (element)": 2,
   "array fully dropped": 1
  },
@@ -53,8 +54,12 @@
    ],
    "components": [
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": true
     },
     {
      "kind": "MonoBehaviour",
@@ -94,8 +99,12 @@
    "children": [],
    "components": [
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     }
    ]
   }

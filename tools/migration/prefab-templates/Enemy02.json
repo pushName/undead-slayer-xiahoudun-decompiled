@@ -11,6 +11,7 @@
  ],
  "unsupported_components": {},
  "field_stats": {
+  "audio clip null in source": 2,
   "refused[record shorter than layout (data assig]": 2,
   "ref set": 4,
   "instances decoded": 17
@@ -66,8 +67,12 @@
      "type": "SphereCollider"
     },
     {
-     "kind": "component",
-     "type": "AudioSource"
+     "kind": "audio",
+     "type": "AudioSource",
+     "enabled": true,
+     "volume": 1.0,
+     "pitch": 1.0,
+     "play_on_awake": false
     },
     {
      "kind": "MonoBehaviour",
